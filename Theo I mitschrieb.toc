@@ -1,0 +1,91 @@
+\select@language {german}
+\contentsline {chapter}{Introduction}{4}
+\contentsline {section}{Einf\IeC {\"u}hrung}{4}
+\contentsline {section}{Bedeutung der Mechanik}{4}
+\contentsline {chapter}{\numberline {1}Newtonsche Mechanik}{6}
+\contentsline {section}{\numberline {1.1}allgemeine Begriffe}{6}
+\contentsline {subsection}{\numberline {1.1.1}Bezugsystem}{6}
+\contentsline {section}{\numberline {1.2}Die Newtonsche Gesetze (1687)}{6}
+\contentsline {subsection}{\numberline {1.2.1}Bem:}{8}
+\contentsline {subsection}{\numberline {1.2.2}Beispiele:}{9}
+\contentsline {section}{\numberline {1.3}Erhaltungss\IeC {\"a}tze}{9}
+\contentsline {subsection}{\numberline {1.3.1}Impulserhaltung}{10}
+\contentsline {subsection}{\numberline {1.3.2}Drehimpulserhaltung}{10}
+\contentsline {subsubsection}{Bsp: Zentralkraft}{10}
+\contentsline {subsection}{\numberline {1.3.3}Energieerhaltung}{10}
+\contentsline {subsubsection}{Bsp: Der ged\IeC {\"a}mpfter harmonischer Oszillator}{12}
+\contentsline {section}{\numberline {1.4}Beschleunigte Bezugsysteme}{13}
+\contentsline {subsection}{\numberline {1.4.1}Rotierendes Bezugsystem:}{14}
+\contentsline {section}{\numberline {1.5}Mehr-K\IeC {\"o}rper-Probleme}{15}
+\contentsline {section}{\numberline {1.6}Die Hamilton-Funktion (1833)}{18}
+\contentsline {subsection}{Newtonsche Mechanik: theoretisches Konzept}{20}
+\contentsline {subsubsection}{Nichtlineare Dynamik und Chaos}{21}
+\contentsline {section}{\numberline {1.7}Schwingungen}{21}
+\contentsline {subsection}{\numberline {1.7.1}Ged\IeC {\"a}mpfte Schwingungen}{23}
+\contentsline {subsection}{\numberline {1.7.2}Ged\IeC {\"a}mpfte Schwingungen}{24}
+\contentsline {subsection}{\numberline {1.7.3}Der getriebene Oszillator}{24}
+\contentsline {subsection}{\numberline {1.7.4} 6. gekoppelte Oszillatoren}{26}
+\contentsline {subsection}{\numberline {1.7.5} 7 Eigenschwingungen}{28}
+\contentsline {section}{\numberline {1.8}Das Zweik\IeC {\"o}rperproblem}{30}
+\contentsline {subsection}{\numberline {1.8.1}Diskussion des Zweik\IeC {\"o}rperproblems}{33}
+\contentsline {subsection}{\numberline {1.8.2}Keplerproblem}{34}
+\contentsline {chapter}{\numberline {2}Lagrange-Formalismus}{37}
+\contentsline {section}{\numberline {2.1}Zwangsbedingungen}{37}
+\contentsline {section}{\numberline {2.2}Lagrange-Gl 1.Art}{39}
+\contentsline {section}{\numberline {2.3}Lagrange-Gl. 2. Art}{42}
+\contentsline {subsection}{\numberline {2.3.1}Lagrange Formalismus}{49}
+\contentsline {subsection}{\numberline {2.3.2}Energieerhaltung}{49}
+\contentsline {section}{\numberline {2.4}Symmetrie und Erhaltungsgr\IeC {\"o}\IeC {\ss }en}{50}
+\contentsline {subsection}{\numberline {2.4.1}Noether-Theorem}{52}
+\contentsline {paragraph}{Beweis:}{53}
+\contentsline {paragraph}{Bem:}{53}
+\contentsline {paragraph}{Invarianz}{53}
+\contentsline {paragraph}{Verallg.:}{54}
+\contentsline {paragraph}{Translation:}{54}
+\contentsline {paragraph}{Rotationsinvarianz}{55}
+\contentsline {paragraph}{Translation in der Zeit}{55}
+\contentsline {paragraph}{Bem:}{56}
+\contentsline {section}{\numberline {2.5}Hamiltonsches Prinzip}{57}
+\contentsline {subsection}{\numberline {2.5.1}Funktionale und Variationsrechnung}{57}
+\contentsline {paragraph}{Bsp1: K\IeC {\"u}rzeste Wegstrecke}{57}
+\contentsline {paragraph}{Bsp2: Brachistochrone}{57}
+\contentsline {subsection}{\numberline {2.5.2}Euler-Lagrange-Gl.}{57}
+\contentsline {paragraph}{Euler-Lagrange-Gl.}{58}
+\contentsline {subsection}{\numberline {2.5.3}Variationsrechnung}{59}
+\contentsline {paragraph}{Verallgemeinerung:}{60}
+\contentsline {section}{\numberline {2.6} 3. Hamiltonsche Prinzip}{61}
+\contentsline {subsection}{\numberline {2.6.1}Schwingung einer Seite}{62}
+\contentsline {subsubsection}{Herleitung der Wellengleichung}{62}
+\contentsline {paragraph}{L\IeC {\"o}sung der Wellengleichung:}{64}
+\contentsline {subsection}{\numberline {2.6.2}Der Starre K\IeC {\"o}rper}{65}
+\contentsline {subsubsection}{Kinetische Energie}{66}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {2 F\IeC {\"a}lle:}}\mathsurround \z@ $\relax }{66}
+\contentsline {paragraph}{Bem:}{67}
+\contentsline {subsubsection}{Drehimpuls:}{68}
+\contentsline {subsubsection}{Eulersche Gleichungen}{69}
+\contentsline {subsubsection}{\relax $\@@underline {\hbox {Bsp: Kr\IeC {\"a}ftefreier symmetrischer Kreisel}}\mathsurround \z@ $\relax }{70}
+\contentsline {subsection}{\numberline {2.6.3}Rotation des Starren K\IeC {\"o}rpers}{71}
+\contentsline {subsubsection}{\relax $\@@underline {\hbox {Schwerer Kreisel}}\mathsurround \z@ $\relax }{72}
+\contentsline {subsubsection}{\relax $\@@underline {\hbox {Lagrange-Funktion}}\mathsurround \z@ $\relax }{72}
+\contentsline {subsubsection}{\relax $\@@underline {\hbox {Symmetrien:}}\mathsurround \z@ $\relax }{72}
+\contentsline {subsubsection}{\relax $\@@underline {\hbox {Erhaltungsgr\IeC {\"o}\IeC {\ss }en}}\mathsurround \z@ $\relax ,,erste Integrale``}{73}
+\contentsline {subsubsection}{\relax $\@@underline {\hbox {Graphische Disskusion der L\IeC {\"o}sung}}\mathsurround \z@ $\relax }{74}
+\contentsline {section}{\numberline {2.7}9 Hamilton-Formalismus}{74}
+\contentsline {subsubsection}{Legendre-Trafo}{74}
+\contentsline {section}{\numberline {2.8}Hamiltonsche Mechanik}{75}
+\contentsline {subsubsection}{Bemerkung:}{76}
+\contentsline {subsubsection}{\relax $\@@underline {\hbox {Standartfall von f Freiheitsgraden $ q_i $}}\mathsurround \z@ $\relax }{77}
+\contentsline {subsubsection}{Mechanik nach:}{78}
+\contentsline {section}{\numberline {2.9}Phasenraum}{78}
+\contentsline {paragraph}{Bsp:}{79}
+\contentsline {subsection}{\numberline {2.9.1}Zeitentwicklung im Phasenraum (PR)}{79}
+\contentsline {subsubsection}{Poissonklammer}{79}
+\contentsline {subsection}{\numberline {2.9.2}\relax $\@@underline {\hbox {PR-Dichte}}\mathsurround \z@ $\relax }{81}
+\contentsline {chapter}{\numberline {3}Relativistische Mechanik}{82}
+\contentsline {subsubsection}{\relax $\@@underline {\hbox {Michelson Experiment (1885)}}\mathsurround \z@ $\relax }{83}
+\contentsline {section}{\numberline {3.1}Relativistische Mechanik}{83}
+\contentsline {subsection}{\numberline {3.1.1}\relax $\@@underline {\hbox {Einsteinsches Relativit\IeC {\"a}tsprinzip}}\mathsurround \z@ $\relax (1905)}{83}
+\contentsline {paragraph}{Def: L\IeC {\"a}ngenmessung}{84}
+\contentsline {paragraph}{Def: Zeitmessung: Synchronisierte Uhren}{84}
+\contentsline {subsubsection}{Gleichzeitigkeit}{84}
+\contentsline {section}{\numberline {3.2}Lorenz-Trafo}{85}

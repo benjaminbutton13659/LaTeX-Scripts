@@ -1,0 +1,3370 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[titlepage,12pt,a4paper,ngerman]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{cleveref}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{mathtools}
+\usepackage{enumerate}
+
+\newenvironment{bew}{\subsection{Bew:}}{\hfill$\square$}
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+\newcommand{\Bew}[1]{\begin{bew}#1\end{bew}}
+\newcommand{\verteq}{\rotatebox{90}{$\,=$}}
+\newcommand{\equalto}[2]{\underset{\scriptstyle\overset{\mkern4mu\verteq}{#2}}{#1}}
+\newcommand{\equaltoup}[2]{\overset{\scriptstyle\underset{\mkern4mu\verteq}{#2}}{#1}}
+\newcommand{\custo}[3]{\underset{\scriptstyle\overset{\mkern4mu\rotatebox{-90}{$\,#1$}}{#3}}{#2}}
+\newcommand{\custoup}[3]{\overset{\scriptstyle\overset{\mkern4mu\rotatebox{-90}{$\,#1$}}{#3}}{#2}}
+\newcommand{\tx}[1]{\textrm{#1}}
+\newcommand{\ov}[1]{\overline{#1}}
+\newcommand{\ub}[1]{\underbrace{#1}}
+\newcommand{\ob}[1]{\overbrace{#1}}
+\newcommand{\im}{\tx{im}}
+\newcommand{\spa}{\tx{span}}
+\newcommand{\adj}{\tx{adj}}
+\newcommand{\grad}{\tx{grad}}
+\newcommand{\ord}{\tx{ord}}
+\newcommand{\basis}[3]{\{#1_{#2}, \dots, #1_{#3}\}}
+\newcommand{\const}{\tx{const.}}
+\newcommand{\summ}[2]{\sum_{#1}^{#2}}
+\newcommand{\intt}[2]{\int_{#1}^{#2}}
+\newcommand{\casess}[4]{\left\{ \begin{array}{ll} {#1} & {#2} \\ {#3} & {#4} \end{array} \right.}
+\newcommand{\ska}[2]{\langle #1 , #2 \rangle}
+
+
+\newcommand{\enph}{F: V \to V \textrm{ Endomorphismus}}
+
+\newcommand{\hfw}{\color{RubineRed}\tx{ $\star$hier fehlt was$\star$ } \color{black}}
+
+\hbadness=99999
+
+\begin{document}
+	
+\renewcommand{\thechapter}{\Roman{chapter}}
+
+\title{
+	\Huge Lineare Algebra II \\[1em]
+	\Large Vorlesung von Prof. Dr. Amador Martin - Pizarro im Sommersemester 2018}
+\author{Markus Österle\\ Andréz Gockel}
+\date{17.04.2018}
+\maketitle
+\tableofcontents
+
+\chapter{Wiederholung}
+\subsection{Def: Ringe} Ein (kommutativer) Ring (mit Einselement) ist eine Menge zusammen mit zwei binären Operationen + und *, sodass:
+\begin{itemize}
+	\item $(R,+,0_{R})$ ist eine abelsche Gruppe
+	\item $(R,*,1_{R})$  ist eine kommutative Halbgruppe
+	\item $(R,+,0_{R})$ die distributiven Gesetze:\\
+	$x(y+z) = xy+xz $\\
+	$(x+y)z=xz+yz $
+	gelten
+\end{itemize}
+
+\subsection{Def: Itegritätsbereich} Ein Integritätsbereich ist ein Ring ohne Nullteiler $$\forall x,y \in R \quad (x\cdot y = 0 \Rightarrow x=0\textrm{ oder } y=0)$$ 
+\subsection{Def: Körper} Ein Körper K ist ein Ring derart, dass:
+\begin{itemize}
+	\item $1_{K} = 0_{K}$
+	\item $\forall x \in K \setminus \{0\}$ $\exists x^{-1} x\cdot x^{-1} = x^{-1} \cdot x = 1_{K}$
+\end{itemize}
+\subsection{Bew:} Körper sind Integritätsbereiche
+\subsection{Bem: Ring Homomorphismus}  Sei R ein nichttrivialer Ring $(0_{R} \neq 1_{R})$,
+$$\varphi: \mathbb{Z} \to R , n \mapsto \left\{\begin{array}{lll} & \ 1_{R}+\dots + 1_{R} & n\ge 0\\ - & ( 1_{R}+\dots + 1_{R}) & n < 0 \end{array}\right.$$\\
+$\varphi$ ist ein Ring Homomorphismus:
+$$\tx{ker}(\varphi) = \{n\in Z | \varphi(n) = 0\}$$\\
+2 Möglichkeiten
+\begin{itemize}
+	\item[a)] $\ker(\varphi) = {0}$
+	R hat Charakteristik 0
+	\item[b)] $\ker(\varphi) \neq {0}$
+\end{itemize}
+
+$\rightarrow$ es existiert ein kleinstes positives Element $p>0$ in  $\ker(\phi)$%, R hat Charakteristik p
+\subsection{Bew:} 
+R Interitätsbereich $\Rightarrow$ p eine Primzahl z.B. 
+\begin{equation*} \frac{\mathbb{Z}}{p\mathbb{Z}} = \{\bar{0}, \bar{1},\dots,\overline{n-1}\} \end{equation*}
+hat \underline{Charakteristik n}.\\
+Insbesondere enthält jeder Körper der Charakteristik p eine ,,Kopie`` von $\frac{\mathbb{Z}}{p\mathbb{Z}}$\\
+K Charakteristik p $\Rightarrow$ $\frac{\mathbb{Z}}{p\mathbb{Z}} \buildrel \tx{injektiv} \over \rightarrow K$\\
+$\frac{\mathbb{Z}}{n\mathbb{Z}}$ ist ein Körper:
+$a \in \frac{\mathbb{Z}}{p\mathbb{Z}}\setminus \{0\}$\\
+$\Rightarrow$ a und p sind teilerfremd\\
+$$ 1 = a\cdot b+p\cdot m \Rightarrow 1 = \bar{a} \cdot  \bar{b}$$
+\subsection{Def: Polynomring} Sei K ein Körper. Der Polynomring K[T] in einer Variable T über K ist die Menge formeller Summen der Form $$ g,f := \sum^{n}_{i=0} a_{i} \cdot T^{i}, \qquad a_i\in K $$
+$\grad(f) := \textrm{max}\{i\vert a_{i} \neq 0 \}$ \\
+$ \grad(0) := -1$
+\subsection{Bem:} K[T] ist ein Integritätsbereich 
+$$(\sum^{n}_{i=0} a_{i}\cdot T^i)+(\sum^{m}_{j=0} b_{j}\cdot T^j) = \sum^{\textrm{max}\{n,m\}}_{k=0} (a_{k}+b_{k})\cdot T^k$$
+$$(\sum_{i=0}^{n}a_{i}\cdot T^{i})\cdot (\sum_{j=0}^{m}b_{j}\cdot T^{j}) = \sum_{k=0}^{n\cdot m}c_{k}\cdot T^{k}$$
+$$ c_{k}=\sum_{i+j=k}a_{i}\cdot b_{j}$$
+
+\noindent $f,g$ beide $\neq 0$
+$$\Rightarrow \grad(f\cdot g) = \grad(f) + \grad(g)$$
+$f\cdot g \neq 0$
+$$\grad (f + g) \le \textrm{max}\{\grad(f), \grad(g)\}$$
+\subsection{Satz:(Division mit Rest)}
+Gegeben $f,g \in K[T]$\\
+$\grad(g)> 0$ \\\\
+Dann existieren eindeutige $q,r\in K[T]$\\
+sodass $f=g\cdot q+r$\\
+wobei $\grad(r) < \grad(g)$ eindeutig\\
+$f = g\cdot q+r = g\cdot q' + r'$\\
+$g\cdot(q-q') = r' - r$\\
+$g\neq g'$
+\begin{gather*}
+\grad(g\cdot(q-q')) = \grad( r' - r) = \textrm{max}\{ \grad(r'),\grad(r) \} < \grad(g) \\ \grad(g\cdot(q-q')) \buildrel q\neq q'\over = \grad(g) + \grad(q-q') 
+\end{gather*}
+$\Rightarrow$ Widerspruch (Wid) !\\
+$\Rightarrow$ $q = q' \Rightarrow r = r'$\\\\
+\subsubsection{Existenz Beweis: Induktion auf $\grad(f)$}
+I.A.: $\grad(f)= 0 \rightarrow f = g\cdot0 + f$\\
+,,n+1`` $\grad(f)= n+1$
+$$\grad(f) < \grad(g) = m$$
+$$\rightarrow f = g\cdot 0 + f$$
+
+OBdA $n+1 = \grad(f)\ge \grad(g) = m > 0$\\
+$f = a_{n+1} \cdot  T^ {n+1} + \tilde{f}$\\
+$\grad(\tilde{f}) \le n$\\
+$ a_{n+1} \neq 0$\\
+Sei $$f' := f - b_{m}^{-1}\cdot  a_{n+1} \cdot  T^{n+1-m} \cdot  g$$
+$\Rightarrow \grad(f') \le n$
+$$ g= \sum_{i=0}^{m} b_{i} \cdot  T^i$$
+
+$\buildrel \tx{I.A.}\over \Rightarrow f' = g \cdot  q' + r'$
+$$ f - b_{m}^{-1} a_{n+1} T^{n+1-m} \cdot g$$
+$\grad(r') < \grad(g)$
+$$\rightarrow f = g(\underbrace{b_{m}^{-1} a_{m} T^{n+1-m} + q'}_{q}) + r' ?= \grad(r') < \grad(g)$$
+$( r' = r)$
+
+\subsection{Def: Teiler} 
+$f,g \in K[T]$\\
+$ \grad (g)> 0$
+$$g \textrm{ teilt } f \Leftrightarrow f = g\cdot q$$
+$(g|f)$ $(r=0)$\\
+%$(T-1|f)$
+\subsection{Def: Nullstelle} $f \in K[T]$ besitzt eine Nullstelle $\lambda \in K$\\
+gdw (genau dann wenn) $(T-\lambda) | f \Leftrightarrow f(\lambda) = 0$ \\
+$f = (T-\lambda) q + r$\\
+\subsection{Bem: Anzahl Nullstellen} $$f\in K[T] , \qquad f\neq 0 , \grad(f) = n$$\\
+Dann besitzt f höchstens n viele Nullstellen in K.\\
+\subsection{Bew:} $n= 0,  f = a_{0} \neq 0$\\
+$n> 0 $ Falls f keine Nullstellen in K besitzt $\Rightarrow$ Ok !\\
+Sonst, bei $\lambda\in K $ eine Nullstelle von $f$. \\
+$$f = (T-\lambda) \cdot g$$\\
+$ \grad (g) = n-1< n$\\
+$\buildrel \tx{I.A.}\over \rightarrow$ besitzt g höchstens $n-1$ viele Nullstellen.\\
+Jede Nullstelle von f ist $\lambda$ oder eine Nullstelle von g $\Rightarrow$ f hat höchstens n viele \underline{Nullstellen}.\\
+\subsection{Def: Vielfachheit der Nullstellen} $f\in K[T], f \neq 0 , \lambda \in K$ Nullstellen von f\\
+$$\rightarrow f = (T-\lambda)^{K_{\lambda }} \cdot g, \quad (g(\lambda) \neq 0)$$\\
+($K_{\lambda}$ ist die Vielfachheit der Nullstelle $\lambda$ in f)\\
+\subsection{Def: Algebraische Abgeschlossenheit} Ein Körper heißt algebraisch abgeschlossen falls jedes Polynom über K positiven Grades eine Nullstelle in K besitzt.
+\subsection{Frage:} Ist $\mathbb{R}$ algebraisch abgeschlossen ?\\ 
+Nein: $T^2+1$
+\subsection{Bem:} $\mathbb{C}$ ist algebraisch abgeschlossen 
+\subsection{Bem: Unendlichkeit} Jeder alg. abg. Körper muss unendlich sein!
+\subsection{Warum?:}
+(Beweis läuft wie unendlichkeit der Primzahlen)\\
+$K = \{\lambda_1,\dots,\lambda_n\}$\\
+$f=(T-\lambda_1)\cdot \dots \cdot (T-\lambda_n) +1$
+\subsection{Bem: Algebraische Abgeschlossenheit} K ist genau dann alg. abg. wenn jedes Polynom f positiven Grades in lineare Faktoren zerfällt:\\
+$$f=(T-\lambda_1)\cdot \dots \cdot (T-\lambda_n) \in K$$
+\subsection{Bew:}
+,,$\Leftarrow$`` Trivial\\
+,,$\Rightarrow$``$\grad(f) = n>0$\\
+$\rightarrow f = (T-\lambda_n)\cdot g$ \\ $(\grad (g) \le n - 1 < n)$\\
+$\buildrel \tx{I.A.} \over \rightarrow g=c(T-\lambda_2)\cdot \dots \cdot (T-\lambda_n)$\\
+$\Rightarrow f=c(T-\lambda_2)\cdot \dots \cdot (T-\lambda_n)$ \checkmark %häckchen of approval\\
+
+
+%2. vorlesung
+
+\subsection{Def: Vektorraum}
+Vektorraum V über K ist eine ablesche Gruppe $(V,+,0_V)$ zusammen mit einer verknüpgung \\
+$$ K \times V \mapsto V$$
+$$(\lambda, v) \mapsto \lambda\cdot v$$
+sodass:
+\begin{itemize}
+	\item[1.)] $\lambda(v+w) = \lambda v +\lambda w$
+	\item[2.)] $\lambda(\mu \cdot v) = \lambda\mu) \cdot v$
+	\item[3.)] $(\lambda + \mu) v = \lambda v + \mu v$
+	\item[4.)] $ 1_K \cdot v = v \qquad\forall v \in V$
+\end{itemize}
+
+Ein Untervektorraum $U\subset V$ ist eine Untergruppe, welche unter Skalarmultiplikation, abg. ist.
+\subsection{Bem: Untervektorräume} $\{U_i\}_{i\in I}$ Unterräume von V\\
+$\rightarrow \bigcap_{i\in I} U_i$ ist auch ein Unterraum.\\
+Insbesondere gegeben $M \subset V $ existiert :
+$$\spa(M) = \langle M \rangle =\textrm{ der kleinste Untervektorram von V, welcher M enthält}$$\\
+$$ \spa(M) = \{\sum^n_{i\in I} \lambda_i m_i, n\in M ,\lambda\in K, n\in \mathbb{N}\}$$
+M ist also ein erzeugenden System für $\spa(M)$\\
+$\{U_i\}_{i\in I}$ Unterräume von V\\
+$$\rightarrow \sum_{i\in I} U_i = \spa (\bigcup_{i\in I} U_I)$$
+$$M_i \subset M_2 \Rightarrow \spa(M_1) \subset \spa(M_2)$$
+\subsection{Def: Lineare Unabhängigkeit}
+$ V : VR/K$\\
+$$v_1,\dots, v_n \in V\textrm{ lin. unabh. falls }\forall\lambda_1 , \dots ,\forall\lambda_n \in K: $$\\
+$$\sum \lambda_i v_i= 0 \Rightarrow\lambda_1 =  \dots = \lambda_n = 0$$
+$M \subset V$ ist lin. unabh. falls jede endliche Teilmenge von M lin. unabh. oder äquivalent dazu sind. Falls kein Element $m$ aus $M$ sich schreiben lässt als linear kombination von $M\setminus \{m \}$.
+$\lambda_i \neq 0$\\
+$$ \lambda_1 m_1 + \lambda_2m_2 + \dots + \lambda_n m_n = 0 \Rightarrow m = \sum - (\frac{\lambda_i}{\lambda_1}) m_i$$
+\subsection{Def: Basis = min. Erz. System} Eine Basis $\mathcal{B}$ von V ist ein lin. unabh. erzeugendensystem von V, äquivalent dazu, wenn jedes Element von V sich \underline{eindeutig schreiben lässt} als lin. kombi. von Elementen aus $\mathcal{B}$. Aquivalent dazu: $\mathcal{B}$ ist min. Erzeugenden System , max. lin. unabh.\\
+\subsection{Satz: Basisergänzungssatz}
+$M\subset V$ lin. unabh. $\Rightarrow\exists \mathcal{B} \subset V $ Basis welche M enthält\\
+Insbesondere hat jeder VR eine Basis ,,Je zwei Basen sind eine Bijekktion``\\
+V ist endlichdimensional, falls V eine endliche Basis besitzt. Sonst ist $V$ unenlichdimensional.\\
+$$\dim(V) = | \mathcal{B} | $$ ($\mathcal{B}$ eine Basis)\\
+
+\subsection{Basisauswahlsatz}
+$M\subset V$ erzeugendensystem $\rightarrow \exists \mathcal{B} \subset M $ Basis von V
+\subsection{Bem: Dimensions Addition} 
+$U\buildrel UR \over \subset V$, 
+$\dim(V) < \infty \Rightarrow \dim(U) < \infty$
+dim ist modular:
+$$\dim(U_1 + U_2) + \dim(U_1 \cap U_2) = \dim(U_1) + \dim(U_2)$$
+
+\subsection{Def: Direkte Summe}
+$$V=U_1 \oplus U_2 \qquad \Leftrightarrow \qquad V= U_1 + U_2\textrm{ und }  U_1 \cap U_2 = \{0\}$$
+$\oplus = direkte Summe$\\
+$$ V = \oplus_{i \in I} U_{i} \qquad \Leftrightarrow \qquad V = \sum_{i\in I } U_i \textrm{ und } \forall i \in I $$
+Die Familie $$\{U_i\}_{i \in I} \rightarrow U_i \cap \Big(\sum_{\substack{j\in J\\ j\neq i}} U_j \Big)=\{0\}$$
+ist \underline{konversal}.
+
+\subsection{Bsp:} $K^2$ ist ein $K - VR.$\\
+$$\begin{pmatrix}1 \\ 0 \end{pmatrix} , \begin{pmatrix}0 \\ 1 \end{pmatrix} = e_1, e_2$$\\
+$U$ = Span$(e_1) \rightarrow K^2 = U \oplus$ Span$(e_2) = U \oplus$ Span$(e_1, e_2)$
+
+\subsection{Def: Lineare Abbildungen}
+$ F: V\rightarrow W $ ist \underline{linear}, falls $$D(\lambda v+\mu u ) = \lambda F(v) + \mu F(u)$$\\
+(F UR von V)
+$$ Ker(F) =\{ v \in V \vert  F(v) = 0 \}$$
+(F UR von W)
+$$ Im(F) = \{ w \in W \vert \exists v \in V, F(v) = w\}$$
+\subsection{Bem: Dimensionssatz}
+Falls $\mathcal{B}$ eine Basis von v ist $\Rightarrow F(\mathcal{B})$ ist ein erzeugendensystem von $Im(F)$\\ 
+$$\textrm{F injektiv} \Leftrightarrow Ker(F) = \{0\}$$\\
+V endlich $$\rightarrow dim(V) = dim(Ker(F)) + dim(Im(F))$$
+
+$$ \nicefrac{v}{Ker(F)} \cong Im(F)$$
+\subsection{Bem: Isomorphie}
+V, W endlich $\{r_1,\dots ,r_n\}$ eine Basis von V
+$$ V \cong K^n$$
+$$v_i \mapsto e_i$$
+$$F: V (dim = n ) \to W (dim = m)$$
+
+$$\{v_1,\dots ,v_n\} \qquad \{w_1,\dots ,w_m\}$$
+$$\begin{array}{ccc}
+V & \buildrel F \over \rightarrow &  W \\
+R & & R \\
+K^n & & K^m \\
+\begin{pmatrix}
+\lambda_1\\
+\vdots\\
+\lambda_n
+\end{pmatrix} & \rightarrow & A \cdot \begin{pmatrix}
+\lambda_1 \\
+\vdots \\
+\lambda_m
+\end{pmatrix}
+\end{array}$$
+
+Wie bekommt man die Matirx A ?\\
+$$ F(v_j) = \sum_{i = a}^m a_{ij} w_i$$\\
+$$F(v_1) \dots F(v_n)$$ 
+\nopagebreak
+$$\begin{pmatrix}
+1_{11} & \cdots & a_{1n} \\
+\vdots & & \vdots\\
+a_{m1} & \cdots & a_{mn}\\
+\end{pmatrix} $$
+
+\begin{flushright}
+	$m\times n$ Matrix
+\end{flushright}
+
+
+\subsection{Def: Rang}
+$$Rg(A) = dim (\textrm{Span(Spaltenvektorraum)}) = dim (\textrm{Span(Zeilenvektorraum)})$$
+$F: V \rightarrow W$ linear $$ Rg(F) = Rg(A) = dim (Im(F)) $$
+
+\subsection{Satz: Basismatrix}
+V, W endlichdim.\\
+Es existieren Basen $\{v_1,\dots, v_n\} \textrm{von} V, \hspace{.5cm} \{w_1,\dots w_m\} \textrm{von} W$ , sodass die Darstellungsmatrix von F die From :
+
+$$\left(\begin{array}{ccccc}
+1 & \cdots & \cdots & 0 \\
+\vdots & 1 & & \vdots \\
+\vdots & & \ddots & \vdots \\
+0 & \cdots & \cdots & 1 \\
+\end{array} \right)$$
+
+\noindent hat.
+
+\subsection{Bew:}
+Sei $U = Ker(F)$ und wähle $\{v_{r+1},\dots, v_n\}$ eine Basis von U. \\
+Sei U' ein Komplement von U in $V \rightarrow V = U\oplus U'$\\
+Sei $\{v_1,\dots, v_r\}$ eine Basis von U'\\
+$\mathcal{B} = \{v_1,\dots , v_n\}$ ist eine Basis von V\\
+$Im(F)$ hat $\{F(v_1),\dots, F(v_n)\}$ als Basis\\
+$$\sum^{r}_{i = 1} \lambda_i F(vi) = 0$$\\
+$$F(\sum^{r}_{i = 1} \lambda_i vi) \Rightarrow \sum^{r}_{i = 1} \lambda_i vi \in U \cap U' = {0}$$\\
+$$\Rightarrow \sum^{r}_{i = 1} \lambda_i v_i = 0\qquad \Rightarrow \underline{\lambda_i = \dots = \lambda_r = 0}$$\\
+$ \text{Ergänze } \{F(v_1), \dots , F(v_r)\}$ zu einer Basis $ \mathcal{B}' = {w_1, \dots , w_m} \text{Basis von } W$\
+
+$$F(v_1) \dots F(v_r), F(v_{r+1}) \dots F(v_n)$$ 
+\nopagebreak
+$$\begin{pmatrix}
+1   &\cdots  & 0  &   0 & \cdots & 0 \\
+\vdots   &\ddots & \vdots  & \vdots && \vdots\\
+0 & \cdots  &1 &  0 & \dots & 0 \\
+0 & \dots & 0 & 0 & \dots & 0 \\
+\vdots  & & \vdots & \vdots & & \vdots\\
+0&\cdots &0 & 0&\cdots & 0\\
+\end{pmatrix} $$
+
+\begin{flushright}
+	$\square$
+\end{flushright}
+
+\subsection{Def: Invertierbarkeit}
+$A \in M_{n\times n} (K) $ ist \underline{invertierbar}, falls es eine Matrix $B\in M_{n\times n} (K)$ gibt, sodass: $$B\cdot A = A\cdot B = E_n$$\\
+$$GL(n,K)= GL_n(K) = \{A\in M_{n\times n} (K) \textrm{invertierbar}\}$$
+$GL_n(K)$ ist eine Gruppe\\
+$$A\in GL_n(K) \Leftrightarrow rg(A) = n$$
+also \underline{invertierbar $\Leftrightarrow$ regulär}\\
+
+\subsection{Bem: Eindeutige Lösung}
+Wenn A regulär ist, dann besitzt ein Gleichungssystem
+
+$$A \cdot \begin{pmatrix}
+\lambda_1\\
+\vdots\\
+\lambda_n
+\end{pmatrix} 
+= \begin{pmatrix}
+b_1\\
+\vdots\\
+b_n\\
+\end{pmatrix}$$
+
+eine eindeutige Lösung:
+
+$$A^{-1} \begin{pmatrix}
+b_1\\
+\vdots\\
+b_n\\
+\end{pmatrix}$$
+
+\subsection{Bem: Zeilenoperationen}
+A ist regulär gdw. A sich durch elementare zeilenoperationen in $E_n$ überführen lässt.\\
+$E_{ij} \leftarrow$ Die Matrix die 1 an der Stelle $(i,j)$ hat und 0 sonst.\\
+Multiplizieren der i-ten Zeile mit $\lambda$ \\
+Addieren $\lambda$ mal j-te Zeile zur i-ten Zeile = $E_n + \lambda E_{ij}$ \\
+Vertauschen der i-ten Zeile mit der j-ten Zeile: $E_n - E_{ii} -E_{jj} + E_{ji} + E_{ij}$
+
+$$\begin{array}{cccc}
+\begin{pmatrix}
+A & \vline & E_n 
+\end{pmatrix} &&  \\\\
+\rotatebox[origin=c]{180}{$\Lsh$} Zeilenoperationen \rightarrow & &\begin{pmatrix}
+E_n & \vline & A^{-1}
+\end{pmatrix} \\
+\end{array}$$
+
+$$\underbrace{B_n \cdot \dots \cdot B_2 \cdot B_1 \cdot A}_{ A^{-1}} = E_n$$
+
+\noindent \underline{Übergangsmatrizen:}
+$dim(V) = n$\\
+$\{v_1, \dots , v_n\}$\\
+$\{v_j', \dots , v_n\}$\\
+$$v'_i = \sum S_{ij} v_{ji}$$
+$$S = \begin{pmatrix}
+S_{11} & S_{1j} \\
+S_{i1} & S_{ij} \\
+\end{pmatrix}$$
+
+%vorlesung 3
+
+Vektorraum V/K
+$\rightarrow \mathcal{B}$ Basis\\
+V ist endlich,falls es eine endliche Basis besitzt.
+$$dim(V) = \vert \mathcal{B} \vert$$
+$$F: V\to W$$
+F: lineare Abbildung
+$$\mathcal{B} = \{v_1, \dots , v_n\}$$ Basis von V 
+$$\mathcal{B}' = \{w_1, \dots , w_n\}$$ Basis von W 
+$$ F(v_1), \dots , F(v_n)$$ 
+$$ F(v_j) = \sum _{ij} w_i$$
+sind lin. unabh. von der Basis von W
+F hat Darstellungsmatrix:
+
+$$\begin{pmatrix}
+a_{11} & \dots & a_{1n} \\
+\vdots & & \vdots \\
+a_{m1} & \dots & a_{mn}
+\end{pmatrix}$$
+
+$$V \mapsto V$$
+$$v_i \mapsto v_i'$$
+$$\mathcal{B} = \{v_1, \dots , v_n\} \qquad \mathcal{B}' = \{w_1,\dots , w_n\} $$
+
+$$S=(s_{ij}) \rightarrow v_j'= \sum s_{ij} v_i \in K$$
+Transformationsmatrix von $\mathcal{B'}$ nach $\mathcal{B}$
+
+$$\begin{pmatrix}
+s_{11} & \dots & s_{1n} \\
+\vdots & & \vdots \\
+s_{n1} & \dots & s_{nn}
+\end{pmatrix} \begin{pmatrix}
+1\\
+0\\
+\vdots \\
+0\\
+\end{pmatrix}$$
+
+$S^{-1}$ ist die Transformationsmatrix von $\mathcal{B}$ nach $\mathcal{B'}$
+
+$$V\buildrel F \over \to W$$
+\begin{center}
+	\begin{tabular}{ccc}
+		$\{v_1,\dots,v_n\}$ & $\buildrel A \over \rightarrow$ & $\{w_1,\dots , w_n\}$ \\
+		$\uparrow S$ &  & $\uparrow T$ \\
+		$\{v_1',\dots, v_n'\}$ & $\buildrel D \over \rightarrow$ & $\{w_1',\dots, w_n'\}$
+	\end{tabular}
+\end{center}
+
+Wie sieht die Darstellungsmatrix von F bzgl. diesen Matritzen aus?\\
+Darstellungsmatrix von F bzgl. $\{v_1',\dots v_n'\} ,\{w_1',\dots ,w_n'\}$ ist $T^{-1} \cdot A \cdot S$.
+\subsection{Def: Äquivalenz und Ähnlichkeit} Zwei (mxn)-Matritzen A, A' sind \underline{äquivalent}, falsls es regulare Matritzen $T\in GL_m(K),\quad S \in GL_n(K)$ gibt, sodass: $$A' = T^{-1} \cdot A \cdot S$$\\
+A, A' $\in M_{n\times n}(K)$ sind \underline{ähnlich}, falls es $S \in GL_n(K)$ gibt, sodass: $$A' = S^{-1} \cdot A \cdot S$$
+
+\subsection{Bem: Ähnlichkeit}
+Ähnlichkeit (Än) auf $M_{n\times n}(K)\Rightarrow$ Äquivalenz (Äq) auf $M_{m\times n}(K)$
+
+\subsection{Def: Determinante} Die Determinante $$det(K^n) \mapsto K$$ multilineare alternierende Abbildung derart, dass $det(e_1,\dots e_n) = 1$.
+$$A\in M_{n\times n}(K)$$
+
+$$A  = \Bigg( a_1 \bigg\vert a_2\bigg\vert \dots \bigg\vert a_n\Bigg) $$
+$$ det(A) = det(a_1,\dots , a_n)$$
+$$A=(a_{ij})$$
+$$det(A) = \sum_{\pi \in \underbrace{S_n}_{B_{ij}(\{1,\dots ,n\})}} sign(\pi) \cdot \prod _{i = 1}^n a_{\pi(i)i}$$
+$sign(\pi)$ (-1) Anzahl von Fehlständen $\{(ij)\vert i<j \pi(i) >\pi(j)\}$, \\
+(-1) Anzahl von Faktoren von $\pi$ als Produkt von Transpositionen\\
+
+%käastchen mit tickz um 22 n-1 1 und n n-1 mit verbindungslinien
+
+$$\begin{pmatrix}
+a_{11} & a_{12} & \dots & a_{1n} \\
+a_{21} &  &  &  \\
+\vdots &  &  & \vdots \\
+&  &  &  \\
+a_{n1} & \dots &  & a_{nn} 
+\end{pmatrix}$$
+
+derline{Eigenschaften}\\
+\begin{itemize}
+	\item[1)] det($A \cdot B) = \textrm{det}(A) \cdot \textrm{det}(B)$
+	\item[2)] $A \textrm{ invertierbar geanu dann wenn det}(A) \neq 0$
+	\item[3)] det$(A^{-1}) = \textrm{det}(A)^{-1}$
+	\item[4)] det$\equalto{(A^T)}{(a_{ji})} = \textrm{det} (A)$\\$E_n + (-E_n) \textrm{ ist nicht invertierbar.}$
+\end{itemize}
+\underline{Laplascher Enwicklungssatz}\\
+Sei $j_0$ ein Spaltenindex, det$(A) = \sum_{i=1}^n (-1)^{i+j_0} a_{ij_0} \textrm{det}(A_{j_0})$\\
+
+$$\leftrightarrow
+\left(\begin{matrix}
+a_{11} \\
+\vdots \\
+a_{n1} \\
+\end{matrix}
+\right| \left.
+\begin{matrix}
+&  \dots & a_{1n} \\
+&  & \vdots \\
+&  \dots & a_{nn}
+\end{matrix} \right)$$
+
+Cramersche Regel
+$$A \begin{pmatrix}
+x_1\\
+\vdots\\
+x_n
+\end{pmatrix}
+= \begin{pmatrix}
+b_1\\
+\vdots\\
+b_n
+\end{pmatrix}
+= b
+$$
+
+Falls A regulär ist, dann gibt es eine einzige Lösung zum System:
+$$ x_j = \frac{det(a_i,\dots,a_{j-1},b,a_{j+1},\dots , a_n)}{det(A)}$$
+\subsection{Def: Darstellungsmatrix}
+$det(F) = det(a)$, Darstellungsmatrix von F bzgl. der Basis $\{v_1,\dots , v_n\}$
+\subsection{Def: Adjunkte} Sei A $(= a_{ij})$ eine n$\times$n-Matrix\\
+definiere die Adjunkte von A,  
+$$\textrm{adj}(A) = (\gamma_{ij})$$ wobei $$\gamma_{ij} = (-1)^{i\neq j} \det(A_{ij})$$
+\subsection{Bem: Determinante und Adjunkte}
+Sei $c_j$ die $j$-te Zeile von $\textrm{adj}(A)$.\\
+Sei $a_i$ die $i$-te Spalte von A 
+\begin{align*}\overbrace{(\gamma_{j1}, \dots , \gamma_{jn})}^{c_i} \cdot \underbrace{\begin{pmatrix} c_{1i}\\ \vdots\\ a_{ni} \end{pmatrix}}_{a_i}  = \sum_{k=1}^n \gamma_{jk} a_{ki} &= \sum_{k=1}^n (-1)^{j+k} a_{ki} \det(A_{jk}) \\ &= \det(a_1, \dots , a_{j-1}, a_i , a_{j+1}, \dots , a_n) \end{align*}
+(Laplacesche Entwicklung) $ = \left\{\begin{array}{ll} det(A) & j=i \\ 0 & j\neq i \end{array}\right.$\\\\
+A regulär:
+$$adj(A) \cdot A = det(A) \cdot E_n$$
+$$\Rightarrow \frac{adj(A)}{det(A)} \cdot A = E_n = A^{-1} \cdot A$$
+$$\Rightarrow \frac{adj(A)}{det(A)} = A^{-1} \quad \Rightarrow \quad A \cdot adj(A) = det(A) \cdot E_n$$
+
+\chapter{Lineare Algebra II}
+\subsection{Def: Diagonaliserbarkeit}
+V Vektorraum\\
+$\{U_i\}_{i=1}^k$ Unterräume von V
+$$ V = \bigoplus_{i=1}^{k} U_{i} \Leftrightarrow \left\{ \begin{array}{ll}
+V = \sum_{i=1}^n U_i & 1\le i \le k \\
+& \\
+U_i \cap \sum\limits_{\substack{j=1\\ j\neq i}}^k U_j = \{0\} & 
+\end{array} \right.$$
+
+Äquvalent dazu, wenn jeder Vektor $v\in V$ sich eindeutig schreiben  lässt als linear kombination von den Vektoren 
+
+$$\bigcup_{i=1}^k \mathcal{B}_j$$
+$\mathcal{B}$ ist Basis von $v_j$
+
+\subsection{Def: Eigenvektor} Ein Endomorphismus 
+$$F: V\to V$$ besitzt einen Eigenvektor, falls es $v\in V\setminus\{0\}$ derart gibt, dass $F(v)= \lambda \cdot v $ für ein $ \lambda\in K$\\
+Falls $F(v) = \lambda \cdot v$ \\
+$\lambda$ ist eindeutig bestimmt von F und v $\Rightarrow \lambda$ ist Eigenwert von F
+$$F(v) = \mu \cdot v = \lambda \cdot v \Rightarrow (\lambda\cdot \mu) \cdot v = 0$$
+\subsection{Def: Eigenraum} $\lambda \in K\quad F: V\to V \textrm{ Endomorphismus}$
+$$V(\lambda) = \{ v\in V\vert F(v) = \lambda \cdot v\}$$
+$V(\lambda)$ ist Eigenraum zum Wert $\lambda$\\
+und ist ein Unterraum
+\subsection{Bem: Eigenwert}$\lambda$ ist ein Eigenwert von F gdw. $\dim(V(\lambda)) \ge 1$.
+\subsection{Bem: Eigenwerte} $\lambda_1,\dots , \lambda_k$ verschiedene Eigenwerte von F 
+$$\rightarrow V(\lambda_{i}) \cap  \sum_{\substack{j = 1\\j\neq i}}^k V(\lambda_j) = \{0\}$$
+\subsection{Def: Diagonalisierbarkeit} V endlich VR / K
+$ F: V \to V$ Endomorphismus ( bzw. eine Matrix $A = K^n \to K^n$) ist diagonalisierbar, falls 
+$$V = \bigoplus_{i=1}^{k} V(\lambda_i) $$
+$\lambda_1, \dots , \lambda_k $ verschiedene Eigenwerte von F\\
+Äquivalent dazu, wenn V eine Basis von Eigenvektoren von F besitzt. Äquivalent dazu, wenn F bzgl. einer Basis von V die  \\
+Darstellingsmatrix:
+
+$$\begin{pmatrix}
+\lambda_1 & & 0 \\
+& \ddots & \\
+0 & & \lambda_n
+\end{pmatrix}$$
+hat.
+
+\underline{Für Matrizen:}\\
+$A$ ist diagonlaisierbar genau dann wenn es eine reguläre Matrix $S$ gibt, sodass $$S^{-1}AS=
+\begin{pmatrix}
+\lambda_1 & & 0 \\
+& \ddots & \\
+0 & & \lambda_n
+\end{pmatrix}$$
+\subsection{Satz: Zu Eigenwerten}$ A \in \mathcal{M}_{n \times n}(K)\\
+\lambda \in K\\
+\lambda \textrm{ ist ein Eigenwert von } A \textrm{ genau dann wenn } \\
+\lambda E_n - A \textrm{ night regulär ist} \Leftrightarrow \textrm{det}(\lambda \cdot E_n - A) = 0 $
+
+\subsection{Def: Charakteristisches Polynom} Das charakteristische Polynom einer Matrix
+$$ A\in \mathcal{M}_{n\times n}(K)$$ ist 
+$$\chi_A (T) = det(T\cdot E_n -A)$$
+\subsection{Bem: Eigenwerte als Nullstellen} $\lambda$ ist Eigenwert von $A \Leftrightarrow \chi _A (\lambda) = 0 $
+\subsection{Bsp:} 
+$$A = \begin{pmatrix}
+0 & 1\\
+-1 & 0\\
+\end{pmatrix} \in M_{2\times 2} (\mathbb{R})$$
+$$\chi_A (T) = T^2 + 1 = \det(\begin{pmatrix}
+T & -1\\
+1 & T\\
+\end{pmatrix} ((= T \cdot E_2 - A))$$
+
+\subsection{Bem: Spur} $A$ und $A'$ ähnlich $A' = S^{-1} A S $
+$$\Rightarrow \chi_A (T) = \chi_{A'} (T)$$
+Insbesondere, können wir über das charakteristische Polynom eines Endomorphismus
+$$\chi_F(T) \qquad F: V\to V$$
+sagen:
+$$(a_{ij}) = A \in M_{n\times n} (K) $$
+$$\chi_A(T) = T^n + b_{n-1} T^{n-1}+ \dots + b_0$$
+wobei $$b_0 = (-1) ^n \det(A)$$
+$$b_{n-1} = - Tr(A) = -\sum_{i=1}^{n} a_{i(i oder j)}$$
+Tr = Trace = Spur von A
+
+\subsection{Kor: Anzahl der Eigenwerte} dim(V) = n\\
+Ein Endomorphismus
+$$F: V\to V $$ kann höchstens n viele Eigenwerte besitzen.
+
+\subsection{Kor: Diagonalisierbarkeit} $$F= V \to V $$
+mit Eigenwerten $\lambda_1, \dots , \lambda_n \neq 0$ ist diagonalisierbar gdw.
+$$n = \sum _{i=1}^k d_i$$
+$$ d_i = \dim(V(\lambda_i)) = \{v\in V \vert F(v) = \lambda \cdot v\}$$
+$d_i =$ geometrische Vielfachheit von $\lambda_i$
+
+\subsection{Bew: }$\Rightarrow$ \\
+F ist diag. gdw. V eine Basis aus Eigenvektoren besitzt, welche aus 
+$$n = |B| = \bigcup_{i=1}^{n} |\mathcal{B}_i| \qquad \mathcal{B}_i = \textrm{Basis von} V(\lambda)$$
+$\vert \mathcal{B}_i \vert = d_i = \dim(V(\lambda_i))$\\\\
+$\Leftarrow$\\
+$n = \sum d_i \Rightarrow \dim(\sum_{i=1}^{k} V(\lambda_i)) = n \Rightarrow V = \sum_{i=1}^k V(\lambda_i)$ \\
+Da die Eigenräume transversal sind, und ein Vektorraum nur einen UVR der dimension $\dim(V)$ hat, sich selbst.
+\begin{flushright}
+	$\square$
+\end{flushright}
+
+
+%Vorlesung 4
+
+\subsection{Bem: Eigenwerte und Diagonalisierbarkeit} $F: V \rightarrow V$ Endomorphismus $0 \neq v \in V$ ist ein Eigenvektor für $F$ 
+$$F(v) = \lambda v , \lambda \in K$$
+$$V(\lambda)=\{v \in V | F(v) = \lambda v \}$$ 
+$\lambda$ ist Eigenwert $\Leftrightarrow \dim(V(\lambda)?=1)$\\
+$V(\lambda) = \ker(F - \lambda Id_v)$ F ist diagonalisierbar wenn $V$ eine Basis von Eigenvektoren besitzt.\\
+$$S^{-1}AS =\begin{pmatrix}
+* & & 0 \\
+& \ddots & \\
+0 & & *
+\end{pmatrix}$$
+$\chi_A(T) =\det(T \cdot E_n - A)$\\
+$A \in \mathcal{M}_{m \times n}(k) = T^n + b_{n-1} T^{n-1} + \dots + b_0$ normiert\\
+$\lambda \in K$ ist $\Leftrightarrow \chi_A (\lambda) = 0$ Eigenwert von $A$\\
+\subsection{Kor: Geometrische Vielfachheit}
+$F: V \rightarrow V$ ist diagonalisierbar $\Leftrightarrow$ geometrische vielfache von Eigenwert $n = \dim(V) = \sum_{i = 1}^k \dim(V(\lambda_i)) = \lambda_1 \dots \lambda_k$ sind die Eigenwerte von $F$\\
+
+\subsection{Bsp:}
+$$A= \begin{pmatrix}
+0  & 1 \\
+0  & 0 \\
+\end{pmatrix} 
+\in M_{2\times 2} (K) $$
+
+$$\chi_A(T) = \det \begin{pmatrix}
+T & -1 \\
+0 & T \\
+\end{pmatrix}
+= T^2$$
+
+0 ist der einzige Eigenwert von A,\\
+A ist diagonalisierbar gdw. \\
+$$ 2 = \dim ( \ker (A) )$$
+$$\begin{pmatrix}
+0 & 1\\
+0 & 0
+\end{pmatrix} \begin{pmatrix}
+x\\y
+\end{pmatrix} = \begin{pmatrix}
+0\\0
+\end{pmatrix}$$
+$$\Leftrightarrow y = 0 \quad 2 \neq 1 \Rightarrow \tx{A ist nicht diagonalisierbar}$$
+$$\Rightarrow \dim(\ker(A)) = 1 $$
+
+\subsection{Def: Algebraische Vielfachheit}
+$\dim(V)< \infty \quad F: V\to V$ Endomorphismus\\
+$\lambda \in K$ Eigenwert\\
+$$\Rightarrow \chi_{F}(\lambda) = 0$$
+algebraische Vielfachheit von $\lambda \quad K = \textrm{ord}_\lambda(F)$
+$$\chi_F(T) = (T-\lambda)\cdot G(T) \qquad G(T) = 0$$
+\subsection{Bem:}
+$$\textrm{ord}_\lambda(F) \ge \dim V(\lambda)$$
+\subsection{Bew:}
+Sei $ \{v_1,\dots,v_k\}$ Basis von $V(\lambda)$ und erweitern sie zu einer Basis \\
+$\{v_1,\dots,v_k,v_{k+1, \dots , v_n}\}$ von $V$.\\
+Die Darstellungsmatrix von F bzgl. $\mathcal{B}$ 
+
+$$F(v_1) \dots F(v_k), F(v_{k+1}) \dots F(v_n)$$ 
+\nopagebreak
+$$\begin{pmatrix}
+\lambda   &  0 & 0 & \\
+0 & \lambda &  0 & & & C_2\\
+0 & 0 &  \lambda & & \\
+& & &  \ddots &  \\
+& 0 & & & & C_1 & \\
+& & & & & \\
+\end{pmatrix} $$
+
+$ C_1 (\tx{vllt.} C_2) \in Mat_{n - k \times k} (K)$
+
+$$\chi_{F(\tx{vllt} \mid U)}(T) = \det(TE_n-M) = (T-\lambda)^k\cdot \underbrace{\det(TE_{n-k} \cdot C_1)}_{H(\lambda)}$$
+$$\Rightarrow k = \textrm{ord}_\lambda(F)$$
+(weil es sein könnte, dass $H(\lambda) = 0$)
+\begin{flushright}
+	$\square$
+\end{flushright}
+
+\subsection{Lemma:}
+Sei V endlichdim.
+$F: V\to V$ Endomorphismus\\
+$U \subset V$ F-invarianter Unterraum ( $F(U) \subset U$)\\
+$$\tilde{F}: V/U \to V/U \quad \textrm{lineare Abbildung}$$
+$$ \bar{v} \mapsto \ov{F(v)}$$
+
+$\tilde{F}$ ist wohldefiniert und ferner
+$$\chi_F(T) = \chi_{F \mid U} (T) \cdot \chi_{\tilde{F}} (T)$$
+\subsection{Bew:}
+$\tilde{F}$ ist wohldefiniert:
+$$\bar{v}_1 = \bar{v} \buildrel \tx{zu zeigen} \over \Rightarrow \overline{F(v)} = \tilde{F}(v_1) = \tilde{F}(v) = \overline{F(v)}$$
+
+$$\Rightarrow v_1 = v + \underbrace{(v_1-v)}_{\in U}$$
+$$ F(v_1) = F(v) + \underbrace{F(v_1 - v)}_{\in U}$$
+$$\Rightarrow \overline{F(v_1)} = \overline{F(v)}$$
+Restklassen sind linear und $\tilde{F}$ ist linear $\Rightarrow\; \tilde{F}$ ist linear
+Sei $\{u_1,\dots,u_k\}$ eine Basis von U und erweitere sie zu einer Basis $\{u_1,\dots,u_k, v_{k+1}, \dots, v_n\}$ von V.
+\subsection{Bem:}
+$\{\overline{v_{k+1}},\dots,\overline{v_n}\}$ ist eine Basis von $V/U$ 
+\subsection{Bem: Darstellungsmatrizen}
+Einfach Darstellungsmatrix von F bzgl. $\mathcal{B}$.
+
+\pagebreak
+$$F(u_1) \dots F(u_k), F(v_{k+1}) \dots F(v_n)$$ 
+\nopagebreak
+
+$$\begin{matrix}
+u & \rightarrow\\
+\vdots \\
+u_k & \rightarrow\\
+v_{k+1} & \rightarrow\\
+\vdots \\
+v_n & \rightarrow
+\end{matrix}
+\begin{pmatrix}
+& & & \\
+& A & & & & C_2\\
+& & & & \\
+0 & \dots & 0 & &  \\
+\vdots & & \vdots & & & C_1 & \\
+0 & \dots & 0 & & & \\
+\end{pmatrix} $$
+
+\begin{align*}
+\chi_F(T) &= \det(T\cdot E_n - H) \\
+&= \det\bigg( T \begin{pmatrix}
+E_k & 0 \\
+0 & E_{n-k}
+\end{pmatrix} - \begin{pmatrix}
+A & C_2 \\
+0 & C_1 
+\end{pmatrix} \bigg)\\
+&= \det\begin{pmatrix}
+TE_k-A & -C_2 \\
+0 & TE_{n-k} - C_1
+\end{pmatrix} \\
+&= \det(TE_k-A) \cdot \det(TE_{n-k} - C_1)
+\end{align*}
+
+A ist die Darstellungsmatrix von $ F \mid U $ bzgl. $\{u_1, \dots, u_k\}$ 
+$$ \Rightarrow \det (TE_k -A) = \chi_{F 1 \mid U}(T)$$
+$C_j$ ist die Darstellungsmatrix von $\tilde{F}$ bzgl. $\{\overline{v_{k+1}}, \dots, \overline{v_n}\}$\\
+$$ \Rightarrow \det (TE_{n-k}-A) = \chi_{\tilde{F}}(T)$$
+\subsection{Satz: Diagonalisierbarkeit}
+$\dim(V) < \infty \quad K$ Körper \\
+$ F: V\to V$ Endomorphismus\\
+F ist diagonalisierbar gdw. $\chi_{F}(T)$ in linearfaktoren zerfällt
+$$\chi_{F}(T) = (T-\lambda_1)^k \dots (T-\lambda_r)^{k_r}$$
+$\lambda_1, \dots, \lambda_r = $ Nullstellen (verschwinden)
+und für jeden Faktor $T-\lambda_i$ gilt:
+$$\textrm{ord}_{\lambda_i}(F) = \dim(V(\lambda_i))$$
+
+\subsection{Bew:}
+$\Rightarrow$ Sei $\mathcal{B}= \{v_1,\dots,v_n\}$ eine Basis von Eigenvektoren.\\
+Seien $\lambda_1,\dots,\lambda_r$ die verschwindenden Eigenwerte.
+$$v_1,\dots,v_{\alpha_1} \in V(\lambda_2)$$
+$$v_{\alpha + 1}, \dots , v_{\alpha, \alpha_2} \in V(\lambda_2)$$
+
+$v_{d_1}+ \dots + v_{d_{r-1}}, \dots , \ub{v_{d_1}+ \dots + d_r}_{n}$
+$d_i = \dim(V(\lambda_i))$
+Die Darstellungsmatrix von F bzgl. $\mathcal{B}$
+$$F(v_1) \dots F(v_d), F(v_{d+1}) \dots F(v_n)$$ 
+$$\begin{pmatrix}
+\lambda_1\\
+& \ddots\\
+& & \lambda_1\\
+& & & \lambda_2\\
+& & & &\ddots\\
+& & & & & \lambda_2\\
+& & & & & &\ddots\\
+& & & & & & & \lambda_r\\
+& & & & & & & & \ddots \\
+& & & & & & & & & \lambda_r\\
+\end{pmatrix}\begin{matrix}
+\\
+\left\}d_1 \right.\\
+\\
+\\
+\left\}d_2 \right.\\
+\\
+\\
+\\
+\left\}d_r \right.\\
+\\
+\end{matrix}$$
+
+Wobei $d_i$ viele $ \lambda_i $ auf der Diagonalen liegen
+
+$$\chi_F(T) = \det(T E_n - A) = (T-\lambda_1)^{d_1} \ub{\dots (T-\lambda_r)^{d_r}}_{a(T)}$$
+$$a_q(\lambda_1) \neq 0 \quad (\lambda\neq \lambda_i , i \neq 1)$$
+$ \Leftarrow$
+$$\chi_F(T) = (T-\lambda_1)^{d_1} \dots (T-\lambda_r)^{d_r}$$
+$(\tx{Grad}(\chi_F) = n)$
+$$d_i = \dim(V(\lambda_i)$$
+F ist diagonalisierbar $\Leftrightarrow n = \dim(V) = \sum d_i$
+
+
+\subsection{Def: Diag. und ähnlichkeit} Eine Matrix $A \in M_{n\times n} (K)$ ist \underline{trigonalisierbar}, wenn sie \underline{ähnlich zu einer} \underline{oberen Dreiecksmatrix} ist 
+
+$$\begin{pmatrix}
+a_{11} & \dots & a_{1n} \\
+& \ddots & \vdots\\
+0 & & a_{nn}
+\end{pmatrix}$$
+
+
+% Vorlesung 5 oder so
+
+endlichdim VR / K
+$F: V \to V $ Endomorphismus
+
+$ A $ Dartellungsmatrix bzw. $B$
+$$ \chi_F (T) = \det (T\cdot E_n - A)$$
+normiert
+$$\chi_F(\lambda) = 0 \leftrightarrow \lambda \textrm{ Eigenwerte von F } \Leftrightarrow \exists v\in V\setminus \{0\} F(v) = \lambda \cdot v$$
+$U \subset V$ Untervektorraum F-invariant ($F(U) \subset U$)
+$$\chi_F = \chi_{F \mid U} \cdot \chi_{\tilde{F}}$$
+$$ \tilde{F}: V/U \to V/U$$
+$$\bar{v} \mapsto \ov{F(v)}$$
+F ist dia/tri ? gonalisierbar $\Leftrightarrow \ \chi_A$ in linearfaktoren zerfällt und $\forall \lambda_1, \dots \lambda_k$ Eigenwerte
+$$\dim(V(\chi)) = \textrm{ord}_{\lambda_i}(\chi_F)$$
+\subsection{Def:}
+$F: V\to V $\\
+F trigonalisierbar ist, falls es eine Darstellungsmatrix von F gibt, welche in oberer Dreiecksform ist.
+
+$$\begin{pmatrix}
+a_{11} & \dots & a_{1n} \\
+& \ddots & \vdots\\
+0 & & a_{nn}
+\end{pmatrix}$$
+
+\subsection{Satz:}
+$F: V\to V $
+ist trigonalisierbar, gdw $\chi_F$ in Linearfaktoren zerfällt 
+$$\chi_F(T) = (T-\lambda_1) \dots (T-\lambda_n)$$
+(eventuell mit wiederholungen)
+\subsection{Kor:}
+Jeder Endomorphismus eines endlichdim VR über einem alg. abg. Körper (z.B.$\mathbb{C}$) ist trigonalisierbar.
+\subsection{Bew: (Satz)}
+$\Rightarrow$ \\
+F ist Darstellungsmatrix 
+
+$$\begin{pmatrix}
+a_{11} & & & *\\
+& a_{22} & & \\
+& & \ddots & \\
+0 & & & a_{nn}
+\end{pmatrix}$$
+
+$$\chi_F(T) = \det(T\cdot E_n - A) = \prod^n_{i=1} (T-a_{ii})$$
+$\Leftarrow$\\ Induktion über $n = \dim(V)$\\
+$n=1 \rightarrow$ Jede $1\times 1$ Matrix ist in oberer Dreiecksform $\rightarrow a_n$ !\\
+$n\ge 2$
+$$\chi_F(T) = (T-\lambda_1) \dots (T-\lambda_n)$$
+$\lambda_1$ ist ein Eigenwert 
+$$\rightarrow \exists v_1 \in V\setminus \{0\} \quad F(v_1) = \lambda_1 \cdot v_1$$
+$$U = \textrm{span}(v_1) \subset V$$
+ist F-invariant
+$$\equalto{\chi_F(T)}{(T-\lambda_1)\prod^n_{i=2}(T-\lambda_i)} = \equalto{\chi_{F \mid U}}{(T-\lambda_1)} \cdot \chi_{\tilde{F}}$$
+$K[T]$ ist ein Integritäsbereich
+$$\Rightarrow \chi_{\tilde{F}}(T) = \prod^n_{i=2}(T-\lambda_i)$$
+$$\dim(V/U) < \dim(V)$$
+$\Downarrow$ I.A.
+Es gibt eine Basis $\bar{v_2}, \dots , \bar{v_n}$ von$ V/U$ derart, dass $\tilde{F}$ bzgl. dieser Basis Darstellungsmatrix
+
+$$\begin{pmatrix}
+\lambda_2 & & * \\
+& \ddots & \\
+0 & & \lambda_1
+\end{pmatrix} = (\mu_{ij})$$
+\subsection{Beh:} Seien $v_i \in V \quad \overline{v_i} = \overline{v_i}, 2 \le i \le n$\\
+$\{v_1,v_2,\dots,v_n\}$ it eine Basis von V
+
+\subsection{Bew: } (Übungsaufgabe)
+\subsection{Frage:}
+Wie sieht die Darstellungsmatrix von $F$ bezüglich $\{v_1, \dots, v_n  \}$ aus?
+$$\tilde{F}(\bar{v_j})=\overline{F(v_j)}$$
+$$\Rightarrow \sum_{2\leq i\leq j}\mu_{ij}\bar{v_i} = \overline{\sum_{2\leq i\leq j}\mu_{ij}v_i}$$
+$$\Rightarrow \mu_{ij} \in K | _{F(v_j)} = \mu_{2j}v_1 + \sum_{2\leq i \leq j}\mu_{ij}v_j = \sum_{1 \leq i \leq j}\mu_{ij}v_j$$
+$$F(v), F(v_2) \dots F(v_n) $$
+$$\begin{pmatrix}
+\lambda_{1} & \lambda_{12} & \cdots &  *\\ 
+& \lambda_2 &  &  \vdots\\ 
+0 &  & \ddots &  \\ 
+0 & 0 &  & \lambda_n
+\end{pmatrix} $$
+
+\subsection{Lemma:} V endlichdim / K \\
+$v\in V \setminus \{0\} \quad \exists r \in \mathbb{N}$
+
+$$\equalto{F^r(v)}{ \underbrace{F \circ F \circ \dots \circ F}_{r \textrm{Mal}}} = \sum ^{r-1}_{i=0} \underbrace{a_i}_{\substack{\textrm{eindeutig} \\ \textrm{bestimmt}}} F^i(v)$$
+
+Insb. ist
+$$U = \textrm{Span}(v, F(v), \dots , F^{n-1}(v))$$
+ist F-invariant, hat Basis $\{v_1, \dots, F^{n-1}(v)\}$\\
+$F \mid U$ hat Darstellungmatrix
+
+$$\begin{pmatrix}
+0 & 0 & 0 & \dots & a_0 \\
+1 & 0 & 0 & \dots & a_1 \\
+& 1 & 0 & \dots & a_2 \\
+&   &   \ddots & \ddots & \vdots \\
+0  &   &   &   & a_{r-1}
+\end{pmatrix} $$
+
+$$\chi_{F \mid U}(T) = T^r - a_{r-1} T^{r-1} \dots - a_{0}$$
+\subsection{Bew:}
+$ n = \dim(V)$
+$v, F(v), \dots , F^r(v)$ lin. unabh.\\
+Sei $r>0$ kleineste rat. Zahl, sodass:
+$v,F(v), \dots , F^r(v)$ lin. abh.
+
+$v, F(v) , \dots , f^{r-1}(v) $\\
+lin. unabh. (aus der Minimalität von r)\\
+$\Downarrow$ Austauschprinzip:
+$$F^r(v) = \sum^{r-1}_{i=0} \ub{a_i}_{\substack{\textrm{eindeutig} \\ \textrm{bestimmt}}} F^i(v)$$
+$$ U = \tx{Span} (v, F(v), \dots , F^{r-1}(v)) \quad \tx{ ist F-invariant}$$
+$$v\in U \quad v = \sum^{r-1}_{i=0} \mu_i F^i(v)$$
+\begin{align*}
+F(v) & = \sum^{r-1}_{i=0} \mu_i F^{i+1}(v) \\
+& = \ub{\sum^{r-2}_{i=0} \mu_i F^{i+1}(v)}_{\in U} + \ub{\mu_{r-1} \equaltoup{\ob{F^r(v)}}{\sum^{r-1}_{i=0} a_i F^i(v)}}_{\in U }
+\end{align*}
+
+$\{v, F(v), \dots , F^{r-1}(v)\}$ ist eine Basis von U.
+
+$$ F(v) , \dots , \ob{F(F^{r-1}(v))}^{F^r(v)}$$
+$$A = \begin{pmatrix}
+0 & 0 & 0 & \dots & a_0 \\
+1 & 0 & 0 &  & a_1 \\
+& 1 & 0 & & \vdots \\
+&   & \ddots & \ddots & \\
+0 &   &   &   & a_{r-1}
+\end{pmatrix} $$
+
+\begin{align*}
+\chi_{F\mid U } (T) &= \det (T\cdot E_n -A)\\
+&= \det\begin{pmatrix}
+T & 0 & & \dots  & a_0 \\
+-1 & T & & 0\\
+& -1 & T  & & \vdots \\
+& & & \ddots \\
+0 & & & & T- a_{r-1}
+\end{pmatrix} \\
+\end{align*}
+(Laplacescher Entwicklungssatz nach der r-ten Spalte)\\
+
+\begin{align*}&= (-1)^{r+1} (-a_0) \det \begin{pmatrix}
+-1 & T \\
+& -1 & T \\
+& & & \ddots \\
+& & & & (-1) ^T
+\end{pmatrix} + \\
+& \quad + (-1)^{r+2} (-a_1) \det \begin{pmatrix}
+-1 & T \\
+& -1 & T \\
+& & & \ddots \\
+& & & & (-1) ^T
+\end{pmatrix} + \dots + \\
+& \quad + (-1)^{2r} (T-a_{r-1}) \det \begin{pmatrix}
+-1 & T \\
+& -1 & T \\
+& & & \ddots \\
+& & & & T
+\end{pmatrix}\\
+&= (-1)^r a_0 (-1)^{r-1} a_1 + (-1)^{r+1} a_1 T (-1)^{r-1} + \dots + (-1)^{2r} (T-a_{r-1}) T^{r-1}\\
+& = -a_0 - a_1 T - \dots - a_{r-1} T^{r-1} + T^r 
+\end{align*}
+
+\noindent
+\subsection*{\underline{Notation}}
+$$\equalto{P(T)}{\sum^m_{i=0} a_i T^i} \in K[T]$$
+$\enph$\\
+$P(F): V\to V $\\
+$ v\mapsto \sum^m_{i=0} a_i F^i(v)$
+
+Mit dieser Notation haben wir, das im vorherigen Lemma
+$$\chi_{F \mid U} (v) = F^r(v) - \sum^{r-1}_{i=0} a_i F^i(v) = 0$$
+\subsection{Satz: (Calay - Hamilton)}
+$\enph $ endlichdim.
+$\chi_F(F)$ ist der 0 Endomorphismus auf V
+\subsection{Bew:}
+Zu Zeigen:
+$\forall v\in V : \chi_F(F)(v) = 0$\\
+\underline{$v=0$} $\rightarrow$ ok\\
+sonst $v\neq 0 \rightarrow \exists r \in \mathbb{N}$
+$$ U = \textrm{Span}(v,F(v), \dots, F^{r-1}(v))$$
+ist $F$ in $V$
+U F-invariant
+$$\Rightarrow \chi_F = \chi_{F \mid U} \cdot \chi_{\tilde{F}} = \chi_{\tilde{F}} \cdot \chi_{F \mid U}$$
+$\tilde{F}: V/U \to V/U$\\
+$\bar{w} \mapsto \bar{F(w)}$\\
+\underline{Aufgabe}\\
+$R(T) = P \cdot C$ allg. Polynom
+$\Rightarrow R(F) = P \cdot (G(F))$ als Endomorphismen
+$$\chi_F(F)(v) = \equalto{\underbrace{\chi_{\tilde{F}} \cdot (\equalto{\underbrace{\chi_{F \mid U}(v)}}{0})}}{0} $$
+
+\subsection{Kor:}
+$A \in \mathcal{M}_{n\times n}(K)$
+$$\chi_A(T) = T^n + \sum^{n-1}_{i=0} b_i T^i$$
+$$\Rightarrow A^n + \sum^{n-1}_{i=0} b_i \cdot A^i = 0$$
+da $n\times n$ Matrix
+\subsection{Satz:}
+$\enph \quad V$ endlichdim. /K\\
+Dann existiert genau ein normierter Polynom kleinsten Grades $m_F$ derart, dass $\forall P\in K[T]$\\
+$$m_F | _P \Leftrightarrow P(T) = 0  \quad \textrm{als Endomorphismus von F}$$
+Insb. gilt $m_F(F) = 0$\\
+Das Polynom $m_F (= \mu _F)$ heißt das minimalpolynom von F.\\																										
+
+%Vorlesung 6
+
+
+
+
+\subsection{Satz:}
+$\enph$ V eindlich dim. und trigonalisierbar
+falls es eine Basis $\mathcal{B}$ von V gibt, sodass F Darstellungsmatrix der Form
+$$\begin{pmatrix}
+* && * \\
+& \ddots \\
+0 && *
+\end{pmatrix}$$
+Falls $\chi_F(T)$ in Linearfaktoren zerfällt dann ist F trigonalisierbar (Insb. falls K alg. abg. ist z.B. $ \mathbb{C}$)
+$$F^0 = Id_{iv}$$
+$$ F^i = \underbrace{F \circ \dots \circ F}_{\tx{i mal}}$$
+$P\in k[T] \quad P = \sum_{i=0}^mT^i$
+$$P(F): \sum a_i F^i: V\to V, v \mapsto \sum a_i F^i(v)$$
+\underline{Aufgabe:}\\
+komposition des Endomorphismus ... Produkt im Polynom
+$$P(F) \circ f(F) = (P \cdot G)(F)$$
+
+\subsection{Satz: (Caley-Hamilton)}
+$$\chi_F(F) = 0_{iv} $$
+als Endomorphismus
+\subsection{Kor:} $A\in \mathcal{M}_{n\times x} (K)$
+$$\chi_A(T) = T^n + \sum_{i=0}^{n-1} b_i T^i$$
+$$\Rightarrow A^n + b_{n-1} A^{n-1} + \dots  + b_0 En = 0$$
+\subsection{Satz:}
+$ V \tx{endlichdim} / K \enph$
+Dann existiert genau ein normiertes Polynom $m_F(T)$ derart, dass $\forall P\in K[T]$:
+$$ m_F|_P \Leftrightarrow P(F) = 0$$
+\subsection{Def:}
+Das Polynom $m_F(T)$ heißt das Minimalpolynom von F. Insb. $m_F(F) = 0$
+\subsection{Bew:} Sei $$\mathcal{F} = \{ P\in K[T] \tx{ normiert } |P(F) = 0 \tx{ als Endomorphismus}\}$$
+Caley.Hamilton
+$$\chi_F(T) \in \mathcal{F} \neq \varnothing$$
+Sei $m_F(T) \in \mathcal{F}$ Polynom kleinsten Grades.\\
+Zu Zeigen: $\forall P\in K[T]$
+$$m_F|_P \Leftrightarrow P(F) = 0$$
+$\Rightarrow$\\
+$$m_F|_P \Leftrightarrow \exists G \in K[T] \quad P = G \cdot m_F$$
+$$ P(F) = G(F) \circ \ub{m_F(F)}_{= 0 (m_F(F) \in \mathcal{F}} = 0$$
+$\Leftarrow$\\
+Sei $P \in K[T] | P(F) = 0$\\
+Division mit Rest $\rightarrow \exists G \buildrel r \over \in K[T]$
+$ P = G \cdot m_F + r \quad \grad(r) < \grad(m_F)$
+$$0=P(F) = \equalto{\ub{G(F) \circ \equalto{\ub{m_F(F)}}{_{0}}}}{_{ 0}} + r(F)$$
+$\Rightarrow r(F) = 0$ als Endomorphismus\\
+$ \Rightarrow r = 0$ ( Sonst $\frac{1}{a_{(\grad(r))}} \cdot r(T) \in \mathcal{F})$
+\underline{Eindeutigkeit}\\
+Angenommen $m_F'$ ist normiert. wäre auch so:
+$$m_F'|_P \Leftrightarrow P(F) = 0 \forall P \in K[T]$$
+$$\Rightarrow m_F|_{m_F'} \quad \& \quad m_F'|_{m_F}$$ 
+
+$\left. \begin{array}{ll}
+m_F = & Q \cdot m_F' \\
+m_F' = & H \cdot m_F
+\end{array} \right\} \rightarrow Q,H \tx{ sind beide \underline{normiert}} $\\[10pt]
+Zu zeigen: \underline{$Q=H=1$}
+$$m_F = Q \cdot m_F' = Q \cdot H \cdot m_F$$
+K[T] \underline{Integritätsbereich}
+$$ \Rightarrow 1 = Q \cdot H$$
+$\grad(G\cdot H) = \grad (1) = 0$\\
+$\grad(G) + \grad(H) \Rightarrow G,H \in K $ und normiert\\
+(als Polynom) $\Rightarrow Q = H = 1$
+
+\subsubsection{Bsp:}
+$$A = \begin{pmatrix}
+0 & 1 \\
+0 & 0
+\end{pmatrix}$$
+$m_A? $
+
+$$\chi_A(T) = T^2 = \det\begin{pmatrix}
+T & -1 \\
+0 & T
+\end{pmatrix}$$
+$$m_A|_{T^2} \Rightarrow m_A = \left\{ \begin{array}{ll}
+T \\ \\ T^2
+\end{array} \right.$$
+$$m_A = 0 \rightarrow m_A(T) \neq T (A\neq 0)$$
+$$A^2 = \begin{pmatrix}
+0 & 0\\
+0 & 0
+\end{pmatrix}$$
+$\rightarrow m_A(T) = T^2$
+\subsection{Lemma:}
+Gegeben $\enph$ V endlichdim / K , dann haben $\chi_F$ und $m_F$ dieselben Nullstellenn in K.
+\subsection{Bew:}
+$$m_F|_{\chi_F} \Rightarrow \chi_F = G \cdot m_F$$
+$\forall \lambda \in K$ , falls $m_F(\lambda) = 0$
+$$ \Rightarrow \chi_F(\lambda) = 0$$
+
+Sei $\lambda \in K | \chi_F(\lambda) = 0$\\
+$\Rightarrow \lambda$ ist ein Eigenwert von F \\
+$\Rightarrow \exists v \in V\setminus \{0\} | F(v) = \lambda\cdot v$\\
+Sei $m_F(T) = T^d + \sum_{i=0}^{d-1} c_i T^i$\\
+\begin{align*}
+0 &= m_F(F) (v)\\
+&= (F^d + \sum c_i F^i)(v)\\
+&= F^d(v) + \sum c_i F^i(v) \\
+&= \lambda^d v + \sum c_i \lambda^i \cdot v\\
+&= \equalto{\ub{(\lambda^d + \sum c_i \lambda^i)}}{_{m_F(\lambda)}} \cdot v
+\end{align*}
+$v\neq 0 \quad m_F(\lambda) = 0$
+
+\subsection{Satz:}
+$\enph$ V endlichdim. / K ist diagonalisierbar gdw $m_F$ in lauter verschiedene Linearfaktoren zerfällt.
+
+$$m_F(T) = \prod_{i=1}^{k} (T-\lambda_i) : \lambda_i \neq \lambda_j \tx{ für } i\neq j $$
+Die $\lambda_i$ sind die Eigenwerte von F
+\subsection{Bew:}
+$ \boxed{\Rightarrow} $\\
+Sei F diagonalisierbar. Dann gilt 
+$$\chi_F(T) = \prod_{i=1}^{k} (T-\lambda_i)^{d_i}$$
+wo die $ \lambda_i $ Eigenwerte von F sind
+$$ \tilde{F} = \begin{pmatrix}
+\lambda_1 \\
+& \ddots\\
+& & \lambda_i \\
+& & & \ddots\\
+& & & & \lambda_k
+\end{pmatrix} \qquad \chi_F(T) = \det(T\cdot E_n - \tilde{F})$$
+
+Außerdem ist $ V = \bigoplus\limits_{i=1}^{k} V\lambda_i $\\
+Sei $ v\in V $beliebig.  Dann gilt $ V = \sum_{i=1}^{k} V_i $, wobei $ v_i \in V(\lambda_i) $\\
+Setze 
+$$ p(T) = \prod_{i=1}^{k}(T-\lambda_i) \quad (\buildrel ? \over = m_F(T)) $$
+\begin{align*}
+\Rightarrow p(F) v &= \prod_{i=1}^{k} (F-\lambda_i) v \\
+&= \prod_{i=1}^{k}(F-\lambda_i) \bigg (\sum_{j=1}^{k} v_j \bigg )\\
+&= \sum_{j=1}^{k}\bigg( \prod_{i=1}^{k} (F-\lambda_i) v_j \bigg)\\
+&= \sum_{j=1}^{k} (F-\lambda_1 \cdot Id) \circ \dots \circ (F-\lambda_i \cdot Id) \circ \dots\\ &\quad \quad \quad \dots \circ (F-\lambda_{i+1} \cdot Id) \circ \dots \circ (F-\lambda_j \cdot Id)(v_j)\\
+&= 0
+\end{align*}
+da $ v_j \in V(\lambda_i) $.\\
+v war beliebig $ \Rightarrow P(F) = 0 \in \tx{end}(V) $\\
+also $  m_F|_p \Rightarrow P(T) = Q(T) \cdot m_F(T)$\\
+Aber $ m_F(T) = \prod_{i=1}^{k}(T-\lambda_i)^{s_i} \quad s_i \ge 1 $\\
+$$ P(T) = \prod_{i=1}^{k}(T-\lambda_i) = Q(T) \prod_{i=1}^{k} (T-\lambda_i)^{s_i}$$
+$\Rightarrow s_i = 1 \tx{ für } i = 1, \dots , k$\\
+sonst wäre Grad (rechte Seite) > Grad(linke Seite)\\
+$$ \Rightarrow m_F(T) = \prod_{i=1}^{k} (T-\lambda_i)$$
+Dies war zu zeigen ($ \Rightarrow $).\\\\
+$ \boxed{\Leftarrow} $\\
+Sei $  m_F(T) = (T-\lambda_1)\circ \dots \circ(T-\lambda_k) \qquad (\lambda_i \neq \lambda_j \tx{ für } i \neq j ) $\\
+zu zeigen ist F ist diagonalisierbar ($ \lambda_1 , \dots , \lambda_k $ sind die Eigenwerte von F)\\
+Es genügt zu zeigen,dass $ V = \bigoplus\limits_{i} V(\lambda_i) $\\
+Beweis erfolgt durch Induktion über $ \dim(V) $\\
+\underline{Sonderfälle:}
+\begin{itemize}
+	\item[(1)] Sei $ \dim(V) = 1 \Rightarrow m_F(T) = (T-\lambda_1) \Rightarrow \lambda_1 $ ist Eigenwert von F\\
+	$$\exists v \in V: \ F v = \lambda_1 v \Rightarrow V = \spa\{v\} = V(\lambda_1)$$
+	$ (v\neq 0) $
+	\item[(2)] Sei nun $ \dim(V) = \ub{n}_{\in \mathbb{N}} \ge 2 $ und $  k = 1 \Rightarrow m_F(T) = (T-\lambda_1)$\\
+	Nach definition von $ m_F $ gilt: $ m_F(F) \Rightarrow F-\lambda_1 = 0 \in \tx{end}(V) $\\
+	für jeden Vektor $ v\in V $ gilt: $ (E-\lambda_1) v = 0 \Rightarrow F v = \lambda_1 v $\\
+	$\Rightarrow V = V(\lambda_1)$	
+\end{itemize}
+Induktionsannahme (für den allgemeinen Fall): \\
+Unser Satz gilt für $ \dim(V) < n (n\in \mathbb{N}) \tx{ fest} $\\
+Also sei $ \dim(V) = n \ge 2 \ \&\  k \ge 2 $ \\
+$(*)$ \underline{Beh:} \\	
+$$ V = \ub{\ker(F-\lambda_i \cdot I_d)}_{\substack{V(\lambda_i)  \\ (\dim(V(\lambda_i)) \ge 1 !)}} \oplus \ub{\im(F-\lambda_i \cdot I_d)}_{\substack{\tx{zu zeigen:} \\ (= V(\lambda_2) \oplus \dots \oplus V(\lambda_k))}} $$
+\underline{Bew:} Sei $ R(T) := \prod_{i=2}^{k}(T-\lambda_i) \quad \bigg[ \Rightarrow m_f(T) = R(T) (T-\lambda_1)\bigg] $\\
+Division mit Rest: $ \exists Q(T) \& r\in K $, sodass:
+$R(T) = Q(T) (T-\lambda1) + r $\\
+$0 \neq R(\lambda_1) = 0 + r \Rightarrow r \neq 0 \in K$\\
+Sei $ v\in V $ beliebig $ R(F)^v = Q(F) (F-\lambda_1) v + r \cdot v $\\
+$$\Rightarrow v = \ub{\frac{1}{r} R(F) r \neq (F-\lambda_1) }_{\in \ \ker(F-\lambda_1)} \circ \ub{(-\frac{1}{r} Q(F) r)}_{\in \ \im(F-\Lambda_1)} $$
+$$(F-\lambda_1) R(F)v = \ub{m_F(F)}_{0}v = 0 \quad \Rightarrow V = \ker(F-\lambda_1) + \im(F-\lambda_1)$$
+Wir wollen zeigen, dass die Summe direkt ist $ \Leftrightarrow  \ker(F-\lambda_1) \cap \im(F-\lambda_1) = \{0\}$\\
+Sei $ v \in \ker(F-\lambda_1) \cap \im(F-\lambda_1) \quad \Rightarrow v = (F-\lambda_1)w \quad w\in V $\\
+$R(F)v = Q(F) (F-\lambda\cdot I_d) v + r\cdot v $\\
+$$\ub{R(F)\circ (F-\lambda_1)}_{m_F(F) = 0} w = \ub{Q(F)(F-\lambda_1 \cdot I_d)}_{= 0} v + r \cdot v \quad \Rightarrow r \cdot v = 0 \Rightarrow \equalto{v}{0} \in V$$
+$\Rightarrow V = \ub{\ker(F-\lambda_1 I_d)}_{V(\lambda_1)} \oplus \im(F-\lambda_1 I_d ) $
+\begin{flushright}
+	$ \square (*)$
+\end{flushright}
+Beweis durch Induktion $ \cdot $ Fortsetzung $ \cdot \ \dim(V) = n \ge 2 , k \ge 2$\\
+Setzte $ W = \im(F-\lambda_1) $ (W ist UVR von V mit $ \dim(W) \subset \dim(V) $)\\
+$(**)$ \underline{Beh:} W ist $ F $-invariant\\
+\underline{Bew:} Sei $ v\in W $ beliebig $ \Rightarrow v = (F-\lambda_1) w \quad w \in W$\\
+$\Rightarrow F(v) = F \circ (F-\lambda_1) w = (F-\lambda_1) \circ \ub{F(w)}_{\in V} \in W$
+\begin{flushright}
+	$ \square (**)$
+\end{flushright}
+$(***)$ \underline{Beh:} (setzte $ F' = F|_W \in \tx{end}(w) $)\\
+$$m_F(T) = \prod_{i=2}^{k} (T-\lambda_i) \ (:= R(T))$$
+\underline{Bew:} Sei $v\in W$ beliebig $ \Rightarrow  v= (F-\lambda_1)w \quad w \in V$\\
+$R(F')(v) = R(F) \circ \ub{(F-\lambda_1)}_{m_F(F) = 0}w = 0 $\\
+$\Rightarrow R(F') = 0 \in \tx{end} (W)$\\$ m_{F'}(T) |_{R(T)} \Rightarrow R(T) = H(T) \cdot m_{F'}(T)$\\
+Es gilt auch 
+$$ 0 = \ub{ m_{F'}(F')}_{=0} \circ (F-\lambda_1))\ub{(V)}_{v \in V \tx{ beliebig}}$$
+$$m_{F'}(F') \circ (F-\lambda_1) = 0 \in \tx{end}(V)$$
+$$m_F(T) |_{m_{F'}(T) \cdot (T-\lambda_1)}$$
+$$ \Rightarrow m_{F'} (T) \cdot (T-\lambda_1) = Q(T) \cdot m_F(T) = Q(T) \cdot R(T) \cdot (T-\lambda_1)$$
+$$ \Rightarrow m_{F'}(T) = Q(T) \cdot R(T) = Q(T) \cdot H(T) \cdot m_{F'}(T) \Rightarrow Q(T)  = H(T) = 1$$
+$\Rightarrow R(T) = m_{F'}(T)$
+$\Rightarrow$ Induktionsannahme: $ W = \bigoplus\limits_{i=1}^{k} W(\lambda_i)  $ Eigenraum von $ F' $ zu $  \lambda_i $ \\
+$\Rightarrow V = V(\lambda_1) \bigoplus\limits_{i=2}^{k} W(\lambda_i)$ zu zeigen: $ W(\lambda_i)  = V(\lambda:i) $\\
+dann gilt: $ V = \bigoplus\limits_{i=1}^{k} V(\lambda_i) $\\
+Es gilt: $  W(\lambda_i) = \{w\in W: F'(w) = \lambda_i w\}  \subseteq \{v \in V : F(v) = \lambda_i \cdot v\} := V(\lambda_i)$ 
+Sei $  v\in \ub{V(\lambda_i)}_{(i>1)} \Rightarrow F(v) = \lambda_i v$ Setze: $ w = \frac{1}{(\lambda_i - \lambda_1)} \cdot v \in V(\lambda_i) $\\
+$ \Rightarrow F(w) - \lambda_i w = v \Rightarrow v \in \im(F-\lambda_i) = W $\\
+$ \Rightarrow v \in \bigoplus\limits _{j=2}^{k} W(\lambda_j)  \Rightarrow v \in W(\lambda_{ i oder 1 })$ Warum?\\
+$ v = \sum \alpha_j w_j $ für $ w_j \in W(\lambda_i) \quad \alpha_j \in K \quad (\subseteq V(\lambda_j))$ Also nur $ \alpha_i \neq 0 $ \\
+Aber $ + V(\lambda_j) = \oplus V(\lambda_j) $ oder $ v \in V(\lambda_i)) \Rightarrow v = \alpha_i w_i \in W(\lambda_i)$	
+
+
+\begin{flushright}
+	$ \square $
+\end{flushright}
+
+\subsection{Bem:} $A\in \mathcal{M}_{n \times n} (\mathbb{R})$
+$ A^2 = E_n$
+$$\Rightarrow A \tx{ ist diagonalisierbar}$$
+da $A^2 = E_n \Rightarrow (T^2-1) (A) = 0$\\
+$m_F | _{T^2-1}$
+$$ m_F = \left\{ \begin{array}{ll}
+T^2-1 & = (T-1)(T+1) \\
+T-1 \\
+T+1
+\end{array} \right.$$
+
+\chapter{Die Jordansche Normalenform}
+\subsection{Lemma:}
+$\enph \quad U \subset V$ Untervektorraum:\\
+Dann ist U F-invariant gdw
+$ U(F-\lambda Id)$- invariant ist für $ \forall \lambda \in K$
+\subsection{Bsp:}
+$\enph \ V$ endlichdim. derart, dass 
+$F^m = 0$ als Endomorphismus) und $m>0$ minimal (,, F ist nilpotent``)\\
+$ F^{m-1} \neq 0 \rightarrow \exists v \in V | F^{n-1}(v) \neq 0$\
+$\{v,F(v),\dots,F^{n-1}(v)\}$ ist linear unabh.\\
+Ergänze das Systme zu einer Basis $\mathcal{B}$ von V: $\{v, \dots , F^{n-1}(v), \dots , v_n\}$
+$$F^{n-1}(v) F^{n-2}(v) \dots, v, v_{mn} , \dots , v_1$$
+$$\begin{pmatrix}
+0 & 1 & 0 & \\
+0 & 0 & 1 & & & * & & \\
+0 & 0 & 0 & \\
+&&& \ddots\\ 
+\\
+& 0 & & & & *
+\end{pmatrix}$$
+
+\subsection{Def: Hauptraum}
+Sei $\lambda \in K$ ein Eigenwert von $\enph \ V$ endlichdim.
+$$ V(\lambda) = \ker ( F-\lambda )$$
+Eigenraum von F bzgl. $\lambda$
+$$ \ker(F-\lambda) \subset \ker(F-\lambda)^2 \subset \ker(F-\lambda)^3 \subset \dots$$
+$$V_\lambda = \bigcup_{n\in \mathbb{N}} \ker(F-\lambda)^n$$
+ist ein Hauptraum von F bzgl. $\lambda$
+\subsection{Bem:}
+$V_\lambda$ ist ein Unterraum und $V_\lambda$ ist F-invariant.\\
+\underline{Warum ?} Weil $V_\lambda$ $(F-\lambda)$-invariant ist.
+\subsection{Bem:} Falls $(\ker(F-\lambda))= V(\lambda) = 0$
+$$\Rightarrow \bigcup_{n\in \mathbb{N}} \ker(F-\lambda)^n = 0$$
+\subsection{Bew:}
+Sei $v \in \bigcup_{n \in \mathbb{N}}(F-\lambda)^n$
+$$\Rightarrow \exists n \in \mathbb{N} | (F-\lambda)^n(v) = 0$$
+$n=0$\\
+$\rightarrow \ub{Id(v)}_{=V} = 0$\\
+sonst: $$(F-\lambda)((F-\lambda)^{n-1}(v)) = 0$$
+$$\Rightarrow (F-\lambda)^{n-1}(v) \in \ker(F-\lambda) = 0$$
+$$\Rightarrow (F-\lambda)^{n-1}(v) = 0$$
+\subsection{Lemma:}
+Seien $\lambda_1,\dots, \lambda_k$ verschiedene Elemente aus K
+$$\Rightarrow V_{\lambda_i} \cap \sum^k_{\substack{ j=1 \\ j \neq i}} V_{\lambda_j} = \{0\}$$
+\subsection{Bew:}
+$V_{\lambda_j}$ ist $(F-\lambda_j)$.invariant\\
+$\Rightarrow V_{\lambda_j}$ ist F-invariant\\
+$\Rightarrow V_{\lambda_j}$ ist $(F-\lambda_i)$-invariant\\
+Wir wollen zuerst zeigen, dass $F-\lambda_i | V_{\lambda_j}$ ein Automorphismus ist ($i \neq j$)\\
+$\Rightarrow$ Es genügt zu zeigen, dass $F-\lambda_i$ injektiv auf $V_{\lambda_j}$ ist.\\
+Sei $w\in V_{\lambda_i} \setminus \{0\}$\\
+$$\Rightarrow \exists m \in \mathbb{N} \tx{ kleinstes } (F-\lambda_i)^m(w) = 0$$
+$$\buildrel ( m>0 (w\neq0) \over \Rightarrow (F-\lambda_j)^{m-j} (w) \neq 0$$
+$$\Rightarrow (F-\lambda_j)^{m-1} (\ub{(\lambda_i - \lambda_j)}_{\neq 0} (w)) \neq 0$$
+\begin{align*}
+\tx{So} 0 &\neq (F-\lambda_j)^{n-1} ([F(w) - \lambda_j w] - (F(w) - \lambda_i w ))\\
+&= \ub{(F-\lambda_j)^m(w)}_{=0} + (F-\lambda_j)^{m-1}(F-\lambda_i)(w)\\
+&\Rightarrow (F-\lambda_i)(w) \neq 0 \tx{ OK!}
+\end{align*}
+Insb. ist jede Potenz $(F-\lambda_i)^k$ ein Automorphismus von $V_{\lambda_i}$
+$$V_{\lambda_i} \bigcap \sum^k_{\substack{j=1 \\ j\neq i}} V_{\lambda_j} = \{0\}$$
+$$v\in V_{\lambda_i} \bigcap \sum^k_{j\neq i} V_{\lambda_j}$$
+$$ v = \sum_{j\neq i} \ub{v_j}_{\in V_{\lambda_j}}$$
+$ \Rightarrow \exists \  m_j \tx{ kleinstes } $
+$$(F-\lambda_j)^{m_j}(v_i) = 0$$
+$$ M = (F-\lambda_i)^{m_1} \circ \dots \circ (F-\lambda_{i-1})^{m_{i-1}} \circ (F-\lambda_{i+1})^{m_{i+1}} \circ \dots \circ (F-\lambda_K)^{m_k}$$
+ist ein Automorphismus von $ V_{\lambda_i}$\\\\
+
+
+% neue Vorlesung
+
+Wiederholung:\\\\
+$\enph \quad \dim_k V = n \qquad \lambda \in K$
+$$V_\lambda = \bigcup \equalto{\ker(F-\lambda)^n}{(F-\lambda)\circ \dots \circ (F-\lambda)}$$
+$V(\lambda) = \ker (F-\lambda) = \{0\}  \Leftrightarrow \chi_F(\lambda) \neq 0 \Rightarrow V_\lambda = \{0\}$\\
+$\lambda_1,\dots,\lambda_k \tx{ verschiedene Eigenwerte}$\\
+$\Rightarrow V_{\lambda_i}  \bigcap \sum^k_{\substack{i=1 \\ i \neq j}} V_{\lambda_i} = \{0\}$
+\subsection{Bem:}
+$V_\lambda $ ist $(F-\lambda)$-invariant\\
+$\Rightarrow V_\lambda$ ist F-invariant
+\subsection{Lemma:}
+Sei $\lambda \in K $\\
+$\dim V_\amalg = \ord_\lambda (\chi_F)$\\
+Ferner hat $ F \upharpoonright V_\lambda $ Matrixdarstellung der Form
+$\begin{pmatrix}
+\lambda & & * \\
+& \ddots \\
+0 & & \lambda
+\end{pmatrix}$
+
+\subsection{Bew}
+Sei $K = \tx{ord}_\lambda ( \chi_F(T))
+\Rightarrow \chi_F (T) = (T - \lambda)^K \cdot Q(T)$ wobei: $Q(\lambda) \neq 0$ 
+\subsection{Beh}
+Es gibt einen $F$-inv. Unterraum $U \subset V$ der dimension $K$, so dass $F \upharpoonright U$ matrix darstellung $$\begin{pmatrix}
+\lambda & & \star \\ & \ddots & \\ 0 & & \lambda
+\end{pmatrix}$$
+
+Falls $ n=0  \rightarrow $ Ok!\\
+OBdA ist $ k\ge 1 $ Wir beweisen die Behauptung mit Induktion auf $ n = \dim V $\\
+n=1 $\Rightarrow$\\
+$\exists v \in V\setminus \{0\} \quad F(v) = \lambda \cdot v$\\
+$\Rightarrow V = \equalto{\underbrace{\spa (v)}}{U_0}$\\
+$n\ge 2$\\
+$\lambda$ ist ein Eigenwert\\
+$\Rightarrow \exists v \in V \setminus \{0\} \quad F(v) = \lambda\cdot v$\\
+$U = \spa (v) \rightarrow \dim 1 \quad F\tx{-invariant}$
+$\Rightarrow\tilde{F}: V/U_0 \rightarrow V/U_0 ; \bar{\omega} \mapsto \ov{F(\omega)}$
+$$\equalto{\chi_F(T)}{(T-\lambda)(T-\lambda^{k-1}) \cdot Q(T)} = \equalto{\chi_{F \upharpoonright U}(T)}{(T-\lambda)} \cdot \chi_{\tilde{F}}(T)$$
+da K[T] Integritätsbereich:
+$$\Rightarrow \chi_{\tilde{F}} (T) = (T-\lambda)^{k-1} \cdot Q(T)$$
+$$ Q(\lambda)\neq 0$$
+
+Nach I.A. existiert einen $\tilde{F}$- Invarianten Unterraum $\tilde{U} \subset V / U$ der Dimension $n-1$, so dass die Matrixdarstellung von $\tilde{F}$ der Form 
+$$\begin{pmatrix}
+\lambda & & \star \\ & \ddots & \\ 0 & & \lambda
+\end{pmatrix}$$
+besitzt.
+Sei $\bar{v}_2, \dots, \bar{v}_K$ eine Basis von $\bar{U}$ so dass die Darstellungsmatrix von $\tilde{F}$ bzg $\{ \bar{v}_2, \dots, \bar{v}_K \}$ 
+$$A =\begin{pmatrix}
+\lambda & & \star \\ & \ddots & \\ 0 & & \lambda
+\end{pmatrix} \tx{ist.}$$
+Die Vektoren $\underbrace{\{ v, v_2 \dots , v_K \}}_{\tx{Vektoren aus \underline{V}}}$
+sind linear unabhängig.\\
+$U = \tx{span} (v, v_2 \dots , v_K)$ hat Dimension K.\\
+
+$U$ ist $F$-Invariant 
+\begin{align*}
+F( \sum_{i=1}^{K} \mu_i v_i) &= \sum \mu_i F(v_i) \\
+&= \underbrace{\mu_1 \lambda v_1 + \sum^k_{i=2} \mu_i F(v_i) }_{\in U}
+\end{align*}
+da: $ F(v_i) \buildrel \tx{nach} U_0 \over = \sum_{j\le i} a_j = v_j$ 
+$F \upharpoonright U$
+$$F(v_1),F(v_2), \dots F(v_k)$$
+$$\begin{pmatrix}
+\lambda & & & *\\
+& \lambda \\
+& & \lambda \\
+& & & \lambda
+\end{pmatrix}$$
+
+Zu Zeigen: $U = V_\lambda$\\
+$U \subset V_\lambda: $\\
+$$\chi_{F \upharpoonright U} = (T-\lambda)^{k}$$
+$$\Downarrow \tx{Caley Hamilton}$$
+$$(F-\lambda)^{k}= 0 \quad \tx{auf } U$$
+$\Rightarrow U \subseteq \ub{\ker(F-\lambda)^k}_{\subset V_\lambda} $\\
+Falls $ U \subsetneq V_\lambda $\\
+$\Rightarrow \dim V_\lambda/ U \ge 1$
+$$\equalto{\chi_F(T)}{(T-\lambda)\cdot Q(T)} = \equalto{\chi_{F \upharpoonright U}(T)}{(T-\lambda)^k} \cdot \chi_{\tilde{F}} (T)$$
+$\tilde{F}: V/U \to V/U$
+$$\Rightarrow \chi_{\tilde{F}(T)} = Q(T) $$
+aber $ Q(\lambda) \neq 0$ 
+$\Rightarrow \lambda$ ist kein Eigenwert von $ \tilde{F} $!!\\
+$\Rightarrow$ Der Hauptraum für $ \lambda $ von $\tilde{F}: V/U \to V/U$ ist \underline{trivial}\\
+Sei $\omega \in V_\lambda$\\
+$\Rightarrow \exists s \in \mathbb{N}$\\
+$(F-\lambda)^s(\omega) = 0 \Rightarrow (F -\lambda)^s(\ov{\omega}) = 0$\\
+$\Rightarrow \ov{\omega} = 0 \Rightarrow \omega \in U$
+\subsection{Def:}
+$\enph$ heißt nilpotent falls es eine feste Zahl m existiert, so dass $\underbrace{F\circ \dots \circ F}_{m} = F^m = 0$ auf V ist.
+\subsection{Lemma:}
+Sei $\enph \quad \dim V = n$ Folgende Aussagen sin äquivalent:
+\begin{itemize}
+	\item[1)] F ist nilpotent
+	\item[2)] $\forall v \in V \exists m_v \in \mathbb{N}: F^{m_v}(v) = 0$
+	\item[3)] Es existiert eine Basis von V, so dass F Darstellungsmatrix $$\begin{pmatrix}
+	0 & & *\\
+	& \ddots \\
+	0 & & 0
+	\end{pmatrix}$$ hat
+	\item[4)] $\chi_F(T) = T^n$
+\end{itemize}
+
+\Bew{$\boxed{1 \Rightarrow 2}$ Trivial\\
+	$\boxed{2 \Rightarrow 3}$ Induktion auf $n = \dim V$
+	$n = 1: Sei v \in V\setminus \{0\} \\
+	\exists m_v \in \mathbb{N} \quad \tx{kleinstes} \\
+	F^{m_v}(v) = 0 \\
+	\Rightarrow m_v \neq 0 \\
+	\Rightarrow F^{m_ - 1}(v) \neq 0 \\
+	\Rightarrow V= \tx{span}(F^{m_ - 1}(v))$
+	\noindent Ferner $ F(F^{m_v-1} (v)) = 0$\\
+	\indent $\rightarrow$ Darstellungsmatrix bzgl. $\{F^{m_v-1}(v)\}$ ist $(0)$\\
+	$n\ge 2$\\
+	Sei $v_i \in V\setminus\{0\}$, so dass $F(v_i) = 0$\\
+	$\Rightarrow U = \spa (v_i)$ ist $F$-invariant\\
+	$ \Rightarrow \tilde{F}: \ub{V/U}_{\equalto{\dim < n}{n-1}} \to V/U $\\
+	$\Rightarrow$ I.A. es existiert eine Basis $\{\ov{v_2}, \dots , \ov{v_n}\}$ von $V/U$, so dass $\tilde{F}$ Darstellungsmatrix:$$\begin{pmatrix}
+	0 & & *\\
+	& \ddots \\
+	0 & & 0\\
+	\end{pmatrix}$$ hat.
+	Die Familie $ \{v_1,v_2,\dots , v_n\} $ ist eine Basis von V und hat Darstellungsmatrix 
+	$$ \begin{pmatrix}
+	0 & & & & * \\
+	& 0 \\
+	& & 0 \\
+	& & & \ddots \\
+	& & & & 0
+	\end{pmatrix} $$
+	
+	$\boxed{3 \Rightarrow 4}$ \\
+	$$\chi_F(T) = \det \bigg( T \cdot E_n - \begin{pmatrix}
+	0 & & *\\
+	& \ddots \\
+	& & 0
+	\end{pmatrix} \bigg) = \det\begin{pmatrix}
+	T & & * \\
+	& \ddots \\
+	& & T
+	\end{pmatrix} = T^n$$
+	
+	$\boxed{4 \Rightarrow 1}$  Caley-Hamilton\\
+	$$F^n = \chi_F(F) = 0$$
+}
+\subsection{Satz: Jorda-Charelley Zerlegung}
+$\enph \ V$ endlichdim.\\
+Falls $ \chi_F(T) $ in linearfaktoren zerfällt dann ist $ V = \bigoplus\limits_{i=1}^{k} V_{\lambda_i} \quad \lambda_1,\dots, \lambda_k$ die verschiedenen Eigenwerte und F lässt sich als Blockmatrix darstellen
+$$\begin{pmatrix}
+A_1 \\
+& A_2 \\
+& & A_3 \\
+& & & \ddots \\
+& & & & A_k
+\end{pmatrix} \qquad A_i = \begin{pmatrix}
+\lambda_i & & *\\
+& \ddots \\
+0 & & \lambda_i
+\end{pmatrix}$$
+
+insb. ist $ F = \ub{G}_{\tx{diagonalisierbar}}+\ub{H}_{\tx{nilpotent}} $\\
+$G \circ H = H \circ G $\\
+Sei $ G: V\to V \quad G _{V_{\lambda_i}} =$ Multiplikation mit $ \lambda_i $. E hat diagonale Matrix bzgl. der Basis $ \mathcal{B} $ 
+$$\begin{pmatrix}
+\lambda_1 \\
+& \lambda_2\\
+& & \ddots \\
+& & & \lambda_n
+\end{pmatrix}$$
+
+setzt $ H = F - G $ die Darstellungsmatrix von $ H $ bzgl. $ \mathcal{B} $ ist:
+$$\begin{pmatrix}
+0 & & *\\
+& \ddots \\
+& & 0\\
+& & & 0 & & *\\
+& & & & \ddots\\
+& & & & & 0\\
+& & & & & & \ddots\\
+& & & & & & & 0 & & *\\
+& & & & & & & & \ddots\\
+& & & & & & & & &0
+\end{pmatrix} \begin{matrix}
+\\
+\bigg\} V_{\lambda_1}\\
+\\
+\bigg\} V_{\lambda_2}\\
+\\
+\\
+\\
+\\
+\\
+\\
+\end{matrix} \Rightarrow H \tx{ ist nilpotent}$$
+
+\subsection{Bew:}
+$\lambda_1,\dots , \lambda_k$ verschiedene Eigenwerte
+$$\chi_F(T) = \prod_{i=1}^{k}(T-\lambda)^{d_i}$$
+$\dim V = \grad \chi_F(T) = n\sum_{i=1}^{k} \equalto{d_i}{\dim V_{\lambda_i}}$\\\\
+$$\dim(\sum_{i=1}^{k} V_{\lambda_i}) \buildrel V_{\lambda_i} \bigcap \sum_{\substack{j=1 \\ j \neq i}}^{k} V_{\lambda_j} = \{0\}\over = \sum d_i = n = \dim V$$
+$\Rightarrow V = \bigoplus^{k}_{i=1} V_{\lambda_i}$\\
+V besitzt eine Basis $ \mathcal{B} $, welche aus der Vereinigung der Basen jedes $V_{\lambda_i}$ besteht.
+
+$F$ wird durch $\equalto{F \upharpoonright V_\lambda\ ,}{\equalto{\begin{pmatrix}
+		\lambda_1 & & \star \\ & \ddots & \\ 0 & & \lambda_1
+		\end{pmatrix}}{A_1}} \dots \ ,\equalto{F \upharpoonright V_{\lambda_K}}{\equalto{\begin{pmatrix}
+		\lambda_K & & \star \\ & \ddots & \\ 0 & & \lambda_K
+		\end{pmatrix}}{A_K}}$ bestimmt \\
+
+$$\begin{pmatrix}
+A_1 &&&\\ &A_2&&\\ &&\ddots &\\ &&&A_K
+\end{pmatrix}$$
+
+
+% markus blatt 2???
+
+zu Zeigen: $G\circ H = H\circ G$ Beachte, dass jedes $V_{\lambda_i}$ $G$-Invariant.\\
+$\Rightarrow V_{\lambda_i}$ ist $H$-Invariant.\\
+Es genügt zu zeigen, dass $G\circ H = H\circ G$ auf $\underline{\underline{V_{\lambda_i}}}$\\ 
+$w \in V_{\lambda_i}$\\
+$H\circ G(w) = H(\lambda\cdot w)$\\
+
+$G\circ H (w) \buildrel{W(w) \in V_{\lambda_i}} \over{=} \lambda_1 H(w)$
+
+% neue vorlesung
+%beweis von satz 0.49 
+
+%neue vorlesung wieder mit pizarro
+
+\subsection{Def:}
+$ \enph $ V endlichdim.\\
+Eine Basis $ \{v_1,\dots,v_n\} $ ist F-adaptiert, falls:\\
+$$F(v_1) = 0$$
+$$2\le j \le n \quad F(v_j) = \casess{0}{}{v_{j-1}}{}$$
+\subsection{Bem:}
+Falls V eine F-adaptierte Basis besitzt, dann ist $ \enph $ nilpotent.
+\subsection{Bew:}
+Sei $ \{v_1,\dots ,v_n\} $ F-adaptiert\\
+Es genügt zu zeigen, dass $ F^n = 0 $ (als Endomorphismus)
+$$F^n(\equalto{v}{\sum_{j=1}^{n} \lambda_j v_j}) = \sum_{j=1}^{n} \lambda_j \ub{F^n(v_j)}_{=0} = 0$$
+\underline{Notation}
+$$ \mathcal{N}_m = \begin{pmatrix}
+0 & 1 \\
+& 0 \\
+& & \ddots \\
+& & & 0 & 1\\
+& & & & 0 
+\end{pmatrix} \in \mathcal{M}_{m\times m} (\mathbb{K})$$
+$\mathcal{N} _j = (0) $
+$$ \mathcal{N}^m_m = \begin{pmatrix}
+0 & & 0 \\
+& \ddots \\
+0 & & 0
+\end{pmatrix}$$
+\subsection{Def:}
+$ \enph $ nilpotent. Es gibt $ m \le n $ kleinste Zahl, sodass 
+$$ \ker(F^m) \subsetneq \dots \ker (F^m) \subsetneq \ker(F^{m+1}) \subsetneq \dots \subsetneq V$$
+m heißt der Index von F
+$$ V = \ker(F^m) \bigoplus F^m(V)$$
+\subsection{Satz:}
+Sei $ \enph \dim(V) = n $ und $ \mathcal{B} $ eine F-adaptierte Basis von F. Dann hat F Matrixdarstellung der Form
+$$\begin{pmatrix}
+\mathcal{N}_{k_1}\\
+& \ddots \\
+& & \mathcal{N}_{k_r}
+\end{pmatrix}$$
+$$\sum_{j=1}^{r} k_j = n \quad \tx{ Index} (F) = \tx{max} \{k_j\}_{1 \le j \le r}$$
+\subsection{Bew:}
+Sei $  \{v_1,\dots,v_n\} $ F-adaptiert\\
+Sei $ k \le i_1 < \dots < i_r < n $ eine Aufzählung der Menge $ \{j | F(v_{j+1})=0\} $
+\nopagebreak
+$$v_1,v_2,\dots,v_{i_j},v_{i_{j-1}}, \dots\quad $$
+\nopagebreak
+$$ \begin{array}{rrrrrrrrrrrrrrrr}
+v_1 & v_2 & \dots & v_{i_1} & v_{i_{j-1}} & & & & & & & & & & &
+\end{array} $$
+$$\begin{pmatrix}
+0 & 1\\
+& 0 \\
+& & \ddots\\
+& & & 0 & 1\\
+& & & & 0\\
+& & & & & 0 & 1\\
+& & & & & & 0 \\
+& & & & & & & \ddots\\
+& & & & & & & & 0 & 1\\
+& & & & & & & & & 0\\
+\end{pmatrix} \begin{array}{l}
+\\
+\\
+\bigg\} i_1\\
+\\
+\\
+\\
+\bigg\} i_2-i_1\\
+\\
+\\
+\end{array}$$
+
+% nacher matrix foto: done 
+
+\subsection{Satz:}
+Sei $ F: V \to V  $ nilpotent mit Index k. Gegeben einen Unterraum $ U \subset V $ derart, dass $ U \cap \ker(F^{k-1}) = \{0\} $. Dann lässt sich jede Basis von $ U $ zu einer $ F $-adaptierten Basis von $ V $ ergänzen.
+
+\subsection{Kor:}
+Jeder nilpotente Endomorphismus besitzt eine $ F $-adaptierte \underline{Basis}
+$$ \ker F \subsetneq \ker F^2 \subset \dots \ker F^{k-1} \subsetneq \ker F^k = \dots = V$$
+$$ B_1 \quad \subset \quad  B_2 \ \ \subset \ \  \dots B_{k-1} \quad \subset \quad B_k \qquad \qquad \quad $$
+$$\bigg(F(U_1) \dots F(U_2) \rightarrow B_{k-1} \qquad U_1, \dots U_r \in B_k \setminus \ker(F^{k-1}) \bigg)$$
+$ \ker F^{K-1} $ hat ein Komplement $ \equalto{U}{\substack{U_1 \\ \vdots \\ U_j}}  $ in $ \ker F^k $
+
+\subsection{Beh:}
+$ \{F(U_1), \dots , F(U_r) \} $ sind lin. unabh. \\
+$ \rightarrow $ sie bilden die Basis von $ F(w) $
+
+\subsection{Bew:}
+$$ \sum_{i=1}^{r} \lambda F(U_i) = 0 = F\bigg(\sum_{i=1}^{r} \lambda_i U_i\bigg) $$
+$$ \sum_{i=1}^{r} \lambda_i U_i \in \ker (F)$$
+$$ \qquad \Downarrow W \cap V = \{0\}$$
+$$ \sum \lambda_i U_i = 0 \qquad $$
+$$ \qquad \qquad \qquad \qquad \quad  \Downarrow \{ U_1, \dots , U_i\} \tx{ sind lin. unabh. }$$
+$$\underline{ \lambda_1 = \dots = \lambda_i = 0 } $$
+Aus unserer Induktionsannahme
+$$ F(w) \tx{ und } F \upharpoonright V': V' \to V'$$
+$ \Rightarrow $ Es gibt eine adaptive Basis $ \{v_1',\dots , v_m'\} $ von $ V'$,\\ welche $ \{F(U_1), \dots , F(U_r) \} $ ergänzt.\\
+$ F(U_j) = v' _{i_j} $ wobei $ i_1 < \dots < i_r $ (sonst ordne $ v'_j $ 's um !)
+\begin{align*}
+v_1 &= v_1' \\
+v_2 &= v_2' \\
+&\vdots \\
+v_{i_1} &= v_{i_1}' \\
+v_{i_1 +1} &= U_1 & \rightarrow \tx{ Basis } \{v_1,\dots,v_n\} \tx{ von } V (W\cap V' = {\alpha_i})\\
+v_{i_1+2} &= v_{i_1+1}' \\
+&\vdots \\
+v_{i_2} &= v_{i_2 -1}' \\
+v_{i_2+1} &= v_{i_2}' \\
+v_{i_2+2} &= U_2 \\
+\end{align*}
+
+\subsection{Folgerung}
+Jeder nilpotente Endomorphismus lässt sich bezüglich  einer geeigneten Basis durch eine Blockmatrix darstellen:
+$$\left (\begin{array}{*{20}c}
+0 & 1\\
+& 0 \\
+& & \ddots\\
+& & & 0 & 1\\
+& & & & 0\\
+& & & & & 0 & 1\\
+& & & & & & 0 \\
+& & & & & & & \ddots\\
+& & & & & & & & 0 & 1\\
+& & & & & & & & & 0\\
+& & & & & & & & & & & \ddots \\
+& & & & & & & & & & & & 0 & 1\\ 
+& & & & & & & & & & & & & 0 \\ 
+& & & & & & & & & & & & & & \ddots\\ 
+& & & & & & & & & & & & & & & 0 & 1\\ 
+& & & & & & & & & & & & & & & & 0\\
+\end{array} \right)$$
+
+\subsection{Kor: Jordansche Normalform}
+Jeder Endomorphismus eines endl. dimensionalen VR, dessen charakteristisches Polynom in Linearfaktoren zerfällt, lässt sich bezüglich einer geeigneten Basis durch eine Blockmatrix folgender Form darstellen:
+$$\left (\begin{array}{*{20}c}
+\lambda_1 & 1\\
+& \lambda_1 \\
+& & \ddots\\
+& & & \lambda_1 & 1\\
+& & & & \lambda_1\\
+& & & & & \lambda_2 & 1\\
+& & & & & & \lambda_2 \\
+& & & & & & & \ddots\\
+& & & & & & & & \lambda_2 & 1\\
+& & & & & & & & & \lambda_2\\
+& & & & & & & & & & & \ddots \\
+& & & & & & & & & & & & \lambda_3 & 1\\ 
+& & & & & & & & & & & & & \lambda_3 \\ 
+& & & & & & & & & & & & & & \ddots\\ 
+& & & & & & & & & & & & & & & \lambda_3 & 1\\ 
+& & & & & & & & & & & & & & & & \lambda_3\\
+\end{array} \right)$$
+
+\subsection{Bew:}
+Induktion auf n\\
+$ \boxed{k=1} $\\
+$ F = 0 $ als Endomorphismus $ \rightarrow $ Jede Basis ist F-adaptiert\\
+$ \boxed{k\ge 2} $\\
+Sei $ V' = \ker(F^{k-1}) \subsetneq V $\\
+Sei $ \{u_1,\dots , u_j\} $ eine Basis von U.
+$U \cap V' = \{0\} \quad U + V' = U \oplus V'$
+hat eine Basis: $ \{u_1,\dots,u_j,\ob{\tilde{v}_1, \dots, \tilde{v}_n }^{\tx{Basis von } V'}\} $\\
+Ergänze diese Basis zu einer Basis von V $ \{u_1,\dots,u_j,u_{j+1},\dots,u_r,\tilde{v}_1 , \dots , \tilde{v}_n\} $\\
+$U \subset \mathcal{W} = \spa(u_1,\dots,u_j)$\\
+$ W \cap V' = \{0\} $\\
+$ F(W) \subset \ker(F^{k-1}) = V' $ (Weil $ F^k = 0 $), $V'$ ist F-invariant und\\
+$ F \upharpoonright V' = V' \to V' $ hat Index \underline{\underline{$ k-1 $}}.
+\subsection{Beh:}
+$ \{0\} = F(\mathcal{W}) \cap \ker(F^{k-2}) $\\
+Sei $ u \in F(\mathcal{W}) \cap \ker(F^{k-2}) $\\
+$ \Rightarrow F^{k-2}(u) = 0 $\\
+es existiert ein $ w \in \mathcal{W} | u = F(w) $\\
+$ 0 = F^{k-2}(u) = F^{k-1} (w)  \rightarrow w \in \ker(F^{k-1} = V')$\\
+$ \Rightarrow w = 0 \Rightarrow U = F(w) = 0 $\\
+$ W \cap V' = \{0\} $\\
+
+% erik 2 
+
+Es genügt zu zeigen, dass die Basis $ \{v_1,\dots,v_n\} $ \underline{F-adaptiert} ist.\\
+z.B. $$F(v_{j+1})  = V'_{i_1} = F(u_1)$$
+$ \Rightarrow u_1 - \ub{v_i +1}_{\in V'} \in \ker(F) \subset V' $\\
+$ \Rightarrow u_1 \in V' \cap W = \{0\} $ \underline{Widerspruch !}\\\\
+
+$ \enph $ nilpotent index K.
+
+% blockblatt markus 1
+
+\subsection*{Beispiel:}
+$$A = \begin{pmatrix}
+1 &1&0&1\\0&2&0&0\\-1&1&2&1\\-1&1&0&3
+\end{pmatrix} \in \mathcal{M}_{n\times n} (\mathbb{K})$$
+
+\begin{align*} \chi_A(T) &= \det\begin{pmatrix}
+T-1 & -1 & 0 & -1\\ 0 & T-2 & 0 & 0 \\ 1 & -1 & T-2 & -1 \\ 1 & -1 & 0 & T-3
+\end{pmatrix}\\[8pt]
+&= (T-2) \det \begin{pmatrix}
+T-1 & 0 & -1 \\ 1 & T-2 & -1 \\ 1 & 0 & T-3
+\end{pmatrix}\end{align*}
+
+$$\chi_A (T) = (T-2)^4 \rightarrow 2 \tx{ ist der einzige Eigenwert.}$$
+$A-2 E_4 = \begin{pmatrix}
+-1&1&0&1\\0&0&0&0&\\-1&1&0&1\\-1&1&0&1
+\end{pmatrix}$ ist \underline{\underline{Nilpotent}}\\
+$ \ker(A - 2 E_4) = \{(x_1,x_2,x_3,x_4) | -x_1 +x_2 + x_4 = 0\} $
+
+% vorlesung 
+
+\chapter{Dualität}
+
+\subsection{Def:}
+Sei $V$ ein $K$-VR Der Dualraum $V^*$ ist die kollektion aller linearen Abbildungen $V \to K$.
+\subsection*{Bem:} $V^*$ ist ein $K$-vektorraum. $F + G: V\to K, \ v\mapsto F(v) + G(v)$ ist linear.\\
+$\lambda \in K, \ \lambda \cdot F = V \to K, \ v \mapsto \lambda \cdot F(v)$ ist linear.
+
+
+\subsection{Def:} Sei V endlichdim und wählte eine Basis $ \mathcal{B} = \{ b_1,\dots,b_n\} $ von  V.\\
+Die duale Basis $ \mathcal{B}^* = \{b_1^*,\dots,b_n^*\} $ ist eine Kollektion linearer Abbildungen derart, dass $ b^*_i (b_j) = \delta_{ij} = \casess{1}{i=j}{0}{\tx{sonst}} $\\
+Insbesondere:
+$$b^*_i(v) = b_i^* (\sum_{j=1}^{n} \lambda_j \cdot \backepsilon_j) = \lambda_i$$
+\subsection*{Bem:} Falls V endlichdim. ist, dann ist $ \mathcal{B}^*  $ eine Basis von $ V^* $ und sonst $ V\simeq V^* $
+
+\Bew{
+	$$b_i^* \dots b_n^* \quad \tx{sind linear unabhängig.}$$
+	warum? $$\sum \lambda_i b_i^* = 0 \quad \tx{(als lin. Abbildung)}$$
+	$$\sum \lambda_i \equalto{b_i^*}{\lambda_j \tx{ für } 1 \leq j \leq n}  (b_j) =0$$ 
+	$\lambda_i \dots = \lambda_n = 0 \rightarrow$ OK!
+	$$\tx{span}(b_i^* \dots b_n^*) = V^*$$
+	Sei $F: V \to K$ beliebig 
+	$$F(b_i) = \lambda_i \in K \quad 1 \leq i \leq n$$
+	$$(F- \sum \lambda_i b_i^*) ( b_j) = 0 = \equalto{F(b_j)}{\lambda_j} - \underbrace{\sum \lambda_i b_i^* (b_j)}_{\lambda_j} \quad 1 \leq j \leq n$$
+	
+	Insb. $ V\to V^* $ ist ein Isomorphismus $  b_i \mapsto b_i^* $\\
+	\underline{Achtung:} Der Isomorphismus $ V\simeq V^* $ hängt von der Basis $ \{b_1,\dots,b_n\} $ ab! NICHT KANONISCH}
+\subsection{Lemma:} 
+kanonischer Monomorphismus $ V \buildrel \varphi \over \hookrightarrow (V^*)^* , v \mapsto \varphi_v:\quad V^* \to K , F \mapsto F(v)$ 
+\subsection{Bew:} $ \varphi $ ist wohldefiniert 
+$$ \varphi_v(F+G) = (F+G) (v) = F(v)+ G(v) \quad \tx{Ok!}$$\\
+Zu zeigen: $ \varphi $ ist injektiv (Übungsaufgabe !)
+\subsection{Korollar:} Wenn V endlichdim. ist, $ V \simeq V^* $ \underline{kanonisch}
+
+\Bew{ 
+	$$\dim V = \dim V^* = \dim (V^*)^* \Rightarrow \varphi: V \to (V^*)^* \tx{ ist surjektiv} $$
+	$\Rightarrow $ ein Isomorphismus}
+\subsection{Lemma:}
+Sei $V$ endlich und wähle Basen $\mathcal B = \{b_1 \dots b_i \}$ und $\mathcal B' = \{b_1' \dots b_i' \}$ von $V$.
+
+Seien $ \mathcal{B}^* $ und $ (\mathcal{B}')^* $ die entsprechenden dualen Basen in $ V^* $. Wenn A die Transformationsmatrix von $ \mathcal{B} $ nach $ \mathcal{B}' $ ist, dann ist die Transformationsmatrix $ \mathcal{B^*} $ nach $ (\mathcal{B}')^* \ \ (A^*)^{-1}$
+\subsection{Bew:}
+$$\begin{pmatrix}
+b^*_1\\
+\vdots\\
+b^*_n
+\end{pmatrix} = A \cdot \begin{pmatrix}
+b_1\\
+\vdots\\
+b_n
+\end{pmatrix}$$
+Sei $ X $ die Transformationsmatrix von $ \mathcal{B}' $ nach $ (\mathcal{B}') ^* $
+$$\begin{pmatrix}
+b_1'^*\\
+\vdots\\
+b_n'^*
+\end{pmatrix} = X \cdot \begin{pmatrix}
+b_1^*\\
+\vdots\\
+b_n^*
+\end{pmatrix}$$
+
+$$\begin{pmatrix}
+b_1^*\\
+\vdots\\
+b_n^*
+\end{pmatrix} \cdot \begin{pmatrix}
+b_1 & \dots b_n
+\end{pmatrix} = E_n $$
+$$\begin{pmatrix}
+b_1'^*\\
+\vdots\\
+b_n'^*
+\end{pmatrix} \cdot \begin{pmatrix}
+b_1' & \dots b_n'
+\end{pmatrix} = E_n $$
+\begin{align*}
+E_n &= \begin{pmatrix}
+b_1'^*\\
+\vdots\\
+b_n'^*
+\end{pmatrix} \cdot \begin{pmatrix}
+b_1' & \dots b_n'
+\end{pmatrix}\\
+&= X \cdot \begin{pmatrix}
+b_1'^*\\
+\vdots\\
+b_n'^*
+\end{pmatrix} \bigg( A \cdot \begin{pmatrix}
+b_1\\
+\vdots\\
+b_n
+\end{pmatrix} \bigg) ^\top\\
+&= X \cdot \begin{pmatrix}
+b_1^*\\
+\vdots\\
+b_n^*
+\end{pmatrix} \cdot \begin{pmatrix}
+b_1 & \dots b_n
+\end{pmatrix} \cdot A^\top
+\end{align*}
+
+$$En = X \cdot En \cdot A^\top = X \cdot A^\top \Rightarrow X = (A^\top)^{-1}$$
+
+\subsection{Def:}
+Sei $F: V \to W$ eine lineare Abbildung. Definiere die duale Abbildung $F^* : W^* \to V^*$, $\psi \mapsto \psi \circ F$
+
+
+$$\begin{array}{ccc}
+V & \buildrel F \over \longrightarrow & W \\
+& \searrow & \downarrow \Psi \\
+\equalto{\Psi \circ F }{F^*(\Psi)} & & K
+\end{array}$$
+
+\subsection*{Bem:}
+$F^*$ ist linear. 
+$$F^* (\psi_1 + \psi_2) = (\psi_1 + \psi_2) \circ F = \psi_1 \circ F + \psi_2 \circ F = F^* (\psi_1) + F^* (\psi_2)$$
+
+$$ U \buildrel G \over \longrightarrow V \buildrel F \over \longrightarrow W$$
+$$ W^* \buildrel F^* \over \longrightarrow V^* \buildrel G^* \over \longrightarrow U^*$$
+von $ W^* $ nach $ U^* $:
+$$(F\circ G)^* = G^* \circ F^*$$
+\subsection{Bew:} $ \Psi \in W^* \quad \Psi \circ W \to K $ 
+$$(F \circ G)^*(\Psi) = \ub{\Psi\circ F}_{F^*(Psi)} \circ G = G^* \circ F^*(\Psi)$$
+\underline{Eigenschaften:}
+\begin{itemize}
+	\item[a)] $ (Id_{I_{V}})^* = Id_{I_{V^*}} $
+	\item[b)] $ (F+G)^* = F^* + G^* $
+	\item[c)] $ (F\circ G)^* = G^* \circ F^* $
+	\item[d)] $ (\mu F)^* = \mu F^* $
+\end{itemize}
+
+$$(Id_{iv})^* (\psi) = \psi \circ Id_{iv} = \psi$$
+\subsection*{Bem:} Falls $F^* =0$ dann ist $\underline{F = 0}$. Feiner, falls $v$ und $W$ endlich dimensional sind.
+$$G: W^* \to V^* \tx{ lin. Abbildung}$$ dann gilt es $$F: V \to W \tx{ so dass } F^* = G$$
+
+\bew $$F^* = 0$$ Sei $v \in V$ fest. \\
+\paragraph{Zu Zeigen:} 
+$F (v) = 0$ \\[10pt]
+Definiere $$W^* \to \psi \mapsto \equalto{\psi (F(v))}{F^* (\psi)(v)}$$ 
+Erinnerung: $W \buildrel \varphi \over \hookrightarrow (W^*)^* , \ w \mapsto \equalto{\varphi_{wi}}{\varphi(wi)} \quad W^* \to K, \ \psi \mapsto \psi(w)$
+$$\varphi_{F(v)} (\psi) = \psi (F(v) = \underbracket{F^* (\psi)}_{=0} (v) \ \underline{\underline{= 0}}$$
+
+
+Aber: $ \varphi $ ist ein Monomorphismus\\
+$ \Rightarrow F(v) = 0 \Rightarrow  F = 0 $ als Homomorphismus $ V\to W $\\
+Die Operation:
+$$ * : \tx{ Hom}(V,W) \mapsto \tx{ Hom}(W^*,V^*)$$
+Falls V, W endlichdim. sind:\\
+($ V \approx K^n \approx V^*  $ und $ W \approx K^m \approx W^* $)\\
+
+\begin{align*}
+\dim \tx{Hom }(V,W) &= \equalto{\dim V}{} \cdot \equalto{\dim W}{}\\
+\dim \tx{Hom }(W^*,V^*) &= \dim V^* \cdot \dim W^*
+\end{align*} 
+Aber $*: \tx{Hom }(V,W) \to \tx{Hom }(W^*, V^*)$ ist injektiv $\Rightarrow$ Surjektiv
+$$\dim V = n, \quad \dim W = m$$
+\subsection*{Bem:}
+$F: V \to W$ hat Darstellungsmatrix $A$ bezüglich $\mathcal B = \{b_i \dots b_n\}$ von $V$ und $\mathcal B' = \{b_i' \dots b_m'\}$ von $W$. Seien $\mathcal B^*$ und $(\mathcal B')^*$ die entsprechenden dualen Basen aus $V^* \tx{, und } W^*$.
+
+
+Dann hat $ F^* $ Darstellungsmatrix $ A^\top $ bzgl $ (\mathcal{B}')^* $ und $ \mathcal{B}^* $.
+\subsection{Bew:}
+$$ F \cdot \begin{pmatrix}
+x_1\\
+\vdots\\
+x_n
+\end{pmatrix} = A \cdot \begin{pmatrix}
+x_1 \\
+\vdots\\
+x_n
+\end{pmatrix} = A \cdot \vec{x}$$
+$$ F^* \begin{pmatrix}
+\Psi_1\\
+\vdots\\
+\Psi_m
+\end{pmatrix} \cdot \begin{pmatrix}
+x_1\\
+\vdots\\
+x_n
+\end{pmatrix} = \begin{pmatrix}
+\Psi_1 & \dots & \Psi_m
+\end{pmatrix} \circ \ub{F \cdot \begin{pmatrix}
+	x_1\\
+	\vdots \\
+	x_n
+	\end{pmatrix} }_{A \cdot \vec{x}} $$
+
+Die Darstellungsmatrix von $ F^* $ ist:
+\begin{align*}
+F^* \cdot \begin{pmatrix}
+\Psi_1\\
+\vdots \\
+\Psi_m
+\end{pmatrix} &= \begin{pmatrix}
+\Psi_1 & \dots & \Psi_m
+\end{pmatrix} \cdot A\\
+F^* \cdot \begin{pmatrix}
+\Psi_1\\
+\vdots \\
+\Psi_m
+\end{pmatrix} &= \bigg( A^\top \cdot \begin{pmatrix}
+\Psi_1\\
+\vdots\\
+\Psi_m
+\end{pmatrix} \bigg)^\top
+\end{align*}
+$ \rightarrow $ Die Darstellungsmatrix von $ F^* $ ist $ A^\top $
+\subsection{Korrolar:}
+$$ \det(F^*) = \det(F) $$
+
+% neue vorlesung:
+
+\paragraph{Wid:}
+$V K-VR, V^* = \tx{Hom} (V,K)$ ist ein $K-VR$, $V$ endlich dimensional $\rightarrow V \simeq V^*$, $\mathcal B = \{b_1 \dots b_n\} \rightarrow \equalto{\mathcal{B}^*}{\{b_1^* \dots b_n^*\}}$ duale Basis.
+$$b_i^* (b_j) = \delta_{ij} \tx{ (kronecker delta)}$$
+$$\varphi: V \hookrightarrow (V^*)^* \tx{Monomorphismus},\ v \mapsto \varphi_v:\ V^* \to K,\ F \mapsto F(v)$$ 
+\paragraph{Folgerung}
+$$\forall v \in V \setminus \{0\} \exists F: V \to K \tx{ linear } F(v) \neq 0$$
+
+$ * : \tx{Hom}(V,W) \to \tx{Hom}(W^*,V^*) $\\
+\begin{align*}
+F: V \to W \rightarrow F^* &\to V^* \\
+\ub{\Psi}_{W \to K} &\mapsto \ub{ \Psi \circ F}_{ V \to K} 
+\end{align*}
+$ (F\circ G)^* G^* \circ F^* $\\
+$ (Id_{IV})^* = Id_{IV^*} $\\
+$ V,W $ endlichdim $ \rightarrow * $ \underline{\underline{Isonorphismus}} 
+
+\subsection*{Bem}
+$ \enph $ lineare Abb. mit Darstellungsmatrix $ A = (a_{ij}) $ bzgl. der Basen $ \mathcal{B} = \{b_1,\dots ,b_n\} , \mathcal{C}= \{c_1,\dots,c_m\} $\\
+
+\begin{align*}
+F^*: W^* &\to V^* \\
+\mathcal{C}^* = \{ c^*_1,\dots , c^*_m\} (&\rightarrow) \mathcal{B}^* = \{b^*_1  \dots , b^*_n\} 
+\end{align*} 
+Darstellungsmatrix von $ F^* $ bzgl. $ \mathcal{C}^* \mathcal{B}^* $ ist $ A^\top $
+
+\Bew{
+	$$F^* (c_k^*) = \sum _{1\leq \varphi \leq n} \lambda_{\varphi k}b_\varphi^* \quad (1\leq k \leq m)$$
+	$$F(b_i) = \sum _{1\leq j \leq m} a_{ij} c_j$$
+	$$ \begin{array}{ccc}
+	F^* (c_k^*) (b_i) & = &(\sum \lambda_{\varphi k} b_\varphi^*) (b_i)\\
+	\rotatebox{90}{=} & &  \\
+	C_k^* (F(b_i)) & = & \lambda_{ik}\\
+	\rotatebox{90}{=} & & \\
+	C_k^*(\sum a_{ji}c_j) & = & a_{ki}
+	\end{array} \rightarrow A^\top \tx{ist die Darstellungs matrix}$$
+}
+
+\subsection{Lemma:}
+$$ V = \bigoplus_{i = 1}^{n} V_i$$
+$$ \Rightarrow V^* \simeq \bigoplus_{i=1}^{n} V_i^*$$
+$ F: V \to K $ ist eindeutig bestimmt durch $ F \upharpoonright V_1, \dots , F \upharpoonright V_n $
+\subsection{Lemma:}
+$ \enph $ linear
+\begin{itemize}
+	\item[a)] F injektiv $ \Leftrightarrow F^* $ surjektiv
+	\item[b)] F surjektiv $ \Leftrightarrow F^* $ injektiv
+	\item[c)] F Isomorphismus $ \Leftrightarrow F^* $ isomorphismus
+\end{itemize}
+
+\subsection{Bew:}
+a) $\boxed{\Rightarrow}\ F: V \hookrightarrow W$ injektiv.
+\paragraph{Zu Zeigen:} $$F^* W^* \to V^* \ni \psi: V \to K \tx{ surjektiv ist}$$
+$$\exists \Theta: W \to K,\ \equalto{F^* (\Theta)}{\Theta \circ F} = \psi$$
+$$\forall v \in V,\ \Theta(F(v)) = \psi(v)$$
+$$\underbrace{\tx{Im}(F)}_{\simeq V} \subset W \quad (\forall v \in \tx{Im}(F)\ \exists ! v \in V,\ w = F(v))$$
+Sei $Z$ ein Komplement von Im$(F)$ in $W$ $\Rightarrow W=$Im$(F) \oplus Z$
+$$\forall w \in W: \quad w= \underbrace{w'}_{\in \tx{Im}(F)} + \underbrace{\tilde w}_{\in Z} \tx{eindeutig}$$
+
+Definiere $ \Theta: W \to K $\\
+$$ W = F(v) + \tilde{w} \mapsto \Psi(v) \qquad \tilde{w} \in Z$$
+Zu Zeigen: $\Theta$ ist linear
+$$\Theta(\equalto{w_1}{F(v_1) + \tilde{w}_1} + \equalto{w_2}{F(v_2) + \tilde{w}_2})= \Theta (\equalto{F(v_1) + F(v_2)}{F(v_1+v_2)} + \ub{\tilde{w_1} + \tilde{w_2}}_{\in Z})$$
+$$ \Theta(w_1) + \Theta(w_2) = \Psi(w_1) + \Psi(w_2) = \Psi(v_1+v_2) (= F(v_1 + v_2))$$
+$\boxed{\Leftarrow}$ $ F^* : W^* \twoheadrightarrow V^* $ surjektiv\\
+Zu Zeigen: $ F: V \to W $ injektiv\\
+$ v \in V $ / $ F(v) = 0 $\\
+$  v \neq 0 \Rightarrow  \exists \Psi:V \to K \quad \Psi(v) \neq 0 $\\
+$ \buildrel F^* \tx{ surj.} \over \Rightarrow \exists \Theta : W \to K $
+$$ \Theta \circ F = F^*(\Theta) = \Psi $$
+$ \Rightarrow \ub{\Theta(F(v))}_{=0} = \Psi(v) $ Wid !
+
+b) $\boxed{\Rightarrow}\ F: V \twoheadrightarrow W$ surjektiv.
+\paragraph{Zu Zeigen:} $$F^* : W^* \hookrightarrow V^* \tx{ injektiv}$$
+Sei $\Theta \in W^* / F^* (\Theta) = 0$ als lineare Abbildung $V \to K$
+$$F^* (\Theta) = \Theta \circ F$$
+\paragraph{Zu Zeigen:} $$\forall w \in W,\ \Theta(w) = 0$$
+$$w \in W \to \ni v \in V / F(v) = w$$
+$$F \tx{ surjektiv} \quad \Theta(w) = \Theta(F(v)) = F^*(\Theta)(v) = 0 $$
+$\boxed{\Leftarrow}\ F^* : W^* \hookrightarrow V^*$ injektiv
+\paragraph{Zu Zeigen:} $$ F: V \twoheadrightarrow W \tx{ surjektiv}$$
+Sei $Z$ ein Komplement von Im$(F)$ in $W=$Im$(F) \oplus Z$
+\paragraph{Zu Zeigen:} $$Z = \{0\} $$
+Sonst sei $\mathcal B$ eine Basis von Z. 
+$$G: W \mapsto K \tx{ linear der art}$$
+$G \upharpoonright$Im$(F) = 0$ und $G(b) = 1,\ \forall b \in \mathcal B$\\
+$ \Rightarrow G \in W^* $\\
+$ F^*(G) = G \circ F : V \to K $\\
+Sei $ v \in V $
+$$ G \circ F(v) = G(F(v)) = 0 $$
+$\Rightarrow F^*(G) $ ist die triviale Abbildung\\
+$ \buildrel F^* \tx{ inj.} \over \Rightarrow G =0 $ als lineare Abbildung\\
+$ \Rightarrow B = \emptyset \Rightarrow Z = 0 \Rightarrow F $ surjektiv
+
+\section{Duale Paarung}
+\subsection{Def:}
+Seien $ V,W $ K-VR\\
+Eine Abbildung $ \varphi: V \cdot W \mapsto K $ ist bilinear, wenn $ \varphi $ linear in jeder Koordinate ist.
+\begin{itemize}
+	\item[a)] $ \varphi(v, \lambda_1w_1 + \lambda_2 w_2) = \lambda_1 \varphi(v, w_1) + \lambda_2 \varphi(v,w_2) $
+	\item[b)] $ \varphi(\lambda_1 v_1 + \lambda_2 v_2, w) \;= \lambda_1 \varphi(v_1,w) + \lambda_2 \varphi(v_2,w) $
+\end{itemize}
+
+\subsection*{Bem:} Falls $V, W$ endlich dimensional mit Basen $\mathcal B = \{b_1 \dots b_n\}$ von V\\
+und $\mathcal C = \{c_1 \dots c_m\}$ von W. Dann ist $\varphi$ eindeutig bestimmt durch die $(n \times m)$-Matrix $A= (\varphi(b_i, c_j))$
+\begin{align*}
+\varphi(v, w) &= \varphi \bigg(\sum_{i \leq n} \lambda_i b_i, \sum_{j \leq m}\mu_j c_j\bigg)\\
+&= \sum_{i \leq n} \lambda_i \varphi \bigg(b_i, \sum_{j \leq m} \mu_j c_j \bigg)\\
+&= \sum_{i \leq n} \lambda_i \sum_{j \leq m} \mu_j \varphi(b_i, c_j)\\
+&= (\lambda_1, \dots \lambda_n)A \begin{pmatrix}
+\mu_1 \\ \vdots \\ \mu_m
+\end{pmatrix}
+\end{align*}
+
+\subsection{Bem:}
+Falls wir Basen $ \mathcal{B}' $ von $ v $ und $ \mathcal{C}' $ von $ W $ gewählt hätten, dann ist die Darstellungsmatrix von $ \varphi $
+$$\mathcal{M}(\mathcal{B},\mathcal{B}')^\top \cdot A \cdot \mathcal{M}(\mathcal{C}, \mathcal{C}')$$
+$$ \begin{pmatrix}
+\lambda_1\\
+\vdots\\
+\lambda_n
+\end{pmatrix} = \mathcal{M}(\mathcal{B},\mathcal{B}') \begin{pmatrix}
+\lambda_1'\\
+\vdots\\
+\lambda_n'
+\end{pmatrix}$$
+$$ \begin{pmatrix}
+\mu_1\\
+\vdots\\
+\mu_n
+\end{pmatrix} = \mathcal{M}(\mathcal{C},\mathcal{C}') \begin{pmatrix}
+\mu_1'\\
+\vdots\\
+\mu_n'
+\end{pmatrix}$$
+$$\begin{pmatrix}
+\lambda_1 & \dots & \lambda_n
+\end{pmatrix} = \begin{pmatrix}
+\lambda_1' & \dots \lambda_n'
+\end{pmatrix} \mathcal{M}(\mathcal{B},\mathcal{B}')^\top$$
+
+\paragraph{Folgerung}
+Der Rang hängt nicht von der Auswahl der Basen ab $\Rightarrow$ Rg$(\varphi)$ ist \underline{wohldefiniert.}
+
+\subsection{Def:}
+Ein Tripel $(V,W,\varphi)$ ist ein duales Paar, falls dim $V =$ dim $W < \infty $
+$$\varphi: V \times W \to K \tx{ ist bilinear und Rg}(\varphi) = \dim (V) = \dim (W)$$
+
+
+\subsection*{Bem:} Falls $ \varphi: V \times W \to K $ bilinear ist, dann ist $ \varphi': W \times V \mapsto K \quad (w,v) \mapsto \varphi(v,w)$ auch bilinear.
+\subsection*{Aufgabe:}
+$ (V,W,\varphi) $ duales Paar $ \Rightarrow (W,V,\varphi') $ auch!
+\subsection{Lemma:} $ V,W $ fest
+\begin{center}
+	\begin{tabular}{cccc}
+		$ \ub{\{\varphi: V\times W \to K \}}_{\tx{bilinear}} $ & $ \buildrel \tx{Bijektion} \Phi \over \longleftrightarrow$ & $ \ub{\{F: V \to W^*\}}_{\tx{linear}} $ & $  $\\
+		\\
+		$ \varphi: V \times W \to K $ & $ \buildrel \Phi \over \longmapsto $ & $ F_\varphi V \to W^* $ & $  $\\
+		$  $ & $  $ & $ v \mapsto F_\varphi (v) : $ & $ W \to K $\\
+		$  $ & $  $ & $  $ & $ w \mapsto \varphi(v,w) $\\
+		$ \varphi_F : V \times W \to K $ & $ \buildrel \Phi ^{-1} \over{\reflectbox{$\longmapsto$}}$ & $ F: V \to W^* $ & $  $\\
+		$ (v,w) \mapsto F(v)(w) $ & $  $ & $  $ & $  $\\
+	\end{tabular}
+\end{center}
+Ferner, falls $ \dim V, \dim W < \infty $:\\
+$$ (V;W;\varphi) \tx{ duales Paar } \quad \Leftrightarrow \quad F_\varphi : V \to W^* \tx{ Isomorphismus}$$
+% its the final tafel:
+$$\Phi^{-1} \circ \Phi (\varphi)(v,w)$$
+$$\Phi^{-1}\bigg(F_\varphi(v):w\mapsto\varphi(v,w)\bigg) = \varphi(v,w)$$   
+
+
+%%% this is the newest shit
+\subsection{Wiederholung}
+$$\varphi: V \times W \to K \tx{ Bilinearform}$$
+$$\mathcal B = \{b_1 \dots b_n\} \tx{ von V}$$
+$$\mathcal C = \{c_1 \dots c_m\} \tx{ von W}$$
+$$\varphi \tx{ hat eine Darstellungsmatrix}$$
+$$A_\varphi = 
+\begin{pmatrix}
+\varphi(b_1, c_1) & \dots & \varphi(b_1, c_m) \\
+\vdots & & \vdots \\
+\varphi(b_n, c_1) & \dots & \varphi(b_n, c_m)	
+\end{pmatrix}$$
+$$\varphi \bigg( \sum \lambda_i b_i, \sum \mu_j \epsilon_j \bigg) = (\lambda_1 \dots \lambda_n) A_\varphi \begin{pmatrix} c_1 \\ \dots \\ c_m \end{pmatrix}$$
+$$\tx{Rg}(\varphi) \tx{ ist eindeutig bestimmt.}$$
+$$(V, W, \varphi) \tx{ ist ein duales Paar, falls } \equalto{\tx{dim } V}{\tx{Rg}(\varphi)} = \tx{ dim } W < \infty$$
+$$ \varphi: V \times W \to K \tx{ duales Paar}$$
+$$\rightarrow \varphi' = W \times V \to K,\ (w,v) \mapsto \varphi(v,w) \tx{ \underline{dual}}$$
+\subsection{Bew:}
+$ \Phi $ ist Wohldefiniert\\
+$ F_\varphi (v) \in W^* $, weil $ \varphi(v,???-) $ linear in der Koordinate ist $ F_\varphi $ ist linear weil $ \varphi $ linear in der ersten Koordinate ist (da es Wohldefiniert ist)
+$$\Phi^{-1} \circ \Phi = Id_\chi$$
+$$\Phi \circ \Phi^{-1} = Id_y$$
+Falls $V,W$ endlich dimensional sind, mit Basen $\mathcal{B} = \{b_1 \dots b_n\}$,\\ $\mathcal{C} = \{c_1 \dots c_m\}$, $A_\varphi$ die Darstellungsmatrix von $\varphi$ bzg. dieser \underline{\underline{Basen}}
+$$A_\varphi = \equalto{(a_{ij})}{\varphi(b_i, c_j)}$$
+Sei $\mathcal C^* = \{c_1^* \dots c_m^*\}$ die duale Basis zu $C$ in $W^*$ 
+$$c_i^*(c_j) = \delta_{ij}$$
+Die Darstellungsmatrix von
+$$F_\varphi \tx{ bzg. } \mathcal B, \mathcal C^*$$
+$$(\lambda_{kl}) \in \mathcal M_{m \times n}(K)$$
+$$F_\varphi (b_k) = \sum \lambda_{lk} c^*_l$$
+$$\equalto{F_\varphi (b_k) (c_r)}{(\sum \lambda_{lk}c_l^*)(c_r)} = \varphi (b_k, c_r)$$
+$$= \sum \lambda_{lk}c_l^*(c_r) = \lambda_{rk}$$
+$$\begin{pmatrix}
+\lambda_{11} & \lambda_{12} & \dots \\
+\lambda_{21} & \ddots & \\
+\vdots & & 
+\end{pmatrix} = A_\varphi^\top$$
+Wobei $\lambda_{12} = \varphi(b_2, c_1) = a_{21}$, und $\lambda_{21} = a_{12}$
+$$\tx{Rg}(A_\varphi^\top) = \tx{Rg}(A_\varphi)$$
+$$(V,W,\varphi) \tx{ ist ein duales Paar} \Leftrightarrow \dim V = \equalto{\dim W}{\dim W^*} = \equalto{\tx{Rg}(A_\varphi)}{\tx{Rg}(A_\varphi^\top)}$$ 
+$$\Leftrightarrow F_\varphi \tx{ Isomorphismus.}$$
+\subsection{Kor:}
+Seien $V,W$ endlich dimensional, $\varphi:V \times W \to K$ Bilinearform. Dann ist $(V,W,\varphi)$ duales Paar, genau dann wenn $\varphi$ \underline{nicht-ausgeartet} ist d.h.
+\begin{align*}
+&a) \forall v \in V:\ \varphi(v,w) = 0\ \forall w \in W \Rightarrow v = 0 \\
+&b) \forall w \in W:\ \varphi(v,w) = 0\ \forall v \in V \Rightarrow w = 0
+\end{align*}
+\subsection{Bew:}
+$\boxed{\Rightarrow}$
+\begin{itemize}
+	\item[a)] Sei $  v\in V $ fest $ \varphi(v,w) = 0 \qquad \forall w \in W $\\
+	$ \varphi (v,w) = F _{\varphi} (v)(w) \Rightarrow F_{\varphi} (v) = 0  \tx{ als Abbildung} \Rightarrow v = 0$\\
+	$ (V,W,\varphi) \tx{ duales Paar } \Rightarrow F_{\varphi} \tx{ Isomorphismus } $
+	\item[b)] $ (V,W,\varphi) $ duales Paar $ \Rightarrow (W,V,\varphi') $ auch dual $ \Rightarrow F_{\varphi'}: W \to V^* $ Isomorphismus\\
+	$ v\in V , \varphi(v,w) = 0 \quad \forall v \in V $\\
+	$ \varphi(v,w) = 0 \ \ = \varphi'(w,v) = F_{\varphi'} (w)(v) \ \ \Rightarrow F_{\varphi}(w) = 0 \Rightarrow w = 0 $
+\end{itemize}
+$ \boxed{\Leftarrow} $ Es genügt zu zeigen, dass $ F_{\varphi}: V \to W^* $ Isomorph ist: \\
+Eigenschaft:
+\begin{itemize}
+	\item[a)] $ \Rightarrow F_{\varphi} $ Isomorph (bijektiv)\\
+	$ \Rightarrow \dim V \le \dim W^ = \dim W $\\
+	es genügt zu zeigen, dass $ \dim V = \dim W^* $ (da $ F_{\varphi} $ injektiv)  und, dass daraus folgt: $ (W,V,\varphi') \quad  (\varphi' = \tx{ bilinearform } ) $
+	\item[b)] $ \Rightarrow F_{\varphi'}: W \to V^* $ injektiv $ \Rightarrow \dim W = \dim V^* = \dim V $\\
+	$ \Rightarrow \dim V = \dim W $
+\end{itemize}
+\begin{flushright}
+	$ \square $
+\end{flushright}
+
+\paragraph{Beispiel:}
+$$(\mathbb R^2, <, > )$$
+$$<x_1 \dots x_n, y_1 \dots y_n> = \sum_{i=1}^n x_i y_i \in \mathbb R.$$
+$$<(x_1 \dots x_n), (1, 0 \dots 0)> = x_1 = 0$$
+
+\subsection{Kor:}
+Sei $(V,W,\varphi)$ ein duales Paar. Für jede Basis $\{c_1 \dots c_n\}$ aus $W$ gibt es eine Basis $\{b_1 \dots b_n\}$ aus $V$, welche ,,dual`` zu $\{c_1 \dots c_n\}$ ist:
+$$\varphi(b_i, c_j) = \delta_{ij}$$
+
+\Bew{
+	Für $\{c_1 \dots c_n\}$ aus $W$ eine Basis.
+	Sei $\{c_1^* \dots c_n^*\}$ die duale Basis aus $W^*$
+	$$F_\varphi: V \to W^* \tx{ Iso}$$
+	Sei $b_i = F_\varphi^{-1}(c_i^*),\ \{b_1 \dots b_n\}$ ist eine duale Basis von $V$
+	$$\varphi(b_i, c_j) = \equalto{\underbracket{F_\varphi(b_i)}}{c_i^*}(c_j) = \delta_{ij}$$
+}
+
+\subsection{Def:}
+Sei $(V,W,\varphi)$ ein duales Paar. $U \subset V$ Unterraum von $V$.\\
+Definiere $$U^\perp = \{w \in W \ |\  \varphi (u,w) = 0\ \forall u \in U \}$$
+\subsection*{Bem:}
+$U^\perp$ ist ein Unterraum von $W$.
+$$(0)^\perp = W$$
+$$V^\perp = \{0\}, \tx{ weil $\varphi$ nicht-ausgeartet ist!}$$
+$$U \subset V$$
+$$\equalto{(U^\perp)^\perp}{U} = \{v \in V \ | \  \forall w \in U^\perp\ \varphi(v,w) = 0 \}$$
+\Bew{
+	$$U\subset (U^\perp)^\perp$$
+	$$u \in U \Rightarrow  u \in (U^\perp)^\perp \Rightarrow \forall w \in U^\perp,\ \varphi(u,w) = 0$$
+	Sei $v \notin U.$\\
+	z.zeigen: $v \notin (U^\perp)^\perp$\\
+	Es gibt $G: V \to K$ derart, $G\upharpoonright U = 0,\ G(v) = 1$
+	$$G \in V^* \simeq W\ F_{\varphi'} \tx{ (Isomorphismus)}$$
+	$$\Rightarrow \exists w \in W\ F_{\varphi'}(w) = G$$
+	D.h. $\forall z \in V\ G (z) = \varphi' (w,z) = \varphi(z,w)$\\
+	$u \in U$\\
+	$ 0 = G(u) = \varphi(u,w) \rightarrow w \in U^\perp $\\
+	$ 1 = G(u) = \varphi(u,w) \rightarrow u \notin (U^\perp)^\perp $
+}
+\subsection{Lemma:}
+Se $ (v,w,\varphi) $ ein duales Paar $ U\subset V $ ein UVR\\
+Dann ist $ (V/U, U^\perp, \tilde{\varphi}) $ duales Paar, wobei $ \tilde{\varphi}(v+u,w) = \varphi(u,w) $\\
+Insbesondere gilt $$ \dim V = \dim U + \dim U^\perp $$
+\subsection*{Bew:}
+Übungsaufgabe
+$$ (V/U,U^\perp,\varphi^\perp) \quad \tx{ ein duales Paar}$$
+$$ \Downarrow$$
+$$ \ub{\dim V/U}_{\dim V \  -\  \dim U} = \dim U^\perp $$
+
+% neue Vorlesung 14.06.18
+
+\subsection{wiederholung}
+$$V, W \tx{ endlich, } (V,W,\varphi) \tx{ duales Paar }$$ 
+$$\Leftrightarrow \dim V = \dim W = \tx{Rg}(\varphi)$$  
+$$\Leftrightarrow F_\varphi: V \to W^* \tx{ Isom.}$$
+$$v \mapsto F_\varphi(v),\ W \to K,\ w \mapsto \varphi(v,w)$$
+$$\Leftrightarrow \varphi \tx{ nicht-ausgeartet ist: } \varphi(v,-): W \to K \tx{ die Null Abbildung} \Rightarrow v = 0$$
+$$\varphi(-,w): V \to K  \tx{ die Null Abbildung} \Rightarrow w = 0$$
+$$U \subset V\ \tx{UR},\ U^\perp = \{w \in W \setminus \varphi(u,w) = 0\}\ \tx{UR}$$
+$$\rightarrow(U^\perp)^\perp = U \rightarrow \dim V = \dim U + \dim U^\perp$$
+$$\mathcal B = \{b1 \dots b_n\}\tx{ Basis von V}$$
+$$\tx{ist dual zu der Basis von W }\{c1 \dots c_n\} \tx{ falls } \varphi(b_i,c_j) = \delta_{ij}$$
+\subsection{Def:}
+Sei $(V,W,\varphi)$ duales Paar und $G:W \to W$ Endomorphismus.\\
+Der adjungierte Endomorphismus $G^\top: V \to V$ wird definiert als $$G\top:F^{-1} \circ G^* \circ F_\varphi$$
+\begin{center}
+	\begin{tikzcd}
+		V & \arrow{l}[swap]{F_{\varphi}^{-1}}  W^* & W \arrow{d}{G}\\
+		V \arrow[mapsto]{u}{G^\top} \arrow{r}[swap]{F_{\varphi}}& W^* \arrow{u}{G^*} & W
+	\end{tikzcd}
+\end{center}
+$ G^*(\Phi) = \Phi \circ G \qquad \Phi \circ ??? G (oder w ) \to K $
+\subsection*{Bem:}
+$G^*$ ist eindeutig bestimmt durch die Gleichung 
+$$\varphi(G^\top(v),w) \buildrel (*) \over = \varphi(v,G(w))\qquad \ \forall v \in V,\ \forall w \in W$$
+\Bew{
+	Eindeutigkeit. Falls $G:V\to V$ die selbe Eigenschaft erfüllt
+	$$ \begin{array}{ccccc}
+	\varphi(G_1(v) - G^* (v),w) = & \varphi(G(v),w) & - & \varphi (G^\top (v),w) \\
+	& \verteq & &  \verteq \\
+	& \varphi(v, G(w)) & - & \varphi(v,G(w)) & = 0
+	\end{array}$$
+	$\Rightarrow G_1(v) = G_1^\top \Rightarrow G_1=G^\top\ \forall v \in V,\ \forall w \in W\ \varphi$ nicht-ausgeartet 
+	\paragraph{zu Zeigen:} $G^\top$ die Eigenschaft $(x)$ besitzt.\\
+	Seien \underline{$v \in V,\ w \in W$} 
+	$$\varphi(v,G(w)) = F_\varphi(v)(G(w))$$
+	$$\varphi(v,G(w)) = \underbracket{\overbrace{F_\varphi(v)}^{\in W^*} \circ G}_{G^*(F\varphi(v))}(w)$$
+	$$ \begin{array}{lc}
+	G^\top(v)  = v_1 \\
+	\ \ \verteq & \Leftrightarrow G^* \circ F_\varphi(v) = F_\varphi(w)\\
+	F^{-1}_{\varphi}\circ G^* \circ F_\varphi(v)
+	\end{array}$$
+	$\rightarrow \forall w \in W:$
+	$$\begin{array}{ccc}
+	F_\varphi(v_1)(w) & = & \equaltoup{\varphi(v_1,w)}{\varphi(G^*(v),w)}\\
+	\verteq \\
+	\underbrace{G^* \circ F_\varphi(v)(w)}_{\in W^*} & = & \underline{\varphi(v,G(w))}
+	\end{array}$$
+}
+
+\section{Euklidische Räume}
+\subsection{Def:}
+Eine Bilinearform $ \varphi: V \times V \to K$ ist symmetrisch, falls $ \varphi = \varphi' $ 
+$$ \Leftrightarrow \forall u,v \in V : \varphi(u,v) = \varphi(v,u) $$
+\subsection*{Bem:}
+Seien $ \mathcal{B},\mathcal{C} $ Basen von V und A die Darstellungsmatrix vo $ \varphi $ bzgl. $ \mathcal{B},\mathcal{C} $.
+$$ \varphi \tx{ symmetrisch } \Leftrightarrow A = A^\top = (\varphi(b_i,c_j))$$
+\subsection{Bew:}
+$\boxed{\Rightarrow}$ Siehe \underline{Übungsblatt}\\
+$\boxed{\Leftarrow}$\\
+\begin{align*}
+\varphi(u,v) & = u^\top \cdot A \cdot v \\
+& = (A^\top \cdot u)^\top \cdot v\\
+& = v^\top \cdot \bigg( ( A^\top \cdot u)^\top \bigg)^\top\\
+& = v^\top \cdot \equalto{A^\top}{A} \cdot u \qquad = \varphi(v,u) 
+\end{align*}
+\subsection*{Bem:}
+$ \varphi $ symmetrisch\\
+$ \Rightarrow $ Der Begriff der Orthogonalitt ist wohldefiniert und vor allem symmetrisch
+\begin{center}
+	$\begin{array}{c}
+	u \perp v \Leftrightarrow \varphi(u,v) = 0\\
+	\Updownarrow\\
+	v \perp u \Leftrightarrow \varphi(v,u) = 0
+	\end{array}$
+\end{center}
+\subsubsection{Beispiel}
+$ \mathbb{R}^n $\\
+$$\varphi(\vec{x},\vec{y}) = \sum_{i=1}^{n} x_i y_i \tx{ smmetrisch}$$ 
+$$\varphi(\vec{x},\vec{x}) = \sum_{i=1}^{n} x_i^2 \ge 0$$
+\subsection{Def:}
+Sei $ \varphi: V \times V \to K $ symmetrische Bilinearform.\\
+Die zugehörige quadratische Form:
+\begin{align*}
+g: V &\to K\\
+v &\mapsto \varphi(v,v)
+\end{align*}
+\subsection*{Anmerkung:}
+$ \dim V = n $\\
+Sei $ \mathcal{B} = \{b_1,\dots,b_n\} $ eine Basis $ \rightarrow \varphi $ hat Darstellungsmatrix \underline{\underline{A}} bzgl. $ \mathcal{B} $.
+\begin{align*}
+q(v) & = \varphi(v,v) - \varphi(\sum\lambda_i b_i , \sum \lambda_j b_j)\\
+& = \begin{pmatrix}
+\lambda_1 & \dots & \lambda_n
+\end{pmatrix} \cdot A \cdot \begin{pmatrix}
+\lambda_1\\
+\dots\\
+\lambda_n
+\end{pmatrix}\\
+& = \sum a_{ij} \lambda_i \lambda_j
+\end{align*}
+\subsection*{Folgerung:}
+(char $ K \neq 2 $)\\
+Jede symmetrische Bilinearform ist durch ihre quadratische Form eindeutig \underline{bestimmt}.
+\begin{align*}
+q(u+v) & = \varphi(u+v,u+v)\\
+& = \varphi(u,u) + \varphi(v,u) + \varphi(u,v) + \varphi(v,v)\\
+& = \underbracket{\varphi(u,u)}_{q(u)} + \underbracket{\varphi(v,v)}_{q(v)} + 2 \varphi(u,v)\\
+q(u-v) & = \dots = q(u) + q(v) - 2 \varphi(u,v)
+\end{align*}
+Insb:
+$$ \varphi(u,v) = \frac{q(u+v) - q(u-v)}{4} $$
+
+
+% nach pause
+\subsection{Def:}
+Sei $V$ ein endlich dimensionaler $\mathbb R$-VR. und $ \varphi:V\times V \to \mathbb R$ Symmetrische Bilinearform. Wir sagen,$\varphi$ ist:
+\begin{enumerate}
+	\item positiv semidefinit, falls $\varphi(u, u) \geq 0\ \forall u \in V$
+	\item negativ semidefinit, falls $\varphi(u,u) \leq 0\ \forall u \in V$
+	\item positiv definit, falls $\varphi$ pos. semidefinit ist und $\varphi(v,v) > 0\ \forall v \in V \setminus \{0\}$
+	\item negativ definit, falls $\varphi$ neg. semidefinit ist und $\varphi(v,v) < 0\ \forall v \neq 0$
+	\item indefinit \underline{sonst.}
+\end{enumerate}
+\paragraph{Beispiele:} 
+\begin{enumerate}[(a)]
+	\item Standard Skalarprodukt auf $\mathbb R^n$ ist positiv def.
+	\item $\varphi: \mathbb R^2 \times \mathbb R^2 \to \mathbb R,\ ((x_1,y_1),(x_2,y_2)) \mapsto x_1 y_1$ ist positiv semidefinit aber nicht pos.def. $\varphi ((0,1),(0,1)) = 0$
+	\item $\mathbb R^2 \times \mathbb R^2 \to \mathbb R,\ ((x_1,y_1),(x_2,y_2)) \mapsto x_1y_1  - x_2y_2$ indefinit
+\end{enumerate}
+\subsection*{Bem:}  
+$$\varphi \tx{ ist posit (semi)-def., } -\varphi \tx{ ist neg (semi)-def.}$$
+\subsection{Def:}
+Ein Skalarprodukt auf einem endlichdimensionalen $ \mathbb{R} $-VR V ist eine positiv definite symmetrische Bilinearform: $ \varphi(u,v) \buildrel \tx{bijektion ???} \over \longrightarrow <u,v> $
+\subsection{Def:}
+$ (V,<,>) $ ist ein euklidischer Raum, wenn V ein $ \mathbb{R} $-VR endlichdimensional  und $ <,> $ ein Skalarprodukt ist.
+\subsection{Def: Norm}
+Eine Norm auf einem $\mathbb R$-VR $V$ ist eine Abbildung $||\cdot||: V \to \mathbb R$ derart, dass:
+\begin{enumerate}
+	\item $||v|| \geq 0,\ = 0 \Leftrightarrow v = 0$
+	\item $||\lambda \cdot v|| = |\lambda|\ ||v||$
+	\item Dreiecksungleichung $||u + v|| \leq ||u|| + ||v||$
+\end{enumerate}
+$(V, || \cdot ||)$ ein normierter $\mathbb R$-VR \underline{ist}
+\paragraph{Beispiele:} $\mathbb R^n$
+\begin{enumerate}[(a)]
+	\item Euklidische Norm $||\vec{x}|| = \sqrt{x_1^2+ \dots + x_n^2}$
+	\item $||\vec{x}||_{\infty \downarrow} = \sum |x_i|$
+	\item $||\vec{x}||_{\infty \geq} = \underbrace{\tx{max}}_{1 \leq i \leq n}\ |x_i|$
+\end{enumerate}
+\subsection{Def:}
+Sei $(V,<,>)$ ein euklidischer Raum und definiere $||\ ||: V \to \mathbb R,\\v \mapsto \sqrt{<v,v>}$ wohldefiniert. Wir wollen Zeigen, dass es eine Norm auf $V$ \underline{induziert}.
+\subsection{Lemma}
+(Cauchy-Schwarzsche-Ungleichung)
+$$\forall v, w \in V$$
+$$|<v,w>| \leq ||v|| \cdot ||w||$$
+\Bew{
+	Falls $w=0 \rightarrow$ ok!\\
+	OBdA ist $ w \neq 0 \rightarrow ||w||>0 $\\
+	Sei $  \lambda \in \mathbb{R} $ beliebig \\
+	$$ 0 \le < v- \lambda w , v - \lambda w > = ||v||^2+ \lambda^2 ||w||^2 - 2 \lambda <v,w> $$\\
+	Insb:
+	$$ 2 \lambda <v,w> \le ||v||^2 + \lambda^2 ||w||^2 $$\\
+	Falls $$ \lambda = \frac{<v,w>}{\ub{||w||^2}_{\neq 0}} \in \mathbb{R} $$
+	$$ 2 \frac{<v,w>^2}{||w||^2} \le ||v||^2 + \frac{<v,w>^2}{||w||^2} \Rightarrow \frac{<v,w>^2}{||w||^2} \le ||v||^2 $$
+	$$ \rightarrow <v,w>^2 \le ||v||^2 \cdot ||w||^2$$
+	$$ \rightarrow |<v,w>| \le ||v|| \cdot ||w|| $$
+}
+\subsection{Folgerung:}
+$ (V,<,>) $ euklidischer Raum\\
+\begin{align*}
+||\cdot ||: V & \to \mathbb{R}\\
+v & \mapsto \sqrt{<v,w>}
+\end{align*}
+ist eine \underline{\underline{Norm}}.
+\subsection{Bew:}
+\begin{enumerate}[1)]
+	\item klar
+	\item $ ||\lambda \cdot v || = \sqrt{< \lambda v,  \lambda v>} = \sqrt{\lambda^2 <v,v>} = |\lambda| \sqrt{<v,v>} = |\lambda| \cdot ||v|| $
+	\item Es genügt zu zeigen, dass $ ||u+v||^2 \le (||u|| + ||v||)^2 $\\
+	\begin{align*}
+	||u+v||^2 & = < u+v, u+v>\\
+	& = < u,u> + <v,v> + 2 <u,v>\\
+	& = ||u||^2 + ||v||^2 + 2 ||u||\, ||v||\\
+	& = (||u|| + ||v||)^2
+	\end{align*}
+\end{enumerate}
+\subsection{Def:}
+$ (V,<,>) $ euklidischer Raum
+$$ -1 \le \equalto{\ub{ \frac{<u,v>}{||u||\, ||v||} }}{\cos \theta} \le 1$$
+$ \theta \in [0,\pi] $ eindeutig \underline{bestimmt}.\\
+$ \theta $ ist der Winkel zwischen $ u $ und $ v $
+\subsection*{Bem:}
+$ u \perp v \Leftrightarrow <u,v> = 0 \Leftrightarrow \tx{ der Winkel } \frac{\pi}{2} \tx{\underline{ist}} $
+$$ u \uparrow \rightarrow v$$
+
+% neue Vorlesung
+
+\subsection{Wiederholung}
+$ \varphi : V \times V \to K $
+symmetrisch gdw $ \varphi(u,v) = \varphi(v,u) $\\
+$ \mathcal{B}= \{b_1,\dots, b_n\} $ eine Basis von V \\
+$A = (\varphi(b_i,b_j)) $ Darstellungsmatrix von $ \varphi $\\
+$ \varphi $ symmetrisch $ \Leftrightarrow  A = A^\top$\\
+$ g(v) = g(\sum(\lambda_i b_i)) =\sum a_{ij} \lambda_i \lambda_j $\\
+$ \tx{char } k \neq 2 \rightarrow q $ bestimmt $ \varphi $\\
+$ \varphi(u,v) = \frac{q(u+v) - q(u-v)}{4} $\\
+$ \varphi $ symmetrisch ist positiv definit, falls $ \varphi(u,u) = q(u) \ge 0 \leftarrow \tx{ Körper ist } \mathbb{R} $\\
+$ q(u) = 0 \Rightarrow u = 0 $\\
+Ein Skalarprodukt auf einen $ \mathbb{R} $-VR V ist eine symmetrische positiv definite Bilinearform
+$ \varphi(u,v) \to <u,v> $\\
+$ ||v||=\sqrt{q(v)} = \sqrt{<v,v>}$ Norm. \\
+\begin{enumerate}[1)]
+	\item $ ||v||\ge 0 ( = 0 \Leftrightarrow v = 0) $
+	\item $ ||\lambda v || = | \lambda|\, ||v|| $
+	\item $ ||v+w|| \le ||v|| + ||w|| $
+\end{enumerate}
+Cauchy-Schwarzsche Ungleichung $ |<v,v>| \le ||v|| \cdot ||w|| $
+
+$$-1 < \equalto{\underbracket{\frac{<v,w>}{||v||\ ||w||}}}{ \cos \theta ,\ \theta \in [0, \pi]}<1$$
+$\theta$ ist winkel zwischen $v$ und $w$.
+\begin{trivlist}
+	\item $v \perp w$ (orthagonal) 
+	\item $\Leftrightarrow <v,w> = 0$
+	\item $\Leftrightarrow$ Der Winkel ist $\frac{\pi}{2}$
+\end{trivlist}
+
+\section{Satz (Pythagoras)}
+$$(V, <.>) \tx{ endlichdimensionaler Raum}$$
+$v \perp w \Leftrightarrow ||v + w||^2 = ||v||^2 + ||w||^2$
+%bild
+
+\subsection{Bew:}
+\begin{align*}
+||v+w||^2 &=\  <v+w,v+w> \ \\ 
+&= <v,v>+<w,w> + 2<v,w>\\
+&= ||v||^2 + ||w||^2 + 2 <v,w> \\
+&\tx{mit: } v\perp w \Leftrightarrow <v,w> = 0 \Leftrightarrow \\
+&= ||v||^2 + ||w||^2
+\end{align*}
+\subsection{Def:}
+$ \varphi:V\times V \to K $ symmetrische Bilinearform\\
+Ein orthogonales System bzgl. $ \varphi $ ist eine Kollektion M von Vektoren $ 0 \notin M \ \ u,v \in M \tx{ verschieden } \varphi(u,v) = 0 $\\
+Ein orthonormales System M ist eine Kollektion von Vektoren\\ $ \varphi(u,v) = \casess{0}{v\neq u}{1}{u=v} $
+
+Dementsprechend definieren wir Othogonalbasis und \\ 
+Orthonormalbasis (ONB)
+\paragraph{Beispiel:}
+Standardbasis $\{o_1, \dots o_k \}\ (\mathbb R^n, \underset{\scriptstyle}{<.>)}_{\tx{standard skalarprodukt}}$
+
+\section{Satz}
+(Char$(K) \neq 2$)\\
+\indent Jede Symmetrische Bilinearform $\varphi$ auf einem endlich dimensionalen $K$-VR $V$ läßt sich bei einer geeigneten Basisauswahl durch eine Diagonalmatrix darstellen. Ferner ist $\varphi$ nicht-ausg. $\Leftrightarrow$ kein Eigenwert der Matrix null ist.
+
+\subsection*{Bem:}
+Es genügt zu zeigen, dass $ (V,\varphi) $ eine Basis $ \mathcal{B} = \{b_1,\dots, b_n\} $ besitzt welche aus paarweise orthogonalen Vektoren \underline{besteht}.\\
+Dann ist die Darstellungsmatrix von $ \varphi $ bzgl. $ \{b_1,\dots , b_n\}$
+$$\begin{pmatrix}
+\varphi(b_1,b_1) & 0 & \dots & 0 \\
+0 & \varphi(b_2,b_2) & \dots & 0 \\
+\vdots& \vdots & \ddots & \vdots \\
+0 & 0 &\dots & \varphi(b_n,b_n)
+\end{pmatrix}$$
+Sei $ q: V \to K \ v \mapsto \varphi(u,v) $ die zugehörige quadratische Form\\
+Falls $ q(v) = 0 \ \forall v \in V $\\
+$ \rightarrow \varphi(u,v) = 0 \ \forall u,v \in V $\\
+$ \rightarrow $ Jede Basis von V besteht aus paarweise orthogonalen \underline{Vektoren}.
+
+Sonst, existiert $b_1 \in V\setminus \equalto{g(b_1)}{\varphi(b_1, b_1)} \neq 0, \quad F:V \to K,\ v \mapsto \varphi(v,b_1)$
+$$\custo{\Rightarrow}{\tx{Im}(F)}{\dim \ker (F) = n -1} = K \tx{ als \underline{$K$-VR}}$$
+$$\ker (F) = \{v \in V \setminus \varphi(v_1,b_1=0\} = \{v \in V \setminus v \perp b_1\} = \tx{ Span}(b_1)^\perp$$
+Induktion auf die Dimension von $V \Rightarrow$ Es existiert eine Basis $b_1 \dots b_n$ von $\ker(F)$ welches aus paarweise orthogonal Vektoren besteht.
+
+Die Basis $ \{b_1, \dots , b_n\} $ ist eine orthogonale Basis von \underline{\underline{V}}.\\
+\subsection*{Bem:}
+Die Eigenwerte der Matrix hängen nicht von der Basis \underline{ab}\\
+$ \rightarrow $ Eigenwerte sind $ \equalto{\varphi(b_1,b_1)}{\mu_1} , \dots , \equalto{\varphi(b_n,b_n)}{\mu_n} $
+
+\boxed{\Rightarrow} Angenommen, dass 
+$$\mu_j = \varphi(b_j,b_j) = 0$$
+wäre
+$$\left. \varphi(b_j,b_i) = \right \{ \begin{array}{ll}
+0 \quad i \neq j\\
+0 \quad i   =  j
+\end{array}$$
+$i$ \underline{beliebig}
+$$\varphi(b_j,-):V \to K \tx{ ist die triviale Abbildung } \Rightarrow \tx{ Wid! } b_j \neq 0$$
+\boxed{\Leftarrow} Sei $v \in V\setminus \{0\}$ beliebig.
+\paragraph{Zu Zeigen:} $\varphi (v,-): V \to K$ nicht trivial ist
+$$v = \summ{i=1}{n} \lambda_i b_i \rightarrow \exists i / \lambda_i \neq 0$$
+$$\varphi(v,b_i) = \summ{j=1}{n} \lambda_j \varphi (b_j, b_i) = \overset{\scriptstyle\underset{\mkern4mu\rotatebox{90}{$\,\neq$}}{0}}{\lambda_i} \overset{\scriptstyle\underset{\mkern4mu\rotatebox{90}{$\,\neq$}}{0}}{\varphi(b_i,b_i)} \neq 0$$
+
+
+\subsection{Kor:}
+(char $ k \neq 2 $)\\
+Falls in K jedes Element ein Quadrat ist, dann lässt sich jede symmetrische Bilinearform durch eine Matrix der Form
+$ \begin{pmatrix}
+1 \\
+& \ddots \\
+& & 1 \\
+& & & 0 \\
+& & & & \ddots \\
+& & & & & 0
+\end{pmatrix} $ darstellen.
+
+\subsection{Bew:}
+Es existiert eine Orthogonalbasis  $ \{b_1,\dots , b_n\} $ für $ \varphi:V \times V \to K $.
+$$c_i = \casess{\frac{b_i}{\sqrt{\varphi(b_i,b_i)}}}{\varphi(b_i,b_i) \neq 0}{\quad \ b_i}{\quad \tx{sonst.}}$$
+$ \{c_1,\dots , c_n \} $ ist immer noch eine Basis.\\
+
+
+OBdA können wir annehmen, dass $ c_1,\dots,c_n $ ist so umgeordnet, dass
+\begin{align*}
+\varphi(c_i,c_i) &= 1  \qquad i \le k\\
+\varphi(c_j,c_j) &= 0  \qquad j > k
+\end{align*}
+Darstellungsmatrix von $ \varphi $ bzgl. $ \{c_1,\dots , c_n\} $
+$$ \begin{pmatrix}
+1 & & & & & 0\\
+& \ddots\\
+& & 1\\
+& & & 0\\
+& & & & \ddots\\
+0 & & & & & 0
+\end{pmatrix} \begin{array}{l}
+\\
+\Bigg\} k \tx{ mal}\\
+\\
+\bigg\} n-k \tx{ mal}\\
+\\
+\end{array}$$
+
+\section{Kor: (Sylvester)}
+Jede Symm. Bilinearform $\varphi$ auf einem endlich dimensionalen $\mathbb R$-VR läßt sich bei geeigneter Basisauswahl durch eine Matrix der form \begin{center}
+	\begin{tikzpicture}
+	\matrix[matrix of math nodes,
+	left delimiter=(,
+	right delimiter=),
+	nodes in empty cells] (m)
+	{
+		1 	&	&	&	&	&	&	&	& \\
+		p =\quad & \ddots &	&	&	&	&	&	& \\
+		&	& 1 &	&	&	&	&	& \\
+		&	&	&	&	&	&	&	& \\
+		&	&	& -1\ &	&	&	&	& \\
+		&	& q = & & \ddots &	&	&	& \\
+		&	&	&	&	& -1\ &	&	& \\
+		&	&	&	&	&	&	&	& \\
+		&	&	&	&	&	& 0\quad &	& \\
+		&	&	&	&	&r =& 	& \ddots \quad & \\
+		&	&	&	&	&	&	&   & 0 \ \\
+	};
+	\draw (m-1-1.north west) -- (m-1-1.south west) -- (m-3-3.south west) -- (m-3-3.south east);
+	\draw (m-5-4.north west) -- (m-5-4.south west) -- (m-7-6.south west) -- (m-7-6.south east);
+	\draw (m-9-7.north west) -- (m-9-7.south west) -- (m-11-9.south west) -- (m-11-9.south east);
+	\end{tikzpicture}
+\end{center}
+darstellen.
+Ferner hängen die Zahlen $p,g$ und $r$ nur bon $\varphi$ ab.
+\Bew{Sei $\{b_1 \dots b_n\}$ eine Orthogonalbasis für $\varphi$
+	$$ c := \left \{ 
+	\begin{array}{ll}
+	\frac{b_1}{\sqrt{\varphi(b_i,b_i)}} & \tx{falls } \varphi(b_i,b,i) > 0\\[15pt]
+	\frac{b_i}{\sqrt{-\varphi(b_i,b_i)}} & \tx{falls } \varphi(b_i,b_i) < 0\\[15pt]
+	b_i & \tx{\underline{sonst}}
+	\end{array}\right.$$
+	
+	Nach Umordnen der Darstellungsmatrix  
+	$$\begin{pmatrix}
+	1\\
+	& \ddots\\
+	& & 1\\
+	& & &1\\
+	& & & & \ddots\\
+	& & & & & 1\\
+	& & & & & & 0\\
+	& & & & & & & \ddots\\
+	& & & & & & & & 0
+	\end{pmatrix} \begin{array}{ll}
+	\\
+	\bigg\} p\\
+	\\
+	\\
+	\bigg\} q\\
+	\\
+	\\
+	\bigg\} r\\
+	\\
+	\end{array}$$}
+
+\subsection*{Bem:}
+$ \varphi \upharpoonright \tx{Span}(c_1,\dots,c_p) \times \tx{Span}(c_1,\dots,c_p) $ ist positiv definit.
+
+\subsection{Bew: falsch:}
+$$\varphi\bigg( \sum_{i=1}^{p} \lambda_i c_i \sum_{i=1}^{p} \lambda_i c_i\bigg) = \sum_{i,j} \lambda_i \lambda_j \varphi(c_i,c_j) = \sum_{i=1}^{p} \lambda_i^2$$
+Sei $ U\subset V $ der größte UR von V derart, dass $ \varphi \upharpoonright U \times U $ positiv definit ist.\\
+$ \spa(c_1,\dots,c_p) \subset U $\\
+zu zeigen $ \boxed{p = \dim U} \ \ \checkmark$ \\
+Sonst $ U \cap \spa (c_{p+1}, \dots , c_n) \neq 0  $\\
+Sei $$ 0 \neq  v \in U \cap \spa (c_{p+1},\dots , c_n) \quad v = \sum_{i=p+1}^{n} \lambda_i c_i$$
+da $ v \in U \varphi\upharpoonright _{U\times U} $ positiv definit
+$$ 0 \le \varphi(v,v) = \sum_{i=p+1}^{n} \lambda_i^2 \ob{\varphi(c_i,c_i)}^{\le 0} \le 0$$
+$ \Rightarrow v = 0 \rightarrow $ \underline{Wid}.\\
+$ g,r $ \underline{bestimmen}\\
+$ \tx{Rg}(\varphi) = \underline{p} + q  \ \rightarrow $ ist eindeutig \underline{bestimmt}\\
+$ r = n - \tx{Rg}(\varphi) \rightarrow $ eindeutig \underline{bestimmt}
+
+\subsection{Def:}
+Signatur $ (\varphi) = \underline{\underline{q-p}} $
+
+% neun Vorlesung
+
+%\begin{center}
+%\begin{tabular}{|c|c|c|}
+%	\hline
+%	P I & & P II\\
+%	\hline
+%	Hohes Tempo& &Mündliche Prüfung \\
+%	\hline	
+%\end{tabular}
+%\end{center}
+
+\subsection{Wiederholung}
+$ \varphi: \mathbb{R}^2 \times \mathbb{R}^2 \mapsto \mathbb{R} $\\
+$ ((x_1,y_1), x_2,y_2) ) \mapsto 2 x_1x_2 - y_1 y_2 $\\
+$ \varphi $ ist positiv definit auf $ \spa ((1,0)) \quad \varphi((\lambda,0),(lambda,0)) = 2 \lambda^2 \ge 0$\\
+$ \varphi $ ist positiv definit auf $ \spa((1,1)) \quad \varphi((\lambda,\lambda),(\lambda,\lambda)) = \lambda^2 \ge 0 $\\
+$ \varphi $ ist nicht positiv definit auf $ \spa((1,0)) + \spa((1,1)) = \mathbb{R}^2 \quad \varphi((0,1),(0,1)) = -1 $\\
+
+\subsection{Bew: Kor Sylvester}
+Wir wollen p eindeutig bestimmen.\\
+$ \varphi $ ist positiv definit auf $ \spa(c_1,\dots,c_p) $\\
+Sie $$ h = \tx{max} \{\dim (U) / U \subset V \varphi\upharpoonright U \times U \tx{ pos. definit ist}\} $$
+Sei $$ U \subset V \tx{ UR der Dimension h sodass } \varphi \upharpoonright U \times U \tx{ pos. definit ist.}$$
+Wir zeigen: $ U \cap \spa (c_{p+1},\dots,c_n) = \{0\} $\\
+$$ \rightarrow\quad  \equalto{\dim(U)}{0} + \equaltoup{n - p}{\dim \spa(c_{p+1,\dots,c_n})} = \ub{\dim \ub{U + \spa(c_{p+1},\dots,c_n)}_{\subset V}}_{\le n} $$
+$ \Rightarrow h \le p  $
+
+\chapter{Unitäre Räume}
+\section{Def:} Ein unitärer Raum $V$ ist ein $\mathbb C$-VR zusammen mit einem komplexen Skalarprodukt $\langle\ ,\ \rangle : V \times V \mapsto \mathbb C$ mit folgeneden Eigenschaften
+\begin{enumerate}
+	\item $\langle v,w \rangle = \overline{\langle w,v \rangle},$ wobei $\overline{a+bi}=a-bi$
+	\item $\langle v+ v', w \rangle = \langle v,w \rangle + \langle v',w \rangle$
+	\item $\langle \lambda \cdot v, w \rangle = \lambda \langle v,w \rangle$
+	\item $\langle v,v \rangle \in \mathbb R$ und ferner $\langle v,v \rangle > 0$ für $v \neq 0$ 
+\end{enumerate}
+\paragraph{Beispiel} $\mathbb C^n \qquad \langle \overline x, \overline y \rangle = \summ{i = 1}{n} x_i \overline{y_i}$
+
+\subsection{Bem:}
+Die Abblidung $ \langle\ ,\ \rangle $ ist nicht bilinear sondern \underline{hermitisch sesquilinear}
+$$ \langle v,\lambda w + \mu w'\rangle = \overline{\lambda}\langle v,w \rangle + \overline{\mu} \langle v,w' \rangle$$
+\subsection{Bew:}
+\begin{align*}
+\langle v,\lambda w + \mu w'\rangle &= \langle \overline{\lambda w + \mu w', v} \rangle \\
+&= \overline{\lambda} \langle \overline{w,v}\rangle + \overline{mu}\langle \overline{w',v}\rangle  = \overline{\lambda}\langle v,w \rangle + \overline{mu}\langle v,w'\rangle 
+\end{align*}
+\subsection{Bem:}
+Für einen unitären Raum V ist
+$$ || \ \ ||: V \to \mathbb{R}$$
+$$ \qquad \qquad \qquad \ \ \, v \mapsto \sqrt{<v,v>}$$
+\begin{enumerate}[1)]
+	\item $ ||v|| \ge 0 \quad = 0 \leftrightarrow v = 0 $
+	\item $ || \lambda \cdot v || = | \lambda| \cdot ||v|| \quad \lambda \in \mathbb{C} $
+	\item $ ||v+w|| \le ||v|| + ||w|| $
+\end{enumerate}
+
+\section*{Bem:}
+$(V, \langle\ ,\ \rangle)$ unitärer Raum $v \perp w \Leftrightarrow \langle v,w \rangle = 0$
+$$\left. \begin{array}{l}
+\tx{Orthogonalität} \\ \tx{Orthogonales System} \\ \tx{Orthonormales System} \\ \tx{Orthogonalbasis}
+\end{array} \right  \} \longrightarrow \tx{ Wir können die Begriffe hier \underline{verwenden}.}$$
+\section{Def:} Sei $ ( V, \langle\ ,\ \rangle)$ ein euklidischer oder unitärer Raum. Eine Orthonormalbasis von $V$ ist eine Basis $\mathcal B = \{b_i\}\quad /\quad b_i \perp b_j \quad i \neq j \quad ||b_i|| = 1$
+\section*{Bem:} Jedes orthoganles System ist linear unabhängig.
+\Bew{$$\summ{i=1}{n}\lambda_i b_i = 0$$
+	$$\equalto{\langle \sum \lambda_i b_i, b_j\rangle}{\summ{i=1}{n}\lambda_i \langle b_i, b_j \rangle = \lambda_i \custo{\neq}{\langle b_j,b_j \rangle}{0}} = 0$$}
+\section{Lemma} Sei $(V, \langle\ ,\ \rangle)$ ein euklidischer oder unitärer Raum und $\{b_1, \dots b_n \}$ eine ONB. Dann
+\begin{enumerate}
+	\item $$\forall v \in V \qquad v = \summ{i=1}{n} \langle v,b_i \rangle b_i$$
+	\item $$\begin{array}{c} v = \sum \lambda_i b_i \\ w = \sum \mu_i b_i \end{array} \Rightarrow \langle v,w \rangle = \sum \lambda_i \overline{\mu_i}$$
+	\item $ F: V \to V $ Endomorphismus. Dann ist die Darstellungsmatrix $ A $ von $ F $ bzgl. $ \{b_1, \dots , b_n\} $ gegeben durch $ a_{ij} = \langle F(b_j),b_i \rangle $
+\end{enumerate}
+
+\subsection{Bew:}
+\begin{enumerate}[1)]
+	\item $ v = \sum\limits_{i=1}^{n} \lambda_i b_i \qquad \langle v_i,b_j \rangle = \equalto{\ub{\sum\limits_{i=1}^{n} \lambda_i \langle b_i, b_j \rangle }}{\lambda_j} $
+	\item $ \langle \sum \lambda_i b_i, \sum \mu_j b_j \rangle = \sum_{i,j} \lambda_i \overline{\mu}_j \equaltoup{\overbrace{\langle b_i,b_j \rangle}}{\delta_{ij}} = \sum \lambda_i \overline{\mu}_i $
+	\item  $ A = (\ub{a_{ij}}_{F(b_1) \dots F(b_n)}) $ $ a_{ij} $ ist die Koordinate von $ F(b_j) $ bzgl. $ b_i $\\
+	$ \Downarrow $ 1)\\
+	$ a_{ij} = \langle F(b_j),b_i \rangle $
+\end{enumerate}
+\subsection{Satz: (Geom-Schmidtsches Orthonormalisierungsverfahren)}
+Sei V ein euklidischer oder unitärer Raum. Gegeben $ \{v_1,\dots , v_n \} $ lin. unabh. dann gibt es ein orthonormalsystem $ \{e_1,\dots , e_n \} $ derart, dass
+$$\spa(v_1,\dots,v_n) = \spa(e_1,\dots,e_n)$$
+Insb., falls V endlichdim ist, besitzt V eine ONB.
+
+\Bew{Zwei Schritte: \begin{itemize}
+		\item Aus $v_1 \dots v_n$ konstruieren wir eine Basis welche aus orthogonalen Vektoren besteht
+		\item Dann normalisieren: $e_1 \dots e_n$ werden rekursiv definiert
+		$$e_1' = v_1 \buildrel{v_1 \neq 0}\over{\longrightarrow} e_1 = \frac{e_1'}{||e_1'||}$$
+	\end{itemize}
+	Angenommen $e_1 \dots e_n$ wurden konstruiert, so dass $e_i \perp e_j \quad i \neq j \quad ||e_1'|| = 1$ und $\spa (e_1 \dots e_n) = \spa (v_1 \dots v_n)$ Wir wollen
+	$$e_{k+1} = v_{k +1} - \summ{i=1}{k} \langle v_{k+1}, e_i \rangle e_i$$
+	$e_{k+1}' \neq 0 \rightarrow$ sonst ist $v_{k+1} \in \spa (e_1, \dots, e_n) = \spa (v_1, \dots, v_n)$ Wid!}
+
+Setze 
+$$ e_{k+1} = \frac{e_{k+1}'}{||e'_{k+1}||}$$
+zu zeigen:
+$$e_{k+1} \perp e_{j_{j \le k}} :$$
+
+\begin{align*}
+< e_{k+1},e_j> &= \frac{1}{||e'_{k+1}||} < v_{k+1} - \sum_{i=1}^{k}< v_{k+1} , e_i > ,e_j>\\
+&=\frac{1}{||e'_{k+1}||} \bigg( <v_{k+1},e_j> - \underbracket{\sum_{i=1}^{k} <v_{k+1},e_i> < e_i,e_j>  }_{<v_{k+1},e_j>} \bigg) = 0 \ \checkmark
+\end{align*}
+
+$$\spa (e_1 \dots e_{k + 1} = \spa (v_1 \dots v_{k + 1})$$
+$$e_{k + 1} \in \spa ( v_{k + 1}, e_1 \dots e_k) = \spa(v_{k+1},v_1 \dots v_k)$$
+$$v_{k+1} = ||e_{k+1}||\ e_{k+1}+\summ{j=1}{k} \langle v_{k+1}, e_j \rangle \in \spa (e_1 \dots e_{k+1})$$
+
+\subsection{Kor:}
+$ (V,\langle \ ,\ \rangle) $ euklidisch oder unitär endlichdimensional und $ D \subset V $ ein Orthonormalsystem. Dann $ \exists $ ONB $ B \supset D $ 
+\subsection{Bem:}
+Sei $ D = \{v_1,\dots,v_k \} $ und ergänze zu einer Basis $ \{v_1 \dots,v_n \} $ von V. $ \rightarrow $ Konstruiere eine ONB $ \{e_1,\dots,e_n\} $\\
+zu zeigen: $ e_i = v_i \quad i \le k $\\
+$$ e_1 = \frac{v_1}{||v_1|| =1} = v_1 $$
+Annahme $ e_j \equiv v_j \qquad j \le i $\\
+$$ e_{i+j} \frac{e'_{i+1}}{||e'_{i+1}||} = v_{i+1} \qquad e'_{i+1} = v _{i+1} - \sum_{j=1}^{i} \equalto{\underbracket{\langle v_{i+1},e_j \rangle }}{0} \equaltoup{e_j}{v_j}$$ 
+
+% neue Vorlesung
+
+%\subsection{Wiederholung}
+%Unitärer Raum: $ \mathbb{C} $-VR V mit einem komplexen skalarprodukt 1) 2) 3)#
+\subsection{Def:}$ (V,\langle\ ,\ \rangle) $ euklidisch und unitär\\
+Zwei Teilmengen A,B von V sind Orthogonal, $ A \perp B $ falls $ v \perp w \quad \forall v \in A,\  \forall w \in B$
+\subsubsection{Bem:}
+$ A \perp B \Leftrightarrow \spa(A) \perp \spa(B) $\\
+in Blatt 7 Aufgabe 3 schon gezeigt
+\subsection{Def:}
+$ A \subset B $ Teilmenge
+\begin{align*}
+A ^\perp &= \{ v \in V\ |\ \{v\} \perp A\}\\
+&= \{ v \in V\ |\ \forall w \in A \quad v \perp W\}
+\end{align*}
+\subsubsection{Bem:}
+$ A^\perp $ ist ein Unterraum von V
+\subsubsection{Bem:}
+$$ A^\perp = \spa(A)^\perp $$
+\subsection{Bew:}
+$ \boxed{\subset} $\\
+$$ A^\perp \perp A \quad \quad \Downarrow$$
+$$ A^\perp \subset \spa(A)^\perp \Leftarrow A^\perp \perp \spa(A)$$
+$ \boxed{\supset} $\\
+$$ v \in \spa(A)^\perp \Rightarrow \forall w \in \overbrace{\spa(A)}^{\supset A}$$
+$$ v \perp w \Rightarrow \forall w \in A \quad v \perp w $$
+$$ \Rightarrow v \in A^\perp$$
+\subsection{Satz:}
+Sei $ (V,\langle\ ,\ \rangle) $ euklidisch oder unitär und $ U \subset V $ endlichdim. UR
+$$ \Rightarrow V = U \oplus U^\perp$$
+\subsection{Bew:}
+$$U \cap U^\perp = \{0\}$$
+$ \langle\ ,\ \rangle $ nicht ausgeartet !\\
+Es genügt zu zeigen, dass $ V = U + U^\perp $\\
+\underline{1. Fall} $ U = \{0\} \rightarrow$ ok! \\
+\underline{2. Fall} $ U \neq \{0\} $\\
+$ \Downarrow U \tx{ endlichdim. Gram-Schmidt} $\\
+$$ \exists \{ b_1,\dots, b_n \} \quad \tx{ ONB von } U$$
+Sei $ v \in V $ beliebig.
+$$ v = \ub{\sum_{i=1}^{k} \langle v, b_i \rangle b_i}_{ \in U } + \bigg( \overbrace{ v - \sum_{i=1}^{k} \langle v, b_i\rangle b_i }^{w} \bigg)$$
+Wir müssen zeigen, dass $ w \in U^\perp $\\[5pt]
+Es genügt, wenn wir zeigen,	dass $  w \perp b_i \quad 1 \le i \le k $
+\begin{align*}
+\langle w, b_i \rangle &= \langle v - \sum_{i=1}^{k} \langle v, b_i \rangle b_i , b_j \rangle\\
+&= \langle v, b_i \rangle - \sum_{i=1}^{k} \overbrace{\langle v , b_i \rangle}^{ \in K } \equalto{\langle b_i,b_j \rangle}{\overbrace{\begin{array}{cc}
+		0 & 1 \\
+		i\neq j & i = j
+		\end{array}}}\\
+&= \langle v,b_i \rangle\qquad  -\qquad  \equaltoup{\langle v,b_j \rangle}{} = 0
+\end{align*}
+\subsection{Lemma:}
+$ (V, \langle\ ,\ \rangle) $ euklidisch oder unitär\\
+$ U \subset V $ endlichdim. UR
+$$ (U^\perp)^\perp = U$$
+\subsection{Bew:}
+$ \boxed{\supset} $\\
+$$ U \perp U^\perp \Rightarrow U \subset (U^\perp)^\perp $$
+$ \boxed{\subset} $\\
+Sei $  v \in (U^\perp)^\perp $\\
+$$ \tx{ mit } V = U \oplus U^\perp \Rightarrow  v = u + w \quad u \in U \quad w \in U^\perp$$
+Es genügt zu zeigen, dass $ w = 0 \Rightarrow v = u \in U $
+$$ w = \ub{v}_{\in (U^\perp)^\perp} - \ub{u}_{\in U \subset (U^\perp)^\perp} \in \ub{(U^\perp)^\perp \cap U^\perp}_{= 0} \Rightarrow \tx{ ok !}$$
+\subsection{Def:}
+Sei $ U \subset V $ UR\\
+Wir definieren die orthogonale Projektion von v auf U als den Vektor $ u \in U $ derart, dass $ v = u+\ub{w}_{\in U^\perp}  $
+\subsubsection{Bem:}
+Falls u existiert $ \Rightarrow $ ist er eindeutig bestimmt.
+$$ \ub{u_2}_{ \in U} + \ub{w_2}_{ \in U^\perp} = v = \ub{u_1}_{\in U} + \ub{w_1}_{\in U^\perp} \ \Rightarrow \ u_1 - u_2 = w_2 - w_1 \in \ub{U \cap U^\perp}_{= \{0\}}$$
+\subsubsection{Bem:}
+Falls $ U \subset V $ endlichdim. $ \Rightarrow $ ist die Projektion auf U wohldefiniert\\
+$ \forall v \in V $ existiert $ Pr|_{u}(v) $ derart, dass $ v = Pr|_{u}(v) + \ub{w}_{\in U^\perp} $
+\subsection{Satz:}
+Sei $ U \subset V $ Unterraum, $ v \in V \ u \in U $\\
+sind folgende Aussagen äquivalent
+\begin{enumerate}[a)]
+	\item $ Pr|_{u}(v) = u $
+	\item $ \forall u_1 \in U \setminus \{0\}  \quad || v - u_1 || > || v - u ||$
+\end{enumerate}
+\subsection{Bew:}
+$\boxed{a) \Rightarrow b)} $ Es kommt.\\
+$\boxed{b) \Rightarrow a)} \quad v = u + (v - u )$\\
+Es genügt zu zeigen, dass $ v-u \in U^\perp $\\
+Sonst, $ \exists u' \in U \ |\ \lambda = \langle v-u, u'\rangle \neq 0 \Rightarrow u' \neq 0 \Rightarrow \tx{ OBdA } ||u'|| = 1 $\\
+Sei $ u + \lambda \cdot u' \in U \setminus \{u\} $\\
+$$ || v-u ||^2 < || \equalto{\ub{v - (u + \lambda u')}}{} ||^2$$ 
+$$ \langle v-u - \lambda u' , v-u - \lambda u' \rangle$$
+$$ = ||v-u||^2 - \underbracket{\lambda \langle u',v-u\rangle}_{= \overline{\lambda}} - \underbracket{\overline{\lambda}\langle v-u,u'\rangle}_{ = \lambda} + \lambda \overline{\lambda} \underbracket{||u'||^2}_{= 1}$$
+$$ = || v-u ||^2 - \underbracket{\lambda \overline{\lambda}}_{||\lambda||^2} - \lambda \overline{\lambda} + \lambda \overline{\lambda} < || v-u ||^2 \quad \tx{Wid !}$$
+\section{Selbsadjungierte Endomorphismen und Hauptachsentransformationen}
+\subsubsection{Bem:}
+Sei $ (V, \langle , \rangle) $ ein endlichsim. euklidischer Raum\\
+$ \rightarrow (V,V,\langle,\rangle)$ ein duales \underline{Paar}.\\
+Sei $ v\in V \quad \langle v, - \rangle : V \to \mathbb{R} $ ist nichttrivial, falls $ v \neq 0 $
+$$ \langle v,v \rangle = ||v||^2 \neq 0\ , \ \tx{ falls } v \neq 0$$
+Falls V endlichdim. unitärer Raum ist, dann ist 
+$$ \langle v,-\rangle : V \to \mathbb{C} \quad \tx{ nichttrivial !!} $$
+$$ \langle v, \lambda w + \mu w' \rangle \neq \lambda \langle v,w \rangle + \mu \langle v, w' \rangle$$
+$$ \tx{aber } = \overline{\lambda} \langle v,w \rangle + \overline{\mu} \langle v, w'\rangle \qquad \quad $$
+\underline{Lösung:}\\
+Wir definieren eine neue Struktur auf V als $ \mathbb{C} $-VR
+$$ \lambda *_{\tx{konj}} \cdot v = \overline{\lambda} \cdot v $$
+Somit ist $ (V,V_{\tx{konj}}, \langle,\rangle) $ ein Duales \underline{Paar} weil 
+$$ \langle v,v \rangle = ||v||^2 \neq 0 \tx{ für } v \neq 0$$
+\underline{Folgerung:}\\
+Sei V endlichdim. unitärer oder euklidischer Raum. Jeder Endomorphismus $ F: V \to V $ besitzt einen adjungierten Endomorphismus $ F^t: V \to V $, sodass $ \forall v,w \in V  $\\
+$$ \langle v, F(w)\rangle = \langle F^t(v) , w \rangle$$
+\underline{Alternative Beschreibung:}\\
+Sei $ \mathcal{B}= \{b_1,\dots , b_n  \} $ eine ONB von V.\\
+Seien $ v,w \in V \rightarrow w = \sum_{i=1}^{n} \equalto{\lambda _i}{\langle w, b_i \rangle} = b_i $
+\begin{align*}
+\langle v, F(w) \rangle &= \langle v , \sum_{i=1}^{n} \langle w, b_i \rangle b_i \rangle\\
+&= \sum_{i=1}^{n} \overline{ \langle w, b_i \rangle } \langle v, F(b_i) \rangle \\
+&= \sum_{i=1}^{n} \langle v, F(b_i) \rangle \langle bi , w \rangle\\
+&= \langle \sum_{i=1}^{n} \langle v, F(b_i)\rangle \cdot b_i , w \rangle = \langle F^t, w \rangle\\
+\end{align*}
+$$ \Rightarrow F^t(v) = \sum_{i=1}^{n} \langle v, F(b_i)\rangle b_i$$
+\subsection{Def:}
+Sei $ K = \mathbb{R}$ oder $\mathbb{C} $\\
+$$ a_{ij} = \mathcal{A} \in \mathcal{M}_{n\times n} (K) $$
+Die adjungierte Matrix $ \mathcal{A}^* $ von $ \mathcal{A} $ ist die Matrix
+$$ \mathcal{A}^* = ( \overline{a_{ji}})$$
+\subsubsection{Bem:}
+$ \mathcal{A} \in \mathcal{M}_{n \times n} (\mathbb{R}) $\\
+$ \mathcal{A}^* = \mathcal{A}^t $\\
+Leicht zu zeigen:\\
+$ (\mathcal A^*)^* = \mathcal A $\\
+$ (\lambda \cdot \mathcal{A})^* = \overline{\lambda} \cdot \mathcal{A}^* $\\
+$ (\mathcal{A} + \mathcal{B})^* = \mathcal{A}^* + \mathcal{B}^* $\\
+$ (\mathcal{A} \cdot \mathcal{B})^* = \mathcal{B}^* \cdot \mathcal{A}^* $
+
+% neue vorlesung
+
+\subsection*{Widerholung:}
+
+$$(V, \langle\ \cdot\ \rangle) \tx{unitärer/euklidischer Raum}$$
+$$A \subset V \tx{teilmenge}$$
+$$A^\perp = \{v \in V\ |\ \forall w \in A\ \langle v,w \langle = 0\}$$
+Unterraum
+$$U \tx{ UR von } V \to U \cap U^\perp =\{0\}$$
+Insbensondere falls $U$ endlich dim. $\Rightarrow V = U \oplus U^\perp$\\
+Orhtogonale Projektion auf $U$ $$Pr|_U : V \to U,\ v \mapsto u\ / v = u + w \in U^\perp$$
+$$\forall u \in U\ u_1 \neq Pr|_U(v) \Leftrightarrow ||v-u_1||> ||v-u||$$
+$$F: \underbrace{V}_{\tx{\underline{endlichdim.}}} \to V \tx{ Endomorphismus,}$$ dann ex. 
+$$F^\top : V \to V \tx{ adjungierter Endomorphismus}$$
+$$\underline{\langle v, F(w) \rangle = \langle F^\top (v) ,w \rangle} \quad \forall v,w \in V$$
+
+\subsection{Def:}
+$ k= \mathbb{R} $ oder $ \mathbb{C} $\\
+$ A = (a_{ij}) \in \mathcal{M}_{n\times n}(K) $\\
+Die adjungierte Matrix $ A^* $ ist $ A^* = (\overline{a_{ji}}) $\\
+$ K = \mathbb{R} \to A^* = A^\top $\\
+$ (A \cdot B)^* = B^* \cdot A^* $\\
+$ (\lambda \cdot A)^* = \overline{\lambda} \cdot A^* $\\
+\subsubsection{Bem:}
+Falls A regulär ist, dann ist $ \det(A^*) = \overline{\det(A)} $ weil $ \overline{a+b} = \overline{a} + \overline{b} \quad \overline{a \cdot b} = \overline{a} \cdot \overline{b} $
+\subsection{Lemma:}
+Sei $ \enph $ eines euklidischen bzw. unitären endlichdim. Raumes V und A die Darstellungsmatrix von F bzgl. der orthonormalen Basis $ \mathcal{B} = \basis{b}{1}{n} $ und $ \mathcal{D} = \basis{d}{1}{n} $\\
+Dann hat $ F^\top: V \to V $ die Darstellungsmatrix $ A^* $ bzgl. $ \mathcal{D} $ und $ \mathcal{B} $.
+\Bew{$$F^\top (d_i) = \summ{j=1}{n} \langle F^\top (d_i), b_j \rangle \cdot b_j$$
+	$$F^\top \to C = (c \cdot j) \quad F^\top (d_j) = \sum c_{ij} b_j \quad \begin{pmatrix}
+	c_{1j} \\ \vdots \\ c_{nj}\end{pmatrix}$$
+	$$A= (c_{ij}) \to F(b_j) = \summ{i = 1}{n} \equalto{a_{ij}}{\langle F(b_j),d_i\rangle} d_i$$
+	$$\overline{a_{ij}} = \langle \overline{F(b_j), d_i} \rangle = \langle d_i, F(b_j) \rangle \buildrel{\tx{Def. von }F^\top} \over = \underline{\langle F^\top (d_i),b_j \rangle} = c_{ji}$$
+}
+\subsection{Def:}
+$ (V,\langle\ ,\ \rangle) $ endlichdim., euklidisch, unitär\\
+$ F:V^\top $ ist \underline{normal}, falls
+$$F \circ F^\top  F^\top \circ F $$ 
+\subsection{Prop:}
+Folgende Aussagen sind Äquivalent:
+\begin{enumerate}[a)]
+	\item $ F:V^\top $ ist normal
+	\item $ \forall v, w \in V \quad \langle F(v) , F(w) \rangle = \langle F^\top(v) , F^\top(w) \rangle $
+\end{enumerate}
+\subsection{Bew:}
+$ \boxed{a) \Rightarrow b)} $\\
+\begin{align*}
+\langle F(v) , F(w) \rangle &\buildrel \tx{Def von }F^\top \over = \langle F^\top(F(v)) , w \rangle \buildrel \tx{Normalität} \over =\\
+&\quad \ \, = \quad \ \, \langle F(F^\top(v)) , w \rangle \\
+&\quad \ \, = \quad \ \, \overline{\langle w , F(F^\top(v)) \rangle}\\
+&\buildrel \tx{Def von } F^\top \over = \overline{\langle F^\top(w) , F^\top(v) \rangle } \\
+&\quad \ \, = \quad \ \, \langle F^\top(v) , F^\top (w)\rangle
+\end{align*}
+$ \boxed{b) \Rightarrow a)} $\\
+Zu Zeigen: $ F \circ F^\top(v) = F^\top \circ F(v)  \quad \forall v \in V $\\
+Oder Äquivalent dazu, dass $$ F \circ F^\top(v) - F^\top \circ F(v) = 0 $$
+\begin{align*}
+\Leftrightarrow \forall w \in V \quad &\langle F \circ F^\top(v) - F^\top \circ F(v) , w \rangle = 0\\
+\Leftrightarrow \qquad\qquad \ \;  &\langle F \circ F^\top (v) , w \rangle = \langle F^\top \circ F(v) , w \rangle
+\end{align*}
+
+$$\begin{array}{ccc}
+\langle F^\top \circ F(v), w \rangle &=& \langle F(v) , F(w) \rangle \\ \rotatebox{90}{$\,=$}& & \rotatebox{90}{$\,=$}\\ \langle F \circ F^\top (v) , w \rangle & & \langle F^top (v) , F^\top (w) \rangle \\ \rotatebox{90}{$\,=$} & & \rotatebox{90}{$\,=$} \\
+\langle \overline{ w, F \circ F^\top (v)}\rangle & = & \langle \overline{F^\top (w), F^\top (v)} \rangle
+\end{array}$$
+
+\subsubsection*{Bem:}  $F: V \to V$ 
+$$\tx{ mit Darstellungsmatrix $A$ bzg. der ONB } \mathcal B =\basis{b}{1}{n} \tx{ von } \underline{V}$$
+$$F^\top : V \to V \tx{ hat Darstellungsmatrix } A^*$$
+
+$$\begin{array}{ccc}
+F^\top \circ F & \to & A^* \cdot A \\ \rotatebox{90}{$\,=$}& & \rotatebox{90}{$\,=$}\\ F \circ F^\top & \to & A \cdot A^* 
+\end{array}$$
+
+\subsection{Def:}
+Eine Matrix $A \in \mathcal M_{n \times n} (K)$ ist normal, falls $A^* \cdot A = A \cdot A^*$
+
+\subsubsection{Folgerung:}
+F ist normal gdw. F eine normale Darstellungsmatrix bzgl JEDER ONB \underline{besitz}.
+\subsection{Lemma:}
+$ \enph $ normal.\\
+$ v \in V $ ist ein Eigenvektor von F bzgl $ \lambda $ gdw v ein Eigenvektor von $ F^\top $ bzgl. $ \overline{\lambda} $
+\subsection{Bew:}
+der Abstand von $ F(v) $ und $ \lambda \cdot v $
+\begin{align*}
+ || F(v) - \lambda \cdot v ||^2  &= \langle  F(v) - \lambda v, F(v) - \lambda v \rangle\\
+ &= \equalto{\langle F(v), F(v) \rangle }{\langle F^\top(v) , F^\top(v)}  - \overline{\lambda} \equalto{\langle F(v) , v \rangle}{\langle F^\top(v),v \rangle} - \lambda \equalto{\langle v, F(v) \rangle}{\langle F^\top(v),v \rangle} + \lambda \overline{\lambda} \langle v, v \rangle\\
+ &= \langle F^\top(v) , F^\top(v) \rangle - \overline{\lambda} \overline{\langle F^\top(v) , v \rangle} - \langle F^\top(v) , \overline{\lambda} \cdot v \rangle + \langle \overline{\lambda} v , \overline{\lambda} v \rangle\\
+ &= \langle F^\top(v), F^\top(v) \rangle - \overline{\lambda} \langle v, F^\top(v) \rangle - \langle F^\top(v) , \overline{\lambda}v\rangle + \langle \overline{\lambda} v , \overline{\lambda} v \rangle\\
+ &= \langle F^\top(v) - \overline{\lambda}v , F^\top(v) - \overline{\lambda} v \rangle \\
+ &= || F^\top(v) - \overline{\lambda} \cdot v ||^2 
+\end{align*}
+
+\subsection{Satz:}
+Sei $F: V \to >V $ derart, dass $\chi_F(T)$ in Linearfaktoren zerfällt. Folgende Aussagen sind äquivalent:
+\begin{enumerate}[a)]
+	\item $F$ ist normal
+	\item Es existiert eine ONB $ \mathcal B =\basis{b}{1}{n}$ von $V$, welche aus Eigenvektoren von $F$ besteht.
+\end{enumerate}
+\subsubsection{Folg}
+Jeder dnormaler Endomorphismus eines unitärem/euklidischen Raumes ist diagonalisierbar
+
+\Bew{(satz)\\
+	$\boxed{a) \Rightarrow b)}$ Induktion auf dim$(V)$ 
+	$$\underline{\dim V = 1} \rightarrow F \tx{ besitzt einen Eigenvektor } o \neq v \tx{ zum Eigenwert } \lambda$$
+	$$||v|| \neq 0 \rightarrow \frac{v}{||v||} \tx{ ist auch ein Eigenvektor tu }\lambda$$
+	$$\bigg \{\frac{v }{||v||} \bigg \} \tx{ ist eine ONB von }V!$$
+	$\boxed{\dim V \geq 2}$
+	$$\chi_F (T) \tx{ zerfällt in Linearfaktoren } (T- \lambda_1) \dots (T-\lambda_n)$$
+	Sei $\custo{\neq \ }{b_i}{\: 0} \in V$ Eigenvektoren zum Eigenwert $\lambda_1$.\\[10pt]
+	OBdA $\underline{||b_i|| = 187}$ $$V = \spa (b_i) \oplus \equalto{U}{\spa (b_i)^\perp} \qquad \dim U = \underline{n-1}$$
+}
+
+\subsection{Beh:}
+U ist $F$-invariant\\
+Beweis: Nächste Woche 
+$$F \upharpoonright_U : U \to U \quad \tx{ ist ein Endomorphismus}$$
+\subsection{Beh:}
+U ist $ F^\top $-invariant und:
+$$ (F\upharpoonright_U)^\top = F^\top \upharpoonright_U$$
+\subsection{Bew:}
+Wenn U $ F^\top $-invariant ist wie oben:\\
+$$ \forall v_1,v_2 \in U \quad \langle u_1,\equalto{F(u_2)}{F\upharpoonright_U(u_2)} \rangle = \langle \equalto{F^\top(u_1)}{F^\top\upharpoonright_U(u_1)} , u_2 \rangle $$
+$$\Downarrow$$
+Aus der Eindeutigkeit von adjungierten Endomorphismus  folgt\\
+$ F^\top \upharpoonright_U = (F\upharpoonright_U)^\top $\\
+Insb ist $ F\upharpoonright_U $ normal 
+$$\Downarrow \tx{ Induktion}$$
+$ \exists \basis{b}{2}{n} $ eine ONB von U welche aus Eigenvektoren von $ F\upharpoonright _U $ besteht.\\
+$ \{ b_1, b_2 , \dots , b_n \} $ ist eine ONB von Eigenvektoren.\\
+$\boxed{b) \Rightarrow a)}$ Sei $\mathcal B = \basis{b}{1}{n}$ eine ONB von Eigenvektoren von $F$
+$$F(b_i) = \lambda_i \cdot b_i$$
+Setze $G: V \to V,\ b_i \mapsto \overline{\lambda_i}\cdot b_i\rightarrow G$ ist eindeutig \underline{bestimmt}
+
+\begin{align*}
+G \circ F ( b_i) &= G(\lambda_i b_i) = \lambda_i G (b_i)\\
+&= \lambda_i \overline{\lambda_i} b_i = \overline{\lambda_i} (\lambda_i b_i)\\
+&= \overline{\lambda_i}(F(b-i)) = F(\overline{\lambda_i}b_i) = F(G(b_i))
+\end{align*}
+
+$$\Rightarrow G \circ F = F \circ G \tx{ \underline{auf $V$}}$$
+
+Aber $ G = F^\top $ !! weil $ b_i $ Eigenvektor von $ F^\top $ zum Eigenwert $ \overline{\lambda_i} $\underline{ist}.
+$$ \Downarrow $$
+$$F^\top(b_i) = \overline{\lambda_i} b_i = G(b_i) \Rightarrow G = F^\top$$ 
+
+% neue vorlesung
+
+\subsubsection{Widerholung:}
+$ \enph $ endlichdim. euklidisch, unitär$ \qquad \ska{F^\top(v)}{w} = \ska{v}{F^\top(w)} $
+$ \exists F^\top: V \to V $ adjungierter Endomorphismus zu F, derart:\\
+$ \mathcal{B} = \basis{b}{1}{n} $ ONB von $ V \to F^\top $ hat Darstellungsmatrix \\
+$ A = a_{ij} $ Darstellungsmatrix von F bzgl. $ \mathcal{B} \qquad A^* = (\overline{a_{ji}})$ bzgl. $\mathcal{B}$\\
+$F$ ist normal, falls $$F \circ F^\top = F^\top \circ F$$
+$$\Leftrightarrow A \cdot A^* = A^* \cdot A$$
+$$\Leftrightarrow \ska{F(v)}{F(w)} = \ska{F^\top (v)}{F^\top (w)}$$
+$$\longrightarrow v \in V \setminus \{0\} \tx{ ist Eigenvektor von $F$ bzg. } \lambda $$
+$$\Leftrightarrow v \tx{ Eigenvektor von } F^\top \tx{ bzg. } \overline{\lambda}$$
+
+\subsection{Satz} $ \enph\  | \  \chi_F(T) $ zerfällt in Linearfaktoren\\
+F ist normal $ \Leftrightarrow $ Es existiert eine ONB von V, welche aus Eigenvektoren von F besteht.\\\\
+ende Wiederholung.
+
+\subsection{Def:}$ F_V\to V $ ist selbstadjungiert, falls $ F = F^\top $ oder äquivalent dazu,
+$$\ska{v}{F(w)} = \ska{F(v)}{w} \quad \forall v,w \in V$$
+Eine Matrix $ A \in \mathcal{M}_{n\times n} (K) $ ist hermitesch, falls $ A^* = A $
+\subsubsection{Wid:}
+$V$ euklidischer untärer endlichedim. Raum $F: V \to V$ selbst adjungiert falls $F = F^*$\\ 
+$F \tx{ selbstadj. } \Leftrightarrow$ Die darstellungsmatrix bzg.$\begin{pmatrix}
+\tx{einer} \\ \tx{jeder}
+\end{pmatrix}$ ONB hermitesch bzw. symmetrisch ist.\\
+$A$ symmetrisch reelle $(n \times n)$-Matrix $\rightarrow$ $\chi_A$ zerfällt in Linearfaktoren über $\underline{\underline{\mathbb R}}$
+$A$ ist dann diagonalisierbar $\rightarrow$ Hauptachsentransformationssatz.\\ 
+$V \tx{ euklidischer endlidim. Raum}$, $\varphi: V \times V \to \mathbb R \tx{ symmetrische bilinearform}$
+$\rightarrow$ Hauptachsen von $\varphi$ sind die Elemente einer ONB von $V$ sodass $\varphi$ Darstellungsmatrix in Diagonalform besitzt.
+\subsection{Kor: Spektralsatz}
+$F:V\to V$ selbstadjungiert $\rightarrow \exists \tx{ ONB von } V$ welches aus Eigenvektoren von $F$ besteht.
+\Bew{$V$ unitär $\rightarrow$ ok, weil $\chi_F$ in Linearfaktoren über $\mathbb C$ zerfällt\\
+	$V$ eiklidisch $\rightarrow$ Die Darstellungsmatrix von $F$ ist symmetrisch $\rightarrow$ diagonalisierbar $\rightarrow$ $\chi_F$ zerfällt in Linearfaktoren über $\mathbb R$ 
+}
+
+\subsubsection{Bem}
+Falls $K = \mathbb R$ ist , dann ist hermitesch = symmetrisch
+\subsubsection{Bem}
+Sei $\mathcal B$ eine ONB von $V$
+$$F: V \to V \tx{ ist selbstadjungiert}$$
+$\Leftrightarrow$ Die Darstellungsmatrix von $F$ bzg. $\mathcal B$ hermitesch ist.
+
+\subsection{Bem:}
+Selbstadjungierte Endomorphismen sind normal.
+\subsection{Lemma:}
+Falls V euklidisch, unitär, endlichdim. ist $ F: V\to V $ selbstadjungiert, dann gilt:
+\begin{enumerate}[a)]
+	\item Alle Eigenwerte von F reell sind
+	\item Eigenvektoren zu verschiedenen Eigenwerten orthogonal sind
+\end{enumerate}
+
+\Bew{
+\begin{enumerate}[a)]
+	\item Sei $\lambda \in \mathbb C$ Eigenwert von $F$ und besteht $v \in V \setminus \{0\}\ / \ F(v) = \lambda \cdot v$
+	\begin{align*}
+ 		\equalto{\ska{\lambda \cdot v}{v}}{\lambda \cdot ||v||^2 \neq 0} = \ska{F(v)}{v}& \buildrel{\ F = F^\top} \over = \ska{v}{F(v)} = \equalto{\ska{v}{\lambda \cdot v}}{\overline{\lambda} \cdot ||v||^2}\\
+ 		&\Rightarrow \ska{v}{w} = 0
+	\end{align*}
+	\item Seien $\underbrace{\lambda \neq \mu}_{\rightarrow \in \mathbb R}$ derart, dass $F(v) = \lambda \cdot v \quad F(w) = \mu \cdot w \quad v,w \in V \setminus \{0\}$
+	$$\equalto{\ska{v}{\mu \cdot w}}{\mu \ska{v}{w} \Rightarrow \ska{v}{w} = 0} = \ska{v}{F(w)} \buildrel{\ F = F^\top} \over = \ska{F(v)}{w}= \equalto{\ska{\lambda \cdot v}{w}}{\lambda \ska{v}{w}}$$
+\end{enumerate}}
+
+\subsection{Satz: Hauptachsentransformation}
+Sei V ein euklidischer endlichdim. Raum und $ \varphi: V \times V \to \mathbb{R} $ eine symmetrische Bilinearform. Es existiert eine ONB  $ \basis{b}{1}{n} $ von V derart, dass $ \varphi $ durch eine Diagonalmatrix bzgl $ \basis{b}{1}{n} $ dargestellt wird.
+
+\subsubsection*{\underline{Zuerst zwei Hilfslemmata:}}
+
+\subsection{Lemma 1:}
+$ A \in \mathcal{M}_{n\times n}(\mathbb{C}) $ hermitesch\\
+$ \rightarrow $ A ist Diagonalisierbar und alle Eigenwerte sind reell
+\subsection{Bew:}
+$ A $ hermitesch, $ \chi_A(T) $ zerfällt in Linearfaktoren über $ \mathbb{C} $ $ \rightarrow F_A: \mathbb{C}^n \to \mathbb{C}^n$, \\ $\vec{x} \mapsto A\vec{x}$ $ F_A $ ist selbstadjungiert und normal $ \Rightarrow $ Alle Eigenwerte sind reell
+\subsection{Lemma 2:}
+Jede symmetrische $ n\times n $ Matrix über $ \mathbb{R} $ ist diagonalisierbar.
+\subsection{Bew:}
+Wir betrachten A als Matrix über $ \mathbb{C} $. A ist hermitesch $ \rightarrow $ A über $ \mathbb{C} $ diagonalisierbar. Alle Eigenwerte von A sind reell $ \Rightarrow $ A ist über $ \mathbb{R} $ diagonalisierbar
+
+\Bew{(Hauptachsentransformationssatz\\
+Sei $\basis{e}{1}{n}$ ONB von $V$.\\
+Definiere: $$F:V \to V, \quad e_i \mapsto \summ{j = 1}{n} \varphi (e_i, e_j) \cdot e_j$$
+$$\ska{e_i}{F(e_i)}= \ska{e_i}{\summ{n=1}{n} \varphi (e_j, e_n) \cdot e_n} = \summ{k=1}{n} \varphi ( e_j, e_n) \ska{e_i}{e_k} = \varphi (e_j,e_i)$$
+$v = \sum \lambda_i e_i \quad w = \sum \mu_j e_j$ beliebig.\\
+Zu Zeigen: $\ska{F(v)}{w}= \ska{v}{F(w)} \Rightarrow F$ ist selbstadj.
+
+\begin{align*}
+\ska{v}{F(w)} &= \ska{\sum_{i=1}^{n} \lambda_i e_i}{\sum_{j=1}^{n} \mu_j F(e_j)}\\
+&= \sum_{i=1}^{n} \sum_{j=1}^{n} \lambda_i \mu_i \ub{\ska{e_i}{F(e_j)}}_{\varphi(e_i,e_j)}\\
+&= \sum_{i=1}^{n} \lambda_i \varphi(e_i, \ub{\sum_{j=1}^{n} \mu_j e_j}_{w}) = \varphi(\ub{\sum_{i=1}^{n} \lambda_i e_i , w}_{\hfw}) = \varphi(v,w)
+\end{align*}
+\begin{equation*}
+\equalto{\ska{v}{F(w)}}{\custo{\Rightarrow}{\ska{F^\top(v)}{w}}{\custo{\Rightarrow}{F = F^\top}{F \tx{ ist \underline{selbsadjungiert}}}}} = \equalto{\varphi(v,w)}{\varphi(w,v) \tx{ da } \varphi \tx{ symm.}} 
+\end{equation*}
+\begin{equation*}
+\ska{F(v)}{w} = \ska{w}{F(v)}
+\end{equation*}
+Die Darstellungsmatrix von F bzgl. $ \basis{e}{1}{n} $ ist \underline{symmetrisch}
+Aus dem lemma 2 folgt, dass $F$ diagonalisierbar ist $\rightarrow$ $\chi_F$ zerfällt in Linearfaktoren\\ 
+$\Downarrow F$ selbstadj.\\
+$\exists \basis{b}{1}{n}$ ONB von Eigenvektoren von $F$\\
+Es genügt zu zeigen, dass die Darstellungsmatrix von $\varphi$ bzg. $\basis{b}{1}{n}$ in Diagonalform ist.
+$$\varphi(b_i, b_j) = \ska{b_i}{\equalto{F(b_j)}{\lambda_j b_j}} = \lambda_j\ska{b_i}{b_j} = \casess{\lambda_i}{i = j}{0}{\underline{\tx{sonst}}}$$
+}
+
+\hfw
+
+\subsection{Korollar:}
+Jede symmetrische $ (n\times n) $ Matrix über $ \mathbb{R} $ ist diagonalisierbar.\\
+Jede hermitesche Matrix über $ \mathbb{C} $ ist diagonalisierbar.
+
+\subsubsection*{\underline{Zurück zu positiv definite Matrizen}}
+
+$$ A \in \mathcal{M}_{n \times n}(\mathbb{R}) \tx{ symmetrisch }\qquad v^\top \cdot A \cdot v \ge 0 \ \ = 0 \tx{ gdw } v = \vec{0} $$
+$$\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix} \quad a > 0 \quad ac - b^2 > 0$$
+
+\subsection{Satz: Sylvester}
+Eine symmetrische $ (n \times n) $-Matrix A über $ \mathbb{R} $ ist genau dann positiv definit, wenn alle Eigenwerte von A echt positiv sind.
+
+\Bew{\boxed{\Rightarrow} Sei $\ska{\ }{\ }$ das Standartskalarprodukt auf $\mathbb R$ und betrachte die von $A$ definierte Bilinearform $\varphi: \mathbb R^n \times \mathbb R^n \to \mathbb R, \quad (v,w) \mapsto v^\top A w$ Aus dem Hauptachsentransformationssatz folgt, dass es eine ONB $\basis{b}{1}{n}$ diagonalisierbar ist.
+$$ S^{-1} \cdot A \cdot S = \Bigg(
+\begin{array}{ccc}
+\equaltoup{\lambda_1}{\varphi(b_1,b_1)} \\
+& \ddots \\
+& & \equalto{\lambda_n}{\varphi(b_n,b_n)}
+\end{array} \Bigg) \quad \Rightarrow \lambda_1,\dots,\lambda_n \ \tx{ sind die Eigenwerte von A}$$
+Insb. ist $ 0 < \varphi(b_i,b_i) = \lambda_i $ weil $ b_i \neq 0 $\\\\
+
+\noindent $ \boxed{\Leftarrow} $
+Sei $ \basis{b}{1}{n} $ eine ONB, do dass A bzgl. $ \basis{b}{1}{n} $ in Diagonalform ist:
+$$S^{-1} \cdot A \cdot S = \begin{pmatrix}
+\lambda_i > 0\\
+& \ddots \\
+& & \lambda_n >0
+\end{pmatrix}$$
+$$v \rightarrow \sum_{i=1}^{n} \mu_i b_i$$
+$$\begin{pmatrix}
+\mu_1 & \dots & \mu_n
+\end{pmatrix} \begin{pmatrix}
+S^{-1} A S
+\end{pmatrix} \begin{pmatrix}
+\mu_1\\
+\vdots\\
+\mu_n
+\end{pmatrix} = \sum_{i=1}^{n} \lambda_i \mu_i^2 \ge 0  \ \ = 0 \Rightarrow \mu_1 = \dots = \mu_n = 0 \Rightarrow v = 0$$
+}
+\subsubsection{Korrolar (Sylvester)}
+Für eine symm. $(n \times n)$-$\mathcal M$atrix $\equaltoup{A}{(a_{ij})}$ über $\mathbb R$ sind folgende Aussagen äquivalent:
+\begin{itemize}
+	\item $A$ ist positiv definit
+	\item Alle Eigenwete von $A$ sind echt positiv
+	\item Alle Hauptminoren
+	$$\det \begin{array}{| ccc |}
+	a_{11} & \cdots & a_{1k}\\
+	\vdots & & \vdots\\
+	a_{k1} & \cdots & a_{kk}	
+	\end{array} \ > \ 0 \qquad \forall\  1 \le v \le n$$
+\end{itemize}
+
+% neue Vorlesung
+
+\subsubsection{Wiederholung:}
+$V$ euklidischer untärer endlichedim. Raum $F: V \to V$ selbst adjungiert falls $F = F^*$\\ 
+$F \tx{ selbstadj. } \Leftrightarrow$ Die darstellungsmatrix bzg.$\begin{pmatrix}
+\tx{einer} \\ \tx{jeder}
+\end{pmatrix}$ ONB hermitesch bzw. symmetrisch ist.\\
+$A$ symmetrisch reelle $(n \times n)$-Matrix $\rightarrow$ $\chi_A$ zerfällt in Linearfaktoren über $\underline{\underline{\mathbb R}}$
+$A$ ist dann diagonalisierbar $\rightarrow$ Hauptachsentransformationssatz.\\ 
+$V \tx{ euklidischer endlidim. Raum}$, $\varphi: V \times V \to \mathbb R \tx{ symmetrische bilinearform}$
+$\rightarrow$ Hauptachsen von $\varphi$ sind die Elemente einer ONB von $V$ sodass $\varphi$ Darstellungsmatrix in Diagonalform besitzt.
+\subsection{Kor: Spektralsatz}
+$F:V\to V$ selbstadjungiert $\rightarrow \exists \tx{ ONB von } V$ welches aus Eigenvektoren von $F$ besteht.
+\Bew{$V$ unitär $\rightarrow$ ok, weil $\chi_F$ in Linearfaktoren über $\mathbb C$ zerfällt\\
+	$V$ euklidisch $\rightarrow$ Die Darstellungsmatrix von $F$ ist symmetrisch $\rightarrow$ diagonalisierbar $\rightarrow$ $\chi_F$ zerfällt in Linearfaktoren über $\mathbb R$ 
+}
+$ A \in \mathcal{M}_{n \times n} (\mathbb{R}) $ symmetrisch
+$$ A \tx{ positiv definit } \Leftrightarrow v^\top \cdot A \cdot v \ge 0 \, \ \ = 0 \tx{ gdw } v = 0$$
+$$ A \tx{ positiv defnit } \Leftrightarrow \tx{ Alle Eigenwerte von } A \tx{ sind echt positiv}$$
+
+\subsection{Bew: Satz von Sylvester}
+$ \boxed{1 \Leftrightarrow 2} $ ok!\\
+$ \boxed{1 \Rightarrow 3} $ Die Bilinearform $ \varphi: \mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}\ ,\ (v,w) \mapsto v^\top A w $ ist positiv definit
+$$\det(A) = \prod_{i=1}^{n} \ub{\lambda_i}_{\tx{Eigenwerte}} > 0$$
+$\forall\ U \subset \mathbb{R}$ UR $ \rightarrow \varphi \upharpoonright_U : U \times U \to \mathbb{R} $ auch positiv definit.\\[5pt]
+Sei $ U = \spa(e_1, \dots , e_k) $
+$$\varphi\upharpoonright_U: U \times U \to \mathbb{R} \ , \ (v,w)  \mapsto v^\top \cdot \begin{pmatrix}
+a_{11} & \dots & a_{1k}\\
+\vdots & & \vdots \\
+a _{k1} & \dots & a_{kk}
+\end{pmatrix} \cdot w$$
+$$\Rightarrow \det\begin{vmatrix}
+a_{11} & \dots & a_{1k}\\
+\vdots & & \vdots \\
+a _{k1} & \dots & a_{kk}
+\end{vmatrix} > 0 $$
+$ \boxed{3 \Rightarrow 1} $ Induktion auf n\\
+$\underline{n=1}$ ,$ A = (\lambda) \to \lambda > 0 $
+$$\left.\begin{array}{cc}
+x^\top \lambda x = \lambda x^2 \ge 0 \phantom{\Leftrightarrow x = 0}\\
+\phantom{x^\top \lambda x  = \lambda x^2 \  } = 0 \Leftrightarrow x = 0
+\end{array} \right\} \rightarrow \substack{A \tx{ ist }\\\tx{positiv} \\\tx{defnit}}$$
+Für $A = \spa (e_1 \dots e_{n+1}$ Die Darstellungmatrix von $\varphi_{\upharpoonright U}$ hat auch alle Hauptminoren exht positiv $\Rightarrow \varphi_{\upharpoonright U}$ \underline{positiv definit}\\
+$\buildrel{\tx{Hauptachsen.}} \over \longrightarrow$ Es gibt eine Orthonormalbasis $\basis{b}{1}{n}$ von $V$ sodass $\varphi$ Diagonalform bzg. $\basis{b}{1}{n}$ hat 
+$$\Bigg(
+\begin{array}{ccc}
+\equaltoup{\lambda_1}{\varphi(b_1,b_1)} \\
+& \ddots \\
+& & \equalto{\lambda_n}{\varphi(b_n,b_n)}
+\end{array} \Bigg)$$
+Falls $ \varphi $ nicht positiv definit wäre, gäbe es: $ \equalto{\lambda_i}{\varphi(b_i,b_i)} < 0 $
+$$ \Downarrow \det(A) = \prod \lambda_i > 0$$
+$$ \exists j \neq i \qquad \equalto{\lambda_i}{\varphi(b_i,b_i)} < 0$$
+$\left. \begin{array}{l}
+b_i = \summ{k=1}{n} \mu_k^i \epsilon_k \\ b_j = \summ{k=1}{n} \mu_k^j e_k
+\end{array} \right \} \exists \alpha, \beta \in \mathbb R $ nicht beide Null,\\[10pt]
+sodass $v = \alpha b_i + \beta b_j \in \equalto{\spa (e_1 \dots e_{n+1})}{U}$ 
+$$\mu'_n = 0 \rightarrow \begin{array}{c}
+\alpha = 1 \\ \beta = 0
+\end{array}$$
+$$0 = \mu^j_n \tx{ genau so sonst} \begin{array}{c}
+\alpha = \mu_n^j \\ \beta = \mu_n^i
+\end{array}$$
+$$b_i \rightarrow (\mu_1^i,\dots \mu_n^i)$$
+$$b_j \rightarrow (\mu_1^j,\dots \mu_n^j)$$
+$$\alpha b_i + \beta b_j \rightarrow (\dots., \alpha \mu^i_n + \beta \mu_n^j)$$
+$$ \varphi(v,v) = \ub{( \xi_1, \dots , \xi_{n-1},0) \cdot \begin{pmatrix}
+a_{11} & \dots & a_{1n-1}& 0\\
+\vdots & & \vdots & 0\\
+a_{n-1 1} & \dots & a_{n-1 n-1} & 0\\
+0 & 0 & 0 & 0
+\end{pmatrix}\cdot \begin{pmatrix}
+\xi_1\\
+\vdots\\
+\xi_n-1\\
+0
+\end{pmatrix}}_{\ge 0}$$
+Weil $ \varphi \upharpoonright_U $ positiv aus der Induktion
+$$ \varphi(v,v) = \varphi( \alpha b_i + \beta b_j , \alpha b_i + \beta b_j) = \ub{ \alpha^2 \lambda _i + \lambda \beta^2 }_{< 0} + 0$$
+$$\Rightarrow \tx{ Widerspruch ! }$$
+
+\section{Orthogonale Abblidungen und Drehungen}
+\subsection{Def:} $V$ euklidischer bzw. unitär. $F:V \to V$ ist orthogonal, falls $\forall v,w \in V:\ \ska{v}{w} = \ska{F(v)}{F(w)}$
+\subsection{Lemma:}
+Folgende Aussagen sind äquivalent: 
+\begin{enumerate}[1.)]
+	\item $F:V \to V $ orthogonal
+	\item $\forall v \in V \quad ||v|| = ||F(v)||$
+	\item Für jedes Orthonormalessystem $\basis{e}{1}{k}$ ist $\{F(e_1) \dots F(e_k)\}$ auch ein Orthonormalessystem
+\end{enumerate}
+
+\subsection{Bew:}
+$ \boxed{1 \Rightarrow 2} $ 
+$$ ||v||^2 = \ska{v}{v} = \ska{F(v)}{F(v)} = ||F(v)||^2$$
+$ \boxed{2 \Rightarrow 3} $ Es genügt zu zeigen, dass $ F(e_i) \perp (F(e_j) \quad \forall\ i \neq j $\\
+$ \boxed{1^{\tx{er}}\tx{ Fall:}} $ V ist euklidisch
+\begin{align*}
+\ska{F(e_i + e_j)}{F(e_i + e_j)} = || F(e_i + e_j) ||^2 = ||e_i + e_j ||^2 = \ska{e_i + e_j}{e_i + e_j} = 2
+\end{align*}
+\begin{align*}
+\ska{F(e_i + e_j)}{F(e_i + e_j)} &= \equalto{\ska{F(e_i)}{F(e_i)}}{\equalto{||F(e_i)||^2}{1}} + \equalto{\ska{F(e_j)}{F(e_j)}}{\equalto{||F(e_i)||^2}{1}} + \ska{F(e_i)}{F(e_j)} + \equalto{\ska{F(e_j)}{F(e_i)}}{\ska{F(e_i)}{F(e_j)}}\\[5pt]
+\tx{Insb: } \custo{\neq}{2}{\, 0} \ska{F(e_i)}{F(e_j)} &= 0 \quad \Rightarrow \quad F(e_i) \perp F(e_j) 
+\end{align*}
+$\boxed{2^{\tx{er}} \tx{ Fall:}}$
+$$\underline{V \tx{ unitär}}$$
+$$\equalto{||e_i + \equaltoup{i}{F_1} e_j ||^2}{2\,  = \underbrace{||e_i||^2}_{1} + \underbrace{||ie_j||^2}_{1}} = \equalto{||F(e_i + ie_j)||^2}{\ska{\equalto{F(e_i) + i F(e_j)}{}}{F(e_i) + F(e_j)}}$$
+$$\underbrace{||F(e_i)||^2}_{1} + \underbrace{||F(e_j)||^2}_{1} +\,  i\,  (\ska{F(e_j)}{F(e_i)}-\ska{F(e_i)}{Fe_j)}$$
+$$\ska{F(e_i)}{F(e_j)} = \equalto{\ska{F(e_j)}{F(e_i)}}{}$$
+Wir machen wie im ersten Teil $\quad \Leftarrow \quad \overline{\ska{F(e_i)}{F(e_j)}} \in \mathbb R$\\[10pt]
+$ \boxed{3 \Rightarrow 1}  \ \ v,w \in V$\\
+Zu Zeigen: $ \ska{v}{w} = \ska{F(v)}{F(w)} $\\
+$ V = 0 \rightarrow $ ok!\\
+Sonst, $ v \neq 0 \rightarrow 1^{\tx{er}} $ Fall $ \{v,w\} $ lin. abh. $ \buildrel v \neq 0 \over \rightarrow \lambda v \quad \lambda \in \mathbb{K} $ \\
+$ v \neq 0 \rightarrow \frac{v}{||v||} $ orthonormal $ \Rightarrow F(\frac{v}{||v||}) $ auch\\
+$ || F(\frac{v}{||v||})|| = 1 \Rightarrow ||v|| = ||F(v)||$
+\begin{align*}
+\ska{v}{w} &= \ska{v}{\lambda v} = \overline{\lambda} \ska{v}{v}\\
+&= \overline{\lambda} ||v||^2 = \overline{\lambda} ||F(v)||^2\\ 
+&= \overline{\lambda} \ska{F(v)}{F(v)} = \ska{F(v)}{\lambda F(v)}\\
+&= \ska{F(v)}{F(w)}
+\end{align*}
+$\boxed{2^{\tx{er}} \tx{ Fall:}} \quad $  v,w lin. unabh.\\[5pt]
+$ G - S \rightarrow \exists \ b_1, b_2 $ orthonormalsystem $ \spa(v,w) = \spa(b_1, b_2) $
+\begin{align*}
+v &= \lambda_1 b_1 + \lambda_2 b_2\\
+w &= \mu_1 b_1 + \mu_2 b_2
+\end{align*}
+
+\begin{equation*}
+\ska{v}{w} = \equalto{\ub{ \lambda_1 \overline{\mu_1} \equalto{||b_1||^2}{||F(b_1)||^2} + \lambda_2 \overline{\mu_2} \equalto{||b_2||^2}{||F(b_2)||^2}} }{\begin{Huge} \ska{F(\lambda_1 b_1 + \lambda_2 b_2)}{F(\mu_1 b_1 ) + F(\mu_2 b_2)} \end{Huge}}
+\end{equation*}
+(letzter schritt weil $ F(b_1) \perp F(b_2) $) 
+
+
+
+
+
+
+	 
+\end{document}

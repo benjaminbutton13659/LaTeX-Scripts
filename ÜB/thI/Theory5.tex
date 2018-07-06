@@ -1,0 +1,120 @@
+\documentclass[12pt,a4paper,ngerman]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{graphicx}
+\usepackage{cleveref}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{nicefrac}
+\usepackage{mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{tcolorbox}
+\usepackage{amsthm}
+\usepackage{savetrees}
+\setlength{\parskip}{1em}
+
+\usepackage{eulervm}
+
+\pagecolor{black}
+\color{white}
+
+\newenvironment{exercise}[2][Aufgabe]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newcommand{\verteq}{\rotatebox{90}{$\,=$}}
+\newcommand{\equalto}[2]{\underset{\scriptstyle\overset{\mkern4mu\verteq}{#2}}{#1}}
+\newcommand{\equaltoup}[2]{\overset{\scriptstyle\underset{\mkern4mu\verteq}{#2}}{#1}}
+\newcommand{\tx}[1]{\textrm{#1}}
+\newcommand{\ov}[1]{\overline{#1}}
+\newcommand{\ub}[1]{\underbrace{#1}}
+\newcommand{\ob}[1]{\overbrace{#1}}
+\newcommand{\im}{\tx{im}}
+\newcommand{\spa}{\tx{span}}
+\newcommand{\adj}{\tx{adj}}
+\newcommand{\grad}{\tx{grad }}
+\newcommand{\zz}{\fontfamily{cmss} \selectfont{Z\kern-.61em\raise-0.7ex\hbox{Z}:}}
+\newcommand{\const}{\tx{const.}}
+\newcommand{\summ}[2]{\sum_{#1}^{#2}}
+\newcommand{\intt}[2]{\int_{#1}^{#2}}
+\newcommand{\vc}[1]{\boldsymbol{#1}}
+\newcommand{\vl}{\vc{\varLambda}}
+\begin{document}
+
+\title{Blatt 5}
+\author{Andréz Gockel\\ 
+Theoretische Physik I\\
+Gruppe: 4}
+\date{29.05.18}
+\maketitle
+\paragraph{Aufgabe 2}
+$$V(r) = -\frac{\alpha}{r}, \quad \vl = \frac{\vc{p} \times \vc{L}}{\alpha m} -  \frac{\vc{r}}{r}, \quad \vc{p}=m\vc{\dot{r}}, \quad \vc{L}=\vc{r}\times \vc{p}, \quad \alpha = \gamma m M$$ 
+$$\frac{d}{dx} \sqrt{x} = \frac{1}{2\sqrt{x}}$$
+$$\vc{r} = \begin{pmatrix} x \\ y \\ z \end{pmatrix} ,\quad r = \sqrt{x^2+y^2+z^2}, \quad \vec{\nabla} \vc{r} = \frac{\vc{r}}{r} = \vc{e}_r$$
+\begin{equation}
+	\vec{\nabla} V(r) = \frac{\partial V(r)}{\partial r} \vec{\nabla} \vc{r} = -\frac{\partial}{\partial r} \frac{\alpha}{r}\vc{e}_r = \frac{\alpha}{r^2}\vc{e}_r = -\frac{V(r)}{r}\vc{e}_r
+\end{equation}
+\begin{equation}
+	\vc{a} \times (\vc{b} \times \vc{c}) = \vc{b} \cdot (\vc{a} \cdot \vc{c}) - \vc{c} \cdot ( \vc{a}\cdot \vc{b})
+\end{equation}
+\paragraph{a)} \zz \ 
+$\dot{\vc{\varLambda}} = 0.$
+\begin{proof}
+	$$\vl = (\vc{r} \times \vc{L}) + V(r)\vc{r}$$
+	$$\dot{\vl}=(\vc{\ddot{r}}\times\vc{L}) + \underbrace{(\vc{r} \times \vc{\dot{L}})}_{=0, \tx{ da } \vc{L}= \tx{const.}} + \frac{d}{dt}(V(r) \cdot \vc{r})$$
+	Mit: $\frac{d}{dt}V(r)=\vec{\nabla}V(r)\cdot\vc{\dot r}$ \textit{(aus vorlesung)} ist
+	$$\dot{\vl}= (\vc{\ddot{r}}\times\vc{L}) + V(r)\cdot\vc{\dot r} + \vc{r} \cdot (\vec{\nabla}V(r)\cdot\vc{\dot r})$$
+	Da die Kräfte konservativ sind: $m\vc{\ddot r} = -\grad V(r) \quad \Rightarrow \vc{\ddot r} = -\frac{\vec{\nabla V(r)}}{m}$
+	\begin{align*} 
+		\Rightarrow \dot \vl &= (\bigg(-\frac{\vec{\nabla V(r)}}{m}\bigg)\times\vc{L}) + V(r)\cdot\vc{\dot r} + \vc{r} \cdot (\vec{\nabla}V(r)\cdot\vc{\dot r})\\
+		&=(-\vec{\nabla} V(r)\times(\vc{r}\times\vc{\dot r})) + V(r)\cdot\vc{\dot r} + \vc{r} \cdot (\vec{\nabla}V(r)\cdot\vc{\dot r})\\
+		\buildrel{\tx{mit (1)}}\over{\Rightarrow} &= \frac{V(r)}{r^2}(\vc{r}\times(\vc{r}\times\vc{\dot r})) + V(r)\cdot\vc{\dot r} + \vc{r} \cdot (-\frac{V(r)}{r^2}\vc{r}\cdot\vc{\dot r})\\
+		\buildrel{\tx{mit (2)}}\over{\Rightarrow} &= \frac{V(r)}{r^2}(\vc{r} \cdot (\vc{r} \cdot \vc{\dot r}) - \vc{\dot r} \cdot ( \vc{r}\cdot \vc{r})) + V(r)\cdot\vc{\dot r} + \vc{r} \cdot (-\frac{V(r)}{r^2}\vc{r}\cdot\vc{\dot r})\\
+		&= \frac{V(r)}{r^2}(\vc{r} \cdot (\vc{r} \cdot \vc{\dot r})) - \frac{V(r)}{r^2} \cdot \vc{\dot r} \cdot ( \vc{r}\cdot \vc{r}) + V(r)\cdot\vc{\dot r} + \vc{r} \cdot (-\frac{V(r)}{r^2}\vc{r}\cdot\vc{\dot r})\\
+		&= -V(r) \cdot \vc{\dot r} + V(r) \cdot \vc{\dot r} = 0
+	\end{align*}
+\end{proof}
+\pagebreak
+\paragraph{b)}
+\zz \ $\vl$ zeigt zu dem Perihel.
+\begin{proof}
+	Wir wählen $r=$ Perihel, d.h. $\vc{r}= -r\vc{e}_y$, $\vc{L}=L\vc{e}_x,\ \vc{p}=-p\vc{e}_z$, daraus folg das $\vl$ in Richtung $-\vc{e}_x$ zeigt (Richtung des Perihel) und da $\vl$ konstant ist zeigt es immer in Richtung Perihel.
+\end{proof}
+\paragraph{c)}
+\zz \ $|\vl|=\epsilon$
+\begin{proof}
+	Trivial. ;)
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
