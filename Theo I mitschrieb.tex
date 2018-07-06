@@ -58,8 +58,8 @@
 \begin{document}
 
 \title{
-	\Huge Theoretische Physik I \\[1em]
-	\Large Vorlesung von Prof.Dr. Gerhard Stock im Sommersemester 2018}
+\Huge Theoretische Physik I \\[1em]
+\Large Vorlesung von Prof.Dr. Gerhard Stock im Sommersemester 2018}
 \author{Markus Österle \\ Andréz Gockel}
 \date{17.04.2018}
 \maketitle
@@ -71,48 +71,48 @@
 \section*{Einführung}
 \addcontentsline{toc}{section}{Einführung} 
 \begin{itemize}
-	\item geht von \underline{grundlegenden Naturgesetzen} aus, die als Postulate (=Axiome)
-	\item benutzt mathematische Methoden um daraus physikalische Aussagen herzuleiten (z.B. $E_{kin}\sim v^2$) 
-	\item Eine \underline{Theorie} basiert auf definierten (Def.) Annahmen
+\item geht von \underline{grundlegenden Naturgesetzen} aus, die als Postulate (=Axiome)
+\item benutzt mathematische Methoden um daraus physikalische Aussagen herzuleiten (z.B. $E_{kin}\sim v^2$) 
+\item Eine \underline{Theorie} basiert auf definierten (Def.) Annahmen
+\begin{itemize}
+	\item[$\rightarrow$] gilt innerhalb eines Anwendungsbereiches und muss hier experimentell (Exp.) \underline{verifizierbare} Ergebnisse liefern\\
+	z.B. klassische Mechanik funktioniert für
 	\begin{itemize}
-		\item[$\rightarrow$] gilt innerhalb eines Anwendungsbereiches und muss hier experimentell (Exp.) \underline{verifizierbare} Ergebnisse liefern\\
-		z.B. klassische Mechanik funktioniert für
-		\begin{itemize}
-			\item[-] $v\ll c$
-			\item[-] $\int(p)dx \gg \hbar$
-		\end{itemize}
+		\item[-] $v\ll c$
+		\item[-] $\int(p)dx \gg \hbar$
 	\end{itemize}
-	\item Ein \underline{theoretisches Modell} macht oft \underline{idealisierende Annahmen} um \underline{explizite} Lösungen zu erlauben z.B. harmonischer Oszillator
-	\item Computational Physics\\
-	löst theoretische Ansätze \underline{numerisch}
+\end{itemize}
+\item Ein \underline{theoretisches Modell} macht oft \underline{idealisierende Annahmen} um \underline{explizite} Lösungen zu erlauben z.B. harmonischer Oszillator
+\item Computational Physics\\
+löst theoretische Ansätze \underline{numerisch}
 \end{itemize}
 
 \section*{Bedeutung der klassischen Mechanik}
 \addcontentsline{toc}{section}{Bedeutung der Mechanik} 
 \begin{itemize}
-	\item zentrale Rolle, da anschauliche Theorie
-	\item Einführung:
-	\begin{itemize}
-		\item zentrale Größen (z.B. Energie, Drehimpuls, Wirkung)
-		\item Methoden (z.B. Variationsrechnung, Störungstheorie)
-		\item Modelle (z.B. harmonischer Oszillator, wichtig in Quantenmechanik (QM), Feldtheorie, ...)
-	\end{itemize}
-	\item praktische Bedeutung:
-	\begin{itemize}
-		\item Himmelsmechanik
-		\item Statik
-		\item Molekül-
-		\item Chemie- und Biophysik
-	\end{itemize}
-	\item nicht lineare Dynamik (z.B. Chaostheorie, Strukturbildung) sind Beispiele aktueller Forschung
+\item zentrale Rolle, da anschauliche Theorie
+\item Einführung:
+\begin{itemize}
+	\item zentrale Größen (z.B. Energie, Drehimpuls, Wirkung)
+	\item Methoden (z.B. Variationsrechnung, Störungstheorie)
+	\item Modelle (z.B. harmonischer Oszillator, wichtig in Quantenmechanik (QM), Feldtheorie, ...)
+\end{itemize}
+\item praktische Bedeutung:
+\begin{itemize}
+	\item Himmelsmechanik
+	\item Statik
+	\item Molekül-
+	\item Chemie- und Biophysik
+\end{itemize}
+\item nicht lineare Dynamik (z.B. Chaostheorie, Strukturbildung) sind Beispiele aktueller Forschung
 \end{itemize}
 
 \chapter{Newtonsche Mechanik}
 \section{allgemeine Begriffe}
 \begin{itemize}
-	\item Statik (ruhende Körper)
-	\item Kinematik (Bewegung, ohne Beschreibung der Wechselwirkungen (WW))
-	\item Dynamik (Bewegung \underline{mit} Beschreibung der WW)
+\item Statik (ruhende Körper)
+\item Kinematik (Bewegung, ohne Beschreibung der Wechselwirkungen (WW))
+\item Dynamik (Bewegung \underline{mit} Beschreibung der WW)
 \end{itemize}
 
 \subsection{Bezugsystem}
@@ -139,9 +139,9 @@ $F_{12} = -F_{21}$\\
 Kraft von 1 auf 2 = Kraft von 2 auf 1
 {\large \underline{Voraussetzung (Annahme):}}
 \begin{itemize}
-	\item ,,absoluter`` Raum
-	\item ,,absolute`` Zeit
-	\item ,,absolute`` Masse
+\item ,,absoluter`` Raum
+\item ,,absolute`` Zeit
+\item ,,absolute`` Masse
 \end{itemize}
 $\rightarrow$ nur gültig für $\frac{v}{c} \ll 1$\\
 ($c = $Lichtgeschwindigkeit)\\
@@ -270,7 +270,7 @@ Minuszeichen ist Konvention.\par
 Zusammen:
 \begin{equation*}
 \boxed{\frac{d}{dt} \bigg( \frac{m \dot{\vec{r}}^{\,2}}{2} + U(\vec{r})\bigg)= \vec{F}_{\tx{diss}}
-\cdot \dot{\vec{r}}} \tag{2}
+	\cdot \dot{\vec{r}}} \tag{2}
 \end{equation*}
 Konservative Kraft $\Leftrightarrow E = T+U=\tx{const.}$\\
 Mit 
@@ -468,7 +468,7 @@ Gegeben sei N-Teilchen System mit ausschließlich konservativen Kräften
 F_i = - \frac{\partial U(r)}{\partial r_i} = \dot{p}_i \qquad \tx{(3 DGL 2. Ordnung)} \tag{1}
 \end{equation*}
 \begin{small}
-$$r \equiv (r_1,r_2,\dots ,r_{3N}) \quad p = (p_1, p_2, \dots , p_{3N}) \quad i = (1,\dots, 3N)$$
+	$$r \equiv (r_1,r_2,\dots ,r_{3N}) \quad p = (p_1, p_2, \dots , p_{3N}) \quad i = (1,\dots, 3N)$$
 \end{small}
 $$T = \sum_i \frac{m_i}{2} v_i^2 \quad \buildrel p_i = m_i v_i \over = \quad \sum_i \frac{p_i^2}{2m_i} \quad \ \  \textrm{, Potential U} $$
 Gesamtenergie $E = T+U$ wird durch die Hamilton-Funktion beschrieben: ,,Hamiltonian``:
@@ -492,8 +492,8 @@ Bewegungsgleichungen im Hamilton-Formalismus
 \begin{equation*}
 \begin{LARGE}
 \rmbox{\begin{array}{ll}
-		r_i &= \frac{\partial H}{\partial p_i}\\[15pt]
-		\dot{p}_i &= -\frac{\partial H}{\partial r_i}
+	r_i &= \frac{\partial H}{\partial p_i}\\[15pt]
+	\dot{p}_i &= -\frac{\partial H}{\partial r_i}
 	\end{array}}
 \end{LARGE} \tag{3}
 \end{equation*}
@@ -1087,8 +1087,8 @@ gebundene bewegung $ \rightarrow $ Keplersche Gesetze
 		\end{tikzpicture}
 		$$
 	\end{minipage}\\[5pt]
-		Die vom Fahrstrahl pro Zeit $ dt $ überstrichene Fläche $ dA = r^2 \frac{d\varphi}{2} $ ist konstant\\
-		Also $ A_1 = A_2 $ wurden vom Fahrstrahl in der \underline{gleichen} Zeit überfahren.
+	Die vom Fahrstrahl pro Zeit $ dt $ überstrichene Fläche $ dA = r^2 \frac{d\varphi}{2} $ ist konstant\\
+	Also $ A_1 = A_2 $ wurden vom Fahrstrahl in der \underline{gleichen} Zeit überfahren.
 	\item[3)] Umlaufzeit  T und die große Halbachse a verhalten sich wie
 	$$ T^2 = \tx{const.} a^3$$
 \end{itemize}
@@ -1706,12 +1706,12 @@ kürzeste Wegstrecke: $J[y] = \tx{ min.}$\\
 Masse $m$ gleitet reibungslos wegen Schwerkraft auf Kurve y(x). Für welcher y(x) ist die Zeit $T$ minimal?\\
 
 $$\left.\begin{array}{l}
-	\tx{Mit } v = \frac{ds}{dt} \quad dt = \frac{ds}{V}\\
-	ds = \sqrt{1+y^{12}}\ dx\\
-	\frac{1}{2}mv^2 = mgy \rightarrow v = \sqrt{2gy}
+\tx{Mit } v = \frac{ds}{dt} \quad dt = \frac{ds}{V}\\
+ds = \sqrt{1+y^{12}}\ dx\\
+\frac{1}{2}mv^2 = mgy \rightarrow v = \sqrt{2gy}
 \end{array}\right\}
-	\rightarrow T = \int_{x_1}^{x_2} dx\ \sqrt{\frac{1+y^{12}}{2gy(x)}}$$
-	
+\rightarrow T = \int_{x_1}^{x_2} dx\ \sqrt{\frac{1+y^{12}}{2gy(x)}}$$
+
 \subsection{Euler-Lagrange-Gl.}
 Problem: Welche Funktion $y(x)$ macht Funktional
 \begin{equation}\label{el:1}
@@ -1790,8 +1790,8 @@ $a,b$ aus $ x_1,x_2 $
 Die Korrespondierenz 
 \begin{align*}
 y_i(x) \quad &\leftrightarrow \quad q_i (t) \\
- F(y,y',x) \quad &\leftrightarrow \quad L(q,\dot{q}, t) \\
- \frac{d}{dx} \frac{\partial F}{\partial y'_i} = \frac{\partial F}{\partial y} \quad &\leftrightarrow \quad \frac{d}{dt} \frac{\partial L}{\partial \dot{q}_k} = \frac{\partial L}{\partial q_i}
+F(y,y',x) \quad &\leftrightarrow \quad L(q,\dot{q}, t) \\
+\frac{d}{dx} \frac{\partial F}{\partial y'_i} = \frac{\partial F}{\partial y} \quad &\leftrightarrow \quad \frac{d}{dt} \frac{\partial L}{\partial \dot{q}_k} = \frac{\partial L}{\partial q_i}
 \end{align*}
 \begin{small}
 	$ y = (y_1,\dots , y_f) \qquad q = (q_1,\dots , q_f) $
@@ -2068,10 +2068,10 @@ und damit\\
 % hier rmbox eulergleichung in fav bild einfügen und weiter unten (8) nachtragen: ??? is glaub ich jetzt egal
 
 \frbox{Eulersche Gleichungen}{\begin{align*}
-I_1\dot{\omega}_1 + (I_3-I_2) \omega_2 \omega_3 &= M_1 \\
-I_2\dot{\omega}_2 + (I_1-I_3) \omega_1 \omega_3 &= M_2 \tag{7}\\
-I_3\dot{\omega}_3 + (I_2-I_1) \omega_2 \omega_1 &= M_3 \\
-\end{align*}} 
+	I_1\dot{\omega}_1 + (I_3-I_2) \omega_2 \omega_3 &= M_1 \\
+	I_2\dot{\omega}_2 + (I_1-I_3) \omega_1 \omega_3 &= M_2 \tag{7}\\
+	I_3\dot{\omega}_3 + (I_2-I_1) \omega_2 \omega_1 &= M_3 \\
+	\end{align*}} 
 
 I.A. Schwer zu Lösen, da nicht linear und M zeitabhängig
 \subsubsection{\underline{Bsp: Kräftefreier symmetrischer Kreisel}}
@@ -2102,10 +2102,10 @@ Zur Betrachtung im IS brauchen wir verallg. Koord. um die Beziehung zwischen KS 
 $ \rightarrow $ Eulersche Winkel $ \Phi, \Psi, \Theta  \rightarrow 	$ siehe Übung\\
 \begin{equation*}
 \rightarrow \rmbox{\begin{array}{l}
-\omega_1 = \dot{\Phi} \sin \Theta \sin \Psi + \Theta \cos \Psi\\
-\omega_2 = \dot{\Phi} \sin \Theta \cos \Psi + \Theta \sin \Psi\\
-\omega_3 = \dot{\Phi} \cos \Theta + \dot \Psi
-\end{array}} \tag{9}
+	\omega_1 = \dot{\Phi} \sin \Theta \sin \Psi + \Theta \cos \Psi\\
+	\omega_2 = \dot{\Phi} \sin \Theta \cos \Psi + \Theta \sin \Psi\\
+	\omega_3 = \dot{\Phi} \cos \Theta + \dot \Psi
+	\end{array}} \tag{9}
 \end{equation*}
 Einsetzen von (9) in (8), ergibt nach Lösung von (9)
 $$ \Psi(t) = \Omega t + \Psi_0 \qquad \Phi(t) = \frac{q}{\sin \Theta_0} + \Phi_0$$
@@ -2254,7 +2254,7 @@ d\ham = \sum_i \bigg[ \frac{\partial \ham}{\partial q_i} dq_i + \frac{\partial \
 liefert durch Koeffizientenvergleich
 \frbox{Hamilton-Gleichungen}{\begin{equation*}
 	\dot{q}_i = \frac{\partial \ham}{\partial p_i} \quad , \quad \dot{p}_i = - \frac{\partial \ham}{\partial q_i} \tag{1}  
-\end{equation*}}
+	\end{equation*}}
 $ i= 1,\dots , f $ und:
 \begin{equation*}
 \rmbox{\frac{\partial \ham}{\partial t} = - \frac{\partial L}{\partial t}} \tag{2}
@@ -2440,23 +2440,23 @@ i \hbar \frac{\partial \rho}{\partial t} = [\ham, \rho] \tag{7}
 
 \chapter{Relativistische Mechanik}
 \begin{tikzpicture}
-	\draw[->] (0,0) -- (2,0) node[right] {$x$}; 
-	\draw[->] (0,0) -- (0,2) node[above] {$y$};
+\draw[->] (0,0) -- (2,0) node[right] {$x$}; 
+\draw[->] (0,0) -- (0,2) node[above] {$y$};
 
-	\node at (0.7,2) [align=flush center,text width=5cm]
-	{IS};
+\node at (0.7,2) [align=flush center,text width=5cm]
+{IS};
 \end{tikzpicture}%
 \begin{tikzpicture}
-	\draw[->] (0,0) -- (2,0) node[right] {$x'$}; 
-	\draw[->] (0,0) -- (0,2) node[above] {$y'$};
-	%\draw[->] (0.1,0.5) -- (0.5,0.5) node[right] {$v = \vec{e}_s$}
-	
-	\node at (1.5,0.8) [align=flush center,text width=5cm]
-	{$\longrightarrow \vec{v} = v\vec{e_x}$};
-	\node at (0.7,2) [align=flush center,text width=5cm]
-	{IS'};
-	\node at (4,1.8) [align=flush center,text width=5cm]
-	{$*$ Ereignis};
+\draw[->] (0,0) -- (2,0) node[right] {$x'$}; 
+\draw[->] (0,0) -- (0,2) node[above] {$y'$};
+%\draw[->] (0.1,0.5) -- (0.5,0.5) node[right] {$v = \vec{e}_s$}
+
+\node at (1.5,0.8) [align=flush center,text width=5cm]
+{$\longrightarrow \vec{v} = v\vec{e_x}$};
+\node at (0.7,2) [align=flush center,text width=5cm]
+{IS'};
+\node at (4,1.8) [align=flush center,text width=5cm]
+{$*$ Ereignis};
 \end{tikzpicture}
 
 IS stillstehend und IS' in Bewegung $ \vec{v} = v \vec{e}_x $\\[10pt]
@@ -2476,19 +2476,19 @@ Luft ist Träger für Schallwellen. Bewegt sich die Luft mit $ \vec{v} = v \vec{
 Photon wird bei $ t = t' = 0 $, $ x = x' = 0 $ in x-Richtung ausgesendet und bewegt sich in IS mit der Geschwindigkeit c. (hier IS mit v in x und IS' stillstehend)\\
 Galilei Trafo.:
 \begin{tikzpicture}
-	\draw[->] (0,0) -- (1,0); 
-	\draw[->] (0,0) -- (0,1);
+\draw[->] (0,0) -- (1,0); 
+\draw[->] (0,0) -- (0,1);
 
-	\node at (1.3,0.5) [align=flush center,text width=2cm]
-	{$\buildrel{\vec{v}} \over \longrightarrow$};
-	\node at (0.7,1) [align=flush center,text width=2cm]
-	{IS};
+\node at (1.3,0.5) [align=flush center,text width=2cm]
+{$\buildrel{\vec{v}} \over \longrightarrow$};
+\node at (0.7,1) [align=flush center,text width=2cm]
+{IS};
 \end{tikzpicture}%
 \begin{tikzpicture}
-	\draw[->] (0,0) -- (1,0); 
-	\draw[->] (0,0) -- (0,1);
-	\node at (0.7,1) [align=flush center,text width=2cm]
-	{IS'};
+\draw[->] (0,0) -- (1,0); 
+\draw[->] (0,0) -- (0,1);
+\node at (0.7,1) [align=flush center,text width=2cm]
+{IS'};
 \end{tikzpicture}
 
 \begin{equation*}
@@ -2538,14 +2538,14 @@ Länge eines in IS ruhenden Objekts kann durch ruhende geeichte Maßstäbe besti
 \subsubsection{Def: Zeitmessung: Synchronisierte Uhren}
 
 \begin{tikzpicture}
-	\draw[->] (0,0) -- (5,0) node[right] {$x$}; 
-	\draw[->] (0,0) -- (0,2) node[above] {$y$};
-	\draw (0,0) circle(0.5cm);
-	\draw (3,2) circle(0.5cm);
-	\draw[thick,->] (0,0) -- (-0.3,0.3);
-	\draw[thick,->] (3,2) -- (2.7,1.7);
-	\draw[thick,->] (0,0) -- (-0.3,-0.3);
-	\draw[thick,->] (3,2) -- (2.7,2.3);
+\draw[->] (0,0) -- (5,0) node[right] {$x$}; 
+\draw[->] (0,0) -- (0,2) node[above] {$y$};
+\draw (0,0) circle(0.5cm);
+\draw (3,2) circle(0.5cm);
+\draw[thick,->] (0,0) -- (-0.3,0.3);
+\draw[thick,->] (3,2) -- (2.7,1.7);
+\draw[thick,->] (0,0) -- (-0.3,-0.3);
+\draw[thick,->] (3,2) -- (2.7,2.3);
 \end{tikzpicture}
 
 \begin{itemize}
@@ -2558,27 +2558,27 @@ Länge eines in IS ruhenden Objekts kann durch ruhende geeichte Maßstäbe besti
 \subsubsection{Gleichzeitigkeit}
 $$
 \begin{tikzpicture}
-	\draw[thick] (0,0) -- (5,0);
-	\draw (0.2,0) -- (0.2,1);
-	\draw (0.2,1) -- (4,1);
-	%\draw (4,1) edge[bend left=30,looseness=1.5] (4.5,0);  alte kantige version
-	\draw[-] (4,1) to [out=0,in=90] (4.8,0);
-	\draw[red,text=red] (1.2,1) node[above]{$A'$};
-	\fill[red] (1.2,0.5)  circle[radius=1.5pt];
-	\draw[red,text=red] (2.4,1) node[above]{$M'$};
-	\fill[red] (2.4,0.5)  circle[radius=1.5pt];
-	\draw[red,text=red] (3.6,1) node[above]{$B'$};
-	\fill[red] (3.6,0.5)  circle[radius=1.5pt];
-	\draw[red,text=red] (6,1) node[above]{IS' Zug};
-	\draw[blue,text=blue] (1.2,0) node[below]{$A$};
-	\fill[blue] (1.2,0)  circle[radius=1.5pt];
-	\draw[blue,text=blue] (2.4,0) node[below]{$M$};
-	\fill[blue] (2.4,0)  circle[radius=1.5pt];
-	\draw[blue,text=blue] (3.6,0) node[below]{$B$};
-	\fill[blue] (3.6,0)  circle[radius=1.5pt];
-	\draw[blue,text=blue] (6.58,0) node[below]{IS Bahnsteig};
-	\node at (5.5,0.5) [align=flush center,text width=3cm]
-	{$\longrightarrow \vec{v}$};
+\draw[thick] (0,0) -- (5,0);
+\draw (0.2,0) -- (0.2,1);
+\draw (0.2,1) -- (4,1);
+%\draw (4,1) edge[bend left=30,looseness=1.5] (4.5,0);  alte kantige version
+\draw[-] (4,1) to [out=0,in=90] (4.8,0);
+\draw[red,text=red] (1.2,1) node[above]{$A'$};
+\fill[red] (1.2,0.5)  circle[radius=1.5pt];
+\draw[red,text=red] (2.4,1) node[above]{$M'$};
+\fill[red] (2.4,0.5)  circle[radius=1.5pt];
+\draw[red,text=red] (3.6,1) node[above]{$B'$};
+\fill[red] (3.6,0.5)  circle[radius=1.5pt];
+\draw[red,text=red] (6,1) node[above]{IS' Zug};
+\draw[blue,text=blue] (1.2,0) node[below]{$A$};
+\fill[blue] (1.2,0)  circle[radius=1.5pt];
+\draw[blue,text=blue] (2.4,0) node[below]{$M$};
+\fill[blue] (2.4,0)  circle[radius=1.5pt];
+\draw[blue,text=blue] (3.6,0) node[below]{$B$};
+\fill[blue] (3.6,0)  circle[radius=1.5pt];
+\draw[blue,text=blue] (6.58,0) node[below]{IS Bahnsteig};
+\node at (5.5,0.5) [align=flush center,text width=3cm]
+{$\longrightarrow \vec{v}$};
 \end{tikzpicture}$$
 Betrachte Bahnsteig ,,IS`` und Zug mit konstanter Geschw. $ \vec{v} $ ,,IS'``\\
 A und B sind zwei punkte im IS, in der Mitte M Steht der Beobachter. Dazu Gehören die Gleichen Punkte im IS' A', B' und M'
@@ -2602,18 +2602,18 @@ Zur Konstruktion verwenden wir die Symmetrien
 	d.h. alle Raumrichtungen sind äquivalent
 \end{itemize}
 \begin{tikzpicture}
-	\draw[->] (0,0) -- (2,0) node[right] {$x$}; 
-	\draw[->] (0,0) -- (0,1) node[above] {$y$};
-	\node at (0.7,1) [align=flush center,text width=2cm]
-	{IS};
+\draw[->] (0,0) -- (2,0) node[right] {$x$}; 
+\draw[->] (0,0) -- (0,1) node[above] {$y$};
+\node at (0.7,1) [align=flush center,text width=2cm]
+{IS};
 \end{tikzpicture}%
 \begin{tikzpicture}
-	\draw[->] (0,0) -- (2,0) node[right] {$x$}; 
-	\draw[->] (0,0) -- (0,1) node[above] {$y$};
-	\node at (1.3,0.5) [align=flush center,text width=3cm]
-	{\color{blue}$\longrightarrow \vec{v} = v\vec{e_x}$};
-	\node at (0.7,1) [align=flush center,text width=2cm]
-	{IS'};
+\draw[->] (0,0) -- (2,0) node[right] {$x$}; 
+\draw[->] (0,0) -- (0,1) node[above] {$y$};
+\node at (1.3,0.5) [align=flush center,text width=3cm]
+{\color{blue}$\longrightarrow \vec{v} = v\vec{e_x}$};
+\node at (0.7,1) [align=flush center,text width=2cm]
+{IS'};
 \end{tikzpicture}
 
 O.B.d.A. betrachten wir Bewegung entlang x-Achse (IS' in x-Richtung mit $ \vec{v} = v \vec{e}_x $) d.h. am Anfang $ y = y' \quad z = z' $\\
@@ -2671,11 +2671,14 @@ Da Galilei-Trafo als Grenzfall sein soll, nur positive Wurzel
 a_{11} = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} \tag{8}
 \end{equation*}
 Mit (3) ist $$a_{12} = \frac{-v}{\sqrt{1 - \frac{v^2}{c^2}}}$$
-$$(2): t' = a_{21} x + a_{12} t$$
-$$(5): x = a_{11} x' + a_{11} v t'$$
+\begin{align*}
+(2):\ t' &= a_{21} x + a_{12} t\\
+(5):\ x &= a_{11} x' + a_{11} v t'
+\end{align*}
 
 
-% check indexe
+
+% check index
 
 
 \begin{align*}
@@ -2684,6 +2687,19 @@ t' &= \frac{x}{a_{11} v} - \frac{a_{12}}{a_{11} v} \frac{(x-vt)}{\sqrt{1-\frac{v
 &= \frac{x (1-\frac{v^2}{c^2}) - x + vt}{v \sqrt{1-\frac{v^2}{c^2}}}\\
 &= \frac{t - \frac{v^2}{c^2} x}{1 - v'}
 \end{align*}
+
+%%% hier fehlt vielleicht? shit
+
+
+\subsubsection{Lorentz trafo}
+Mit dem Lorentz faktor $\gamma  = \frac{1}{\sqrt{1- \frac{v^2}{c^2}}}$ erhalten wir
+\rbox{\begin{align*} \tag 9
+	x' &= \frac{x-ct}{\sqrt{1-\frac{v^2}{c^2}}} = \gamma (x-ct)\\
+	t' &= \frac{t-\frac{v^2}{c^2} x}{\sqrt{1 - \frac{v^2}{c^2}}} = \gamma (t-\frac{v}{c^2}x) 
+	\end{align*}}
+$$a_{11} = a_{22} = \gamma = \coth \psi$$
+$$a_{12} = a_{21} = \gamma \frac{v}{c} = - \sinh \psi$$
+mit dem sog. Rapidität $\psi = \tx{arctanh} \frac{v}{c}$
 
 
 

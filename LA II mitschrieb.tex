@@ -3155,7 +3155,7 @@ Zu Zeigen: $\ska{F(v)}{w}= \ska{v}{F(w)} \Rightarrow F$ ist selbstadj.
 \begin{align*}
 \ska{v}{F(w)} &= \ska{\sum_{i=1}^{n} \lambda_i e_i}{\sum_{j=1}^{n} \mu_j F(e_j)}\\
 &= \sum_{i=1}^{n} \sum_{j=1}^{n} \lambda_i \mu_i \ub{\ska{e_i}{F(e_j)}}_{\varphi(e_i,e_j)}\\
-&= \sum_{i=1}^{n} \lambda_i \varphi(e_i, \ub{\sum_{j=1}^{n} \mu_j e_j}_{w}) = \varphi(\ub{\sum_{i=1}^{n} \lambda_i e_i , w}_{\hfw}) = \varphi(v,w)
+&= \sum_{i=1}^{n} \lambda_i \varphi(e_i, \ub{\sum_{j=1}^{n} \mu_j e_j}_{w}) = \varphi(\ub{\sum_{i=1}^{n} \lambda_i e_i , w}_{v}) = \varphi(v,w)
 \end{align*}
 \begin{equation*}
 \equalto{\ska{v}{F(w)}}{\custo{\Rightarrow}{\ska{F^\top(v)}{w}}{\custo{\Rightarrow}{F = F^\top}{F \tx{ ist \underline{selbsadjungiert}}}}} = \equalto{\varphi(v,w)}{\varphi(w,v) \tx{ da } \varphi \tx{ symm.}} 
@@ -3170,8 +3170,6 @@ $\exists \basis{b}{1}{n}$ ONB von Eigenvektoren von $F$\\
 Es genügt zu zeigen, dass die Darstellungsmatrix von $\varphi$ bzg. $\basis{b}{1}{n}$ in Diagonalform ist.
 $$\varphi(b_i, b_j) = \ska{b_i}{\equalto{F(b_j)}{\lambda_j b_j}} = \lambda_j\ska{b_i}{b_j} = \casess{\lambda_i}{i = j}{0}{\underline{\tx{sonst}}}$$
 }
-
-\hfw
 
 \subsection{Korollar:}
 Jede symmetrische $ (n\times n) $ Matrix über $ \mathbb{R} $ ist diagonalisierbar.\\
@@ -3229,6 +3227,7 @@ Für eine symm. $(n \times n)$-$\mathcal M$atrix $\equaltoup{A}{(a_{ij})}$ über
 \end{itemize}
 
 % neue Vorlesung
+
 
 \subsubsection{Wiederholung:}
 $V$ euklidischer untärer endlichedim. Raum $F: V \to V$ selbst adjungiert falls $F = F^*$\\ 
@@ -3295,16 +3294,16 @@ $$b_i \rightarrow (\mu_1^i,\dots \mu_n^i)$$
 $$b_j \rightarrow (\mu_1^j,\dots \mu_n^j)$$
 $$\alpha b_i + \beta b_j \rightarrow (\dots., \alpha \mu^i_n + \beta \mu_n^j)$$
 $$ \varphi(v,v) = \ub{( \xi_1, \dots , \xi_{n-1},0) \cdot \begin{pmatrix}
-a_{11} & \dots & a_{1n-1}& 0\\
-\vdots & & \vdots & 0\\
-a_{n-1 1} & \dots & a_{n-1 n-1} & 0\\
-0 & 0 & 0 & 0
-\end{pmatrix}\cdot \begin{pmatrix}
-\xi_1\\
-\vdots\\
-\xi_n-1\\
-0
-\end{pmatrix}}_{\ge 0}$$
+	a_{11} & \dots & a_{1n-1}& 0\\
+	\vdots & & \vdots & 0\\
+	a_{n-1 1} & \dots & a_{n-1 n-1} & 0\\
+	0 & 0 & 0 & 0
+	\end{pmatrix}\cdot \begin{pmatrix}
+	\xi_1\\
+	\vdots\\
+	\xi_n-1\\
+	0
+	\end{pmatrix}}_{\ge 0}$$
 Weil $ \varphi \upharpoonright_U $ positiv aus der Induktion
 $$ \varphi(v,v) = \varphi( \alpha b_i + \beta b_j , \alpha b_i + \beta b_j) = \ub{ \alpha^2 \lambda _i + \lambda \beta^2 }_{< 0} + 0$$
 $$\Rightarrow \tx{ Widerspruch ! }$$
@@ -3360,7 +3359,6 @@ w &= \mu_1 b_1 + \mu_2 b_2
 \ska{v}{w} = \equalto{\ub{ \lambda_1 \overline{\mu_1} \equalto{||b_1||^2}{||F(b_1)||^2} + \lambda_2 \overline{\mu_2} \equalto{||b_2||^2}{||F(b_2)||^2}} }{\begin{Huge} \ska{F(\lambda_1 b_1 + \lambda_2 b_2)}{F(\mu_1 b_1 ) + F(\mu_2 b_2)} \end{Huge}}
 \end{equation*}
 (letzter schritt weil $ F(b_1) \perp F(b_2) $) 
-
 
 
 
