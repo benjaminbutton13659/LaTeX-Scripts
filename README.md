@@ -14,7 +14,7 @@ New versions of the script will be available as soon as we had time to Tex the l
 
 * **Markus Österle**
 
-* **Andr'ez Gockel**
+* **Andrez Gockel**
 
 ## Acknowledgments
 
