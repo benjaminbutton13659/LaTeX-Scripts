@@ -9,6 +9,8 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing,patterns}
+\usetikzlibrary{arrows}
 \usepackage{nicefrac}
 \usepackage{mathtools}
 \usepackage[margin=1in]{geometry}
@@ -31,7 +33,6 @@
 \newcommand{\ham}{\mathcal{H}}
 \newcommand{\prt}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\casess}[4]{\left\{ \begin{array}{ll} {#1} & {#2} \\ {#3} & {#4} \end{array} \right.}
-%\newcommand{\reff}[1]{(\ref{{#1})}
 
 \newcommand{\const}{\tx{const.}}
 \newcommand{\summ}[2]{\sum_{#1}^{#2}}
@@ -409,19 +410,15 @@ Vektorielle Multiplikation des 2. NG mit r$\vec{r}_i$
 $$ \sum_{i} \vec{r}_i \times m_i\ddot{\vec{r}}_i = \sum_{i} \vec{r}_i \times \vec{F}_i$$
 $$( \dot{\vec{r}}_i \times \dot{\vec{r}}_i = 0)$$
 $$\frac{d}{dt} \underbrace{\sum_i m_i (\vec{r}_i \times \dot{\vec{r}}_i)} _{\vec{L} = \sum_i \vec{l}_i} = \underbrace{\sum_i \vec{r}_i \times \vec{F}_i^k}_{\vec{M} = \sum_i \vec{M}_i} + \underbrace{\sum_i \vec{r}_i \times \sum _{j\neq i} \vec{F}_{ij}}_{\buildrel ? \over = 0}$$
-
-%Blatt 1:
 \begin{align*}
 \sum_i \sum_{j\neq i} \vec{r}_i \times \vec{F}_{ij} = \ \  &\frac{1}{2} \sum_{i, j\neq i} (\vec{r}_i \times \vec{F}_{ij} + \vec{r}_j\times \vec{F}_{ji}) \\
 \buildrel \textrm{3. NG} \over = &\frac{1}{2} \sum_{i,j\neq i} \underbrace{(\vec{r}_i - \vec{r}_j) \times \vec{F}_{ij}}_{\textrm{Annahme: } \vec{F}_{ij} \parallel \vec{r}_i - \vec{r}_j} = 0
 \end{align*}
-
 d.h. innere Kräfte ergeben kein resultierendes Drehmoment.
 $$\frac{d\vec{L}}{dt} = \sum_i \vec{r}_i \times \vec{F}_i^A = \vec{M}  $$
 $$\textrm{abgeschlossenes System} \leftrightarrow \textrm{Gesamtdrehimpuls } \vec{L} \textrm{ ist erhalten}$$
 \underline{Energie:}
 Mult. von 2.NG mit $\dot{\vec{r}}_i$ 
-
 \begin{align*}
 \sum_i m_i \ddot{\vec{r}}_i \cdot \dot{\vec{r}}_i &= \frac{d}{dt} \underbrace{\sum_i \frac{m_i}{2} \cdot \dot{\vec{r}}_i\,^2}_{T} = \frac{dT}{dt} \\
 &= \sum_i (\vec{F}_{i}^{\tx{kons}} + \vec{F}_{i}^{\tx{diss}}) \dot{\vec{r}}_i
@@ -461,9 +458,6 @@ $$U_{ij} = \frac{q_i q_j}{|\vec{r}_i - \vec{r}_j |}$$
 	\hline\\[-10pt]
 	& & \underline{10 Größen}
 \end{tabular} \\\\
-
-
-
 Selten mehr: z.B. Lenzscher Vektor im Keplerproblem
 
 \section{Die Hamilton-Funktion (1833)}
@@ -478,7 +472,6 @@ $$r \equiv (r_1,r_2,\dots ,r_{3N}) \quad p = (p_1, p_2, \dots , p_{3N}) \quad i 
 \end{small}
 $$T = \sum_i \frac{m_i}{2} v_i^2 \quad \buildrel p_i = m_i v_i \over = \quad \sum_i \frac{p_i^2}{2m_i} \quad \ \  \textrm{, Potential U} $$
 Gesamtenergie $E = T+U$ wird durch die Hamilton-Funktion beschrieben: ,,Hamiltonian``:
-	
 \begin{equation*}
 \begin{Large}
 \rmbox{\begin{array}{ll}
@@ -488,7 +481,6 @@ Gesamtenergie $E = T+U$ wird durch die Hamilton-Funktion beschrieben: ,,Hamilton
 \end{Large}
 \tag{2}
 \end{equation*}
-
 Mit 
 $$\frac{\partial H}{\partial r_i} = \frac{\partial U}{\partial r_i} \buildrel (1) \over = - \dot{P}_i$$
 $$ \frac{\partial H}{\partial p_i} = \frac{p_i}{m_i} = \dot{r}_i \quad \ $$
@@ -596,7 +588,6 @@ Harm. Oszillator ist ein zentrales Modell der Physik
 $$ H(p,q) = \frac{p^2}{2m} + U(q)$$
 das bei $q = q_0$ eine stable Gleichgewichtslage besitzt.\\
 Idee(,,harmonische Näherung``) : Taylor Entwicklung von $k$ um $q_0$
-
 $$U(q) = \underbrace{U(q_0)}_{\textrm{oEdA } =\  0} + \underbrace{\frac{dU}{dq} \bigg|_{q_0}}_{\substack{ =\  0 \tx{,da}\\ \textrm{GGWlage}}} (q-q_0) + \frac{1}{2} \underbrace{ \frac{d^2 U}{d q^2} \bigg|}_{= k} (q-q_0)^2 + \dots$$
 $$\approx \frac{1}{2} k (q-q_0)^2 \equiv \frac{k}{2} x^2$$
 \underline{Bew Gl:} 
@@ -664,7 +655,7 @@ $$x(t) = C_0  e ^{-\frac{\gamma}{2}t} + C_1 t  e ^{-\frac{\gamma}{2}t}$$
 	\end{tabular}
 \end{itemize}
 
-\subsection{Gedämpfte Schwingungen}
+\subsection*{Gedämpfte Schwingungen (Wiederholung)}
 $$\ddot{x} + \gamma \dot{x} + \omega^2 x = 0$$
 $$ x(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}$$
 $$\lambda_{1/2} = \ub{- \gamma/2}_{\tx{Dämpfung}} \pm \frac{1}{2} \underbrace{\sqrt{\gamma^2 - 4 \omega^2}}_{\substack{\textrm{ für } \omega > 2 \gamma \rightarrow \textrm{schwingung} \\ \textrm{sonst Dämpfung}}}$$ 
@@ -687,7 +678,6 @@ mit \underline{Exp. ansatz:} $x(t) = A \pm e^{\pm i \omega t}$\\
 =& f\frac{(\omega_0^2 - \omega^2) \cos \omega t + \gamma \omega \sin \omega t}{(\omega_0^2 - \omega^2)^2 + \omega^2 \gamma^2} = a \cos \omega t + b \sin \omega t\\[10pt]
 =& A \cos (\omega t - \varphi)
 \end{align*}
-
 \begin{align*}
 &A = \sqrt{a^2 +b^2} \rightarrow A(\omega) = \frac{f}{\sqrt{(\omega^2_0 - \omega^2)^2 - \omega^2 \gamma^2}} \quad &\textrm{Amplitude}\\[15pt]
 &\tan(y) = \frac{a}{b} \rightarrow y(\omega) = \arctan\bigg(\frac{\gamma \omega}{\omega^2_0 - \omega^2}\bigg ) \quad &\textrm{Phase}
@@ -709,9 +699,33 @@ Resonanz wichtig: \begin{itemize}
 \end{itemize}
 
 %bild 5 2 gekoppelte Oszillatoren und wänden
+
+
 %markus arrival
 
-\subsection{ 6. gekoppelte Oszillatoren}
+\subsection{gekoppelte Oszillatoren}
+$$
+\begin{tikzpicture}
+\node[circle,fill=black,inner sep=1.5mm] (a) at (0,0) {};
+\node at (0,.5){$m$};
+\node at (2,.5){$m$};
+\node at (-1,-0.8){$c$};
+\node at (3,-0.8){$c$};
+\node at (1,-0.8){$k$};
+\draw[thick][->](2,-1)--(2.5,-1);
+\draw[thick] (2,-1.25)--(2,-.75);
+\node at (2.25,-1.5){$x_2$};
+\draw[thick][->](0,-1)--(0.5,-1);
+\draw[thick] (0,-1.25)--(0,-.75);
+\node at (0.25,-1.5){$x_1$};
+\node[circle,fill=black,inner sep=1.5mm] (b) at (2,0) {};
+\draw[decoration={aspect=0.3, segment length=3mm, amplitude=3mm,coil},decorate] (-2,0)--(a);
+\draw[decoration={aspect=0.3, segment length=3mm, amplitude=3mm,coil},decorate] (b)--(4,0);
+\draw[decoration={aspect=0.3, segment length=3mm, amplitude=3mm,coil},decorate] (b)--(a);
+\filldraw[pattern=north east lines] (-2.5,-1) rectangle (-2,1);
+\filldraw[pattern=north east lines] (4,-1) rectangle (4.5,1);
+\end{tikzpicture}
+$$
 $m_1$ und $m_2$ sind aneinander und an zwei wänden mit federn gekoppelt (äußere federn mit c und innere feder mit k)
 \begin{align*}
 m\ddot{x}_1 &= - cx_1 + k (x_2 - x_1) \tag{1}\\
@@ -778,7 +792,7 @@ $$ \vec{a}_1 = \frac{1}{\sqrt{2}} \begin{pmatrix}
 -1
 \end{pmatrix}$$
 
-$$\underbrace{V}_{\substack{\textrm{Operator} \\ \textrm{Abbildung} \\ \textrm{Matrix}}} \cdot \underbrace{\vec{a}_i}_{\textrm{Eigenvektor}} = \underbrace{\lambda_i}_{\textrm{Eigenwert}} \cdot \underbrace{\vec{a}_i}_{\textrm{Eigenvektor}}$$
+$$\rmbox{\underbrace{V}_{\substack{\textrm{Operator} \\ \textrm{Abbildung} \\ \textrm{Matrix}}} \cdot \underbrace{\vec{a}_i}_{\textrm{Eigenvektor}} = \underbrace{\lambda_i}_{\textrm{Eigenwert}} \cdot \underbrace{\vec{a}_i}_{\textrm{Eigenvektor}}}$$
 
 \underline{Eigenschwingungen}\\
 z.B. betrachte Molekül mit N Atomen (nicht lineare Mol)(für lineare Mol. $3N-5$ FG)
@@ -789,11 +803,8 @@ mit Gleichgewichtslage $x_1^{(0)}, \quad \rightarrow \frac{\partial V}{\partial 
 und Potential $V(x_1,\dots, x_f)$\\
 Entwickle V um $\vec{x}^{(0)}$\\
 $$\underbrace{V(x_1,\dots , x_f)}_{\textrm{oEdA }= 0} = V(x_1^{(0)},\dots , x_f^{(0)}) + \sum_i \underbrace{\bigg(\frac{\partial V}{\partial x_i}\bigg)_{x_i^{(0)}}}_{= 0} (x_i - x_i^{(0)})$$
-
-% blatt 1:
 $$ T = \frac{1}{2} \sum _{i,j} \ub{\bigg(\frac{\partial^2 V}{\partial x_i \partial x_j} \bigg)_0}_{V_{ij}} \ub{(x_i - x_i^{(0)} )}_{\equiv x_i}  \ub{( x_j - x_j^{(0)})}_{\equiv x_j} + \dots $$
 Hessematrix: $V = \frac{1}{2} \sum_{i,j} V_{ij} x_i x_j  $ harmonische Näherung
-
 \underline{Bew. GL:} $$m_i\ddot{x}_i = -\frac{\partial V}{\partial x_i} = - \sum_i V_{ij} x_j$$
 massenbehaftete Koordinaten: $ q_i = \sqrt{m_i} x_i$
 $$\rightarrow \boxed{\ddot{q}_i + \sum_i V_{ij} q_j = 0} \qquad V_{ij} = \frac{V_{ij}}{\sqrt{m_i m_j}}$$
@@ -806,7 +817,7 @@ a_2\\
 \end{pmatrix}$$
 ist $(\mathcal{V} - \lambda 1)\vec{a}=0 $ Eigenwertproblem
 
-\subsection{ 7 Eigenschwingungen}
+\subsection{Eigenschwingungen}
 $\mathcal{V} = \{v_{ij}\} \qquad i,j = 1, \dots ,N \qquad \vec{a} = (a_1,\dots,a_N)$\\
 Eigenwertproblem: $ \boxed{\mathcal{V} \vec{a} = \lambda \vec{a}}  \qquad \lambda = \omega^2$\\
 \underline{Eigenwerte $ \lambda_k $} $\det(\mathcal{V}-\lambda1) \buildrel ! \over = 0 \qquad (1)$\\
@@ -839,11 +850,48 @@ T &= \frac{1}{2} \sum_i \dot{q}_i^2 = \frac{1}{2} \dot{\vec{q}}^\top \dot{\vec{q
 \end{align*}
 Mit $P_k = \dot{Q}_k$ ist damit der Hamiltonian
 $$\boxed{H(Q,P) = \frac{1}{2} \sum_{k=1}^{N} ( p^2_k + \omega_k^2 Q^2_k)}$$
-der in ein System \underline{unabhängiger} Oszillatoren \underline{seperiert.}\\
-\underline{Bsp:} Normalmoden von Wasser\\
-% bild 
-Bilder: Wasser Molekül mit Biegeschwingung und symmetrischer oder asymmetrischer Streckschwingung
+der in ein System \underline{unabhängiger} Oszillatoren \underline{seperiert.}
+\subsubsection{\underline{Bsp:} Normalmoden von Wasser}
+$$
+\begin{tikzpicture}
+\node[circle,fill=red, draw=black,inner sep=1.5mm] (a) at (0,0) {};
+\node[circle,fill=red, draw=black,inner sep=1.5mm] (b) at (5,0) {};
+\node[circle,fill=red, draw=black,inner sep=1.5mm] (c) at (10,0) {};
+\node[circle,fill=white, draw=black, inner sep=1mm] (a1) at (-1,-1) {};
+\node[circle,fill=white, draw=black, inner sep=1mm] (a2) at (1,-1) {};
+\node[circle,fill=white, draw=black, inner sep=1mm] (b1) at (4,-1) {};
+\node[circle,fill=white, draw=black, inner sep=1mm] (b2) at (6,-1) {};
+\node[circle,fill=white, draw=black, inner sep=1mm] (c1) at (9,-1) {};
+\node[circle,fill=white, draw=black, inner sep=1mm] (c2) at (11,-1) {};
+\draw[thick,-] (a1) -- (a);
+\draw[thick,-] (a2) -- (a);
+\draw[thick,-] (b1) -- (b);
+\draw[thick,-] (b2) -- (b);
+\draw[thick,-] (c1) -- (c);
+\draw[thick,-] (c2) -- (c);
+\node at (0,.5) {O};
+\node at (-1.25,-1.5) {H};
+\node at (1.25,-1.5) {H};
+\node at (5,.5) {O};
+\node at (5-1.25,-1.5) {H};
+\node at (5+1.25,-1.5) {H};
+\node at (10,.5) {O};
+\node at (10-1.25,-1.5) {H};
+\node at (11.25,-1.5) {H};
+\draw [<->,black,thick] (0.5,-1) to [out=-150,in=-30] (-0.5,-1);
+\draw [<->,black,thick] (5-0.25-.15,0+.15) to (4-.15,-1+0.25+.15);
+\draw [<->,black,thick] (5+0.25+.15,0+.15) to (6+.15,-1+0.25+.15);
+\draw [<-,black,thick] (10-0.25-.15,0+.15) to (9-.15,-1+0.25+.15);
+\draw [->,black,thick] (10+0.25+.15,0+.15) to (11+.15,-1+0.25+.15);
+\node at (0,-3) {Biegeschwingung};
+\node at (5,-2.5) {symmetrische-};
+\node at (10,-2.5) {asymmetrische-};
+\node at (7.5,-3.25) {Streckschwingung};
+\end{tikzpicture}
+$$
 
+\noindent
+Bilder: Wasser Molekül mit Biegeschwingung und symmetrischer oder asymmetrischer Streckschwingung.\\[5pt]
 Anwendung: Wasser absorbiert (infrarot) Licht mit den Eigenfrequenzen: \underline{$\omega_k$ sind exp. observable Größen}\\
 $\rightarrow$ Schwingungsspektroskopie
 
@@ -997,7 +1045,12 @@ $$\begin{array}{lll}
 gebundene bewegung $ \rightarrow $ Keplersche Gesetze
 \begin{itemize}
 	\item[1)] Planetenbewegung sind Ellipsen mit Sonne in einen Brennpunkt\\
-	$$\frac{(x+a\epsilon)^2}{a^2} + \frac{y^2}{b^2} = 1$$
+	\begin{minipage}{.5\linewidth}
+		$$ test $$
+	\end{minipage}
+	\begin{minipage}{.5\linewidth}
+		$$\frac{(x+a\epsilon)^2}{a^2} + \frac{y^2}{b^2} = 1$$
+	\end{minipage}
 	\item[2)] Flächensatz\\
 	Die vom Fahrstrahl pro Zeit $ dt $ überstrichene Fläche ist konstant
 	$$ dA = r^2 \frac{d\varphi}{2} $$
