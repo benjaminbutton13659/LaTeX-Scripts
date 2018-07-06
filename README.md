@@ -6,9 +6,9 @@ Theoretical Physics I, Experimental Physics II and Linear Algebra II
 
 * [TexStudio](https://www.texstudio.org/) and [Texpad](https://www.texpad.com/) - The IDEs used to edit LaTex
 
-## Versioning
+## Latest Version
 
-New versions of the script will be available as soon as we had time to Tex the lectures. This might take from hours to a few days later.
+New versions of the script will be available as soon as we have had the time to Tex the lectures. This might take up to a few days after the lecture.
 
 ## Authors
 
@@ -18,4 +18,4 @@ New versions of the script will be available as soon as we had time to Tex the l
 
 ## Acknowledgments
 
-* Hat tip to anyone who is helping to improve the code and helps us find mistakes
+Hat tip to anyone who is helping to improve the code and helps us find mistakes
