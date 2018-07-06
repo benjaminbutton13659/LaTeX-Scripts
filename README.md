@@ -4,7 +4,7 @@ Theoretical Physics I, Experimental Physics II and Linear Algebra II
 
 ## Built With
 
-* [TexStudio](https://www.texstudio.org/) [Texpad](https://www.texpad.com/) - The IDEs used to edit LaTex
+* [TexStudio](https://www.texstudio.org/) and [Texpad](https://www.texpad.com/) - The IDEs used to edit LaTex
 
 ## Versioning
 
