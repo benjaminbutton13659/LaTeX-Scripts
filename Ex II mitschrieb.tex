@@ -2659,10 +2659,10 @@ $ E_0(l,m,n) $ ergibt sich aus den Bedingungen
 	Anzahl der Resonatormoden ergibt sich dazu:
 	\begin{align*}
 	N_G &= 2 \frac{V_{\tx{Kugel}} (k_G) }{V_0} \quad 2 \tx{ für Polarisationsfreiheitsgrade}\\
-	&= 2 \frac{\pi}{6} (\frac{a\omega_G}{\pi c}) ^3 = \frac{8 \pi f_{G}^3 a^3}{3 c^2} \quad F_G = 2 \pi \omega_G
+	&= 2 \frac{\pi}{6} (\frac{a\omega_G}{\pi c}) ^3 = \frac{8 \pi f_{G}^3 a^3}{3 c^3} \quad f_G = \frac{\omega_G}{2 \pi}
 	\end{align*}
-	$$\tx{Modendichte:}\quad \frac{N_G}{V} = \frac{ 8 \pi f_G^3}{3 c^2}$$
-	$$\tx{Spektrale Modendichte:} \quad \frac{d N_G/V}{df} = \frac{8 \pi f_G^2}{c^2}$$
+	$$\tx{Modendichte:}\quad \frac{N_G}{V} = \frac{ 8 \pi f_G^3}{3 c^3}$$
+	$$\tx{Spektrale Modendichte:} \quad \frac{d N_G/V}{df} = \frac{8 \pi f_G^2}{c^3}$$
 \end{itemize}
 
 \subsection{Hohlleiter}
@@ -2797,6 +2797,145 @@ el.-mag. Welle transportiert auch Impuls\\
 \end{align*}
 $$\Rightarrow P_{\tx{St}} = \epsilon_0 |\vec{E}|^2 = w_{\tx{em}} \quad \tx{ für Absorption}$$
 Spiegel mit Reflexion der Welle $ \Delta p \rightarrow 2 \Delta p $
+
+% neue Vorlesung
+
+\section{Wellenabstrahlung}
+\subsection{Hertzscher Dipol}
+\begin{itemize}
+	\item offener, gerader Schwingkreis
+	\item $ e^- $ im Leitungsband schwingen periodisch 
+	\item Trennung der Ladungen: $ e^- $-überschuss oder $ e^- $-Mangel\\
+	$ \rightarrow $ Bildung eines oszillierenden Dipols
+	$ \vec{p} = q \vec{d}\quad \pm q $ Ladungen , $ \vec{d} : -q \buildrel \vec{d} \over \rightarrow +q $\\
+	Beachte $ |\vec{d}| \ll l_{\tx{stab}} \quad $ typ: $ |\vec{d}| \sim \mu\tx{m} $
+\end{itemize}
+
+\subsection{Abstrahlung des Hertzschen Dipols}
+\begin{itemize}
+	\item $ q $ spürt Kraftwirkung aus dem $ \vec{E} $-Feld des Dipols erst nach $ \Delta t = \frac{\tx{Abstand}}{c} $\\
+	\item[$ \rightarrow $] Retardierung, $ \vec{E}, \ \vec{B} $ breiten sich mit Verzögerung im Raum aus
+\end{itemize}
+\subsubsection{\underline{Magnetfeld}}
+Bio-Savart für Vektorpotential $ \vec{A} $
+$$\vec{A}(\vec{r},t) = \frac{\mu_0}{4 \pi} \int \frac{\vec{j}(\vec{r}',t)}{|\vec{r} - \vec{r}'|} d^3 \vec{r}'$$
+\folie{Zur Berechnung des B-Feldes}\\
+Stromdichte der $ e^- $ im Stab:
+$$\vec{j}(\vec{r}',t) = \ub{\vec{v}(\vec{r}',t)}_{\tx{Geschw.}} \ub{\rho(\vec{r}',t)}_{\tx{Ladungsdichte}}$$
+Betrachte:
+\begin{itemize}
+	\item $ |\vec{r} - \vec{r}'| \gg l $ Stab dann
+	\begin{enumerate}[a)]
+		\item $ r= |\vec{r}| \gg l $
+		\item $ |\vec{r} - \vec{r}'| \approx |\vec{r}| $ unabhängig von $ \vec{r}' $
+	\end{enumerate}
+	\item Laufzeit der Wellen im Stab $ \mathcal{T} = \frac{l}{c} \ll T = \frac{2 \pi}{\omega}$\\
+	d.h. alle Wellenfronten von unterschiedlicher $ \vec{r}' $ gleichzeitig bei $ \vec{r} $ ankommen
+\end{itemize}
+Berücksichtigung der Retardierung
+$$\vec{A} (\vec{r},t) = \frac{\mu_0}{4 \pi r} \int\vec{v} (\vec{r}',t') \rho(\vec{r}',t') d^3 \vec{r}'$$
+$$t' = t - \frac{r}{c} \quad \tx{Retardierung}$$
+Integrand durch oszillierenden Dipol beschreibbar. Dipol in z-Richtung: $ \vec{p}(t) = q d \sin \omega t \vec{e}_z $\\
+Aus $ \frac{d}{dt} \vec{d} = \vec{v} $ folgt: $ \frac{d}{dt} \vec{p} = q \frac{d}{dt} \vec{d} = q \vec{v} $\\[5pt]
+Raum- $ \rightarrow $ Ladungsintegral $ \rho d^3 \vec{r}' = d q $
+$$\rightarrow \vec{A}(\vec{r},t) = \frac{\mu_0}{4 \pi r} \frac{1}{q} \frac{dp (t-\frac{r}{c})}{dt} \int_{\tx{Stab}} d q$$
+$$ \vec{A}(\vec{r},t) = \frac{\mu_0}{4 \pi r} q d \omega\{\omega (t - \frac{r}{c})\} \vec{e}_z  \quad p_0 = qd$$
+\begin{itemize}
+	\item $ \frac{d}{dt} \vec{p} $ erzeugt $\vec{A}$ und damit $ \vec{E} $ und $ \vec{B} $-Felder
+	\item Magnetfeld $ \vec{B}  = \tx{rot } \vec{A} = \begin{pmatrix}
+		\frac{\partial A_z}{\partial y} \\
+		-\frac{\partial A_z}{\partial x} \\
+		0
+	\end{pmatrix} $
+\end{itemize}
+Bei Ableitung beachten: $ \tau(x,y) $ und Retardierung 
+$$\vec{B}  = \frac{\mu_0}{4 \pi} \begin{pmatrix}
+\frac{d}{dt} p(t-\frac{r}{c}) \frac{\partial}{\partial y} (\frac{1}{r}) + \frac{1}{r} \frac{\partial }{\partial y} \frac{d}{dt} p(t-\frac{r}{c}) \\
+-\frac{d}{dt} p(t-\frac{r}{c}) \frac{\partial}{\partial x} (\frac{1}{r}) + \frac{1}{r} \frac{\partial }{\partial x} \frac{d}{dt} p(t-\frac{r}{c}) \\
+0
+\end{pmatrix}$$
+$$t' = t-\frac{r}{c} \quad \frac{d}{dt} p(t-\frac{r}{c}) = \frac{d}{dt'} p(t') \ub{\frac{dt'}{dt}}_{1} \equiv \dot{p}$$
+$$\frac{\partial t'}{\partial r} = -\frac{1}{c} \quad \frac{\partial r}{\partial y} \frac{\partial \sqrt{x^2 + y^2 + z^2}}{\partial y} = \frac{1}{2r} 2y = \frac{y}{r} \quad \frac{\partial r}{\partial x} = \frac{x}{r}$$
+$$\frac{\partial }{\partial x} \dot{p} = - \ddot{p} \frac{1}{c} \frac{x}{r}$$
+$$\frac{\partial }{\partial y} (\frac{1}{r}) = \frac{\partial }{\partial y} \frac{1}{\sqrt{x^2 + y^2 + z^2}} = \frac{1}{-2r^3} 2y = - \frac{y}{r^3} $$
+Ergibt:
+$$\vec{B} = \frac{\mu_0}{4 \pi} \begin{Bmatrix}
+-\dot{p} \frac{y}{r^3} - \ddot{p} \frac{y}{cr^2} \\
++ \dot{p} \frac{x}{r^3} + \ddot{p} \frac{x}{cr^2} \\
+0
+\end{Bmatrix}$$
+$$\vec{B}(\vec{r},t) = \frac{mu_0}{4 \pi} \bigg\{ \frac{\dot{\vec{p}}}{r^2} x \vec{e}_r + \frac{\ddot{\vec{p}}}{c r} x \vec{e}_r \bigg\}$$
+$ \vec{B} \perp \vec{p} \quad (\vec{p} \parallel \dot{\vec{p}} \parallel \ddot{\vec{p}} ) \quad \vec{B} \perp \vec{r} $ 
+Beiträge:
+\begin{enumerate}[a)]
+	\item ,,$ \dot{\vec{p}} $`` , $ \sim \frac{1}{r^2} $\\
+	Vgl. Bio-Savart $ d\vec{B} = \frac{1}{4 \pi \epsilon_0} \frac{\vec{j} \times \vec{r}}{r^2} dV $\\
+	$ \dot{\vec{p}} \int\vec{j} dV \Rightarrow \dot{\vec{p}} $ stammt aus Oszillation von $ \vec{j} $
+	\item ,,$ \ddot{\vec{p}} $`` , $ \sim \frac{1}{r} $ aus $ \frac{\partial \vec{E}}{\partial t} $ bzw. des Verschiebungsstromes \\
+	Vgl: Maxwell-Gl:
+	$$\tx{rot } \vec{B} = \mu_0 \vec{j}  + \frac{1}{c^2}  \frac{\partial \vec{E}}{\partial t}$$
+\end{enumerate}
+\subsubsection{\underline{Elektrisches Feld}}
+$$\tx{div } \vec{A} = \frac{\partial A_z}{\partial z} = \frac{\mu_0}{4 \pi} (\dot{p} \frac{z}{r^3} + \ddot{p} \frac{z}{cr^2})$$
+In Lorentzeichung:
+$$\tx{div } \vec{A} = - \frac{1}{c^2} \frac{\partial }{\partial t} \rho_{\tx{el}} \quad \tx{mit} \quad \epsilon_0 \mu_0 = \frac{1}{c^2}$$
+$$\rho_{\tx{el}} \frac{1}{4 \pi \epsilon_0} \bigg\{ p\frac{z}{r^3} + \dot{r}\frac{z}{cr^2} \bigg\}$$
+Final
+\begin{align*}
+\vec{E} &= - \vec{\nabla} \rho_{\tx{el}} - \frac{\partial \vec{A}}{\partial t} \\
+&= \frac{1}{4 \pi \epsilon_0} \begin{Bmatrix}
+3 p \frac{xz}{r^5} + 3 \dot{p} \frac{xz}{cr^4} + \ddot{p} \frac{xz}{c^2r^3} \\
+3 p \frac{yz}{r^5} + 3 \dot{p} \frac{yz}{cr^4} + \ddot{p} \frac{yz}{c^2r^3} \\
+p(3\frac{z^2}{r^5} - \frac{1}{r^3}) + \dot{p} (3 \frac{z^2}{cr^4} - \frac{1}{cr^2}) + \ddot{p} (\frac{z^2}{c^2r^3} - \frac{1}{c^2r})
+\end{Bmatrix}
+\end{align*} 
+\begin{align*}
+\vec{E} = \frac{1}{4 \pi \epsilon_0} \bigg\{ 3(\frac{\vec{p}}{r^3} \vec{e}_r) \vec{e}_r - \frac{\vec{p}}{r^3} + 3(\frac{\vec{p}}{cr^2} \vec{e}_r) \vec{e}_r - \frac{\dot{\vec{p}}}{cr^2} + (\frac{\ddot{\vec{p}}}{cr^2} \times \vec{e}_r) \vec{e}_r \bigg\}
+\end{align*}
+
+% foto nachtragen
+
+Nahfeld: Terme $ \sim \frac{1}{r^2} $ und $ \sim \frac{1}{r^3} $
+$$\vec{E}_N = \frac{1}{4 \pi \epsilon_0 r^3} [ - \vec{p}^* + 3 ( \vec{p}^* \vec{e}_r) \vec{e}_r ]$$
+$$\vec{p}^* ? \vec{p} + \frac{r}{c} \dot{\vec{p}}$$
+$ \vec{E} $ und $ \vec{B} $ um $ \frac{\pi}{2} $ verschoben\\
+Fernfeld: Term $ \sim \frac{1}{r} $
+$$\vec{E}_F = \frac{1}{4 \pi \epsilon_0 c^2 r} [\ddot{\vec{p}} - (\vec{e}_r \cdot \ddot{\vec{p}}) \vec{e}_r]$$
+$ \perp \vec{r} , \ \perp \vec{B}, \ \vec{E} $ und $ \vec{B} $ in Phase wie von Vakuumwelle erwartet\\
+Amplitude $ \sim \frac{1}{r} \Rightarrow $ Intensität $ \sim \frac{1}{r^2} $\\
+$ \rightarrow $ Energie und Impuls durch eine Kugelfläche konstant
+$$|\vec{E}| = \frac{|\ddot{\vec{p}}| \sin \theta}{4 \pi \epsilon_0 c^2 r} $$
+
+% better angle winkel mit radius durch
+
+$$\theta: \angle \tx{Dipolachse und Richtung der Welle}$$
+nicht isotrop, maximal $ \perp $ Dipolachse. Verschwindet entlang Dipolachse\\
+\folie{Nahfeld des Hertzschen Dipol und davor}
+\subsubsection{\underline{Strahlungsdämpfung}}
+Energiestromdichte: $ |\vec{S}| = \epsilon_0 c |\vec{E}|^2 $\\
+Im Fernfeld: $ S = \epsilon_0 c \bigg( \frac{1}{4 \pi \epsilon_0} \frac{\ddot{p}}{c^2r} \sin \theta \bigg)^2 $\\
+mit $ \ddot{p}^2 = - p_0^2 \omega^4 \sin^2 (\omega(t+\frac{r}{c})) $\\
+Mittlung über Schwingungsperiode $ \overline{\ddot{p}^2} = \frac{1}{2} p_0^2 \omega^4 $\\
+Beachte Skalierung mit $ \omega^4 $\\
+$ \rightarrow $ signifikante Abstrahlung bei hohen Frequenzen
+$$\boxed{p = \frac{p_0^2 \omega^4}{12 \pi \epsilon_0 c^3}}$$
+\begin{itemize}
+	\item Energie wird der Schwingung des Dipols entzogen\\
+	$ \rightarrow $ Dämpfung der Schwingung\\
+	aber Kompensation durch gekoppelte Schwingkreis
+	\item Berechnung für freie Schwingung\\
+	Bei $ t = 0 $ Schwingung mit Amplitude $ p_0 $ dann schwache Dämpfung $ p(t) = p_0 e^{-\gamma t} $\\
+	Da $ E_{\tx{tot}} = E_{\tx{kin}} + E_{\tx{pot}} \sim |\tx{Amplitude}|^2 $\\
+	gilt $ E_{\tx{tot}} = E_{\tx{tot}}(t=0) e^{-2 \gamma t} $\\
+	Abgestrahlte Leistung $ P > 0 $\\
+	$ -P = \frac{dE_{\tx{tot}}}{dt} = - 2 \gamma E_{\tx{tot}} \quad \gamma = \frac{1}{2} \frac{P}{E_{\tx{tot}}} $\\[5pt]
+	In Mechanik: $ E_{\tx{tot}} = \frac{1}{2} m v_{\tx{max}}^2 = \frac{1}{2} m \omega^2 d^2 $\\
+	Daraus $ \gamma = \frac{q^2 \omega^2}{12 \pi \epsilon_0 m_e c^3} $ \\
+	$ m_e $ Masse el., $ q $ Ladung des Dipols
+	\item Wie sieht das Frequenzspektrum aus ?\\
+	
+	
+\end{itemize}
 
 
 
