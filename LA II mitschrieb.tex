@@ -39,6 +39,7 @@
 \newcommand{\summ}[2]{\sum_{#1}^{#2}}
 \newcommand{\intt}[2]{\int_{#1}^{#2}}
 \newcommand{\casess}[4]{\left\{ \begin{array}{ll} {#1} & {#2} \\ {#3} & {#4} \end{array} \right.}
+\newcommand{\dmat}[3]{\begin{pmatrix} #1_{#2}&&\\ &\ddots& \\ && #1_{#3} \end{pmatrix}}
 \newcommand{\ska}[2]{\langle #1 , #2 \rangle}
 
 
@@ -3359,6 +3360,178 @@ w &= \mu_1 b_1 + \mu_2 b_2
 \ska{v}{w} = \equalto{\ub{ \lambda_1 \overline{\mu_1} \equalto{||b_1||^2}{||F(b_1)||^2} + \lambda_2 \overline{\mu_2} \equalto{||b_2||^2}{||F(b_2)||^2}} }{\begin{Huge} \ska{F(\lambda_1 b_1 + \lambda_2 b_2)}{F(\mu_1 b_1 ) + F(\mu_2 b_2)} \end{Huge}}
 \end{equation*}
 (letzter schritt weil $ F(b_1) \perp F(b_2) $) 
+
+% neue vorlesung
+
+\subsection{Wiederholung:}
+Orthogonale Endlómorphismes $ F: V \to V \quad \forall v,w \in V$ V euklidisch oder unitär \\
+$ \ska{v}{w} = \ska{F(v)}{F(w)} $\\
+F orthogonal gdw $ ||v|| = ||F(v) || \  \forall v \in V $ dann bildet F Orthonormalsysterme zu Orthonormalsysteme ab \\
+\underline{Frage:}\\
+$ F: \mathbb{R} \to \mathbb{R}\quad x \mapsto 2 \cdot x $
+$ \rightarrow $ Orthogonale Abbildungen (für euklidische Räume) erhalten den Winkel zwischen Vektoren
+
+\subsection{Satz:}
+Jede orthogonale Abbildung ist injektiv.
+\subsection{Bew:} $ F:V\to V \quad v \in \ker(F)$
+$$0 = F(v) \rightarrow 0 = ||F(v)|| = ||v|| \rightarrow v = 0$$
+\subsection{Satz:} Sei V endlichdim. euklidischer oder unitärer Raum und $ F: V\to V $ eine Bijektive lineare Abbildung.\\
+Folgende Aussagen sind dann äquivalent:
+\begin{enumerate}[1)]
+	\item F it orthogonal
+	\item Der adjunkte Endomorphismus $ F^\top $ von $ F $ ist $ F^{-1} $
+\end{enumerate}
+
+\subsection{Bew:}
+$ \boxed{1 \Rightarrow 2} $ \\
+$ \forall v,w \in V: $\\
+%$$\ska{\equalto{w}{\equalto{\ub{F(F^{-1}(w))}_{=}}}{}}{F(v)} = \ska{F^\top(w)}{v}$$
+$ \leftarrow F \tx{ orthogonal} $\\
+$$\ska{F^{-1}(w)}{v}  \buildrel \substack{\tx{Eindeutigkeit}\\\tx{von } F^\top} \over \Rightarrow  F^{-1} = F^\top $$
+$ \boxed{2 \Rightarrow 1} $ \\
+F \underline{orthogonal}\\
+$$\ska{F(v)}{F(w)} \buildrel \tx{Definition} F^\top \over = \ska{F^\top(F(v))}{w} \buildrel F^\top = F^{-1} \over = \ska{F^{-1}(F(v))}{w} = \ska{v}{w}$$
+
+\subsection{Kor:}
+$ F: V\to V $ endlichdim. euklidisch oder unitäre orthogonale Abbildung \\
+$ \Rightarrow $ F ist bijektiv und normal, mit $ F^{-1} = F^\top $
+
+\subsection{Bew:}
+F orthogonal $ \Rightarrow $ F injektiv $ \buildrel \tx{dim}(V) < \infty \over \Rightarrow $ F bijektiv ist $ \Rightarrow $ $ F^\top = F^{-1} $
+$$F \circ F^\top = F \circ F^{-1} = F^{-1} \circ F = F^\top \circ F \Rightarrow \quad \tx{ normal}$$
+
+\subsection{Satz:}
+Sei V endlichdim, euklidisch oder unitär $ F:V\to V $ orthogonale Abbildung. Dann haben alle Eigenwerte von F Absolutbetrag 1. Form ist $ \det(F) = 1 $
+
+\subsection{Bew:}
+Beachte, dass 0 kein Eigenwert von D ist. (weil F injektiv ist !)\\
+Sei $ \lambda \in K $ ein Eigenwert von F und $ v \in V \setminus \{0\} $ ein Eigenwert zu $ \lambda $
+$$ \begin{array}{cc}
+\equalto{||F(v)||}{} = ||v|| \neq 0\\
+\ ||\lambda v || \ = | \lambda | \ ||v||
+\end{array} \rightarrow |\lambda| = 1$$
+Sei A die Darstellungsmatrix von F bzgl. der ONB
+\begin{align*}
+|\det(F)| &= |\det(A)| = |\overline{\det(A)}| = |\det(\overline{A})| = |\det(\overline{A^\top})| \\
+&= | \det(\ub{\overline{A^\top}}_{A^*})| \buildrel F \tx{ orthogonal} \over = |\det(F^\top)| = |\det(F^{-1})| = | \det(F)|^{-1}
+\end{align*}
+$ F\circ F^{-1} = Id_{IV} $\\
+$$|\det(F)|^2 = 1 \Rightarrow |\det(F)| = 1$$
+
+\subsubsection{Bem:}
+Sei B eine ONB von V\\
+$A \ \ \;$  die Darstellungsmatrix von $F \ \ \; $ bzgl. B\\
+$ A^* \ \:$ die Darstellungsmatrix von $ F^\top \ $ bzgl. B\\
+$ A^{-1} $ die Darstellungsmatrix von $ F^{-1} $ bzgl. B
+$$F^{-1} = F^\top \Leftrightarrow A^{-1} = A^*$$
+
+\subsection{Def:}
+Sei $A \in \mathcal M_{(n \times n)} (K) \qquad K = \mathbb{R} \tx{ oder } \mathbb{C}$ regulär 
+$$A \tx{ ist Orthogonal, falls } A^{-1} = A^*$$
+\subsubsection{Bem:}
+$F$ ist orthogonal $\Leftrightarrow$ Die Darstellungsmatrix von $F$ bzgl. $\begin{pmatrix}
+\tx{einer} \\ \tx{jeder}
+\end{pmatrix}$ ONB orthogonal
+\subsection{Kor:}
+$ A \in \mathcal{M}_{n \times n} (K) $ regülär ist orthogonal $ \Leftrightarrow $ die  Zeilenvektoren (bzw die Spaltenvektoren) ein Orthonormalsystem in $ K^n $ bilden (und somit eine ONB)
+\subsection{Bew:}
+$$ A \tx{ orthogonal } \Leftrightarrow A^{-1} = A^* \Leftrightarrow A \cdot A^* = E_n = A \cdot A^{-1} \Leftrightarrow \equalto{\ub{\sum_{k=1}^{n} a_{ik} \cdot \overline{a_{jk}}}}{\ska{\vec{a}_i}{\vec{a}_j} \in K^n} = \casess{1}{i=j}{0}{i\neq j} $$
+$$\ska{\ub{\vec{a}_i}_{\tx{i-te Zeile}}}{\ub{\vec{a}_j}_{\tx{j-te Zeile}}} \in K^n \tx{ mit dem Standartskalarprodukt } $$
+\subsection{Kor: zu irgendeinem Satz}
+Sei $ F: V \to V $ normale Abbildung eines endlichdimensionalen unitären Raumes V derart, dass alle Eigenwerte von F Absolutbetrag 1 haben. Dann ist F orthogonal.
+
+\subsection{Bew:}
+$$ \chi_{F}(T) \in \mathbb{C} [T] \tx{ zerfällt in Linearfaktoren}$$
+$$\Downarrow F \tx{ normal}$$
+Es existiert eine ONB $ \basis{b}{1}{n} $ von Eigenvektoren von F $ F(b_i) = \lambda \cdot b_i $\\[5pt]
+F hat Darstellungsmatrix:
+$\begin{pmatrix}
+\lambda_1\\
+& \ddots \\
+& & \lambda_n
+\end{pmatrix} $
+bzgl $ B = \basis{b}{1}{n} $\\[5pt]
+$$\Rightarrow 0 \neq |\det(F)| = | \prod  \lambda_i | = \prod | \lambda_i| = 1$$
+F hat Darstellungsmatrix:
+$\begin{pmatrix}
+\overline{\lambda_1}\\
+& \ddots \\
+& & \overline{\lambda_n}
+\end{pmatrix}$
+bzgl $ B ) \basis{b}{1}{n} $\\[5pt]
+$$\lambda_i \cdot \overline{\lambda_i} = |\lambda_i|^2 = 1 \Rightarrow \overline{\lambda_i} = \lambda_i^{-1}$$
+$ F^\top $ $ (= F^{-1}) $ hat Darstellungsmatrix: $ \begin{pmatrix}
+\frac{1}{\lambda_1} \\
+& \ddots \\
+& & \frac{1}{\lambda_n}
+\end{pmatrix} $ bzgl $ B = \basis{b}{1}{n} $ 
+$$\Rightarrow F^{-1} = F^\top \rightarrow F \tx{ ist orthogonal}$$
+
+\subsection{Def:}
+Eine Matrix $ A \in \mathcal{M}_{n \times n}(K) $ ist orthogonal diagonalisierbar, falls es eine orthogonale (reguläre) Matrix $ S $ gibt, sodass $ S^{-1} A S  \ (= S^* A S)$ in Diagonalform ist.
+
+\subsection{Prop:}
+Jede normale Matrix $ A \in \mathcal{M}_{n \times n}(K) $ deren charakteristisches Polynom in Linearfaktoren zerfällt, ist orthogonal diagonalisierbar.
+
+\subsection{Bew:}
+Sei $ F_A: K^n \to K^n $ die zugehörige lineare Abbildung $ \Rightarrow  F_A $ ist normal $ \Rightarrow \chi_A(T) $ zerfällt in Linearfaktoren.\\
+Es gibt eine ONB $ \basis{b}{1}{n} $ von Eigenvektoren von F(d.h. von A)\\
+Sei $ S = (b_1| \dots | b_n) \qquad b_i$ als Spaltenvektoren
+$$S^{-1} A S = \dmat{\lambda}{1}{n} \quad \tx{in Diagonalform}$$
+Es genügt zu zeigen, dass S eine orthogonale Matrix ist.\\
+Aber die Spaltenvektoren von S bilden ein orthonormales System.\\
+$$\Rightarrow S \tx{ ist orthogonal} $$
+
+\subsection{Kor:}
+Jede symmetrische $ n \times n $ Matrix über $ \mathbb{R} $ bzw. jede hermitesche Matrix über $ \mathbb{C} $ ist orthogonal diagonalisierbar.
+
+\subsection{Bew:}
+A ist normal, $ \chi_A(T) $ zerfällt in Linearfaktoren.
+
+\subsection{Def: Drehung}
+Sei V ein endlichdim euklidischer Raum.\\
+$ F: V \to V $ orthogonale Abbildung ist eine \underline{\underline{Drehung}}, falls $ \det(F) = 1 $.
+
+\subsubsection{Bem:}
+Die Kollektion aller Drehungen bilden eine \underline{\underline{Gruppe}}.
+
+\subsection{Satz:}
+Sei $ \mathbb{R}^2 $ mit dem Standartskalarprodukt als euklidischer Raum.\\
+$F: \mathbb{R}^2 \to \mathbb{R}^2$ ist eine Drehung, gdw F Darstellungsmatrix bzgl $ \{e_1,e_2\} $ der Form:
+$$\begin{pmatrix}
+\cos \alpha & - \sin \alpha \\
+\sin \alpha & \cos \alpha
+\end{pmatrix}$$
+hat, für ein $ \alpha \in [0, 2\pi] $. Wobei $ \alpha $ der Winkel der Drehung ist.
+\underline{Bsp:}
+
+$$ \alpha = \frac{\pi}{2} :\qquad \begin{tikzpicture}
+\draw[->] (0,0) to [out=90,in=0] (-.5,.5);
+\end{tikzpicture} = \begin{pmatrix}
+0 & -1\\
+1 & 0
+\end{pmatrix}\qquad 
+\begin{array}{ccccc}
+\begin{pmatrix}
+1\\0
+\end{pmatrix}& (\rightarrow) & \buildrel \begin{tikzpicture}
+\draw[->] (0,0) to [out=90,in=0] (-.25,.25);
+\end{tikzpicture} \over \longrightarrow & \begin{pmatrix}
+0\\1
+\end{pmatrix}& (\uparrow)\\[10pt]
+\begin{pmatrix}
+0\\1
+\end{pmatrix}& (\uparrow) & \buildrel \begin{tikzpicture}
+\draw[->] (0,0) to [out=90,in=0] (-.25,.25);
+\end{tikzpicture} \over \longrightarrow & \begin{pmatrix}
+-1\\0
+\end{pmatrix}& (\leftarrow)
+\end{array}$$
+
+
+
+
+
 
 
 

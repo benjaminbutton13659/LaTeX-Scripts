@@ -2596,11 +2596,13 @@ Dieser Effekt verschwindet, wenn Lichtgeschw. $ c \rightarrow \infty $, also bei
 \section{Lorenz-Trafo}
 Zur Konstruktion verwenden wir die Symmetrien
 \begin{itemize}
+	\item Relativitätsprinzip
 	\item Homogenität von Raum und Zeit\\
 	d.h. alle Raumzeitpunkte sind äquivalent, man kann also seinen Ursprung beliebig Wählen
 	\item Isotropie des Raumes\\
 	d.h. alle Raumrichtungen sind äquivalent
 \end{itemize}
+$$
 \begin{tikzpicture}
 \draw[->] (0,0) -- (2,0) node[right] {$x$}; 
 \draw[->] (0,0) -- (0,1) node[above] {$y$};
@@ -2615,7 +2617,7 @@ Zur Konstruktion verwenden wir die Symmetrien
 \node at (0.7,1) [align=flush center,text width=2cm]
 {IS'};
 \end{tikzpicture}
-
+$$
 O.B.d.A. betrachten wir Bewegung entlang x-Achse (IS' in x-Richtung mit $ \vec{v} = v \vec{e}_x $) d.h. am Anfang $ y = y' \quad z = z' $\\
 Zur Zeit $ z=0 $ fallen IS und IS' zusammen.\\[5pt]
 Wegen Homogenität von Raum und Zeit muss Trafo \underline{linear} sein
@@ -2690,11 +2692,21 @@ t' &= \frac{x}{a_{11} v} - \frac{a_{12}}{a_{11} v} \frac{(x-vt)}{\sqrt{1-\frac{v
 
 %%% hier fehlt vielleicht? shit
 
+%$$
+%\begin{tikzpicture}
+%\draw[thick] (0,0) ellipse (3cm and 1cm);
+%\draw[fill=white, draw=none] (-3.1,0) rectangle (3.1,2);
+%\draw[thick] (0,1) ellipse (3cm and 1cm);
+%\draw[thick] (-3,0) --(-3,1);
+%\draw[thick] (3,0) -- (3,1);
+%\end{tikzpicture}
+%$$
 
 \subsubsection{Lorentz trafo}
-Mit dem Lorentz faktor $\gamma  = \frac{1}{\sqrt{1- \frac{v^2}{c^2}}}$ erhalten wir
+Mit dem Lorentz faktor $\gamma  = \frac{1}{\sqrt{1- \frac{v^2}{c^2}}}$ erhalten wir für\\
+$ y' = y \ , \ z' = z $:
 \rbox{\begin{align*} \tag 9
-	x' &= \frac{x-ct}{\sqrt{1-\frac{v^2}{c^2}}} = \gamma (x-ct)\\
+	x' &= \frac{x-vt}{\sqrt{1-\frac{v^2}{c^2}}} = \gamma (x-ct)\\
 	t' &= \frac{t-\frac{v^2}{c^2} x}{\sqrt{1 - \frac{v^2}{c^2}}} = \gamma (t-\frac{v}{c^2}x) 
 	\end{align*}}
 $$a_{11} = a_{22} = \gamma = \coth \psi$$
@@ -2702,8 +2714,177 @@ $$a_{12} = a_{21} = \gamma \frac{v}{c} = - \sinh \psi$$
 mit dem sog. Rapidität $\psi = \tx{arctanh} \frac{v}{c}$
 
 %\begin{tikzpicture}
-%\draw [-,black,thick] (-0.5,-1) to [out=30,in=150] (0.5,-1) to [out=-30,in=-150] (1.5,-1) to [out=30,in=150] (2.5,-1);
+%\draw [-,black] (-0.5,-1) to [out=30,in=150] (0.5,-1) to [out=-30,in=-150] (1.5,-1) to [out=90,in=90] (5.5,-1);
+%\draw (1.5,-1) to [out=-90,in=-90] (5.5,-1);
+%\draw[red] (3.5,-1) ellipse (2cm and .29*4cm);
 %\end{tikzpicture}
+
+%neue Vorlesung
+
+\begin{itemize}
+	\item Für $ c \rightarrow \infty $, oder $ v \ll c $ $ \longrightarrow $ Galilei-Trafo $ x' = x -vt \quad t' = t $
+	\item relativistische Effekte für $ \frac{v}{c} \ge 0.1 $
+	\item Lorenz-Trafo auch ohne Annahme $ c = \const $ herleitbar\\
+	$ \rightarrow $ man erhält konst. Parameter, der $ c $ entspricht.
+	\item es gibt in der Physik Geschw. $ v > c $ \\
+	(z.B. rotierender Laserstrahl auf Mond)\\
+	aber keine Transportgeschwindigkeit für Signale, Energie oder Körper
+\end{itemize}
+
+\section{Längenkontraktion und Zeitdilatation}
+\subsection{Längenkontraktion}
+\begin{tikzpicture}
+\draw[->] (0,0) -- (2,0) node[right] {$x$}; 
+\draw[->] (0,0) -- (0,2) node[above] {$y$};
+\node at (0.7,2) [align=flush center,text width=5cm]
+{IS};
+\draw (0,-.1) -- (0,.1);
+\draw (1.8,-.1) -- (1.8,.1);
+\node at (0,-.4) {$x_1$};
+\node at (1.8,-.4) {$x_2$};
+\node at (1.5,0.8) [align=flush center,text width=5cm]
+{$\longrightarrow \vec{v} = v\vec{e_x}$};
+\end{tikzpicture}
+\begin{tikzpicture}
+\draw[->] (0,0) -- (2,0) node[right] {$x'$}; 
+\draw[->] (0,0) -- (0,2) node[above] {$y'$};
+%\draw[->] (0.1,0.5) -- (0.5,0.5) node[right] {$v = \vec{e}_s$}
+\node at (0.7,2) [align=flush center,text width=5cm]
+{IS'};
+\filldraw[pattern=north east lines] (0,0) rectangle (1.8,.4);
+\draw (0,-.1) -- (0,.1);
+\draw (1.8,-.1) -- (1.8,.1);
+\node at (0,-.4) {$x_1$};
+\node at (1.8,-.4) {$x_2$};
+\node at (6,1) {Stab der \underline{Eichlänge} $ l_0 = x_2' - x_1' $};
+\end{tikzpicture}
+
+% alignene und x2 x1 an stab
+
+Welche Stablänge wird in IS gemessen ?\\
+Dazu müssen 2 Beobachter in IS zur gleichen IS-Zeit, z.B. $ t=0 $ die Position von Stabanfang $ (x=x_1) $ und Stabende $ (x=x_2) $ messen.\\
+$ \rightarrow $ 2 Ereignisse
+\begin{enumerate}[1)]
+	\item Stabende passiert einen Beobachter in IS bei $ x_1 = 0 $ und $ t_1 = 0 $\\
+	\underline{E1:}
+	\begin{align*}
+	x_1 &= 0 \quad t_1 = 0\\
+	x'_1 &= 0 \quad t_1' = 0
+	\end{align*}
+	\item Stabanfang passiert einen Beobachter in IS bei $ x_2 $ zur Zeit $ t_2 = 0 $\\
+	\underline{E2:}
+	\begin{align*}
+	&x_2 \quad t_1 = 0\\
+	&x_2' \quad t_2'
+	\end{align*}
+\end{enumerate}
+Für Beobachter in IS ist Stablänge
+$$ l = x_2 - x_1 \buildrel x_1 = 0 \over = x_2 $$
+Lorenz-Trafo: $ x' = \gamma (x-vt) \qquad \gamma = 1 / \sqrt{1-v^2/c^2} $\\
+für E2:
+\begin{align*}
+x_2' = \  &\gamma (x_2 - v t_2) = l_0 \\
+\buildrel t_2 = 0 \over = &\gamma x_2 \\\\
+\rightarrow x_2 = \frac{l_0}{\gamma}
+\end{align*}
+Länge l des Stabes in IS 
+\begin{equation*}
+\rmbox{l = l_0 \sqrt{1-\frac{v^2}{c^2}}} \tag{1}
+\end{equation*}
+d.h. der Stab ist kürzer als seine Eigenlänge $ l_0 $. Sogenannte Längenkontraktion oder Lorenz Kontraktion.\\[5pt]
+\underline{Verallgemeinerung:}\\
+(1) gilt, wenn Stab parallel zu $ \vec{v} $. Andernfalls, z.B. bei $ l_0^\perp $ in $ \vec{e}_y $, $ l_0^\parallel = \vec{e}_x $, $ l_0^2 = (l_0^\perp)^2 + (l_0^\parallel)^2  $ ändern sich wegen $ y' = y $ die Länge senkrecht zu $ \vec{v} = v \vec{e}_x $ nicht.
+\begin{align*}
+\rightarrow l_{\parallel} &= l_0 ^\parallel \sqrt{1-\frac{v^2}{c^2}}\\
+l_{\perp} &= l_0^\perp
+\end{align*}
+\begin{itemize}
+	\item Bewegt sich Stab mit $ v = v(t) $, so ergibt Messung in IS zur Zeit $ t_0 $ ebenfalls Gl.(1) mit $ v=v(t_0) $
+\end{itemize}
+\underline{Bem:}
+\begin{itemize}
+	\item Ruht der Stab in IS mit Eigenlänge $ l_0 $, so wird in IS' ebenfalls $ l=\frac{l_0}{\gamma} < l_0 $ gemessen. Die Kontraktion (1) hängt nicht vom Vorzeichen von $ v $ ab.
+	\item Die Asymmetrie von IS und IS', also ob die Kontraktion die Maßstäbe in IS oder IS' betrifft, wird durch die \underline{Messung} verursacht.
+\end{itemize}
+Im IS sind die Ereignisse $ x_1 = 0\ , \ t_1 = 0 $ und $ x_2,t_2 = 0 $ gleichzeitig\\
+in IS' sind die Ereignisse $ x_1' = 0 \ , \ t_1' = 0 $ und $ x_2' = l_0 \ , \ t_2' \tx{ \underline{nicht} } $\\
+mit: $ t_1 = 0  \ , \ x_2 = \frac{l_0}{\gamma} $
+\begin{align*}
+\tx{ da } \ t_2' \buildrel LT \over = &\gamma (t_2 - \frac{x_2 v}{c^2})\\
+= &- \frac{l_0 v}{c^2} \neq 0
+\end{align*} 
+$ \rightarrow $ Gleichzeitigkeit ist ein relativer Begriff.
+
+\subsection{Zeitdilatation}
+
+% bild mit uhren
+
+Wir betrachten den Gang einer Uhr in IS' vom IS aus.\\
+\underline{Ereignisse:}
+\begin{enumerate}[1)]
+	\item IS' Uhr passiert Beobachter in IS bei $ x_1 = 0\ , \ t_1 = 0 $\\
+	\underline{E1:}
+	\begin{align*}
+	x_1 &= 0 \ , \ t_1 = 0 \\
+	x_1' &= 0 \ , \ t_1' = 0
+	\end{align*}
+	\item IS' Uhr passiert Beobachter in IS bei $ x_2 = v t_2 $ und $ t = t_2 $\\
+	\underline{E2:}
+	\begin{align*}
+	x_2 &= v t_2 \ , \ t_2\\
+	x_2' &= 0 \ , \ t_2'
+	\end{align*}
+\end{enumerate}
+\underline{Lorenz-Trafo:}
+\begin{equation*}
+ct' = \frac{ct - x \frac{v}{c}}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation*}
+für E2:
+\begin{equation*}
+t_2' = \frac{t_2 - x_2 \frac{v}{c^2}}{\sqrt{1 - \frac{v^2}{c^2}}} \buildrel x_2 = v t_2 \over = t_2 \sqrt{1 - \frac{v^2}{c^2}}
+\end{equation*}
+IS' zeigt für das Zeitintervall zwischen E1 und E2:
+$$ t_0 = t_2' - t_1' \buildrel t_1' = 0 \over = t_2' $$
+Diese Anzeige wird der IS' Uhr wird vom Beobachter in IS bei $ x_2 $ abgelesen zur IS Zeit
+$$ t = t_2 - t_1 \buildrel t_1 = 0 \over = t_2 $$
+Was der IS Zeitdifferenz zwischen E1 und E2 entspricht.
+\begin{equation*}
+\rmbox{ t = \frac{t_0}{\sqrt{1-\frac{v^2}{c^2}}} } \tag{2}
+\end{equation*}
+Wegen $ t_0 < t $ geht die bewegte Uhr in IS' gegenüber den IS-Uhren nach ,,\underline{Zeitdilatation}``\\[5pt]
+\underline{Eigenzeit $ t_0 $:}\\
+Eine Zeit, die von einer \underline{einzelnen} Uhr, die dich mit einem Körper bewegt (also relativ dazu ruht) heißt Eigenzeit. ,, Lorenzinvariante Größe``\\[5pt]
+\underline{Bem:}\\
+Die Kurzfassung ,, bewegte Uhren gehen langsamer`` ist problematisch, da man mit den Aussagen:
+\begin{itemize}
+	\item die IS' Uhr geht langsamer als die IS Uhr
+	\item die IS Uhr geht langsamer als die IS' Uhr
+\end{itemize}
+(da sich von IS' aus IS bewegt und andersherum) einen Widerspruch konstruiert.
+\begin{itemize}
+	\item Die Asymmetrie zwischen IS und IS' in (2) resultiert von der Messung, die \underline{zwei} Uhren in IS benötigt an denen sich \underline{eine} Uhr in IS' vorbeibewegt.
+\end{itemize} 
+\subsubsection{Bsp: Myonenzerfall}
+Myonen $ \mu \pm $ werden in der Atmosphäre durch kosmische Strahlung erzeugt, in $ \approx 10 \tx{ km} $ Höhe. Sie zerfallen gemäß
+$$ \mu ^\pm \rightarrow e^\pm + \gamma_{e} - \ni _{\mu}$$
+Im Ruhesystem der Myonen gilt das Zerfallsgesetz
+$$ N(t) = N_0 e^{-\frac{t}{T}} $$
+mit der mittleren Lebensdauer $ T = 2./9 \mu \tx{s} $\\
+In 9 km Höhe werden $ 8 \times 10^7 $ Myonen gezählt.\\
+Gegeben $ v = 0.918 \ c $, wieviele Teilchen kommen in Meereshöhe an?\\
+\underline{Nichtrelativistisch} beträgt die Flugzeit
+$$t_{f} = \frac{9 \tx{ km}}{0.918 \ c} \approx 30 \mu \tx{s}$$
+$$N(t_{f}) = 8 \cdot 10^7 e^{-\frac{30}{2.19}} \approx 90$$
+\underline{Relativistisch über Zeitdilatation}
+In IS Erde ist Flugzeit $ t_{f} = 30 \mu \tx{s} $\\
+Die Eigenzeit der Myonen $ \tau = \sqrt{1-\frac{v^2}{c^2}} t_{f} $
+$$\tau = \frac{t_{f}}{15.8} \approx 1.9 \mu \tx{s}$$
+$$N(\tau) = N_0 e^{-\frac{2}{\tau}} \approx 3.4 \cdot 10^7$$
+\underline{Relativistisch über Längenkontraktion}
+Im Bezugssystem Myon fliegt die Erde $ v = 0.998 \ c $ und legt kontrahierte Stecke $ \frac{9 \tx{ km}}{15.8} = 0.5t \tx{ km} $ zurück\\
+Dabei vergeht die Eigenzeit
+$$Z = \frac{0.57 \tx{ km}}{0.998 \ c} \approx 1.9 \mu \tx{s}$$
+
 
 
 
