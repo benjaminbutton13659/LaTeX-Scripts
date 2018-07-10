@@ -722,8 +722,10 @@ $$
 \draw[decoration={aspect=0.3, segment length=3mm, amplitude=3mm,coil},decorate] (-2,0)--(a);
 \draw[decoration={aspect=0.3, segment length=3mm, amplitude=3mm,coil},decorate] (b)--(4,0);
 \draw[decoration={aspect=0.3, segment length=3mm, amplitude=3mm,coil},decorate] (b)--(a);
-\filldraw[pattern=north east lines] (-2.5,-1) rectangle (-2,1);
-\filldraw[pattern=north east lines] (4,-1) rectangle (4.5,1);
+\filldraw[draw=none,pattern=north east lines] (-2.5,-1) rectangle (-2,1);
+\filldraw[draw=none,pattern=north east lines] (4,-1) rectangle (4.5,1);
+\draw (-2,-1) -- (-2,1);
+\draw (4,-1) -- (4,1);
 \end{tikzpicture}
 $$
 $m_1$ und $m_2$ sind aneinander und an zwei wänden mit federn gekoppelt (äußere federn mit c und innere feder mit k)
@@ -2734,21 +2736,18 @@ mit dem sog. Rapidität $\psi = \tx{arctanh} \frac{v}{c}$
 \section{Längenkontraktion und Zeitdilatation}
 \subsection{Längenkontraktion}
 \begin{tikzpicture}
-\draw[->] (0,0) -- (2,0) node[right] {$x$}; 
-\draw[->] (0,0) -- (0,2) node[above] {$y$};
-\node at (0.7,2) [align=flush center,text width=5cm]
+\draw[->] (-5,0) -- (2.5-5,0) node[right] {$x$}; 
+\draw[->] (-5,0) -- (-5,2) node[above] {$y$};
+\node at (0.7-5,2) [align=flush center,text width=5cm]
 {IS};
-\draw (0,-.1) -- (0,.1);
-\draw (1.8,-.1) -- (1.8,.1);
-\node at (0,-.4) {$x_1$};
-\node at (1.8,-.4) {$x_2$};
-\node at (1.5,0.8) [align=flush center,text width=5cm]
+\draw (-5,-.1) -- (-5,.1);
+\draw (1.8-5,-.1) -- (1.8-5,.1);
+\node at (-5,-.4) {$x_1$};
+\node at (1.8-5,-.4) {$x_2$};
+\node at (1.5-5,1) [align=flush center,text width=5cm]
 {$\longrightarrow \vec{v} = v\vec{e_x}$};
-\end{tikzpicture}
-\begin{tikzpicture}
-\draw[->] (0,0) -- (2,0) node[right] {$x'$}; 
+\draw[->] (0,0) -- (2.5,0) node[right] {$x'$}; 
 \draw[->] (0,0) -- (0,2) node[above] {$y'$};
-%\draw[->] (0.1,0.5) -- (0.5,0.5) node[right] {$v = \vec{e}_s$}
 \node at (0.7,2) [align=flush center,text width=5cm]
 {IS'};
 \filldraw[pattern=north east lines] (0,0) rectangle (1.8,.4);
@@ -2756,7 +2755,7 @@ mit dem sog. Rapidität $\psi = \tx{arctanh} \frac{v}{c}$
 \draw (1.8,-.1) -- (1.8,.1);
 \node at (0,-.4) {$x_1$};
 \node at (1.8,-.4) {$x_2$};
-\node at (6,1) {Stab der \underline{Eichlänge} $ l_0 = x_2' - x_1' $};
+\node[align=center] at (6,1) {Stab der \underline{Eichlänge} \\[5pt] $ l_0 = x_2' - x_1' $};
 \end{tikzpicture}
 
 % alignene und x2 x1 an stab
@@ -2788,9 +2787,10 @@ x_2' = \  &\gamma (x_2 - v t_2) = l_0 \\
 \rightarrow x_2 = \frac{l_0}{\gamma}
 \end{align*}
 Länge l des Stabes in IS 
+\frbox{Längenkontraktion}{
 \begin{equation*}
-\rmbox{l = l_0 \sqrt{1-\frac{v^2}{c^2}}} \tag{1}
-\end{equation*}
+l = l_0 \sqrt{1-\frac{v^2}{c^2}} \tag{1}
+\end{equation*}}
 d.h. der Stab ist kürzer als seine Eigenlänge $ l_0 $. Sogenannte Längenkontraktion oder Lorenz Kontraktion.\\[5pt]
 \underline{Verallgemeinerung:}\\
 (1) gilt, wenn Stab parallel zu $ \vec{v} $. Andernfalls, z.B. bei $ l_0^\perp $ in $ \vec{e}_y $, $ l_0^\parallel = \vec{e}_x $, $ l_0^2 = (l_0^\perp)^2 + (l_0^\parallel)^2  $ ändern sich wegen $ y' = y $ die Länge senkrecht zu $ \vec{v} = v \vec{e}_x $ nicht.
@@ -2848,9 +2848,10 @@ $$ t_0 = t_2' - t_1' \buildrel t_1' = 0 \over = t_2' $$
 Diese Anzeige wird der IS' Uhr wird vom Beobachter in IS bei $ x_2 $ abgelesen zur IS Zeit
 $$ t = t_2 - t_1 \buildrel t_1 = 0 \over = t_2 $$
 Was der IS Zeitdifferenz zwischen E1 und E2 entspricht.
+\frbox{Zeitdilatation}{
 \begin{equation*}
-\rmbox{ t = \frac{t_0}{\sqrt{1-\frac{v^2}{c^2}}} } \tag{2}
-\end{equation*}
+t = \frac{t_0}{\sqrt{1-\frac{v^2}{c^2}}} \tag{2}
+\end{equation*}}
 Wegen $ t_0 < t $ geht die bewegte Uhr in IS' gegenüber den IS-Uhren nach ,,\underline{Zeitdilatation}``\\[5pt]
 \underline{Eigenzeit $ t_0 $:}\\
 Eine Zeit, die von einer \underline{einzelnen} Uhr, die dich mit einem Körper bewegt (also relativ dazu ruht) heißt Eigenzeit. ,, Lorenzinvariante Größe``\\[5pt]
@@ -2864,7 +2865,7 @@ Die Kurzfassung ,, bewegte Uhren gehen langsamer`` ist problematisch, da man mit
 \begin{itemize}
 	\item Die Asymmetrie zwischen IS und IS' in (2) resultiert von der Messung, die \underline{zwei} Uhren in IS benötigt an denen sich \underline{eine} Uhr in IS' vorbeibewegt.
 \end{itemize} 
-\subsubsection{Bsp: Myonenzerfall}
+\subsection*{Bsp: Myonenzerfall}
 Myonen $ \mu \pm $ werden in der Atmosphäre durch kosmische Strahlung erzeugt, in $ \approx 10 \tx{ km} $ Höhe. Sie zerfallen gemäß
 $$ \mu ^\pm \rightarrow e^\pm + \gamma_{e} - \ni _{\mu}$$
 Im Ruhesystem der Myonen gilt das Zerfallsgesetz
@@ -2872,15 +2873,15 @@ $$ N(t) = N_0 e^{-\frac{t}{T}} $$
 mit der mittleren Lebensdauer $ T = 2./9 \mu \tx{s} $\\
 In 9 km Höhe werden $ 8 \times 10^7 $ Myonen gezählt.\\
 Gegeben $ v = 0.918 \ c $, wieviele Teilchen kommen in Meereshöhe an?\\
-\underline{Nichtrelativistisch} beträgt die Flugzeit
+\textbf{Nichtrelativistisch beträgt die Flugzeit}\\
 $$t_{f} = \frac{9 \tx{ km}}{0.918 \ c} \approx 30 \mu \tx{s}$$
 $$N(t_{f}) = 8 \cdot 10^7 e^{-\frac{30}{2.19}} \approx 90$$
-\underline{Relativistisch über Zeitdilatation}
+\textbf{Relativistisch über Zeitdilatation}\\
 In IS Erde ist Flugzeit $ t_{f} = 30 \mu \tx{s} $\\
 Die Eigenzeit der Myonen $ \tau = \sqrt{1-\frac{v^2}{c^2}} t_{f} $
 $$\tau = \frac{t_{f}}{15.8} \approx 1.9 \mu \tx{s}$$
 $$N(\tau) = N_0 e^{-\frac{2}{\tau}} \approx 3.4 \cdot 10^7$$
-\underline{Relativistisch über Längenkontraktion}
+\textbf{Relativistisch über Längenkontraktion}\\
 Im Bezugssystem Myon fliegt die Erde $ v = 0.998 \ c $ und legt kontrahierte Stecke $ \frac{9 \tx{ km}}{15.8} = 0.5t \tx{ km} $ zurück\\
 Dabei vergeht die Eigenzeit
 $$Z = \frac{0.57 \tx{ km}}{0.998 \ c} \approx 1.9 \mu \tx{s}$$
