@@ -1057,7 +1057,7 @@ gebundene bewegung $ \rightarrow $ Keplersche Gesetze
 		\draw[thick] (0,0)--(0,-1.5)  (0,-.75) node[right] {$b$};
 		\draw[thick] (0,0)--(-2,0);
 		\node at (-.75,.3) {$a$};
-		\draw[red,thick] (.8+.5,0) arc (0:120:.5);
+		\draw[red,thick] (.8+.5,0) arc (0:125:.5);
 		\draw[red] (0.8+.25,.25) to [out=60,in=180 ] (2,.8) node[right] {$\varphi$};
 		\draw[->,thick,red] (.8,0) -- (100:1.5cm);
 		\node[red] at (-.25,.6) {$r$};
@@ -2816,9 +2816,36 @@ mit: $ t_1 = 0  \ , \ x_2 = \frac{l_0}{\gamma} $
 $ \rightarrow $ Gleichzeitigkeit ist ein relativer Begriff.
 
 \subsection{Zeitdilatation}
-
-% bild mit uhren
-
+$$
+\begin{tikzpicture}
+\draw[->] (-5,0) -- (3-5,0) node[right] {$x$}; 
+\draw[->] (-5,0) -- (-5,2) node[above] {$y$};
+\node at (.7-5,2) [align=flush center,text width=5cm]
+{IS};
+\node at (-4.2,1.2) [align=flush center,text width=5cm]
+{$\longrightarrow \vec{v}$};
+\draw (-5,0) circle(0.5cm);
+\draw (2-5,0) circle(0.5cm);
+\draw[thick,->] (-5,0) -- (-0.3-5,0.3);
+\draw[thick,->] (2-5,0) -- (1.7-5,0.3);
+\draw[thick,->] (-5,0) -- (-0.3-5,-0.3);
+\draw[thick,->] (2-5,0) -- (2.3-5,0.3);
+\draw (-5,-.1) -- (-5,.1);
+\draw (2-5,-.1) -- (2-5,.1);
+\node at (-5,-.8) {$x_1$};
+\node at (2-5,-.8) {$x_2$};
+\draw[->] (0,0) -- (3,0) node[right] {$x'$}; 
+\draw[->] (0,0) -- (0,2) node[above] {$y'$};
+\node at (0.7,2) [align=flush center,text width=5cm]
+{IS'};
+\draw (0,0) circle(0.5cm);
+\draw[thick,->] (0,0) -- (-0.3,0.3);
+\draw[thick,->] (0,0) -- (-0.3,-0.3);
+\draw (0,-.1) -- (0,.1);
+\draw (2,-.1) -- (2,.1);
+\node at (0,-.8) {$x_1$};
+\node at (2,-.8) {$x_2$};
+\end{tikzpicture}$$
 Wir betrachten den Gang einer Uhr in IS' vom IS aus.\\
 \underline{Ereignisse:}
 \begin{enumerate}[1)]

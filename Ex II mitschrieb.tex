@@ -2933,12 +2933,144 @@ $$\boxed{p = \frac{p_0^2 \omega^4}{12 \pi \epsilon_0 c^3}}$$
 	Daraus $ \gamma = \frac{q^2 \omega^2}{12 \pi \epsilon_0 m_e c^3} $ \\
 	$ m_e $ Masse el., $ q $ Ladung des Dipols
 	\item Wie sieht das Frequenzspektrum aus ?\\
-	
-	
+	%neueVorlesung
+	\begin{itemize}
+		\item naiv: nur $ \omega_R = \frac{1}{\sqrt{LC}} $
+		\item Dämpfung bewirkt Verbreitung. Antenne sendet eine Welle aus mit esp. abklingender Amplitude.\\
+		Mechanik: $$ d= \frac{k}{\sqrt{(\omega^2_0 - \omega^2) + (2\gamma \omega)^2}}$$
+		$ d $ Amplitude, $ \omega_0 $ Resonanzfrequenz\\
+		K Stärke der Anregung $ = \frac{E_0 q}{m} $\\
+		Einsetzen in $ P = + 2 \gamma E_{\tx{tot}} $
+		$$P = \frac{q^2 \omega^2 K^2}{12 \pi \epsilon_0 c^3} \frac{1}{(\omega_0^2 - \omega^2) + (2 \gamma \omega)^2}$$
+		bei $ \omega_{1/2} = \sqrt{\omega_0^2 - \omega^2} \pm \gamma $ fällt $ P $ auf die Hälfte $ \Delta \omega = 2 \gamma $ volle Breite auf halber Höhe\\
+		\folie{Lebensdauer eines atomaren Zustands}
+	\end{itemize}
 \end{itemize}
 
+% neue Vorlesung
 
+%\begin{tikzpicture}
+%\draw[->,thick] (-4,0) -- (4,0);
+%\draw[->,thick] (0,-2) -- (0,2);
+%\draw(-1.5,0) ellipse (1.5cm and 1cm);
+%\draw(1.5,0) ellipse (1.5cm and 1cm);
+%\draw[->,thick] (0,0) -- (2.8,.5);
+%\draw[red,thick] (.75,.15) arc (30:98:.75);
+%\node[red] at (.9,.6) {$ \varphi $};
+%\end{tikzpicture}
 
+\subsection{Beschleunigte Ladungen}
+Elektrostatik $ \varphi(\verb|r|) $ aus $ \rho(\vec{r}') $ via Poisson-Integrals
+$$\varphi(\vec{r}) = \frac{1}{4 \pi \epsilon} \int \frac{\rho(\vec{r}')}{|\vec{r} - \vec{r}'} d^3 \vec{r}'$$
+Bewegte Ladungen $ \rightarrow $ Modifikationen
+\begin{enumerate}[i)]
+	\item Retardierung: $ \vec{r}' (t-\frac{r}{c}) \quad \rho(\vec{r}'(t-\frac{r}{c})) $
+	\item ,,Deformation`` des Integrationsvolumens $ dV'_{R} $\\
+	\folie{Verlängerung der Strecke in Bewegungsrichtung}
+\end{enumerate}
+Verlängerung von $ d^3\vec{r}' $ in Richtung von $ \vec{v} $ der Ladungsbewegung
+$$ dV'_R = \frac{d^3 \vec{r}'}{1 - \frac{(\vec{r} - \vec{r}')}{|\vec{r}-\vec{r}'|}} \frac{\vec{v}}{c}$$
+$$\Rightarrow \varphi(\vec{r}) = \frac{1}{4 \pi \epsilon_0} \int\frac{\rho(\vec{r}' ( t-\frac{r}{c}))}{|\vec{r} - \vec{r}'(t-\frac{r}{c}) |} \frac{1}{|\vec{r}-\vec{r}'|} \frac{\vec{v}}{c} d^3 \vec{r}'$$
+Für eine Punkladung q
+$$\varphi(\vec{r},t) = \frac{1}{4\pi \epsilon_0} \frac{qC}{|\vec{r} - \vec{r}'|c - (\vec{r} - \vec{r}')\vec{v}} \bigg|_{\tx{ret}}$$
+analog ergibt sich
+\begin{align*}
+\vec{A}(\vec{r},t) &= \frac{\mu_0}{4\pi} \frac{qC}{|\vec{r} - \vec{r}'| c - (\vec{r} - \vec{r}') \vec{v}}\bigg|_{\tx{ret}}\\
+&= \frac{\vec{v}}{c^2} \varphi(\vec{r},t)
+\end{align*}
+Liénard-Wiedert-Potentiale für Pkt. ladungen\\[5pt]
+Felder der bewegten Ladung
+$$\vec{E} = - \vec{\nabla} \varphi - \frac{\partial }{\partial t} \vec{A} \qquad \vec{B} = \vec{\nabla} \times \vec{A}$$
+Einsetzen und lange rechnen $ \dots $
+$$\vec{E} = \frac{1}{4 \pi \epsilon_0} \frac{q w}{(\vec{\omega} \cdot \vec{u})^3} \bigg\{ (c^2 - v^2) \vec{u} + \vec{w} \times (\vec{u} \times \vec{a}) \bigg\}_{\tx{ret}}$$
+$$\vec{B} = \frac{1}{c} \vec{e}_w \times \vec{E} \quad \vec{v} , \vec{a} \tx{ Geschwindigkeit, Beschleunigung der Ladung q}$$
+$$\vec{w} \equiv \vec{r} - \vec{r}'_{\tx{ret}} \qquad \vec{u} \equiv c \vec{e}_w - \vec{v}$$
+2 Beiträge:
+\begin{enumerate}[i)]
+	\item Term $ \sim \vec{u} $ Nahfeld $ |\vec{E}|, |\vec{B}| \sim \frac{1}{w^2}$\\
+	Energiefluss $ \sim \frac{1}{w^4} \longrightarrow 0 $ für Kugelschale mit $ R \rightarrow \infty $
+	\item Term $ \sim \vec{w} \times (\vec{u} \times \vec{a}) $ Fernfeld $ |\vec{E}|,|\vec{B}| \sim \frac{1}{w} $\\
+	Energiefluss $ \sim \frac{1}{w^2} \longrightarrow $ konstant durch Kugelschalen\\
+	$ \rightarrow $ Dieser Term bestimmt Abstrahlung $ \sim |\vec{a}| $ bewirkt Energieverlust von q
+\end{enumerate}
+2 Spezialfälle:
+\begin{enumerate}[i)]
+	\item ruhende Ladung $ n = c \vec{e}_w \ \parallel \ \vec{r} - \vec{r}' $
+	$$ \vec{E} = \frac{1}{4 \pi \epsilon_0} \frac{q w}{c^3 (\vec{w} \vec{e}_w)} c^2 (c \vec{e}_w) = \frac{1}{4 \pi \epsilon_0} \frac{q}{w^2} \vec{e}_w$$
+	$\vec{B} = 0 \qquad $ wie in Elektrostatik
+	\item konstante Geschwindigkeit $ \vec{r}' (t) = \vec{v}t $
+	$$\vec{E}(\vec{r},t) =  \frac{1}{4 \pi \epsilon_0} \frac{qw}{(\vec{w} \vec{u})^3} (c^2 - v^2) \vec{u} \bigg|_{\tx{ret}}$$
+	Es gilt: $ w \vec{u} = c \Delta \vec{r} \qquad \Delta \vec{r} \equiv \vec{r} - \vec{r}' = \vec{r} - \vec{v}t $\\
+	weiterhin: $ \vec{w} \vec{u} = c \Delta \vec{r} \sqrt{1 - \frac{v^2}{c^2} \sin^2\theta} $ \\
+	$ \theta = \sphericalangle \vec{v} $ und $ \vec{E} $
+	$$\tx{Ergibt:} \vec{E} = \frac{1}{4 \pi \epsilon_0} \frac{1 - \frac{v^2}{c^2}}{(1-\frac{v^2}{c^2} \sin^2 \theta) ^{\frac{3}{2}}} \frac{q}{\Delta r^2} \Delta \vec{r}$$
+	\folie{Elektrische Feldlinien bewegter Punktladungen}
+	Für $ |\vec{v}| \rightarrow c \quad E_{\tx{trans}} $ wächst, $ E_{\tx{long}} $ nimmt ab
+\end{enumerate}
 
+\subsubsection{Abstrahlung}
+\begin{itemize}
+	\item im Fernfeld, $ \sim |\vec{a}| $ der Pkt.ladung
+	Energiefluss aus Pointingvektor
+	\begin{align*}
+	\vec{S} &= \epsilon_0 c^2 (\vec{E} \times \vec{B}) = \epsilon_0 c (\vec{E} \times (\vec{e}_w \times \vec{E}))\\
+	&= \epsilon_0 c (\vec{E}^2 \vec{e}_w - (\vec{e}_w \vec{E}) \vec{E})
+	\end{align*}
+	im Fernfeld gilt $ \vec{E} \perp \vec{w} \rightarrow $ 2. Term = 0
+	$$\boxed{ \vec{S} = \epsilon_0 c |\vec{E}|^2 \vec{e}_w}$$
+	$ \vec{E} $ abhängig von $ \vec{v} $ und $\vec{a}$ der Ladung
+	\item wenn $ \vec{v} = \vec{0} $ dann $ \vec{u} = c \vec{e}_w $ aber Abstrahlung $ \neq 0 $
+	\item wenn $ \vec{a} = \vec{0} $ dann Abstrahlung $ = 0 $\\
+	$ \vec{a} \neq \vec{0} $ dann Abstrahlung in gewisse Richtung\\
+	\boxed{Beschleunigte el. Ladungen strahlen el. mag. Wellen aus}
+\end{itemize}
+Abgestrahlte Leistung in $ d\Omega = d \varphi \sin \theta \ d \theta $
+$$\frac{d P}{d \Omega} = \epsilon_0 c |\vec{E}|^2 w^2$$
+$ \vec{S} $ gibt Leistung von Bewegung $ Q $ in Richtung $ d \varphi, \ d \theta $ aus Sicht der Ladung.\\
+Suche: Leistung an Ort $ \vec{r} $ (ruhender Beobachter).\\
+Leistung unterschiedlich da Art Dopplereffekt:
+\begin{enumerate}[$ \rightarrow $]
+	\item Abstände Wellentäler ändert sich
+	\item zusätzlicher Faktor
+\end{enumerate}
+$$\frac{d P}{d \Omega} = \epsilon_0 c | \vec{E}|^2 w^2 \frac{\vec{w} \vec{u}}{w c} \qquad (\substack{\tx{ohne} \\ \tx{Ableitung}})$$
+Betrachte 2 Spezialfälle:
+\begin{enumerate}[i)]
+	\item $ \vec{a} $ parallel $ \vec{v} $\\
+	$ \vec{u} \times \vec{a} = c (\vec{w} \times \vec{a}) $ und $ \vec{w} \cdot \vec{u} = \vec{w} (c - \vec{e}_w \vec{v}) $
+	\begin{align*}
+	\frac{dP}{d \Omega} &= \frac{q^2 c^2}{16 \pi^2 \epsilon_0} \frac{\{\vec{e}_w \times (\vec{e}_w \times \vec{a})\}}{(c - \vec{e}_w \vec{v})^5}
+	&= \frac{q^2 |\vec{a}|^2}{16 \pi^2 \epsilon_0} \frac{\sin^2 \theta}{(1 - \frac{v}{c} \cos \theta) ^5}
+	\end{align*}
+	$\theta = \sphericalangle \vec{v} , \quad \tx{Beobachtungsrichtung}$\\
+	$ v \rightarrow 0 : \sim \sin^2 \theta $ Senkrecht zu $ \vec{a} $\\
+	$ v \rightarrow \infty : $ Nenner $ \rightarrow 0 $ für $ \theta \rightarrow 0 \Rightarrow $ Vorwärtsabstrahlung
+	$$\boxed{P = \int \frac{dP}{d\Omega} \Omega  = \frac{q^2 c^2 \gamma^6}{6 \pi \epsilon_0 c^3} }$$
+	$$\gamma \equiv \frac{1}{\sqrt{ 1 - \beta^2}} = \frac{E_{\tx{ges}}}{den}m c^2 \ge 1 \quad \beta = \frac{v}{c} \le 1$$
+	Beachte: $ \gamma^6 = (\frac{E}{m})^6 $ Abhängigkeit\\
+	,,Bremstrahlung``wenn $ \vec{a} \uparrow \downarrow \vec{v} $\\
+	Gleich für Beschleunigung und Abbremsung $ (|\vec{a}|^2) $\\
+	\folie{Bremsstrahlung in Materie} \ \folie{Röntgenröhren}
+	\item $ \vec{a} \perp \vec{v}\quad |\vec{v}| = \const $ Kreisbewegung\\
+	$ \vec{v} \sim \vec{e}_w $ und $ \vec{a} \sim \vec{e}_x \ \  \vec{w} $ in Polarkoordinaten
+	$$\frac{dP}{d \Omega} = \frac{q^2 a^2}{16 \pi^2 \epsilon_0 c^3} \frac{(1 - \beta \cos \theta) ^2 - (1-\beta^2) \sin^2 \theta \cos ^2 \theta}{(1-\beta \cos \theta) ^5}$$
+	$$P = \frac{q^2 a^2 \gamma^4}{6 \pi \epsilon_0 c^3}$$
+	,,Synchrotronstrahlung``: 1964 erstmals an Kreisbeschleuniger beobachtet
+	\begin{itemize}
+		\item $ \gamma^4 = (\frac{E}{m})^4 $ Abhängigkeit\\
+		limitiert maximale Energie von Kreisförmigen $ \frac{e^+}{e^-} $-Beschleunigern
+		\item Abstrahlungscharakteristik\\
+		$ \beta \approx 0: \ \sim 1 - \sin^2 \theta \cos^2 \varphi $\\
+		$\phantom{\qquad \quad \ \, }  \varphi = 0 :  \ 1 - \sin ^2 \theta  $ (wieder $ \perp \vec{a} $)\\
+		$\phantom{\qquad \quad \ \, } \varphi = 90^\circ : \ 1 $\\
+		$\phantom{\qquad \quad \ \, } \varphi = 45^\circ : \ (\cos 45^\circ = \frac{1}{\sqrt{2}} )  1 - \frac{1}{2} \sin^2 \theta $\\
+		$ \beta \rightarrow 1 : \ \frac{1}{(1 - \beta \cos \theta)^3} $\\
+		\phantom{\qquad \quad \ \, } Strahlung in Vorwärtsrichtung gebündelt\\
+		\phantom{\qquad \quad \ \, } \folie{Abstrahlung bei v senkrecht a} \\ \phantom{\qquad \quad \ \, } \folie{Kosmische Synchrotronstrahlung} \\
+		\phantom{\qquad \quad \ \, } \folie{Strahlentod der Atomen}
+	\end{itemize}
+\end{enumerate}
+
+\section{Wellen in Materie}
 
 \end{document}
