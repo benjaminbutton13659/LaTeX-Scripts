@@ -14,12 +14,13 @@
 \usepackage{nicefrac}
 \usepackage{mathtools}
 \usepackage{enumerate}
+\usepackage{cancel}
 
-\newenvironment{bew}{\subsection{Bew:}}{\hfill$\square$}
+\newenvironment{bew}[1]{\subsection{Bew: #1}}{\hfill$\square$}
 
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
 
-\newcommand{\Bew}[1]{\begin{bew}#1\end{bew}}
+\newcommand{\Bew}[2]{\begin{bew}{#1}#2\end{bew}}
 \newcommand{\verteq}{\rotatebox{90}{$\,=$}}
 \newcommand{\equalto}[2]{\underset{\scriptstyle\overset{\mkern4mu\verteq}{#2}}{#1}}
 \newcommand{\equaltoup}[2]{\overset{\scriptstyle\underset{\mkern4mu\verteq}{#2}}{#1}}
@@ -1432,7 +1433,7 @@ Sei $\enph \quad \dim V = n$ Folgende Aussagen sin äquivalent:
 	\item[4)] $\chi_F(T) = T^n$
 \end{itemize}
 
-\Bew{$\boxed{1 \Rightarrow 2}$ Trivial\\
+\Bew{}{$\boxed{1 \Rightarrow 2}$ Trivial\\
 	$\boxed{2 \Rightarrow 3}$ Induktion auf $n = \dim V$
 	$n = 1: Sei v \in V\setminus \{0\} \\
 	\exists m_v \in \mathbb{N} \quad \tx{kleinstes} \\
@@ -1778,7 +1779,7 @@ Insbesondere:
 $$b^*_i(v) = b_i^* (\sum_{j=1}^{n} \lambda_j \cdot \backepsilon_j) = \lambda_i$$
 \subsection*{Bem:} Falls V endlichdim. ist, dann ist $ \mathcal{B}^*  $ eine Basis von $ V^* $ und sonst $ V\simeq V^* $
 
-\Bew{
+\Bew{}{
 	$$b_i^* \dots b_n^* \quad \tx{sind linear unabhängig.}$$
 	warum? $$\sum \lambda_i b_i^* = 0 \quad \tx{(als lin. Abbildung)}$$
 	$$\sum \lambda_i \equalto{b_i^*}{\lambda_j \tx{ für } 1 \leq j \leq n}  (b_j) =0$$ 
@@ -1797,7 +1798,7 @@ $$ \varphi_v(F+G) = (F+G) (v) = F(v)+ G(v) \quad \tx{Ok!}$$\\
 Zu zeigen: $ \varphi $ ist injektiv (Übungsaufgabe !)
 \subsection{Korollar:} Wenn V endlichdim. ist, $ V \simeq V^* $ \underline{kanonisch}
 
-\Bew{ 
+\Bew{}{ 
 	$$\dim V = \dim V^* = \dim (V^*)^* \Rightarrow \varphi: V \to (V^*)^* \tx{ ist surjektiv} $$
 	$\Rightarrow $ ein Isomorphismus}
 \subsection{Lemma:}
@@ -1899,7 +1900,9 @@ $$(Id_{iv})^* (\psi) = \psi \circ Id_{iv} = \psi$$
 \subsection*{Bem:} Falls $F^* =0$ dann ist $\underline{F = 0}$. Feiner, falls $v$ und $W$ endlich dimensional sind.
 $$G: W^* \to V^* \tx{ lin. Abbildung}$$ dann gilt es $$F: V \to W \tx{ so dass } F^* = G$$
 
-\bew $$F^* = 0$$ Sei $v \in V$ fest. \\
+\Bew{}{
+$$F^* = 0$$
+Sei $v \in V$ fest. \\
 \paragraph{Zu Zeigen:} 
 $F (v) = 0$ \\[10pt]
 Definiere $$W^* \to \psi \mapsto \equalto{\psi (F(v))}{F^* (\psi)(v)}$$ 
@@ -1920,6 +1923,7 @@ Falls V, W endlichdim. sind:\\
 \end{align*} 
 Aber $*: \tx{Hom }(V,W) \to \tx{Hom }(W^*, V^*)$ ist injektiv $\Rightarrow$ Surjektiv
 $$\dim V = n, \quad \dim W = m$$
+}
 \subsection*{Bem:}
 $F: V \to W$ hat Darstellungsmatrix $A$ bezüglich $\mathcal B = \{b_i \dots b_n\}$ von $V$ und $\mathcal B' = \{b_i' \dots b_m'\}$ von $W$. Seien $\mathcal B^*$ und $(\mathcal B')^*$ die entsprechenden dualen Basen aus $V^* \tx{, und } W^*$.
 
@@ -2001,7 +2005,7 @@ F^*: W^* &\to V^* \\
 \end{align*} 
 Darstellungsmatrix von $ F^* $ bzgl. $ \mathcal{C}^* \mathcal{B}^* $ ist $ A^\top $
 
-\Bew{
+\Bew{}{
 	$$F^* (c_k^*) = \sum _{1\leq \varphi \leq n} \lambda_{\varphi k}b_\varphi^* \quad (1\leq k \leq m)$$
 	$$F(b_i) = \sum _{1\leq j \leq m} a_{ij} c_j$$
 	$$ \begin{array}{ccc}
@@ -2225,7 +2229,7 @@ $$<(x_1 \dots x_n), (1, 0 \dots 0)> = x_1 = 0$$
 Sei $(V,W,\varphi)$ ein duales Paar. Für jede Basis $\{c_1 \dots c_n\}$ aus $W$ gibt es eine Basis $\{b_1 \dots b_n\}$ aus $V$, welche ,,dual`` zu $\{c_1 \dots c_n\}$ ist:
 $$\varphi(b_i, c_j) = \delta_{ij}$$
 
-\Bew{
+\Bew{}{
 	Für $\{c_1 \dots c_n\}$ aus $W$ eine Basis.
 	Sei $\{c_1^* \dots c_n^*\}$ die duale Basis aus $W^*$
 	$$F_\varphi: V \to W^* \tx{ Iso}$$
@@ -2242,7 +2246,7 @@ $$(0)^\perp = W$$
 $$V^\perp = \{0\}, \tx{ weil $\varphi$ nicht-ausgeartet ist!}$$
 $$U \subset V$$
 $$\equalto{(U^\perp)^\perp}{U} = \{v \in V \ | \  \forall w \in U^\perp\ \varphi(v,w) = 0 \}$$
-\Bew{
+\Bew{}{
 	$$U\subset (U^\perp)^\perp$$
 	$$u \in U \Rightarrow  u \in (U^\perp)^\perp \Rightarrow \forall w \in U^\perp,\ \varphi(u,w) = 0$$
 	Sei $v \notin U.$\\
@@ -2291,8 +2295,8 @@ $ G^*(\Phi) = \Phi \circ G \qquad \Phi \circ ??? G (oder w ) \to K $
 \subsection*{Bem:}
 $G^*$ ist eindeutig bestimmt durch die Gleichung 
 $$\varphi(G^\top(v),w) \buildrel (*) \over = \varphi(v,G(w))\qquad \ \forall v \in V,\ \forall w \in W$$
-\Bew{
-	Eindeutigkeit. Falls $G:V\to V$ die selbe Eigenschaft erfüllt
+\Bew{Eindeutigkeit}{
+	Falls $G:V\to V$ die selbe Eigenschaft erfüllt
 	$$ \begin{array}{ccccc}
 	\varphi(G_1(v) - G^* (v),w) = & \varphi(G(v),w) & - & \varphi (G^\top (v),w) \\
 	& \verteq & &  \verteq \\
@@ -2422,7 +2426,7 @@ Sei $(V,<,>)$ ein euklidischer Raum und definiere $||\ ||: V \to \mathbb R,\\v \
 (Cauchy-Schwarzsche-Ungleichung)
 $$\forall v, w \in V$$
 $$|<v,w>| \leq ||v|| \cdot ||w||$$
-\Bew{
+\Bew{}{
 	Falls $w=0 \rightarrow$ ok!\\
 	OBdA ist $ w \neq 0 \rightarrow ||w||>0 $\\
 	Sei $  \lambda \in \mathbb{R} $ beliebig \\
@@ -2625,7 +2629,7 @@ Jede Symm. Bilinearform $\varphi$ auf einem endlich dimensionalen $\mathbb R$-VR
 \end{center}
 darstellen.
 Ferner hängen die Zahlen $p,g$ und $r$ nur bon $\varphi$ ab.
-\Bew{Sei $\{b_1 \dots b_n\}$ eine Orthogonalbasis für $\varphi$
+\Bew{}{Sei $\{b_1 \dots b_n\}$ eine Orthogonalbasis für $\varphi$
 	$$ c := \left \{ 
 	\begin{array}{ll}
 	\frac{b_1}{\sqrt{\varphi(b_i,b_i)}} & \tx{falls } \varphi(b_i,b,i) > 0\\[15pt]
@@ -2654,7 +2658,8 @@ Ferner hängen die Zahlen $p,g$ und $r$ nur bon $\varphi$ ab.
 	\\
 	\bigg\} r\\
 	\\
-	\end{array}$$}
+	\end{array}$$
+}
 
 \subsection*{Bem:}
 $ \varphi \upharpoonright \tx{Span}(c_1,\dots,c_p) \times \tx{Span}(c_1,\dots,c_p) $ ist positiv definit.
@@ -2693,7 +2698,8 @@ $ \varphi: \mathbb{R}^2 \times \mathbb{R}^2 \mapsto \mathbb{R} $\\
 $ ((x_1,y_1), x_2,y_2) ) \mapsto 2 x_1x_2 - y_1 y_2 $\\
 $ \varphi $ ist positiv definit auf $ \spa ((1,0)) \quad \varphi((\lambda,0),(lambda,0)) = 2 \lambda^2 \ge 0$\\
 $ \varphi $ ist positiv definit auf $ \spa((1,1)) \quad \varphi((\lambda,\lambda),(\lambda,\lambda)) = \lambda^2 \ge 0 $\\
-$ \varphi $ ist nicht positiv definit auf $ \spa((1,0)) + \spa((1,1)) = \mathbb{R}^2 \quad \varphi((0,1),(0,1)) = -1 $\\
+$ \varphi $ ist nicht positiv definit auf $ \spa((1,0)) + \spa((1,1)) = \mathbb{R}^2$\\
+$\varphi((0,1),(0,1)) = -1 $
 
 \subsection{Bew: Kor Sylvester}
 Wir wollen p eindeutig bestimmen.\\
@@ -2739,7 +2745,7 @@ $$\left. \begin{array}{l}
 \end{array} \right  \} \longrightarrow \tx{ Wir können die Begriffe hier \underline{verwenden}.}$$
 \section{Def:} Sei $ ( V, \langle\ ,\ \rangle)$ ein euklidischer oder unitärer Raum. Eine Orthonormalbasis von $V$ ist eine Basis $\mathcal B = \{b_i\}\quad /\quad b_i \perp b_j \quad i \neq j \quad ||b_i|| = 1$
 \section*{Bem:} Jedes orthoganles System ist linear unabhängig.
-\Bew{$$\summ{i=1}{n}\lambda_i b_i = 0$$
+\Bew{}{$$\summ{i=1}{n}\lambda_i b_i = 0$$
 	$$\equalto{\langle \sum \lambda_i b_i, b_j\rangle}{\summ{i=1}{n}\lambda_i \langle b_i, b_j \rangle = \lambda_i \custo{\neq}{\langle b_j,b_j \rangle}{0}} = 0$$}
 \section{Lemma} Sei $(V, \langle\ ,\ \rangle)$ ein euklidischer oder unitärer Raum und $\{b_1, \dots b_n \}$ eine ONB. Dann
 \begin{enumerate}
@@ -2756,18 +2762,20 @@ $$\left. \begin{array}{l}
 	$ \Downarrow $ 1)\\
 	$ a_{ij} = \langle F(b_j),b_i \rangle $
 \end{enumerate}
-\subsection{Satz: (Geom-Schmidtsches Orthonormalisierungsverfahren)}
+\subsection{Satz: (Geom-Schmidtsches\\ Orthonormalisierungsverfahren)}
 Sei V ein euklidischer oder unitärer Raum. Gegeben $ \{v_1,\dots , v_n \} $ lin. unabh. dann gibt es ein orthonormalsystem $ \{e_1,\dots , e_n \} $ derart, dass
 $$\spa(v_1,\dots,v_n) = \spa(e_1,\dots,e_n)$$
 Insb., falls V endlichdim ist, besitzt V eine ONB.
 
-\Bew{Zwei Schritte: \begin{itemize}
-		\item Aus $v_1 \dots v_n$ konstruieren wir eine Basis welche aus orthogonalen Vektoren besteht
-		\item Dann normalisieren: $e_1 \dots e_n$ werden rekursiv definiert
-		$$e_1' = v_1 \buildrel{v_1 \neq 0}\over{\longrightarrow} e_1 = \frac{e_1'}{||e_1'||}$$
-	\end{itemize}
-	Angenommen $e_1 \dots e_n$ wurden konstruiert, so dass $e_i \perp e_j \quad i \neq j \quad ||e_1'|| = 1$ und $\spa (e_1 \dots e_n) = \spa (v_1 \dots v_n)$ Wir wollen
-	$$e_{k+1} = v_{k +1} - \summ{i=1}{k} \langle v_{k+1}, e_i \rangle e_i$$
+\Bew{}{Zwei Schritte: 
+\begin{itemize}
+	\item Aus $v_1 \dots v_n$ konstruieren wir eine Basis welche aus orthogonalen Vektoren besteht
+	\item Dann normalisieren: $e_1 \dots e_n$ werden rekursiv definiert
+	$$e_1' = v_1 \buildrel{v_1 \neq 0}\over{\longrightarrow} e_1 = \frac{e_1'}{||e_1'||}$$
+\end{itemize}
+
+Angenommen $e_1 \dots e_n$ wurden konstruiert, so dass $$e_i \perp e_j \quad i \neq j \quad ||e_1'|| = 1$$ und $\spa (e_1 \dots e_n) = \spa (v_1 \dots v_n)$ Wir wollen
+$$e_{k+1} = v_{k +1} - \summ{i=1}{k} \langle v_{k+1}, e_i \rangle e_i$$
 	$e_{k+1}' \neq 0 \rightarrow$ sonst ist $v_{k+1} \in \spa (e_1, \dots, e_n) = \spa (v_1, \dots, v_n)$ Wid!}
 
 Setze 
@@ -2881,7 +2889,7 @@ $$ || v-u ||^2 < || \equalto{\ub{v - (u + \lambda u')}}{} ||^2$$
 $$ \langle v-u - \lambda u' , v-u - \lambda u' \rangle$$
 $$ = ||v-u||^2 - \underbracket{\lambda \langle u',v-u\rangle}_{= \overline{\lambda}} - \underbracket{\overline{\lambda}\langle v-u,u'\rangle}_{ = \lambda} + \lambda \overline{\lambda} \underbracket{||u'||^2}_{= 1}$$
 $$ = || v-u ||^2 - \underbracket{\lambda \overline{\lambda}}_{||\lambda||^2} - \lambda \overline{\lambda} + \lambda \overline{\lambda} < || v-u ||^2 \quad \tx{Wid !}$$
-\section{Selbsadjungierte Endomorphismen und Hauptachsentransformationen}
+\section{Selbsadjungierte Endomorphismen\\ und Hauptachsentransformationen}
 \subsubsection{Bem:}
 Sei $ (V, \langle , \rangle) $ ein endlichsim. euklidischer Raum\\
 $ \rightarrow (V,V,\langle,\rangle)$ ein duales \underline{Paar}.\\
@@ -2951,7 +2959,7 @@ Falls A regulär ist, dann ist $ \det(A^*) = \overline{\det(A)} $ weil $ \overli
 \subsection{Lemma:}
 Sei $ \enph $ eines euklidischen bzw. unitären endlichdim. Raumes V und A die Darstellungsmatrix von F bzgl. der orthonormalen Basis $ \mathcal{B} = \basis{b}{1}{n} $ und $ \mathcal{D} = \basis{d}{1}{n} $\\
 Dann hat $ F^\top: V \to V $ die Darstellungsmatrix $ A^* $ bzgl. $ \mathcal{D} $ und $ \mathcal{B} $.
-\Bew{$$F^\top (d_i) = \summ{j=1}{n} \langle F^\top (d_i), b_j \rangle \cdot b_j$$
+\Bew{}{$$F^\top (d_i) = \summ{j=1}{n} \langle F^\top (d_i), b_j \rangle \cdot b_j$$
 	$$F^\top \to C = (c \cdot j) \quad F^\top (d_j) = \sum c_{ij} b_j \quad \begin{pmatrix}
 	c_{1j} \\ \vdots \\ c_{nj}\end{pmatrix}$$
 	$$A= (c_{ij}) \to F(b_j) = \summ{i = 1}{n} \equalto{a_{ij}}{\langle F(b_j),d_i\rangle} d_i$$
@@ -3025,7 +3033,7 @@ Sei $F: V \to >V $ derart, dass $\chi_F(T)$ in Linearfaktoren zerfällt. Folgend
 \subsubsection{Folg}
 Jeder dnormaler Endomorphismus eines unitärem/euklidischen Raumes ist diagonalisierbar
 
-\Bew{(satz)\\
+\Bew{(satz)}{
 	$\boxed{a) \Rightarrow b)}$ Induktion auf dim$(V)$ 
 	$$\underline{\dim V = 1} \rightarrow F \tx{ besitzt einen Eigenvektor } o \neq v \tx{ zum Eigenwert } \lambda$$
 	$$||v|| \neq 0 \rightarrow \frac{v}{||v||} \tx{ ist auch ein Eigenvektor tu }\lambda$$
@@ -3072,7 +3080,7 @@ $$F^\top(b_i) = \overline{\lambda_i} b_i = G(b_i) \Rightarrow G = F^\top$$
 % neue vorlesung
 
 \subsubsection{Widerholung:}
-$ \enph $ endlichdim. euklidisch, unitär$ \qquad \ska{F^\top(v)}{w} = \ska{v}{F^\top(w)} $
+$ \enph $ endlichdim. euklidisch, unitär\\ $\ska{F^\top(v)}{w} = \ska{v}{F^\top(w)} $
 $ \exists F^\top: V \to V $ adjungierter Endomorphismus zu F, derart:\\
 $ \mathcal{B} = \basis{b}{1}{n} $ ONB von $ V \to F^\top $ hat Darstellungsmatrix \\
 $ A = a_{ij} $ Darstellungsmatrix von F bzgl. $ \mathcal{B} \qquad A^* = (\overline{a_{ji}})$ bzgl. $\mathcal{B}$\\
@@ -3100,7 +3108,7 @@ $V \tx{ euklidischer endlidim. Raum}$, $\varphi: V \times V \to \mathbb R \tx{ s
 $\rightarrow$ Hauptachsen von $\varphi$ sind die Elemente einer ONB von $V$ sodass $\varphi$ Darstellungsmatrix in Diagonalform besitzt.
 \subsection{Kor: Spektralsatz}
 $F:V\to V$ selbstadjungiert $\rightarrow \exists \tx{ ONB von } V$ welches aus Eigenvektoren von $F$ besteht.
-\Bew{$V$ unitär $\rightarrow$ ok, weil $\chi_F$ in Linearfaktoren über $\mathbb C$ zerfällt\\
+\Bew{}{$V$ unitär $\rightarrow$ ok, weil $\chi_F$ in Linearfaktoren über $\mathbb C$ zerfällt\\
 	$V$ eiklidisch $\rightarrow$ Die Darstellungsmatrix von $F$ ist symmetrisch $\rightarrow$ diagonalisierbar $\rightarrow$ $\chi_F$ zerfällt in Linearfaktoren über $\mathbb R$ 
 }
 
@@ -3120,7 +3128,7 @@ Falls V euklidisch, unitär, endlichdim. ist $ F: V\to V $ selbstadjungiert, dan
 	\item Eigenvektoren zu verschiedenen Eigenwerten orthogonal sind
 \end{enumerate}
 
-\Bew{
+\Bew{}{
 \begin{enumerate}[a)]
 	\item Sei $\lambda \in \mathbb C$ Eigenwert von $F$ und besteht $v \in V \setminus \{0\}\ / \ F(v) = \lambda \cdot v$
 	\begin{align*}
@@ -3146,7 +3154,7 @@ Jede symmetrische $ n\times n $ Matrix über $ \mathbb{R} $ ist diagonalisierbar
 \subsection{Bew:}
 Wir betrachten A als Matrix über $ \mathbb{C} $. A ist hermitesch $ \rightarrow $ A über $ \mathbb{C} $ diagonalisierbar. Alle Eigenwerte von A sind reell $ \Rightarrow $ A ist über $ \mathbb{R} $ diagonalisierbar
 
-\Bew{(Hauptachsentransformationssatz\\
+\Bew{Hauptachsentransformationssatz}{
 Sei $\basis{e}{1}{n}$ ONB von $V$.\\
 Definiere: $$F:V \to V, \quad e_i \mapsto \summ{j = 1}{n} \varphi (e_i, e_j) \cdot e_j$$
 $$\ska{e_i}{F(e_i)}= \ska{e_i}{\summ{n=1}{n} \varphi (e_j, e_n) \cdot e_n} = \summ{k=1}{n} \varphi ( e_j, e_n) \ska{e_i}{e_k} = \varphi (e_j,e_i)$$
@@ -3187,13 +3195,13 @@ c & d
 \subsection{Satz: Sylvester}
 Eine symmetrische $ (n \times n) $-Matrix A über $ \mathbb{R} $ ist genau dann positiv definit, wenn alle Eigenwerte von A echt positiv sind.
 
-\Bew{\boxed{\Rightarrow} Sei $\ska{\ }{\ }$ das Standartskalarprodukt auf $\mathbb R$ und betrachte die von $A$ definierte Bilinearform $\varphi: \mathbb R^n \times \mathbb R^n \to \mathbb R, \quad (v,w) \mapsto v^\top A w$ Aus dem Hauptachsentransformationssatz folgt, dass es eine ONB $\basis{b}{1}{n}$ diagonalisierbar ist.
+\Bew{}{\boxed{\Rightarrow} Sei $\ska{\ }{\ }$ das Standartskalarprodukt auf $\mathbb R$ und betrachte die von $A$ definierte Bilinearform $\varphi: \mathbb R^n \times \mathbb R^n \to \mathbb R, \quad (v,w) \mapsto v^\top A w$ Aus dem Hauptachsentransformationssatz folgt, dass es eine ONB $\basis{b}{1}{n}$ diagonalisierbar ist.
 $$ S^{-1} \cdot A \cdot S = \Bigg(
 \begin{array}{ccc}
 \equaltoup{\lambda_1}{\varphi(b_1,b_1)} \\
 & \ddots \\
 & & \equalto{\lambda_n}{\varphi(b_n,b_n)}
-\end{array} \Bigg) \quad \Rightarrow \lambda_1,\dots,\lambda_n \ \tx{ sind die Eigenwerte von A}$$
+\end{array} \Bigg)$$ $$\Rightarrow \lambda_1,\dots,\lambda_n \ \tx{ sind die Eigenwerte von A}$$
 Insb. ist $ 0 < \varphi(b_i,b_i) = \lambda_i $ weil $ b_i \neq 0 $\\\\
 
 \noindent $ \boxed{\Leftarrow} $
@@ -3212,7 +3220,7 @@ S^{-1} A S
 \mu_1\\
 \vdots\\
 \mu_n
-\end{pmatrix} = \sum_{i=1}^{n} \lambda_i \mu_i^2 \ge 0  \ \ = 0 \Rightarrow \mu_1 = \dots = \mu_n = 0 \Rightarrow v = 0$$
+\end{pmatrix}$$ $$= \sum_{i=1}^{n} \lambda_i \mu_i^2 \ge 0  \ \ = 0 \Rightarrow \mu_1 = \dots = \mu_n = 0 \Rightarrow v = 0$$
 }
 \subsubsection{Korrolar (Sylvester)}
 Für eine symm. $(n \times n)$-$\mathcal M$atrix $\equaltoup{A}{(a_{ij})}$ über $\mathbb R$ sind folgende Aussagen äquivalent:
@@ -3241,13 +3249,13 @@ $V \tx{ euklidischer endlidim. Raum}$, $\varphi: V \times V \to \mathbb R \tx{ s
 $\rightarrow$ Hauptachsen von $\varphi$ sind die Elemente einer ONB von $V$ sodass $\varphi$ Darstellungsmatrix in Diagonalform besitzt.
 \subsection{Kor: Spektralsatz}
 $F:V\to V$ selbstadjungiert $\rightarrow \exists \tx{ ONB von } V$ welches aus Eigenvektoren von $F$ besteht.
-\Bew{$V$ unitär $\rightarrow$ ok, weil $\chi_F$ in Linearfaktoren über $\mathbb C$ zerfällt\\
+\Bew{}{$V$ unitär $\rightarrow$ ok, weil $\chi_F$ in Linearfaktoren über $\mathbb C$ zerfällt\\
 	$V$ euklidisch $\rightarrow$ Die Darstellungsmatrix von $F$ ist symmetrisch $\rightarrow$ diagonalisierbar $\rightarrow$ $\chi_F$ zerfällt in Linearfaktoren über $\mathbb R$ 
-}
+
 $ A \in \mathcal{M}_{n \times n} (\mathbb{R}) $ symmetrisch
 $$ A \tx{ positiv definit } \Leftrightarrow v^\top \cdot A \cdot v \ge 0 \, \ \ = 0 \tx{ gdw } v = 0$$
 $$ A \tx{ positiv defnit } \Leftrightarrow \tx{ Alle Eigenwerte von } A \tx{ sind echt positiv}$$
-
+}
 \subsection{Bew: Satz von Sylvester}
 $ \boxed{1 \Leftrightarrow 2} $ ok!\\
 $ \boxed{1 \Rightarrow 3} $ Die Bilinearform $ \varphi: \mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}\ ,\ (v,w) \mapsto v^\top A w $ ist positiv definit
@@ -3328,8 +3336,9 @@ $ \boxed{1^{\tx{er}}\tx{ Fall:}} $ V ist euklidisch
 \ska{F(e_i + e_j)}{F(e_i + e_j)} = || F(e_i + e_j) ||^2 = ||e_i + e_j ||^2 = \ska{e_i + e_j}{e_i + e_j} = 2
 \end{align*}
 \begin{align*}
-\ska{F(e_i + e_j)}{F(e_i + e_j)} &= \equalto{\ska{F(e_i)}{F(e_i)}}{\equalto{||F(e_i)||^2}{1}} + \equalto{\ska{F(e_j)}{F(e_j)}}{\equalto{||F(e_i)||^2}{1}} + \ska{F(e_i)}{F(e_j)} + \equalto{\ska{F(e_j)}{F(e_i)}}{\ska{F(e_i)}{F(e_j)}}\\[5pt]
-\tx{Insb: } \custo{\neq}{2}{\, 0} \ska{F(e_i)}{F(e_j)} &= 0 \quad \Rightarrow \quad F(e_i) \perp F(e_j) 
+&\ska{F(e_i + e_j)}{F(e_i + e_j)}\\
+&= \equalto{\ska{F(e_i)}{F(e_i)}}{\equalto{||F(e_i)||^2}{1}} + \equalto{\ska{F(e_j)}{F(e_j)}}{\equalto{||F(e_i)||^2}{1}} + \ska{F(e_i)}{F(e_j)} + \equalto{\ska{F(e_j)}{F(e_i)}}{\ska{F(e_i)}{F(e_j)}}\\[5pt]
+&\tx{Insb: } \custo{\neq}{2}{\, 0} \ska{F(e_i)}{F(e_j)} = 0 \quad \Rightarrow \quad F(e_i) \perp F(e_j) 
 \end{align*}
 $\boxed{2^{\tx{er}} \tx{ Fall:}}$
 $$\underline{V \tx{ unitär}}$$
@@ -3357,7 +3366,7 @@ w &= \mu_1 b_1 + \mu_2 b_2
 \end{align*}
 
 \begin{equation*}
-\ska{v}{w} = \equalto{\ub{ \lambda_1 \overline{\mu_1} \equalto{||b_1||^2}{||F(b_1)||^2} + \lambda_2 \overline{\mu_2} \equalto{||b_2||^2}{||F(b_2)||^2}} }{\begin{Huge} \ska{F(\lambda_1 b_1 + \lambda_2 b_2)}{F(\mu_1 b_1 ) + F(\mu_2 b_2)} \end{Huge}}
+\ska{v}{w} = \equalto{\ub{ \lambda_1 \overline{\mu_1} \equalto{||b_1||^2}{||F(b_1)||^2} + \lambda_2 \overline{\mu_2} \equalto{||b_2||^2}{||F(b_2)||^2}} }{\ska{F(\lambda_1 b_1 + \lambda_2 b_2)}{F(\mu_1 b_1 ) + F(\mu_2 b_2)}}
 \end{equation*}
 (letzter schritt weil $ F(b_1) \perp F(b_2) $) 
 
@@ -3435,7 +3444,7 @@ $F$ ist orthogonal $\Leftrightarrow$ Die Darstellungsmatrix von $F$ bzgl. $\begi
 \subsection{Kor:}
 $ A \in \mathcal{M}_{n \times n} (K) $ regülär ist orthogonal $ \Leftrightarrow $ die  Zeilenvektoren (bzw die Spaltenvektoren) ein Orthonormalsystem in $ K^n $ bilden (und somit eine ONB)
 \subsection{Bew:}
-$$ A \tx{ orthogonal } \Leftrightarrow A^{-1} = A^* \Leftrightarrow A \cdot A^* = E_n = A \cdot A^{-1} \Leftrightarrow \equalto{\ub{\sum_{k=1}^{n} a_{ik} \cdot \overline{a_{jk}}}}{\ska{\vec{a}_i}{\vec{a}_j} \in K^n} = \casess{1}{i=j}{0}{i\neq j} $$
+$$ A \tx{ orthogonal } \Leftrightarrow A^{-1} = A^* \Leftrightarrow A \cdot A^* = E_n = A \cdot A^{-1}$$ $$\Leftrightarrow \equalto{\ub{\sum_{k=1}^{n} a_{ik} \cdot \overline{a_{jk}}}}{\ska{\vec{a}_i}{\vec{a}_j} \in K^n} = \casess{1}{i=j}{0}{i\neq j} $$
 $$\ska{\ub{\vec{a}_i}_{\tx{i-te Zeile}}}{\ub{\vec{a}_j}_{\tx{j-te Zeile}}} \in K^n \tx{ mit dem Standartskalarprodukt } $$
 \subsection{Kor: zu irgendeinem Satz}
 Sei $ F: V \to V $ normale Abbildung eines endlichdimensionalen unitären Raumes V derart, dass alle Eigenwerte von F Absolutbetrag 1 haben. Dann ist F orthogonal.
@@ -3528,11 +3537,154 @@ $$ \alpha = \frac{\pi}{2} :\qquad \begin{tikzpicture}
 \end{pmatrix}& (\leftarrow)
 \end{array}$$
 
+% neue Vorlesung
+% wud auf bild evtl nachtragen
 
+\subsection{Wid:}
+V  euklidischer Raum
+$$\tx{Dreh}(V) = \{F: V \to V \tx{ Drehung}\}$$
+Drehung $ \leftrightarrow $ orthogonale Abbildung mit $ \det(F) = 1 $\\
+eins \underline{Gruppe}
 
+\Bew{Satz}{
+$\boxed{ \Leftarrow }$
+$$\det \begin{pmatrix}
+\cos \alpha & - \sin \alpha\\
+\sin \alpha & \cos \alpha
+\end{pmatrix} = 1$$
+$\boxed{\Rightarrow}$ Sei $ \{e_1,e_2\} $ die kanonische Basis $ A = (a_{ij})_{1 \le i,j \le 2} $ und die Darstellungsmatrix von F:
+$$\phantom{A = } F(e_1) \qquad \ \  F(e_2)$$
+$$A = \begin{pmatrix}
+\ska{F(e_1)}{e_1} & \ska{F(e_2)}{e_1}\\
+\ska{F(e_1)}{e_2} & \ska{F(e_2)}{2_2}
+\end{pmatrix}$$
+Die Spaltenvektoren bilden ein orthonormales System.\pagebreak
+$$||\equalto{F(e_1)}{}||^2 = 1$$\\[-30pt]
+$$\ska{F(e_1)}{e_1}^2 + \ska{F(e_1)}{e_2}^2$$
+$ \Rightarrow \exists \alpha \in [0,2 \pi] \quad \cos \alpha = \ska{F(e_1)}{e_1} \quad \sin \alpha = \ska{F(e_1)}{e_2} $
+$$\left. \begin{array}{cc}
+\det(A) = 1\\
+0 = \ska{F(e_1)}{e_2}
+\end{array}\right\} \begin{array}{cc}
+\rightarrow & 1 = \cos \alpha \ska{F(e_2)}{e_2} - \sin \alpha \ska{F(e_2)}{e_1}\\
+\rightarrow & 0 = \cos \alpha \ska{F(e_2)}{e_1} + \sin \alpha \ska{F(e_2)}{e_2}
+\end{array}$$
+$$\begin{pmatrix}
+\cos \alpha & \sin \alpha\\
+- \sin \alpha & \cos \alpha
+\end{pmatrix} \begin{pmatrix}
+\ska{F(e_2)}{e_1}\\
+\ska{F(e_2)}{e_2}
+\end{pmatrix} = \begin{pmatrix}
+0\\1
+\end{pmatrix}$$
+$$\begin{pmatrix}
+\ska{F(e_2)}{e_1}\\
+\ska{F(e_2)}{e_2}
+\end{pmatrix} = \begin{pmatrix}
+\cos \alpha & \sin \alpha\\
+- \sin \alpha & \cos \alpha
+\end{pmatrix} \begin{pmatrix}
+0\\1
+\end{pmatrix} = \begin{pmatrix}
+- \sin \alpha\\
+\cos \alpha
+\end{pmatrix}$$
+}
 
+\subsection{Satz:}
+$ F : \mathbb{R}^3 \to \mathbb{R}^3 $ ist genau dann eine Drehung, wenn F Darstellungsmatrix bzgl. einer geeigneten ONB $ \{b_1,b_2,b_3\} $ der Form
+$$\begin{pmatrix}
+1 & 0 & 0 \\
+0 & \cos \alpha & - \sin \alpha\\
+0 & \sin \alpha & \cos \alpha
+\end{pmatrix} \quad \tx{ hat.} \qquad \qquad \alpha \in [0,2 \pi]$$ 
 
+\Bew{}{
+$ \boxed{\Leftarrow}\  \checkmark $\\
+$ \boxed{\Rightarrow} $ Sei A die Darstellungsmatrix von F bzgl. der kanonischen Basis $ \{a_1,a_2,a_3\} $
+$$ \Rightarrow \tx{ A ist orthogonal}$$
+$ \Rightarrow $ Als Matrix über $ \mathbb{C} $ haben alle Eigenwerte $ \lambda_1,\lambda_2,\lambda_3 $ von A Absolutbetrag 1.
+$$|\lambda_1| = |\lambda_2| = |\lambda_3| = 1$$
+$ \chi_F(T) = \chi_A(T) $ ist ein \underline{normiertes} Polynom Grades 3 über \underline{\underline{$ \mathbb{R} $}}\\
+$ \rightarrow $ Es muss eine Nullstelle in $ \mathbb{R} $ haben $ \rightarrow $ OBdA $ \lambda_1 \in \mathbb{R} $\\[5pt]
+$ |\lambda_1| = 1 \Rightarrow \lambda_1 = \pm 1 $\\
+$  1 = \det(A) = \lambda_1 \lambda_2 \lambda_3 $\\
+\textbf{1er Fall:} $ \lambda_2, \lambda_3 \in \mathbb{R} \rightarrow $ Für ein i muss $\lambda_i = 1 \ \Rightarrow $ OBdA $ \lambda_1 = 1 $\\
+\textbf{2er Fall:} Sonst. $ \lambda_2 \in \mathbb{C/R} $
+$$\chi_F(T) = (T-\lambda_1) (T-\lambda_2) (T-\lambda_3)$$
+hat Koeffizienten in $ \mathbb{R} $\\[5pt]
+Insb. $ \overline{\lambda_2} = \left\{ \begin{array}{cc}
+\cancel{\bcancel{\lambda_1}}\\ \lambda_3
+\end{array} \right. $
+nicht $ \lambda_1 $ da es Reell ist.\\
+$ |\lambda_2| = |\lambda_3| = 1 $\\
+$ \lambda_2 = e^{i\alpha} = \cos \alpha + i \sin \alpha \quad \lambda_3 = \overline{\lambda_2} = \cos \alpha - i \sin \alpha = e^{-i\alpha} = \frac{1}{\lambda_2} $\\
+$ \det(F) = 1 = \lambda_1 \cdot \ub{ \lambda_2 \cdot (\lambda_2)^{-1}}_{= 1} $\\
+$ \Rightarrow \lambda_1 = 1 $\\[5pt]
+Sei $ b_1 \in \mathbb{R}^3 $ ein Eigenvektor zum Wert \underline{$ \lambda_1 = 1 $}\\
+Sei $ U = \spa (b_1)^\perp \rightarrow\dim(U) = 2 $\\[10pt]
+\textbf{Frage:} $ F(U) \perp \spa(b_1) $ ?\\
+$$\Leftrightarrow F(U) \subset U ?$$
+$$ u \in U \qquad \equalto{\ska{F(u)}{\equalto{b_1}{F(b_1)}}}{} \Rightarrow F(u) \in U $$
+gleich da F orthogonal
+$$ \ska{u}{b_1} = 0 $$
+Aus dem Gram-Schmidt'schen Verfahren wähle eine ONB $ \{b_2,b_3\} $ von U. (aus dem Eulersatz) $ \Rightarrow \{b_1,b_2,b_3\} $ ist eine ONB von $ \mathbb{R}^3 $.\\
+$ F\upharpoonright_U $ hat auch eine Drehung ! $ \begin{pmatrix}
+1 & 0 & 0\\
+0 & * & *\\
+0 & * & *
+\end{pmatrix} $\\
+$ \rightarrow $ F hat Darstellungsmatrix bzgl. $ \{b_1,b_2,b_3\} $ ist $ \begin{pmatrix}
+1 & 0 & 0\\
+0 & \cos \alpha & - \sin \alpha\\
+0 & \sin \alpha & \cos \alpha 
+\end{pmatrix} $
+}
 
+\section{Multilineare Algebra}
+Sei K ein beliebiger Körper
+\subsection{Def:}
+Das Tensorprodukt von zwei K-VR U und V ist ein K-VR T zusammen mit einer (universellen) bilinearen Abbildung: $ \otimes: U \times U \to T $ derart, dass jede bilineare Abbildung $ g: U \times V \to W $ sich schreiben läßt als eine Komposition.
+\begin{center}
+	\begin{tikzpicture}[baseline= (a).base]
+	\node[scale=1.3] (a) at (0,0){
+		\begin{tikzcd}
+		\arrow{r}{\otimes} \arrow{d}[swap]{f\, \circ\, \otimes\, =\, g} U \times V &   T \arrow{dl} {f} \\
+		W
+		\end{tikzcd}
+	};
+	\node at (0.1,0.2) {$ \blacksquare $};
+	\end{tikzpicture}
+\end{center}
+für eine eindeutig bestimmte lineare Abbildung $ f: T \to W  $
+\subsection{Satz:}
+JJe zwei K-VR U und V besitzen ein Tensor produkt, dass bis auf Isomorphi eindeutig bestimmt ist. Schreibe $ U \otimes V $
+\Bew{}{
+Seien $ \{a_I\}_{i \in I} $ Basis von U. $ \{b_j\}_{j\in J} $ Basis von V.\\
+Wähle Elemente $ (c_{i,j})_{(i,j) \in I \times J} $ K-linear unabh.\\[5pt]
+Setze 
+\begin{align*}
+T &= \spa(\{c_{i,j}\}_{(i,j) \in I \times J})\\
+&= \bigg\{ \sum_{\tx{endliche}} \lambda_{i',j'} c_{i,j} \bigg\}
+\end{align*}
+\begin{align*}
+\otimes : U \times V &\to T\\
+(a_i,b_i) &\mapsto c_{i,j}
+\end{align*}
+Erweitern wegen Bilinearitöt:
+$$\otimes (\sum \lambda_i a_i, \sum \mu_j b_j) = \sum_i \sum_j \lambda_i \mu_j a_{ij}$$
+Sei nun $ g: U \times V \to W \ \ , \ \ (a_i,b_j) \mapsto g(a_i,b_j) $ bilinear
+
+\begin{align*}
+f: T & \to W\\c_{i,j} &\mapsto g(a_i,b_j)
+\end{align*}
+erweitere f aus \underline{linearität} $ \rightarrow $ f ist eindeutig \underline{bestimmt}
+$$f \circ \otimes (a_i,b_j) = g(a_i,b_j)$$
+$$ \rightarrow f \circ \otimes = g$$
+$$ a_i \otimes b_j := c_{i,j}$$
+$$\cancel{\otimes (a_i,b_j)} $$
+}
 
 
 

@@ -2557,7 +2557,7 @@ Länge eines in IS ruhenden Objekts kann durch ruhende geeichte Maßstäbe besti
 	d.h. zur Zeit $ t $ sendet Standartuhr ein Signal zur anderen Uhr , das sofort wieder zurückgeschickt wird und zur Zeit $ t+\Delta t $ ankommt $ \rightarrow $ Bei Empfangen des Signals von der anderen Uhr war Zeitpunkt $ t + \frac{\Delta t}{2} $
 \end{itemize}
 
-\subsubsection{Gleichzeitigkeit}
+\subsection{Gleichzeitigkeit}
 $$
 \begin{tikzpicture}
 \draw[thick] (0,0) -- (5,0);
@@ -2806,7 +2806,7 @@ l_{\perp} &= l_0^\perp
 	\item Ruht der Stab in IS mit Eigenlänge $ l_0 $, so wird in IS' ebenfalls $ l=\frac{l_0}{\gamma} < l_0 $ gemessen. Die Kontraktion (1) hängt nicht vom Vorzeichen von $ v $ ab.
 	\item Die Asymmetrie von IS und IS', also ob die Kontraktion die Maßstäbe in IS oder IS' betrifft, wird durch die \underline{Messung} verursacht.
 \end{itemize}
-Im IS sind die Ereignisse $ x_1 = 0\ , \ t_1 = 0 $ und $ x_2,t_2 = 0 $ gleichzeitig\\
+Im IS sind die Ereignisse $ x_1 = 0\ , \ t_1 = 0 $ und $ x_2,\ \ t_2 = 0 $ gleichzeitig\\
 in IS' sind die Ereignisse $ x_1' = 0 \ , \ t_1' = 0 $ und $ x_2' = l_0 \ , \ t_2' \tx{ \underline{nicht} } $\\
 mit: $ t_1 = 0  \ , \ x_2 = \frac{l_0}{\gamma} $
 \begin{align*}
@@ -2822,7 +2822,7 @@ $$
 \draw[->] (-5,0) -- (-5,2) node[above] {$y$};
 \node at (.7-5,2) [align=flush center,text width=5cm]
 {IS};
-\node at (-4.2,1.2) [align=flush center,text width=5cm]
+\node at (-4.2+5,1.2) [align=flush center,text width=5cm]
 {$\longrightarrow \vec{v}$};
 \draw (-5,0) circle(0.5cm);
 \draw (2-5,0) circle(0.5cm);
@@ -2913,9 +2913,100 @@ Im Bezugssystem Myon fliegt die Erde $ v = 0.998 \ c $ und legt kontrahierte Ste
 Dabei vergeht die Eigenzeit
 $$Z = \frac{0.57 \tx{ km}}{0.998 \ c} \approx 1.9 \mu \tx{s}$$
 
+% neue Vorlesung
 
+\subsection{Eigenzeit}
+Uhr, die sich mit $ \vec{v}(t) $  relativ zu IS bewegt kann wegen $ v \neq \const $ nicht zum Ursprung eines IS' gemacht werden. Dennoch kann die tatsächlich angezeigte Zeit dieser Uhr berechnet werden.\\
+Für einen Zeitpunkt $ t_0 $ bewegt sie sich mit konst. $ \vec{v}(t_0) $ ruht also in IS', das sich mit $ \vec{v}(t_0) $ bewegt.\\
+Zeitintervall $ d \tau = t_0 + d\tau - t_0 $ ist:
+$$ d\tau = dt' = dt \sqrt{1-\frac{v^2(t_0)}{c^2}}$$
+zwischen 2 Ereignissen bei $ t_1 $ und $ t_2 $ ist:
+\frbox{Eigenzeit}{$$ \tau = \int_{t_1}^{t_2} dt \sqrt{1 - \frac{v^2(t)}{c^2}}$$}
+$$\begin{tikzpicture}
+\draw[thick,->] (0,0) -- (1.4,0);
+\node at (.7,.3) {$ \substack{v\, =\, \const} $};
+\end{tikzpicture} \ \sqrt{1 - \frac{v^2}{c^2}} (t_2 - t_1)$$
+wird von einer einzigen Uhr gemessen, die sich mit dem Körper bewegt. Eigenzeit ist Lorenzinvariant, hängt also nicht vom Bezugssystem ab\\
+z.B. schalte Uhr bei $ t_1 $ an und bei $ t_2 $ aus, so ergibt sich einer Zeigerstellung (also $ \tau $), die von jedem Beobachter unabhängig vom Bewegungszustand abgelesen werden kann.
 
+\subsection{Zwilingsparadoxon}
+Astronaut Alex altert auf Weltraumreise weniger als sein Zwillingsbruder Erwin, der auf der Erde bleibt. Paradox, da Bezugssysteme Raumschiff und Erde gleichwertig erscheinen, und deshalb wegen Relativitätsprinzip kein Unterschied sich ergeben dürfte.
+\begin{enumerate}[1)]
+	\item Alex startet zu $ l=8 \tx{ LJ} $ entfernten Sonnensystem Raumschiff beschleunigt in kurzer Zeit auf $ v = 0.8 \tx{ c} $ d.h. $ \gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} = \frac{1}{0.6} $
+	\item Alex fliegt mit $ v = 0.8 \tx{ c} $\\
+	Erwin misst die Flugzeit  $ T_E = \frac{l}{v} = 10 \tx{ Jahre} $
+	\item Raumschiff bremst bei Ankunft in kurzer Zeit auf $ v = 0 $ ab. Rückflug erfolgt sofort und in gleicher Weise.
+\end{enumerate}
+Zeit, die in Phase 2 im Raumschiff verstreicht, ist die Eigenzeit:
+$$T_A = \sqrt{1-\frac{v^2}{c^2}}\  T_E = 0.6 \cdot 10 \tx{ J} = 6 \tx{ J}$$
+Alternativ über Längenkontraktion:\\
+Für Alex ist die Flugstrecke
+$$l_A = \sqrt{1-\frac{v^2}{c^2}}\  l = 0.6 \cdot 8 \tx{ LJ} = 4.8 \tx{ LJ}$$
+für die er $ T_A = \frac{l_A}{v} = 6 \tx{ J} $ braucht.
+\begin{enumerate}[$ \rightarrow $]
+	\item Nach Erwins Zeitrechnung dauert die Reise 20 J\\
+	Nach Alex Zeitrechnung dauert die Reise nur 12 J
+	\item Erwin ist 8 Jahre älter als sein Zwillingsbruder
+\end{enumerate}
+\subsection{Ursprung des Asymmetrie}
+In beschleunigten Bezugsystemen laufen Uhren zwar langsamer, aber bei relativ kurzen Beschleunigungszeiten kann dieser Effekt nicht Jahre betragen.\\[5pt]
+\underline{Aber:} Zustände der beiden Zwillinge sind unterschiedlich
+\begin{itemize}
+	\item die Erde ist ein IS
+	\item das Raumschiff ist wegen Beschleunigungsphasen 1 und 3 \textbf{kein} IS
+	\item im Rahmen der Speziellen Relativitätstheorie können wie nur physikalische Gesetze in IS formulieren. \\
+	Dies wurde ober gemacht, d.h. Berechnung von $ T_E $ dann $ T_A = \frac{1}{\gamma} T_E $.\\
+	Diese Analyse kann man nicht im Ruhesystem Raumschiff machen, da es mehrfach das IS wechselt.
+\end{itemize}
+\subsubsection{Allg.: Gedanken Exp.}
+\begin{enumerate}[1)]
+	\item 2 Uhren werden am selben Ort gestartet.
+	\item 2 Uhren werden relativ zueinander bewegt.
+	\item 2 Uhren werden zusammen gebracht und verglichen.
+\end{enumerate}
+$ \rightarrow $ mindestens 1 Uhr bewegt sich in einem beschleunigten Bezugssystem\\
+$ \rightarrow $ nicht allg. zu sagen \\[5pt]
+\underline{Aber:} durch Messung der Lorenzinvarianz Eigenzeit ist klar, welche Uhr schneller/langsamer ging.
 
-
+\section{Vierdimentionale Entfernungen}
+Drehung eines 3D Vektors $ \vec{a} \in \mathbb{R}^3 $ ändert die Länge $ \sqrt{\vec{a}^{\,2}} $ nicht d.h. $ \vec{a}^{\, 2} = a^2 $ ist eine Invariante unter Drehungen.\\
+$ \rightarrow $ welche Invariant gibt es bei Lorenz-Trafos ?\\[5pt]
+\underline{Gegben:} IS und IS' mit konst. Relativgeschwindigkeit $ \vec{v} $ und Anfangbedingungen:
+\begin{align*}
+t_1 &= t_1' = 0\\
+\vec{r}_1 &= \vec{r'}_1 = 0
+\end{align*}
+Zu $ t_1 = t_1' = 0 $ wird ein Lichtpuls in alle Richtungen abgestrahlt, der sich Kugelförmig in beiden IS mit gleicher Geschwindigkeit c ausbreitet. Für Ereignisse an der Wellenfront gilt:
+\begin{align*}
+(ct)^2 - (x^2 + y^2 + z^2) &= (ct)^2 - \vec{r}^2 = 0\\
+(ct')^2 - \vec{r'}^{\, 2} &= 0
+\end{align*}
+folglich ist die Größe $ (ct)^2 - \vec{r}^2 $ Lorenzinvariant für alle Ereignisse, die durch ein Lichtsignal verbunden sind.\\
+\textbf{Def:}
+\begin{itemize}
+	\item Raumzeitpunkt oder \underline{Weltpunkt} $ (ct,\vec{r}) $ def. ein Ereignis
+	\item Die Größe
+	$$S = \sqrt{c^2(t_2-t_1)^2 - (\vec{r}_2 - \vec{r}_1)^2}$$
+	heißt \underline{Abstand} oder Intervall oder \underline{4D Entfernung} zwischen 2 Weltpunkten $ (ct_1,\vec{r}_1) $ und $ (ct_2,\vec{r}_2) $
+	\item Das Abstandsquadrat
+	$$S^2 = c^2 (t_2-t_1)^2- (\vec{r}_2 - \vec{r}_1)^2$$
+	zwischen 2 \underline{beliebigen} Ereignissen ist Lorenzinvarant.
+\end{itemize}
+\textbf{Beweis:} Verschiebung um $ -t_1 $ und $ - \vec{r}_1 $ und erhalten die Ereignisse
+$$E_1 = (0,\vec{0})\ \ , \ \ E_2 = (c(t_2-t_1) , \vec{r}_2 - \vec{r}_1) =: (ct,\vec{r})$$
+$$S^2 = (ct)^2 - (x^2 + y^2 + z^2)$$
+\textbf{LT:}
+$$x = \gamma (x' + vt') \ \ , \ \ t = \gamma(t' + \frac{v}{c^2} x') \ \ , \ \ y = y' \ \ , \ \ z = z'$$
+\begin{align*}
+S^2 &= \bigg[c \gamma (t' + \frac{v}{c^2} x')\bigg]^2 - \bigg[\gamma (t' + vt')\bigg]^2 - y'^2 - z'^2\\
+&= (ct')^2 \ub{\bigg(\gamma^2 \bigg(1 - \bigg(\frac{v}{c}\bigg)^2\bigg) \bigg)}_{= 1} + 0 + x'^{\, 2} \ub{\gamma^2 \bigg(\frac{v^2}{c^2} - 1\bigg)}_{= 1} - Y'^{\, 2} - Z'^{\, 2}\\
+&= (ct')^2 - (x'^{\, 2} + y'^{\, 2} + z'^{\, 2}) \qquad \checkmark
+\end{align*}
+\textbf{Zur Eigenzeit:}
+\begin{equation*}
+(ds^2)_{\tx{Uhr}} = (c^2 dt^2 - d\vec{r}^{\, 2})_{\tx{Uhr}} \buildrel d\vec{r} = \vec{r} dt \over = c^2 \bigg(1 - \frac{\vec{v}^2(t)}{c^2}\bigg) dt
+\end{equation*}
+Mit Eigenzeit $ d\tau = dt \sqrt{1 - \frac{v^2(t)}{c^2}} = c^2 d\tau ^2 $\\
+$ \tau $ ist Lorenzinvariant
 
 \end{document}
