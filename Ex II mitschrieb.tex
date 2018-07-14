@@ -54,7 +54,7 @@
 
 \chapter{Elektrostatik}
 \section{Elektrische Ladung}
-\subsection*{Exp: Auf Thales Spuren}
+\subsubsection*{Exp: Auf Thales Spuren}
 (PVC Rohr mit Filz gerieben, Lametta zum schweben gebracht)
 \subsection{Reibungselektrizität}
 \begin{itemize}
@@ -62,7 +62,7 @@
 \item Berührung Lametta mit Stab $\Rightarrow$ Abstoßung
 \end{itemize}
 {\large Anziehende/Abstoßende Kräfte: Elektrizität}
-\subsection*{Exp:}
+\subsubsection*{Exp:}
 \begin{itemize}
 \item[i)] 2 Kunststoffstäbe $\Rightarrow$ Abstoßung, gleiche Ladung
 \item[ii)] Kunststoff-, Glasstab $\Rightarrow$ Anziehung, ungleiche (entgegengesetzte) Ladung 
@@ -158,13 +158,13 @@ $$\frac{4}{3} \pi r^3 \rho_{\tx{Oel}} g = \frac{4}{3} \pi r^3_{\pi} \rho_{\tx{Lu
  d = Abstand Kondensatorplatten
 $$Q\pi = \frac{4}{3}	\pi g  \bigg( \rho_{\tx{Oel}}-\rho_{\tx{Luft}} \frac{d}{U}\bigg)$$
 viele Tröpfchen $\rightarrow$ Statische Auswertung\\
-Ergebnis von Millikan \\%+-unicode
-Elektrische Ladung ist gequantelt $+- e;+-2e;\dots$
+Ergebnis von Millikan \\
+\textbf{Elektrische Ladung ist gequantelt} $\pm e;\pm2e;\dots$
 $$e = 1.6021766208(88) \cdot 10^{-19} C$$
 Erstmals gequantelte Größe\\
 Drittelzahlige Ladungen der Quarks\\
 Quarks sind Konstituenten von Protonen und Neutronen\\
-\underline{Proton $p \widehat{=}$ (uud) Neutron $n \widehat{=} $ (udd)}
+\textbf{Proton p $\widehat{=}$ (uud) Neutron n $\widehat{=} $ (udd)}
 $$Q_u = + \frac{2}{3}, Q_d = - \frac{1}{3} \Rightarrow Q_p = 1 Q_n = 0$$
 $$Q_p + Q_e < 10{-21} e$$ aus Stabilität der Materie\\
 \textbf{Historisch:}\\
@@ -813,44 +813,39 @@ E_{el} &= \frac{1}{2} Q_1 [\varphi_2(\vec{r}_1) + \varphi_3(\vec{r}_1)] \\
 $$E_{el} = \frac{1}{2} \sum_{i=1}^N Q_i \varphi(\vec{r}_i) \quad \tx{ für N Punktladungen}$$
 mit $$\varphi(\vec{r}_i) = \sum^N_{\substack{ i=1 \\ i \neq j }} \varphi_j(\vec{r}_i)$$
 konst. Ladungsvertielung $\varphi(\vec{r}) : \sum Q_i \rightarrow \int dQ$
-
 $$E_{el}= \frac{1}{3} \int \frac{d^3\vec{r} \rho (\vec{r})}{dQ} \varphi(\vec{r})$$
 Bsp.: \textbf{homogengeladene Kugelschale} mit Radius R
-$$\varphi(\vec{r}) = \tx{const} \quad  r<R \qquad = \frac{Q}{4\pi\epsilon_0} \frac{1}{r} \quad r\ge R$$
+$$\varphi(\vec{r}) = \tx{const} \quad  r<R \qquad \varphi(\vec{r})= \frac{Q}{4\pi\epsilon_0} \frac{1}{r} \quad r\ge R$$
 Sei zunächst $Q = 0$. $dQ$ aus $\infty \rightarrow R$\\
-$dE_{el}= \varphi(e) dQ = \frac{1}{4\pi\epsilon_0} \frac{Q}{R} \; dQ$\\
-$E_{el}= \int^Q_0 \frac{1}{4\pi\epsilon_0} \frac{Q^1}{R} \; dQ^1 = \frac{1}{4\pi\epsilon_0} \frac{1}{2} \frac{Q^{12}}{R} \bigg\vert_0^{???R} = \frac{1}{4\pi\epsilon_0} \frac{1}{2} \frac{Q}{R} = \frac{1}{2} Q \varphi(R)$ wie oben
-
-
+$$dE_{el}= \varphi(e) dQ = \frac{1}{4\pi\epsilon_0} \frac{Q}{R} \; dQ$$
+$$E_{el}= \int^Q_0 \frac{1}{4\pi\epsilon_0} \frac{Q^1}{R} \; dQ^1 = \frac{1}{4\pi\epsilon_0} \frac{1}{2} \frac{(Q^{1})^2}{R} \bigg\vert_0^{???R} = \frac{1}{4\pi\epsilon_0} \frac{1}{2} \frac{Q}{R} = \frac{1}{2} Q \varphi(R)$$ wie oben
 Bsp.: homogen geladene Kugel Radius $R$, Ladung $Q$:
 $$E_{el} = \frac{3}{5}\ k\ \frac{\ Q^2}{R}$$
-
-
 \end{itemize}
-
 \underline{Andere Form von $E_{el}$ mit $ \vec{E}$}
-$$E_{el} = \frac{1}{2} \it d^3\vec{r} \rho(\vec{r}) \varphi(\vec{r}) \quad \tx{3. MW-Gl.)} \quad div(\vec{E}) = \frac{\rho}{\epsilon_0}$$
-$$= \frac{\epsilon_0}{2} \int d^3 \vec{r} \vec{\nabla} \vec{E}(\vec{r}) \varphi(\vec{r})$$
-partielle Integraltion (1 dim: $\int_a^b dx f(x) g'(x) = fg \bigg \vert _a^b - \int dx f'(x) g(x)$)
+\begin{align*}
+E_{el} &= \frac{1}{2} \it d^3\vec{r} \rho(\vec{r}) \varphi(\vec{r}) \qquad \qquad \tx{(3. MW-Gl.)} \quad \tx{div}(\vec{E}) = \frac{\rho}{\epsilon_0}\\
+&= \frac{\epsilon_0}{2} \int d^3 \vec{r} \vec{\nabla} \vec{E}(\vec{r}) \varphi(\vec{r})
+\end{align*}
+partielle Integraltion $\bigg($ 1 dim: $\int_a^b dx f(x) g'(x) = fg \bigg \vert _a^b - \int dx f'(x) g(x) \bigg)$
 in 3 Dimensionen:
-
 $$ E_{el}= \frac{\epsilon_0}{2} \bigg[ \oint \limits _{\substack{\tx{Rand des} \\ \tx{Volumens}}} \varphi(\vec{r}) \vec{E}(\vec{r}) \; d\vec{s} - \int d^3\vec{r}\; \vec{E}(\vec{r}) \vec{\nabla} \varphi(\vec{r}) \bigg]$$
 
 Volumen $\rightarrow \infty ; E(\vec{r}) \rightarrow 0$ auf Rand $ \Rightarrow \oint_{\tx{Rand}} \rightarrow 0 $ verschwindet
 $$E_{el} = \frac{\epsilon_0}{2} \int |\vec{E}(\vec{r})|^2 d^3 \vec{r}\qquad \vec{\nabla} \varphi = - \vec{E}$$
 $E_{el} \sim |\vec{E}|^2$ Energie im $\vec{E}$-Feld gespeichert\\
-Energiedichte $W_{el} = \frac{\epsilon_0}{2} | \vec{E}| ^2$\\\\
-Bsp.: Plattenkondensator mit Spannung $U(q)$\\
+Energiedichte $W_{el} = \frac{\epsilon_0}{2} | \vec{E}| ^2$\\[10pt]
+Bsp.: \textbf{Plattenkondensator mit Spannung $U(q)$}\\
 $E_{el}$ und $dq$ auf Platte hinzufägen? \\
 $dE_{el} = U dq = \frac{q}{C} \; dq$
 Energie um Kondensator von $\varnothing$ nach Q laden
 $$E_{el} = \int ^Q _0 \frac{q}{C} \; dq = \frac{1}{2} \frac{q^2}{C} |_0^Q = \frac{1}{2} \frac{Q^2}{C}$$
-$$E_{el} = \frac{1}{2} \frac{Q^2}{C} = \frac{1}{2} Q U = \frac{1}{2} C U^2 = \frac{1}{2} \epsilon_0 V_{\tx{Kondensator}} |\vec{E}|^2$$
+$$\boxed{E_{el} = \frac{1}{2} \frac{Q^2}{C} = \frac{1}{2} Q U = \frac{1}{2} C U^2 = \frac{1}{2} \epsilon_0 V_{\tx{Kond}} |\vec{E}|^2}$$
 $$V_{\tx{Kond}} = Ad \quad C= \epsilon_0 \frac{A}{d} \quad |\vec{E}| = \frac{U}{d}$$
 
 \section{Materie in elektrischen Feldern}
 \subsection{Polarisation des Mediums}
-Betrachte Nichtliter, $Q=0$ im externen $\vec{E}$-Feld
+Betrachte Nichtleiter, $Q=0$ im externen $\vec{E}$-Feld
 \begin{itemize}
 \item keine freien Elektronen $e^-$
 \item Verschiebung der $e^-$ im Atom / Molekül.\\
@@ -860,29 +855,30 @@ $\rightarrow$ Ausrichtung im $\vec{E}$-Feld: $\vec{E} \uparrow \uparrow \vec{p}_
 Effekt:
 \begin{itemize}
 \item Polarisation des Mediums $\vec{P}$ oder ($\underline{\vec{P}}$)
-\item Flächenladungsdichte $\sigma_{pol} $ am Rand des Mediums
+\item Flächenladungsdichte $\sigma_{\tx{pol}} $ am Rand des Mediums
 \end{itemize}
-Polarisation $\vec{P}$: $\vec{P} \equiv \frac{1}{V} \sum_i \vec{p}_i$ Mittelung der mikroskopischen Dipole über Volumen V\\
+Polarisation $\vec{P}$: $$\vec{P} \equiv \frac{1}{V} \sum_i \vec{p}_i$$ Mittelung der mikroskopischen Dipole über Volumen V\\
 $[\vec{P}] = \frac{C}{m^2}$
 Annahme: alle $\vec{p}_i$ gleich $\vec{P}$, gleich ausgerichtet, Dipoldichte $\eta$\\
-Gilt: $P = |\vec{P}| = \eta |\vec{p}| = \eta q d$\\\\
-Flächenladungsdichte $\sigma_{pol}$\\
+Gilt: $$P = |\vec{P}| = \eta |\vec{p}\,| = \eta q d$$
+Flächenladungsdichte $\sigma_{\tx{pol}}$\\
 Betrachte $V = dA$ am Rand des Mediums
-$$ P = \frac{\eta q d a}{A} = \frac{\eta q V }{A} = \frac{Q}{A} = \sigma_{pol}$$
+$$ P = \frac{\eta q d A}{A} = \frac{\eta q V }{A} = \frac{Q}{A} = \sigma_{\tx{pol}}$$
 d.h. Polarisation $\widehat{=}$ Flächenladungsdichte am Rand
-\subsubsection{Polarisationsfeld $\vec{E}_{pol}$ im Medium}
+\subsubsection{Polarisationsfeld $\vec{E}_{\tx{pol}}$ im Medium}
 Anwendung von Maxwell-Gl auf Bereich mit $\sigma_+$ 
-$$\oint_{\sigma_+} \vec{E}_{pol} \; d\vec{A} = \frac{Q_{ein}}{\epsilon_0}$$
-rechts $\vec{E}_{pol} = 0$ keine Beitrag zum Fluss\\
-links $ \vec{E}_{pol} \uparrow \uparrow \vec{A}$\\
-$$E_{pol} A = \frac{Q_{ein}}{\epsilon_0} \Rightarrow E_{pol} = \frac{Q_{ein}}{A \epsilon_0} = \frac{\sigma_{pol}}{\epsilon_0} = \frac{p}{\epsilon_0}$$
-Richtung von $\vec{E}_{pol}$: \\
+$$\oint_{\sigma_+} \vec{E}_{\tx{pol}} \; d\vec{A} = \frac{Q_{\tx{ein}}}{\epsilon_0}$$
+rechts $\vec{E}_{\tx{pol}} = 0$ keine Beitrag zum Fluss\\
+links $ \vec{E}_{\tx{pol}} \uparrow \uparrow \vec{A}$\\
+$$E_{\tx{pol}} A = \frac{Q_{\tx{ein}}}{\epsilon_0} \Rightarrow E_{\tx{pol}} = \frac{Q_{\tx{ein}}}{A \epsilon_0} = \frac{\sigma_{\tx{pol}}}{\epsilon_0} = \frac{P}{\epsilon_0}$$
+Richtung von $\vec{E}_{\tx{pol}}$: \\
 $\vec{p}$ von neg. Pol zur pos Pol\\
-$ \vec{E}_{pol}$ von pos. Ladung zur neg Ladung\\
-$$ \rightarrow \vec{P} = - \epsilon_0 \vec{E}_{pol}$$
+$ \vec{E}_{\tx{pol}}$ von pos. Ladung zur neg Ladung\\
+$$ \rightarrow \vec{P} = - \epsilon_0 \vec{E}_{\tx{pol}}$$
 
 
 %% Nachtragen:?
+% hier fehlt was
 
 ?????
 
