@@ -34,6 +34,7 @@
 \newcommand{\uind}{U_{\tx{ind}}}
 \newcommand{\folie}[1]{\color{gray}[Folie: #1]\color{black}}
 \newcommand{\const}{\tx{const.}}
+\newcommand{\casess}[4]{\left\{ \begin{array}{ll} {#1} & {#2} \\ {#3} & {#4} \end{array} \right.}
 
 
 \hbadness=99999
@@ -112,22 +113,22 @@ hier: Eichsymmetrie $U(1)_{Q}\Leftrightarrow$ Ladungserhaltung
 (später fortgeschrittene Quantenmechanik, Teilchenphysik)
 
 \subsection{Die Elementarladung}
-{\large \underline{Faraday Elektrolyseexperimente}}\\
+\textbf{Faraday Elektrolyseexperimente}\\
 Bei der Umsetzung von einem Mol eines Elements wird eine feste Ladung umgesetzt.\\
-1 wertig: $96486 C/mol$ (Faraday Konstante)\\
-Also bei der Reaktion eines Moleküls wird $Q=1,6\cdot 10^{-19} C$ (Annahme Avogardozahl bekannt, erste Bestimmung 1865 Loschschmidt)\par
-{\large \underline{Frage:}} Mittelwert über viele Reaktionen oder fester Wert für jede Reaktion.
+1 wertig: $96486\ \tx{C}/\tx{mol}$ (Faraday Konstante)\\
+Also bei der Reaktion eines Moleküls wird $Q=1,6\cdot 10^{-19} \tx{C}$ (Annahme Avogardozahl bekannt, erste Bestimmung 1865 Loschschmidt)\\
+\textbf{Frage:} Mittelwert über viele Reaktionen oder fester Wert für jede Reaktion.
 \subsection*{Exp: $\rightarrow$ 1913 Millikan - Experiment}
 %milikan bild
 Kräfte:\\
-Gewichtskraft: $$\vec{F}=m\cdot \vec{g}=(\frac{4}{3}\pi r_{\textrm{tröpf}}^3)\rho_{\textrm{Öl}}\vec{\rho} \downarrow$$
+Gewichtskraft: $$\vec{F}=m\cdot \vec{g}=(\frac{4}{3}\pi r_{\textrm{tröpf}}^3)\rho_{\textrm{Öl}}\vec{g} \downarrow$$
 Elektrische Kraft: $$\vec{F_{el}}=Q_{\textrm{tröpf}}\vec{E}\downarrow \uparrow$$
 Auftrieb: $$\vec{F_A}=-\frac{4}{3}\pi T^3_{\textrm{tröpf}} \rho_{\tx{Luft}} \vec{g} \uparrow$$
-Reibungskraft: $$\vec{F_R}=-G \pi \eta_{\tx{Luft}} \vec{v_{\textrm{tröpf}}} \uparrow \downarrow $$
+Reibungskraft: $$\vec{F_R}=-G \pi \eta_{\tx{Luft}} \vec{v}_{\textrm{tröpf}} \uparrow \downarrow $$
 Laminare Strömung\\
 Da $r_{\textrm{tröpf}} \sim \lambda_{\tx{frei}} $\\
 $\rightarrow $ Conningham - Korrektur
-$$F_R = 1+\frac{\lambda_{\tx{frei}}}{r_{\tx{tropf}}} (A_1 +A_2 e^{-A_3} \frac{r_{\tx{tropf}}}{\lambda_{\tx{frei}}}$$
+$$F_R = 1+\frac{\lambda_{\tx{frei}}}{r_{\tx{tropf}}} \bigg(A_1 +A_2 e^{-A_3} \frac{r_{\tx{tropf}}}{\lambda_{\tx{frei}}}\bigg)$$
 Luft: $A_1 = 1,257 A_2=0,4 A_3 = 1,1$
 \begin{itemize}
 \item Suche Tröpfchen
@@ -147,41 +148,40 @@ Luft: $A_1 = 1,257 A_2=0,4 A_3 = 1,1$
 \item zwei Spannungen $U_c(>0)$ Messe $\vec{r}_{\tx{tropf}}$
 \end{itemize}
 \end{itemize}
-Mathode a) (ohne Conningham Korrektur)\\
-$U = 0V$, $$\vert \vec{F}_G \vert = \vert \vec{F}_A \vert + \vert \vec{F}_R \vert$$ (Stationärer Zustand ($\vec{a} = \tx{const}$))
+\textbf{Mathode a)} (ohne Conningham Korrektur)\\
+$$U = 0V \quad \vert \vec{F}_G \vert = \vert \vec{F}_A \vert + \vert \vec{F}_R \vert$$ (Stationärer Zustand ($\vec{a} = \tx{const}$))
 $$\frac{4}{3} \pi \rho_{\tx{Oel}} r^3_{\tx{tropf}} g = \frac{4}{3} \pi \rho_{Luft} r_{\tx{tropf}}^3 g + 6 \pi \eta_{\tx{Luft}} + r \vert \vec{v} \vert$$
 $$\Rightarrow r_{\tx{tropf}} = \sqrt{\frac{9}{2g} \frac{\eta_{\tx{Luft}} + \vert \vec{r} \vert }{\rho_{\tx{Oel}}-\rho_{\tx{Luft}}}}$$
 Bei Schwebung:
 $$U = 0V \quad \vert \vec{F}_G \vert = \vert \vec{F}_A \vert + \vert \vec{F}_{el} \vert$$
 $$\frac{4}{3} \pi r^3 \rho_{\tx{Oel}} g = \frac{4}{3} \pi r^3_{\pi} \rho_{\tx{Luft}} + Q_{\tx{tropf}} \frac{U}{d}$$
  d = Abstand Kondensatorplatten
-$$Q\pi = \frac{4}{3}	\pi g(\rho_{\tx{Oel}}-\rho_{\tx{Luft}} \frac{d}{U})$$
+$$Q\pi = \frac{4}{3}	\pi g  \bigg( \rho_{\tx{Oel}}-\rho_{\tx{Luft}} \frac{d}{U}\bigg)$$
 viele Tröpfchen $\rightarrow$ Statische Auswertung\\
 Ergebnis von Millikan \\%+-unicode
 Elektrische Ladung ist gequantelt $+- e;+-2e;\dots$
 $$e = 1.6021766208(88) \cdot 10^{-19} C$$
 Erstmals gequantelte Größe\\
 Drittelzahlige Ladungen der Quarks\\
-Quarks sind Konstituenten von Protonen und Neutronen\par
+Quarks sind Konstituenten von Protonen und Neutronen\\
 \underline{Proton $p \widehat{=}$ (uud) Neutron $n \widehat{=} $ (udd)}
 $$Q_u = + \frac{2}{3}, Q_d = - \frac{1}{3} \Rightarrow Q_p = 1 Q_n = 0$$
-$$Q_p + Q_e < 10{-21} e$$ aus Stabilität der Materie\par
-underline{Historisch:}\\
+$$Q_p + Q_e < 10{-21} e$$ aus Stabilität der Materie\\
+\textbf{Historisch:}\\
 $Q = 4,774 +- 0,009 \cdot 10^{-10}$esu (Elactrostatic unit)\\
 1 esu$ = 3,34 \cdot 10^{-10} C$\\
 Millikans wert für Elementarladung: $$ \textrm{esu} \Rightarrow \textrm{SI}: e = 1,592 +- 0,003 \cdot 10 ^{-19} C$$
 ,,5$\sigma$`` - Effekt $\rightarrow$ Fehler unterschätzt.
 \section{Kraft und Feld}
 \subsection{Coulomb - Gesetz}
-Elektrische Kraft zwischen zwei Körpern (punktförmig) mit Laungen $Q_1$ und $Q_2$ im Abstand r
+Elektrische Kraft zwischen zwei Körpern (punktförmig) mit Ladungen $Q_1$ und $Q_2$ im Abstand r
 $$\vec{F}_{el} = k \frac{Q_1 Q_2}{r^2} , \hspace{0.5cm}\hat{r}_{12} = \frac{\vec{r}_{12}}{\vert\vec{r}_{12} \vert }$$
 Kraft auf $Q_2$ von $Q_1$ 
-\subsection*{Exp: Coulomb - Waage}
+\subsubsection*{Exp: Coulomb - Waage}
 $k = 8,99 \cdot 10^{9} \frac{\tx{N m}^2}{C^2}$\\
-für $Q_1 = Q_2  =1C$, $r =1m \Rightarrow \vert \vec{F}_{el} \vert 8,99 \cdot 10^{9} N$\
-Im SI-System: $k = \frac{1}{4 \pi \epsilon_0}$
-$\epsilon_0$ \\
-Dielektrizitätskonstante $\epsilon_0 = 8,85 \cdot 10^{12} \frac{e^2}{\tx{Nm}^2}$\\
+für $Q_1 = Q_2  =1\tx{ C}$, $r =1\tx { m} \Rightarrow \vert \vec{F}_{el} \vert\  8,99 \cdot 10^{9} \tx{ N}$\
+Im SI-System: $k = \frac{1}{4 \pi \epsilon_0}$\\
+$\epsilon_0$Dielektrizitätskonstante: $\epsilon_0 = 8,85 \cdot 10^{12} \frac{e^2}{\tx{Nm}^2}$\\
 (cgs-System k = 1 $\Rightarrow$ Umdefinition der Ladung)
 $$\vec{F}_{el} = \frac{1}{4 \pi \epsilon_0 } \frac{Q_1 Q_2}{r^2}\hat{r}_{12}$$ Coulomb - Gesetz\\
 Motivation der Abhängigkeit:
@@ -193,10 +193,12 @@ Motivation der Abhängigkeit:
 
 \subsection{Influez}
 Beobachtung: Ausschlag des Elektrometers ohne Berührung. Anhängig von der nähe des Stabes.\\
-Erklärung: Kraft von $e^-$ auf dem Stab verdrängen die $e^-$ aus der Kugel in die Zeiger. $\Rightarrow$ Kugel positiv geladen, Zeiger negativ geladen\\\par
-\underline{Influenz:} Trennung von Ladungen in einem neutralen Körper.\\\par
-\underline{In Metallen und Leitern} sind die Elektronen (zu einem bestimmten vom Material abhängigen Grad) frei beweglich.\par
-$Q_1 = Q_2$ da neutral $$\vert \vec{F}_1 \vert = k \frac{Q_1 Q}{r_1^2} \quad \vert \vec{F}_2 \vert = k \frac{Q_2 Q}{r_2^2} \tx{ da } r_1 < r_2 \quad \vert \vec{F}_1 \vert > \vert \vec{F}_2 \vert$$ Leiter angezogen\par
+Erklärung: Kraft von $e^-$ auf dem Stab verdrängen die $e^-$ aus der Kugel in die Zeiger.\\
+$\Rightarrow$ Kugel positiv geladen, Zeiger negativ geladen\\[5pt]
+\underline{Influenz:} Trennung von Ladungen in einem neutralen Körper.\\[5pt]
+\underline{In Metallen und Leitern} sind die Elektronen (zu einem bestimmten vom Material abhängigen Grad) frei beweglich.\\
+$Q_1 = Q_2$ da neutral
+$$\vert \vec{F}_1 \vert = k \frac{Q_1 Q}{r_1^2} \quad \vert \vec{F}_2 \vert = k \frac{Q_2 Q}{r_2^2}\quad  \tx{ da } r_1 < r_2 \quad \vert \vec{F}_1 \vert > \vert \vec{F}_2 \vert$$ Leiter angezogen\\[5pt]
 \underline{Nichtleiter:} \\
 Ladungen/Elektronen nicht Frei beweglich Verschiebung bei Polaren Molekülen. Wasser $H_2 O$ $\alpha = 105$ $e^-$ vom H zum O verschoben $\rightarrow$ Dipol\\
 
@@ -205,7 +207,7 @@ Ladungen/Elektronen nicht Frei beweglich Verschiebung bei Polaren Molekülen. Wa
 \subsection{Das Elektrische Feld}
 Bisher: Kraft zwischen zwei Ladungen $ q\textrm{ und } Q \rightarrow \vec{F}$\\
 Frage : woher kennt $q$ die Existenz von $Q$ ?\\
-$\rightarrow$ abstraktes Konzept: elektrisches Feld $\vec{F}$
+$\rightarrow$ abstraktes Konzept: elektrisches Feld $\vec{E}$
 \begin{itemize}
 \item um jede Ladung $Q$ bildet sich ein Feld $\vec{E}$
 \item Probeladung $q$ spürt eine Kraft $ \vec{F} = q \vec{E}$
@@ -216,28 +218,24 @@ Quantenelktrodynamik (QED):
 \item Kraft/Wechselwirkung = Austausch von $\gamma$
 \end{itemize} 
 Pragmatisch: gegben: beliebige Ladungsverteilung wie sieht die Kraft auf eine pkt.förmige $q$ ? ($q \textrm{ klein} \rightarrow \textrm{ keine Verzerrung von } \vec{E})$
-$$\rightarrow \vec{E} = \frac{\vec{F}}{F_{\tx{Probe}}} \quad \textrm{ unabhängig von } q_{\tx{Probe}}$$
+$$\rightarrow \vec{E} = \frac{\vec{F}}{q_{\tx{Probe}}} \quad \textrm{ unabhängig von } q_{\tx{Probe}}$$
 El. Feld einer Pktladung 
 $$ \vec{E} = \frac{\vec{F}_{\tx{Punkt}}}{q_{\tx{Probe}}} = \frac{1}{4 \pi \epsilon_{0}} \frac{Q q_{\tx{Probe}}}{r^2 q_{\tx{Probe}}} \hat{r} = \frac{1}{4 \pi \epsilon_{0}} \frac{Q}{r^2} \hat{r}$$
-Zsf: 
+Zusammenfassung: 
 \begin{itemize}
 \item jede Ladung $Q$ von $\vec{E}$-Feld umgeben
 \item es gilt Superpositonsprinzip $\vec{E}_{Q_1 + Q_2} = \vec{E}_{Q_1} + \vec{E}_{Q_2}$ folgt aus Addition von Kräften
 \item Nahwirkung der Kraft: Feld breitet sich mit Lichtgeschwindigkeit $c$ aus
 \end{itemize}
-
 Superposition:
 \begin{itemize}
 \item N Punktladungen $Q_i, i = 1, \dots , N
 \qquad \vec{F} = \sum _{i=1}^{N} \vec{F}_i = \frac{1}{4 \pi \epsilon_{0}} \sum _{i=1}^{N} \frac{Q_i}{r^2_i} \hat{r}_i$
 $$ \Rightarrow \vec{E} = \sum _{i=1}^{N} \vec{E}_i = \frac{1}{4 \pi \epsilon_{0}}  \sum _{i=1}^{N} \frac{Q_i}{r^2_i} \hat{r}_i$$
-\item kontinuierliche Ladungsverteilung $\rho(\vec{r})$\\
-Gesamtladung $Q = \int dV \rho(\vec{r}') \quad (dV = d \vec{r}^{'3})$
-
-$$\vec{E} (\vec{r}) = \frac{1}{4 \pi \epsilon_0} \int d^3 \vec{r}' \frac{\rho (\vec{r}')}{\vert \vec{r}-\vec{r}' \vert ^2} \frac{\vec{r}-\vec{r}'}{\vert \vec{r}-\vec{r}' \vert}$$
-
+\item kontinuierliche \textbf{Ladungsverteilung:} $\rho(\vec{r})$\\[5pt]
+Gesamtladung $Q = \int dV \rho(\vec{r'}) \quad (dV = d \vec{r'}^{3})$
+$$\vec{E} (\vec{r}) = \frac{1}{4 \pi \epsilon_0} \int d^3 \vec{r'} \frac{\rho (\vec{r'})}{\vert \vec{r}-\vec{r'} \vert ^2} \frac{\vec{r}-\vec{r'}}{\vert \vec{r}-\vec{r'} \vert}$$
 \end{itemize}
-  
 Visualisierung:
 \begin{itemize}
 \item[a)] Feldvektoren an vorgegebenen Gitterpunkten im Raume oft Vektor $\widehat{=}$ Projektion von $\vec{E}$ in Ebene
@@ -250,7 +248,7 @@ Visualisierung:
 
 \subsubsection*{Exp: Feldlinien} % error blitz orthogonal
 \begin{itemize}
-\item Feldlinien kreuzen sich nicht [Falls Kreuzung: dann 2 Felder $\vec{F}$ , 2 $\vec{E}$ in einem Punkt wid: Superpositionsprinzip ]
+\item Feldlinien kreuzen sich nicht [Falls Kreuzung: dann 2 Felder $\vec{E}$ , 2 $\vec{E}$ in einem Punkt wid: Superpositionsprinzip ]
 \item Feldlinien $\perp$ orthogonal auf Oberfläche der Leiter
 \item keine Feldlinien innerhalb geschlossener Leiter
 \end{itemize}
@@ -263,45 +261,40 @@ Elektrisches Feld im Leiter
 \end{itemize}
 Kugel mit Radius: $$ \vec{E}(\vec{R}) = 0 \qquad \vert \vec{r} \vert < R$$
 $$ \vec{E}(\vec{r}) = \frac{1}{4 \pi\epsilon_0} \frac{Q}{r^2} \hat{r} \qquad \vert \vec{r} \vert \ge R$$
-pkt. förmige Ladung im Zentrum\\\\
-Beliebige Flächen:\\
+verhält sich bei großem Abstand wie Punkt-förmige Ladung im Zentrum\\\\
+\textbf{Beliebige Flächen:}\\
 Approximation durch Ebenen und Kugelschalen
 Kugel:
 $$ \vert \vec{E} \vert \sim \frac{1}{r^2} $$
-kleiner Krümmungsradius $\rightarrow$ großes $ \vert \vec{E} \vert $\\
+kleiner Krümmungsradius $\rightarrow$ großes $ | \vec{E} | $\\
 ,,Spitze`` $\rightarrow$ kleines r $\rightarrow$ großes $\vert \vec{E} \vert \rightarrow$ führt zur Entladungen\\\\
-Faradaysche Becher: 
+\textbf{Faradaysche Becher:}
 \begin{itemize}
 \item begränzte Ladungsaufnahme von außen
 \item[$\rightarrow$] Ladungen von innen aufbringen
 \end{itemize}
-Feldberechnung:
+\textbf{Feldberechnung:}
 \begin{itemize}
-\item[1)] homogen geladener Ring Radius R, Dicke vernachlässigbar
+\item[1)] \textbf{homogen geladener Ring} Radius R, Dicke vernachlässigbar
 \begin{itemize}
-\item $\lambda = \frac{Q}{2\pi R} \qquad [\lambda] = \frac{C}{m}$ Linienladungsdichte\\
+\item $\lambda = \frac{Q}{2\pi R} \qquad [\lambda] = \frac{C}{m}$ Linienladungsdichte
 \item gesucht: $\vec{E}(a)$ auf Symmetrieachse (y=z=0)
 \item Symmetrie: $\vec{E}(a) = E \vec{e}_x$ [andere Komponenten kompensieren sich]
 \item Element auf Ring trägt Ladung $\lambda dx$, liefert Feldbeitrag $$dE_x = \frac{1}{4\pi \epsilon_0} \frac{1}{r^2} \cos \phi dQ$$
 \item Es gilt: $$E_x = \cos \phi \vert \vec{E} \vert \qquad \cos\phi = \frac{a}{r} \qquad r= \sqrt{R^2+a^2}$$
 \item Integration über Ring in Polarkoordinaten 
-
-
 \begin{align*}
 E_x & = \int_{\tx{Ring}} dQ \frac{1}{4\pi\epsilon_0} \frac{1}{r^2} \cos \phi \\
 & = \int_{\tx{Ring}}dQ 
 \end{align*}
-
 $$\int_{\tx{Ring}} dQ \frac{1}{4\pi\epsilon_0} \frac{1}{R^2+a^2}\frac{a}{\sqrt{R^2+a^2}} = \frac{Q}{4\pi\epsilon_0} \frac{a}{(R^2+a^2)^{(\frac{3}{2})}}$$
 \begin{align*}
-\textrm{große Entfernung: }  a&\gg R : & E_x \sim \frac{1}{a^2} \textrm{ wie Pkt.ladung}\\
-\textrm{Nähe des Rings: }  a &\sim R  : & \textrm{langsamer Anstieg von }\\ &&\vert \vec{E} \vert \textrm{ als für Pkt.ladung}\\
- a&=0: &E_x = 0  \textrm{ aus Symmetrie }
+\textrm{große Entfernung: }  a\gg R &: & E_x \sim \frac{1}{a^2} \textrm{ wie Pkt.ladung}\\
+\textrm{Nähe des Rings: }  a \sim R  &: & \textrm{langsamer Anstieg von }\\ & & \vert \vec{E} \vert \textrm{ als für Pkt.ladung}\\
+ a=0&: &E_x = 0  \textrm{ aus Symmetrie }
 \end{align*}
-
-
 \end{itemize}
-\item[2)] unendlich dünne, unendlich ausgedehnte leitende Platte\\ Ladungsflächendichte $\sigma \quad [\sigma] = \frac{C}{m^2}$
+\item[2)] \textbf{unendlich dünne, unendlich ausgedehnte leitende Platte}\\ Flächenladungsdichte $\sigma \quad [\sigma] = \frac{C}{m^2}$
 \begin{itemize}
 \item Symmetrie: $\vec{E} = \vec{E}_z \vec{e}_z \perp $ auf Platte
 $$Q = \frac{1}{4 \pi \epsilon_0} \int_{V Platte} d^3 \vec{r}\; \rho ( \vec{r})$$
@@ -320,12 +313,12 @@ E_z(a) &= \frac{1}{4\pi\epsilon_0} \int_0^\infty dr \int_0^{2\pi} d\varphi \; r 
 \end{align*}
 mit $$ r=a\tan \beta\qquad dr = \frac{a}{\cos^2 \beta} d\beta $$
 \begin{align*}
-r=0 & \widehat{ = } \beta = 0\\
-r=\infty & \widehat{ = } \beta = \frac{\pi}{2}
+r=0 &\ \widehat{ = }\ \beta = 0\\
+r=\infty &\ \widehat{ = }\ \beta = \frac{\pi}{2}
 \end{align*}
 \begin{align*}
 E_z(a) &=  \frac{\sigma}{4 \pi \epsilon_0a^2} \int_0^{2\pi} d\varphi \int_0^{\frac{\pi}{2}} a^2 \sin\beta \; d\beta\\
-&= \frac{\sigma}{2\epsilon_0} (-\cos\beta) \mathop{\bigg|}_{0}^{\frac{\pi}{2}}\\
+&= \frac{\sigma}{2\epsilon_0} (-\cos\beta) \bigg|_{0}^{\frac{\pi}{2}}\\
 &= \frac{\sigma}{2\epsilon_0}
 \end{align*}
 \item homogenes Feld in z-Richtung (d.h. senkrecht $\perp$ zur Platte)
@@ -336,189 +329,189 @@ E_z(a) &=  \frac{\sigma}{4 \pi \epsilon_0a^2} \int_0^{2\pi} d\varphi \int_0^{\fr
 
 \subsection{Das elektrische Potential}
 \begin{itemize}
-\item Bewegung von Ladung im elektrischen Feld
+\item \textbf{Bewegung von Ladung im elektrischen Feld}
 $$ W = -\int\limits_{Weg} \vec{F} \; d\vec{s} = -q \int\limits_{Weg} \vec{E} \;d\vec{s}$$
 $ W>0:$ von außen gegen $\vec{E}$-Feld verrichten\\
 $ W<0:$ Feld verrichtet Arbeit
 Charakteristik der Feldes: Arbeit pro Einheitsladung
 $$\frac{W}{q} = -\int\limits_{Weg} \vec{E}\;d\vec{s}$$
-\item Arbeit im Feld einer Punktladung
+\item \textbf{Arbeit im Feld einer Punktladung}
 $ \vec{E} \perp d\vec{s}$ keinen Beitrag
 $$ \frac{W_{ACB}}{q} = -\int_{A}^C |\vec{E}| ds = -\dfrac{1}{a\pi\epsilon_0} \int_{r_A}^{r_C} \frac{Q}{r^2} dr =  -\dfrac{1}{a\pi\epsilon_0} (-\frac{Q}{r}) \mathop{\bigg|}_{r_A}^{r_C} =  -\dfrac{Q}{a\pi\epsilon_0} ( \frac{1}{r_A} - \frac{1}{r_C})$$
 analog:
 $$\frac{W_{ADB}}{q} = -\int_D^B |\vec{E}| ds =  -\dfrac{Q}{a\pi\epsilon_0} ( \frac{1}{r_D} - \frac{1}{r_B})$$
-
 $$r_A = r_D \quad r_B = r_C \Rightarrow \frac{W}{q} \textrm{ auf beiden Wegen gleich}$$
-$$\Rightarrow \oint_{\textrm{geschlossenem Weg}} \vec{E}\; d\vec{s} = 0 \quad W \textrm{ unabh. von Weg}$$
-
+$$\Rightarrow \oint_{\textrm{geschlossenem Weg}} \vec{E}\; d\vec{s} = 0 \qquad \qquad W \textrm{ unabh. von Weg}$$
 + Superpositionsprinzip $\Rightarrow$ Arbeit auf einem geschlossenen Weg verschwindet (i.e = 0)\\
 Erlaubt Definition der potentiellen Energie
 $$ E_{pot} (\vec{r}) = -\int_{\vec{r}_0}^{\vec{r}} \vec{E} \; d\vec{s} $$
 $\vec{r}_0$ ist ein Bezugspunkt (Referenzpunkt) oft im unendlichen da ($\vec{E}( |\vec{r}| \rightarrow \infty) \rightarrow 0$)
-
 In Praxis: nur
 $$ \Delta E_{pot} = E_{pot}(\vec{r}_2) - E_{pot}(\vec{r}_1)$$
 relevant.
-
 Normierung von $E_{pot}$ auf im Feld bewegte Ladung:
 el. Potential 
-$$\varphi(\vec{r}) - \varphi (\vec{r}_0) = \int \vec{E} \; d \vec{s} \textrm{ oft } \phi(\vec{r}_0) = 0$$
-Für Punktladung Q $\vec{r}_0 \rightarrow \infty : \varphi(\vec{r}) = \frac{1}{4\pi\epsilon_0} \frac{Q}{|\vec{r}|}$\\
-\item Superpositionsprinzip:
-\begin{itemize}
-\item[i)] N Punktladungen $Q_i$ bei $\vec{r}_i$
+$$\varphi(\vec{r}) - \varphi (\vec{r}_0) = \int \vec{E} \; d \vec{s} \qquad \qquad \textrm{ oft } \varphi(\vec{r}_0) = 0$$
+$$\varphi(\vec{r}) = \int \vec{E} \; d \vec{s}$$
+Für Punktladung Q $\quad \vec{r}_0 \rightarrow \infty :$ $$\varphi(\vec{r}) = \frac{1}{4\pi\epsilon_0} \frac{Q}{|\vec{r}|}$$
+\item \textbf{Superpositionsprinzip:}\\
+N Punktladungen $Q_i$ bei $\vec{r}_i$
 $$ \varphi(\vec{r}) = \sum_{i=1}^N \varphi_i(\vec{r}) = \sum_{i=1}^N \frac{1}{4\pi\epsilon_0} \frac{Q_i}{|\vec{r}-\vec{r}_i|}$$
-Potential ist Skalarfeld $\rightarrow$ Rechnungen oft einfacher graphische Darstellung mittels Äquipotentialflächen: \\
-(auf diesen gilt $\varphi(\vec{r}) = const$)
+\textbf{Potential ist Skalarfeld} $\rightarrow$ Rechnungen oft einfacher, graphische Darstellung mittels Äquipotentialflächen: \\
+(auf diesen gilt $\varphi(\vec{r}) = \const$)
 \begin{itemize}
 \item für Pkt. Ladung: Äquipotentialflächen = Kugelschalen
 \item Feldlinien / $\vec{E}$-Feld $\perp$ Äquipotentialflächen
 \item Bewegung in Äquipotentialflächen $\rightarrow$ keine Arbeit wird verrichtet
 \end{itemize}
-\underline{Zusammenhang el. Feld $\vec{E}$ und Potential $\varphi$}
+\textbf{Zusammenhang elektrisches Feld $\vec{E}$ und Potential $\varphi$}\\
 Wir hatten: $$\varphi(\vec{r}) = - \int_{\vec{r}_0}^{\vec{r}} \vec{E} \; d \vec{s} \qquad \varphi(\vec{r}_0) = 0$$
 Ist dies umkehrbar?
 \begin{itemize}
-\item[a)] infinitesimaler Weg dx, Probeladung q
+\item[a)] infinitesimaler Weg $dx$, Probeladung $q$
 \begin{align*}
 dW &= -q [ \varphi(x,y,z) - \varphi(x + dx,y,z] \\[10pt]
 &= q \frac{\varphi(x+dx,y,z) - \varphi(x,y,z)}{dx} dx \\[10pt]
 & = q \frac{\partial \varphi(x,y,z)}{\partial x} dx
 \end{align*}
-\item[b)] $$dW = -q \vec{E}(\vec{r}) \; d\vec{s} \qquad d\vec{s} = \begin{pmatrix}
+\item[b)]
+\begin{align*}
+dW &= -q \vec{E}(\vec{r}) \; d\vec{s} \qquad d\vec{s} = \begin{pmatrix}
 dx\\
 0\\
 0\\
-\end{pmatrix} = -q E_x\;dx$$
+\end{pmatrix}\\
+&= -q E_x\;dx
+\end{align*}
 Vgl: $$E_x = -\frac{\partial \varphi}{dx}$$
 analog zu Bewegung in y- und in z-Richtung
-
 \begin{align*}
 \vec{E} (\vec{r}) &=  \bigg( - \frac{\partial \varphi}{\partial x} \vec{e}_x \bigg) + \bigg( - \frac{\partial \varphi}{\partial y} \vec{e}_y \bigg) + \bigg( - \frac{\partial \varphi}{\partial z} \vec{e}_z \bigg)\\[10pt]
-&= -\textrm{grad}\; \varphi(\vec{r}) = - \vec{\nabla} \varphi(\vec{r})
-\end{align*}
-
-$$\vec{\nabla} = \begin{pmatrix}
+&= -\textrm{grad}\; \varphi(\vec{r}) = - \vec{\nabla} \varphi(\vec{r}) \qquad \qquad \qquad \vec{\nabla} = \begin{pmatrix}
 \frac{\partial \varphi}{\partial x} \\
 \frac{\partial \varphi}{\partial y} \\
 \frac{\partial \varphi}{\partial z} 
-\end{pmatrix}$$
-
+\end{pmatrix}
+\end{align*}
 \end{itemize} 
-\end{itemize}
-
 Elektrostatik: äquivalente Beschreibung durch entweder $\vec{E}$-Feld oder $\varphi$\\
 \end{itemize}
 \underline{Wirbelfreiheit von $\vec{E}$}
 Rotation von 
-
 \begin{align*}
-\vec{E}:\; rot(\vec{E}) &= \vec{\nabla} \times \vec{E} \\
+\vec{E}:\; \tx{rot}(\vec{E}) &= \vec{\nabla} \times \vec{E} \\
 &= \bigg( \frac{\partial E_z}{\partial y} - \frac{\partial E_y}{\partial z} \bigg) \vec{e}_x + \bigg( \frac{\partial E_x}{\partial z} - \frac{\partial E_z}{\partial x} \bigg) \vec{e}_y + \bigg( \frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y} \bigg) \vec{e}_z
 \end{align*}
-
 da $\vec{E} = \textrm{grad} \varphi $ und 
 $$ \frac{\partial^2 \varphi}{\partial y \partial x} = \frac{\partial^2 \varphi}{\partial x \partial y}$$
 Partielle Ableitungen vertauschbar
 $$ \Rightarrow \quad \textrm{rot} \vec{E} = - \textrm{rot}(\textrm{grad} \varphi ) = \vec{0}$$
-
 $\vec{E}$-Felder in Elektrostatik sind Wirbelfrei\\
 Zusammenhang: mit Stokesschem Satz
-$$\int\limits_{A} \vec{\nabla} \times \vec{V}(\vec{r}) \; d\vec{A} \oint\limits _{S= dA} \vec{V}(\vec{r}) \; d \vec{s} \qquad \vec{V}(\vec{r}) \textrm{Vetorfeld}$$
+$$\int\limits_{A} \vec{\nabla} \times \vec{V}(\vec{r}) \; d\vec{A} = \oint\limits _{S= dA} \vec{V}(\vec{r}) \; d \vec{s} \qquad \vec{V}(\vec{r}) \textrm{Vetorfeld}$$
 hier
-$$\int_{A} rot(\vec{E}) \; d\vec{A} \oint_{\delta A} \vec{E} \; d\vec{s} \buildrel \textrm{Elektrostatik}\over= 0 $$
-Bedeutung: wirbelfrei bzw. keine geschlossenen Feldlinien\\
-Beispiele Potentialberechung:
+$$\int_{A} \tx{rot}(\vec{E}) \; d\vec{A} = \oint_{\delta A} \vec{E} \; d\vec{s} \buildrel \textrm{\ E. statik}\over= 0 $$
+Bedeutung: wirbelfrei bzw. keine geschlossenen Feldlinien\\[5pt]
+\textbf{Beispiele Potential-Berechung:}
 \begin{itemize}
 \item[1)] Potential eines homogenen ringförmigen Leiters. Beitrag $d\varphi$ aus $dQ$ auf Ring
 $$ d\varphi = \frac{1}{4\pi\epsilon_0} \frac{1}{r} \;dQ$$
 Aus Abbildung: $r = \sqrt{R^2 + a^2}$
 $$ \varphi(a) = \frac{Q}{4\pi\epsilon_0} \frac{1}{\sqrt{R^2 + a^2}}$$
-da $r = const$ auf x-Achse\\
+da $r = \const$ auf x-Achse\\
 für $a\gg R \quad \varphi(a) = \frac{Q}{4\pi\epsilon_0} \frac{1}{a}$ Potential einer Pkt. Ladung
-$$E_x = -\frac{\partial \varphi(a)}{\partial a}= -\frac{\partial\varphi(x)}{\partial x} = -\frac{Q}{4\pi\epsilon_0} \frac{1}{(R^2 + a^2)^{\frac{3}{2}}} (-\frac{1}{2}) 2 a = \frac{1}{4\pi\epsilon_0} \frac{Q a}{(R^2 + a^2)^{\frac{3}{2}}}$$
+$$E_x = -\frac{\partial \varphi(a)}{\partial a}= -\frac{\partial\varphi(x)}{\partial x} = -\frac{Q}{4\pi\epsilon_0} \frac{1}{(R^2 + a^2)^{\frac{3}{2}}} \left(-\frac{1}{2}\right) 2 a = \frac{1}{4\pi\epsilon_0} \frac{Q a}{(R^2 + a^2)^{\frac{3}{2}}}$$
 \item[2)] Beispiel 2: leitende Kugel Radius R
 $$\varphi(a) = \frac{Q}{4\pi\epsilon_0} \frac{1}{a} \qquad a\ge R$$
-$$ \varphi(a) = \frac{Q}{4\pi\epsilon_0} \frac{1}{R} = \tx{const.}$$
+$$ \varphi(a) = \frac{Q}{4\pi\epsilon_0} \frac{1}{R} = \tx{const.} \qquad a < R$$
 \begin{align*}
 \rightarrow \vec{E} = - \grad \varphi &= \frac{Q}{4\pi\epsilon_0} \frac{1}{a^2} \vec{e}_R \qquad a\ge R \\
  &= 0 \Rightarrow \qquad a < R
 \end{align*}
 Bisher: $\varphi(\vec{r})$ aus $\rho(\vec{r})$ via Poisson-Integral teilweise $\rho(\vec{r})$ nicht bekannt, aber Randbedingungen $\varphi(\vec{r}) = 0 $ auf Leiteroberfläche. ($\rho(\vec{r})$ kann komlex sein)\\
-$\Rightarrow$ Randwertproblem (Theo II.)\\
-
+$\Rightarrow$ Randwertproblem (Theo II.)
 \end{itemize}
-
-,,Einfaches`` Beispiel mit Methode der Spiegelladung\\
-Platte geerdet $\varphi(x,y,z) \buildrel ! \over = 0$
-Punktladung $q_1$ bei $\vec{r} = \begin{pmatrix}
+,,Einfaches`` Beispiel mit \textbf{Methode der \underline{Spiegelladung}}\\
+Platte geerdet $\ \varphi(x,y,z) \buildrel ! \over = 0 \ $
+Punktladung $q_1$ bei $\ \vec{r} = \begin{pmatrix}
 0\\
 0\\
 z_1
-\end{pmatrix}$
-
+\end{pmatrix}$\\
 Realisierung der Randbedingungen durch Spiegelladung $q_2$\\
 Brauche: $\varphi(x,y,z=0) = 0$\\
 Superposition $\varphi = \varphi_1 + \varphi_2$\\
 $\Rightarrow q_2 = - q_1 \quad z_2 = - z_1$ erfüllen Randbedingung\\
-$$\varphi(\vec{r}) = \frac{a_1}{4\pi\epsilon} \{ \frac{1}{|\vec{r}-\vec{r}_1|} - \frac{1}{| \vec{r} - \vec{r}_2|}\}$$
+$$\varphi(\vec{r}) = \frac{a_r}{4\pi\epsilon} \bigg\{ \frac{1}{|\vec{r}-\vec{r}_1|} - \frac{1}{| \vec{r} - \vec{r}_2|} \bigg \} \quad $$
 
 $\vec{E}$-Feld aus $-\vec{\nabla}^2 \varphi$\\
 $$ \vec{E}(\vec{r}) = \frac{a_r}{4\pi\epsilon_0} \bigg\{ \frac{\vec{r} - \vec{r}_1}{|\vec{r} - \vec{r}_1|^3} - \frac{\vec{r} - \vec{r}_2}{|\vec{r} - \vec{r}_2|^3} \bigg\}$$
-für z=0 : $ E_x = E_y = 0 \quad \vec{E} \perp (x,y)$-Ebene
-
-Flächenladungsdichte: $\sigma \quad [\sigma] = \frac{C}{m^2}$
+für z=0 : $ E_x = E_y = 0 \quad \vec{E} \perp (x,y)$-Ebene\\
+Flächenladungsdichte: $\sigma \quad [\sigma] = \frac{C}{m^2}$\\
 Später: $ \sigma = 2 \epsilon_0 E_z$
-$$\sigma = - \frac{q_1}{2\pi} \frac{z_1}{(x^2+y^2+z_1^2}$$
+$$\sigma = - \frac{q_1}{2\pi} \frac{z_1}{(x^2+y^2+z_1^2)}$$
 $$ \vec{r}_1 = \begin{pmatrix}
 0\\0\\z_1
 \end{pmatrix}$$
 
 \subsection{Der elektrische Fluss}
 Elektrischer Fluss $\Phi$ ist ein Maß für die dichte der el. Feldlinien. Er ist definiert für eine gegebene Fläche A.
-$$ \Phi_A = \int_{A} \vec{E} \;d \vec{A} \qquad \vec{A} = \textrm{infinitisimaler Normalvektor}$$
-$$ \vec{A} \perp \textrm{ Fläche }$$
+$$ \boxed{\Phi_A = \int_{A} \vec{E} \;d \vec{A}} \qquad \vec{A} = \textrm{infinitisimaler Normalvektor} \qquad \vec{A} \perp \textrm{ Fläche }$$
 offene Fläche: Orientierung beliebig\\
-geschlossene Fläche: Orientierung nach außen\par
-\underline{Fluss durch geschlossene Fläche}\\
-Bsp: Würfel im Plattenkondensator (Abb.) nur Beiträge von linker und rechter Fläche 
-$$ \Phi = \Phi_l + \Phi_r = \vec{E} \vec{A}_l + \vec{E} \vec{A}_r = 0$$
-$$ \vec{A}_l = - \vec{A}_r$$
+geschlossene Fläche: Orientierung nach außen\\[5pt]
+\subsubsection{Fluss durch geschlossene Fläche:}
+Bsp: \textbf{Würfel im Plattenkondensator} (Abb.auf \folie{Elektrischer Fluss durch geschlossene Oberfläche}) nur Beiträge von linker und rechter Fläche:
+$$
+\begin{tikzpicture}[scale=.6]
+\draw[thick,draw=black,fill=yellow] (0,0)--(1,1)--(4,1)--(4,-1)--(2,-2)--(0,-2)--(0,0);
+\draw[draw=none,fill=black,opacity=.15](2,0)--(4,1)--(4,-1)--(2,-2)--(2,0);
+\draw[thick,draw=black](0,0)--(2,0)--(2,-2);
+\draw[thick,draw=black] (2,0)--(4,1);
+\draw[dashed,thick] (2,0) -- (3,1);
+\draw[thick,draw=red] (3,.5) arc (25:55:.7cm);
+\node[red] at (3.2,.8) {$ \alpha $};
+\node at (0,.5) {$ l $};
+\node at (3,.1) {$ l_r $};
+\draw (-.5,.1)--(0,.1);
+\draw (-1.5,-.4)--(0,-.4);
+\draw (-.5,-.8)--(0,-.8);
+\draw (-1.5,-1.2)--(0,-1.2);
+\draw[->] (3.5,.1)--(4.5,.1);
+\draw[->] (2.5,-.4)--(3.5,-.4);
+\draw[->] (3.5,-.8)--(4.5,-.8);
+\draw[->] (2.5,-1.2)--(3.5,-1.2);
+\node at (-2,-.6) {$ \vec{E} $};
+\end{tikzpicture}
+$$
+$$ \Phi = \Phi_l + \Phi_r = \vec{E} \vec{A}_l + \vec{E} \vec{A}_r = -E A_l + E A_r \cos \alpha = -EA_l + E A_l= 0$$
+$$ \vec{A}_l = - \vec{A}_r \cos \alpha$$
 Superposition bzw. Approximation von Körper durch inf. Würfel $\Rightarrow$ Fluss durch geschlossene Oberfläche im homogenen Feld verschwindet.\\
 Bsp: Kugelschale
-
 $$\vec{A}(r) = 4 \pi r^2 \vec{e}_R \left\{\begin{array}{ll}
 + & \textrm{ für äußere} \\
 - & \textrm{ für innere}
 \end{array}\right.$$
-
 $$\vec{E}(\vec{r}) = \frac{Q}{4\pi\epsilon_0} \frac{1}{r^2} $$
-$$\bigg | \vec{E}(\vec{r}) * \vec{A}(\vec{r}) \bigg | = \textrm{ const}$$
-
+$$\bigg | \vec{E}(\vec{r}) \cdot \vec{A}(\vec{r}) \bigg | = \textrm{ const}$$
 $$\Phi = \Phi(r_1) + \Phi(r_2) = + \textrm{ const} - \textrm{ const} = 0$$
-
 In elektrischen Feldern (wenn keine Ladungen im Volumen) $\Rightarrow $ Fluss durch geschlossene Oberfläche verschwindet.
 
 \subsection{Quellstärke des elektrischen Feldes}
-$\Phi_A \neq 0$ wenn Ladungen innerhalb geschlossener Oberfläche. Bsp: Kugel mit Radius R. Pkt.Ladung im Ursprung $s\vec{A}$ und $\vec{E}$ radial nach außen $\sim \vec{e}_r$ 
-$$\Phi = \oint\limits_{\textrm{R = const}} \vec{E}\; d \vec{A} = \underbrace{\frac{1}{4\pi\epsilon_0} \frac{Q}{R^2}}_{|\vec{E}|} \underbrace{4\pi R^2}_{A} = \frac{Q}{\epsilon_0}$$
-
+$\Phi_A \neq 0$ wenn Ladungen innerhalb geschlossener Oberfläche. Bsp: Kugel mit Radius R. Punktladung im Ursprung $d\vec{A}$ und $\vec{E}$ radial nach außen $\sim \vec{e}_r$ 
+$$\Phi = \oint\limits_{\textrm{R = const}} \vec{E}\; d \vec{A} = \underbrace{\frac{1}{4\pi\epsilon_0} \frac{Q}{R^2}}_{|\vec{E}|}\  \underbrace{4\pi R^2}_{A} = \frac{Q}{\epsilon_0}$$
 Ergebnis unabhängig von:
 \begin{itemize}
 \item Form der Oberfläche
 \item Position der Ladung innerhalb der Oberfläche
 \end{itemize} 
 Mehrere Ladungen $Q_i$ aus Superposition der $\vec{E}_i$ 
-$$\Phi = \oint (\sum_i \vec{E}_i) \;d \vec{A} = \frac{\sum_i Q_i}{\epsilon_0}$$
+$$\Phi = \oint \Big(\sum_i \vec{E}_i\Big) \;d \vec{A} = \frac{\sum_i Q_i}{\epsilon_0}$$
 ,,externe`` $Q_i$ liefern keinen Beitrag\\
-Es gilt:\\
-
-%umrahmen
-
-$$\Phi = \oint \vec{E}\; d\vec{A} = \frac{Q_{ein}}{\epsilon_0} $$ \\
+Es gilt:
+$$\boxed{\Phi = \oint \vec{E}\; d\vec{A} = \frac{Q_{\tx{ein}}}{\epsilon_0}} $$
 Gaußsches Gesetz (Integralform)\\
 Mit Gaußschen Satz : Oberflächen- $\rightarrow$ Volumenintegral\\
-$$ \oint_A \vec{E} \;d \vec{A} = \int_V \textrm{div} \vec{E} \; d \vec{V} \quad \textrm{mit} \quad Q_{ein} = \int_V \rho(\vec{r})\;dV$$
+$$ \oint_A \vec{E} \;d \vec{A} = \int_V \textrm{div} \vec{E} \; d \vec{V} \quad \textrm{mit} \quad Q_{\tx{ein}} = \int_V \rho(\vec{r})\;dV$$
 $$\int_V \textrm{div} \vec{E}\; dV = \frac{1}{\epsilon_0} \int_V \rho(\vec{R}) \; dV$$
 gültig für beliebige Volumen\\
 $\Rightarrow \textrm{div} \vec{E}=\frac{\rho}{\epsilon_0}$ differentielle Form des Gaußschen Gesetzes\\
@@ -527,18 +520,14 @@ Ladungen die Quellen $(\rho > 0 )$ bzw. Senken $\rho < 0)$ des elektrischen Feld
 \subsection{Maxwell-Gleichungen}
 für statische (unbewegte) Ladungen
 Integral- und Differentialform \\
-
-% einrahmen
-
-$$\begin{array}{llll}
-1. & \oint \vec{E}\; d\vec{s} = 0 & \quad & rot\vec{E} = \vec{0} \textrm{ Wirbelfrei } \\
-3. & \oint \vec{E} \; d\vec{A} = \frac{Q_{ein}}{\epsilon_0} & \quad & div\vec{E}= \frac{\rho}{\epsilon_0}  \textrm{ Quellen/Senken} 
-\end{array}$$
+\begin{eqnarray*}
+\phantom{\qquad \qquad \qquad \qquad \qquad}\boxed{\oint \vec{E}\; d\vec{s} = 0 \quad \tx{rot}\vec{E} = \vec{0}\ \ \textrm{ Wirbelfrei }} \qquad \quad \qquad \quad \ \ (1)\\
+\boxed{\oint \vec{E} \; d\vec{A} = \frac{Q_{\tx{ein}}}{\epsilon_0} \quad \tx{div}\vec{E}= \frac{\rho}{\epsilon_0}  \ \ \textrm{ Quellen/Senken}}  \qquad \qquad (3)
+\end{eqnarray*}
 1. gilt allgemein in Zentralkraftfeldern d.h. $\rho(\vec{r}) \sim |\vec{r}|$\\
-3. gilt nur für $\varphi \sim \frac{1}{|\vec{r}|} | \vec{E} | \sim \frac{1}{|\vec{r}|^2}$ im 3-dimensionalen Raum\\
-
-MW-Gleichungen sind Axiome der Elektrostatik d.h. $F_{coulomb}$ ableitbar\\
-betrachte Ladungen $Q_1 = Q_{ein}$\\
+3. gilt nur für $\varphi \sim \frac{1}{|\vec{r}|} | \vec{E} | \sim \frac{1}{|\vec{r}|^2}$ im 3-dimensionalen Raum\\[10pt]
+MW-Gleichungen sind Axiome der Elektrostatik d.h. $F_{\tx{coulomb}}$ ableitbar\\
+betrachte Ladungen $Q_1 = Q_{\tx{ein}}$\\
 1.Gl: $$\oint_A \vec{E}\; d\vec{A} = \frac{Q_1}{\epsilon_0}$$
 $$|\vec{E}(r)| 4 \pi r^2 = \frac{Q_1}{\epsilon_0}$$
 Kraft auf Ladung $Q_2$: $\vec{F}_{Q_2} = \vec{E}_{Q_1} \cdot Q_2$
@@ -546,34 +535,32 @@ $$|\vec{F}_{Q_2}| = \frac{Q_1 Q_2}{4\pi\epsilon_0} \frac{1}{r^2}$$
 \begin{flushright}
 $\square$
 \end{flushright}
-Bsp.: homogene geladene Kugel, Radius R, $\rho(\vec{r}) = \textrm{const}\quad |\vec{r}| \le R$
-$$ Q_{ges} = \frac{4}{3} \pi R^3 \rho$$
-Symmetrie:  $ \vec{E} = |\vec{E}| \vec{e}_r$ radial $ |\vec{E}| = E_r$\\
+Bsp.: \textbf{homogene geladene Kugel}, Radius R, $\rho(\vec{r}) = \textrm{const}\quad |\vec{r}| \le R$
+$$ Q_{\tx{ges}} = \frac{4}{3} \pi R^3 \rho$$
+Symmetrie:  $ \vec{E} = |\vec{E}| \vec{e}_r\ $ radial $\  |\vec{E}| = E_r$\\
 \begin{itemize}
 \item[$|\vec{r}|\ge R$:] $$\Phi = \oint_A \vec{E} \; d \vec{A} = \int_A E_r \; dA = E_r 4 \pi r^2 \buildrel ! \over = \frac{Q_{ein}}{\epsilon_0}$$
 $$ E_r = \frac{\rho_0 R^3}{\epsilon_0 3 r^2}$$
 wie bei Punktladung
-\item[$|\vec{r}|\le R$:] $$ Q_{ein} = \frac{4}{3} \pi r^3 \rho \qquad \Phi = \frac{Q_{ein}}{\epsilon_0}$$\\
+\item[$|\vec{r}|\le R$:] $$ Q_{\tx{ein}} = \frac{4}{3} \pi r^3 \rho \qquad \Phi = \frac{Q_{\tx{ein}}}{\epsilon_0}$$\\
 $$ E_r = \frac{\rho_0 r}{3 \epsilon_0}$$ linearen Anstieg
 \end{itemize}
-
 \noindent
 Potential $\varphi(\vec{r})$:\\
 $\varphi(r_0 = \infty) = 0$\\
-$$\varphi(r) = -\int_\infty ^r \vec{E}\; d\vec{r} \buildrel (r\ge R) \over = -\int_\infty ^r \frac{\rho R^3}{\epsilon_0 3 r'^2}\; dr' =   \int_{r}^{\infty} \frac{\rho}{\epsilon_0} \frac{R^3}{r'^2}\; d r' = \frac{\rho R^3}{\epsilon 3 r}$$
-$$(\frac{\partial (\hat{r})}{\partial r} = - \frac{1}{r^2})$$
+$$\varphi(r) = -\int_\infty ^r \vec{E}\; d\vec{r} \buildrel (r\ge R) \over = -\int_\infty ^r \frac{\rho R^3}{\epsilon_0 3 r'^2}\; dr' =   \int_{r}^{\infty} \frac{\rho}{\epsilon_0} \frac{R^3}{3 r'^2}\; d r' = \frac{\rho R^3}{\epsilon 3 r}$$
+$$\Big(\frac{\partial (\hat{r})}{\partial r} = - \frac{1}{r^2}\Big)$$
 Innenraum: $(r\le R)$
 $$\varphi (r) = -\int \frac{\rho r'}{3 \epsilon_0 } \; dr' = -\frac{1}{2} \frac{\rho_0}{\epsilon_0} \frac{r^2}{3} + \textrm{const}$$
 Wähle c so, dass $\varphi$ stetig bei $r = R$ ist\\
 $\rightarrow c = \frac{R^2 \rho}{2 \epsilon_0}$
 $$\varphi(r) = \frac{R^2 \rho}{2 \epsilon_0} (1 - \frac{r^2}{3 R^2} ) \quad \textrm{ für } r\le R$$
-\noindent
-\underline{Maxwell-Gl. und Potential $\phi$}
+\textbf{Maxwell-Gl. und Potential $\varphi$}
 $$\vec{E} = -\textrm{grad}(\varphi)$$
-1. Gl $$\textrm{rot}\vec{E} = - \textrm{rot}(\textrm{grad} \varphi )\buildrel linear \over = 0$$
+1. Gl $$\textrm{rot}\vec{E} = - \textrm{rot}(\textrm{grad} \varphi )\buildrel \tx{linear} \over = 0$$
 da rot$\vec{E} = 0$ können wir $\vec{E}$ als grad$\varphi$ schreiben\\
-3. Gl $$\textrm{div}\vec{E} = \textrm{div}(-\textrm{grad} \phi) = -[\frac{\partial^2 \varphi}{\partial x^2} + \frac{\partial^2 \varphi}{\partial y^2} + \frac{\partial^2 \varphi}{\partial z^2} ] = - \Delta \phi$$
-$$\rightarrow -\Delta \phi = \frac{\rho}{\epsilon_0}$$ 
+3. Gl $$\textrm{div}\vec{E} = \textrm{div}(-\textrm{grad} \varphi) = -\Big[\frac{\partial^2 \varphi}{\partial x^2} + \frac{\partial^2 \varphi}{\partial y^2} + \frac{\partial^2 \varphi}{\partial z^2} \Big] = - \Delta \phi$$
+$$\rightarrow \quad -\Delta \phi = \frac{\rho}{\epsilon_0}$$ 
 Poisson-Gl. ($\rho = 0$ Laplace-Gl.)\\
 Poisson-Gl. äquivalent zu beiden Maxwell-Gl.\\
 MW-Gl: 2 Gl. erster Ordnung in Ableitungen $(\frac{\partial}{\partial x} ,\dots )$\\
@@ -582,86 +569,75 @@ Poisson-Gl: 1.Gl. zweiter Ordnung in Ableitung $(\frac{\partial^2}{\partial x^2}
 \section{Multipole}
 \begin{itemize}
 \item für beliebige Ladungsverteilung $\rho(\vec{r})$ ist $$ \Phi (\vec{r}) = \frac{1}{4\pi\epsilon_0} \int d^3 \vec{r'} \frac{\rho(\vec{r}\: ')}{|\vec{r}-\vec{r}'|}$$ komplex i.a.
-\item oft interessiert nur Fernfeld $\rho(\vec{r}), \vec{E}(\vec{r}), |\vec{r}| \gg | \vec{r'}|$ mit $\rho(\vec{r'}) = 0$
+\item oft interessiert nur Fernfeld $\rho(\vec{r}), \vec{E}(\vec{r}),\ \ |\vec{r}| \gg | \vec{r'}|\ $ mit $\ \rho(\vec{r'}) = 0$\\
 Abstand $\gg$ Ausdehnung der Ladungsverteilung
 \item Approximation von $\rho(r)$ in Taylor-Entwicklung\\
 $\rightarrow$ Multipolentwicklung
-$$\rho(\vec{r}) = \underbrace{\frac{a}{T}}_{Monopol} + \underbrace{\frac{b}{T^2}}_{Dipol} + \underbrace{\frac{c}{T^3}}_{Quadropol} + \dots$$ 
+$$\rho(\vec{r}) = \underbrace{\frac{a}{T}}_{\tx{Monopol}} + \underbrace{\frac{b}{T^2}}_{\tx{Dipol}} + \underbrace{\frac{c}{T^3}}_{\tx{Quadropol}} + \dots$$ 
 \end{itemize}
-\underline{Monopol}\\
- $$\vec{E}_{Mono}(\vec{r}) = \frac{1}{4\pi\epsilon_0} \frac{Q}{r^2} \hat{r} \qquad \rho_{Mono}(\vec{r}) = \frac{Q}{4\pi\epsilon_0} \frac{1}{r}$$
- dominiert für $r\rightarrow\infty$ wenn $Q_{ges} \neq 0$\\
- $$Q_{Mono} = \sum_{i=1}^N Q_i \textrm{ Pkt. Ladungen } \quad Q_{Mono} = \int d^3\vec{r} \rho (\vec{r})$$
- $Q_{Mono}$ bei $\vec{r}_s$ Ladungsschwerpunkt platzieren\\
- $$\vec{r}_s = \frac{\sum_i |Q_i| \vec{r}_i}{\sum_i | Q_i|}$$
- 
- $$\vec{r}_s = \frac{\int|\rho(\vec{r})| \vec{r} d^3 \vec{r}}{\int|\rho(\vec{r})| d^3\vec{r}}$$
- 
- 
- \underline{Dipol}\\
- zwei entgegengesetzte, gleich große Ladungen $Q>0$ im Abstand $d = |\vec{d}|$. Richtung von $\vec{d}$ von -Q nach +Q 
- $$\vec{r}_- = \vec{r}_0 - \frac{\vec{d}}{2} \qquad \vec{r}_+ = \vec{r}_0 + \frac{\vec{d}}{2}$$
- Potential $\varphi(\vec{r})$ aus Superposition
- $$\varphi_{Dipol} (\vec{r}) = \frac{Q}{4 \pi \epsilon_0} \bigg\{ \frac{1}{|\vec{r}_0 - \frac{\vec{d}}{2}|} - \frac{1}{|\vec{r}_0 - \frac{\vec{d}}{2}|} \bigg\}$$ 
- für $(|\vec{r}_0| \gg |\vec{d}|)$ nutze Näherung 
-
-$$\frac{1}{|\vec{r}_0 \pm \frac{\vec{d}}{2}|} = \frac{1}{\sqrt{\vec{r}_0^2 \pm r_0 \vec{d} + \frac{\vec{d}^2}{4}}} = \frac{1}{|\vec{r}_0|} \frac{1}{\sqrt{1 \pm \frac{r_0 \vec{d}}{|\vec{r}_0|^2} + \frac{\vec{d}^2}{4 \vec{r}_0^2}}} =  \frac{1}{|\vec{r}_0|} \bigg( 1 \mp \frac{\vec{r}_0 \vec{d}}{\vec{r}_0^2}\bigg)$$
- 
- $$\varphi_{Dipol} \sim \frac{Q}{4\pi\epsilon_0 r} \frac{\vec{r}\vec{d}}{r^2} = \frac{1}{4\pi\epsilon_0} \frac{\vec{p}\;\vec{\hat{r}}}{r^2} $$
-$ \vec{p} = Q \vec{d} = [\vec{p}] = c_m$ Dipolmoment
- $$\varphi_{Dipol} (\vec{r}) = \frac{Qd}{4\pi\epsilon_0} \frac{\cos \theta}{r^2} \qquad \theta = \angle (\vec{d}, \vec{r})$$
- 
+\textbf{Monopol:}\\
+$$\vec{E}_{\tx{Mono}}(\vec{r}) = \frac{1}{4\pi\epsilon_0} \frac{Q}{r^2} \hat{r} \qquad \varphi_{\tx{Mono}}(\vec{r}) = \frac{Q}{4\pi\epsilon_0} \frac{1}{r}$$
+dominiert für $r\rightarrow\infty$ wenn $Q_{\tx{ges}} \neq 0$\\
+$$Q_{\tx{Mono}} = \sum_{i=1}^N Q_i \textrm{ Pkt. Ladungen } \quad Q_{\tx{Mono}} = \int d^3\vec{r} \rho (\vec{r})$$
+$Q_{\tx{Mono}}$ bei $\vec{r}_s$ Ladungsschwerpunkt platzieren\\
+$$\vec{r}_s = \frac{\sum_i |Q_i| \vec{r}_i}{\sum_i | Q_i|}$$
+$$\vec{r}_s = \frac{\int|\rho(\vec{r})| \vec{r} d^3 \vec{r}}{\int|\rho(\vec{r})| d^3\vec{r}}$$
+\textbf{Dipol:}\\
+zwei entgegengesetzte, gleich große Ladungen $Q>0$ im Abstand $d = |\vec{d}|$. Richtung $\vec{d}$ von $-Q$ nach $+Q$ 
+$$\vec{r}_- = \vec{r}_0 - \frac{\vec{d}}{2} \qquad \vec{r}_+ = \vec{r}_0 + \frac{\vec{d}}{2}$$
+Potential $\varphi(\vec{r})$ aus Superposition
+$$\varphi_{\tx{Dipol}} (\vec{r}) = \frac{Q}{4 \pi \epsilon_0} \bigg\{ \frac{1}{|\vec{r}_0 - \frac{\vec{d}}{2}|} - \frac{1}{|\vec{r}_0 - \frac{\vec{d}}{2}|} \bigg\}$$ 
+für $(|\vec{r}_0| \gg |\vec{d}|)$ nutze Näherung 
+$$\frac{1}{|\vec{r}_0 \pm \frac{\vec{d}}{2}|} = \frac{1}{\sqrt{\vec{r}_0^{\,2} \pm r_0 \vec{d} + \frac{\vec{d}^2}{4}}} = \frac{1}{|\vec{r}_0|} \frac{1}{\sqrt{1 \pm \frac{r_0 \vec{d}}{|\vec{r}_0|^2} + \frac{\vec{d}^{\,2}}{4 \vec{r}_0^{\,2}}}} =  \frac{1}{|\vec{r}_0|} \bigg( 1 \mp \frac{\vec{r}_0 \vec{d}}{\vec{r}_0^{\,2}}\bigg)$$
+$$\varphi_{\tx{Dipol}} \sim \frac{Q}{4\pi\epsilon_0 r} \frac{\vec{r}\vec{d}}{r^2} = \frac{1}{4\pi\epsilon_0} \frac{\vec{p}\;\vec{\hat{r}}}{r^2} $$
+$ \vec{p} = Q \vec{d} = [\vec{p}] = c_m$ \textbf{Dipolmoment}
+$$\varphi_{\tx{Dipol}} (\vec{r}) = \frac{Q\vec{d}}{4\pi\epsilon_0} \frac{\cos \theta}{r^2} \qquad \theta = \sphericalangle (\vec{d}, \vec{r})$$
 \begin{itemize}
 \item Potential richtungsabhängig $\sim \cos \theta$\\
 maximal entlang $\vec{d}$ verschwindend $\perp \vec{d}$
-\item $\varphi \sim \frac{1}{r^2} \Rightarrow$ Erwartung $|\vec{E}| \sim \frac{1}{r^3}$
+\item $\varphi \sim \frac{1}{r^2} \Rightarrow \ $ Erwartung $|\vec{E}| \sim \frac{1}{r^3}$
 \end{itemize}
-
-Bestimmung des $\vec{E}$-Feldes\\
+\textbf{Bestimmung des $\vec{E}$-Feldes:}\\
 $\vec{d}$ entlang z-Achse\\
 Geometrie $\rightarrow$ Zylindersymmetrie des Feldes, d.h. keine Abhängigkeit vom Azimutalwinkel $\phi$ 
 $$\vec{E}(\vec{r}) = - \vec{\nabla} \varphi(\vec{r}) = -\frac{\partial \varphi}{\partial r} \vec{e}_r - \frac{1}{r} \frac{\partial \varphi}{\partial \theta} \vec{e}_\theta = \frac{1}{r \sin \theta} \underbrace{\frac{\partial \varphi}{\partial \phi}}_{\varnothing} \vec{e}_\varphi$$
-
 $$ \vec{E} (\vec{r}) = \frac{1}{4\pi\epsilon_0 r^3} \; |\vec{p}| \; (2 \cos \theta \vec{e}_r + \sin \theta \vec{e}_\theta ) $$
-
 \begin{itemize}
 \item für N Punktladungen $\vec{p} = \sum_i Q_i \vec{r}_i$
 \item für Ladungsverteilung $\vec{p} = \int d^3 \vec{r} \ \rho (\vec{r}) \vec{r} $
 \end{itemize}
-
-$\vec{p}$ abhängig von Wahl des Koordinatenursprungs\\\\
-Bsp.: Pkt.Ladung bei $\vec{r}_0 \Rightarrow \left\{ \begin{array}{cccc}
+$\vec{p}$ abhängig von Wahl des Koordinatenursprungs\\[10pt]
+Bsp.: Punktladung bei $\vec{r}_0 \Rightarrow \left\{ \begin{array}{cccc}
 \textrm{i)} & \vec{r}_0 = \vec{0} & \textrm{dann} & \vec{p} = \vec{0} \\
 \textrm{ii)} & \vec{r}_0 \neq \vec{0} & \textrm{dann} & \vec{p} \neq \vec{0}
-\end{array} \right. $ \\
-
+\end{array} \right. $ \\[10pt]
 Konvention: Ursprung bei $\vec{r}_s$ Ladungsschwerpunkt
 \begin{itemize}
 \item punktsymmetrische Ladungsverteilung $ \rho(\vec{r}) = \rho(-\vec{r})$ gilt $\vec{p} = \vec{0}$
-\item wenn $Q_{ges} = 0$ dann $\vec{p}$ unabhängig von Ursprung
+\item wenn $Q_{\tx{ges}} = 0$ dann $\vec{p}$ unabhängig von Ursprung
 \end{itemize}
 
 %Vorlesung 5 oder so
 
 \subsection{Kräfte auf Dipol}
 \begin{itemize}
-\item[a)] homogenes $\vec{E}$-Feld (Bsp. Plattenkondensator)\\
+\item[a)] \textbf{homogenes $\vec{E}$-Feld} (Bsp. Plattenkondensator)\\
 Beobachtung: Dipol richtet sich im Kondensator wie erwartet aus: Plus zu Minus, Minus zu Plus\\
 Kraft: $$\vec{F}_{ges} = Q \vec{E} + (-Q) \vec{E} = \vec{0}$$ $\rightarrow$ keine Translation\\
 Drehmoment: \begin{align*}
 \vec{T}_{ges} & = \sum^2_{i=1} \vec{r}_i\times \vec{F}_i \\
 & = \frac{\vec{d}}{2} \times Q\vec{E} + \frac{-\vec{d}}{2} \times (-Q\vec{E}) = Q \vec{d} \times \vec{E}\\
 \end{align*}
-$$\vec{T}_{ges} = \vec{p} \times \vec{E}$$
+$$\boxed{\vec{T}_{ges} = \vec{p} \times \vec{E}}$$
 $\vec{p} \perp \vec{E} \quad \vec{T}$ Maximal\\
 $ \vec{p} \parallel \vec{E} \quad \vec{T}$ verschwindet\\
 $\rightarrow$ Ausrichtung im $\vec{E}$-Feld\\
 Potentiellen Energie:\\
-$$ E_{Dip}= Q \varphi(\vec{r}_1) - Q \varphi(\vec{r}_2)$$
+$$ E_{\tx{Dip}}= Q \varphi(\vec{r}_1) - Q \varphi(\vec{r}_2)$$
 $$\varphi(\vec{r}_1) - \varphi(\vec{r}_2) = \vec{\nabla} \varphi(\vec{r}) \vec{d} = -\vec{E} \vec{d}$$
-$$E_{Dip} = - Q \vec{E}\vec{d} = - \vec{p} \vec{E}$$\\
+$$E_{\tx{Dip}} = - Q \vec{E}\vec{d} = - \vec{p} \vec{E}$$\\
 $p \uparrow \uparrow E$ minimiert $E_{Dip} \quad \rightarrow$ Richtung von $\vec{p}$ im $\vec{E}$
-\item[b)]inhomogenes $\vec{E}$-Feld \\
+\item[b)] \textbf{inhomogenes $\vec{E}$-Feld} \\
 zusätzliche Kraft: $$\vec{F}_{ges} = Q \vec{E} (\vec{r}+\vec{d}) - Q \vec{E}(\vec{r})$$
 $$\vec{E}(\vec{r}+\vec{d}) \buildrel \textrm{Taylor-Entwicklung} \over = \vec{E}(\vec{r}) + (\vec{d}\cdot \nabla ) \vec{E}(\vec{r})$$ 
 $$\vec{F}_{ges} = Q ( \vec{q} \cdot \nabla ) \vec{E}(\vec{r}) = (\vec{p} \cdot \nabla ) \vec{E}(\vec{r})$$
@@ -675,12 +651,11 @@ $$\vec{F}_{ges} = Q ( \vec{q} \cdot \nabla ) \vec{E}(\vec{r}) = (\vec{p} \cdot \
 \begin{itemize}
 \item vier Ladungen $ 2: \; +Q$, $ 2: \; -Q$ , jeweils im Abstand $d$
 \item zwei Dipole $\vec{p}$ bei $(x,z) = (\frac{d}{2}, 0) \quad -\vec{p}$ bei $(x,z) = (-\frac{d}{2}, 0)$
-$$ \varphi_{Dipol} = \frac{1}{4\pi\epsilon_0} \frac{\vec{p}\vec{r}}{r^3} = \frac{1}{4\pi\epsilon_0} \frac{p \cos \theta}{r^2} \quad \vec{r}_s = \vec{0} \quad \theta = \angle (\vec{r}, \vec{e}_z)$$
-$$\varphi _{Quadrupol} = \varphi_{oben}(\vec{r}- \frac{\vec{d}}{2}) - \varphi_{unten}(\vec{r}+ \frac{\vec{d}}{2})$$
-für $|\vec{d}|$ klein : $$\approx -d \frac{\partial}{\partial x } \varphi_{Dipol} (\vec{r})$$
-$$\frac{\partial }{\partial x} \varphi_{Dipol} = \frac{1}{4\pi\epsilon_0} \bigg[ -2 \frac{p \cos \theta}{r^3} \frac{\partial r }{\partial x} - \frac{p \sin \theta }{r^2} \frac{\partial \theta}{\partial x} \bigg]$$
+$$ \varphi_{\tx{Dipol}} = \frac{1}{4\pi\epsilon_0} \frac{\vec{p}\vec{r}}{r^3} = \frac{1}{4\pi\epsilon_0} \frac{p \cos \theta}{r^2} \qquad \vec{r}_s = \vec{0} \quad \theta = \sphericalangle (\vec{r}, \vec{e}_z)$$
+$$\varphi _{\tx{Quadrupol}} = \varphi_{\tx{oben}}(\vec{r}- \frac{\vec{d}}{2}) - \varphi_{\tx{unten}}(\vec{r}+ \frac{\vec{d}}{2})$$
+für $|\vec{d}|$ klein : $$\approx -d \frac{\partial}{\partial x } \varphi_{\tx{Dipol}} (\vec{r})$$
+$$\frac{\partial }{\partial x} \varphi_{\tx{Dipol}} = \frac{1}{4\pi\epsilon_0} \bigg[ -2 \frac{p \cos \theta}{r^3} \frac{\partial r }{\partial x} - \frac{p \sin \theta }{r^2} \frac{\partial \theta}{\partial x} \bigg]$$
 \end{itemize}
-
 Kettenregel: 
 $$ \frac{\partial}{\partial x} = \frac{\partial r}{\partial x} \frac{\partial}{\partial r} \quad \frac{\partial}{\partial x} = \frac{\partial \theta}{\partial x} \frac{\partial}{\partial \theta}$$
 Kugelkoordinaten: $$ \begin{pmatrix}
@@ -694,110 +669,101 @@ r \cos \phi
 \end{pmatrix}$$
 $$ \frac{\partial r}{\partial x} = \frac{\partial}{\partial x} \sqrt{x^2+y^2+z^2} = \frac{1}{r^2} 2x = \frac{x}{r} = \sin \theta \cos \phi $$
 $$\frac{\partial \cos \theta}{\partial x} = -\frac{1}{r} \sin \theta \sin \phi \cos \phi$$
-
 \begin{align*}
-\varphi_{Quadrupol}(\vec{r}) &= -\frac{|\vec{p}||\vec{d}|}{4\pi\epsilon_0} \bigg\{ - \frac{2 \cos \theta }{r^3} \sin \theta \cos \phi - \frac{\sin \theta}{r^2} \frac{1}{r} \cos \theta \cos \phi \bigg\} \\
-& = \  \frac{3|\vec{p}||\vec{d}|}{4\pi\epsilon_0 r^3} \cos \theta \sin \theta \cos \varphi
+\varphi_{\tx{Quadrupol}}(\vec{r}) &= -\frac{|\vec{p}||\vec{d}|}{4\pi\epsilon_0} \bigg\{ - \frac{2 \cos \theta }{r^3} \sin \theta \cos \phi - \frac{\sin \theta}{r^2} \frac{1}{r} \cos \theta \cos \phi \bigg\} \\
+& = \  \frac{3|\vec{p}||\vec{d}|}{4\pi\epsilon_0 r^3} \cos \theta \sin \theta \cos \phi
 \end{align*}
-
-$$Q_{Mono} = 0  \quad \vec{p}_{gesamt} = \vec{0}$$
+$$Q_{\tx{Mono}} = 0  \quad \vec{p}_{\tx{gesamt}} = \vec{0}$$
 Fernferld: $$ \varphi(\vec{r}) \sim \frac{1}{r^3} \quad \textrm{bzw.} \quad \vec{E} (\vec{r}) \sim \frac{1}{r^4} \vec{e}_R$$
 Bsp.: linearer Quadrupol
-$$\varphi^{lin}_{Quad} = \frac{1}{4\pi\epsilon_0} \frac{|\vec{a}|^2Q}{r^3} (3 \cos^2\theta -1)$$
+$$\varphi^{\tx{lin}}_{\tx{Quad}} = \frac{1}{4\pi\epsilon_0} \frac{|\vec{a}|^2Q}{r^3} (3 \cos^2\theta -1)$$
 \subsubsection{Kraft und Elektrische Energie des Quadrupols}
 \begin{itemize}
-\item homogenes Feld: $\vec{F}_{ges} = \vec{0} \quad ; \quad \vec{T}_{ges} = \vec{0}$
-\item inhomogenes Feld : komplexe $\vec{F}_{ges}$ , $\vec{T}_{ges}$
+\item homogenes Feld: $\vec{F}_{\tx{ges}} = \vec{0} \quad ; \quad \vec{T}_{\tx{ges}} = \vec{0}$
+\item inhomogenes Feld : komplexe $\vec{F}_{\tx{ges}}$ , $\vec{T}_{\tx{ges}}$
 \end{itemize}
 Elektrische Energie
-$$ E_{el} = \sum ^4_{i=1} Q_i \varphi_{ext}(\vec{r}_i) \quad \textrm{(eine kleine Rechnung)}$$
-$$ E_{el} = Q |\vec{d}|^2 \frac{\partial ^2 \varphi_{ext}}{\partial x \partial y} = \frac{1}{3} \hat{Q}_{xy} \frac{\partial ^2 \varphi_{ext}}{\partial x \partial y} $$
+$$ E_{el} = \sum ^4_{i=1} Q_i \varphi_{\tx{ext}}(\vec{r}_i) \quad \textrm{(eine kleine Rechnung)}$$
+$$ E_{el} = Q |\vec{d}|^2 \frac{\partial ^2 \varphi_{\tx{ext}}}{\partial x \partial y} = \frac{1}{3} \hat{Q}_{xy} \frac{\partial ^2 \varphi_{\tx{ext}}}{\partial x \partial y} $$
 $$\hat{Q}_{x_1} = 3 Q |\vec{d}|^2 \textrm{ Quadrupol}$$
 allgemein gilt : 
 für $ x_1 \widehat{=} x, x_2 \widehat{=} y, x_3 \widehat{=} z$
 $$E_{el} = \frac{1}{6} \sum^3_{i,j=1} \hat{Q}_{ij} \frac{\partial ^2 \varphi_{ext}}{\partial x_i \partial x_j}$$
 $$\hat{Q}_{ij} = \int d^3 \vec{r} \{ 3x_ix_j - |\vec{r}|^2 \delta_{ij} \} \rho (\vec{r})$$
 Tensor 2. Stufe $i,j = 1 \rightarrow 3$\\
-für N Punktladungen : $$\hat{Q}_{ij} = \sum^N_{k=1} (3x_ix_j)_n - |\vec{r}|^2 \delta_{ij} \qquad \delta_{ij}= \begin{pmatrix}
-1 & 0 \\
-0 & 1 
+für N Punktladungen : $$\hat{Q}_{ij} = \sum^N_{k=1} (3x_ix_j)_n - |\vec{r}|^2 \delta_{ij} \qquad \delta_{ij}= \casess{i=j}{1}{i \neq j}{\tx{sonst}} = \begin{pmatrix}
+1 & \cdots & 0 \\
+\vdots & \ddots & \vdots\\
+0 & \cdots & 1 
 \end{pmatrix}$$
 
 $E_{el}$ in Multipolentwicklung
 
 \begin{align*}
-E_{el} &= Q_{ges} \varphi_{ext} (\vec{r})  + \sum^3_{i=1} p_i \frac{\partial \varphi_{ext}}{\partial x_i} + \frac{1}{6} \sum^3_{i,j = 1} \hat{Q}_{ij} \frac{\partial ^2 \varphi_{ext}}{\partial x_i \partial x_j} \\
-&= Q_{Mono} \varphi_{ext}(\vec{r}) + \underbrace{\vec{p} \; \vec{\nabla} \varphi_{ext} (\vec{r})}_{Dipolanteil} + \underbrace{ \frac{1}{6} \sum^3_{i,j = 1} \hat{Q}_{ij} \frac{\partial ^2 \varphi_{ext}}{\partial x_i \partial x_j} }_{Quadrupolanteil}
+E_{el} &= Q_{\tx{ges}} \varphi_{\tx{ext}} (\vec{r})  + \sum^3_{i=1} p_i \frac{\partial \varphi_{\tx{ext}}}{\partial x_i} + \frac{1}{6} \sum^3_{i,j = 1} \hat{Q}_{ij} \frac{\partial ^2 \varphi_{\tx{ext}}}{\partial x_i \partial x_j} \\
+&= Q_{\tx{Mono}} \varphi_{\tx{ext}}(\vec{r}) + \underbrace{\vec{p} \; \vec{\nabla} \varphi_{\tx{ext}} (\vec{r})}_{\tx{Dipolanteil}} + \underbrace{ \frac{1}{6} \sum^3_{i,j = 1} \hat{Q}_{ij} \frac{\partial ^2 \varphi_{\tx{ext}}}{\partial x_i \partial x_j} }_{\tx{Quadrupolanteil}}
 \end{align*}
-
 Bem.: $\vec{p}, \hat{Q}$ abhängig von Wahl des Koordinatensystems
-
 \section{Elektrostatische Energie und Kapazität}
 \subsection{Spannung}
 Erinnerung: $$\varphi(\vec{r}) = \frac{``W(\vec{r}_0 \rightarrow \vec{r})``}{q} = \int_{\vec{r}_0}^{\vec{r}} \vec{E} \; d\vec{s} + \varphi(\vec{r}_0)$$
 $\vec{r}_0$ Bezugspunkt\\
 Spannung U als Potentialdifferenz zwischen $\vec{r}_A$ und $\vec{r}_B$
-$$U_{ba} = \varphi(\vec{r}_B) - \varphi(\vec{r}_A)  = \int_{\vec{r}_A}^{\vec{r}_B} \vec{E} \; d\vec{s} \quad \textrm{unabhängig von} \vec{r}_0$$
+$$U_{\tx{BA}} = \varphi(\vec{r}_B) - \varphi(\vec{r}_A)  = \int_{\vec{r}_A}^{\vec{r}_B} \vec{E} \; d\vec{s} \quad \textrm{unabhängig von} \vec{r}_0$$
 $$[U] = 1 V = 1 \frac{J}{C}$$
 \subsection{Kapazität}
 \begin{itemize}
 \item alle Potentiale $\sim$ Ladung: $\varphi(\vec{r}) \sim Q$\\
 N Punktladungen $$\varphi(\vec{r}) = \frac{1}{4\pi\epsilon_0} \sum^N_{i=1} \frac{Q_i}{|\vec{r}-\vec{r}_i|}$$
 für $Q_i \rightarrow z Q_i $ gilt $\varphi(\vec{r}) \rightarrow z \varphi(\vec{r})$\\
-Es folgt: $ U = \frac{1}{C} Q$
-C Kapazität $[C] = 1 F (Farad) = a \frac{C}{V}$\\
-typische Werte für C: pF bis mF $(10^{-12}F - 10^{-3}F)$
-Bei gegebener Spannung U ist die Kapazität C ein Maß dafür wieviel Ladung eine Konfiguration von Leitern aufnehmen kann
+Es folgt: $$ U = \frac{1}{C} Q$$
+C Kapazität $$[C] = 1 F (\tx{Farad}) = a \frac{C}{V}$$
+typische Werte für C: pF bis mF $(10^{-12}F \tx{ - } 10^{-3}F)$
+Bei gegebener Spannung U ist die \textbf{Kapazität C ein Maß dafür wieviel Ladung eine Konfiguration von Leitern aufnehmen kann}
 \item C abhängig von Geometrie der Leiter\\
 Beispiele:
 \begin{itemize}
-\item[a)] homogene Kugel Radius R, Ladung Q
+\item[a)] \textbf{homogene Kugel} Radius R, Ladung Q
 $$\varphi(\vec{r}) = \frac{Q}{4\pi\epsilon_0} \frac{1}{r} \quad r_0 = \infty \quad \varphi(\vec{r}_0) = 0$$
 $$U(R) = \varphi(R) - \varphi(\infty) = \frac{Q}{4\pi\epsilon_0} \frac{1}{R}$$
-
-% einrahmen 
-
-$$ C_{Kugel} = 4\pi\epsilon_0 R$$
-\item[b)] Plattenkondensator (homogenes Feld)
+$$\boxed{ C_{\tx{Kugel}} = 4\pi\epsilon_0 R}$$
+\item[b)] \textbf{Plattenkondensator} (homogenes Feld)
 $$ \vec{E}= \frac{\sigma}{\epsilon_0} \vec{e}_z \qquad \sigma = \frac{Q}{A} \quad \textrm{Flächenladungsdichte}$$
 $$\varphi(\vec{r}) = \int_{z=0}^{z} \vec{E} \; d\vec{z} = \frac{1}{\epsilon_0} \frac{Q}{A} z \qquad \varphi(z=0) = 0$$
-$$U = \varphi(d\vec{e}_z) - \varphi(o \vec{e}_z) = \frac{1}{\epsilon_0} \frac{Q}{A} d = |\vec{E}| d$$
-$$\boxed{C_{Platte} = \frac{\epsilon_0 A}{d}}$$
-\item[c)] Zylinderkondensator, Länge l 
-$$ Q_1 = - Q-2$$
+$$U = \varphi(d\vec{e}_z) - \varphi(d \vec{e}_z) = \frac{1}{\epsilon_0} \frac{Q}{A} d = |\vec{E}| d$$
+$$\boxed{C_{\tx{Platte}} = \frac{\epsilon_0 A}{d}}$$
+\item[c)] \textbf{Zylinderkondensator}, Länge l 
+$$ Q_1 = - Q_2$$
 $ \vec{E}$-Feld aus Gaußschem Gesetz\\
-für $r<R_1 , r>R_2 \quad \vec{E}=0$ da $Q_{ein} = 0$\\
+für $R_1>r>R_2 \quad \vec{E}=0$ da $Q_{\tx{ein}} = 0$\\
 für $R_1 \le r \le R_2$: 
-$$\oint\limits_{Zylinder(r)} \vec{E}\; d\vec{A} \int_0^l \int_0^{2\pi} dz d\varphi E_r (|\vec{r}|) = l 2\pi r E_r$$
+$$\oint\limits_{\tx{Zylinder(r)}} \vec{E}\; d\vec{A} = \int_0^l \int_0^{2\pi} dz d\varphi E_r (|\vec{r}|) = l 2\pi r E_r$$
 $$E_r = \frac{1}{2\pi\epsilon_0} \frac{Q}{l} \frac{1}{l}$$
 $$\varphi = \frac{1}{2\pi\epsilon_0} \frac{Q}{l} \ln{r}$$
-
 $$ U = \varphi(R_2) - \varphi(R_2) = \frac{1}{2 \pi \epsilon_0} \frac{Q}{l} \ln \frac{R_2}{R_1}$$
-$$C_{\tx{Zylinder}} = 2 \pi \epsilon_0 \frac{l}{\ln \frac{R_2}{R_1}}$$
+$$\boxed{C_{\tx{Zylinder}} = 2 \pi \epsilon_0 \frac{l}{\ln \frac{R_2}{R_1}}}$$
 
 % Vorlesung 6
 
-\item[d)] Lecherleitung / parallele Drähte\\
+\item[d)] \textbf{Lecherleitung/parallele Drähte}\\
 einzelner Draht mit Radius R, Ladungsdichte $\frac{Q}{l}$
-$$\varphi(\vec{r}) =-\frac{1}{2\pi\epsilon_0} \frac{Q}{l} ln(\frac{r}{R})$$
+$$\varphi(\vec{r}) =-\frac{1}{2\pi\epsilon_0} \frac{Q}{l} \ln\Big(\frac{r}{R}\Big)$$
 Drahtpaar mit $\mp \frac{Q}{l}$, Abstand a
-$$ \varphi(\vec{r}) = -\frac{Q}{2\pi\epsilon_0} \bigg[ ln(\frac{r_+}{R}) - \ln(\frac{r_-}{R}) \bigg]$$
-
+$$ \varphi(\vec{r}) = -\frac{Q}{2\pi\epsilon_0} \bigg[ \ln\Big(\frac{r_+}{R}\Big) - \ln\Big(\frac{r_-}{R}\Big) \bigg]$$
 Sei $ R \ll a$ . U aus 2 Punkten auf Drähten\\
 pos. Draht: $r_+ \approx R \quad r_- \approx a$\\
-neg. Draht: $r_+ \approx a \quad r_- \approx R$\\
-
+neg. Draht: $r_+ \approx a \quad\: r_- \approx R$\\
 \begin{align*}
 U &= \varphi(\tx{pos. D}) - \varphi(\tx{neg- D})\\
 &= -\frac{1}{2\pi\epsilon_0} \frac{Q}{l} [\ln\frac{R}{R} - \ln\frac{a}{R} - \ln\frac{a}{R} + \ln\frac{R}{R}] \\
 &= \frac{1}{\pi \epsilon_0} \frac{Q}{l} \ln\frac{a}{R}
 \end{align*}
-$$C_{\tx{Lecher}} = \frac{\pi\epsilon_0 l}{\ln\frac{a}{R}}$$
+$$\boxed{C_{\tx{Lecher}} = \frac{\pi\epsilon_0 l}{\ln\frac{a}{R}}}$$
 
 % andrez Cgesamt  ???
 
-\item[e)] Kugelkondensator 
-$$C_{\textrm{Kugelkond.}} = \frac{4 \pi \epsilon_0 R_1 R_2}{R_2 - R_1} = \frac{4 \pi\epsilon_0 R_1}{1 - \frac{R_1}{R_2}}$$
+\item[e)] \textbf{Kugelkondensator}
+$$\boxed{C_{\textrm{Kugelkond.}}} = \frac{4 \pi \epsilon_0 R_1 R_2}{R_2 - R_1} \boxed{= \frac{4 \pi\epsilon_0 R_1}{1 - \frac{R_1}{R_2}}}$$
 für $R_2 \rightarrow \infty \quad C_{Kugel} = 4 \pi \epsilon_0 R_1$
 
 \end{itemize}
@@ -806,31 +772,23 @@ für $R_2 \rightarrow \infty \quad C_{Kugel} = 4 \pi \epsilon_0 R_1$
 
 \subsection{Kondensatorschaltungen}
 \begin{itemize}
-\item[a)] Parallelschaltung
+\item[a)] \textbf{Parallelschaltung}
 $$C_1:  Q_1 = C_1 U \quad C_2: Q_2 = C_2 U$$
 Potentiale / Spannungen gleich $U_1 = U_2 = U = \varphi_+-0$\\
-$Q_{ges} = Q_1 + Q_2$ Ladungserhaltung\\
-$Q_{ges} = C_{ges} U $ Frage: $C_{ges}$\\
-$$Q_{ges} = Q_1 + Q_2 = U(C_1 + C_2) \quad \tx{ also } \quad C_{ges} = C_1 + C_2$$\\
+$Q_{\tx{ges}} = Q_1 + Q_2$ Ladungserhaltung\\
+$Q_{\tx{ges}} = C_{\tx{ges}} U $ Frage: $C_{\tx{ges}}$\\
+$$Q_{\tx{ges}} = Q_1 + Q_2 = U(C_1 + C_2) \quad \tx{ also } \quad C_{\tx{ges}} = C_1 + C_2$$\\
 allgemein für n parallele $C_i$: 
-
-$$C_{ges} = \sum_{i=1}^{n}C_i$$
-Parallelschaltung erlaubt großes $C_{ges}$\\
-
-\item[b)] Reihenschaltung\\
+$$C_{\tx{ges}} = \sum_{i=1}^{n}C_i$$
+Parallelschaltung erlaubt großes $C_{\tx{ges}}$\\
+\item[b)] \textbf{Reihenschaltung}\\
 Es gilt: $ Q^+_1 = - Q_1^- = Q_2^+ = -Q_2^-$\\
 $Q_1 \equiv Q$\\
 $ U = U_1 + U_2$
 $$ U = \frac{Q}{C_1} + \frac{Q}{C_2} = Q(\frac{1}{C_1} + \frac{1}{C_2}) = \frac{Q}{C_{\tx{ges}}}$$
-
 also $$ \frac{1}{C_{\tx{ges}}} = \frac{1}{C_1} + \frac{1}{C_2}$$
 allg. für serielle $C_i$:
 $$ \frac{1}{C_{\tx{ges}}} = \sum^n_{i=1} \frac{1}{C_i} \quad C_{\tx{ges}} < C_i$$
-
-
-% andrez w_1 = Q_1 ... E_el ???
-
-
 \end{itemize}
 
 \subsection{Elektrische Energie}
@@ -842,26 +800,22 @@ $ W_{A\rightarrow B}= q \varphi(\vec{r}_B) - q \varphi(\vec{r}_A)$
 $Q_1: \infty \rightarrow \vec{r}_1:$ kein $\vec{E}$-Feld, kein $\varphi \rightarrow$ keine Arbeit\\
 $Q_2: \infty \rightarrow \vec{r}_2:$ Arbeit im Feld von $Q_1$\\
 $$W_2 = Q_2 \varphi_1(\vec{r}_2) = Q_2 \frac{Q_1}{4\pi\epsilon_0 |\vec{r}_2 - \vec{r}_1|}$$ 
-
 andere Reihenfolge: $$W_1 = Q_1 \varphi_2 (\vec{r_1}) = Q_1 \frac{Q_2}{4 \pi \epsilon_0  \vert \vec{r_1} - \vec{r_2}\vert }$$
-
 $$E_{el} = \frac{1}{2} \sum_{i,j=1 \ i\neq j}^{2}Q_i \varphi_j(\vec{r_i})$$
-
 dritte Punktladung $Q_3 : \infty \rightarrow \vec{r}_3$\\
 $$W_3 = Q_3 \varphi_1(\vec{r}_3) + Q_3 \varphi_2(\vec{r}_3)$$
-Es gilt: $Q_3 \varphi_i(\vec{r}_3) = Q_i \varphi_3(\vec{r}_i) \quad 1 = 1,2$
-
+Es gilt: $Q_3 \varphi_i(\vec{r}_3) = Q_i \varphi_3(\vec{r}_i) \quad i = 1,2$
 \begin{align*}
 E_{el} &= \frac{1}{2} Q_1 [\varphi_2(\vec{r}_1) + \varphi_3(\vec{r}_1)] \\
 & + \frac{1}{2} Q_2 [\varphi_1(\vec{r}_2) + \varphi_3(\vec{r}_2)] \\
-& + \frac{1}{2} Q_1 [\varphi_1(\vec{r}_3) + \varphi_2(\vec{r}_3)]
+& + \frac{1}{2} Q_3 [\varphi_1(\vec{r}_3) + \varphi_2(\vec{r}_3)]
 \end{align*}
 $$E_{el} = \frac{1}{2} \sum_{i=1}^N Q_i \varphi(\vec{r}_i) \quad \tx{ für N Punktladungen}$$
 mit $$\varphi(\vec{r}_i) = \sum^N_{\substack{ i=1 \\ i \neq j }} \varphi_j(\vec{r}_i)$$
 konst. Ladungsvertielung $\varphi(\vec{r}) : \sum Q_i \rightarrow \int dQ$
 
 $$E_{el}= \frac{1}{3} \int \frac{d^3\vec{r} \rho (\vec{r})}{dQ} \varphi(\vec{r})$$
-Bsp.: homogengeladene Kugelschale mit Radius R
+Bsp.: \textbf{homogengeladene Kugelschale} mit Radius R
 $$\varphi(\vec{r}) = \tx{const} \quad  r<R \qquad = \frac{Q}{4\pi\epsilon_0} \frac{1}{r} \quad r\ge R$$
 Sei zunächst $Q = 0$. $dQ$ aus $\infty \rightarrow R$\\
 $dE_{el}= \varphi(e) dQ = \frac{1}{4\pi\epsilon_0} \frac{Q}{R} \; dQ$\\
