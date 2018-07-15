@@ -883,43 +883,51 @@ $$ \rightarrow \vec{P} = - \epsilon_0 \vec{E}_{\tx{pol}}$$
 ?????
 
 
-$\vec{E}_{\tx{Mol}}$ (tsl?) Überlagerung von ???????\\
-a) $\vec{E}_{\tx{frei}}$ ohne Medium $\quad \vec{E}_{\tx{pol}}$ aus Dipolen
+$\vec{E}_{\tx{Mol}}$ (tsl?) Überlagerung von ???????\\\\
+a)  \textbf{$\vec{E}_{\tx{frei}}$ ohne Medium $\quad \vec{E}_{\tx{pol}}$ aus Dipolen}
 $$\vec{E}_{\tx{Med}} = \vec{E}_{\tx{frei}} + \vec{E}_{\tx{Pol}} = \vec{E}_{\tx{frei}} - \frac{\vec{P}}{\epsilon_0}$$
 Polarisation abhängig von $ \vec{E}_{\tx{Mol}}: \vec{P} = \epsilon_0 \chi_e \vec{E}_{\tx{Med}}$\\
-$\chi_e \widehat{=}$ diielektrische Suszeptibilität
+$\chi_e\  \widehat{=}$ dielektrische Suszeptibilität
 $$\vec{E}_{\tx{Med}} = \frac{\vec{E}_{\tx{frei}}}{1+\chi_e}$$
 $\epsilon = 1+ \chi_e$  relative Dielektrizitätskonstante / Permitivität\\
-$\vec{E}_{\tx{Med}} = \frac{\vec{E}_{\tx{frei}}}{\epsilon} \quad \epsilon$ Faktor um den Feld geschwächt wird\\
+$$\vec{E}_{\tx{Med}} = \frac{\vec{E}_{\tx{frei}}}{\epsilon}$$
+$\epsilon$ Faktor um den Feld geschwächt wird\\
 $\epsilon,\chi_e$ abhängig von der Art und Struktur des Mediums
 
 \subsection{Felder und Maxwell gl. im Medium}
-3. MW-Gl: $$\tx{div} \vec{E}_{\tx{Med}} = \frac{P}{\epsilon_0} = \frac{1}{\epsilon_0}(\rho_{\tx{frei}} + \rho_{\tx{Pol}}) \qquad (*)$$
+3. MW-Gl: 
+\begin{equation*}
+\tx{div} \vec{E}_{\tx{Med}} = \frac{P}{\epsilon_0} = \frac{1}{\epsilon_0}(\rho_{\tx{frei}} + \rho_{\tx{Pol}}) \tag{$ * $}
+\end{equation*}
 $\rho_{\tx{frei}}$ freie Ladung, $\rho_{\tx{Pol}}$ Polarisationsladungen\\
 Polarisationsladung in V mit Rand A
-$$\Delta Q_{\tx{Pol}} = \int_A \sigma_{\tx{Pol}} \;dA = \int_A \vec{P} \; dA \qquad (1)$$
+\begin{equation*}
+\Delta Q_{\tx{Pol}} = \int_A \sigma_{\tx{Pol}} \;dA = \int_A \vec{P} \; dA \tag{1}
+\end{equation*}
 Außerdem:
-$$\Delta Q_{\tx{Pol}} = -\int \rho_{\tx{Pol}} \; dV \qquad \qquad \qquad \: (2)$$
+\begin{equation*}
+\Delta Q_{\tx{Pol}} = -\int \rho_{\tx{Pol}} \; dV \tag{2}
+\end{equation*}
 $\vec{P}\uparrow\uparrow,\vec{E}_{\tx{frei}} \rightarrow \vec{P} \uparrow\downarrow \vec{A}$ auf rechter Grenze also mit ,,+`` $\Delta Q_{\tx{Pol}} < 0$ in (1)\\
-$\rho_{\tx{Pol}} > 0$ in (2) $\rightarrow$ ,,-`` Zeichen in (2)\\\\
+$\rho_{\tx{Pol}} > 0$ in (2) $\rightarrow$ ,,$-$`` Zeichen in (2)\\\\
 Gaußscher Satz:
 $$\oint \vec{P}\; d\vec{A} = \int \tx{div} \vec{P} \; dV = \int - \rho_{\tx{Pol}} \; dV$$
 Es folgt: $$\rho_{\tx{Pol}} = - \tx{div} \vec{P} = \epsilon_0 \tx{div} \vec{E}_{\tx{Pol}}$$
 In (*): $$\tx{div}\vec{E}_{\tx{Med}} = \frac{1}{\epsilon_0} (\rho_{\tx{frei}} + \epsilon_0 \tx{div}\vec{E}_{\tx{Pol}})$$
 $$\tx{div}(\vec{E}_{\tx{Med}} - \vec{E}_{\tx{Pol}}) = \frac{1}{\epsilon_0} \rho_{\tx{frei}}$$
-Definiere  $\vec{D}$ als Flussdichte / eleektrische Erregung / dielektrische Verschiebung
+Definiere  $\vec{D}$ als Flussdichte / elektrische Erregung / dielektrische Verschiebung
 $$ \vec{D} = \epsilon_0(\vec{E}_{\tx{Med}} - \vec{E}_{\tx{Pol}}) = \epsilon_0 \vec{E}_{\tx{frei}} = \epsilon_0 E_{\tx{Med}} + \vec{P}$$
-
 $$\boxed{\begin{array}{ll}
-\tx{3.MW-GL}: & \tx{div}\vec{D} = \tx{frei} \\
+\tx{3.MW-GL}: & \tx{div}\vec{D} = \rho_\tx{frei} \\
 \tx{1.MW-GL}: & \tx{rot}\vec{E}_{\tx{Med}} = 0
 \end{array}
 }$$
+
 \subsubsection{Feldverhalten an Grenzflächen}
 Betrachte Grenzfkäche: Medium/Dielekktrikum $(\epsilon>1) \leftrightarrow$ Volumen $(\epsilon=1)$
 \begin{itemize}
 \item nur Polarisation $\rho_{\tx{frei}} = 0 \quad \cdot \vec{E}_{\tx{ext}}$
-\item $\rho_{\tx{frei}} = 0 \Rightarrow D \perp \tx{Med} = D \perp \tx{Vak} \qquad E_{\tx{Med}}^{\perp} = \frac{1}{\epsilon} E^{\perp}_{\tx{Vak}}$
+\item $\rho_{\tx{frei}} = 0 \Rightarrow D ^\perp _\tx{Med} = D ^\perp _\tx{Vak} \qquad E_{\tx{Med}}^{\perp} = \frac{1}{\epsilon} E^{\perp}_{\tx{Vak}}$
 $$\oint\vec{D}\; dA = 0 \tx{ da frei } = 0$$
 $d\rightarrow0$ : Beiträge von linker und rechter Stirnfläche
 $$D^{\perp}_{\tx{Med}} (A) + D^{\perp}_{\tx{Vak}}(-A) = 0 \rightarrow D^{\perp}_{\tx{Med}} = D^{\perp}_{\tx{Vak}}$$
@@ -942,9 +950,9 @@ angenommen $\vec{P} \sim \vec{E}_{\tx{Med}}$
 \item Verhalten von Nichtleitern ohne permanentes Dipolmoment $\vec{p} = 0$\\
 z.B. $H_2$ Ladungsschwerpunkt $(\vec{r}_s)$ mittig 
 \item im $\vec{E}$-Feld verschiebung der $e^-$ bzw. $\vec{r}_s \quad \vec{F}_e \sim \vec{E}$\\
-$\rightarrow \vec{p} = \alpha \vec{E},\quad  \alpha \widehat{=}$ \underline{elektrische Polarisierbarkeit} solche Materialien: verschiebungs Pol. dominiert, sind Dielektrika im engeren Sinne
+$\rightarrow \vec{p} = \alpha \vec{E},\quad  \alpha\ \widehat{=}$ \underline{elektrische Polarisierbarkeit} solche Materialien: verschiebungs Polarisation dominiert, sind Dielektrika im engeren Sinne
 \item Makroskopische Polarisation $\vec{P}$
-$$\vec{P} = n \vec{p}  = n \alpha \vec{E}_{\tx{Med}} \quad n \ \widehat{ = }\  \tx{Moleküle} \quad  n = \frac{N_A \rho}{m_{\tx{Mol}}}$$
+$$\vec{P} = n \vec{p}  = n \alpha \vec{E}_{\tx{Med}} \quad n \ \widehat{ = }\  \tx{Moleküle} \quad  n = \frac{N_A\ \rho}{m_{\tx{Mol}}}$$
 $$ N_A \tx{ Avogadrokonst.} \quad \rho \tx{ Massendichte} \quad m_{\tx{Mol}} \tx{ Molmasse}$$
 \item Hatten $ \vec{P} = \epsilon_0 \chi_e \vec{E}_{\tx{Med}}$\\
 Zusammenhang $\alpha$ und $\chi_e \epsilon$
@@ -954,43 +962,41 @@ gut für kleine $P$ (z.B. Gase)\\
 wen $P$ groß, dann Dipol-Dipol-Wechselwirkung\\
 $\rightarrow$ Clausius-Mosotti-Beziehung: $\alpha = \epsilon \frac{\epsilon_0}{n} \frac{\epsilon-1}{\epsilon+2}$
 \end{itemize}
-\underline{Bsp.:} $H_2$-Molekül im E-Feld $1\frac{\tx{MV}}{\tx{m}}$
+\underline{Bsp.:} \textbf{ $H_2$-Molekül im E-Feld} $1\frac{\tx{MV}}{\tx{m}}$
 $$\alpha_{H_2} = 8,7 \cdot 10^{-41} \frac{\tx{Cm}}{\tx{V}} (\alpha_{\tx{typ}} \approx 100 \alpha_{H_2})$$
 $$|\vec{p}|_{H_2} = 8,7 \cdot 10^{-35} \tx{Cm}$$
 $$d = 2,7\cdot 10^{-16} \tx{m} \quad L = 7,4 \cdot 10^{-11}\tx{m} \tx{ (Abstand H Atome)}$$
-$d/L = 3,6\cdot 10^{-6}$
-
-\underline{Orientierungspolarisation}
+$d/L = 3,6\cdot 10^{-6}$\\[5pt]
+\textbf{Orientierungspolarisation:}
 \begin{itemize}
 \item polare Moleküle (z.B. $H_2O$) mit permanentem Dipolmoment $\vec{p}$\\R
-$\rightarrow $ paraelektrisch
+$\rightarrow $ \textbf{paraelektrisch}
 \item$\vec{E}_{\tx{Med}} = 0 $ Richtung der $ \vec{p}$ statistisch / gleichverteilt $\rightarrow$ kein $\vec{p}$
 \item $\vec{E}_{\tx{Med}} \neq 0$ Ausrichtung der $\vec{p}$ im $\vec{E}$-Feld
 \end{itemize}
-
 Wärmebewegung behindert vollständige Ausrichtung. Ausrichtungsgrad beschrieben durch Boltzmannverteilung ($\rightarrow$ Ex1)
 $$f(\Delta E) = f_0 e ^{-\Delta E / kT} \quad \tx{ T Temperatur, k Boltzmannkonstante}$$
-$\Delta E = -|\vec{p}| |\vec{E}| \cos \theta \quad \tx{ pot Energie des Dipols}$\\
-$\vec{E} = E \vec{e}_z$ Beitrag von 1 Molekül $p_z = |\vec{p}| \cos \theta$\\
+$$\Delta E = -|\vec{p}| |\vec{E}| \cos \theta \quad \tx{ pot Energie des Dipols}$$
+$\vec{E} = E \vec{e}_z$ Beitrag von 1 Molekül $\vec{p}_z = |\vec{p}| \cos \theta$\\
 Polarisation aus $f(\theta)$\\
-Ergibt: $$P = n \bar{p}_2 \ub{\{\coth \frac{p|\vec{E}|}{kT} - \frac{kT}{p|\vec{E}|} \} }_{ \tx{Langevin fkt.} L(\frac{p|\vec{E}|}{kt})}$$
-$l(x) = 1$ d.h. alle Dipole ausgerichtet. oft $p|\vec{E}| << kT $ dann $L(x) \approx \frac{1}{3}x $ für $|x| <<1$ \\
-dann $P= n p \frac{1}{3} \frac{p|\vec{E}|}{kt} = \frac{1}{3} \frac{p^2|\vec{E}|}{kt}$ wieder linear in $|\vec{E}|$
+Ergibt: $$P = n \vec{p}_z \ub{\Big\{\coth \frac{p|\vec{E}|}{kT} - \frac{kT}{p|\vec{E}|} \Big\} }_{ \tx{Langevin fkt.} L(\frac{p|\vec{E}|}{kt})}$$
+$L(x) = 1$ d.h. alle Dipole ausgerichtet. oft $p|\vec{E}| << kT $ dann $L(x) \approx \frac{1}{3}x $ für $|x| <<1$ \\
+dann $$P= n p \frac{1}{3} \frac{p|\vec{E}|}{kt} = \frac{1}{3} \frac{p^2|\vec{E}|}{kt}$$ wieder linear in $|\vec{E}|$
 \begin{itemize}
 \item für $|\vec{E}|$ groß, oder $T$ klein nicht lineare Effekte und schließlich Sättigung
-\item Suszeptibilität abhängig von Temperatur $\chi_c(T)$
+\item Suszeptibilität abhängig von Temperatur $\chi_e(T)$
 \end{itemize}
 Bsp.: $H_2O$-Molekül in E-Feld $100\frac{\tx{kV}}{\tx{m}}$\\
 $P_{H_2O} = 6,15 \cdot 10^{-30} \tx{Cm} \quad \epsilon_{H_2O} \approx 80$\\
 $\Delta E = |\vec{p}||\vec{E}| = 7,7 \cdot 10^{-27} \tx{J} = 4,8 \cdot 10^{-8} \tx{eV}$\\
 Ausrichtungsgrad: $\frac{1}{3} \frac{p|\vec{E}|}{kT} = 1,9 \cdot 10^{-6}$\\
 d.h. für 1 Million Moleküle, 2 mit $\vec{p}\uparrow \uparrow \vec{E}$
-Paraelektrisch: Überlagerung von Verschieb. pol. und Orientierungs pol.\\
-$$P = n(\alpha + \frac{1}{3} \frac{p^2}{kT}) E_{\tx{Med}}$$
+Paraelektrisch: Überlagerung von Verschieb. pol. und Orientierungs-pol.\\
+$$P = n\Big(\alpha + \frac{1}{3} \frac{p^2}{kT}\Big) E_{\tx{Med}}$$
 plus Clausius-Moretti-Korrektur $ 3\frac{\epsilon-1}{\epsilon +2} \epsilon_0 = n ( \alpha + \frac{1}{3} \frac{p^3}{kT})$
 hieraus $\chi_e, \epsilon \quad P = \epsilon_0 \chi_e E_{\tx{Med}}$\\
-Esp. Bestimmung: Messung $C(T) \rightarrow \chi_e(T)$\\
-\underline{Ferroelektrika}
+\textbf{Exp. Bestimmung: Messung $C(T) \rightarrow \chi_e(T)$}\\
+\textbf{Ferroelektrika}
 \begin{itemize}
 \item große permanente Dipolmomente $\vec{p}$ (Kristalle, \underline{kein} Eisen)
 \item Dipol-Dipol-Wechselwirkung $\rightarrow$ Domänenbildung
@@ -1004,8 +1010,8 @@ Ziel: \begin{itemize}
 \item Erhöhung der Spannungsfelder
 \item Erhöhung der Kapazität
 \end{itemize}
-Exp: \begin{itemize}
-\item[a)] Ladung $Q =$ const. $C = \frac{Q}{C}$\\
+\textbf{Exp:} \begin{itemize}
+\item[a)] Ladung $Q =$ const. $C = \frac{Q}{U}$\\
 Beobachtung: $U(|\vec{E}|) $ kleiner $\rightarrow C$ größer
 \item[b)] Spannung $U = $ const. \\
 Beobachtung: $Q$ größer $\rightarrow C$ größer
@@ -1016,13 +1022,11 @@ Erklärung: (a)
 \item Oberflächenladung $\sigma_{\tx{pol}}$ an Grenzflächen\\
 $\rightarrow \vec{E}_{\tx{pol}} \uparrow \downarrow \vec{E}_{\tx{ext}} \Rightarrow \vec{E}_{\tx{Med}} $ geschwächt $\rightarrow U$ kleiner $ U = |\vec{E}|d$
 \end{itemize}
-U def. über Arbeit um $dq$ von ,,+`` nach ,,-`` zu bewegen. Feld schwächer $\rightarrow U$ kleiner um Faktor $\epsilon$ also
-$$ C = \epsilon \epsilon_0 \frac{A}{d}$$
+U def. über Arbeit um $dq$ von ,,$+$`` nach ,,$-$`` zu bewegen. Feld schwächer $\rightarrow U$ kleiner um Faktor $\epsilon$ also
+$$\boxed{ C = \epsilon \epsilon_0 \frac{A}{d} }$$
 und $$E_{\tx{el}} = \frac{1}{2} C U^2 = \frac{1}{2} \epsilon \epsilon_0 |\vec{E}|^2 V$$
-Energiedichte $$W_{\tx{el}} = \frac{E_{\tx{el}}}{V} = \frac{1}{2} \epsilon\epsilon_0 | \vec{E} | ^2 0 \frac{1}{2} \epsilon_0 \vec{D} \vec{E}$$
-
+Energiedichte $$W_{\tx{el}} = \frac{E_{\tx{el}}}{V} = \frac{1}{2} \epsilon\epsilon_0 | \vec{E} | ^2 = \frac{1}{2} \epsilon_0 \vec{D} \vec{E}$$
 %% conflicted copy vorlesung 9 oder so
-
 Vgl. von elektrischer Energie ohne und mit Dielektrikum
 $$\begin{array}{cccc}
 \tx{ohne}&&\tx{mit} \\
@@ -1031,11 +1035,10 @@ U_0 & \rightarrow & U_0/ \epsilon & \tx{ bei } Q = \tx{const.} \\
 & \Downarrow\\
 E_{\tx{el}} &\rightarrow & E_{\tx{el}} / \epsilon
 \end{array}$$
-
 Teilweise mit $\epsilon > 1$ gefüllter Kondensator
 \begin{itemize}
 \item Ladungsdichte größer bei $ \epsilon >1 $ da $E_{\parallel}^{\tx{Med}} = E_{\parallel}^{\tx{Vak}}$
-\item Parallelschaltung von 3 Kondensatoren
+\item Parallelschaltung von 2 Kondensatoren
 \item $ C_{\tx{Med}} = \epsilon C_{\tx{Vak}} \rightarrow Q_{\tx{Med}} = \epsilon Q_{\tx{Vak}} \tx{ da } U = \tx{const.}$
 \end{itemize}
 
@@ -1045,17 +1048,17 @@ Teilweise mit $\epsilon > 1$ gefüllter Kondensator
 \subsection{Elektrischer Strom}
 Bisher: ruhende Ladungen, räumlich getrennt $\rightarrow \vec{E}, \varphi$\\
 Jetzt: leitende Verbindung $\rightarrow$ pos. und/oder neg. Ladungen bewegen sich\\
-Strom: Laungsfluss pro Zeit durch eine gegebene Fläche
+Strom: Ladungsfluss pro Zeit durch eine gegebene Fläche
 $$\boxed{I= \frac{\Delta Q}{\Delta t}}\quad \tx{bzw.} \quad \boxed{I=\frac{dQ}{dt}}$$
-1. wenn $y = $ const. ist in $\Delta t$ und 2.für $I(t)$\\
+1. wenn $I = $ const. ist in $\Delta t$ und 2.für $I(t)$\\
 $[I] = 1 A \ \tx{ Ampére} \quad$ SI-Basiseinheit\\
-Richtung: von ,,+``-Pol zu ,,-``-Pol $\rightarrow$ technische Stromrichtung\\
-in Leitern (metall): $\uparrow \downarrow$ Richtung der Elektronen\\\\
-Stromdichte:
-$$ \vec{j}(\vec{r}) = \frac{dy}{dA} \vec{e}_{j} \quad \vec{e}_{j} \tx{ in Stromrichtung}$$
+Richtung: von ,,$+$``-Pol zu ,,$-$``-Pol $\rightarrow$ technische Stromrichtung\\
+in Leitern (metall): $\uparrow \downarrow$ Richtung der Elektronen\\[10pt]
+\textbf{Stromdichte:}
+$$ \vec{j}(\vec{r}) = \frac{dI}{dA} \vec{e}_{j} \quad \vec{e}_{j} \tx{ in Stromrichtung}$$
 $$\tx{Zshg.: } I = \int_A \vec{j} \; d\vec{A}$$
-Bsp.: Vakuumdiiode\\
-$V_e$ (Kathode) $\approx 0 $m/s Beschleunigung in $\vec{E} = E \vec{e}_z$\\
+Bsp.: \textbf{Vakuumdiode}\\
+$v_e$ (Kathode) $\approx 0 $m/s Beschleunigung in $\vec{E} = E \vec{e}_z$\\
 wieviele $e^-$ treffen in $dt$ auf pos. Platte?\\
 Alle $e^-$ im Abstand $< ds = v\; dt$ bzw. Volumen $ds\; A$ befinden $V = ds\; A = Av \; dt$ Anzahlt $e^-$ in V: $n_e V \quad n_e$ Elektronendichte. Transponierte Ladung $dQ = e n_e A v \; dt$
 $$\tx{Strom } \boxed{I= e n_e A v} \quad \tx{Stromdichte } \boxed{\vec{j} = e n_e \vec{v}} $$
@@ -1064,14 +1067,13 @@ $\Rightarrow$ Kathode: kleine $v$, große $n_e$ ; Anode: große $v$, kleine $n_e
 \subsubsection{Kontinuitätsgleichung}
 Betrachte Volumen V, mit Oberfläche A\\
 Strom (oder) Ladungsdichte/Zeit  druch A = Änderung der Ladung in V
-$$I = \oint_{A(v)} \vec{j} \; d\vec{A} = -\frac{dQ}{dt}$$
+$$I = \oint_{A(V)} \vec{j} \; d\vec{A} = -\frac{dQ}{dt}$$
 Gaußscher Satz:
 
 % mit gleichheitszeichen verdeutlichen
 
-
 $$\Rightarrow \int_V \tx{div} \vec{j} \;dV = - \frac{d}{dt} \int \rho_Q \;dV$$
-
+$ Q = \int \rho_{el} \, dV$
 $$\Rightarrow \boxed{\tx{div} \vec{j}(\vec{r},t) = -\frac{\partial}{\partial t} \rho_Q (\vec{r},t)}\quad \tx{Kontinuitätsgleichung}$$
 Ladungen erhalten; werden nicht erzeugt oder vernichtet
 \subsection{Ohmsches Gesetz}
@@ -1082,66 +1084,61 @@ R: el./ohmscher Widerstand $$[R] = 1 \frac{\tx{V}}{\tx{A}} = 1 \Omega \quad \tx{
 
 \subsubsection{Exp: Strom-Spannungs Charakteristika $I(U)$}
 $R(U) = \frac{dU}{dI}$\\
-
 $$\begin{array}{l|l|l}
 \tx{\underline{Kohlefaden}} & \tx{\underline{Glühlampe}} & \tx{\underline{Konstantandraht}}\\
 &&\\
 R \tx{ kleiner für große } U & R \tx{ größer für große } U & R \tx{ konstant} \\
 \end{array}$$
-
 Ursache: Temperaturabhängigkeit $R(T)$ ($\rightarrow
 $später)\\
 Strikt: Ohmscher Widerstand $I\sim U^1$; nicht-ohmsch $I\sim U^k \quad k \neq 1$
 \subsubsection{Supraleitung}
-
 Flüssiger Stickstoff: $T_{W_2} = 77K \widehat{=} - 196^\circ C$\\
 Messung: $R(\Delta T) \quad \Delta T = T_{\tx{Probe}} - T_{W_2} \quad \tx{Zeitabstand } \Delta t \approx 5s$
 Beobachtung:\\
 Hochtemperatursupraleiter $R = 0\Omega \quad \tx{bis zu} \quad \Delta T \approx 8 K$\\
 $\rightarrow $ Sprungtemperatur $T_c = 77K + 8 K = 85 K \widehat{=} -188^\circ C$\\
 Kupfer:\\
-$R = 0,7 \tx{m}\Omega$ für kleine $\Delta T$, danach ohmscher Widerstand
-Supraleitung: gewisse Materialien die für $T<T_c$ Widerstand Verlieren
+$R = 0,7 \tx{m}\Omega$ für kleine $\Delta T$, danach ohmscher Widerstand\\
+Supraleitung:\\ gewisse Materialien die für $T<T_c$ Widerstand Verlieren
 \subsection{Arbeit und Leitung}
 An Ladung q (von $\varphi_1$ nach $\varphi_2$ gebracht) wird Arbeit verrichtet/gewonnen
 $$W = q(\varphi_1 - \varphi_2) = q U$$
-In $dt$ wird $dQ$ transportiert, dann wird Leistung p verrichtet.
-$$\boxed{p = \frac{dW}{dt} = \frac{dQ}{dt} U = U I} \quad \tx{el. Leistung} $$
-Umkehrung: $$W = \int_0^t p(t) \; dt = \int_0^t U(t) I(t) \; dt$$
-$[p] = 1 \tx{W} = 1 \tx{VA} = 1 \frac{\tx{I}}{\tx{s}}$\\
+In $dt$ wird $dQ$ transportiert, dann wird Leistung $P$ verrichtet.
+$$\boxed{P = \frac{dW}{dt} = \frac{dQ}{dt} U = U I} \quad \tx{el. Leistung} $$
+Umkehrung: $$W = \int_0^t P(t) \; dt = \int_0^t U(t) I(t) \; dt$$
+$[P] = 1 \tx{W} = 1 \tx{VA} = 1 \frac{\tx{I}}{\tx{s}}$\\
 Leistung wird im Leiter in Wärme umgewandelt geht aus Stromkreis verloren.
 \subsubsection{Exp: Widerstände}
 Widerstände aus Fe und Cn in Reihe geschalten $R_{Cn} < R_{Fe}$ Strom I gleich \\
-$p = UI = R I^2 \quad \rightarrow \quad P_{Fe} > P_{Cn}$
+$P = UI = R I^2 \quad \rightarrow \quad P_{Cn} < P_{Fe}$
 
-% vorlesung ejdoisnvdowcs verbessere I = j bis zur formel I = |\vec{j}|
+% vorlesung ejdoisnvdowcs
 
 \subsection{Leitungsvorgänge in Metallen und Halbleitern}
-\underline{Metalle:} \\
+\textbf{Metalle:} \\
 Strom durch die $ e^- $ im Leitungsband, U an Drahtenden $ \rightarrow  \vec{E}$-Feld\\
 Beschleunigung der $ e^- \quad \vec{F}_{e^-} = - e \vec{E}$\\
 Aber: thermische Bewegung $hT(300\tx{K})= 0,0025 \tx{eV} \rightarrow v_{\tx{therm}} \approx 10^5 \frac{\tx{m}}{\tx{s}}$
 Stöße mit den Atomen (,,Reibungseffekt``)\\
-$\rightarrow$ Drift der Elektronen mit $ v_{\tx{drift}} $\\\\
-Stromdichte $ \vec{I} $: in dt passieren alle $ e^- $ die Fläche A in $dl = v_0 t$ bzw $ V = dl\;A $\\
-$dQ = N_e e = e n_e V \;dA\;dt$ \\
+$\rightarrow$ Drift der Elektronen mit $ v_{\tx{drift}} $\\[5pt]
+Stromdichte $ \vec{j} $: in dt passieren alle $ e^- $ die Fläche A in $dl = v_0 t$ bzw $ V = dl\;A $\\
+$$dQ = N_e e = e n_e V \;dA\;dt$$ 
 $N_e$ Anzahl $e^-$, $n_e \ e^- $-Dichte\\
-$\boxed{\vec{I} = - n_e \vec{v}_0}$ ,,-`` weil $ \vec{v}_0 \uparrow \downarrow \vec{E} $\\
+$$\boxed{\vec{j} = - n_e e \vec{v}_0}$$ ,,$-$`` weil $ \vec{v}_0 \uparrow \downarrow \vec{E} $\\
 Driftgeschewindigkeit $v_D$ 
 $$v(t) = a t = \frac{e|\vec{E}|}{m_e} t \qquad m_e \tx{ Elektronenmasse }$$
+(mit $ F_el = q \cdot \vec{E} $ und $ q = e $)\\
 Sei $ \mathcal{T}_s $ mittlere Zeit zwischen 2 Stößen
 $$v_0 = \frac{e|\vec{E}| \mathcal{T}_s}{m_e} = \boxed{\frac{n_e e^2 \mathcal{T}}{m_e}} |\vec{E}|$$
 $$\boxed{\sigma_{el} = \frac{1}{\rho_{el}} = \frac{n_e e^2 \mathcal{T}}{m_e}}$$
-$ \sigma_{el} $ Elektrische Leitfähigkeit?!?!? $ \rho_{el} $ spezifischer Widerstand $ [\rho_{el} ] = \Omega m $
-$$\boxed{\vec{I} = \sigma_{el} \vec{E}}$$
+$ \sigma_{el} $ Elektrische Leitfähigkeit?!?!? $\quad \rho_{el} $ \textbf{spezifischer Widerstand} $ [\rho_{el} ] = \Omega m $
+$$\boxed{\vec{j} = \sigma_{el} \vec{E}}$$
 ohmsches Gesetz in mikroskopischer/originaler Form\\
-,,Rückkehr`` zu makroskopischem OG $ \vec{I} = \tx{const.} $ über A
+,,Rückkehr`` zu makroskopischem OG. $ \vec{I} = \tx{const.} $ über A
 $$I = |\vec{j}| A = \frac{1}{\rho_{el}} |\vec{E}| A = \frac{1}{\rho_{el}} \frac{U}{l} A$$
-
-%hier
-
-d.h. $\boxed{ R = \frac{\rho_{el} l}{A}}$ Widerstand eines Drahtes\\
-\underline{Halbleiter:}\\
+d.h. $\boxed{ R = \frac{\rho_{el}\ l}{A}}$ \textbf{Widerstand eines Drahtes}\\
+\textbf{Halbleiter:}\\
 Bandlücke $ \Delta E $ zwischen Valenz- und Leitungsband 
 $$n_e = n_0 e^{-\frac{\Delta E}{k T}} \quad \tx{steigt mit T}$$
 \begin{itemize}
@@ -1155,25 +1152,25 @@ $$n_e = n_0 e^{-\frac{\Delta E}{k T}} \quad \tx{steigt mit T}$$
 \subsection{Kirchhoffsche Gesetze KHG}
 \begin{itemize}
 	\item 2 KHG + OG Grundlage für U bzw. I in R-Netzwerken
-	\item 1.KHG (auch Kontenregel): im Knoten gilt $ \sum_i I_i = 0 $ aus Ladungserhaltung
-	\item 2.KHG (auch Maschenregel): in Maschen gilt $ \sum_i U_i = 0 $ folgt $ \oint \vec{E} ; d\vec{S} = 0 $
+	\item 1.KHG (auch \textbf{Kontenregel}): im Knoten gilt $ \sum_i I_i = 0 $ aus Ladungserhaltung
+	\item 2.KHG (auch \textbf{Maschenregel}): in Maschen gilt $ \sum_i U_i = 0 $ folgt $ \oint \vec{E} \; d\vec{S} = 0 $
 \end{itemize}
-\underline{Widerstandsschaltungen}
+\textbf{Widerstandsschaltungen}
 \begin{itemize}
-	\item Reihenschaltung:\\
+	\item \textbf{Reihenschaltung:}\\
 	Knotenregel: $ I = I_1 = I_2 $\\
 	Machenregel: $ U = U_1 + U_2 $\\
 	OG: $ U = R_1 I_1 + R_2 I_2 = (R_1 +R_2) I $\\
 	$ \rightarrow R_{\tx{ges}} = R_1 + R_2 $\\
-	bzw. für $ n\ R_i: \quad R_{\tx{ges}} = \sum_{i=1}^{n} R_i $
-	\item Parallelschaltung:\\
+	bzw. für $ n\ R_i:$ $$R_{\tx{ges}} = \sum_{i=1}^{n} R_i $$
+	\item \textbf{Parallelschaltung:}\\
 	Knotenregel: $ I = I_1 +I_2 $\\
 	Maschenregel: $ U = U_1 = U_2 $\\
 	$I = I_1 + I_2 = \frac{U_1}{R_1} + \frac{U_2}{R_2} = U (\frac{1}{R_1}+\frac{1}{R_2})$\\
 	$ \frac{1}{R_{\tx{ges}}} = \frac{1}{R_1} + \frac{1}{R_2} $\\
-	bzw. für $ n R_i: \frac{1}{R_{\tx{ges}}} = \sum_{i=1}^{n}  \frac{1}{R_i}$
+	bzw. für $ n R_i:$ $$\frac{1}{R_{\tx{ges}}} = \sum_{i=1}^{n}  \frac{1}{R_i}$$
 \end{itemize}
-\underline{Wheatstonesche Brückenschaltung}\\
+\textbf{Wheatstonesche Brückenschaltung}\\
 Ziel: Messung von unbekannten $ R_x $\\
 Spannungen an den grünen Punkten:
 $$U_L = \frac{R_2}{R_1 + R_2} U_0 \qquad U_R = \frac{R_x}{R_0 + R_x} U_0 $$
@@ -1187,7 +1184,7 @@ Beobachtung: reines $ H_2O $ kein Strom, Zugabe von $ NaCl $ Strom $\sim$ Konzen
 	$$ NaCl \rightarrow Na^+ (H_2O) + Cl^- (H_2O)$$
 	wenn E(Anlagerung) > E(Ionisation)
 	\item Wanderung der$ Na^+ , Cl^- $-Ionen im $ \vec{E} $-Feld.\\ Materialabscheidung an Elektroden (fest, gasförmig)\\
-	$ Na^+ $ zu Kathode(-): Abscheidung von $ Na  \ (Na^+ + e^- = Na)$\\
+	$ Na^+ $ zu Kathode($-$): Abscheidung von $ Na  \ (Na^+ + e^- = Na)$\\
 	$ CL^- $ zu Anode(+): Abscheidung von Chlorgas $ (2 Cl^- \rightarrow Cl_2 + 2 e^-) $
 \end{itemize}
 \subsubsection{Exp:} Glas bei $ T = 300 \tx{K} $ Isolator, erstarrte Flüssigkeit bei $ T = 600^\circ \tx{C} $ Funken, erster Stromfluss\\
@@ -1195,13 +1192,13 @@ Strom $ \rightarrow  T\nearrow \rightarrow I\nearrow \rightarrow T\nearrow \dots
 Ionenleitung:\\
 pos. Ionen mit Ladung $ Z_+ $ und Dichte $ n_+ $\\
 neg. Ionen mit Ladung $ Z_- $ und Dichte $ n_- $\\\\
-Drift im $ \vec{E} $-Feld: $ \vec{v}_{x/-} = \pm \beta_{\pm} \vec{E} \quad \beta_{\pm}$ ist die Beweglichkeit der Ionen (teilweise: $ u, \mu $) $ [\beta] = \frac{\tx{m}^2}{\tx{Vs}} $\\\\
+Drift im $ \vec{E} $-Feld: $ \vec{v}_{+/-} = \pm \beta_{\pm} \vec{E} \quad \beta_{\pm}$ ist die Beweglichkeit der Ionen (teilweise: $ u, \mu $) $ [\beta] = \frac{\tx{m}^2}{\tx{Vs}} $\\\\
 Stromdichte: 
 $$|\vec{j}| = e(n_+ Z_+ V_+ + n_- Z_- V_-)$$
 $$\sigma_{el} = e(n_+\beta_+ Z_+ + n_- \beta_- Z_-)$$
 für kleine n: $ \beta \neq \beta(n) \quad \tx{typisches } \beta \sim 10^{-8} \rightarrow 10^{-7} \frac{\tx{m}^2}{\tx{Vs}}$
 
-\subsubsection{\underline{Voltasche Spannungsreihe}}
+\subsubsection{Voltasche Spannungsreihe}
 Metall in Wasser: wenn $ E_{\tx{Ionisation}} < E_{\tx{Hydratisierung}} $\\
 Atom $ \rightarrow A^+(H_2O) + e^-$ (Elektrode)\\
 $ \vec{E} $-Feld zwischen neg. Elektrode und pos. Elektrode \underline{bewirkt} $ E_{\tx{Ionisation}} $ wächst $ \rightarrow$ Sättigung der Ionisation \\
@@ -1213,7 +1210,7 @@ $ n_{\tx{Gleichgewicht}} $ und $ U_{\tx{Gleichgewicht}} $ (Elektrode und Flüssi
 		\item[b)] unterschiedliche Metalle $ \rightarrow \Delta U $ Galvanisches Element
 	\end{itemize}
 	\item Messung von $ \Delta U $ zu Referenzelektrode ($ H_2 $ umspültes Platin)\\
-	$ \rightarrow $ Voltasche Spannungsreihe (,,$-$`` unedel $ \rightarrow $) ,,$+$``edler)
+	$ \rightarrow $ Voltasche Spannungsreihe (,,$-$`` unedel $ \rightarrow $ ,,$+$``edler)
 \end{itemize}
 
 \subsection{Stromleitung in Gasen}
@@ -1260,40 +1257,41 @@ $$ n_+ = n_- = n $$
 	\item[$ \rightarrow $] Effekt beschrieben durch Ersatzschaltbild (Reale Stromquelle als Spannungsquelle in reihe mit Widerstand)
 \end{itemize}
 Spannungs/Stromquelle mit $ U_0 $ in Serie mit Innenwiderstand $ R_I \quad U_0 $ Elektromotorische Kraft EMK
-$$I = \frac{U_0}{R_I+R_V} \qquad U_{kl} = R_V I = \frac{R_V}{R_I+P_V}U_0$$
+$$I = \frac{U_0}{R_I+R_V} \qquad U_{kl} = R_V I = \frac{R_V}{R_I+R_V}U_0$$
 Leistung: $$P_V = U_{kl} I = \frac{R_V}{(R_V+R_I)^2} U_0^2$$
 Grenzfälle: \begin{itemize}
-	\item [a)] $ R_V \rightarrow \infty \quad U_{kl} \rightarrow U_0 \quad I \rightarrow 0 \quad P_V \rightarrow 0 $ offene Stromstärke
-	\item [b)] $R_V \rightarrow 0 \ \ \quad U_{kl} \rightarrow 0 \ \quad I = \frac{U_0}{R_I} \quad P_V \rightarrow0 $ kurz schluss
+	\item [a)] $ R_V \rightarrow \infty \quad U_{kl} \rightarrow U_0 \quad I \rightarrow 0 \qquad \quad \ \ \: P_V \rightarrow 0 $ offene Stromstärke
+	\item [b)] $R_V \rightarrow 0 \ \ \quad U_{kl} \rightarrow 0 \ \quad I = \frac{U_0}{R_I}= \frac{U_{kl}}{R_V} \quad P_V \rightarrow0 $ kurz schluss
 \end{itemize}
-dazwischen $ P_V $ maximal
-\subsubsection{Thermoelektrizität}
-\underline{Kontaktpotential}
+dazwischen $ P_V $ maximal (bei $ R_I = R_V $ in Übung berechnet)
+\subsection{Thermoelektrizität}
+\textbf{Kontaktpotential}
 \begin{itemize}
 	\item 2 unterschiedliche Metalle in Kontakt\\
-	Fermi-Energie / Austrittsarbeiten sind unterschiedlich\\
-	$ E_F(A) < E_F(B) : $ wandern $ e^- $ von $ B $ nach $ A $, $ B $ pos. geladen / $ A $ neg. geladen \\
+	\textbf{Fermi-Energien / Austrittsarbeiten} sind unterschiedlich\\
+	$ E_F(A) < E_F(B) : $ wandern $ e^- $ von $ A $ nach $ B $, $ A $ pos. geladen / $ B $ neg. geladen \\
 	$ \rightarrow \vec{E}(A\rightarrow B) $ entgegengesetzt zu Strom
 	\item[$ \rightarrow $] Kontaktspannung $ U_{\tx{kon}} = E_F(B)-E_F(A) $\\
 	Geschlossener Kreis: $ \sum_i U_{\tx{kon}}^i = 0 $ bei konstanter Temperatur
 \end{itemize}
-\underline{Seebeck-Effekt}
+\textbf{Seebeck-Effekt}
 \begin{itemize}
 	\item $ U_{\tx{kon}} $ temperaturabhängig
 	\item kontakte 1 und 2 bei $ T_1 $ und $ T_2 $\\
 	$ \rightarrow $ Seebeck koeffizienten $ [S_i]  = \frac{\tx{V}}{\tx{K}}$ typ: $ 10^{-5 \rightarrow -6} \tx{ in Metall } 10^{-3} \tx{ in Halbleiter } $
 	\item $ \Delta T $ bewirkt Spannung
 \end{itemize}
-\underline{Peltier-Effekt}\\
+\textbf{Peltier-Effekt}\\
 Strom durch Material A, B, A
 \begin{itemize}
 	\item Strom durch Kontaktstellen bewirkt $ \Delta T $
 	\item $ E^A_F > E_F^B $ AB heiß BA kühl
 \end{itemize}
-$ A\rightarrow B : \frac{dW}{dt} > 0$ T steigt, Energie dem Gitter zugeführt\\
+$ A\rightarrow B : \frac{dW}{dt} > 0$ T steigt, Energie dem Gitter zugeführt\\[5pt]
 $ B\rightarrow A : \frac{dW}{dt} < 0$ T sinkt, Energie dem Gitter entzogen
 $$\frac{dW}{dt} = (\Pi_A - \Pi_B)I \qquad  \tx{ Peltierkoeffizienten} [\Pi] = \frac{\tx{J}}{\tx{K}} \quad (\tx{typ } 10^2 J/K)$$
 Es gilt: $ \Pi_A = S_A T$
+
 \section{Das magnetische Feld}
 \subsection{Eletromagnetische Kräfte}
  $ \rightarrow $ Folie
@@ -1306,17 +1304,17 @@ Es gilt: $ \Pi_A = S_A T$
 \begin{itemize}
 	\item Beobachtung:
 	\begin{itemize}
-		\item Feldlinien immer geschlossen\\
+		\item \textbf{Feldlinien immer geschlossen}\\
 		$[$auch innerhalb von Permanentmagneten$]$\\
-		$ \Rightarrow $ quellenfrei
+		$ \Rightarrow $ \textbf{Quellen-frei}
 		\item in Nähe von Pol und Stromdurchflossener Leiter Feldlinien Dichter\\
 		$ \rightarrow $ Feld größer $ \sim \frac{1}{r^k} \quad k> 0 $
 		\item Konvention: \\
-		Außenbereich von Nord $ \rightarrow $ Süd\\
-		Innenbereich von Süd $ \rightarrow $ Nord\\
-		in Permanentmagneten
+		\textbf{Außenbereich} von Nord $ \rightarrow $ Süd\\
+		\textbf{Innenbereich} von Süd $ \rightarrow $ Nord\\
+		in \textbf{Permanentmagneten}
 	\end{itemize}
-	Idee: math. Beschreibung durch Vektorfeld $ \vec{B}(\vec{r}) $ ,,magnetische Feldstärke``,\\ ,,Flussdichte``, ,,Induktion``\\
+	Idee: mathematische Beschreibung durch Vektorfeld $ \vec{B}(\vec{r}) $ ,,magnetische Feldstärke``,\\ ,,Flussdichte``, ,,Induktion``\\
 	$ [\vec{B}] = 1 \tx{T (Tesla)} = 1 \frac{Vs}{m^2} $ (Zshg. später)\\magnetischer Fluss $ \Phi_M \equiv \int_A \vec{B} \; d \vec{A} $
 \end{itemize}
 
@@ -1326,32 +1324,30 @@ Es gilt: $ \Pi_A = S_A T$
 \subsection{Maxwell-Gleichung der Magnetostatik}
 \begin{itemize}
 	\item geschlossene Feldlinien ohne Anfang und Ende\\
-	\fbox{
-		$\begin{array}{c}
-		\tx{div } \vec{B}=0 \\
-		\Phi_M = \oint_A \vec{B}\; d \vec{A}
-		\end{array}$
-	}
-	4. MW-Gl. $\vec{B}$ ist quellenfrei.\\
+	\begin{center}
+		\fbox{
+			$\begin{array}{c}
+			\tx{div } \vec{B}=0 \\
+			\Phi_M = \oint_A \vec{B}\; d \vec{A}
+			\end{array}$
+		}
+	\end{center}
+	4. MW-Gl. $\vec{B}$ ist Quellen-frei.\\[5pt]
 	Äquivalenz mittels Gaußschen Satzes
 	$$\oint_A \vec{B}\; d \vec{A} = \int_V \tx{div} \vec{B}\; dV =0 \quad \tx{für beliebige Volumina}\ \Rightarrow \ \tx{div} \vec{B} =0$$
 	\item kein skalares Potential $\varphi_M$ definierbar
 	\item Feld von stromdurchflossenen Leiter. 
-	$$\vec{B}(\vec{r})=B(|\vec{r}|) \vec{e}_\varphi \tx{nur von r abhängig}$$
-	$$\oint_{r=r_0}\vec{B}\;d\vec{s} = 2 \pi r_0 B(r_0) \neq 0 . I \tx{experimentell}$$
-	$\rightarrow$ \fbox{$\oint\vec{B}\; d\vec{s}=\mu_0 I$} Ampéresches Gesetz $\mu_0$ magnetische Feldkonstante Permeabilität des Volumens
+	$$\vec{B}(\vec{r})=B(|\vec{r}|) \vec{e}_\varphi \tx{ nur von r abhängig}$$
+	$$\oint_{r=r_0}\vec{B}\;d\vec{s} = 2 \pi r_0 B(r_0) \neq 0 \ \  \mu_0 I \tx{ experimentell}$$
+	$$\boxed{ \rightarrow \quad \oint\vec{B}\; d\vec{s}=\mu_0 I}$$ Ampéresches Gesetz $\mu_0$ magnetische Feldkonstante Permeabilität des Volumens
 	$$\mu_0 = 4 \pi \times 10^{-7} \frac{\tx{Vs}}{\tx{Am}} \quad \mu_0 \tx{ ohne Felder } \rightarrow \tx{später}$$
 	\item Anwendung des stokeschen Satzes mit $I= \int \vec{j} \; d \vec{A}$
 	$$\oint_{R(A)}\vec{B} \; d\vec{s} = \int_A \tx{rot }\vec{B} \; d\vec{A} = \mu_0 \int \vec{j} \; d\vec{A}$$ 
 	Weg $ \vec{s} $ auf dem Rand $ R(A) $ pos. Schraube um $ \vec{A} $
 \end{itemize}
-
-  \boxed{\tx{rot} \vec{B} = \mu _0 \vec{j} \qquad \oint \vec{B} \; d \vec{s} = \mu _0 I}
-\indent \begin{tabular}{cc}
- \tx{2 MW-Gl. Wirbelkerne} =\\ \tx{Orte mit Stromdichte $\neq$ 0}
-\end{tabular}\\
-
-Def: magnetische Feldenergie $ E_{\tx{mag}} $ bzw. Energiedichte $ w_{\tx{mag}} $ 
+$$\boxed{\tx{rot} \vec{B} = \mu _0 \vec{j} \qquad \oint \vec{B} \; d \vec{s} = \mu _0 I}$$
+2 MW-Gl. Wirbelkerne = Orte mit Stromdichte $\neq$ 0\\[5pt]
+Def: \textbf{magnetische Feldenergie} $ E_{\tx{mag}} $ bzw. \textbf{Energiedichte} $ w_{\tx{mag}} $ 
 $$ E_{\tx{mag}} = \frac{1}{2 \mu _0} \int|\vec{B}|^2 \; dV \qquad  hier fehlt was$$
 Zsfg:\\
 $ \vec{E} $ ist wirbelfreies Quellfeld\\
@@ -1367,9 +1363,9 @@ $ \vec{B} $ ist quellfreies Wirbelfeld
 		\begin{itemize}
 			\item klassische Physik: lediglich Hilfsmittel
 			\item Quantenmechanik: Aharahou-Bohm-Effekt\\
-			$ \vec{A} \neq 0 $ beeinflusst eine $ e^- $-Strahl obwohl\\
+			$ \vec{A} \neq 0 $ beeinflusst einen $ e^- $-Strahl obwohl\\
 			$ \vec{B} = 0 $ auf Weg des Strahls
-			\item QED: $ (\varphi_{\tx{el}}) , \vec{A}) $ ist ,,Wellenfunktion`` des Photon
+			\item QED: $ (\varphi_{\tx{el}}, \vec{A}) $ ist ,,Wellenfunktion`` des Photon
 		\end{itemize}
 	\end{itemize}
 	\item $ \vec{A} $ ist nicht eindeutig\\
@@ -1377,11 +1373,11 @@ $ \vec{B} $ ist quellfreies Wirbelfeld
 	$ \rightarrow $  Eichfreiheit durch Wahl von f oft:\\
 	Coulombgleichung: $ \tx{div} \vec{A} \buildrel ! \over = 0 $
 	\item f eindeutig ? Nein.\\
-	Alle $ f $ mit $ \Delta f = \tx{div grad} f = 0 $ erfüllen $ \div(\vec{A}) = 0 $\\
-	nutze freiheit in $ f $, so dass $ |\vec{A}(\vec{r}) \buildrel |\vec{r}| \rightarrow \infty \over \longrightarrow 0 $
+	Alle $ f $ mit $ \Delta f = \tx{div grad} f = 0 $ erfüllen $ \tx{div}(\vec{A}) = 0 $\\
+	nutze Freiheit in $ f $, so dass $ |\vec{A}(\vec{r})| \buildrel |\vec{r}| \rightarrow \infty \over \longrightarrow 0 $
 	\item  Betrachte 2. MG.
 	$$ \tx{rot} \vec{B} = \vec{\nabla} \times (\vec{\nabla} \times \vec{A}) = \dots = - \Delta \vec{A}$$
-	also\\
+	also
 	\begin{center}
 			\fbox{$\begin{array}{c}
 				\Delta \vec{A} = \mu_0 \vec{j}\\
@@ -1392,48 +1388,55 @@ $ \vec{B} $ ist quellfreies Wirbelfeld
 \subsection{Berechnung von Magnetfeldern}
 Aus MW-Gl. bzw. Ampéresches Gesetz
 \begin{itemize}
-	\item[1)] gerader Leiter, Strom I\\
+	\item[1)] \textbf{gerader Leiter}, Strom I\\
 	$ \int\vec{B} \; d \vec{s} = \mu _0 I \quad B $ nur abhängig von r, in Richtung $ \vec{e_r} $\\
 	$ B(r) 2 \pi r = \mu_0 I $\\
 	$$\boxed{B(r) = \frac{\mu_0 I}{2 \pi r}}$$
-	\item[2)] Koaxialkabel
-	$$B(r) = \frac{\mu_0 I}{2 \pi} \qquad \substack{\frac{r}{R_s} \tx{ für } r<R_s \\\frac{1}{r} \tx{ für } R_s < r < R-n \\ 0 \tx{ für } R_n < r}$$
-	\item[3)] Solenoid
+	\item[2)] \textbf{Koaxialkabel}
+	$$B(r) = \frac{\mu_0 I}{2 \pi} \cdot
+	\left\{ \begin{array}{ccc}
+	\frac{r}{R_s} & \tx{für} & r < R_s\\
+	\frac{1}{r} & \tx{für} & R_s < r < R_n\\
+	0 & \tx{für} & R_n < r
+	\end{array} \right.$$
+	\item[3)] \textbf{Solenoid}
 	$$\oint \vec{B} \; d \vec{s} = \int_{C}^{D} \vec{B} \; d \vec{s} + \int_{A}^{B} \vec{B} \; d \vec{s} \quad \tx{ auf anderen Wegen } \quad \vec{B} \perp d\vec{s}$$
 	$B$ homogen und entlang Symmetrieachse \\
 	für ,,AB``$ \rightarrow \infty  \quad B(\infty) \rightarrow 0$\\
-	$$ = \int_{C}^{D} \vec{B}\; d \vec{s} = B l = \mu_0 N I$$
-	l Länge des Solenoiden N Windungszahl
+	$$ \oint \vec{B} \; d\vec{s} = \int_{C}^{D} \vec{B}\; d \vec{s} = B l = \mu_0 N I$$
+	$l$ Länge des Solenoiden $N$ Windungszahl
 	$$\boxed{ B = \frac{\mu_0 N I }{l}}$$
-	\item Toroidspule
+	\item[4)] \textbf{Toroidspule}
 	$ \vec{B} = \frac{\mu N I }{2 \pi R} \vec{e}_\varphi$
-\end{itemize}
-\underline{Biot-Savart-Gesetz BSG}\\
+	\item[5)] \textbf{Flächenstrom} $B_y = -\frac{1}{2} \mu_0 \vec{j} d$
+\end{itemize}\pagebreak
+\textbf{Biot-Savart-Gesetz BSG}
 \begin{itemize}
 	\item Ziel: Verfahren zur Berechnung von $ \vec{B} $ für beliebige gegebene $ \vec{j}, I $
-	\item  Betrachte infinitisimales Leeiterstück mit inf Stromdichte $ d\vec{j} \rightarrow d \vec{V} $ \\
+	\item  Betrachte infinitesimales Leiterstück mit infinitesimaler Stromdichte $ d\vec{j} \rightarrow d \vec{V} $ \\
 	$ \vec{B}_{\tx{Gesamt}} $ aus Summe/Integral über $ d\vec{j} $
 	\item Es gilt: $ \Delta \vec{A} = -\mu_0 \vec{j} \quad [\tx{Vgl:} \Delta \varphi_{\tx{el}} = - \frac{\rho}{\epsilon_0}] $ \\
-	Lsg: $  \vec{A} = \frac{ \mu_0}{4 \pi} \int d^3 \vec{r}' \frac{\vec{j} (\vec{r}')}{|\vec{r} - \vec{r}'|} $\\
-	$ \vec{B}  = \tx{rot} \vec{A} = \dots = \frac{\mu_0}{4 \pi} \int d^3 \vec{r}\,' [ \frac{1}{|\vec{r} - \vec{r}\,'|} \vec{\nabla} \times \vec{j} (\vec{r}\,')= + \frac{1}{|\vec{r} - \vec{r}\,'|}^3 \vec{j} \times (\vec{r} \times \vec{r}\,')] $\\
+	$$\tx{Lsg:} \qquad  \vec{A} = \frac{ \mu_0}{4 \pi} \int d^3 \vec{r}' \frac{\vec{j} (\vec{r}')}{|\vec{r} - \vec{r}'|} $$
+	$ \vec{B}  = \tx{rot} \vec{A} = \dots = \frac{\mu_0}{4 \pi} \int d^3 \vec{r}\,' \Big[ \frac{1}{|\vec{r} - \vec{r}\,'|} \vec{\nabla} \times \vec{j} (\vec{r}\,')= + \frac{1}{|\vec{r} - \vec{r}\,'|}^3 \vec{j} \times (\vec{r} \times \vec{r}\,')\Big] $\\
 	$ \tx{rot} \vec{j} = 0 $ kein Kreisstrom ohne externen Antrieb in Magnetostatik
 	$$\boxed{\vec{B} = \frac{\mu_0}{4\pi} \int d^3 \vec{r}\,' \frac{\vec{j} (\vec{r}\,') \times (\vec{r} - \vec{r}\,') }{| \vec{r} - \vec{r}\,'| ^3}}$$
 	
 	% andres wenn bis I
+	
 	$$\boxed{\vec{B} = -\frac{\mu_0 I}{4\pi} \int \frac{(\vec{r} - \vec{r}\,') \times d\vec{l} }{| \vec{r} - \vec{r}\,'| ^3}} oder so nachschauen $$
 	
 	hier fehlt was\\
 	
 \end{itemize}
-Bestimmung von $ \vec{B} $ mit BSG
+\textbf{Bestimmung von $ \vec{B} $ mit BSG}
 \begin{itemize}
 	\item[1)] Leiterschleife mit Radius R, Strom I\\
-	ges: Magnetfeld auf der Achse aus $ d\vec{l} \sim \vec{j} \quad d \vec{B} \sim - (\vec{r} - \vec{r}') \times d\vec{l} $\\
-	Symmetrie bzw Kompensatioen von $ d\vec{l} $ bei $ \varphi $ und $\varphi + \pi$ $ \Rightarrow \vec{B} = B_z \vec{e}_z $\\
-	$ dB_z = \cos \alpha d B \quad \cos \alpha = \frac{R}{|\vec{r} - \vec{r} '| }  = \frac{R}{\sqrt{R^2 + z^2}}$\\
-	$ d\vec{l} \perp \vec{r} - \vec{r}' \Rightarrow $ Beträge ausreichend\\
+	ges: Magnetfeld auf der Achse aus $ d\vec{l} \sim \vec{j} \quad d \vec{B} \sim - (\vec{r} - \vec{r'}) \times d\vec{l} $\\
+	Symmetrie bzw Kompensation von $ d\vec{l} $ bei $ \varphi $ und $\varphi + \pi$ $ \Rightarrow \vec{B} = B_z \vec{e}_z $\\
+	$$ dB_z = \cos \alpha d B \quad \cos \alpha = \frac{R}{|\vec{r} - \vec{r'}|}  = \frac{R}{\sqrt{R^2 + z^2}}$$
+	$ d\vec{l} \perp \vec{r} - \vec{r'} \Rightarrow $ Beträge ausreichend\\
 	\begin{align*}
-	B_z & = \frac{\mu_= I }{4 \pi} \int d l \frac{\cos \alpha }{|\vec{r} - \vec{r}'|} \quad \tx{ auf Kreis } \quad R,z = \tx{const.} \\
+	B_z & = \frac{\mu_0 I }{4 \pi} \int d l \frac{\cos \alpha }{|\vec{r} - \vec{r'}|} \quad \tx{ auf Kreis } \quad R,z = \tx{const.} \\
 	& = \frac{\mu_0 I }{4 \pi} \frac{R}{(R^2 + z^2 )^{\frac{3}{2}}} 2 \pi R = \frac{\mu_0 I }{2} \frac{ R^2}{(R^2 + z^2 ) ^{\frac{3}{2}}}
 	\end{align*}
 	
@@ -1443,7 +1446,7 @@ Bestimmung von $ \vec{B} $ mit BSG
 
 \section{Magnetische Kräfte}
 \subsection{Die Lorenz Kraft}
-Erinnerung: Anziehung $  I_1 \uparrow \uparrow I_2 $, Abstoßung $ I_1 \uparrow \downarrow I_2 $ keine Coulombkräfte, da Leuter neutral
+Erinnerung: Anziehung $  I_1 \uparrow \uparrow I_2 $, Abstoßung $ I_1 \uparrow \downarrow I_2 $ keine Coulomb-Kräfte, da Leiter neutral
 \subsubsection{Exp: Fadenstrahlrohr}
 Beobachtung: $  R \sim \frac{1}{I} \sim \frac{1}{|\vec{B}|} $\\
 Richtung der Kraft: $ -\vec{v}_e \times \vec{B} \quad $ rechte-Hand-Ragel ,,$ + $``$ Q_e = -e $\\\\
@@ -2175,14 +2178,14 @@ $$ (\ub{i \omega L}_{Z_L} + \ub{\frac{1}{i \omega L}}_{Z_C} + \ub{R}_{Z_R} ) I_0
  	\item Lösungsansatz: $ Q = Q_0 \cos \omega t $\\
  	Einsetzen: $ -Q_0 \omega^2 \cos \omega t + \frac{1}{LC} Q_0 \cos \omega t = 0 $\\
  	also: $$\boxed{\omega = \frac{1}{\sqrt{LC}} \qquad f = \frac{1}{2 \pi} \frac{1}{\sqrt{LC}} } \quad \tx{ Thomson-Formel}$$\\
- 	harmonische Schwinung mit Randbedingung $ Q(t=0)= Q_0 $ andere Sartbedingung: $ Q(t) = Q_0 \cos(\omega t + \phi) $\\
+ 	harmonische Schwingung mit Randbedingung $ Q(t=0)= Q_0 $ andere Startbedingung: $ Q(t) = Q_0 \cos(\omega t + \phi) $\\
  	$ I(t) = \frac{dQ}{dt} = - Q_0 \omega \sin(\omega t + \phi) = Q_0 \omega \cos (\omega t - \frac{\pi}{2} + \phi) $\\
  	d.h. I eilt $ U_C $ bzw. $ Q_C $ um $\frac{\pi}{2}$ hinterher
  \end{itemize}
  \subsubsection{Gedämpfte Schwingung $ R \neq 0 $}
  \begin{itemize}
  	\item RLC-Kreis $ \quad Q(t=0) = Q_{\tx{max}} $
- 	\item $ t=0 $ Kreis schließen $ \rightarrow $ Schwinung mit abnehmender Amplitude
+ 	\item $ t=0 $ Kreis schließen $ \rightarrow $ Schwingung mit abnehmender Amplitude
  	\item Maschenregel: $ U_L + U_C + U_R = 0 $\\
  	$$\frac{d^2 Q}{dt^2} + \ub{\frac{R}{L}}_{2 \gamma} \frac{dQ}{dt} + \ub{\frac{1}{LC}}_{\omega^2_0} Q = 0 $$
  	$ \gamma $ ist die Dämpfungskonstante, $ 2 \gamma $ Dämpfungsterm
