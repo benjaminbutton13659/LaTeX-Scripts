@@ -3650,16 +3650,16 @@ Das Tensorprodukt von zwei K-VR U und V ist ein K-VR T zusammen mit einer (unive
 	\begin{tikzpicture}[baseline= (a).base]
 	\node[scale=1.3] (a) at (0,0){
 		\begin{tikzcd}
-		\arrow{r}{\otimes} \arrow{d}[swap]{f\, \circ\, \otimes\, =\, g} U \times V &   T \arrow{dl} {f} \\
+		\arrow{r}{\otimes} \arrow{d}[swap]{f\, \circ\, \otimes\, =\, g} U \times V &   T \arrow{dl} { \exists ! f} \\
 		W
 		\end{tikzcd}
 	};
 	\node at (0.1,0.2) {$ \blacksquare $};
 	\end{tikzpicture}
 \end{center}
-für eine eindeutig bestimmte lineare Abbildung $ f: T \to W  $
+für eine eindeutig bestimmte lineare Abbildung $ f: T \to W  $. Formel ist $ (T;\otimes) $ bis auf Isomorphi eindeutig bestimmt.
 \subsection{Satz:}
-JJe zwei K-VR U und V besitzen ein Tensor produkt, dass bis auf Isomorphi eindeutig bestimmt ist. Schreibe $ U \otimes V $
+Je zwei K-VR U und V besitzen ein Tensor-Produkt $ (T;\otimes) $, dass bis auf Isomorphi eindeutig bestimmt ist. Schreibe $ U \otimes V $
 \Bew{}{
 Seien $ \{a_I\}_{i \in I} $ Basis von U. $ \{b_j\}_{j\in J} $ Basis von V.\\
 Wähle Elemente $ (c_{i,j})_{(i,j) \in I \times J} $ K-linear unabh.\\[5pt]
@@ -3686,8 +3686,135 @@ $$ a_i \otimes b_j := c_{i,j}$$
 $$\cancel{\otimes (a_i,b_j)} $$
 }
 
+% neue Vorlesung
 
+\subsection{Bew:} 
+Sei $ \{a_i\}_{i\in I} $ Basis von U, $ \{b_j\}_{j \in J} $ Basis von V
+$$\forall i \in I , j \in J \rightarrow T_{ij}$$
+$$T = \Big\{ \sum_{\tx{endliche}} \equalto{\lambda_j}{\in K} T_{ij} \Big\}$$
+\begin{align*}
+\otimes : \  & U \times V \to T \quad \rightarrow \tx{ Erweitere sie um Bilinearität}\\
+& (a_i,b_j) \to T_{ij}
+\end{align*}
 
+% tikz bild 1 in bildern
+
+$ F(T_{ij}) = g(a_i,b_j) $ ist eindeutig bestimmt!\\[10pt]
+\textbf{Eindeutigkeit:}\\
+Sei  $ T' $ auch ein Tensorprodukt von U,V $\quad \otimes ' : U \times V \to T' $
+
+% tikz bild 2 in bildern
+
+\subsection{Kor:}
+Für jede Basis $ \{a_i\}_{i\in I} $ von U und jede Basis $ \{b_j\}_{j\in J} $ von V ist: $ \{a_i \otimes b_j\}_{(i,j) \in I \otimes J} $ eine Basis von $ U \otimes V $.\\
+Isbesondere falls $ \dim U , \dim V =  \infty \quad $ ist $ \quad \dim (U  \otimes  V) = \dim U  \cdot  \dim V$
+
+\subsection{Kor:}
+Jedes Element $ w $ von $ U \otimes V $ lässt sich schreiben als $ \sum_{k=1}^{n} a_{i_k} \otimes v_k $ für $ v_k \in V $ eindeutig bestimmt.
+
+\Bew{}{
+$$w \in U \otimes V$$
+$$\{\equalto{ a_i \otimes b_j }{\otimes (a_i,b_j)}\} \quad \tx{Basis}$$
+\begin{align*}
+w &= \sum \lambda_{ij} a_i \otimes b_j\\
+&= \sum a_i \otimes \lambda_{ij} b_j\\
+&= \sum_i \sum_j a_i \otimes \lambda_{ij} b_j\\
+&= \sum_i a_i \otimes \underbrace{\sum_j \lambda_{ij} b_j}_{v_i \in V}
+\end{align*}
+\textbf{Frage:} Warum sind die $ v_i' $ s eindeutig bestimmt?
+$$w = \sum a_i \otimes v_i' \quad \longrightarrow \quad v_i' = \sum \mu_{ij} b_j$$
+$$ w = \sum a_i \otimes \Big( \sum \mu_{ij} b_j \Big) = \sum_i \sum_j \mu_{ij} a_i \otimes b_j$$
+$$\Rightarrow \lambda_{ij} = \mu_{ij} \Rightarrow v_i = v_i'$$
+$ \{ a_i \otimes b_j \} $ eine Basis von $ U \otimes V $
+}\\[5pt]
+\textbf{\underline{Achtung!}}\\
+Nicht jedes Element von $ U \otimes V $ lässt sich als ein rein Tensor $ u \otimes v $ schreiben!
+
+\Bew{}{
+$ U = V = \mathbb{R}^2 $ mit der Standartbasis $ \{ e_1, e_2\} $
+}
+
+\subsection{Beh:}
+$$w = e_1 \otimes e_2 + e_2 \otimes e_1 \in \mathbb{R}^2 \otimes \mathbb{R}^2$$
+angenommen:
+$$w = u \otimes v \qquad u,v \in \mathbb{R}^2$$
+$$u = (\lambda_1 e_1, \lambda_2 e_2) \qquad v = (\mu_1 e_1, \mu_2 e_2)$$
+$$u \otimes v = \lambda_1 \mu_1 e_1 \otimes e_1 + \lambda_1 \mu_2 e_1 \otimes e_2 + \lambda_2 \mu_1 e_2 \otimes e_1 + \lambda_2 \mu_2 e_2 \otimes e_2$$
+$$ \left.\begin{array}{c}
+\lambda_1 \mu_1 = 0\\
+\lambda_2 \mu_2 = 0\\
+\lambda_1 \mu_2 = 1\\
+\lambda_2 \mu_1 = 1
+\end{array} \right\} \begin{array}{cc}
+\rightarrow \mu_1 = 0\\
+\uparrow & \rightarrow \mu_2 = 0\\
+\rightarrow \lambda_1 \neq 0 & \uparrow\\
+& \rightarrow \lambda_2 \neq 0\\
+\end{array}$$
+$$\rightarrow v = 0 \Rightarrow u \otimes v = 0 \neq e_1 \otimes e_2 + e_2 \otimes e_1$$
+
+\subsection{Lemma:}
+V K-VR
+$$ K \otimes V \simeq V$$
+
+\Bew{}{
+Wir wollen zuerst eine Abbildung von $ K \otimes V \to V $ konstruieren
+
+% tikz bild 3
+
+\begin{align*}
+G: &V \to K \otimes V \quad \tx{ ist linear}\\
+&v \ \mapsto \ 1 \otimes v
+\end{align*}
+$ G $ ist surjektiv 
+$$\equalto{\lambda \cdot (1 \otimes v)}{\equalto{1 \otimes \lambda \cdot v}{G(\lambda v)}}$$
+Weil 1 eine Basis von K über K ist!\\
+Zu zeigen: $ F : K \otimes V \to V $ Isomorphismus
+\begin{align*}
+G \circ F(\lambda \otimes v) &= G(\lambda v) \\
+&= 1 \otimes \lambda \cdot v\\
+&= \lambda(1 \otimes v)\\
+&= \lambda \otimes v
+\end{align*}
+$$F \circ G(v) = F(1 \otimes v) = 1 \cdot v = v$$
+F und G sind Inverse voneinander
+}
+
+\subsection{Lemma:}
+\begin{enumerate}[a)]
+	\item $ F: U \to U'  \quad G: V \to V' $ lineare Abbildungen\\
+	$ \Rightarrow \exists \ F \otimes G: U \otimes V \to U' \otimes V' \quad u \otimes v \mapsto F(u) \otimes G(v) $ lineare Abbildung
+	\item $ Id_{Iu} \otimes Id_{Iv} = Id_{u \otimes v} $
+	\item $ (F_1 + F_2) \otimes G = F_1 \otimes G + F_2 \otimes G $
+	\item $ (\lambda F) \otimes G = \lambda (F \otimes G) $
+	\item $ (F_2 \circ F_1) \otimes (G_2 \circ G_1) = (F_2 \otimes G_2) \circ (F_1 \otimes G_1) $
+\end{enumerate}
+
+% tikz bild 4
+
+\Bew{}{
+\begin{enumerate}[a)]
+	\item Sei $$U \times V \to U' \otimes V' \quad (u,v) \mapsto F(u) \otimes G(v) \quad \tx{bilinear}$$
+	
+	% tikz bild 5
+	
+	\item trivial
+	\item einfach:
+	\item einfach:
+	\begin{align*}
+	(F_1+F_2) \otimes G(u\otimes v) &= (F_1 + F_2) (u) \otimes G(v)\\
+	&=(F_1(u) + F_2(v)) \otimes G(v)\\
+	&=\equalto{ F_1(u) \otimes G(v) }{(F_1 \otimes G) (u \otimes v)} + \equalto{ F_2(u) \otimes G(v) }{(F_2 \otimes G) (u \otimes v)}
+	\end{align*}
+	\item \begin{align*}
+	&\phantom{=} (F_2 \circ F_1) \otimes G_2 \circ G_1 (v)\\
+	&= F_2 \circ F_1 (u) \otimes G_2 \circ G_1 (v)\\
+	&= F_2 (F_1(u)) \otimes G_2(G_1(v))\\
+	&= F_2 \otimes G_2 \equalto{(F_1(u) \otimes G_1(v))}{(F_1 \otimes G_1) (u \otimes v)} \quad \tx{ ok !}
+	\end{align*}
+\end{enumerate}
+
+}
 
 	 
 \end{document}

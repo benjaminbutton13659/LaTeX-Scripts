@@ -157,7 +157,7 @@ $$U = 0V \quad \vert \vec{F}_G \vert = \vert \vec{F}_A \vert + \vert \vec{F}_{el
 $$\frac{4}{3} \pi r^3 \rho_{\tx{Oel}} g = \frac{4}{3} \pi r^3_{\pi} \rho_{\tx{Luft}} + Q_{\tx{tropf}} \frac{U}{d}$$
  d = Abstand Kondensatorplatten
 $$Q\pi = \frac{4}{3}	\pi g  \bigg( \rho_{\tx{Oel}}-\rho_{\tx{Luft}} \frac{d}{U}\bigg)$$
-viele Tröpfchen $\rightarrow$ Statische Auswertung\\
+viele Tröpfchen $\rightarrow$ Statistische Auswertung\\
 Ergebnis von Millikan \\
 \textbf{Elektrische Ladung ist gequantelt} $\pm e;\pm2e;\dots$
 $$e = 1.6021766208(88) \cdot 10^{-19} C$$
@@ -168,7 +168,7 @@ Quarks sind Konstituenten von Protonen und Neutronen\\
 $$Q_u = + \frac{2}{3}, Q_d = - \frac{1}{3} \Rightarrow Q_p = 1 Q_n = 0$$
 $$Q_p + Q_e < 10{-21} e$$ aus Stabilität der Materie\\
 \textbf{Historisch:}\\
-$Q = 4,774 +- 0,009 \cdot 10^{-10}$esu (Elactrostatic unit)\\
+$Q = 4,774 +- 0,009 \cdot 10^{-10}$esu (Electrostatic unit)\\
 1 esu$ = 3,34 \cdot 10^{-10} C$\\
 Millikans wert für Elementarladung: $$ \textrm{esu} \Rightarrow \textrm{SI}: e = 1,592 +- 0,003 \cdot 10 ^{-19} C$$
 ,,5$\sigma$`` - Effekt $\rightarrow$ Fehler unterschätzt.
@@ -297,11 +297,11 @@ $$\int_{\tx{Ring}} dQ \frac{1}{4\pi\epsilon_0} \frac{1}{R^2+a^2}\frac{a}{\sqrt{R
 \item[2)] \textbf{unendlich dünne, unendlich ausgedehnte leitende Platte}\\ Flächenladungsdichte $\sigma \quad [\sigma] = \frac{C}{m^2}$
 \begin{itemize}
 \item Symmetrie: $\vec{E} = \vec{E}_z \vec{e}_z \perp $ auf Platte
-$$Q = \frac{1}{4 \pi \epsilon_0} \int_{V Platte} d^3 \vec{r}\; \rho ( \vec{r})$$
+$$Q = \frac{1}{4 \pi \epsilon_0} \int_{V \tx{Platte}} d^3 \vec{r}\; \rho ( \vec{r})$$
 
 \begin{align*}
-\vec{E}(\vec{r}) &= \frac{1}{4 \pi \epsilon_0} \int_{V Platte} d^3 \vec{r}\; \frac{\rho ( \vec{r})}{r^2} \hat{r}\qquad \hat{r} \perp Platte\\
-&= \frac{1}{4\pi\epsilon_0} \int_{A Platte} d^2 \vec{r} \; \frac{\sigma}{r^2} \hat{r}
+\vec{E}(\vec{r}) &= \frac{1}{4 \pi \epsilon_0} \int_{V \tx{Platte}} d^3 \vec{r}\; \frac{\rho ( \vec{r})}{r^2} \hat{r}\qquad \hat{r} \perp \tx{ Platte}\\
+&= \frac{1}{4\pi\epsilon_0} \int_{A \tx{Platte}} d^2 \vec{r} \; \frac{\sigma}{r^2} \hat{r}
 \end{align*}
 
 \item Es gilt: $E_z = \cos\beta \vert \vec{E} \vert \qquad \cos\beta = \frac{a}{d}$\\
@@ -344,12 +344,12 @@ $$r_A = r_D \quad r_B = r_C \Rightarrow \frac{W}{q} \textrm{ auf beiden Wegen gl
 $$\Rightarrow \oint_{\textrm{geschlossenem Weg}} \vec{E}\; d\vec{s} = 0 \qquad \qquad W \textrm{ unabh. von Weg}$$
 + Superpositionsprinzip $\Rightarrow$ Arbeit auf einem geschlossenen Weg verschwindet (i.e = 0)\\
 Erlaubt Definition der potentiellen Energie
-$$ E_{pot} (\vec{r}) = -\int_{\vec{r}_0}^{\vec{r}} \vec{E} \; d\vec{s} $$
+$$ E_{\tx{pot}} (\vec{r}) = -\int_{\vec{r}_0}^{\vec{r}} \vec{E} \; d\vec{s} $$
 $\vec{r}_0$ ist ein Bezugspunkt (Referenzpunkt) oft im unendlichen da ($\vec{E}( |\vec{r}| \rightarrow \infty) \rightarrow 0$)
 In Praxis: nur
-$$ \Delta E_{pot} = E_{pot}(\vec{r}_2) - E_{pot}(\vec{r}_1)$$
+$$ \Delta E_{\tx{pot}} = E_{\tx{pot}}(\vec{r}_2) - E_{\tx{pot}}(\vec{r}_1)$$
 relevant.
-Normierung von $E_{pot}$ auf im Feld bewegte Ladung:
+Normierung von $E_{\tx{pot}}$ auf im Feld bewegte Ladung:
 el. Potential 
 $$\varphi(\vec{r}) - \varphi (\vec{r}_0) = \int \vec{E} \; d \vec{s} \qquad \qquad \textrm{ oft } \varphi(\vec{r}_0) = 0$$
 $$\varphi(\vec{r}) = \int \vec{E} \; d \vec{s}$$
@@ -444,7 +444,7 @@ Superposition $\varphi = \varphi_1 + \varphi_2$\\
 $\Rightarrow q_2 = - q_1 \quad z_2 = - z_1$ erfüllen Randbedingung\\
 $$\varphi(\vec{r}) = \frac{a_r}{4\pi\epsilon} \bigg\{ \frac{1}{|\vec{r}-\vec{r}_1|} - \frac{1}{| \vec{r} - \vec{r}_2|} \bigg \} \quad $$
 
-$\vec{E}$-Feld aus $-\vec{\nabla}^2 \varphi$\\
+$\vec{E}$-Feld aus $-\vec{\nabla} \varphi$\\
 $$ \vec{E}(\vec{r}) = \frac{a_r}{4\pi\epsilon_0} \bigg\{ \frac{\vec{r} - \vec{r}_1}{|\vec{r} - \vec{r}_1|^3} - \frac{\vec{r} - \vec{r}_2}{|\vec{r} - \vec{r}_2|^3} \bigg\}$$
 für z=0 : $ E_x = E_y = 0 \quad \vec{E} \perp (x,y)$-Ebene\\
 Flächenladungsdichte: $\sigma \quad [\sigma] = \frac{C}{m^2}$\\
@@ -512,10 +512,10 @@ $$\boxed{\Phi = \oint \vec{E}\; d\vec{A} = \frac{Q_{\tx{ein}}}{\epsilon_0}} $$
 Gaußsches Gesetz (Integralform)\\
 Mit Gaußschen Satz : Oberflächen- $\rightarrow$ Volumenintegral\\
 $$ \oint_A \vec{E} \;d \vec{A} = \int_V \textrm{div} \vec{E} \; d \vec{V} \quad \textrm{mit} \quad Q_{\tx{ein}} = \int_V \rho(\vec{r})\;dV$$
-$$\int_V \textrm{div} \vec{E}\; dV = \frac{1}{\epsilon_0} \int_V \rho(\vec{R}) \; dV$$
+$$\int_V \textrm{div} \vec{E}\; dV = \frac{1}{\epsilon_0} \int_V \rho(\vec{r}) \; dV$$
 gültig für beliebige Volumen\\
 $\Rightarrow \textrm{div} \vec{E}=\frac{\rho}{\epsilon_0}$ differentielle Form des Gaußschen Gesetzes\\
-Ladungen die Quellen $(\rho > 0 )$ bzw. Senken $\rho < 0)$ des elektrischen Feldes sind.
+Ladungen die Quellen $(\rho > 0 )$ bzw. Senken $(\rho < 0)$ des elektrischen Feldes sind.
 
 \subsection{Maxwell-Gleichungen}
 für statische (unbewegte) Ladungen
@@ -539,7 +539,7 @@ Bsp.: \textbf{homogene geladene Kugel}, Radius R, $\rho(\vec{r}) = \textrm{const
 $$ Q_{\tx{ges}} = \frac{4}{3} \pi R^3 \rho$$
 Symmetrie:  $ \vec{E} = |\vec{E}| \vec{e}_r\ $ radial $\  |\vec{E}| = E_r$\\
 \begin{itemize}
-\item[$|\vec{r}|\ge R$:] $$\Phi = \oint_A \vec{E} \; d \vec{A} = \int_A E_r \; dA = E_r 4 \pi r^2 \buildrel ! \over = \frac{Q_{ein}}{\epsilon_0}$$
+\item[$|\vec{r}|\ge R$:] $$\Phi = \oint_A \vec{E} \; d \vec{A} = \int_A E_r \; dA = E_r 4 \pi r^2 \buildrel ! \over = \frac{Q_{\tx{ein}}}{\epsilon_0}$$
 $$ E_r = \frac{\rho_0 R^3}{\epsilon_0 3 r^2}$$
 wie bei Punktladung
 \item[$|\vec{r}|\le R$:] $$ Q_{\tx{ein}} = \frac{4}{3} \pi r^3 \rho \qquad \Phi = \frac{Q_{\tx{ein}}}{\epsilon_0}$$\\
@@ -559,8 +559,8 @@ $$\varphi(r) = \frac{R^2 \rho}{2 \epsilon_0} (1 - \frac{r^2}{3 R^2} ) \quad \tex
 $$\vec{E} = -\textrm{grad}(\varphi)$$
 1. Gl $$\textrm{rot}\vec{E} = - \textrm{rot}(\textrm{grad} \varphi )\buildrel \tx{linear} \over = 0$$
 da rot$\vec{E} = 0$ können wir $\vec{E}$ als grad$\varphi$ schreiben\\
-3. Gl $$\textrm{div}\vec{E} = \textrm{div}(-\textrm{grad} \varphi) = -\Big[\frac{\partial^2 \varphi}{\partial x^2} + \frac{\partial^2 \varphi}{\partial y^2} + \frac{\partial^2 \varphi}{\partial z^2} \Big] = - \Delta \phi$$
-$$\rightarrow \quad -\Delta \phi = \frac{\rho}{\epsilon_0}$$ 
+3. Gl $$\textrm{div}\vec{E} = \textrm{div}(-\textrm{grad} \varphi) = -\Big[\frac{\partial^2 \varphi}{\partial x^2} + \frac{\partial^2 \varphi}{\partial y^2} + \frac{\partial^2 \varphi}{\partial z^2} \Big] = - \Delta \varphi$$
+$$\rightarrow \quad -\Delta \varphi = \frac{\rho}{\epsilon_0}$$ 
 Poisson-Gl. ($\rho = 0$ Laplace-Gl.)\\
 Poisson-Gl. äquivalent zu beiden Maxwell-Gl.\\
 MW-Gl: 2 Gl. erster Ordnung in Ableitungen $(\frac{\partial}{\partial x} ,\dots )$\\
@@ -573,7 +573,7 @@ Poisson-Gl: 1.Gl. zweiter Ordnung in Ableitung $(\frac{\partial^2}{\partial x^2}
 Abstand $\gg$ Ausdehnung der Ladungsverteilung
 \item Approximation von $\rho(r)$ in Taylor-Entwicklung\\
 $\rightarrow$ Multipolentwicklung
-$$\rho(\vec{r}) = \underbrace{\frac{a}{T}}_{\tx{Monopol}} + \underbrace{\frac{b}{T^2}}_{\tx{Dipol}} + \underbrace{\frac{c}{T^3}}_{\tx{Quadropol}} + \dots$$ 
+$$\rho(\vec{r}) = \underbrace{\frac{a}{T}}_{\tx{Monopol}} + \underbrace{\frac{b}{T^2}}_{\tx{Dipol}} + \underbrace{\frac{c}{T^3}}_{\tx{Quadrupol}} + \dots$$ 
 \end{itemize}
 \textbf{Monopol:}\\
 $$\vec{E}_{\tx{Mono}}(\vec{r}) = \frac{1}{4\pi\epsilon_0} \frac{Q}{r^2} \hat{r} \qquad \varphi_{\tx{Mono}}(\vec{r}) = \frac{Q}{4\pi\epsilon_0} \frac{1}{r}$$
@@ -586,10 +586,10 @@ $$\vec{r}_s = \frac{\int|\rho(\vec{r})| \vec{r} d^3 \vec{r}}{\int|\rho(\vec{r})|
 zwei entgegengesetzte, gleich große Ladungen $Q>0$ im Abstand $d = |\vec{d}|$. Richtung $\vec{d}$ von $-Q$ nach $+Q$ 
 $$\vec{r}_- = \vec{r}_0 - \frac{\vec{d}}{2} \qquad \vec{r}_+ = \vec{r}_0 + \frac{\vec{d}}{2}$$
 Potential $\varphi(\vec{r})$ aus Superposition
-$$\varphi_{\tx{Dipol}} (\vec{r}) = \frac{Q}{4 \pi \epsilon_0} \bigg\{ \frac{1}{|\vec{r}_0 - \frac{\vec{d}}{2}|} - \frac{1}{|\vec{r}_0 - \frac{\vec{d}}{2}|} \bigg\}$$ 
+$$\varphi_{\tx{Dipol}} (\vec{r}) = \frac{Q}{4 \pi \epsilon_0} \bigg\{ \frac{1}{|\vec{r}_0 + \frac{\vec{d}}{2}|} - \frac{1}{|\vec{r}_0 - \frac{\vec{d}}{2}|} \bigg\}$$ 
 für $(|\vec{r}_0| \gg |\vec{d}|)$ nutze Näherung 
 $$\frac{1}{|\vec{r}_0 \pm \frac{\vec{d}}{2}|} = \frac{1}{\sqrt{\vec{r}_0^{\,2} \pm r_0 \vec{d} + \frac{\vec{d}^2}{4}}} = \frac{1}{|\vec{r}_0|} \frac{1}{\sqrt{1 \pm \frac{r_0 \vec{d}}{|\vec{r}_0|^2} + \frac{\vec{d}^{\,2}}{4 \vec{r}_0^{\,2}}}} =  \frac{1}{|\vec{r}_0|} \bigg( 1 \mp \frac{\vec{r}_0 \vec{d}}{\vec{r}_0^{\,2}}\bigg)$$
-$$\varphi_{\tx{Dipol}} \sim \frac{Q}{4\pi\epsilon_0 r} \frac{\vec{r}\vec{d}}{r^2} = \frac{1}{4\pi\epsilon_0} \frac{\vec{p}\;\vec{\hat{r}}}{r^2} $$
+$$\varphi_{\tx{Dipol}} \sim \frac{Q}{4\pi\epsilon_0} \frac{\vec{\hat{r}}\vec{d}}{r^2} = \frac{1}{4\pi\epsilon_0} \frac{\vec{p}\;\vec{\hat{r}}}{r^2} $$
 $ \vec{p} = Q \vec{d} = [\vec{p}] = c_m$ \textbf{Dipolmoment}
 $$\varphi_{\tx{Dipol}} (\vec{r}) = \frac{Q\vec{d}}{4\pi\epsilon_0} \frac{\cos \theta}{r^2} \qquad \theta = \sphericalangle (\vec{d}, \vec{r})$$
 \begin{itemize}
@@ -636,7 +636,7 @@ Potentiellen Energie:\\
 $$ E_{\tx{Dip}}= Q \varphi(\vec{r}_1) - Q \varphi(\vec{r}_2)$$
 $$\varphi(\vec{r}_1) - \varphi(\vec{r}_2) = \vec{\nabla} \varphi(\vec{r}) \vec{d} = -\vec{E} \vec{d}$$
 $$E_{\tx{Dip}} = - Q \vec{E}\vec{d} = - \vec{p} \vec{E}$$\\
-$p \uparrow \uparrow E$ minimiert $E_{Dip} \quad \rightarrow$ Richtung von $\vec{p}$ im $\vec{E}$
+$p \uparrow \uparrow E$ minimiert $E_{\tx{Dip}} \quad \rightarrow$ Richtung von $\vec{p}$ im $\vec{E}$
 \item[b)] \textbf{inhomogenes $\vec{E}$-Feld} \\
 zusätzliche Kraft: $$\vec{F}_{ges} = Q \vec{E} (\vec{r}+\vec{d}) - Q \vec{E}(\vec{r})$$
 $$\vec{E}(\vec{r}+\vec{d}) \buildrel \textrm{Taylor-Entwicklung} \over = \vec{E}(\vec{r}) + (\vec{d}\cdot \nabla ) \vec{E}(\vec{r})$$ 
@@ -675,8 +675,8 @@ $$\frac{\partial \cos \theta}{\partial x} = -\frac{1}{r} \sin \theta \sin \phi \
 \end{align*}
 $$Q_{\tx{Mono}} = 0  \quad \vec{p}_{\tx{gesamt}} = \vec{0}$$
 Fernferld: $$ \varphi(\vec{r}) \sim \frac{1}{r^3} \quad \textrm{bzw.} \quad \vec{E} (\vec{r}) \sim \frac{1}{r^4} \vec{e}_R$$
-Bsp.: linearer Quadrupol
-$$\varphi^{\tx{lin}}_{\tx{Quad}} = \frac{1}{4\pi\epsilon_0} \frac{|\vec{a}|^2Q}{r^3} (3 \cos^2\theta -1)$$
+Bsp.: \textbf{linearer Quadrupol}
+$$\varphi^{\tx{lin}}_{\tx{Quad}} = \frac{1}{4\pi\epsilon_0} \frac{|\vec{d}|^2Q}{r^3} (3 \cos^2\theta -1)$$
 \subsubsection{Kraft und Elektrische Energie des Quadrupols}
 \begin{itemize}
 \item homogenes Feld: $\vec{F}_{\tx{ges}} = \vec{0} \quad ; \quad \vec{T}_{\tx{ges}} = \vec{0}$
@@ -818,7 +818,7 @@ Bsp.: \textbf{homogengeladene Kugelschale} mit Radius R
 $$\varphi(\vec{r}) = \tx{const} \quad  r<R \qquad \varphi(\vec{r})= \frac{Q}{4\pi\epsilon_0} \frac{1}{r} \quad r\ge R$$
 Sei zunächst $Q = 0$. $dQ$ aus $\infty \rightarrow R$\\
 $$dE_{el}= \varphi(e) dQ = \frac{1}{4\pi\epsilon_0} \frac{Q}{R} \; dQ$$
-$$E_{el}= \int^Q_0 \frac{1}{4\pi\epsilon_0} \frac{Q^1}{R} \; dQ^1 = \frac{1}{4\pi\epsilon_0} \frac{1}{2} \frac{(Q^{1})^2}{R} \bigg\vert_0^{???R} = \frac{1}{4\pi\epsilon_0} \frac{1}{2} \frac{Q}{R} = \frac{1}{2} Q \varphi(R)$$ wie oben
+$$E_{el}= \int^Q_0 \frac{1}{4\pi\epsilon_0} \frac{Q^1}{R} \; dQ^1 = \frac{1}{4\pi\epsilon_0} \frac{1}{2} \frac{(Q^{1})^2}{R} \bigg\vert_0^{Q???R} = \frac{1}{4\pi\epsilon_0} \frac{1}{2} \frac{Q^2}{R} = \frac{1}{2} Q \varphi(R)$$ wie oben
 Bsp.: homogen geladene Kugel Radius $R$, Ladung $Q$:
 $$E_{el} = \frac{3}{5}\ k\ \frac{\ Q^2}{R}$$
 \end{itemize}
@@ -882,11 +882,10 @@ $$ \rightarrow \vec{P} = - \epsilon_0 \vec{E}_{\tx{pol}}$$
 
 ?????
 
-
-$\vec{E}_{\tx{Mol}}$ (tsl?) Überlagerung von ???????\\\\
+$\vec{E}_{\tx{Med}}$ (tsl?) Überlagerung von ???????\\\\
 a)  \textbf{$\vec{E}_{\tx{frei}}$ ohne Medium $\quad \vec{E}_{\tx{pol}}$ aus Dipolen}
 $$\vec{E}_{\tx{Med}} = \vec{E}_{\tx{frei}} + \vec{E}_{\tx{Pol}} = \vec{E}_{\tx{frei}} - \frac{\vec{P}}{\epsilon_0}$$
-Polarisation abhängig von $ \vec{E}_{\tx{Mol}}: \vec{P} = \epsilon_0 \chi_e \vec{E}_{\tx{Med}}$\\
+Polarisation abhängig von $ \vec{E}_{\tx{Med}}: \vec{P} = \epsilon_0 \chi_e \vec{E}_{\tx{Med}}$\\
 $\chi_e\  \widehat{=}$ dielektrische Suszeptibilität
 $$\vec{E}_{\tx{Med}} = \frac{\vec{E}_{\tx{frei}}}{1+\chi_e}$$
 $\epsilon = 1+ \chi_e$  relative Dielektrizitätskonstante / Permitivität\\
@@ -971,7 +970,7 @@ $d/L = 3,6\cdot 10^{-6}$\\[5pt]
 \begin{itemize}
 \item polare Moleküle (z.B. $H_2O$) mit permanentem Dipolmoment $\vec{p}$\\R
 $\rightarrow $ \textbf{paraelektrisch}
-\item$\vec{E}_{\tx{Med}} = 0 $ Richtung der $ \vec{p}$ statistisch / gleichverteilt $\rightarrow$ kein $\vec{p}$
+\item$\vec{E}_{\tx{Med}} = 0 $ Richtung der $ \vec{p}$ statistisch / gleichverteilt $\rightarrow$ kein $\vec{P}$
 \item $\vec{E}_{\tx{Med}} \neq 0$ Ausrichtung der $\vec{p}$ im $\vec{E}$-Feld
 \end{itemize}
 Wärmebewegung behindert vollständige Ausrichtung. Ausrichtungsgrad beschrieben durch Boltzmannverteilung ($\rightarrow$ Ex1)
@@ -1035,7 +1034,7 @@ U_0 & \rightarrow & U_0/ \epsilon & \tx{ bei } Q = \tx{const.} \\
 & \Downarrow\\
 E_{\tx{el}} &\rightarrow & E_{\tx{el}} / \epsilon
 \end{array}$$
-Teilweise mit $\epsilon > 1$ gefüllter Kondensator
+\textbf{Teilweise} mit $\epsilon > 1$ \textbf{gefüllter Kondensator}
 \begin{itemize}
 \item Ladungsdichte größer bei $ \epsilon >1 $ da $E_{\parallel}^{\tx{Med}} = E_{\parallel}^{\tx{Vak}}$
 \item Parallelschaltung von 2 Kondensatoren
@@ -1137,7 +1136,7 @@ $$\boxed{\vec{j} = \sigma_{el} \vec{E}}$$
 ohmsches Gesetz in mikroskopischer/originaler Form\\
 ,,Rückkehr`` zu makroskopischem OG. $ \vec{I} = \tx{const.} $ über A
 $$I = |\vec{j}| A = \frac{1}{\rho_{el}} |\vec{E}| A = \frac{1}{\rho_{el}} \frac{U}{l} A$$
-d.h. $\boxed{ R = \frac{\rho_{el}\ l}{A}}$ \textbf{Widerstand eines Drahtes}\\
+d.h. $$\boxed{ R = \frac{\rho_{el}\ l}{A}} \tx{\textbf{Widerstand eines Drahtes}}$$
 \textbf{Halbleiter:}\\
 Bandlücke $ \Delta E $ zwischen Valenz- und Leitungsband 
 $$n_e = n_0 e^{-\frac{\Delta E}{k T}} \quad \tx{steigt mit T}$$
@@ -1168,7 +1167,7 @@ $$n_e = n_0 e^{-\frac{\Delta E}{k T}} \quad \tx{steigt mit T}$$
 	Maschenregel: $ U = U_1 = U_2 $\\
 	$I = I_1 + I_2 = \frac{U_1}{R_1} + \frac{U_2}{R_2} = U (\frac{1}{R_1}+\frac{1}{R_2})$\\
 	$ \frac{1}{R_{\tx{ges}}} = \frac{1}{R_1} + \frac{1}{R_2} $\\
-	bzw. für $ n R_i:$ $$\frac{1}{R_{\tx{ges}}} = \sum_{i=1}^{n}  \frac{1}{R_i}$$
+	bzw. für $ n \ R_i:$ $$\frac{1}{R_{\tx{ges}}} = \sum_{i=1}^{n}  \frac{1}{R_i}$$
 \end{itemize}
 \textbf{Wheatstonesche Brückenschaltung}\\
 Ziel: Messung von unbekannten $ R_x $\\
@@ -1245,8 +1244,8 @@ $$ n_+ = n_- = n $$
 	$$ \vec{j} = e \sqrt{\frac{\alpha}{\beta}} (\beta^+ + \beta^- ) \vec{E}$$
 	%\item
 	\item $ U,\vec{E} $ sehr groß: $ \lambda_{\tx{frei}} \gg $ Abstand der Platten\\
-	$ \rightarrow $ keine Rakombination $ \beta \rightarrow 0 $\\
-	Sättigungsstrom $ I_s: $ alle $ e^- A^+ $ abgesagt
+	$ \rightarrow $ keine Rekombination $ \beta \rightarrow 0 $\\
+	Sättigungsstrom $ I_s: $ alle $ e^- A^+ $ abgesandt
 	$$ I_s \sim \alpha$$
 \end{itemize}
 \subsection{Stromquellen}
@@ -1256,7 +1255,7 @@ $$ n_+ = n_- = n $$
 	\item Stromquelle hat maximale Leitung
 	\item[$ \rightarrow $] Effekt beschrieben durch Ersatzschaltbild (Reale Stromquelle als Spannungsquelle in reihe mit Widerstand)
 \end{itemize}
-Spannungs/Stromquelle mit $ U_0 $ in Serie mit Innenwiderstand $ R_I \quad U_0 $ Elektromotorische Kraft EMK
+Spannungs-/Stromquelle mit $ U_0 $ in Serie mit Innenwiderstand $ R_I \quad U_0 $ Elektromotorische Kraft EMK
 $$I = \frac{U_0}{R_I+R_V} \qquad U_{kl} = R_V I = \frac{R_V}{R_I+R_V}U_0$$
 Leistung: $$P_V = U_{kl} I = \frac{R_V}{(R_V+R_I)^2} U_0^2$$
 Grenzfälle: \begin{itemize}
@@ -1270,15 +1269,15 @@ dazwischen $ P_V $ maximal (bei $ R_I = R_V $ in Übung berechnet)
 	\item 2 unterschiedliche Metalle in Kontakt\\
 	\textbf{Fermi-Energien / Austrittsarbeiten} sind unterschiedlich\\
 	$ E_F(A) < E_F(B) : $ wandern $ e^- $ von $ A $ nach $ B $, $ A $ pos. geladen / $ B $ neg. geladen \\
-	$ \rightarrow \vec{E}(A\rightarrow B) $ entgegengesetzt zu Strom
+	$ \rightarrow \vec{E}(B\rightarrow A) $ entgegengesetzt zu Strom
 	\item[$ \rightarrow $] Kontaktspannung $ U_{\tx{kon}} = E_F(B)-E_F(A) $\\
 	Geschlossener Kreis: $ \sum_i U_{\tx{kon}}^i = 0 $ bei konstanter Temperatur
 \end{itemize}
 \textbf{Seebeck-Effekt}
 \begin{itemize}
 	\item $ U_{\tx{kon}} $ temperaturabhängig
-	\item kontakte 1 und 2 bei $ T_1 $ und $ T_2 $\\
-	$ \rightarrow $ Seebeck koeffizienten $ [S_i]  = \frac{\tx{V}}{\tx{K}}$ typ: $ 10^{-5 \rightarrow -6} \tx{ in Metall } 10^{-3} \tx{ in Halbleiter } $
+	\item Kontakte 1 und 2 bei $ T_1 $ und $ T_2 $\\
+	$ \rightarrow $ Seebeck Koeffizienten $ [S_i]  = \frac{\tx{V}}{\tx{K}}$ typ: $ 10^{-5 \rightarrow -6} \tx{ in Metall } 10^{-3} \tx{ in Halbleiter } $
 	\item $ \Delta T $ bewirkt Spannung
 \end{itemize}
 \textbf{Peltier-Effekt}\\
@@ -1341,7 +1340,7 @@ Es gilt: $ \Pi_A = S_A T$
 	$$\oint_{r=r_0}\vec{B}\;d\vec{s} = 2 \pi r_0 B(r_0) \neq 0 \ \  \mu_0 I \tx{ experimentell}$$
 	$$\boxed{ \rightarrow \quad \oint\vec{B}\; d\vec{s}=\mu_0 I}$$ Ampéresches Gesetz $\mu_0$ magnetische Feldkonstante Permeabilität des Volumens
 	$$\mu_0 = 4 \pi \times 10^{-7} \frac{\tx{Vs}}{\tx{Am}} \quad \mu_0 \tx{ ohne Felder } \rightarrow \tx{später}$$
-	\item Anwendung des stokeschen Satzes mit $I= \int \vec{j} \; d \vec{A}$
+	\item Anwendung des stokesschen Satzes mit $I= \int \vec{j} \; d \vec{A}$
 	$$\oint_{R(A)}\vec{B} \; d\vec{s} = \int_A \tx{rot }\vec{B} \; d\vec{A} = \mu_0 \int \vec{j} \; d\vec{A}$$ 
 	Weg $ \vec{s} $ auf dem Rand $ R(A) $ pos. Schraube um $ \vec{A} $
 \end{itemize}
@@ -1369,7 +1368,7 @@ $ \vec{B} $ ist quellfreies Wirbelfeld
 		\end{itemize}
 	\end{itemize}
 	\item $ \vec{A} $ ist nicht eindeutig\\
-	$ \vec{A} $ und $ \vec{A}'  = \vec{A} + \tx{grad} f \quad f$ skalarfeld liefern selbes $ \vec{B} $, da $ \tx{rot} ( \tx{grad}f) = 0 $\\
+	$ \vec{A} $ und $ \vec{A}'  = \vec{A} + \tx{grad} f \quad f$ Skalarfeld liefern selbes $ \vec{B} $, da $ \tx{rot} ( \tx{grad}f) = 0 $\\
 	$ \rightarrow $  Eichfreiheit durch Wahl von f oft:\\
 	Coulombgleichung: $ \tx{div} \vec{A} \buildrel ! \over = 0 $
 	\item f eindeutig ? Nein.\\
@@ -1423,9 +1422,11 @@ Aus MW-Gl. bzw. Ampéresches Gesetz
 	
 	% andres wenn bis I
 	
-	$$\boxed{\vec{B} = -\frac{\mu_0 I}{4\pi} \int \frac{(\vec{r} - \vec{r}\,') \times d\vec{l} }{| \vec{r} - \vec{r}\,'| ^3}} oder so nachschauen $$
+	% von kim
+	wenn $ \vec{j} = \const $ über Leiteroberfläche\\
+	$ \vec{j} \; d\vec{V} = \vec{j} \; d\vec{A} \; d\vec{l} = I \; d\vec{l} \qquad d\vec{l} \uparrow \uparrow d\vec{j} \uparrow \uparrow \vec{I}$ 
 	
-	hier fehlt was\\
+	$$\boxed{\vec{B} = -\frac{\mu_0 I}{4\pi} \int \frac{(\vec{r} - \vec{r}\,') \times d\vec{l} }{| \vec{r} - \vec{r}\,'| ^3}} \qquad \tx{ Biot Savart Gesetz}$$
 	
 \end{itemize}
 \textbf{Bestimmung von $ \vec{B} $ mit BSG}
@@ -1449,61 +1450,60 @@ Aus MW-Gl. bzw. Ampéresches Gesetz
 Erinnerung: Anziehung $  I_1 \uparrow \uparrow I_2 $, Abstoßung $ I_1 \uparrow \downarrow I_2 $ keine Coulomb-Kräfte, da Leiter neutral
 \subsubsection{Exp: Fadenstrahlrohr}
 Beobachtung: $  R \sim \frac{1}{I} \sim \frac{1}{|\vec{B}|} $\\
-Richtung der Kraft: $ -\vec{v}_e \times \vec{B} \quad $ rechte-Hand-Ragel ,,$ + $``$ Q_e = -e $\\\\
+Richtung der Kraft: $ -\vec{v}_e \times \vec{B} \quad $ rechte-Hand-Regel ,,$ + $``$ Q_e = -e $\\[10pt]
 keine Arbeit verrichtet durch $ F_{\tx{Mag}}  $ (Loranzkraft) $ W = \int F_{\tx{Mag}} \; d\vec{s} = 0\quad F_{\tx{Mag}} \perp \vec{v} \Rightarrow $ Richtung von $ \vec{v} $ ändert sich, Betrag von $ \vec{v} $ konstant
 $$\boxed{\vec{F}_{\tx{Mag}} = \vec{F}_L = q \vec{v} \times \vec{B}} \quad \tx{ Lorenzkraft }$$
-Fadenstrahlrohr:\\
+\textbf{Fadenstrahlrohr:}\\
 \\Beschleunigung in $ \vec{E} $-Feld: $ eU_B = \frac{1}{2} m v^2 \quad v = \sqrt{\frac{2 e U _B}{m}} $\\
 für $ U_B = 300 \tx{V} \quad v = 0,03 \tx{ Lichtgeschwindigkeit } $\\
 $ \vec{F}_L  = \vec{F} _{\tx{Zent}} \quad -e \vec{v} \times \vec{B} = - \frac{mv^2}{r} \vec{e}_r$\\
 $ \Rightarrow r = \frac{|\vec{p}|}{e B } \quad \vec{p} = m \vec{v} $\\
-$ T_{\tx{Umlauf}} = \frac{\tx{Umfang } 2 \pi r }{v} = \frac{ 2\pi m}{e B} \quad W _{\tx{Umlauf}} = \frac{2\pi }{T _{\tx{Umlauf}}} = \frac{e}{m_e} B \quad \tx{ Zyklotronfrequenz} $\\
-gilt für $  v<<C $ Lichtgeschw.\\
-für $ v \rightarrow c $ wird $ T \nearrow , w \searrow $\\
+$$ T_{\tx{Umlauf}} = \frac{\tx{Umfang } 2 \pi r }{v} = \frac{ 2\pi m}{e B} \quad \omega _{\tx{Umlauf}} = \frac{2\pi }{T _{\tx{Umlauf}}} = \frac{e}{m_e} B \quad \tx{ \textbf{Zyklotronfrequenz}} $$
+(gilt für $  v<<C $ Lichtgeschwindigkeit)\\
+für $ v \rightarrow c $ wird $ T \nearrow , \omega \searrow $\\[5pt]
 Wenn $ \vec{v} \perp \vec{B} $  dann in Gl. $ \vec{v},\vec{p} \rightarrow \vec{v}_{\perp \vec{B}}, \vec{p}_{\perp \vec{B}} $\\
-$ eB = \frac{=_{\perp B}}{\rho} \quad \rho $ Radius in Ebene $ \perp \vec{B} $\\
-$ \vec{v}_{\parallel B} $ unbeeinflusst $ \rightarrow $ Helixbahn des Elektronenstrahls\\
-Anwendung: $ \frac{e}{m} $- Bestimmung\\
-\underline{Hall-Effekt}
-
-%eu evorlesung
+$ eB = \frac{v_{\perp B}}{\rho} (\cdot m_e)? \quad \rho $ Radius in Ebene $ \perp \vec{B} $\\
+$ \vec{v}_{\parallel B} $ unbeeinflusst $ \rightarrow $ \textbf{Helixbahn} des Elektronenstrahls\\
+Anwendung: $ \frac{e}{m} $- Bestimmung\\[10pt]
+%neue vorlesung
+\textbf{Hall-Effekt:}
 \begin{itemize}
 	\item \underline{Hall-Effekt} (Erwin Hall 1879 in Doktorarbeit)
-	\item[Exp:] Strom durch (Halb)leiter in Magnetfeld\\
+	\item[\textbf{Exp:}] \textbf{Strom durch (Halb)leiter in Magnetfeld}\\
 	$ \rightarrow $ Spannung $ U_{\tx{Hall}} \perp \vec{B} $ und $ \perp \vec{j} $
 	\item $ e^- $ durch $ \vec{F}_L $ abgelenkt $ \rightarrow \vec{E} $-Feld wegen $ e^- $-Mangel/Überschuss
 	\item Gleichgewicht wenn $ \vec{F}_{\tx{el}} + \vec{F}_L = \vec{0} $\\
 	$ e | \vec{v}_D | | \vec{B} | = e | \vec{E}| \qquad | \vec{E} | = \frac{U_H}{b} $\\
 	$ I = |\vec{j}| A = j b d   \quad j = n_e |\vec{v}_D| e \quad e v_D = \frac{j}{n_e}$\\
 	Also: $ F_L = \frac{I}{b d n_e} B \quad F_{\tx{el}} = e \frac{U_H}{b} $\\
-	$ \rightarrow \boxed{U_H = \frac{IB}{e d n_e}} \qquad (n_e)_{H_L} \ll (n_e)_{\tx{Leiter}} \Rightarrow \tx{ für } I = \tx{const.}  $ wird $ U_H $ größer
+	$$ \rightarrow \boxed{U_H = \frac{IB}{e d n_e}}$$ $(n_e)_{H_L} \ll (n_e)_{\tx{Leiter}} \Rightarrow \tx{ für } I = \tx{const.}  $ wird $ U_H $ größer
 	\item Anwendung: Hall-Sonde zur Messung von B-Feldern.
 \end{itemize}
 
 \subsection{Kräfte auf Stöme}
 Leiter mit Querschnitt $ A $: $ I = j A \quad \vec{j} = e n_e \vec{v}_D $\\
-Kraft auf infinitisimales Leiterstück $ dl \quad dq = e n_e A \; dl $\\
-$ d\vec{F} = dq (\vec{v}_D \times \vec{B}) = e n_e A\; dl (\vec{v} \times \vec{B}) = A \; dl \vec{j} \times \vec{B} $\\
+Kraft auf infinitesimales Leiterstück $ dl, \quad dq = e n_e A \; dl $\\
+$$ d\vec{F} = dq (\vec{v}_D \times \vec{B}) = e n_e A\; dl (\vec{v} \times \vec{B}) = A \; dl \vec{j} \times \vec{B} $$
 $ d\vec{l} \equiv dl \frac{\vec{j}}{| \vec{j} |}$\\
-$ d\vec{F} = A j d\vec{l} \times \vec{B} = I d\vec{l} \times \vec{B} $\\
+$$ d\vec{F} = A j d\vec{l} \times \vec{B} = I d\vec{l} \times \vec{B} $$
 Integration über Leiter: $ \vec{F} = I \vec{e} \times \vec{B} \rightarrow $ erklärt rollenden Stab/Leiterschaukel\\
 \begin{itemize}
-	\item parallele Ströme (galvanische Kräfte)\\
+	\item \textbf{parallele Ströme (galvanische Kräfte)}\\
 	$ I_2 $ erzeugt $ \vec{B} (I_2) $ am Ort von $ I_1 $\\
 	$ \rightarrow $ Lorenzkraft auf $ I_1 $ gemäß obiger Gleichung\\
 	Abstand der Leiter $ r $ , länge $ l \gg r $\\
 	Kraft auf $  dl_1 $ im Leiter 1\\
-	$ d\vec{F}_1  = I_1 d\vec{l}_1 \times \vec{B}(I_2) $\\
-	Hatten: $ \vec{B}(I_2) = \frac{\mu_0}{2 \pi} \frac{I_2}{r} \vec{e}_\varphi $\\
+	$$ d\vec{F}_1  = I_1 d\vec{l}_1 \times \vec{B}(I_2) $$
+	Hatten: $$ \vec{B}(I_2) = \frac{\mu_0}{2 \pi} \frac{I_2}{r} \vec{e}_\varphi $$
 	$ \vec{B} (I_2) \perp I_1 \Rightarrow $ Beträge ausreichend\\
-	$ dF_1 = I_1 \frac{ \mu_0}{2 \pi} \frac{I_2}{r} dl_1 $\\
+	$$ dF_1 = I_1 \frac{ \mu_0}{2 \pi} \frac{I_2}{r} dl_1 $$
 	$$\boxed{ |\vec{F}_1 | = \int_0 ^L \frac{\mu _0}{2 \pi r } I_1 I_2 \; dl_1 = \frac{\mu_0}{2 \pi} \frac{L}{r} I_1 I_2}$$
 	$ d\vec{l}_1 \times \vec{B} $ mit Rechte-Hand-Regel\\
 	$ \rightarrow $ Abstoßung für $ I_1 \uparrow \downarrow I_2 $\\
 	actio = reactio Aymmtrie zwischen $ I_1 $ und $ I_2 $ \\
 \end{itemize}
 \subsubsection{Exp: ,,Stromwaage``} 
-Masse con 200 mg zum Beschweren\\
+Masse von 200 mg zum Beschweren\\
 $ F_L = F_G \quad F_G = m \cdot g \quad F_L = \frac{\mu_0}{2 \pi} I^2 \frac{L}{r} $\\
 $ \rightarrow I = \sqrt{\frac{mg 2 \pi r}{L \mu_0}}  = 15,1 A  \quad \tx{Vgl. Exp: I = 14,9 A }$
 \subsubsection{Exp: Meissler-Ochsenfeldeffekt}
@@ -1511,40 +1511,41 @@ Hochtemperatursupraleiter (Ytrium Barium Kupferoxid) \\
 \begin{itemize}
 	\item Für $ T < T_{\tx{sprung}} $ supraleitend
 	\item Magnetfeld aus Körper hinausgedrängt Erklärung in Festkörperphysik (Ginzburg-Landau-Th, BCS-Theorie)
-	\item warum scheben über Magnetbahn ? $ \rightarrow $ Übung
+	\item warum schweben über Magnetbahn ? $ \rightarrow $ Übung
 \end{itemize}
 \subsection{Der Magnetische Dipol}
-Def. magnetiischer Dipol C $ \rightarrow $ Leiterschleife\\
-$ \vec{p}_M = I \vec{A} $ Richtung von $ \vec{A} $ aus $ \vec{j} $ über ,,Rechte-Hand-Regel``\\
+Def.: \textbf{magnetischer Dipol} C $ \rightarrow $ \textbf{Leiterschleife}\\
+$$ \boxed{\vec{p}_M = I \vec{A}} $$
+Richtung von $ \vec{A} $ aus $ \vec{j} $ über ,,Rechte-Hand-Regel``\\
 Hatten B auf Achse: $$ \vec{B} = \frac{\mu_0 I}{2} \frac{l^2}{(R^2 + z^2 ) ^{\frac{3}{2}}} \vec{e}_z $$
-für $ R^2 \ll z^2 $: $$= \frac{\mu_0 I}{2} \frac{R^2}{z^3} \vec{e}_z \sim \boxed{\frac{1}{z^3}}$$
+für $ R^2 \ll z^2 $: $$= \frac{\mu_0 I}{2} \frac{R^2}{z^3} \vec{e}_z \sim \boxed{\frac{1}{z^3}}\quad  \, $$
 $$ = \frac{\mu_0 }{2 \pi} \frac{\vec{p}_M}{z^3} \quad \boxed{\vec{p_M} \uparrow \uparrow \vec{B}}$$
 Allgemein (außerhalb Achse)\\
 $$ \vec{B} (\vec{r}) = \frac{\mu_0}{4 \pi} \frac{1}{| \vec{r} | ^3} \bigg( \frac{3 \vec{r} (\vec{p}_M \cdot \vec{r})}{r^2} - \vec{p}_M \bigg) $$
-Nordpol bei + z - Richtung, Südpol bei - z - Richtung\\
+Nordpol bei $+$ z - Richtung, Südpol bei $-$ z - Richtung\\
 $ \rightarrow \vec{p}_M $ zeigt von Süd- nach Nordpol\\
 \begin{itemize}
 	\item Dipol des $ e^- $ im Wasserstoffatom (klassisch)\\
-	$ \vec{F}_{\tx{el}} = \vec{F}_{\tx{zen}} \quad \frac{1}{4 \pi \epsilon_0} \frac{e^2}{r^2} = m_e \frac{v^2}{r} = \frac{Lv}{r^2} \quad L \equiv m_e v r $\\
+	$$ \vec{F}_{\tx{el}} = \vec{F}_{\tx{zen}} \quad \frac{1}{4 \pi \epsilon_0} \frac{e^2}{r^2} = m_e \frac{v^2}{r} = \frac{Lv}{r^2} \quad L \equiv m_e v r $$
 	In QM: L quantisiert $ n \hbar \quad \hbar = \frac{h}{2 \pi} \quad h $ Planksches Wirkungsquantum\\
-	$ e^- $-Bewegung $ \widehat{=} $ Kreisstrom $ I = \frac{e}{T}  \quad T $ Umlaufzeit\\
-	$ \vec{p}_H = U \vec{A} = \frac{-e}{r} \vec{A} = \frac{-e v}{2 \pi r} \pi r^2 \vec{e}_n = - \frac{e}{2 m_e} \vec{L} $\\
-	für $ L = 1 \hbar $: $ |\vec{p}_H | = \ub{\frac{e \hbar}{2 m_e}}_{\mu_B} = 9,26 \cdot 10^{-24} \tx{ A m} ^2   $\
+	$ e^- $-Bewegung $ \widehat{=} $ Kreisstrom $ I = \frac{-e}{T}  \quad T $ Umlaufzeit\\
+	$$ \vec{p}_H = I \vec{A} = \frac{-e}{T} \vec{A} = \frac{-e v}{2 \pi r} \pi r^2 \vec{e}_n = - \frac{e}{2 m_e} \vec{L} $$
+	für $ L = 1 \hbar \ :\qquad  |\vec{p}_H | = \ub{\frac{e \hbar}{2 m_e}}_{\mu_B} = 9,26 \cdot 10^{-24} \tx{ A m} ^2   $\\
 	$ \mu_B = $ Bohrsches Magneton 
 \end{itemize} 
 \subsubsection{Kräfte auf magnetischen Dipol}
 Leiterschleife $ \vec{F} = I \oint d\vec{l} \times \vec{B} \quad \vec{M} = I \oint \vec{r} \times (d\vec{l} \times \vec{B}) $\\
 \begin{itemize}
-	\item[a)] homogenes $ \vec{B} $-Feld\\
+	\item[a)] \textbf{homogenes $ \vec{B} $-Feld}\\
 	$ \vec{F}_{\tx{ges}} = 0 $ da Kompensation von $ d\vec{l} $ bei $ \varphi $ und $ d\vec{l} $ bei $ \varphi + \pi $\\
-	$ \vec{M} = I B \sin \alpha \pi R^2 \vec{e}_y = \vec{e}_M \times \vec{B} $\\
-	$ \vec{B} \downarrow \rightarrow \vec{p}_M \qquad \vec{p}_M \uparrow \uparrow \vec{B} $ energetisch günstiger\\
-	$ \Delta E_{\tx{mag}} \equiv - \int \limits _{\frac{\pi}{2}} ^{d} \vec{M} \; d \vec{\alpha} = - \vec{p}_M \vec{B} $ Nullpunkt für $ E_{\tx{mag}}$ bei $ \alpha = \pi / 2 $
-	\item[b)] inhomogenes $ \vec{B} $-Feld\\
-	Taylorentwicklung $ \vec{B} (\vec{r}) = \ub{\vec{B} (\vec{r}_0 )}_{\tx{const.}} + (\vec{r} \cdot \vec{\nabla} \vec{B}( \vec{r} )) \mathop{\vert}_{\vec{r} = \vec{r}_0} $
+	$$ \vec{M} = I B \sin \alpha \pi R^2 \vec{e}_y = \vec{p}_M \times \vec{B} $$
+	$ \vec{B} \downarrow \rightarrow \vec{p}_M \qquad \vec{p}_M \uparrow \uparrow \vec{B} $ energetisch günstiger\\\pagebreak
+	$$ \Delta E_{\tx{mag}} \equiv - \int \limits _{\frac{\pi}{2}} ^{\alpha} \vec{M} \; d \vec{\alpha} = - \vec{p}_M \vec{B} \quad \tx{ Nullpunkt für } E_{\tx{mag}} \tx{ bei } \alpha = \pi / 2 $$
+	\item[b)] \textbf{inhomogenes $ \vec{B} $-Feld}\\
+	Taylorentwicklung $ \vec{B} (\vec{r}) = \ub{\vec{B} (\vec{r}_0 )}_{\tx{const.}} + (\vec{r} \cdot \vec{\nabla} \vec{B}( \vec{r} )) \mathop{\vert}_{\vec{r} = \vec{r}_0} $\\
 	$ \vec{B} (\vec{r}_0) $ kein Beitrag zur Kraft\\
 	Rechnung zeigt: $ \vec{F} = \vec{\nabla} ( \vec{B} \vec{p}_M) $\\
-	d.h. Kraft in Richtung $ \vec{B} $-Gradient. Dipol wird in Bereich großer Feldstärke gezogen
+	d.h. \textbf{Kraft in Richtung $\vec{B}$-Gradient. Dipol wird in Bereich großer Feldstärke gezogen}.
 \end{itemize}
 
 %neue vorlesung
@@ -1555,16 +1556,16 @@ Leiterschleife $ \vec{F} = I \oint d\vec{l} \times \vec{B} \quad \vec{M} = I \oi
 	\item Atom: Elektronen und Kern. $ \quad e^- $ mit $ \vec{p}_M $ verbunden\\
 	$ \vec{p}_M $ im Magnetfeld $ \vec{B} $ ausgerichtet
 	\item $ \vec{B} (\vec{p}_M) \equiv \vec{B}_{\tx{Mag}} $ überlagert sich externes $ \vec{B} $-Feld $ \rightarrow \vec{B}_{\tx{Med}} $
-	\item $ e^- $ mit $ \vec{L} \Rightarrow \vec{p}_M = \ub{-\frac{e}{2 m_e}}_{\gamma _L} \vec{L} \quad |\vec{L}| = n \hbar $\\
+	\item $ e^- $ mit $ \vec{L} \Rightarrow\  \vec{p}_M = \ub{-\frac{e}{2 m_e}}_{\gamma _L} \vec{L} = \gamma _L \vec{L}\quad |\vec{L}| = n \hbar $\\
 	$ \gamma _L = $ gyromagnetisches Verhältnis manchmal auch ohne -\\
-	für $ |\vec{L}| = 1 \hbar  \quad |\vec{p}_M = \mu_B $ Bohrsche Magneton (des $ e^- $)
+	für $ |\vec{L}| = 1 \hbar  \quad |\vec{p}_M| = \mu_B $ Bohrsche Magneton (des $ e^- $)
 	\item komplexe Atome: viele $ e^- \rightarrow $ vektorielle Summe der $ \vec{L}_i $\\
 	$ \rightarrow $ Quantenmechanik, Atomphysik
 	\item Kern: $ \gamma_{L,\tx{ Photon}} = \frac{e}{2 m_p} \approx \frac{1}{1836} \gamma_{L,e^-} \rightarrow $ vernachlässigbar
 	\item Spin des $ e^- $ (Eigendrehimpuls) $ \vec{S}: | \vec{S}| = \frac{1}{2} \hbar $\\
 	$$ \vec{p}_M = \gamma_S \vec{S} \quad \gamma_S = - \frac{e}{m_e} = 2 \gamma_L $$
 	\item Gesamt Dipolmoment eines $ e^-: \vec{p}_M = \vec{p}_{M,L} + \vec{p}_{M,S} $\\
-	komplexes Atom: $ \vec{p}_{M, \tx{gesamt}} $ aus $ c^- $-Konfiguration\\
+	komplexes Atom: $ \vec{p}_{M, \tx{gesamt}} $ aus $ e^- $-Konfiguration\\
 	aber: $ \vec{p}_{\tx{Atom}} $ fixiert, $ \vec{B}_{\tx{ext}} $ ändert nur Orientierung von $ \vec{p}_{\tx{Atom}} $
 \end{itemize}
 \subsubsection{Magnetisierung der Materie}
@@ -1574,25 +1575,26 @@ Leiterschleife $ \vec{F} = I \oint d\vec{l} \times \vec{B} \quad \vec{M} = I \oi
 	\begin{itemize}
 		\item im Inneren Kompensation von entgegengerichteten Strömen
 		\item auf Rand Oberflächenstrom $ I_{\tx{Mag}} $
-		$$ \vec{M} = \frac{I_{\tx{Mag}} \vec{A}}{V} \qquad | \vec{M} | = \frac{I_{\tx{Mag}} A}{A d}  = \frac{I_{\tx{Mag}}}{d} \quad  d = \tx{Dichte der schicht}$$
+		$$ \vec{M} = \frac{I_{\tx{Mag}} \vec{A}}{V} \qquad | \vec{M} | = \frac{I_{\tx{Mag}} A}{A d}  = \frac{I_{\tx{Mag}}}{d} \quad  d = \tx{Dicke der schicht}$$
 	\end{itemize}
 	\item  $ \vec{B}_{\tx{Mag}} $ aus $ I_{\tx{Mag}} $ über Ampéresches Gesetz Annahme: $ \vec{B}_{\tx{Mag}} $ homogen, im Vakuum verschwindet
 	$$ \oint \vec{B}_{\tx{Mag}} d\vec{s} = \mu_0 I_{\tx{Mag}} \qquad B_{\tx{Mag}} d = \mu_0 I_{\tx{Mag}} $$
 	$$|\vec{B}_{\tx{Mag}}| = \mu_0 \frac{I_{\tx{Mag}}}{d} = \mu_0 | \vec{M} | \tx{ Rechte-Hand-Regel} \vec{M} \uparrow \uparrow \vec{B}$$
-	\item  Vgl: Elektrostatik $ \vec{E}_{\tx{Pol}}  = - \frac{1}{\epsilon_0}  \vec{P} $\\
+	\item  Vgl: Elektrostatik $ \vec{E}_{\tx{Pol}}  = - \frac{1}{\epsilon_0}  \vec{P} \quad \vec{B}_{\tx{Mag}} = \mu_0 \vec{M} $\\
 		$\vec{E}_{\tx{Pol}} \uparrow \downarrow \vec{P} \rightarrow $ Schwächung des E-Feldes\\
 		$ \vec{B}_{\tx{Mag}} \uparrow \uparrow \vec{M} \rightarrow $ Stärkung des B-Feldes
 	\item Feld im Medium $ \vec{B}_{\tx{Med}} = \vec{B}_{\tx{frei}} + \vec{B}_{\tx{Mag}} = \vec{B}_{\tx{frei}} + \mu_0 \vec{M} $\\
-	$  \vec{B}_{\tx{Mag}} / \vec{M} $ proportional zu $ \vec{B}_{\tx{frei}}  \quad \vec{B}_{\tx{Mag}} = \chi_m \vec{B}_{\tx{frei}} $\\
+	$  \vec{B}_{\tx{Mag}}\ /\  \vec{M} $ proportional zu $ \vec{B}_{\tx{frei}}  \quad \vec{B}_{\tx{Mag}} = \chi_m \vec{B}_{\tx{frei}} $\\
 	$ \chi_m $ magnetische Suszeptibilität \\
-	Achtung: $ \vec{E}_{\tx{Pol}} = \chi_e \vec{E}_{\tx{Med}} $ (nicht via $ \vec{E}_{\tx{frei}} $)\\
-	Zsgh: $ \vec{B}_{\tx{Med}} = (1 + \chi_m) \vec{B}_{\tx{frei}}\equiv \mu \vec{B}_{\tx{frei}} $
-	$ \mu $ relative Permeabilität $ \mu = 1 + \chi_m $
+	Achtung: $ \vec{E}_{\tx{Pol}} =\chi_e \vec{E}_{\tx{Med}} $ (nicht via $ \vec{E}_{\tx{frei}} $)\\
+	Zsgh: $$ \vec{B}_{\tx{Med}} = (1 + \chi_m) \vec{B}_{\tx{frei}}\equiv \mu \vec{B}_{\tx{frei}} $$
+	$ \mu $ relative Permeabilität $ \mu = 1 + \chi_m $\\
+	($(1+\chi_e) \vec{E}_{\tx{Med}} = \vec{E}_{\tx{frei}}$)
 \end{itemize}
 \subsubsection{Maxwell- Gleichungen im Medium}
-Def: neues Feld 
-$$ \vec{H} \equiv \frac{1}{\mu_0} \vec{B}_{\tx{frei}} \qquad \tx{magnetische Erregung}$$
-Es gilt: $ \vec{M} = \chi_m \vec{H} \qquad \vec{B}_{\tx{Med}} = \vec{B}_{\tx{frei}}+ \vec{B}_{\tx{Mag}} = \mu_0 (\vec{H} + \vec{M})$\\
+Def: neues Feld \textbf{magnetische Erregung}
+$$ \boxed{\vec{H} \equiv \frac{1}{\mu_0} \vec{B}_{\tx{frei}}} \qquad \tx{magnetische Erregung}$$
+Es gilt: $$ \vec{M} = \chi_m \vec{H} \qquad \vec{B}_{\tx{Med}} = \vec{B}_{\tx{frei}}+ \vec{B}_{\tx{Mag}} = \mu_0 (\vec{H} + \vec{M})$$
 Verwendung von $ \vec{B} $ und $ \vec{H} \rightarrow $ kompaktere MW-Gl.\\
 \begin{itemize}
 	\item Ab jetzt: ,, Med `` unterdrücken \\
@@ -1607,27 +1609,27 @@ Verwendung von $ \vec{B} $ und $ \vec{H} \rightarrow $ kompaktere MW-Gl.\\
 	$ \tx{div}(\mu,\mu_0,\vec{H}) = \mu \mu_0 \tx{ div} \vec{H} + \mu_0 \  \grad \mu \cdot \vec{H} \buildrel ! \over = 0 $
 	\begin{itemize}
 		\item homogenes Medium $ \mu = \tx{const.}  \rightarrow \tx{div} \vec{H} = 0 $
-		\item inhomogenes Medium $ \mu = \mu(\vec{r}) \rightarrow \tx{div} \vec{H} = - \frac{\grad \mu \vec{H}}{\mu} \neq 0 \quad tx{i.a.} $
+		\item inhomogenes Medium $ \mu = \mu(\vec{r}) \rightarrow \tx{div} \vec{H} = - \frac{\grad \mu \vec{H}}{\mu} \neq 0 \quad \tx{i.a.} $
 	\end{itemize}
 	\item Verhalten an Grenzflächen\\
 	d.h.überlagerung von Vakuum $ (\mu = 1) $ zu Medium $ (\mu \neq 1) $\\
-	$ \tx{rot} \vec{H} = \vec{j} = 0 \Rightarrow \vec{H}^{\parallel}_{\tx{frei}} = \vec{H}^{\parallel}_{\tx{Med}} \quad \vec{B}^{\parallel}_{\tx{frei}} = \frac{1}{\mu} \vec{B}^{\parallel}_{\tx{Med}} $\\
-	$ \tx{div} \vec{B} = 0 \Rightarrow \vec{B}^{\perp}_{\tx{frei}} = \vec{B}^{\perp}_{\tx{Med}} \quad \vec{H}^{\perp}_{\tx{frei}} = \mu \vec{H}^{\perp}_{\tx{Med}} $
+	$ \tx{rot} \vec{H} = \vec{j} = 0 \Rightarrow \, \vec{H}^{\parallel}_{\tx{frei}} = \vec{H}^{\parallel}_{\tx{Med}} \quad \vec{B}^{\parallel}_{\tx{frei}} = \frac{1}{\mu} \vec{B}^{\parallel}_{\tx{Med}} $\\
+	$ \tx{div} \vec{B} = 0 \Rightarrow \quad \quad \vec{B}^{\perp}_{\tx{frei}} = \vec{B}^{\perp}_{\tx{Med}} \quad \vec{H}^{\perp}_{\tx{frei}} = \mu \vec{H}^{\perp}_{\tx{Med}} $
 \end{itemize}
 \subsection{Diamagnetismus}
 \begin{itemize}
 	\item keine permanente Dipole $ (\vec{I}_{\tx{Atom}} = \vec{L}_{\tx{Atom}} + \vec{S}_{\tx{Atom}} = 0 )$\\
 	wenn abgeschlossene Schulen in Hülle (reist)
 	\item $ \vec{B}_{\tx{ext}} $ induziert magnetische Dipole\\
-	$ \vec{P}^{\tx{ind}}_M \uparrow \downarrow \rightarrow $ nächstes Kapitel\\
+	$ \vec{P}^{\tx{ind}}_M \uparrow \downarrow \quad \rightarrow $ nächstes Kapitel\\
 	$ \rightarrow $ Schwächung des B-Feldes, $ \chi_m < 0, \mu < 1 $\\
 	typ: $ \chi_m \sim - 10 ^{-5} \rightarrow -10^{-6} $
 	\item Kraft im inhomogenen Feld $ \vec{F} = \vec{\nabla} (\vec{B} \cdot \vec{p}_M) $\\
 	$ \vec{M} = \frac{1}{V} \sum_i \vec{p}_{M,i} $\\
 	$ \vec{p}_M = V \vec{M} = V \chi_m \vec{H} = \frac{V \chi_m}{\mu_0} \vec{B}$\\
-	$ \vec{F} = \vec{\nabla}(\vec{B} \frac{V \chi_m}{\mu_0} \vec{B}) = \frac{V \chi_m}{\mu_0} \vec{\nabla} |\vec{B}|^2$\\
+	$$ \vec{F} = \vec{\nabla}(\vec{B} \frac{V \chi_m}{\mu_0} \vec{B}) = \frac{V \chi_m}{\mu_0} \vec{\nabla} |\vec{B}|^2$$
 	\item  Probe aus Bereich von hohem Feld herausgedrängt
-	\item alle Substanzen zeigen Diamagnetismus aber durch paramagnetismus und  ferromagnetismus Effekt überdeckt
+	\item alle Substanzen zeigen Diamagnetismus aber durch Paramagnetismus und  Ferromagnetismus Effekt überdeckt
 \end{itemize}
 \subsection{Paramagnetismus}
 \begin{itemize}
@@ -1640,28 +1642,28 @@ Verwendung von $ \vec{B} $ und $ \vec{H} \rightarrow $ kompaktere MW-Gl.\\
 	 $  \Delta E = \mu_B |\vec{B}| = 9,26 \cdot 10 ^{-24} \tx{J für }  B = 1 T $\\
 	 $ kT (T= 300 \tx{K}) = 4,14 \cdot 10^{-21} \tx{J} \quad \Rightarrow \frac{\Delta E}{kT} \ll 1$
 	 \item  Mittleres Dipolmoment eines Atoms
-	 $$| \overline{\vec{p}_M}| = \frac{1}{3} \frac{| \vec{p}_m}|^2 | \vec{B}|{k T}  n_p \quad \tx{ Dipoldichte }$$ 
-	 $$\vec{M} = n_p \overline{\vec{p}_m} = \frac{1}{3} \frac{n_p | \vec{p}_m|^2}{kT} \vec{B}$$
+	 $$| \overline{\vec{p}_M}| = \frac{1}{3} \frac{| \vec{p}_m|^2}{k T}| \vec{B}| \qquad  n_p \ \ \tx{ Dipoldichte }$$ 
+	 $$\vec{M} = n_p \overline{\vec{p}_M} = \frac{1}{3} \frac{n_p | \vec{p}_m|^2}{kT} \vec{B}$$
 	 $$ \boxed{\chi_m = \frac{\mu_0 \vec{M}}{|\vec{B}|} = \frac{1}{3} \frac{n_p \mu_0 | \vec{p}_m |^2}{kT} \sim \frac{1}{T}} \quad \tx{ Curie- Gesetz}$$
 	 $\chi_m (300\tx{K}) \buildrel \tx{typ} \over \approx 10^{-6} \rightarrow 10 ^{-4}$
 	 \item Probe in den Bereich größeres B-Feldes gezogen
 \end{itemize}
 \subsection{Ferromagnetismus}
 \begin{itemize}
-	\item grosse $\chi$, $\vec{M}$ aus WW der atomaren Dipole
-	\item hohe Temp.: Dipole statistisch verteilt $E_{therm}>E_{Austausch}$
-	\item temperatursink: $E_{therm}>E_{Austausch}$\\
-	$\rightarrow$ ausrichtung der dipole an mehreren stellen\\
-	$\rightarrow$ bildung der wißschen Bezirke / Domänen
-	\item für $\vec{B} = \vec{O}$ gilt $ \vec{M} = \vec{O}$ (zunächst)
-	\item $\vec{B} \neq \vec{O}:$ ausrichtung der domänen $\vec{M} \uparrow \uparrow \vec{B}$
+	\item große $\chi$, $\vec{M}$ aus WW der atomaren Dipole
+	\item hohe Temperatur: Dipole statistisch verteilt $E_{\tx{therm}}>E_{\tx{Austausch}}$
+	\item Temperatur sinkt: $E_{\tx{therm}}>E_{\tx{Austausch}}$\\
+	$\rightarrow$ Ausrichtung der Dipole an mehreren stellen\\
+	$\rightarrow$ Bildung der weißschen Bezirke / Domänen
+	\item für $\vec{B} = \vec{0}$ gilt $ \vec{M} = \vec{0}$ (zunächst)
+	\item $\vec{B} \neq \vec{0}:$ Ausrichtung der Domänen $\vec{M} \uparrow \uparrow \vec{B}$
 	\begin{itemize}
-		\item sprungweise $\rightarrow$ Barkhausen effekt
-		\item sättigung $\rightarrow$ alle Domänen ausgerichtet
+		\item Sprungweise $\rightarrow$ Barkhausen Effekt
+		\item Sättigung $\rightarrow$ alle Domänen ausgerichtet
 	\end{itemize}
-	\item Phasenübergang bei Temperatur erhöhung\\
-	bei $T>T_c$: $E_{therm}>E_{Austausch}$  ($N_i: T_c = 358\tx{C}$)\\
-	$\rightarrow$ auflösen der domänen\\
+	\item Phasenübergang bei Temperatur Erhöhung\\
+	bei $T>T_c$: $E_{\tx{therm}}>E_{\tx{Austausch}}$  ($N_i: T_c = 358\tx{C}$)\\
+	$\rightarrow$ auflösen der Domänen\\
 	$\rightarrow \vec{M} \rightarrow 0$ Entmagnetisierung\\
 	Phasenübergang: Ferro- $\rightarrow$ Paramagnetismus
 	$$\tx{obehalb } T_c: \chi = \frac{d}{(T-T_c)^r} \quad c = \tx{const.},\ r = 1 \rightarrow 1,5$$
@@ -1671,11 +1673,11 @@ Verwendung von $ \vec{B} $ und $ \vec{H} \rightarrow $ kompaktere MW-Gl.\\
 	\item Kombination Spule und Eisenkern\\
 	$\rightarrow$ Formung des Magnetfeldes\\
 	$\rightarrow$ Luftspalt zur Nutzung des Feldes\\
-	Amperesches Gesetz: $$\oint \vec{H}d\vec{s}=H_{Fe}+l_{Fe} + H_0d=NI$$
-	Grenze: $B_\perp =$ const. $\mu_{Fe} H_{Fe} = H_0$\\
-	$\rightarrow B = \frac{\mu_0 N I}{\frac{l_{Fe}}{\mu_{Fe}}+d} \approx \frac{\mu_o NI}{d}\quad \mu_{Fe}\approx 4000$ hier fehlt was\\
+	Ampéresches Gesetz: $$\oint \vec{H}d\vec{s}=H_{\tx{Fe}}+l_{\tx{Fe}} + H_0d=NI$$
+	Grenze: $B_\perp =$ const. $\mu_{\tx{Fe}} H_{\tx{Fe}} = H_0$\\
+	$$\rightarrow B = \frac{\mu_0 N I}{\frac{l_{\tx{Fe}}}{\mu_{\tx{Fe}}}+d} \approx \frac{\mu_o NI}{d}\quad \mu_{Fe}\approx 4000 \qquad  hier fehlt was$$
 	spalt kleiner, dann $B$ größer\\
-	vgl: Luftspule $B= \frac{\mu_0 NI}{L_{spule}}$ hier Verstärkung $\frac{dL_{spule}}{d}$
+	vgl: Luftspule $B= \frac{\mu_0 NI}{L_{\tx{Spule}}}$ hier Verstärkung $\frac{dL_{\tx{Spule}}}{d}$
 \end{itemize}
 
 \chapter{Elektrodynamik}
@@ -1701,52 +1703,53 @@ $$ \uind \sim \frac{d}{dt} \Phi_{M} \quad \Phi_{M} = \int_M \vec{B} d \vec{A} $$
 	$$B_z \uparrow\uparrow \vec{v} \tx{ keine } F_L, \tx{ keine } \uind$$
 	$$\tx{radiale komponente }B_r,\ \vec{B}_r \perp \vec{v} \rightarrow F_L \rightarrow \uind \neq 0$$
 	$$\tx{aus div }\vec{B} =0 \tx{ folgt } B_r = \frac{B_0}{r} \int dr\ r \frac{df(z)}{dz}$$
-	Ring geschlossen: fließt Induktionstrom $I_{ind}$\\
+	Ring geschlossen: fließt Induktionstrom $I_{\tx{ind}}$\\
 	Offen: Induktionsspannung an Enden
 	$$F_{el} = e |\vec{E}| = e \frac{|\uind|}{2\pi r} \buildrel ! \over = e|\vec{v}| B_r = F_L$$
-	$$|\uind = 2\pi r |\vec{v}| B_r\ (1)$$
+	\begin{equation*}
+	|\uind| = 2\pi r |\vec{v}| B_r \tag{1}
+	\end{equation*}
 	Betrachte Fluss durch Leiterschleife
 	$$\Phi_M = \int_A \vec{B}d\vec{A}= \oint_A B_z dA = \int d \varphi \int dr\ r B_0 f(z)$$
 	\begin{align*}
-	\frac{d \Phi_M}{dt} &= \underbrace{2 \pi}_{\int d \varphi} B_0 \frac{d}{dt} \int dr\ r F(z) = 2 \pi B_0 \int \frac{df(z)}{dz}\underbrace{\frac{dz}{dt}}_{V}r\ dr\\
-	&= 2\pi B_0 |\vec{v}| \int dr\ r \frac{df(z)}{dz} = f2\pi B_r r |\vec{v}| \quad (2)
+	\frac{d \Phi_M}{dt} &= \underbrace{2 \pi}_{\int d \varphi} B_0 \frac{d}{dt} \int dr\ r f(z) = 2 \pi B_0 \int \frac{df(z)}{dz}\underbrace{\frac{dz}{dt}}_{v}r\ dr\\
+	&= 2\pi B_0 |\vec{v}| \int dr\ r \frac{df(z)}{dz} = f2\pi B_r r |\vec{v}| \tag{2}
 	\end{align*}
 	also aus Vgl (1) und (2) $|\uind| = \frac{d \Phi_M}{dt}$
 \end{itemize}
 
 \subsubsection{Lenzsche Regel}
 \begin{itemize}
-	\item Richtung von $\uind$ und $I_{ind}$?
-	\item Betrachte Leiterschleife $\vec{A} \uparrow \uparrow z$-Achse /symmetrieachse\\
+	\item Richtung von $\uind$ und $I_{\tx{ind}}$?
+	\item Betrachte Leiterschleife $\vec{A} \uparrow \uparrow z$-Achse /Symmetrieachse\\
 	Ring nach links bewegen $\frac{d\Phi_M}{dt}>0$\\
-	für $\uind = - \frac{d\Phi_M}{dt}$ strom Linkschrauve um $\vec{A}$ machen oben $I$ nach hunten, $e^-$ Lorntzkraft nach vorne Richtung von $I$ konstant mit Herleitung aus $F_L$
-	\item Gedanken experiment: $\vec{B}_{ind}(I_{ind}) \uparrow \downarrow \Delta \vec{B}_{sol}$ sonst Verletzung der Energieerhaltung
+	für $\uind = - \frac{d\Phi_M}{dt}$ Strom Linksschraube um $\vec{A}$ machen oben $I$ nach unten, $e^-$ Lorentzkraft nach vorne Richtung von $I$ konstant mit Herleitung aus $F_L$
+	\item Gedanken Experiment: $\vec{B}_{\tx{ind}}(I_{\tx{ind}}) \uparrow \downarrow \Delta \vec{B}_{\tx{sol}}$ sonst Verletzung der Energieerhaltung
 \end{itemize}
 Lensche regel:
 $$\boxed{I_{\tx{ind}} \tx{ so gerichtet, dass erzeugte }\vec{B}_{\tx{ind}}\tx{ der Änderung von }\Phi_M \tx{ entegenwirkt.}}$$
 
 \paragraph{Zusammenfassung:}
-Änderung von $\Phi_M$ in $A$ erzeugt/induziert $\uind$ auf Rand des Leiters gemäß
-Faradasches Induktionsgesetz
+Änderung von $\Phi_M$ in $A$ erzeugt/induziert $\uind$ auf Rand des Leiters gemäß Faradayschen Induktionsgesetzes.
 $$\boxed{\uind= -\frac{d \Phi_M}{dt}}$$
 \begin{itemize}
-	\item $I_{ind}$ ist Kreisstrom (z.B. in Ring)
-	$\rightarrow$ kreis/ring förmiges $\vec{E}$-Feld\\
-	$\oint \vec{E}d \vec{s} = \uind \neq 0$ zunächst widerspuch zu 1. MX-Gl.\\
-	aber bisger: $\Phi_M = $ const. $\rightarrow \uind =0$\\
-	neues term in MW-Gl.
+	\item $I_{\tx{ind}}$ ist Kreisstrom (z.B. in Ring)
+	$\rightarrow$ Kreis/Ring förmiges $\vec{E}$-Feld\\
+	$\oint \vec{E}d \vec{s} = \uind \neq 0$ zunächst Widerspruch zu 1. MX-Gl.\\
+	aber bisher: $\Phi_M = $ const. $\rightarrow \uind =0$\\
+	neuer Term in MW-Gl.
 	$$\boxed{\oint_{dA} \vec{E}d \vec{s} = - \frac{d}{dt}\int_A \vec{B} d \vec{A} + \tx{satz von Stokes}}$$
-	$$\oint_{dA} \vec{E}d \vec{s} = \int_A rot \vec{E}d \vec{A} = - \frac{d}{dt}\int_A \vec{B}d \vec{A}$$
+	$$\oint_{dA} \vec{E}d \vec{s} = \int_A \tx{rot} \vec{E}d \vec{A} = - \frac{d}{dt}\int_A \vec{B}d \vec{A}$$
 	$$A \tx{ beliebig } \Rightarrow \boxed{\tx{rot } \vec{E}= -\frac{d}{dt}\vec{B}}$$
-	1. MW- Gl...
+	1. MW- Gl.:\\
+	\textbf{„$ \, $zeitlich veränderliche $\vec{B}$-Feld erzeugt elektrisches Wirbelfeld“}
 \end{itemize}
-„zeitlich veränderliche $\vec{B}$-Feld erzeugt el. Wirbelfeld“
-\subsubsection{``Wirbelströme''}
+\subsubsection{,,Wirbelströme''}
 \begin{itemize}
 	\item bisher: Leiterschleifen, Spulen
-	\item generell: in geschlossenem Leiter erzeugt el. Wirbelfeld Kreisströme / Wirbelströme
+	\item generell: in geschlossenem Leiter erzeugte elektrische Wirbelfeld Kreisströme / Wirbelströme
 	\item Wirbelströme erzeugen $\vec{B}$-Feld gemäß Lenzscher Regel\\
-	\folie{wibelstrom bremese des ICE3}
+	\folie{Wirbelstrom bremse des ICE3}
 \end{itemize}
 
 % 13.06.18
@@ -1754,13 +1757,13 @@ $$\boxed{\uind= -\frac{d \Phi_M}{dt}}$$
 \subsection{Selbstinduktion}
 \begin{itemize}
 	\item Schleife/ Spule mit Induktion und separates veränderliches Magnetfeld
-	\item aber: Induktion im feldererzeugenden Leiter $\rightarrow$ Selbstinduktion
+	\item aber: Induktion im Feld-erzeugenden Leiter $\rightarrow$ Selbstinduktion
 \end{itemize}
 Betrachte Spule: Strom $I \rightarrow \vec{B}$-Feld erzeugt
-$$\Phi_M \sim |\vec{B}| \sim I \quad \Phi_M \equiv LI$$
+$$\Phi_M \sim |\vec{B}| \sim I \quad \boxed{\Phi_M \equiv LI}$$
 (selbst-)Induktion $L$ $[L] = 1\frac{\tx{Vs}}{\tx{A}} = 1 \tx{H (Henry)}$
 \begin{description}
-	\item [Lenzsche Regel] $U_{\tx{ind}} = \frac{d \Phi_M}{dt} = - L \frac{dI}{dt}$
+	\item [Lenzsche Regel] $$\boxed{U_{\tx{ind}} = \frac{d \Phi_M}{dt} = - L \frac{dI}{dt}}$$
 \end{description}
 $L$ abhängige von Geometrie des Leiters, zeitlich konstant
 \begin{description}
@@ -1768,7 +1771,7 @@ $L$ abhängige von Geometrie des Leiters, zeitlich konstant
 	\item [Gegenspannung] $U_L = - \uind $
 \end{description}
 $\rightarrow U_0 = U_R - \uind = RI + L \frac{dI}{dt}$
-$$\frac{dI}{dt}= - \frac{R}{L} I + \frac{U_0}{L} \tx{(DGL)}$$
+$$\frac{dI}{dt}= - \frac{R}{L} I + \frac{U_0}{L} \qquad \tx{(DGL)}$$
 Lösungsansatz: $I(t) = Ae^{-\chi t} + B$
 $$\frac{dI}{dt} = -\chi Ae^{-\chi t}$$
 Einsetzen: $- \chi A e^{-\chi t} = - \frac{R}{L} A e^{-\chi t} - \frac{R}{L}B + \frac{U_0}{L}$\\
@@ -1803,19 +1806,19 @@ starker Anstieg, asymptotisch gegen $\frac{U_0}{R} (\hat{=} L = 0)$
 \begin{itemize}
 	\item Betrachte Schaltvorgänge in Spule 
 	\begin{itemize}
-		Einschalten $\rightarrow$ Aufbau $\vec{B}$-Feld Energie im $\vec{B}$-Feld gespeichert
+		\item Einschalten $\rightarrow$ Aufbau $\vec{B}$-Feld Energie im $\vec{B}$-Feld gespeichert
 		\item Ausschalten $U_{\tx{ext}} = 0$, Stromfluss $\rightarrow$ Energiefreisetzung\\
-		strom ducht $R_1$ und $R_2$ in serie $\rightarrow P = I^2 R \quad R = R_1 + R_2$
+		Strom durch $R_1$ und $R_2$ in Serie $\rightarrow P = I^2 R \quad R = R_1 + R_2$
 		$$W_m = \int_0^\infty I^2 (t) R\ dt = \int_0^\infty I_0^2 e^{-\frac{2R}{L} t} R\ dt = - I_0^2 \frac{LR}{2R}e^{-\frac{2R}{L} t} \bigg|_0^\infty$$
 		$$\boxed{W_m = \frac{1}{2}I_0^2 L}$$
 	\end{itemize}
 \end{itemize}
 Solenoid: $L = \mu_0 n^2 Al \quad B = \mu_0 n I_0$\\
-dann $w_m = \frac{W_m}{V} = \frac{1}{2} I_0^2 \mu_0 =\frac{1}{2\mu_0}| \vec{B}|^2$\\
+dann $w_m = \frac{W_m}{V} = \frac{1}{2} I_0^2 \mu_0 =\frac{1}{2\mu_0}| \vec{B}|^2$\\[5pt]
 Ergebnis ist allgemeingültig
 $$\begin{array}{llll}
 \tx{Zsfg}: & W_{\tx{el}} = \frac{1}{2} \epsilon_0 |\vec{E}^2 & \tx{Kondensators} & W_{\tx{el}} = \frac{1}{2}CU^2 \\
-& W_{\tx{mag}} = \frac{1}{2 \mu_0} |\vec{B}|^2 & \tx{spule} & W_{\tx{mag} = \frac{1}{2}LI^2}\\
+& W_{\tx{mag}} = \frac{1}{2 \mu_0} |\vec{B}|^2 & \tx{spule} & W_{\tx{mag}} = \frac{1}{2}LI^2\\
 & \tx{mit } \epsilon_0 \mu_0 = \frac{1}{c^2} && c\tx{ für Lichtgeschwindigkeit} \\
 & W_{\tx{??}} W_{\tx{ges}} = \frac{1}{2} \epsilon_0 (|\vec{z}|^2 + c^2 |\vec{B}|^2)
 \end{array}$$
@@ -1824,12 +1827,12 @@ $$\begin{array}{llll}
 \begin{itemize}
 	\item Gl. für statische Situation\\
 	+ Faradays Induktionsgesetz\\
-	+ neuer Term "Verschiebungstrom" aus theo. Argument (Maxwell)
+	+ neuer Term ,,Verschiebungsstrom`` aus Theo. Argument (Maxwell)
 \end{itemize}
-Betrachte $$\oint \vec{B}d \vec{s} = \mu_0 I$$
+Betrachte: $$\oint \vec{B}d \vec{s} = \mu_0 I$$
 \begin{description}
 	\item [Links] ringförmigen Weg am Leiter $\oint \vec{B}\ ds = 0$\\
-	wiederspruch zu Ampereschen Gesetz/ Maxwell-Gl.
+	Widerspruch zu Ampéreschen Gesetz/ Maxwell-Gl.
 	\item [Rechts] keinen Strom $I$ im Kondensator aller el. Fluss $\Phi_{\tx{el}}$ ducht Zylinderfläche $\rightarrow$ zusätzlicher Beitrag $\frac{d \Phi_\tx{el}}{dt}$ nur wenn $\frac{d \Phi_\tx{el}}{dt} \neq 0$ fließt $I$ und erzeugt $\vec{B}$-Feld
 	\item [Rechnung] $I_V = \frac{dQ}{dt} \quad \frac{dQ}{dt}$ Änderung auf Kondensatorplatten
 	$$|\vec{E}| = \frac{Q}{\epsilon_0 A} \quad Q = |\vec{E}|A\epsilon_0$$ 
@@ -1840,30 +1843,32 @@ Betrachte $$\oint \vec{B}d \vec{s} = \mu_0 I$$
 \end{align*}
 Addition von $I_V$ zu normalen Strom in MW-Gl.
 $$\boxed{\oint \vec{B}\ d\vec{s} = \mu_0 (I +I_V) = \mu_0 I + \mu_0 \epsilon_0 \frac{d}{dt}\Phi_{\tx{el}}}$$
-Diff. Form: $ I = \int_A \vec{j}\ d\vec{A}$ und Stokescher Satz
+Diff. Form: $ I = \int_A \vec{j}\ d\vec{A}$ und Stokes`scher Satz
 $$\int_A \tx{rot } \vec{B}\ d\vec{A} = \mu_0 \int \vec{j}\ d \vec{A} + \mu_0 \epsilon_0 \frac{d}{dt} \int \vec{E}\ d\vec{A}$$
-A beliebig: rot $\vec{B} = \mu_0 \vec{j} + \mu_0 \epsilon_0 \frac{d}{dt}\vec{E}$\\
+A beliebig: $$\tx{rot} \vec{B} = \mu_0 \vec{j} + \mu_0 \epsilon_0 \frac{d}{dt}\vec{E}$$
 Finale Form der MW-Gl. im Vakuum Kopplung von $\vec{E}$ und $\vec{B}$ durch ,,$\frac{d}{dt}$''-Therme
 
 \section{Wechselstromkreise}
 \subsection{Wechselstrom}
 \begin{itemize}
-	\item periodische Änderung der Polarität der Spannungsquelle meist sunsuförmig: 
-	$$U(t) = U_0 \sin \frac{2 \pi}{T}t \quad \frac{1}{T} = f \tx{ Frequenz}$$ 
-	$$I(t) = I_0 \sin \omega t \quad \frac{2 \pi}{T}= 2 \pi f = \omega$$
+	\item periodische Änderung der Polarität der Spannungsquelle meist Sinusförmig: 
+	\begin{align*}
+	U(t) &= U_0 \sin \omega t \quad \ \ \ \ \frac{1}{T} = f \tx{ Frequenz}\\
+	I(t) &= I_0 \sin \omega t \; \quad \quad \frac{2 \pi}{T}= 2 \pi f = \omega
+	\end{align*}
 \end{itemize}
-$I_0$ bzw. $U_0$ Maximal o. Spitzenwete\\
-Leistung am ohmschen Wiederstant $P(t) = U(t) I(t)$\\
+$I_0$ bzw. $U_0$ Maximal o. Spitzenwerte\\
+Leistung am ohmschen Widerstand $P(t) = U(t) I(t)$\\
 Spitzenwert $U_0 I_0 = \frac{U_0^2}{R}= R_0 I_0^2$ 
 $$P(t) = \frac{U_0^2}{R} \sin^2 \omega t = R I_0^2 \sin^2 \omega t$$
 \begin{align*}
 \overline{P} =& \frac{1}{T} \int_0^T \frac{U_0^2}{R} \sin^2 \omega t\ dt\\
 &= \frac{1}{2}\frac{U_0^2}{R} = \frac{1}{2}I_0^2 R = \frac{1}{2}U_0 I_0
 \end{align*}
-$\rightarrow$ Effektivwerte: Werte die Gleichstrom hat mit gleichem Leistungverbrauch
+$\rightarrow$ Effektivwerte: Werte die Gleichstrom hat mit gleichem Leistungsverbrauch
 $$U_{\tx{eff}} = \frac{U_0}{\sqrt{2}} \quad I_{\tx{eff}} = \frac{I_0}{\sqrt{2}}$$
 \folie{Netzspannung in Deutschland}\\
-\folie{Drei-Phasen-Wechelspannung}\\
+\folie{Drei-Phasen-Wechselspannung}\\
 \folie{Generator zur Erzeugung der Netzwechselspannung}
 
 \subsection{Diodenschaltungen}
@@ -1874,7 +1879,7 @@ $$U_{\tx{eff}} = \frac{U_0}{\sqrt{2}} \quad I_{\tx{eff}} = \frac{I_0}{\sqrt{2}}$
 \folie{Kennlinie und Schaltsymbol}
 \begin{align*}
 &U_{Ak} > 0,5 \tx{V  Diode wird leitend}\\
-&U_{Ak} \gg 0,7 \tx{V  }l_{in}\ I-U\tx{-Charakteristik }I = k (U-0,7\tx{V})\\
+&U_{Ak} \gg 0,7 \tx{V  }l_{\tx{in}}\ I-U\tx{-Charakteristik }I = k (U-0,7\tx{V})\\
 &U_{Ak} < 0,5 \tx{V  fließt Sperrstrom } I_{\tx{sperr}} \approx pA \rightarrow \mu A\\
 &U_{Ak} \ll 0 \tx{ Durchbruch} 
 \end{align*}
@@ -1884,30 +1889,30 @@ $$U_{\tx{eff}} = \frac{U_0}{\sqrt{2}} \quad I_{\tx{eff}} = \frac{I_0}{\sqrt{2}}$
 \end{trivlist}
 \begin{itemize}
 	\item Ziel: Erzeugung von Gleichspannung aus Wechselspannung
-	\item[i)] Einweggleichrichtung
+	\item[i)] \textbf{Einweggleichrichtung}
 	\begin{itemize}
 		\item nur in pos. Halbperiode Diode leitend
 		\item $ U_{\tx{aus}}^{\tx{max}} = U_{\tx{ein}} - 0,7 \tx{V} $
 		\item Glättung durch Kondensator $ U_{\tx{aus}}(t) = U_{\tx{max}} e^{-t/RC} \approx U_{\tx{max}} (1- \frac{t}{RC}) $
 	\end{itemize}
-	\item[ii)] Grätzschaltung
+	\item[ii)] \textbf{Grätzschaltung}
 	\begin{itemize}
 		\item in jeder Halbperiode 2 Dioden leitend
 		\item $ U_{\tx{max}}^{\tx{aus}} = U_{\tx{ein}} - 1,4 \tx{V} $
 		\item Glättung wie oben
 	\end{itemize}
-	\item [iii)] Villardschaltung\\
+	\item [iii)] \textbf{Villardschaltung}\\
 	Einschalten: $ U_C $ bis $ U_0 -0,7 \tx{V} $ geladen\\
 	Maschenregel: $ U_{\tx{aus}} = U_{\tx{ein}} + U_C = U_{\tx{ein}} + U_0 \approx U_0 + U_0 \cos \omega t $\\\
-	$ \rightarrow $ Spannungshub um $ U_0 $\\
+	$ \rightarrow $ Spannungsschub um $ U_0 $\\
 	$ + $ Gleichrichter $ \rightarrow $ Greinacher Schaltung\\
 	$ U_{D_1} = U_0 + U_0 \cos \omega t $\\
 	$ U_{\tx{max}}^{\tx{aus}} 2 U_0 (-1,4 \tx{V}) $
-	\item[iv)] Kaskadenschaltung nach Greinacher
+	\item[iv)] \textbf{Kaskadenschaltung nach Greinacher}
 	\begin{itemize}
 		\item[1. Stufe]
 		$ U_{A_0} = 2 U_0 -1,4\tx{V} $ gleichgerichtet\\
-		$ U_{D_2} = 2 U_0 \sim \omega t \rightarrow $ Eingang für 2. Stufe\\
+		$ U_{D_2} = 2 U_0 \sim \omega t \rightarrow $ Eingang für 2. Stufe
 		\item [2. Stufe]
 		$ U_{AB} = 2 U_0 - 1,4 \tx{V} $ gleichgerichtet\\
 		$ \rightarrow U_{B0}^{\tx{max}} = 4 U_0 - 2,8 \tx{V} $
@@ -1919,11 +1924,11 @@ $$U_{\tx{eff}} = \frac{U_0}{\sqrt{2}} \quad I_{\tx{eff}} = \frac{I_0}{\sqrt{2}}$
 
 \subsection{Zeigerdiagramme}
 \begin{itemize}
-	\item komplexe Schaltungen $ \rightarrow $ Rechnen mit $ \cos ,\sin $ und Additionsth. schwierig\\
+	\item komplexe Schaltungen $ \rightarrow $ Rechnen mit $ \cos ,\sin $ und Additionstheorem schwierig\\
 	$ \rightarrow $ komplexe Schreibweise $ \sin $ und $ \cos $ als Realteile der komplexen Exponentialfunktion\\
 	z.B. $ U_0 \cos \omega t = \tx{Re}(U_0 e^{i \omega t} ) \quad U_0 \sin \omega t = \tx{Re} ( U_0 r ^{i \omega t - \pi/2}) $\\
-	$ \tx{exp}(i a) = \cos a i \sin a \quad \cos (a- \frac{\pi}{2}) \sin a $\\
-	$ a+ib = \sqrt{a^2 + b^2} e^{i\Phi} \quad \Phi = \arctan \frac{b}{a} $\\
+	$$ \tx{exp}(i a) = \cos a i \sin a \quad \cos (a- \frac{\pi}{2}) \sin a $$
+	$$ a+ib = \sqrt{a^2 + b^2} e^{i\Phi} \quad \Phi = \arctan \frac{b}{a} $$
 	oft Re weggelassen: $ U = U_0 e^{i\omega t} $
 	\begin{itemize}
 		\item nur Hilfsmittel, an Ende Realteil bilden
@@ -1933,39 +1938,37 @@ $$U_{\tx{eff}} = \frac{U_0}{\sqrt{2}} \quad I_{\tx{eff}} = \frac{I_0}{\sqrt{2}}$
 
 \subsection{Komplexe Widerstände}
 Gilt: $ U = \frac{Q}{C} \quad \frac{d}{dt}: \frac{dU}{dt} = \frac{I}{C} $\\
-$ U(t) = U_0 \cos \omega t \quad \tx{gegeben} $\\
-$ I(t) = C \frac{dU}{dt} = - \omega U_0 C \sin \omega t = I_0 \cos (\omega t + \frac{\pi}{2}) $\\
+$$ U(t) = U_0 \cos \omega t \quad \tx{gegeben} $$
+$$ I(t) = C \frac{dU}{dt} = - \omega U_0 C \sin \omega t = I_0 \cos (\omega t + \frac{\pi}{2}) $$
 Spitzenwert $ I_0 = \omega C U_0 \quad I $ teilt $ U $ um $ \frac{\pi}{2} (90^\circ) $ voraus\\
 \paragraph{\underline{Spule:}} Maschenregel: $ U-U_L = 0 \quad U_L = - \uind $\\
 $ - \uind = L \frac{dI}{dt} = U(t) $\\
 Geg: $ U(t) = U_0 \cos \omega t $\\
 $ \frac{dI}{dt} = \frac{1}{L} U(t) = \frac{U_0}{L} \cos \omega t $\\
-$ I(t) = \int \frac{U_0}{L} \cos \omega t \, dt = \frac{U_0}{L\omega} = \frac{U_0}{L\omega} \cos ( \omega t - \frac{\pi}{2}) $\\
+$$ I(t) = \int \frac{U_0}{L} \cos \omega t \, dt = \frac{U_0}{L\omega} = \frac{U_0}{L\omega} \cos ( \omega t - \frac{\pi}{2}) $$
 Spitzenwert $ I_0 = \frac{U_0}{\omega L} $ Spannung eilt Strom um $ \frac{\pi}{2} $ voraus
 \paragraph{\underline{Impedanz Z:}}
 Widerstand für Bauteil um $ \frac{U}{I} $ zu beschreiben. naiv: $ \frac{U(t)}{I(t)} $ ,,Widerstand`` zeitabhängig, negativ\\
 alternativ: $ \boxed{Z = \frac{U(t)}{I(t)}} $ wobei $ U,I $ komplexwertige Funktionen sind.
 \begin{itemize}
-	\item[i)] Kondensator mit Kapazität
-	
-	% foto vfavortiten 2:
+	\item[i)] \textbf{Kondensator mit Kapazität C}
 	$ U(t) = U_0 e^{i \omega t} \quad I(t) = \omega C U_0 r ^{i(\omega t + \frac{\pi}{2})} $\\
-	$ Z_C = \frac{1}{\omega C} \frac{1}{e^{i \pi/2}} = \frac{1}{i \omega C} $\\
+	$ \boxed{Z_C = \frac{1}{\omega C} \frac{1}{e^{i \pi/2}} = \frac{1}{i \omega C}} $\\
 	$ \omega \rightarrow 0: Z_C \nearrow \infty \quad \omega \rightarrow \infty : Z_C \searrow 0 $
 	
-	\item[ii)] Spule mit Induktivität L\\
+	\item[ii)] \textbf{Spule mit Induktivität L}\\
 	$ U(t) = U_0 e^{i\omega t} \quad I(t) = \frac{U_0}{\omega L} e^{i (\omega t - \frac{\pi}{2})} $\\
-	%ich habe hier ein ö entfernt ich nehme an das war ausversehen -az
-	$\boxed{Z_L = \omega \frac{1}{e^{-i \pi/2}} = i \omega L} $
+	%ich habe hier ein ö entfernt ich nehme an das war ausversehen -az 
+	$\boxed{Z_L = \omega \frac{1}{e^{-i \pi/2}} = i \omega L} $\\
 	$ \omega \rightarrow 0 : Z_L \searrow 0 \quad \omega \rightarrow \infty: Z_L \nearrow \infty $
-	\item [iii)] Ohmscher Widerstand\\
-	$ Z_R = R  $ (trivial) \\
+	\item [iii)] \textbf{Ohmscher Widerstand}\\
+	$\boxed{ Z_R = R } $ (trivial)
 \end{itemize}
-Kirchhoffsche Gesetze auch hier gültig (da auf Q- und E-Erhaltung basierend) Berechnung von Netzwerken mit KHG und den Impendanzen. 
+Kirchhoffsche Gesetze auch hier gültig (da auf Q- und E-Erhaltung basierend) Berechnung von Netzwerken mit KHG und den Impedanzen. 
 
 \subsection{Frequenzfilter}
-\paragraph{Bem:} periodisches Signal mit beliebigem Amplitudenverlauf aus überlagerung von $ \cos $- und $ \sin $-förmigen Signalen\\
-$ \rightarrow $ Fourierzerlegung
+\paragraph{Bem:} periodisches Signal mit beliebigem Amplitudenverlauf aus Überlagerung von $ \cos $- und $ \sin $-förmigen Signalen\\
+$ \rightarrow $ \textbf{Fourierzerlegung}
 \paragraph{Komplexe Widerstände}
 \begin{itemize}
 	\item Ändern das Frequenzspektrum
@@ -1975,10 +1978,10 @@ $ \rightarrow $ Fourierzerlegung
 Spannungsteiler mit $ Z_1 = \frac{1}{i \omega C} \quad Z_2 = R $\\
 Übertragungsfaktor $ k = \frac{U_{\tx{aus}}}{U_{\tx{ein}}} = \frac{Z_{\tx{aus}}}{Z_{\tx{ges}}} $
 $$ K = \frac{R}{R + \frac{1}{i \omega C}} \frac{R + \frac{i}{\omega C}}{R + \frac{i}{\omega C}} = \frac{R^2 + i \frac{R}{\omega C}}{ R^2 + \frac{1}{\omega^2 C^2}} = \frac{\omega^2 C^2 R^2}{\omega^2 C^2 R^2 + 1} + i \frac{\omega C R}{\omega^2 C^2 R^2 + 1} $$
-$$ |k| = \frac{|U_{\tx{aus}} |}{| U_{\tx{ein}} |} \quad |k|^2 = \frac{\omega ^2 C^2 R^2}{\omega^2 C^2 R^2 + 1} = \frac{1}{1+ \frac{\omega_0^2}{\omega^2}} \quad \omega_0 \equiv \frac{1}{RC} $$
+$$ |k| = \frac{|U_{\tx{aus}} |}{| U_{\tx{ein}} |} \quad |k|^2 = \frac{\omega ^2 C^2 R^2}{\omega^2 C^2 R^2 + 1} = \frac{1}{1+ \frac{\omega_0^2}{\omega^2}} \qquad \omega_0 \equiv \frac{1}{RC} $$
 Phase $ \Phi \qquad \tan \Phi = \frac{\tx{Im}}{\tx{Re}} = \frac{1}{\omega C R} = \frac{\omega_0}{\omega} $\\
 für $ \omega \rightarrow \infty \quad |k| \rightarrow 1 $ ,,Hochpass``\\
-für $ \omega \rightarrow 0 \quad Z_C \rightarrow\infty $ Kondansator sperrt\\
+für $ \omega \rightarrow 0 \quad Z_C \rightarrow\infty $ Kondensator sperrt\\
 für $ \omega $ klein eilt Spannung um $ \frac{\pi}{2} $ hinterher
 \paragraph{Def: Grenzfrequenz $ \omega_{\tx{Gr}} $}
 Frequenz bei der $ |k(\omega_{\tx{Gr}})| = \frac{1}{\sqrt{2}} $\\
@@ -1988,8 +1991,8 @@ Hochpass: $ \omega_{\tx{Gr}} = \omega_0 = \frac{1}{RC} $
 	\item[a)] RC-Serienschaltung mit Abgiff über C
 	\item[b)] LR-Serienschaltung mit Abgriff über R
 \end{itemize}
-$ Z_1 = i \omega L \quad Z_2 = R \quad k = \frac{R}{R+i \omega L} $\\
-$ |k|^2 = \frac{R^2}{R^2 + \omega^2 L^2} = \frac{1}{1 + \frac{\omega^2}{\omega_0^2}} \quad \omega_0 \equiv \frac{R}{L} $\\
+$$ Z_1 = i \omega L \quad Z_2 = R \quad k = \frac{R}{R+i \omega L} $$
+$$ |k|^2 = \frac{R^2}{R^2 + \omega^2 L^2} = \frac{1}{1 + \frac{\omega^2}{\omega_0^2}} \qquad \omega_0 \equiv \frac{R}{L} $$
 $ \tan \Phi = \frac{-\omega L}{R} = \frac{-\omega}{\omega_0} $\\
 für $ \omega\rightarrow 0 \quad |k| \rightarrow 1 \quad \Phi \rightarrow 0 $ Tiefpass\\
 für $ \omega \rightarrow \infty \quad |k| \rightarrow 0 \quad \Phi \rightarrow -\frac{\pi}{2} $\\
@@ -1997,7 +2000,7 @@ für $ \omega \rightarrow \infty \quad |k| \rightarrow 0 \quad \Phi \rightarrow 
 \begin{enumerate}
 	\item R-L-C-Serienschaltung
 	\item nur Durchlass in einem gewissen Frequenzbereich
-	\item zwei frequenzabhängige Impadanzen $ \sim \omega, \sim \frac{1}{\omega} $\\
+	\item zwei frequenzabhängige Impedanzen $ \sim \omega, \sim \frac{1}{\omega} $\\
 	$$|k| = \frac{R}{\sqrt{R^2 [\omega L - \frac{1}{\omega C}]}} \qquad \tan \Phi = \frac{\frac{1}{\omega C} - \omega L}{R} $$
 	\item $ |k| = 1 $ maximal bei $ \omega_0 = \frac{1}{\sqrt{LC}} $ dort Sprung in $ \Phi $ von $ + \pi/2 \rightarrow - \pi/2 $
 	\item Breite des Bereichs in $ \omega $ mit $ |k| > \frac{1}{\sqrt{2}} $\\
@@ -2005,9 +2008,9 @@ für $ \omega \rightarrow \infty \quad |k| \rightarrow 0 \quad \Phi \rightarrow 
 \end{enumerate}
 \subsection{Blindleistung}
 \begin{itemize}
-	\item Bestimmung von Leistung P an Impendanz Z 
+	\item Bestimmung von Leistung P an Impedanz Z 
 	\item Gleichspannung: $ P = U I $ zeitlich konstant
-	\item An Ipendanz Z: $ U(t) = U_0 \cos \omega t \quad I(t) = I_0 \cos (\omega t-\Phi) $\\
+	\item An Impedanz Z: $ U(t) = U_0 \cos \omega t \quad I(t) = I_0 \cos (\omega t-\Phi) $\\
 	Mittlere Leistung $ \overline{P} \equiv \frac{1}{T} \int\limits_{0}^{T} U(t) I(t) dt $\\
 	$$ \overline{P} = \frac{1}{T} \int\limits_{0}^{T} U_0 I_0 \cos (\omega t) \cos (\omega t - \Phi) \dots = \frac{1}{2} U_0 I_0 \cos \Phi $$
 	ohmscher Widerstand $ Z = R \quad \Phi = 0 \quad \overline{P} = \frac{U_0 I_0}{2} \equiv U_{\tx{eff}} I_{\tx{eff}} $
@@ -2027,12 +2030,11 @@ für $ \omega \rightarrow \infty \quad |k| \rightarrow 0 \quad \Phi \rightarrow 
 \paragraph{Leistungsanpassung}
 Betrachte Spule mit $R\ll \omega L$ $\rightarrow$ geringe Wirkleistung aber eventuell sehr großer Strom
 \begin{itemize}
-	\item optimale Leistungsübertragung $\rightarrow$ weitere Anpassungimpedanz $Z_A$ in Reihe an Last $\overline P = \frac{1}{2} I^2_0 \tx{ Re}(Z_L)$
+	\item optimale Leistungsübertragung $\rightarrow$ weitere Anpassungsimpedanz $Z_A$ in Reihe an Last $\overline P = \frac{1}{2} I^2_0 \tx{ Re}(Z_L)$
 	$$I(t) = \frac{U(t)}{Z_A + Z_L} \rightarrow I_0 = \frac{U_0}{|Z_A + Z_L|}$$
 \end{itemize}
 $$ \overline{P} = \frac{1}{2} \frac{U_0^2}{|Z_A + Z_L|^2} \tx{ Re } Z_L = \frac{1}{2} \frac{U_0^2}{(\tx{Re } Z_A + \tx{ Re } Z_L)^2 (\tx{Im } Z_A + \tx{ Im } Z_L)^2 } \tx{ Re } Z_L $$
-
-	$\overline P$ maximal wenn Im($Z_A) = $ Im$(Z_L)$\\ Impedanz verhaltern,  die $ \Delta \Phi $ kompensiert.\\
+$$\overline P \tx{ maximal wenn Im }(Z_A) = \tx{ Im }(Z_L)$$ Impedanz verhaltern,  die $ \Delta \Phi $ kompensiert.\\
 hier: Kondensator mit $ \frac{1}{\omega C} = \omega L $.\\
 weiterhin: $ \tx{Re}(Z_A) = 0 $ damit $ \overline{P}(Z_n) = 0 $\\
 wenn $ R_z $ gegeben, dann $ R_L = R_Z $ maximal $ \overline{P} $ 
@@ -2040,7 +2042,7 @@ wenn $ R_z $ gegeben, dann $ R_L = R_Z $ maximal $ \overline{P} $
 \begin{description}
 	\item [Ziel] Strom oder Spannung erhöhen/erniedrigen
 	\item [Prinzip] Induktion zwischen gekoppelten Spulen
-	\item \folie{Transformator - Schaltzeichnung und tech. Umsetzung}
+	\item \folie{Transformator - Schaltzeichnung und technische Umsetzung}
 \end{description}
 \paragraph{Ideale, unbelaster Trafo}
  \begin{itemize}
@@ -2057,7 +2059,7 @@ $$\frac{d\Phi_{m,1}}{dt} = \frac{d\Phi_{m,2}}{dt}$$
 Induziert $$U_2(t) = - N_2 \frac{d\Phi_{m,1}}{dt} = - \frac{N_2}{N_1} U_1(t) \tx{ also } \frac{U_2}{U_1} = -\frac{N_2}{N_1}\quad \Delta\phi = \pi \tx{ gegenphasig}$$
 ideal: kein Leistungsverbrauch
 $$U_1(t)\ I_1(t)\ = U_2 (t)\ I_2(t) \rightarrow \frac{I_2 (t)}{I_1 (t) } = -\frac{N_1}{N_2}$$
-großes $N_2/N_1 \rightarrow$ Erzerugung von Hochspannung\\
+großes $N_2/N_1 \rightarrow$ Erzeugung von Hochspannung\\
 kleines $N_2/N_1 \rightarrow$ Erzeugung von hohe Ströme\\
 aber: wenn $I_2 \neq 0$ dann Gegeninduktion
 \paragraph{Realer, belastender Trafo}
@@ -3024,6 +3026,153 @@ Betrachte 2 Spezialfälle:
 	\end{itemize}
 \end{enumerate}
 
-\section{Wellen in Materie}
+% neue Vorlesung
+
+\section{Elektro-magnetische Wellen in Materie}
+\subsection{Brechungsindex/Brechzahlen}
+\begin{itemize}
+	\item wie verändert sich Welle im Medium?
+	\item Wissen bereits:
+	\begin{itemize}
+		\item 	$$v_{\tx{ph}}^{\tx{med}} = c = c_{\tx{med}} = \frac{1}{\sqrt{\epsilon_0 \mu_0 \epsilon \mu}} = \frac{c_0}{\sqrt{\epsilon \mu}} \quad c_0 \tx{Lichtgeschw. im Vakuum}$$
+		\item Dipol im Wasser: $ \lambda < \lambda_0 \qquad \lambda_0 \tx{Vakuumwellenlänge}$
+		\item $ e^- $ in Atomen zu periodischen Schwingungen angeregt
+		$$\omega_{e^-} = \omega_{\tx{ext Welle}}$$
+		$ \rightarrow $ Abstrahlung von Sekundärwellen
+	\end{itemize}
+	\item Brechzahl $ n = \frac{c_0}{c_{\tx{med}}} $ da $ \omega = \const $ folgt $ \lambda_{\tx{med}} = \frac{\lambda_0}{n} $
+\end{itemize}
+\folie{Anregung von Atomschwingungen}
+\subsubsection{Reaktion des Mediums}
+$ e^- $-Schwingung durch Welle in z-Richtung, in x linear polarisiert
+$$m \ddot{x} + b \dot{x} + Dx = - e E_0 e^{i\omega t} $$
+$$\ddot{x} + 2 \gamma \dot{x} + \omega_0^2 x = K e ^{i \omega t} \qquad K = - \frac{e E_0}{m}$$
+$ b $ beschreibt die Dämpfung die durch Energieübertragung auf Festkörper entsteht\\
+$ D $ beschreibt die Stärke der atomaren Rückstellkraft\\
+$ E_0 $ ist die Amplitude der Anregenden Welle\\[10pt]
+\textbf{Lösung:}
+$$x(t) = x_0(\omega) e ^{i \omega t} $$
+$$x_0(\omega) = \frac{k}{\omega_0^2  - \omega^2 + 2 i \gamma \omega}$$
+Phasenverschiebung: 
+$$\phi(\omega) = \pi + \arctan \frac{\gamma \omega}{\omega_0^2 - \omega^2}$$
+$$|x_0(\omega)| = \frac{k}{\sqrt{(\omega_0^2 - \omega^2) + (2 \gamma \omega)^2}}$$
+$ \rightarrow $ Emission von Sekundärwellen von allen $ e^- $ im Medium $ \omega/ \omega_0  $ klein $ \rightarrow $ positive Phasenverschiebung $ \Delta \phi > 0 $ klein\\
+\folie{Überlagerung von Primärwelle und Sekundärwelle(n)}\\[5pt]
+Überlagerung der Wellen bewirkt:
+\begin{itemize}
+	\item Phase wird in jeder Schicht verzögert
+	\item Abstand der Maxima/Wellenlänge wird reduziert
+	\item Welle $ \perp $ Ausbreitungsrichtung interferieren zu $ 0 $
+	\item[$ \Rightarrow $] $ \lambda $ und $ c $ im Medium sind reduziert um $ n $
+\end{itemize}
+\subsubsection{Makroskopische Welle}
+\folie{Phasenverzögerung im Medium}\\
+Strecke $ \Delta z $ im Medium \\
+Vakuumwelle bräuchte: $ t_0 = \frac{\Delta z}{c_0} $\\
+Mediumwelle braucht: $ t_{\Delta z} = \frac{\Delta z}{c} = \frac{n \Delta z}{c_0} = t_0 + \ub{\frac{(n-1) \Delta z}{c_0}}_{\Delta t} $\\
+Welle beim Eintritt: $ E(t) = E_0 e^{i \omega t} $ bei $ z=0 $\\
+Beim Austritt: $ E(\Delta z , t) = E_0 e^{i \omega (t - t_{\Delta z})}  = \ub{E_0 e^{i \omega(t - \frac{\Delta z }{c_0})}}_{\substack{\tx{ungestörte Welle}\\\tx{im Vakuum}}} \equalto{e^{-i \omega(n-1) \frac{\Delta z}{c_0}}}{ \equiv e^{- i \phi} \tx{Phasenverzögerung}} $
+$$\phi = \omega(n-1) \frac{\Delta z}{c_0} = 2 \pi (n-1) \frac{\Delta z}{\lambda_0}$$
+Dünne Schicht: $ \phi \ll 1 \Rightarrow e^{-i\phi} \approx 1 - i \phi $\\
+Welle hinter Medium:
+$$E(\Delta z,t) = \ub{E_0 e^{i \omega(t - \frac{\Delta z}{c_0})}}_{\tx{Primärwelle}} - \ub{i \omega(n-1) \frac{\Delta z}{c_0} E_0 e^{i \omega(t - \frac{\Delta z}{c_0})}} _{\tx{Effekt von Sekundärwellen}}$$
+
+\subsubsection{Mikroskopische Modell:}
+\folie{Zur Berechnung des E-Feldes der Sekundärwelle}
+\begin{itemize}
+	\item Betrachte $ \vec{E} $-Feld eines Hertzschen Dipols (Dipol $ p_0 = - e x_0 $) im Fernfeld $ z_0 \gg x_0 $ am Punkt $ z_0 $ vom Dipol bei $ z = 0, \rho, \varphi$
+	$$\vec{E}_{\tx{1D}} (z_0,t) = - \frac{1}{ 4 \pi \epsilon_0} \frac{e \omega^2 x_0}{c_0^2 r} e ^{i \omega (t - \frac{r}{c_0})} \begin{pmatrix}
+	1 - \frac{\rho^2}{r^2} \cos^2 \varphi\\
+	- \frac{\rho^2}{r^2} \sin \varphi \cos \varphi\\
+	\rho \frac{z_0}{r^2} \cos \varphi
+	\end{pmatrix}$$
+	Kreisring bei $ \rho $ summieren/integrieren\\
+	Kreisscheibe mit Dichte $ \Delta z $ : $ d V = \Delta z \; d\varphi \rho \; d \rho $\\
+	Anzahl der Dipole in Kreisscheibe: $ d N = n_{\tx{at}} d V \quad n_{\tx{at}} \ \widehat{=} \ \tx{Atomdichte} $ auf z-Achse konstruktive Überlagerung da $ \Delta t $ gleich\\
+	$ \Rightarrow $ resultierende Welle $ dN $ mal Welle für 1 Dipol
+	$$d \vec{E}_0 (z_0,t) = n_{\tx{at}} \vec{E}_{\tx{1D}} (z_0,t)$$
+	$$\vec{E}_{\tx{D}} = n_{\tx{at}} \int_{0}^{\infty} d\rho \int_{0}^{2 \pi} d \varphi \rho \vec{E}_{\tx{1D}} (z_0,t)$$
+	$ \vec{E}_{\tx{D}} $ in x-Richtung. $ \int d\varphi $ bewirkt $ E_y = E_z = 0 $
+	$$\left. \vec{E}_0 (z_0,t) = \frac{1}{4 \pi \epsilon_0} \frac{-e x_0 \omega^2 }{c_0^2} n _{\tx{at}} \Delta z e ^{i \omega t} \right\} \equiv A$$
+	$$\int_{z_0}^{\infty} dr \int_{0}^{2 \pi} d \varphi (1 - \frac{\rho^2}{r^2} \cos^2 \varphi) e^{-i \omega \frac{r}{c_0}} \vec{e}_x$$
+	Änderung der Integrationsvariablen $ \rho \rightarrow r $
+	$$\rho \; d \rho = r \; dr \quad \tx{da } \quad r^2 = \rho^2 + z_0^2 \quad z_0 = \const$$
+	Integration über $ d \varphi $ durchführen:
+	$$\vec{E}_{\tx{D}}(z_0,t) = A \int_{z_0}^{\infty} dr \pi \Big(1 + \frac{z_0^2}{r^2}\Big)  e^{-i\frac{\omega}{c_0} r} \vec{e}_x$$
+	Für $ \infty $-ausgedehnte Welle divergiert Integral. Durchmesser der Lichtwelle $ 2 \rho_{\tx{max}} $, nur Dipole mit $ \rho < \rho_{\tx{max}} $ teil $ z_0^2 \approx r^2 $ im Fernfeld $ \Big(1 + \frac{z_0^2}{r^2}\Big) \approx 2 $\\
+	Berücksichtige nur untere Integrationsgrenze
+	$$\vec{E}_{\tx{D}} (z_0,t) = \frac{1}{2 \epsilon_0} \frac{e x_0 \omega^2}{c_0^2} n_{\tx{at}} \Delta z e^{i \omega t} \Big(i \frac{c_0}{\omega} \Big) e^{-i \frac{\omega}{c_0} r} \vec{e}_x$$
+	Mit Amplitude $ x_0 $ der $ e^- $-Schwingung
+	$$\vec{E}_{\tx{D}} (z_0,t) = -i \frac{e^2 \omega^2 n_{\tx{at}}}{2 \epsilon_0 m} \frac{\Delta z}{c_0} E_0 \frac{1}{\omega_0^2 - \omega^2 + 2 i \gamma \omega} e^{i \omega (t- \frac{z_0}{c})} \vec{e}_x$$
+	Vergleich zwischen makroskop. und mikroskop. Beschreibung
+	$$\frac{e^2 \omega n_{\tx{at}} \Delta z}{2 \epsilon_0 m c_0} E_0 \frac{1}{\omega_0^2 - \omega^2 + 2 i \gamma \omega} \buildrel ! \over = \omega (n-1) \frac{\Delta z}{c_0} E_0$$
+	$$ \Rightarrow \boxed{n = 1 + \frac{e^2 n_{\tx{at}}}{2 \epsilon_0 m} \frac{1}{\omega_0^2 - \omega^2 + 2 i \gamma \omega}} \qquad \tx{ komplexe Größe}$$
+	\begin{itemize}
+		\item abhängig von $ n_{\tx{at}}, \omega_0 , \gamma $
+		\item Achtung: gilt strikt nur für Medien mit $ n-1 \ll 1 $
+		Hier nur eine Eigenfrequenz $ \rightarrow $ Verallgemeinerung
+		$$n = 1 + \frac{e^2}{2 \epsilon_0 m} \sum_{j=1}^{N} \frac{n_{j, \tx{at}}}{\omega_j^2 - \omega^2 + 2 i \gamma_j \omega_j}$$
+		für $ N $ Eigenfrequenzen $ \omega_j $, mit Dämpfung $ \gamma_j $ und Dipoldichte $ n_{j, \tx{at}} $
+	\end{itemize}
+\end{itemize}
+\subsubsection{Absorption und Dispersion}
+Aufspaltung $ n = \equalto{n'}{(n_r)} - i \kappa $\\
+Realteil:
+$$n' = 1 + \frac{e^2 n_{\tx{at}}}{2 \epsilon_0 m}\frac{\omega_0^2 - \omega^2}{(\omega_0^2 - \omega^2)^2 + 4 \gamma^2 \omega^2}$$
+Imaginärteil:
+$$\kappa = \frac{e^2 n_{\tx{at}}}{2 \epsilon_0 m} \frac{4 \gamma ^2 \omega^2}{(\omega_0^2 - \omega^2) ^2 + 4 \gamma^2 \omega^2} \qquad = 0 \quad \tx{für} \quad \gamma = 0 $$
+Welle bei Austritt aus Medium:
+\begin{align*}
+\vec{E}(z_0,t) &= E_0 e^{\omega\kappa \frac{\Delta z}{c_0}} e ^{-i \omega(n'-1) \frac{\Delta z}{c_0}} e^{i\omega (t - \frac{\Delta z}{c_0})}\\
+&= E_0 e^{2 \pi \kappa \frac{\Delta z}{\lambda_0}} e ^{-i 2 \pi (n'-1) \frac{\Delta z}{\lambda_0}} e^{i\omega (t - \frac{\Delta z}{c_0})}
+\end{align*}
+\begin{itemize}
+	\item $ e^{i \omega (t - \frac{\Delta z}{c_0})} $ ausfallende ursprüngliche Welle
+	\item $ e^{-i \omega(n'-1) \frac{\Delta z}{c_0}} $ Phasenverschiebung im Medium\\
+	$ n'(\omega) \Rightarrow n'(\lambda) $ Dispersion
+	\item $ e^{-\omega\kappa \frac{\Delta z}{c_0}} $ exponentielle Abnahme der Amplitude
+\end{itemize}
+Def.: \textbf{Absorptionskoeffizienten $ \alpha $}
+$$\boxed{ I (\Delta z) = I_0 e^{- \alpha \Delta z}} \quad \tx{Beersches Absorptionsgesetz}$$
+$ I \tx{ Intensität}  $\\
+\folie{Dispersion in verschiedenen Gläsern}\\
+Zshg. von $ \kappa $ und $ \alpha $: $ \alpha = \frac{ 4 \pi \kappa}{\lambda} \qquad [\alpha] = \frac{1}{\tx{m}}$
+\subsubsection{Reflexions- und Brechungsgesetz}
+\folie{Reflexion und Brechung}
+\begin{itemize}
+	\item hier: Richtungen, Intensitäten/Polarisation (Mittwoch)
+	\item Grenzfläche in x-z-Ebene
+	\item Wellenvektor der einlaufenden Welle $ \vec{k}_e $ in x-y-Ebene\\
+	Normalenvektor $ \vec{n}_{xz} $ und $ \vec{k}_e $ bilden Einfallsebene
+	\item Tangentialkomponente des $ \vec{E} $-Feldes stetig an Grenzfläche
+	\begin{equation*}
+	E_{e,t} + E_{r,t} = E_{g,t} \tag{$ * $}
+	\end{equation*}
+	t tangential, e einlaufend, g gebrochen\\
+	bei $ \vec{r} = 0 :$
+	$$A_{e,t} e^{i \omega_e t} + A_{e,t} e^{i \omega_r t} = A_{g,t} e^{i \omega_g t} $$
+	Nur Lösung, wenn gilt $ \omega_e = \omega_r = \omega_g $\\
+	Bedingung $ (*) $ gilt nur für gesamte x-z-Ebene
+	\begin{equation*}
+	k_e \vec{r} = k_r \vec{r} = \vec{k}_g \vec{r} \tag{ $ **  $}
+	\end{equation*}
+	$$\vec{r} = x \vec{e}_x + z \vec{e}_z \quad \tx{ in Grenzfläche }$$
+	$$\vec{k_e} = k_{ex} \vec{e}_x + k_{ey} \vec{e}$$
+	$$\vec{k}_r = k_{rx} \vec{e}_x + k_{ry} \vec{e}_y + k_{rz} \vec{e}_z \qquad \vec{k}_g = k_{gx} \vec{e}_x + k_{gy} \vec{e}_y + k_{gz} \vec{e}_z$$
+	Einsetzen in $ (**) $
+	$$k_{ex} x = k_{rx} x + k_{rz} z = k_{gx} x + k_{gz} z $$
+	Muss für beliebige x und z in Grenzfläche gelten
+	$$\Rightarrow k_{ex} = k_{rx} = k_{gx} \qquad k_{rz} = k_{gz} = 0$$
+	d.h. Wellenvektoren von reflektierter und gebrochener Welle auch in Einfallsebene.\\
+	Aus Abb: 
+	$$k_{ex} = k_e \sin \alpha \qquad k_{rx} = k_r \sin \alpha' \qquad k_{gx} = k_g \sin \beta $$
+	$$\frac{\sin \alpha}{c_1} = \frac{\sin \alpha'}{c_1} = \frac{\sin \beta}{c_2} \quad c_i \tx{ Lichtgeschwindigketi im Medium i}$$
+	$$\boxed{ \sin \alpha = \sin \alpha' \qquad \alpha = \alpha' \qquad \tx{Reflexionsgesetz}}$$
+	$$\boxed{ \frac{\sin \alpha}{\sin \beta} = \frac{c1}{c2} = \frac{n2}{n_1} \qquad \tx{Snelliusche Brechungsgesetz} }$$
+	\folie{Anwendung er Totalreflexion: Retroflexionsprisma und Lichtleiter}
+	
+	
+\end{itemize} 
+
 
 \end{document}

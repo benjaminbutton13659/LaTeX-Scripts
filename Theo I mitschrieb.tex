@@ -154,8 +154,8 @@ $\rightarrow$ physikalische Gesetze nehmen in IS eine besonders einfache Form an
 \underline{NG1:} In einem IS ist die kräftefreie Bewegung durch $\vec{r}(t) = const.$ beschrieben
 \underline{Relativitätsprinzip} (Galilei)\\
 Geg. sei IS S mit Bahnkurve $\vec{r}(t)$\\
-und IS $\bar{S}$ mit Bahnkurve $\vec{r}(t)$\\
-worin $\bar{S}$ um $\vec{r}_{0}$ zu S verschoben sei und sich mit einer Geschwindigkeit $\vec{v}_{0} = const.$ dazu bewege:\\
+und IS $\bar{S}$ mit Bahnkurve $\bar{r}(t)$\\
+worin $\bar{S}$ um $\vec{r}_{0}$ zu S verschoben sei und sich mit einer Geschwindigkeit $\vec{v}_{0} = \const$ dazu bewege:\\
 Dann gilt die \underline{Galilei Transformation} (Trafo)\\
 $ r \rightarrow \bar{r}$ mit
 \begin{equation*}
@@ -2612,8 +2612,8 @@ $$
 {IS};
 \end{tikzpicture}%
 \begin{tikzpicture}
-\draw[->] (0,0) -- (2,0) node[right] {$x$}; 
-\draw[->] (0,0) -- (0,1) node[above] {$y$};
+\draw[->] (0,0) -- (2,0) node[right] {$x'$}; 
+\draw[->] (0,0) -- (0,1) node[above] {$y'$};
 \node at (1.3,0.5) [align=flush center,text width=3cm]
 {\color{blue}$\longrightarrow \vec{v} = v\vec{e_x}$};
 \node at (0.7,1) [align=flush center,text width=2cm]
@@ -2986,19 +2986,19 @@ folglich ist die Größe $ (ct)^2 - \vec{r}^2 $ Lorenzinvariant für alle Ereign
 \begin{itemize}
 	\item Raumzeitpunkt oder \underline{Weltpunkt} $ (ct,\vec{r}) $ def. ein Ereignis
 	\item Die Größe
-	$$S = \sqrt{c^2(t_2-t_1)^2 - (\vec{r}_2 - \vec{r}_1)^2}$$
+	$$s = \sqrt{c^2(t_2-t_1)^2 - (\vec{r}_2 - \vec{r}_1)^2}$$
 	heißt \underline{Abstand} oder Intervall oder \underline{4D Entfernung} zwischen 2 Weltpunkten $ (ct_1,\vec{r}_1) $ und $ (ct_2,\vec{r}_2) $
 	\item Das Abstandsquadrat
-	$$S^2 = c^2 (t_2-t_1)^2- (\vec{r}_2 - \vec{r}_1)^2$$
+	$$s^2 = c^2 (t_2-t_1)^2- (\vec{r}_2 - \vec{r}_1)^2$$
 	zwischen 2 \underline{beliebigen} Ereignissen ist Lorenzinvarant.
 \end{itemize}
 \textbf{Beweis:} Verschiebung um $ -t_1 $ und $ - \vec{r}_1 $ und erhalten die Ereignisse
 $$E_1 = (0,\vec{0})\ \ , \ \ E_2 = (c(t_2-t_1) , \vec{r}_2 - \vec{r}_1) =: (ct,\vec{r})$$
-$$S^2 = (ct)^2 - (x^2 + y^2 + z^2)$$
+$$s^2 = (ct)^2 - (x^2 + y^2 + z^2)$$
 \textbf{LT:}
 $$x = \gamma (x' + vt') \ \ , \ \ t = \gamma(t' + \frac{v}{c^2} x') \ \ , \ \ y = y' \ \ , \ \ z = z'$$
 \begin{align*}
-S^2 &= \bigg[c \gamma (t' + \frac{v}{c^2} x')\bigg]^2 - \bigg[\gamma (t' + vt')\bigg]^2 - y'^2 - z'^2\\
+s^2 &= \bigg[c \gamma (t' + \frac{v}{c^2} x')\bigg]^2 - \bigg[\gamma (t' + vt')\bigg]^2 - y'^2 - z'^2\\
 &= (ct')^2 \ub{\bigg(\gamma^2 \bigg(1 - \bigg(\frac{v}{c}\bigg)^2\bigg) \bigg)}_{= 1} + 0 + x'^{\, 2} \ub{\gamma^2 \bigg(\frac{v^2}{c^2} - 1\bigg)}_{= 1} - Y'^{\, 2} - Z'^{\, 2}\\
 &= (ct')^2 - (x'^{\, 2} + y'^{\, 2} + z'^{\, 2}) \qquad \checkmark
 \end{align*}
@@ -3008,5 +3008,167 @@ S^2 &= \bigg[c \gamma (t' + \frac{v}{c^2} x')\bigg]^2 - \bigg[\gamma (t' + vt')\
 \end{equation*}
 Mit Eigenzeit $ d\tau = dt \sqrt{1 - \frac{v^2(t)}{c^2}} = c^2 d\tau ^2 $\\
 $ \tau $ ist Lorenzinvariant
+
+% neue Vorlesung
+
+\textbf{geg:} Ereignisse $ E_i $ mit Weltpunkt $ (ct_1,\vec{r}_i) $\\[5pt]
+Das Abstandsquadrat
+$$s^2 = c^2(t_2-t_1)^2 - (\vec{r}_2 - \vec{r}_1)^2$$
+ist Lorenzinvariant (folgt aus LT)\\[5pt]
+Für Uhr, die sich mit $ \vec{v} $ bewegt, ist
+$$ds^2 = c^2 dt - d\vec{r}^2 = c^2(1-\frac{v^2(t)}{c^2})dt^2 = c^2 dz^2$$
+$$\tx{Eigenzeit} d\tau = dt \sqrt{1-\frac{v^2(t)}{c^2}} \quad \tx{ist Lorenzinvariant}$$
+\textbf{Kausalität und Minkovski-Diagramm}\\
+Gleichzeitigkeit ist relativ.\\
+So ist es auch die zeitliche Reihenfolge, und damit das Prinzip der Kausalität (Ursache und Wirkung). In der Relativitätstheorie willkürlich?\\[5pt]
+Der kausale Zusammenhang zweier Ereignisse wird durch Vorzeichen von $ s^2 $ bestimmt.\\
+Sei oBdA:\\[5pt]
+\underline{E1:}
+\begin{align*}
+x_1 &= 0\quad t_1 = 0\\
+x_1' &= 0\quad t_1' = 0
+\end{align*}
+\underline{E2:}
+\begin{align*}
+x_2 &= x \quad \, t_2 = t\\
+x_2'&= x' \quad t_2' = t'
+\end{align*}
+Diese Ereignisse seien durch ein Objekt verbunden, das mit $ v = \frac{x}{t} > 0 $ entlang der x-Achse bewegt.\\
+Wegen: $s_{12}^2 = c^2 t^2 - x^2 $ ist
+\begin{align*}
+s_{12}^2 &= 0 \quad : \quad v = c \qquad \tx{lichtartig}\\
+s_{12}^2 &> 0 \quad : \quad v < c \qquad \tx{zeitartig}\\
+s_{12}^2 &< 0 \quad : \quad v > c \qquad \tx{raumartig}
+\end{align*}
+
+% drawtikz fertigstellen
+
+\textbf{Minkovski-Diagramm}\\
+$$
+\begin{tikzpicture}
+\draw[->] (0,-2.5) -- (0,2.5);
+\draw[->] (-2.5,0) -- (2.5,0);
+\draw[draw=blue] (-2,-2) -- (2,2);
+\draw[draw=blue] (-2,2) --(2,-2);
+\end{tikzpicture}
+$$
+\underline{$ s_{12}^2>0 $: ,,zeitartig``}, da Zeit-Term größer.\\
+Die Ereignisse liegen räumlich so nah zusammen bzw, zeitlich so weit auseinander, dass ein kausaler Zusammenhang möglich ist (aber nicht sein muss).\\[5pt]
+\underline{$ s_{12}^2 < 0 $: ,,raumartig``}\\
+Die Ereignisse liegen soweit auseinander, dass kein kausaler Zusammenhang möglich ist.\\[5pt]
+\underline{$ s_{12}^2 $: ,,lichtartig``}\\
+kausaler Zusammenhang ist möglich (mit Lichtgeschwindigkeit).
+\rbox{Da $ s_{12}^2 $ Loranzinvariant ist, so ist es auch die Klassifizierung und damit die Kausalität.}
+
+\section{Relativistische Dynamik}
+\begin{itemize}
+	\item Grenzfall der Newtonschen Mechanik muss für $ \frac{v}{c} \ll 1 $ in Relativitätstheorie enthalten sein.
+	\item Relativ. Gleichungen müssen Lorenzinvariant sein.
+	\item Typischer weise ist man an Impuls- und Energieerhaltung vor und nach der Wechselwirkung mit anderen Teilchen interessiert, weniger an der expliziten Bahnkurve.
+\end{itemize}
+\subsection{1.) Vierervektoren}
+Raumzeitpunkt $ (ct,\vec{r}) $ wird als Vierervektor (4-Vektor) geschrieben:
+\begin{equation*}
+X = (ct, \vec{r}) \tag{1}
+\end{equation*}
+(alle Komponenten haben die gleiche Einheit)\\
+\textbf{Eigenschaften:}\\
+\begin{enumerate}[1)]
+	\item $$X = \begin{pmatrix}
+	ct\\
+	x\\
+	y\\
+	z
+	\end{pmatrix} \buildrel \substack{\tx{Drehung um} \varphi\\ \tx{und z-Achse}} \over \longrightarrow X' = \begin{pmatrix}
+	ct\\x \cos \varphi + y \sin \varphi\\
+	-x \sin \varphi + y \cos \varphi\\ z
+	\end{pmatrix}$$
+	\item Bei Lorenz-Trafo mit $ \vec{v} = v \vec{e}_x$ ist:
+	hier fehlt was 
+	
+	% zweite trafo
+	
+	% vierervektoren underlinen
+	
+\end{enumerate}
+\textbf{Def: Vierervektoren}
+$$ A = (A_0,A_1,A_2,A_3)$$
+Die sich räumlichen Drehungen und bei Lorenz-Trafos wie
+$$X = (ct, \vec{r}) \qquad \tx{Transformieren}$$
+$ A_0 $: zeitliche Komponente\\
+$ A_1,A_2,A_3 $: räumliche Komponenten\\[5pt]
+\textbf{Quadrat}
+$$A^2 := A_0^2 - A_1^2 - A_2^2 - A_3^2$$
+\textbf{Beachte:} $ A^2 = 0 $ folgt nicht $ A = 0 $\\[5pt]
+Vektorraum heißt Minkowski-Raum oder pseudoeuklidischer Raum.\\[5pt]
+\textbf{Skalarprodukt:}
+$$A \cdot B = A_0 B_0 - A_1 B_1 - A_2 B_2 - A_3 B_3$$
+Da Abstandsquadrat $ s^2 = X \cdot X = c^2 t^2 - \vec{r}^2 $ lorenzinvariant und sich alle 4-Vektoren wie $ X $ transformieren, ist das Quadrat aller 4-Vektoren $ A^2 $ lorenzinvariant.\\
+Wie bei Drehung von $\vec{r}$ in 3D, kann man die Lorenz-Trafo von $ X $ als Drehung im Minkowski-Raum auffassen. Wegen:
+$$(A+B)^2 = A^2 + 2AB + B^2$$
+ist skalarprodukt $ A\cdot B $ lorenzinvariant, da alle anderen Terme lorenzinvariant sind.\\[5pt]
+\textbf{Ansatz:}\\
+Ersetze 3D Vektoren der Newtonschen Mechanik $ \vec{r},\vec{v},\vec{a},\vec{p},\vec{F} $ durch lorenzinvariante 4-Vektoren $ X, \dots $\\
+$ \rightarrow $ relativistische Form des 2. Newtonschen Axioms.\\
+$ \rightarrow $ keine mathematische Ableitung, sondern neue Theorie mit neuen Annahmen oder Axiomen. Muss von Exp. bestätigt werden.\\[5pt]
+Offenbar sind
+\begin{equation*}
+X = (ct,\vec{r}) \qquad \tx{Raumzeitkoordinaten} \tag{1}
+\end{equation*}
+\begin{equation*}
+d\tau = \sqrt{1 - \frac{v^2}{c^2}} dt \qquad \tx{Eigenzeit} \tag{2}
+\end{equation*}
+Lorenzinvariant:
+$$\frac{dX}{dt} = (c,\vec{v})$$
+ist \textbf{kein} 4-Vektor, da sich $ dt $ bei Lorenz-Trafo ändert.\\[5pt]
+\textbf{Def: Vierergeschwindigkeit}
+\begin{equation*}
+\underline{u} := \frac{dX}{d\tau} = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} \frac{d}{dt} (ct,\vec{r})  = \gamma (c, \vec{v}) \tag{3}
+\end{equation*}
+Wegen
+\begin{equation*}
+\underline{u} \cdot \underline{u} = \frac{c^2 - v^2}{1 - \frac{v^2}{c^2}} = c^2 > 0 \tag{4}
+\end{equation*}
+Vierergeschwindigkeit ist zeitartig.\\[5pt]
+\textbf{Def: Viererbeschleunigung}
+\begin{equation*}
+\underline{a} := \frac{d^2 X}{d\tau^2} = \frac{d\underline{u}}{dt} = \gamma \frac{d}{dt} \Big(\gamma (c,\vec{v})\Big)
+\end{equation*}
+$ \frac{d\vec{v}^2}{dt} = 2 \vec{v} \cdot \vec{a} $
+\begin{equation*}
+\underline{a} := \gamma \bigg[ \Big( -\frac{1}{2} \frac{1}{(1 - \frac{v^2}{c^2})^{\frac{3}{2}}} \Big(\frac{-2 \vec{v} \vec{a}}{c^2}\Big) \Big) (c,\vec{v}) + (0,\vec{a}) \bigg]
+\end{equation*}
+\begin{equation*}
+\underline{a} := \gamma^2 (v) \Big[ \gamma^2(v) \frac{\vec{v} \cdot \vec{a}}{c^2} (c,\vec{v}) + (0,\vec{a}) \Big] \tag{5}
+\end{equation*}
+Wegen
+\begin{equation*}
+\frac{d}{d\tau} \underline{u} \cdot \underline{u} = 2 \underline{u} \cdot \underline{a} \buildrel (4) \over = \frac{d}{d\tau} c^2 = 0
+\end{equation*}
+\begin{equation*}
+\underline{u} \cdot \underline{u} = 0 \tag{6}
+\end{equation*}
+4 Geschwindigkeit und 4 Beschleunigung stehen Senkrecht aufeinander.\\[5pt]
+\textbf{Def: Viererimpuls}
+\begin{equation*}
+\underline{p} := m_0 \underline{u} = m_0 \gamma (c,\vec{v}) \tag{7}
+\end{equation*}
+$ m_0 $ ist die Masse des ruhendes Körpers, sogenannte Ruhemasse, da $ \underline{p} $ für $ \frac{v^2}{c^2} \rightarrow 0 $ in nichtrelativ Impuls $ \vec{p} $ übergehen soll.
+\begin{equation*}
+\underline{p} \cdot \underline{p} = \frac{m_0^2}{1-\frac{v^2}{c^2}} (c^2 - \vec{v}^2) = m_0^2 c^2 > 0 \tag{8}
+\end{equation*}
+Viererimpuls ist somit also zeitartig.\\[5pt]
+Da 4 Quadrate lorenzinvariant, ist auch die Ruhemasse lorenzinvariant. Im Ruhesystem ist $ \underline{p} = (m_0 c , \vec{0}) $\\[5pt]
+\textbf{Def: Relativistische oder dynamische Masse}
+\begin{equation*}
+m(v) = \frac{m_0}{\sqrt{1 - \frac{v^2}{c^2}}} \tag{9}
+\end{equation*}
+Damit ist:
+\begin{equation*}
+\underline{p} = m_0 \underline{u} = m(v) (c,\vec{v})
+\end{equation*}
+d.h. Masse nimmt mit Geschwindigkeit $ v $ zu. Masse wird mit steigender Geschwindigkeit immer schwerer zu beschleunigen.\\
+Wegen $m(v) \buildrel \frac{v}{c} \rightarrow 1 \over \longrightarrow \infty$ können massive Körper nicht auf $ c $ beschleunigt werden. Dies ist vielfach experimentell bestätigt.
+
 
 \end{document}
