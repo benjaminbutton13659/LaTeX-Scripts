@@ -2971,7 +2971,7 @@ $ \rightarrow $ nicht allg. zu sagen \\[5pt]
 \section{Vierdimentionale Entfernungen}
 Drehung eines 3D Vektors $ \vec{a} \in \mathbb{R}^3 $ ändert die Länge $ \sqrt{\vec{a}^{\,2}} $ nicht d.h. $ \vec{a}^{\, 2} = a^2 $ ist eine Invariante unter Drehungen.\\
 $ \rightarrow $ welche Invariant gibt es bei Lorenz-Trafos ?\\[5pt]
-\underline{Gegben:} IS und IS' mit konst. Relativgeschwindigkeit $ \vec{v} $ und Anfangbedingungen:
+\textbf{Gegben:} IS und IS' mit konstanter Relativgeschwindigkeit $ \vec{v} $ und Anfangsbedingungen:
 \begin{align*}
 t_1 &= t_1' = 0\\
 \vec{r}_1 &= \vec{r'}_1 = 0
@@ -2984,13 +2984,13 @@ Zu $ t_1 = t_1' = 0 $ wird ein Lichtpuls in alle Richtungen abgestrahlt, der sic
 folglich ist die Größe $ (ct)^2 - \vec{r}^2 $ Lorenzinvariant für alle Ereignisse, die durch ein Lichtsignal verbunden sind.\\
 \textbf{Def:}
 \begin{itemize}
-	\item Raumzeitpunkt oder \underline{Weltpunkt} $ (ct,\vec{r}) $ def. ein Ereignis
+	\item Raumzeitpunkt oder \textbf{Weltpunkt} $ (ct,\vec{r}) $ def. ein Ereignis
 	\item Die Größe
 	$$s = \sqrt{c^2(t_2-t_1)^2 - (\vec{r}_2 - \vec{r}_1)^2}$$
-	heißt \underline{Abstand} oder Intervall oder \underline{4D Entfernung} zwischen 2 Weltpunkten $ (ct_1,\vec{r}_1) $ und $ (ct_2,\vec{r}_2) $
+	heißt \textbf{Abstand} oder Intervall oder \textbf{4D Entfernung} zwischen 2 Weltpunkten $ (ct_1,\vec{r}_1) $ und $ (ct_2,\vec{r}_2) $
 	\item Das Abstandsquadrat
 	$$s^2 = c^2 (t_2-t_1)^2- (\vec{r}_2 - \vec{r}_1)^2$$
-	zwischen 2 \underline{beliebigen} Ereignissen ist Lorenzinvarant.
+	zwischen 2 \textbf{beliebigen} Ereignissen ist Lorenzinvarant.
 \end{itemize}
 \textbf{Beweis:} Verschiebung um $ -t_1 $ und $ - \vec{r}_1 $ und erhalten die Ereignisse
 $$E_1 = (0,\vec{0})\ \ , \ \ E_2 = (c(t_2-t_1) , \vec{r}_2 - \vec{r}_1) =: (ct,\vec{r})$$
@@ -3069,12 +3069,12 @@ kausaler Zusammenhang ist möglich (mit Lichtgeschwindigkeit).
 \subsection{1.) Vierervektoren}
 Raumzeitpunkt $ (ct,\vec{r}) $ wird als Vierervektor (4-Vektor) geschrieben:
 \begin{equation*}
-X = (ct, \vec{r}) \tag{1}
+\underline{X} = (ct, \vec{r}) \tag{1}
 \end{equation*}
 (alle Komponenten haben die gleiche Einheit)\\
 \textbf{Eigenschaften:}\\
 \begin{enumerate}[1)]
-	\item $$X = \begin{pmatrix}
+	\item $$\underline{X} = \begin{pmatrix}
 	ct\\
 	x\\
 	y\\
@@ -3084,46 +3084,47 @@ X = (ct, \vec{r}) \tag{1}
 	-x \sin \varphi + y \cos \varphi\\ z
 	\end{pmatrix}$$
 	\item Bei Lorenz-Trafo mit $ \vec{v} = v \vec{e}_x$ ist:
-	hier fehlt was 
-	
-	% zweite trafo
-	
-	% vierervektoren underlinen
-	
+	$$\underline{X} = \begin{pmatrix}
+	ct\\x\\y\\z
+	\end{pmatrix} \buildrel \tx{LT} \over \longrightarrow \underline{X}' = \begin{pmatrix}
+	\gamma (ct - \frac{v}{c} x) \\
+	\gamma (c - vt) \\
+	y \\ z
+	\end{pmatrix}$$
 \end{enumerate}
 \textbf{Def: Vierervektoren}
-$$ A = (A_0,A_1,A_2,A_3)$$
+$$ \underline{A} = (\underline{A}_0,\underline{A}_1,\underline{A}_2,\underline{A}_3)$$
 Die sich räumlichen Drehungen und bei Lorenz-Trafos wie
-$$X = (ct, \vec{r}) \qquad \tx{Transformieren}$$
-$ A_0 $: zeitliche Komponente\\
-$ A_1,A_2,A_3 $: räumliche Komponenten\\[5pt]
+$$\underline{X} = (ct, \vec{r}) \qquad \tx{Transformieren}$$
+$ \underline{A}_0 $: zeitliche Komponente\\
+$ \underline{A}_1,\underline{A}_2,\underline{A}_3 $: räumliche Komponenten\\[5pt]
 \textbf{Quadrat}
-$$A^2 := A_0^2 - A_1^2 - A_2^2 - A_3^2$$
-\textbf{Beachte:} $ A^2 = 0 $ folgt nicht $ A = 0 $\\[5pt]
+$$\underline{A}^2 := \underline{A}_0^2 - \underline{A}_1^2 - \underline{A}_2^2 - \underline{A}_3^2$$
+\textbf{Beachte:} $ \underline{A}^2 = 0 $ folgt nicht $ \underline{A} = 0 $\\[5pt]
 Vektorraum heißt Minkowski-Raum oder pseudoeuklidischer Raum.\\[5pt]
 \textbf{Skalarprodukt:}
-$$A \cdot B = A_0 B_0 - A_1 B_1 - A_2 B_2 - A_3 B_3$$
-Da Abstandsquadrat $ s^2 = X \cdot X = c^2 t^2 - \vec{r}^2 $ lorenzinvariant und sich alle 4-Vektoren wie $ X $ transformieren, ist das Quadrat aller 4-Vektoren $ A^2 $ lorenzinvariant.\\
-Wie bei Drehung von $\vec{r}$ in 3D, kann man die Lorenz-Trafo von $ X $ als Drehung im Minkowski-Raum auffassen. Wegen:
-$$(A+B)^2 = A^2 + 2AB + B^2$$
-ist skalarprodukt $ A\cdot B $ lorenzinvariant, da alle anderen Terme lorenzinvariant sind.\\[5pt]
+$$\underline{A} \cdot \underline{B} = \underline{A}_0 \underline{B}_0 - \underline{A}_1 \underline{B}_1 - \underline{A}_2 \underline{B}_2 - \underline{A}_3 \underline{B}_3$$
+Da Abstandsquadrat $ s^2 = \underline{X} \cdot \underline{X} = c^2 t^2 - \vec{r}^2 $ lorenzinvariant und sich alle 4-Vektoren wie $ \underline{X} $ transformieren, ist das Quadrat aller 4-Vektoren $ \underline{A}^2 $ lorenzinvariant.\\
+Wie bei Drehung von $\vec{r}$ in 3D, kann man die Lorenz-Trafo von $ \underline{X} $ als Drehung im Minkowski-Raum auffassen. Wegen:
+$$(\underline{A}+\underline{B})^2 = \underline{A}^2 + 2\underline{A}\underline{B} + \underline{B}^2$$
+ist skalarprodukt $ \underline{A} \cdot \underline{B} $ lorenzinvariant, da alle anderen Terme lorenzinvariant sind.\\[5pt]
 \textbf{Ansatz:}\\
-Ersetze 3D Vektoren der Newtonschen Mechanik $ \vec{r},\vec{v},\vec{a},\vec{p},\vec{F} $ durch lorenzinvariante 4-Vektoren $ X, \dots $\\
+Ersetze 3D Vektoren der Newtonschen Mechanik $ \vec{r},\vec{v},\vec{a},\vec{p},\vec{F} $ durch lorenzinvariante 4-Vektoren $ \underline{X}, \dots $\\
 $ \rightarrow $ relativistische Form des 2. Newtonschen Axioms.\\
 $ \rightarrow $ keine mathematische Ableitung, sondern neue Theorie mit neuen Annahmen oder Axiomen. Muss von Exp. bestätigt werden.\\[5pt]
 Offenbar sind
 \begin{equation*}
-X = (ct,\vec{r}) \qquad \tx{Raumzeitkoordinaten} \tag{1}
+\underline{X} = (ct,\vec{r}) \qquad \tx{Raumzeitkoordinaten} \tag{1}
 \end{equation*}
 \begin{equation*}
 d\tau = \sqrt{1 - \frac{v^2}{c^2}} dt \qquad \tx{Eigenzeit} \tag{2}
 \end{equation*}
 Lorenzinvariant:
-$$\frac{dX}{dt} = (c,\vec{v})$$
+$$\frac{d\underline{X}}{dt} = (c,\vec{v})$$
 ist \textbf{kein} 4-Vektor, da sich $ dt $ bei Lorenz-Trafo ändert.\\[5pt]
 \textbf{Def: Vierergeschwindigkeit}
 \begin{equation*}
-\underline{u} := \frac{dX}{d\tau} = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} \frac{d}{dt} (ct,\vec{r})  = \gamma (c, \vec{v}) \tag{3}
+\underline{u} := \frac{d\underline{X}}{d\tau} = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} \frac{d}{dt} (ct,\vec{r})  = \gamma (c, \vec{v}) \tag{3}
 \end{equation*}
 Wegen
 \begin{equation*}
@@ -3132,7 +3133,7 @@ Wegen
 Vierergeschwindigkeit ist zeitartig.\\[5pt]
 \textbf{Def: Viererbeschleunigung}
 \begin{equation*}
-\underline{a} := \frac{d^2 X}{d\tau^2} = \frac{d\underline{u}}{dt} = \gamma \frac{d}{dt} \Big(\gamma (c,\vec{v})\Big)
+\underline{a} := \frac{d^2 \underline{X}}{d\tau^2} = \frac{d\underline{u}}{dt} = \gamma \frac{d}{dt} \Big(\gamma (c,\vec{v})\Big)
 \end{equation*}
 $ \frac{d\vec{v}^2}{dt} = 2 \vec{v} \cdot \vec{a} $
 \begin{equation*}
