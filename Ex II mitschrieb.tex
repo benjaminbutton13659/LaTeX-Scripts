@@ -1441,7 +1441,9 @@ Aus MW-Gl. bzw. Ampéresches Gesetz
 	& = \frac{\mu_0 I }{4 \pi} \frac{R}{(R^2 + z^2 )^{\frac{3}{2}}} 2 \pi R = \frac{\mu_0 I }{2} \frac{ R^2}{(R^2 + z^2 ) ^{\frac{3}{2}}}
 	\end{align*}
 	
-	hier fehlt was 
+	für $ z=0 $ (Ringzentrum) : $ B_z = \frac{\mu_0 I}{2} \frac{1}{R} $ 
+	\item[2)] Helmholzspulenpaar\\
+	2 Spuen mit Radius $ R $, Abstand $ d_0 $ (oft = $ R $)
 	
 \end{itemize}
 
@@ -1486,7 +1488,7 @@ Kraft auf infinitesimales Leiterstück $ dl, \quad dq = e n_e A \; dl $\\
 $$ d\vec{F} = dq (\vec{v}_D \times \vec{B}) = e n_e A\; dl (\vec{v} \times \vec{B}) = A \; dl \vec{j} \times \vec{B} $$
 $ d\vec{l} \equiv dl \frac{\vec{j}}{| \vec{j} |}$\\
 $$ d\vec{F} = A j d\vec{l} \times \vec{B} = I d\vec{l} \times \vec{B} $$
-Integration über Leiter: $ \vec{F} = I \vec{e} \times \vec{B} \rightarrow $ erklärt rollenden Stab/Leiterschaukel\\
+Integration über Leiter: $ \vec{F} = I \vec{l} \times \vec{B} \rightarrow $ erklärt rollenden Stab/Leiterschaukel\\
 \begin{itemize}
 	\item \textbf{parallele Ströme (galvanische Kräfte)}\\
 	$ I_2 $ erzeugt $ \vec{B} (I_2) $ am Ort von $ I_1 $\\
@@ -1539,7 +1541,7 @@ Leiterschleife $ \vec{F} = I \oint d\vec{l} \times \vec{B} \quad \vec{M} = I \oi
 	\item[a)] \textbf{homogenes $ \vec{B} $-Feld}\\
 	$ \vec{F}_{\tx{ges}} = 0 $ da Kompensation von $ d\vec{l} $ bei $ \varphi $ und $ d\vec{l} $ bei $ \varphi + \pi $\\
 	$$ \vec{M} = I B \sin \alpha \pi R^2 \vec{e}_y = \vec{p}_M \times \vec{B} $$
-	$ \vec{B} \downarrow \rightarrow \vec{p}_M \qquad \vec{p}_M \uparrow \uparrow \vec{B} $ energetisch günstiger\\\pagebreak
+	$ \vec{B} \downarrow \rightarrow \vec{p}_M \qquad \vec{p}_M \uparrow \uparrow \vec{B} $ energetisch günstiger\\
 	$$ \Delta E_{\tx{mag}} \equiv - \int \limits _{\frac{\pi}{2}} ^{\alpha} \vec{M} \; d \vec{\alpha} = - \vec{p}_M \vec{B} \quad \tx{ Nullpunkt für } E_{\tx{mag}} \tx{ bei } \alpha = \pi / 2 $$
 	\item[b)] \textbf{inhomogenes $ \vec{B} $-Feld}\\
 	Taylorentwicklung $ \vec{B} (\vec{r}) = \ub{\vec{B} (\vec{r}_0 )}_{\tx{const.}} + (\vec{r} \cdot \vec{\nabla} \vec{B}( \vec{r} )) \mathop{\vert}_{\vec{r} = \vec{r}_0} $\\
@@ -1676,14 +1678,14 @@ Verwendung von $ \vec{B} $ und $ \vec{H} \rightarrow $ kompaktere MW-Gl.\\
 	Ampéresches Gesetz: $$\oint \vec{H}d\vec{s}=H_{\tx{Fe}}+l_{\tx{Fe}} + H_0d=NI$$
 	Grenze: $B_\perp =$ const. $\mu_{\tx{Fe}} H_{\tx{Fe}} = H_0$\\
 	$$\rightarrow B = \frac{\mu_0 N I}{\frac{l_{\tx{Fe}}}{\mu_{\tx{Fe}}}+d} \approx \frac{\mu_o NI}{d}\quad \mu_{Fe}\approx 4000 \qquad  hier fehlt was$$
-	spalt kleiner, dann $B$ größer\\
+	Spalt kleiner, dann $B$ größer\\
 	vgl: Luftspule $B= \frac{\mu_0 NI}{L_{\tx{Spule}}}$ hier Verstärkung $\frac{dL_{\tx{Spule}}}{d}$
 \end{itemize}
 
 \chapter{Elektrodynamik}
 \setcounter{section}{9}
 \section{Elektromagnetische Induktion}
-\subsection{Indutionsgesetz}
+\subsection{Induktionsgesetz}
 \begin{description}
 	\item [1831 Faraday:] in veränderlichem $\vec{B}$-Feld wird entlang Leiter Spannung induziert $\uind$
 	\item [Beobachtung:] $\uind \sim \frac{d}{dt}A,\ \frac{d}{dt} \vec{B},\ \frac{d}{dt}$ Winkel $(\vec{A},\vec{B})$
@@ -1726,7 +1728,7 @@ $$ \uind \sim \frac{d}{dt} \Phi_{M} \quad \Phi_{M} = \int_M \vec{B} d \vec{A} $$
 	für $\uind = - \frac{d\Phi_M}{dt}$ Strom Linksschraube um $\vec{A}$ machen oben $I$ nach unten, $e^-$ Lorentzkraft nach vorne Richtung von $I$ konstant mit Herleitung aus $F_L$
 	\item Gedanken Experiment: $\vec{B}_{\tx{ind}}(I_{\tx{ind}}) \uparrow \downarrow \Delta \vec{B}_{\tx{sol}}$ sonst Verletzung der Energieerhaltung
 \end{itemize}
-Lensche regel:
+\textbf{Lensche Regel:}
 $$\boxed{I_{\tx{ind}} \tx{ so gerichtet, dass erzeugte }\vec{B}_{\tx{ind}}\tx{ der Änderung von }\Phi_M \tx{ entegenwirkt.}}$$
 
 \paragraph{Zusammenfassung:}
@@ -1776,7 +1778,7 @@ Lösungsansatz: $I(t) = Ae^{-\chi t} + B$
 $$\frac{dI}{dt} = -\chi Ae^{-\chi t}$$
 Einsetzen: $- \chi A e^{-\chi t} = - \frac{R}{L} A e^{-\chi t} - \frac{R}{L}B + \frac{U_0}{L}$\\
 für belt: $\rightarrow \chi = \frac{R}{L} A_{\tx{bel}} B = \frac{U_0}{R}$
-$$\rightarrow I(t) \frac{U_0}{R} (1-e^{-\frac{R}{L} t}$$
+$$\rightarrow I(t) = \frac{U_0}{R} (1-e)^{-\frac{R}{L} t}$$
 starker Anstieg, asymptotisch gegen $\frac{U_0}{R} (\hat{=} L = 0)$
 
 \subsubsection{Ausschaltvorgang}
@@ -1817,10 +1819,10 @@ Solenoid: $L = \mu_0 n^2 Al \quad B = \mu_0 n I_0$\\
 dann $w_m = \frac{W_m}{V} = \frac{1}{2} I_0^2 \mu_0 =\frac{1}{2\mu_0}| \vec{B}|^2$\\[5pt]
 Ergebnis ist allgemeingültig
 $$\begin{array}{llll}
-\tx{Zsfg}: & W_{\tx{el}} = \frac{1}{2} \epsilon_0 |\vec{E}^2 & \tx{Kondensators} & W_{\tx{el}} = \frac{1}{2}CU^2 \\
+\tx{Zsfg}: & W_{\tx{el}} = \frac{1}{2} \epsilon_0 |\vec{E}|^2 & \tx{Kondensators} & W_{\tx{el}} = \frac{1}{2}CU^2 \\
 & W_{\tx{mag}} = \frac{1}{2 \mu_0} |\vec{B}|^2 & \tx{spule} & W_{\tx{mag}} = \frac{1}{2}LI^2\\
 & \tx{mit } \epsilon_0 \mu_0 = \frac{1}{c^2} && c\tx{ für Lichtgeschwindigkeit} \\
-& W_{\tx{??}} W_{\tx{ges}} = \frac{1}{2} \epsilon_0 (|\vec{z}|^2 + c^2 |\vec{B}|^2)
+& W_{\tx{ges}} = \frac{1}{2} \epsilon_0 (|\vec{E}|^2 + c^2 |\vec{B}|^2)
 \end{array}$$
 
 \subsection{Maxwell-Gleichungen}
@@ -1833,7 +1835,7 @@ Betrachte: $$\oint \vec{B}d \vec{s} = \mu_0 I$$
 \begin{description}
 	\item [Links] ringförmigen Weg am Leiter $\oint \vec{B}\ ds = 0$\\
 	Widerspruch zu Ampéreschen Gesetz/ Maxwell-Gl.
-	\item [Rechts] keinen Strom $I$ im Kondensator aller el. Fluss $\Phi_{\tx{el}}$ ducht Zylinderfläche $\rightarrow$ zusätzlicher Beitrag $\frac{d \Phi_\tx{el}}{dt}$ nur wenn $\frac{d \Phi_\tx{el}}{dt} \neq 0$ fließt $I$ und erzeugt $\vec{B}$-Feld
+	\item [Rechts] keinen Strom $I$ im Kondensator aller el. Fluss $\Phi_{\tx{el}}$ durch Zylinderfläche $\rightarrow$ zusätzlicher Beitrag $\frac{d \Phi_\tx{el}}{dt}$ nur wenn $\frac{d \Phi_\tx{el}}{dt} \neq 0$ fließt $I$ und erzeugt $\vec{B}$-Feld
 	\item [Rechnung] $I_V = \frac{dQ}{dt} \quad \frac{dQ}{dt}$ Änderung auf Kondensatorplatten
 	$$|\vec{E}| = \frac{Q}{\epsilon_0 A} \quad Q = |\vec{E}|A\epsilon_0$$ 
 \end{description}
@@ -1907,7 +1909,7 @@ $$U_{\tx{eff}} = \frac{U_0}{\sqrt{2}} \quad I_{\tx{eff}} = \frac{I_0}{\sqrt{2}}$
 	$ \rightarrow $ Spannungsschub um $ U_0 $\\
 	$ + $ Gleichrichter $ \rightarrow $ Greinacher Schaltung\\
 	$ U_{D_1} = U_0 + U_0 \cos \omega t $\\
-	$ U_{\tx{max}}^{\tx{aus}} 2 U_0 (-1,4 \tx{V}) $
+	$ U_{\tx{max}}^{\tx{aus}} = 2 U_0 (-1,4 \tx{V}) $
 	\item[iv)] \textbf{Kaskadenschaltung nach Greinacher}
 	\begin{itemize}
 		\item[1. Stufe]
@@ -1937,6 +1939,7 @@ $$U_{\tx{eff}} = \frac{U_0}{\sqrt{2}} \quad I_{\tx{eff}} = \frac{I_0}{\sqrt{2}}$
 \end{itemize}
 
 \subsection{Komplexe Widerstände}
+\paragraph{\underline{Kondensator:}}
 Gilt: $ U = \frac{Q}{C} \quad \frac{d}{dt}: \frac{dU}{dt} = \frac{I}{C} $\\
 $$ U(t) = U_0 \cos \omega t \quad \tx{gegeben} $$
 $$ I(t) = C \frac{dU}{dt} = - \omega U_0 C \sin \omega t = I_0 \cos (\omega t + \frac{\pi}{2}) $$
@@ -1977,7 +1980,7 @@ $ \rightarrow $ \textbf{Fourierzerlegung}
 \paragraph{\underline{Hochpass:}}
 Spannungsteiler mit $ Z_1 = \frac{1}{i \omega C} \quad Z_2 = R $\\
 Übertragungsfaktor $ k = \frac{U_{\tx{aus}}}{U_{\tx{ein}}} = \frac{Z_{\tx{aus}}}{Z_{\tx{ges}}} $
-$$ K = \frac{R}{R + \frac{1}{i \omega C}} \frac{R + \frac{i}{\omega C}}{R + \frac{i}{\omega C}} = \frac{R^2 + i \frac{R}{\omega C}}{ R^2 + \frac{1}{\omega^2 C^2}} = \frac{\omega^2 C^2 R^2}{\omega^2 C^2 R^2 + 1} + i \frac{\omega C R}{\omega^2 C^2 R^2 + 1} $$
+$$ k = \frac{R}{R + \frac{1}{i \omega C}} \frac{R + \frac{i}{\omega C}}{R + \frac{i}{\omega C}} = \frac{R^2 + i \frac{R}{\omega C}}{ R^2 + \frac{1}{\omega^2 C^2}} = \frac{\omega^2 C^2 R^2}{\omega^2 C^2 R^2 + 1} + i \frac{\omega C R}{\omega^2 C^2 R^2 + 1} $$
 $$ |k| = \frac{|U_{\tx{aus}} |}{| U_{\tx{ein}} |} \quad |k|^2 = \frac{\omega ^2 C^2 R^2}{\omega^2 C^2 R^2 + 1} = \frac{1}{1+ \frac{\omega_0^2}{\omega^2}} \qquad \omega_0 \equiv \frac{1}{RC} $$
 Phase $ \Phi \qquad \tan \Phi = \frac{\tx{Im}}{\tx{Re}} = \frac{1}{\omega C R} = \frac{\omega_0}{\omega} $\\
 für $ \omega \rightarrow \infty \quad |k| \rightarrow 1 $ ,,Hochpass``\\
@@ -2081,14 +2084,14 @@ $ L_{12},L_{21} $ Gegeninduktivitäten \\
 perfekte koppelung, keine Verluste von $\Phi_m$ dann $L_{12} = L_{21} = \sqrt{L_{11}L_{22}}$
 $$N_1 \Phi_{m,1} = N_1[\Phi_{m,11} + \Phi_{m,12}] = L_{11} I_1 + L_{12}I_2$$
 $$N_2 \Phi_{m,2} = N_2[\Phi_{m,21} + \Phi_{m,22}] = L_{21} I_1 + L_{22}I_2$$
-Einsetzen in $(*)$ $\rightarrow$ Transfromatior gleichungen
+Einsetzen in $(*)$ $\rightarrow$ Transfromator gleichungen
 $$U_1 - R_1 I_1 = L_{11} \frac{dI_1}{dt}+ L_{12} \frac{dI_2}{dt}$$
 $$U_2 - R_2 I_2 = L_{21} \frac{dI_1}{dt}+ L_{22} \frac{dI_2}{dt}$$
-Für Spitzenwete $U_0,\ I_0$ mit $U_1 = U_0 e^{i\omega t}$
+Für Spitzenwerte $U_0,\ I_0$ mit $U_1 = U_0 e^{i\omega t}$
 $$U_1 - R_1 I_1 = i\omega L_{11} I_1 + \omega L_{12} I_2$$
 $$U_2 + R_2 I_2 = - i\omega L_{21} I_1 - \omega L_{22} I_2$$
 Phasenverschiebung $U_2$ zu $U_1$ von $\pi \rightarrow$ ,,\ -\ '' Zeichen\\
-Für weitere Diskussion $R^{\tx{spule}}_1 = R^{\tx{spule}}_2 = 0$ aber Last $Z$ sekundärkreis
+Für weitere Diskussion $R^{\tx{spule}}_1 = R^{\tx{spule}}_2 = 0$ aber Last $Z$ Sekundärkreis
 
 Nutze $ U_2 = Z I_2 $ und nach Strömen auflösen
 $$ I_1 = \frac{i \omega L_{22} + Z}{i \omega L_{11} Z + \omega^2 (l_{12}^2 - L_{11} L_{22})} U_1 $$
@@ -2096,8 +2099,8 @@ $$ I_2 = \frac{i \omega L_{12}}{i \omega L_{11} Z + \omega^2 (L_{12}^2 - L_{11} 
 Darus Übersetzungsverhältnisse für $ U_i, I_i $
 $$ \frac{I_2}{I_1} = - \frac{i \omega L_{12}}{i \omega L_{22} + Z} \quad \frac{U_2}{U_1} = - \frac{i \omega L_{12} Z}{i \omega L_{11} Z + \omega^2 (L_{12}^2 l L_1 L_2)}$$
 
-\paragraph{Def:} Kppelungsgrad $k= \rightarrow \frac{L_{12}}{\sqrt{L_{11}L_{22}}} \qquad 0<k<1$
-$k=1$ vollständige koppelung $k = 0$ entkoppelt
+\paragraph{Def:} Kopplungsgrad $k= \rightarrow \frac{L_{12}}{\sqrt{L_{11}L_{22}}} \qquad 0<k<1$
+$k=1$ vollständige Kopplung $k = 0$ entkoppelt
 $$\frac{U_2}{U_1} = \frac{i L_{12}}{i L_{11}+\omega^2 (k^2 - 1) \frac{L_{11}L_{22}}{Z}}$$
 
 Beträge: $$ \frac{|I_2|}{|I_1|} = \frac{\omega L_{12}}{\sqrt{Z^2+\omega^2 L_{12}^2}} \quad \frac{|U_2|}{|U_1|} = \frac{L_{12}}{\sqrt{ L_{11}^2 + \omega^2 \frac{L_{11}^2 L_{22}^2}{|Z|^2} (1-k^2)}}$$
@@ -2153,9 +2156,9 @@ RLC-Serienschaltung $\rightarrow$ Bandpass (ohne $R$)
 \end{align*}
 \folie{Serienschwingkeris}
 $$ \frac{d}{dt}: \quad \frac{d U_{\tx{ext}}}{dt} = L \frac{d^2 I}{dt^2} + R \frac{dI}{dt} + \frac{1}{C} I $$
-$ U_{\tx{ext}} = U_0 \sin \omega t \cdot \frac{1}{C} $
-$$\frac{s^2 I}{dt^2} + \frac{R}{L} \frac{dI}{dt} + \frac{1}{LC} I = \frac{U_0 \omega}{L} \cos \omega t $$
-inhomogene DGL 2. Ordnung für den Strom $ I(t) $\\
+$ U_{\tx{ext}} = U_0 \sin \omega t\quad  (??? \cdot \frac{1}{C}) $
+$$\frac{d^2 I}{dt^2} + \frac{R}{L} \frac{dI}{dt} + \frac{1}{LC} I = \frac{U_0 \omega}{L} \cos \omega t $$
+inhomogene DGL 2. Ordnung für den Strom $ I(t) $
 \paragraph{Lösung:} mit komplexwertigem Ansatz\\
 zunächst $ U_{\tx{ext}} = U_0 e^{i\omega t} $
 $$ \frac{d^2 I}{dt^2} + \frac{R}{L} \frac{dI}{dt} + \frac{1}{LC} I = \frac{i U_0 \omega}{L} e ^{i \omega t}$$
@@ -2164,14 +2167,14 @@ Bilden zeitliche Ableitung und Einsetzen
 $$ (\ub{i \omega L}_{Z_L} + \ub{\frac{1}{i \omega L}}_{Z_C} + \ub{R}_{Z_R} ) I_0 = U_0 e ^{i \Phi} $$
  wie erwartet für Impedanzen in Serie\\
  $ I(t) = \frac{U(t)}{Z_{\tx{ges}}} $ Resonanz wenn $ Z_{\tx{ges}} $ minimal
- $$\frac{d Z_{\tx{ges}}}{d \omega} \bigg|_{\omega_R} \buildrel ! \over = 0 \qquad i L \omega - \frac{1}{i \omega_R C} = 0 \Leftrightarrow \omega_R = \frac{1}{\sqrt{LC}}$$
+ $$\frac{d Z_{\tx{ges}}}{d \omega} \bigg|_{\omega_R} \buildrel ! \over = 0 \qquad i L \omega_R - \frac{1}{i \omega_R C} = 0 \Leftrightarrow \omega_R = \frac{1}{\sqrt{LC}}$$
  
  % neue vorlesung
  
  \subsubsection{Freie, ungedämpfte Schwingung}
  \begin{itemize}
  	\item LC-Kreis $ R = 0 $ keine externe Anregung
- 	\item \item Kondensator laden, bei $ t=0 $ mit Spule verbinden\\
+ 	\item Kondensator laden, bei $ t=0 $ mit Spule verbinden\\
  	$ \rightarrow $ Schwingungen
  	\item periodisches Umladen des Kondensators, periodische Ströme in Spule\\
  	\folie{El.-mag. Schwingkreis und mech. Modell eines Oszillators im Vergleich}
@@ -2216,7 +2219,7 @@ $$ (\ub{i \omega L}_{Z_L} + \ub{\frac{1}{i \omega L}}_{Z_C} + \ub{R}_{Z_R} ) I_0
  	$$U(t) = U_0 e^{i\omega t} \quad I(t) = \frac{U(t)}{Z_{\tx{ges}}} $$
  	Kreis schwingt mit externer Frequenz $ I_0 = \frac{U_0}{|Z_{\tx{ges}}|} $
  	\item Serienkreis $\ \; Z_{\tx{ges}} = i \omega L + \frac{1}{i \omega C} + R $\\
- 	Parallelkreis $ Z_{\tx{ges}} = (i \omega L + \frac{1}{i \omega C} + R)^{-1} $\\
+ 	Parallelkreis $ Z_{\tx{ges}} = (i \omega L)^{-1} + (\frac{1}{i \omega C})^{-1} + (R)^{-1} $\\
  	Resonanzverhalten in beiden Fällen
  \end{itemize}
  \paragraph{Serienkreis}
@@ -2259,7 +2262,7 @@ Einsetzen in DGL und sortieren
 $$\ub{\begin{pmatrix}
 R_1 + i (L_1 \omega - \frac{1}{\omega C_1}) & i L_{12} \omega \\
 i L_{21} \omega & R_2 + i(L_2\omega - \frac{1}{\omega C_2})
-\end{pmatrix}}_{\tx{Impedanzmatrix} \mathcal{M}} \begin{pmatrix}
+\end{pmatrix}}_{\tx{Impedanzmatrix } \mathcal{M}} \begin{pmatrix}
 \hat{I}_1\\
 \hat{I}_2
 \end{pmatrix} = \begin{pmatrix}
@@ -2267,16 +2270,18 @@ i L_{21} \omega & R_2 + i(L_2\omega - \frac{1}{\omega C_2})
 \end{pmatrix}$$
 Triviale Lösung: $ \hat{I}_1 = \hat{I}_2 = 0 $\\
 Nicht triviale Lösung: Bedingung $ \det \mathcal{M} = 0 $\\
-$$\det \mathcal{M} = (R_1 + i(\omega L_1 - \frac{1}{\omega C_1}) )(R_2 + i(\omega_2 L_2 - \frac{1}{\omega_2 C_2})) + \omega^2 L_{12} L_{21} \buildrel ! \over = 0 $$
-allgemeiner Lösungsansatz 
+$$\det \mathcal{M} = \Big(R_1 + i(\omega L_1 - \frac{1}{\omega C_1}) \Big)\Big(R_2 + i(\omega_2 L_2 - \frac{1}{\omega_2 C_2})\Big) + \omega^2 L_{12} L_{21} \buildrel ! \over = 0 $$
+allgemeiner Lösungsansatz:
 
 % hier fehlt was Patrick
+
+hier fehlt was
 
 % danach bild 2
 
 Thomsonfrequenz $ \omega_0 = \frac{1}{\sqrt{LC}} $\\
 Kopplungsparameter $ k = \frac{L_{12}}{L} $\\
-Wir haben 2 Eigenfrequenzen $ (h\ll1\ \ \Delta \omega = \omega_1 - \omega_2 = \omega_0 k) $\\
+Wir haben 2 Eigenfrequenzen $ (k\ll1\ \ \Delta \omega = \omega_1 - \omega_2 = \omega_0 k) $\\
 $ k=0 $: Entkopplung Schwingung bei $ \omega_0 $\\
 $ k \rightarrow 1 $: $ \omega_2 \rightarrow \infty \quad \omega_1 = \frac{\omega_0}{\sqrt{2}} $ verständlich 1 Kreis mit doppelter Kapazität\\
 $ 0<k<1 $: Beobachtung beider Frequenzen bzw. Überlagerung $ \rightarrow $ Schebung
