@@ -3150,34 +3150,158 @@ Zshg. von $ \kappa $ und $ \alpha $: $ \alpha = \frac{ 4 \pi \kappa}{\lambda} \q
 	\item Wellenvektor der einlaufenden Welle $ \vec{k}_e $ in x-y-Ebene\\
 	Normalenvektor $ \vec{n}_{xz} $ und $ \vec{k}_e $ bilden Einfallsebene
 	\item Tangentialkomponente des $ \vec{E} $-Feldes stetig an Grenzfläche
-	\begin{equation*}
-	E_{e,t} + E_{r,t} = E_{g,t} \tag{$ * $}
-	\end{equation*}
-	t tangential, e einlaufend, g gebrochen\\
-	bei $ \vec{r} = 0 :$
-	$$A_{e,t} e^{i \omega_e t} + A_{e,t} e^{i \omega_r t} = A_{g,t} e^{i \omega_g t} $$
-	Nur Lösung, wenn gilt $ \omega_e = \omega_r = \omega_g $\\
-	Bedingung $ (*) $ gilt nur für gesamte x-z-Ebene
-	\begin{equation*}
-	k_e \vec{r} = k_r \vec{r} = \vec{k}_g \vec{r} \tag{ $ **  $}
-	\end{equation*}
-	$$\vec{r} = x \vec{e}_x + z \vec{e}_z \quad \tx{ in Grenzfläche }$$
-	$$\vec{k_e} = k_{ex} \vec{e}_x + k_{ey} \vec{e}$$
-	$$\vec{k}_r = k_{rx} \vec{e}_x + k_{ry} \vec{e}_y + k_{rz} \vec{e}_z \qquad \vec{k}_g = k_{gx} \vec{e}_x + k_{gy} \vec{e}_y + k_{gz} \vec{e}_z$$
-	Einsetzen in $ (**) $
-	$$k_{ex} x = k_{rx} x + k_{rz} z = k_{gx} x + k_{gz} z $$
-	Muss für beliebige x und z in Grenzfläche gelten
-	$$\Rightarrow k_{ex} = k_{rx} = k_{gx} \qquad k_{rz} = k_{gz} = 0$$
-	d.h. Wellenvektoren von reflektierter und gebrochener Welle auch in Einfallsebene.\\
-	Aus Abb: 
-	$$k_{ex} = k_e \sin \alpha \qquad k_{rx} = k_r \sin \alpha' \qquad k_{gx} = k_g \sin \beta $$
-	$$\frac{\sin \alpha}{c_1} = \frac{\sin \alpha'}{c_1} = \frac{\sin \beta}{c_2} \quad c_i \tx{ Lichtgeschwindigketi im Medium i}$$
-	$$\boxed{ \sin \alpha = \sin \alpha' \qquad \alpha = \alpha' \qquad \tx{Reflexionsgesetz}}$$
-	$$\boxed{ \frac{\sin \alpha}{\sin \beta} = \frac{c1}{c2} = \frac{n2}{n_1} \qquad \tx{Snelliusche Brechungsgesetz} }$$
-	\folie{Anwendung er Totalreflexion: Retroflexionsprisma und Lichtleiter}
-	
-	
 \end{itemize} 
+\begin{equation*}
+E_{e,t} + E_{r,t} = E_{g,t} \tag{$ * $}
+\end{equation*}
+t tangential, e einlaufend, g gebrochen\\
+bei $ \vec{r} = 0 :$
+$$A_{e,t} e^{i \omega_e t} + A_{e,t} e^{i \omega_r t} = A_{g,t} e^{i \omega_g t} $$
+Nur Lösung, wenn gilt $ \omega_e = \omega_r = \omega_g $\\
+Bedingung $ (*) $ gilt nur für gesamte x-z-Ebene
+\begin{equation*}
+k_e \vec{r} = k_r \vec{r} = \vec{k}_g \vec{r} \tag{ $ **  $}
+\end{equation*}
+$$\vec{r} = x \vec{e}_x + z \vec{e}_z \quad \tx{ in Grenzfläche }$$
+$$\vec{k_e} = k_{ex} \vec{e}_x + k_{ey} \vec{e}$$
+$$\vec{k}_r = k_{rx} \vec{e}_x + k_{ry} \vec{e}_y + k_{rz} \vec{e}_z \qquad \vec{k}_g = k_{gx} \vec{e}_x + k_{gy} \vec{e}_y + k_{gz} \vec{e}_z$$
+Einsetzen in $ (**) $
+$$k_{ex} x = k_{rx} x + k_{rz} z = k_{gx} x + k_{gz} z $$
+Muss für beliebige x und z in Grenzfläche gelten
+$$\Rightarrow k_{ex} = k_{rx} = k_{gx} \qquad k_{rz} = k_{gz} = 0$$
+d.h. Wellenvektoren von reflektierter und gebrochener Welle auch in Einfallsebene.\\
+Aus Abb: 
+$$k_{ex} = k_e \sin \alpha \qquad k_{rx} = k_r \sin \alpha' \qquad k_{gx} = k_g \sin \beta $$
+$$\frac{\sin \alpha}{c_1} = \frac{\sin \alpha'}{c_1} = \frac{\sin \beta}{c_2} \quad c_i \tx{ Lichtgeschwindigketi im Medium i}$$
+$$\boxed{ \sin \alpha = \sin \alpha' \qquad \alpha = \alpha' \qquad \tx{Reflexionsgesetz}}$$
+$$\boxed{ \frac{\sin \alpha}{\sin \beta} = \frac{c1}{c2} = \frac{n2}{n_1} \qquad \tx{Snelliusche Brechungsgesetz} }$$
+\folie{Anwendung er Totalreflexion: Retroreflexionsprisma und Lichtleiter}
+
+% neue Vorlesung
+
+\subsubsection{Totalreflexion}
+Übergang $ 1 \rightarrow 2 $ ; $ n_1 > n_2 $\\
+$ \sin \alpha \frac{n_1}{n_2} = \sin \beta \buildrel ! \over \le 1 $\\
+Für $ \sin \beta > 1 $ keine Brechung $ \rightarrow $ Totalreflexion\\
+Grenzwinkel $ \sin \alpha_{\tx{Gr}} = \frac{n_2}{n_1} $\\[5pt]
+$ \alpha > \alpha_{\tx{Gr}} $ wird $ \vec{k}_{g} $ komplex $ \Rightarrow $ evaneszente Welle:\\
+Welle dringt in das Medium ein. Intensität $ I_2 \sim e^{-\frac{z}{\lambda}} $
+\subsubsection{Absorption}
+$ \kappa , \alpha $ werden groß wenn $ \omega \approx \omega_0 $. Dann $ n_r = 1 $\\
+\textbf{Exp:} weißes Licht $ \rightarrow $ Schatten des Stäbchens, ,,keine`` Absorption\\
+Na-Lampe $ \rightarrow $ Absorption in NaCl $ \rightarrow $ Schatten der Flamme\\
+$ \hbar \omega_{\tx{Licht}} = \Delta E _{\tx{Na}} $ Unterschied der Energieniveaus im Na
+
+\subsection{Wellengleichung in Materie}
+$$\vec{\nabla} \times \vec{E} = - \frac{\partial \vec{B}}{\partial t} \quad \vec{\nabla} \times \vec{B} = \mu_0 \mu (\vec{j} + \frac{\partial D}{\partial t})$$
+$$\vec{\nabla} \vec{D} = \rho \qquad \vec{\nabla}\vec{B} = 0$$
+$$\vec{D} = \epsilon \epsilon_0 \vec{E} = \epsilon_0 \vec{E} + \vec{P} \quad \rho,\vec{j} \tx{ freien Dichten}$$
+Nichtleiter/Isolator: $ \vec{j} = 0 $ ungeladen $ \rho = 0 $\\
+Analog zu Vakuum: $ \Delta \vec{E} = \mu \mu_0 \epsilon \epsilon_0 \frac{\partial ^2 \vec{E}}{\partial t^2}  \quad c = \frac{1}{\sqrt{\mu \mu_0 \epsilon \epsilon_0}} $\\
+ebenso: $ \Delta \vec{B} = \frac{1}{c^2} \frac{\partial ^2 \vec{B}}{\partial t^2} $
+Annahme $\mu_r \approx \underline{1}$ (kein Ferromagnet)\\
+Setze $\vec{D} (\vec{E}, \vec{\underline{P}})$ in rot$\vec{B}$ ein
+$$\Delta \vec{E} = \ub{\frac{1}{c_0^2} \frac{\partial ^2 \vec{E}}{\partial t^2}}_{\tx{Primärwelle}} + \ub{\frac{1}{\epsilon_0 c_0^2} \frac{\partial ^2 \vec{P}}{\partial t^2}}_{\tx{Sekundärwelle aus Dipolen}} \qquad \mu \approx 1 \quad n = \sqrt{\epsilon}$$
+Aus $\vec{B} \frac{1}{\omega} (\vec{k} \times \vec{E}) \tx{ folgt mit }  \vec{k} = n \vec{k}_0 $\\
+$ \vec{B} = \frac{n}{c} (\vec{e}_{\vec{n}_0} \times \vec{E})  = \frac{|n|}{c}  (\vec{e}_{n_0} \times \vec{E}) e^{i \phi_B}$\\
+mit $ n = |n| e^{i \phi_b}  \quad \tan\phi_B = -\frac{k}{n} $\\
+für $ k\neq 0 $ sind $ \vec{E} $ und $ \vec{B} $ nicht mehr in Phase\\
+In $x$ lin. pol. Welle mit Ausbreitung in $z$-Richtung 
+\begin{align*}
+\vec{E}= E_0 e^{i(\omega t-kz} \vec{e}_x \quad &\underline{P}= N\alpha E_x\\
+&\alpha\ \tx{polarisierbarkeit}, N\ \tx{Dipoldichte}
+\end{align*}
+$ \alpha $ Polarisierbarkeit, $N$ Dipoldichte\\
+Einsetzen in Wellengleichung: $ k^2 = \frac{\omega^2}{c^2} (1 + \frac{N \alpha}{\epsilon_0}) \qquad \frac{c}{n} = \frac{\omega}{k} $\\
+ergibt:
+$$\boxed{n^2 = 1 + \frac{N \alpha}{\epsilon_0}}$$
+Zusammenhang zwischen Brechzahl und Polarisierbarkeit\\
+Induzierter Dipol:
+$$p = -e X_0 = \frac{e^2 E}{m(\omega_0^2 - \omega^2 + 2 \gamma i \omega)}$$
+Andererseits: $ \vec{p} = \alpha (\omega) \vec{E} $\\
+Also folgt: $$ \alpha = \frac{e^2}{m( \omega_0^2 \omega^2 + 2 i \gamma \omega)}$$
+bzw: $ n^2 = 1 + \frac{e^2 N}{\epsilon m (\omega_0^2 - \omega^2 + 2 i \gamma \omega)} $\\[5pt]
+Gültig für n-1 groß\\
+Für $ (n-1) \ll 1 $ ,,altes`` Ergebnis mit $ (n^2-1) \approx 2(n-1) $
+
+\subsection{Wellen an Grenzflächen}
+\begin{description}
+	\item[einfallend] $E_e = A_e e^{i(\omega t - \vec{k}_e\vec{r})}$
+	\item[reflektiert] $E_r = A_r e^{i(\omega t - \vec{k}_r\vec{r})}$
+	\item[gebrochen] $E_g = A_g e^{i(\omega t - \vec{k}_g \vec{r})}$
+\end{description}
+$ \vec{k}_0 , \vec{k}_r $ aus Reflexions- bzw. Brechungsgesetz\\
+jetzt: Amplituden und Polarisationen
+\subsubsection{Randbedingungen an $ \vec{E} $ und $ \vec{R} $ auf Grenzfläche}
+Tangentialkomponente $ E_t,B_t $ und Normalkomponente $ E_n,B_n $\\
+Beim übergang: $ E_t $ und $ B_n $ stetig\\
+Weiterhin: $ |\vec{E}_1| \epsilon_1 = |\vec{E}_2| \epsilon_2 $\\
+da $ E_t $ gleicht: 
+$$\frac{E_{1,n}}{E_{2,n}} = \frac{\epsilon_2}{\epsilon_1} \buildrel \substack{\mu = 1 \\ k = 0} \over \approx \frac{n_2^2}{n_1^2}$$
+analog für $ \vec{B} $: $B_{1n} = B_{2n}$
+$$ \frac{B_{1,t}}{B_{2,t}} = \frac{\mu_1}{\mu_2} \buildrel \mu = 1 \over \approx 1$$
+\subsubsection{Amplituden}
+Zerlege Amplitude von $ \vec{E} $ in $ A_p $ parallel und $ A_s $ senkrecht zur Einfallsebene $ (\vec{k}_e,\vec{n}_{\tx{Grenz}}) $\\
+hier: $ A_p = (A_x,A_y,0) \quad A_s = (0,0,A_z) $\\[5pt]
+Nutze Stetigkeit von $ E_t $ und $ B_t $ und Reflexions- bzw. Brechungsgesetz\\
+$ \rightarrow $ \fbox{Fresnelsche Gleichungen}\\[5pt]
+Senkrechte Komponenten\\
+
+%boxed:
+\noindent
+Reflexionskoeffizient $ \rho_s $
+$$\rho_s = \frac{A_{rs}}{A_{es}} = \frac{1-a}{1+a} = - \frac{\sin( \alpha - \beta)}{\sin (\alpha + \beta)} \ \ $$
+Transmissionskoeffizienten $ \tau_s $
+$$\, \qquad \tau_s = \frac{A_{gs}}{A_{es}} = \frac{2}{1-a} = \frac{2 n_1 \cos \alpha}{n_1 \cos \alpha + n_2 \cos \beta}$$
+Analog für parallele Komponenten
+\begin{align*}
+\rho_p &= \frac{A_{rp}}{A_{ep}} = \frac{\tan (\alpha - \beta)}{\tan( \alpha + \beta)}\\
+\tau_p &= \frac{A_{gp}}{A_{ep}} = \frac{2 \sin\alpha \cos \beta}{\sin (\alpha + \beta) \cos (\alpha - \beta)}
+\end{align*}
+
+% bis hier
+
+Grundlage um Reflexion und Transmission zu berechnen
+Reflexions- und Transmissionsvermögen
+\begin{align*}
+\overline{I}_e &= \epsilon_0 \epsilon_1 |\vec{E}_e|^2 = \frac{1}{2} \epsilon_0 \epsilon_1 c_1 A_e^2 \quad A_e = \sqrt{A_{e,s}^2 + A_{e,p}^2}\\
+\overline{I}_R &= \frac{1}{2} \epsilon_0 \epsilon_1 c_1 A_r^2
+\end{align*}
+Reflexionsvermögen $ R = \frac{\overline{I}_r}{\overline{I}_e} = \frac{A_r^2}{A_e^2} $\\
+Strikt Fläche $ \perp $ Strahl $ \quad \frac{1}{\cos \alpha} $ Fläche auf der Grenze
+$$R = \frac{\overline{I}_R \cos \alpha '}{\overline{I}_e \cos \alpha } = \frac{\overline{I}_R}{\overline{I}_e} \quad \tx{da } \alpha = \alpha'$$
+Transmissionsvermögen $ T = \frac{\overline{I}_t \cos \beta}{\overline{I}_e \cos \beta} $
+\begin{align*}
+\overline{I}_t &= \frac{1}{2} \epsilon_2 \epsilon_0 c_2 A_g^2\\
+&= \frac{1}{2} \frac{n_2}{\mu_0 c_0} A_g^2 \qquad \tx{für } \mu = 1
+\end{align*}
+Analog: $ \overline{I}_e = \frac{1}{2} \frac{n_1}{\mu_0 c_0} A_e^2 $
+$$\Rightarrow \boxed{ T = \frac{n_2 \cos \beta A_g^2}{n_1 \cos \alpha A_e^2} }$$
+Da $ \rho_s , \rho_p $ unterschiedlich sind $ R_s,R_p $ unterschiedlich
+$$R_s = \frac{A_{re}^2}{A_{es}^2} = \frac{\sin^2 (\alpha - \beta)}{\sin^2(\alpha + \beta)} \qquad R_p = \frac{A_{rp}^2}{A_{ep}^2} = \frac{\tan^2 (\alpha - \beta)}{\tan^2(\alpha + \beta)}$$
+Senkrechter Einfall $ \quad R(\alpha = 0) = \frac{(n_1 - n_2)^2}{(n_1+n_2)^2} $\\[5pt]
+Allgemeiner Falls (nachrechnen !)
+$$T_p + R_p = 1 \quad T_s + R_s = 1 \quad T + P = 1$$
+$ \rightarrow $ Intensität geht nicht verloren
+\subsubsection{Brewster-Winkel}
+Für $ \alpha + \beta = \frac{\pi}{2} = 90^\circ $ dann $ \tan(\alpha + \beta) \rightarrow \infty $\\
+$ A_{rp} = 0 $ d.h. die reflektierte Welle hat nur Anteile senkrecht zur Einfallsebene\\
+Für Brewster-Winkel $ \alpha_{\tx{Br}} $ gilt $ \vec{k}_r \perp \vec{k}_g $\\[5pt]
+Brewsterbedingung $ \frac{\sin \alpha}{\sin \beta} = \frac{n_2}{n_1} \quad \alpha + \beta = \frac{\pi}{2} $\\
+$$ \rightarrow \tan\alpha_{\tx{Br}} = \frac{n_2}{n_1} \quad \tx{für} \quad  \frac{n_2}{n_1} = 1,5 \quad \alpha = 56.3^\circ $$
+\textbf{Esp:}
+\begin{enumerate}[a)]
+	\item unpolarisiertes Licht\\
+	Reflexion: $ A_p $ wird nicht reflektiert, $ \perp $ unpolarisiert\\
+	Transmission groß\\[5pt]
+	viele Glaßplatten: nur $ A_s $ reflektiert (vielmals)\\
+	$ A_s $ klein $ \rightarrow  A_p $ dominiert $ \rightarrow \parallel $ polarisiert
+	\item polarisiertes Licht\\
+	$ \parallel $ polarisiert $ \rightarrow $ keine Reflexion, vollständig Transmission \\
+	$ \perp $ polarisiert $ \rightarrow $ Reflexion und Transmission
+\end{enumerate}
+
+
 
 
 \end{document}
