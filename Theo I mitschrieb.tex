@@ -52,6 +52,7 @@
 \newcommand{\rmbox}[1]{\tcboxmath[colback=white,colframe=red!75!black]{#1}} % mahlt eine box um mathe innerhalb mathmode
 
 \renewcommand{\boxed}{\rmbox}
+%\renewcommand{\vec}[1]{\boldsymbol{#1}}
 
 \hbadness=99999
 
@@ -2037,7 +2038,7 @@ oder
 \subsubsection{Eulersche Gleichungen}
 $$ \frac{d}{dt} \vec{L} = \vec{M}$$
 \begin{align*}
-\frac{d}{dt} \vec{L} &= \frac{d}{dt} \sum_{n=1}^N m_n (\vec{r}_n \times \dot \vec{r}_n) = \frac{d}{dt} ( I \cdot \vec{\omega})\\
+\frac{d}{dt} \vec{L} &= \frac{d}{dt} \sum_{n=1}^N m_n (\vec{r}_n \times \dot{\vec{r}}_n) = \frac{d}{dt} ( I \cdot \vec{\omega})\\
 &= \vec{M} = \sum_{n=1}^{N} \vec{r}_i \times \vec{F}_n^A
 \end{align*}
 Mit Gl. $ (*) $ ist dann
@@ -3097,7 +3098,7 @@ $$ \underline{A} = (\underline{A}_0,\underline{A}_1,\underline{A}_2,\underline{A
 Die sich räumlichen Drehungen und bei Lorenz-Trafos wie
 $$\underline{X} = (ct, \vec{r}) \qquad \tx{Transformieren}$$
 $ \underline{A}_0 $: zeitliche Komponente\\
-$ \underline{A}_1,\underline{A}_2,\underline{A}_3 $: räumliche Komponenten\\[5pt]
+$ \underline{A}_1,\underline{A}_2,\underline{A}_3 $: räumliche Komponenten transformieren sich wie $ \vec{r} \in \mathbb{R}^3 $\\[5pt]
 \textbf{Quadrat}
 $$\underline{A}^2 := \underline{A}_0^2 - \underline{A}_1^2 - \underline{A}_2^2 - \underline{A}_3^2$$
 \textbf{Beachte:} $ \underline{A}^2 = 0 $ folgt nicht $ \underline{A} = 0 $\\[5pt]
@@ -3170,6 +3171,123 @@ Damit ist:
 \end{equation*}
 d.h. Masse nimmt mit Geschwindigkeit $ v $ zu. Masse wird mit steigender Geschwindigkeit immer schwerer zu beschleunigen.\\
 Wegen $m(v) \buildrel \frac{v}{c} \rightarrow 1 \over \longrightarrow \infty$ können massive Körper nicht auf $ c $ beschleunigt werden. Dies ist vielfach experimentell bestätigt.
+
+% neue Vorlesung
+\noindent
+\textbf{Def Viererkraft} (oder Minkowski-Kraft)
+\begin{align*}
+\underline{K} &= \frac{d}{dt} \underline{p} = m_0 \frac{d}{dt} \underline{u} = m_0 \underline{a} \tag{10}
+&= (K_0,\vec{K})
+\end{align*}
+Vergleich von $ \vec{K} $ mit der Newton-Kraft $ \vec{F} $
+\begin{equation*}
+\vec{K} = \frac{d}{dt} \frac{m_0 \vec{v}}{\sqrt{1-\dfrac{v^2}{c^2}}} = \frac{1}{1-\frac{v^2}{c^2}} \frac{d}{dt} \frac{m_0 \vec{v}}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{equation*}
+\begin{equation*}
+\frac{d}{dt} \frac{m_0 \vec{v}}{\sqrt{1 - \frac{v^2}{c^2}}} = \frac{d}{dt} \Big( m(v) \vec{v} \Big) = \frac{d}{dt} \vec{p} \buildrel\  \substack{\tx{Newton}\\\tx{Postulat}} \over = \ \vec{F}
+\end{equation*}
+\begin{equation*}
+\rightarrow \vec{K} = \frac{1}{\sqrt{1 -  \frac{v^2}{c^2}}} \vec{F} = \gamma(v) \vec{F} \tag{11}
+\end{equation*}
+\begin{equation*}
+\rightarrow \vec{F} = m_0 \frac{d}{dt} \frac{\vec{v}}{\sqrt{1 - \frac{v^2}{c^2}}} \buildrel (5) \over = m_0 \gamma (v) \bigg[ \gamma^2(v) \frac{\vec{v} \cdot \vec{a}}{c^2} \vec{v} + \vec{a} \bigg] \tag{12}
+\end{equation*}
+Beachte, dass $ \vec{F} $ und $ \vec{a} $ i.A. verschiedene Richtungen haben.\\
+Wegen:
+\begin{align*}
+\underline{K} \cdot \underline{u} &= m_0 \underline{a} \cdot \underline{u} \buildrel (6) \over = 0 \\
+&= K_0 u_o - \vec{K} \cdot \vec{u} = K_0 \gamma(v) c - \gamma(v) \vec{F} \cdot \gamma(v) \vec{v}
+\end{align*}
+ergibt sich für die zeitliche Komponente
+$$K_0 = \gamma(v) \frac{\vec{F} \cdot \vec{v}}{c}$$
+\begin{equation*}
+\rightarrow \underline{K} = \gamma(v) \Bigg( \frac{\vec{F} \cdot \vec{v}}{c} , \vec{F} \Bigg) \tag{13}
+\end{equation*}
+\textbf{Masse und Energie}
+$$K_0 = \gamma(v) \frac{\vec{F} \cdot \vec{v}}{c}$$
+mit
+\begin{equation*}
+\frac{d}{d\tau} p_0 = m_0 \frac{d}{dt} u_0 = m_0 \gamma(v) \frac{d}{dt} \frac{c}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation*}
+\begin{equation*}
+\frac{d}{dt} \frac{m_0c^2}{\sqrt{den1 - \frac{v^2}{c^2}}} = \vec{F} \cdot \vec{v} = P \tag{14}
+\end{equation*}
+P ist die Leistung, die die Kraft $ \vec{F} $ am Körper mit $ \vec{v} $ verrichtet. Integration ergibt mit $ m(t) = \frac{m_0}{\sqrt{1 - \frac{v^2(t)}{c^2}}} $
+\begin{equation*}
+m(t) c^2 - m(0) c^2 = \int_{0}^{t} P(t') \; dt = W
+\end{equation*}
+wobei W die Arbeit ist, die die Kraft $ \vec{F} $ zwischen $ 0 $ und $ t $ am Körper verrichtet,\\
+Für freien Körper (K = 0) ist dies die Änderung der kinetischen Energie T
+\begin{equation*}
+m(t) c^2 - m(0) c^2 = T(t) - T(0)
+\end{equation*}
+Für $ v(0) = 0 \rightarrow T(0) = 0\ , \ m(0) = m_0 $
+\begin{equation*}
+T = m c^2 - m_0 c^2 \tag{15}
+\end{equation*}
+Für kleine Geschwindigkeiten $ \frac{v}{c} \ll 1 $ ist
+\begin{align*}
+T &= \Bigg( \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} - 1 \Bigg) m_0 c^2 \qquad \tx{mit } (1+ \epsilon)^\alpha \approx 1 + \alpha \epsilon + \dots\\
+&\approx \bigg( 1 - \Big( - \frac{1}{2} \Big) \frac{v^2}{c^2} - 1 \bigg) m_0 c^2 = \frac{m_0}{2} v^2
+\end{align*}
+die korrekte nicht-relativistische kinetische Energie.\\
+Relativistische Energie (15) hat 2 Terme
+\begin{itemize}
+	\item $ m(v) c^2 = m_0 \gamma c^2 $ ist Gesamtenergie, die mit $ v $ wächst
+	\item $ m_0c^2 $ ist die Energie eines Ruhenden Teilchens, die Ruheenergie
+\end{itemize}
+Gesamtenergie $ E $ (ohne Pot. U) ist kinetische Energie $ T $ + Ruheenergie
+\begin{equation*}
+E = T + m_0 c^2 = \frac{m_0 c^2}{\sqrt{1 - \frac{v^2}{c^2}}} = m(v) c^2
+\end{equation*}
+oder kurz:
+\begin{equation*}
+\rmbox{E = mc^2_{\phantom{2}}} \tag{16}
+\end{equation*}
+Die ,,Einsteinsche Formel`` beschreibt die Äquivalenz von Masse und Energie. Ruhemasse kann in Energie und Energie in Ruhemasse umgewandelt werden.\\[5pt]
+\textbf{Bem:}\\
+\begin{itemize}
+	\item Gesamtmasse $ E $ bzw. die dynamische Masse $ m(v) $ ist in abgeschlossenem System erhalten.\\
+	In Newtonscher Mechanik gibt es je einen Erhaltungssatz für Masse und Energie
+	\item dynamische Masse $ m(v) $ ist Erhaltungsgröße, aber nicht Lorenzinvariant\\
+	Ruhemasse $ m_0 $ ist keine Erhaltungsgröße, aber Lorenzinvariant
+\end{itemize}
+\textbf{Bsp:} Massenverlust der Sonne\\
+Fussionsreaktion der Sonne $  \quad 2 p + 2 n \rightarrow ^4 He + \gamma $\\
+$ E_{\gamma} \approx 2,8 \tx{ MeV } $ wird in Wärme umgewandelt \\
+$ \rightarrow 5700 \tx{ K} $ auf Oberfläche\\
+Die Energie $ E = \Delta m_0 c^2 $ mit sogenanntem Massendefekt $ \Delta m_0 $ resultiert daraus, dass Heliumkern leichter als die 4 Bausteine ist.
+\begin{equation*}
+\rightarrow P \approx 3.8 \ 10^{26} \tx{ W} \quad \tx{Leistung}
+\end{equation*}
+Damit verliert die Sonne \underline{pro Sekunde} die Masse
+\begin{equation*}
+m = \frac{p\  1 \tx{s}}{c^2} = 4.3 \ 10^9 \tx{ kg}
+\end{equation*}
+was wenig zur Sonnenmasse $ \approx 2 \cdot 10^{30} \tx{ kg} $ ist.\\[5pt]
+Mit Gl. (16) können wir für 4 Impuls schreiben:
+\begin{equation*}
+\underline{P} = m (v) (c,\vec{v}) = \Big( \frac{E}{c} , m(v) \vec{v} \Big) \tag{17}
+\end{equation*}
+$ \underline{P} $ beschreibt also Energie und räumlichen Impuls.\\[5pt]
+Beacht, dass klassische Energie eines freien Teilchens 
+\begin{equation*}
+E = \frac{p^2}{2m} \quad \tx{ \underline{nicht} mehr gilt.}
+\end{equation*}
+\begin{equation*}
+\underline{p} \cdot \underline{p} \buildrel (8) \over = m_0^2 v^2 \buildrel (17) \over = \frac{E^2}{c^2} - m^2(v) v^2
+\end{equation*}
+und damit (mit $ \vec{p} = m(v) \vec{v} $)
+\begin{equation*}
+E^2 = (m_0 c^2)^2 + (\vec{p} c)^2 \tag{18}
+\end{equation*}
+\begin{equation*}
+\rightarrow E = \pm \sqrt{(m_0c^2)^2 + (\vec{p} c)^2}
+\end{equation*}
+klassische Mechanik: $\ + $ Vorzeichen\\
+QM Relativistik: $\quad \ \ \  - $ Vorzeichen beschreibt Antiteilchen.\\
+(Dirac-Gl.)
+
 
 
 \end{document}
