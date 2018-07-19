@@ -14,6 +14,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{enumerate}
 \usepackage{tocloft}
+\usepackage{tcolorbox}
 
 \addtolength{\cftchapnumwidth}{10pt}
 \addtolength{\cftsecnumwidth}{10pt}
@@ -3243,6 +3244,7 @@ $ \rightarrow $ \fbox{Fresnelsche Gleichungen}\\[5pt]
 Senkrechte Komponenten\\
 
 %boxed:
+\begin{tcolorbox}[colback=white,colframe=black,sharp corners,boxrule=.5pt]
 \noindent
 Reflexionskoeffizient $ \rho_s $
 $$\rho_s = \frac{A_{rs}}{A_{es}} = \frac{1-a}{1+a} = - \frac{\sin( \alpha - \beta)}{\sin (\alpha + \beta)} \ \ $$
@@ -3253,7 +3255,7 @@ Analog für parallele Komponenten
 \rho_p &= \frac{A_{rp}}{A_{ep}} = \frac{\tan (\alpha - \beta)}{\tan( \alpha + \beta)}\\
 \tau_p &= \frac{A_{gp}}{A_{ep}} = \frac{2 \sin\alpha \cos \beta}{\sin (\alpha + \beta) \cos (\alpha - \beta)}
 \end{align*}
-
+\end{tcolorbox}
 % bis hier
 
 Grundlage um Reflexion und Transmission zu berechnen
