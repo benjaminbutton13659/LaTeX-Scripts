@@ -14,6 +14,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{enumerate}
 \usepackage{tocloft}
+\usepackage{tcolorbox}
 
 \addtolength{\cftchapnumwidth}{10pt}
 \addtolength{\cftsecnumwidth}{10pt}
@@ -539,10 +540,10 @@ Bsp.: \textbf{homogene geladene Kugel}, Radius R, $\rho(\vec{r}) = \textrm{const
 $$ Q_{\tx{ges}} = \frac{4}{3} \pi R^3 \rho$$
 Symmetrie:  $ \vec{E} = |\vec{E}| \vec{e}_r\ $ radial $\  |\vec{E}| = E_r$\\
 \begin{itemize}
-\item[$|\vec{r}|\ge R$:] $$\Phi = \oint_A \vec{E} \; d \vec{A} = \int_A E_r \; dA = E_r 4 \pi r^2 \buildrel ! \over = \frac{Q_{\tx{ein}}}{\epsilon_0}$$
+\item $|\vec{r}|\ge R$: $$\Phi = \oint_A \vec{E} \; d \vec{A} = \int_A E_r \; dA = E_r 4 \pi r^2 \buildrel ! \over = \frac{Q_{\tx{ein}}}{\epsilon_0}$$
 $$ E_r = \frac{\rho_0 R^3}{\epsilon_0 3 r^2}$$
 wie bei Punktladung
-\item[$|\vec{r}|\le R$:] $$ Q_{\tx{ein}} = \frac{4}{3} \pi r^3 \rho \qquad \Phi = \frac{Q_{\tx{ein}}}{\epsilon_0}$$\\
+\item $|\vec{r}|\le R$: $$ Q_{\tx{ein}} = \frac{4}{3} \pi r^3 \rho \qquad \Phi = \frac{Q_{\tx{ein}}}{\epsilon_0}$$\\
 $$ E_r = \frac{\rho_0 r}{3 \epsilon_0}$$ linearen Anstieg
 \end{itemize}
 \noindent
@@ -875,14 +876,9 @@ Richtung von $\vec{E}_{\tx{pol}}$: \\
 $\vec{p}$ von neg. Pol zur pos Pol\\
 $ \vec{E}_{\tx{pol}}$ von pos. Ladung zur neg Ladung\\
 $$ \rightarrow \vec{P} = - \epsilon_0 \vec{E}_{\tx{pol}}$$
-
-
 %% Nachtragen:?
-% hier fehlt was
-
-?????
-
-$\vec{E}_{\tx{Med}}$ (tsl?) Überlagerung von ???????\\\\
+% hier fehlt was (tsl?)
+$\vec{E}_{\tx{Med}}$ Überlagerung von $ \vec{E}_{\tx{Pol}} $ und $ \vec{E}_{\tx{frei}} $\\\\
 a)  \textbf{$\vec{E}_{\tx{frei}}$ ohne Medium $\quad \vec{E}_{\tx{pol}}$ aus Dipolen}
 $$\vec{E}_{\tx{Med}} = \vec{E}_{\tx{frei}} + \vec{E}_{\tx{Pol}} = \vec{E}_{\tx{frei}} - \frac{\vec{P}}{\epsilon_0}$$
 Polarisation abhängig von $ \vec{E}_{\tx{Med}}: \vec{P} = \epsilon_0 \chi_e \vec{E}_{\tx{Med}}$\\
@@ -1347,7 +1343,7 @@ Es gilt: $ \Pi_A = S_A T$
 $$\boxed{\tx{rot} \vec{B} = \mu _0 \vec{j} \qquad \oint \vec{B} \; d \vec{s} = \mu _0 I}$$
 2 MW-Gl. Wirbelkerne = Orte mit Stromdichte $\neq$ 0\\[5pt]
 Def: \textbf{magnetische Feldenergie} $ E_{\tx{mag}} $ bzw. \textbf{Energiedichte} $ w_{\tx{mag}} $ 
-$$ E_{\tx{mag}} = \frac{1}{2 \mu _0} \int|\vec{B}|^2 \; dV \qquad  hier fehlt was$$
+$$ E_{\tx{mag}} = \frac{1}{2 \mu _0} \int|\vec{B}|^2 \; dV \qquad  w_{\tx{mag}} = \frac{1}{2 \mu_0} |\vec{B}|^2$$
 Zsfg:\\
 $ \vec{E} $ ist wirbelfreies Quellfeld\\
 $ \vec{B} $ ist quellfreies Wirbelfeld
@@ -1441,7 +1437,9 @@ Aus MW-Gl. bzw. Ampéresches Gesetz
 	& = \frac{\mu_0 I }{4 \pi} \frac{R}{(R^2 + z^2 )^{\frac{3}{2}}} 2 \pi R = \frac{\mu_0 I }{2} \frac{ R^2}{(R^2 + z^2 ) ^{\frac{3}{2}}}
 	\end{align*}
 	
-	hier fehlt was 
+	für $ z=0 $ (Ringzentrum) : $ B_z = \frac{\mu_0 I}{2} \frac{1}{R} $ 
+	\item[2)] Helmholzspulenpaar\\
+	2 Spuen mit Radius $ R $, Abstand $ d_0 $ (oft = $ R $)
 	
 \end{itemize}
 
@@ -1486,7 +1484,7 @@ Kraft auf infinitesimales Leiterstück $ dl, \quad dq = e n_e A \; dl $\\
 $$ d\vec{F} = dq (\vec{v}_D \times \vec{B}) = e n_e A\; dl (\vec{v} \times \vec{B}) = A \; dl \vec{j} \times \vec{B} $$
 $ d\vec{l} \equiv dl \frac{\vec{j}}{| \vec{j} |}$\\
 $$ d\vec{F} = A j d\vec{l} \times \vec{B} = I d\vec{l} \times \vec{B} $$
-Integration über Leiter: $ \vec{F} = I \vec{e} \times \vec{B} \rightarrow $ erklärt rollenden Stab/Leiterschaukel\\
+Integration über Leiter: $ \vec{F} = I \vec{l} \times \vec{B} \rightarrow $ erklärt rollenden Stab/Leiterschaukel\\
 \begin{itemize}
 	\item \textbf{parallele Ströme (galvanische Kräfte)}\\
 	$ I_2 $ erzeugt $ \vec{B} (I_2) $ am Ort von $ I_1 $\\
@@ -1539,7 +1537,7 @@ Leiterschleife $ \vec{F} = I \oint d\vec{l} \times \vec{B} \quad \vec{M} = I \oi
 	\item[a)] \textbf{homogenes $ \vec{B} $-Feld}\\
 	$ \vec{F}_{\tx{ges}} = 0 $ da Kompensation von $ d\vec{l} $ bei $ \varphi $ und $ d\vec{l} $ bei $ \varphi + \pi $\\
 	$$ \vec{M} = I B \sin \alpha \pi R^2 \vec{e}_y = \vec{p}_M \times \vec{B} $$
-	$ \vec{B} \downarrow \rightarrow \vec{p}_M \qquad \vec{p}_M \uparrow \uparrow \vec{B} $ energetisch günstiger\\\pagebreak
+	$ \vec{B} \downarrow \rightarrow \vec{p}_M \qquad \vec{p}_M \uparrow \uparrow \vec{B} $ energetisch günstiger\\
 	$$ \Delta E_{\tx{mag}} \equiv - \int \limits _{\frac{\pi}{2}} ^{\alpha} \vec{M} \; d \vec{\alpha} = - \vec{p}_M \vec{B} \quad \tx{ Nullpunkt für } E_{\tx{mag}} \tx{ bei } \alpha = \pi / 2 $$
 	\item[b)] \textbf{inhomogenes $ \vec{B} $-Feld}\\
 	Taylorentwicklung $ \vec{B} (\vec{r}) = \ub{\vec{B} (\vec{r}_0 )}_{\tx{const.}} + (\vec{r} \cdot \vec{\nabla} \vec{B}( \vec{r} )) \mathop{\vert}_{\vec{r} = \vec{r}_0} $\\
@@ -1676,14 +1674,14 @@ Verwendung von $ \vec{B} $ und $ \vec{H} \rightarrow $ kompaktere MW-Gl.\\
 	Ampéresches Gesetz: $$\oint \vec{H}d\vec{s}=H_{\tx{Fe}}+l_{\tx{Fe}} + H_0d=NI$$
 	Grenze: $B_\perp =$ const. $\mu_{\tx{Fe}} H_{\tx{Fe}} = H_0$\\
 	$$\rightarrow B = \frac{\mu_0 N I}{\frac{l_{\tx{Fe}}}{\mu_{\tx{Fe}}}+d} \approx \frac{\mu_o NI}{d}\quad \mu_{Fe}\approx 4000 \qquad  hier fehlt was$$
-	spalt kleiner, dann $B$ größer\\
+	Spalt kleiner, dann $B$ größer\\
 	vgl: Luftspule $B= \frac{\mu_0 NI}{L_{\tx{Spule}}}$ hier Verstärkung $\frac{dL_{\tx{Spule}}}{d}$
 \end{itemize}
 
 \chapter{Elektrodynamik}
 \setcounter{section}{9}
 \section{Elektromagnetische Induktion}
-\subsection{Indutionsgesetz}
+\subsection{Induktionsgesetz}
 \begin{description}
 	\item [1831 Faraday:] in veränderlichem $\vec{B}$-Feld wird entlang Leiter Spannung induziert $\uind$
 	\item [Beobachtung:] $\uind \sim \frac{d}{dt}A,\ \frac{d}{dt} \vec{B},\ \frac{d}{dt}$ Winkel $(\vec{A},\vec{B})$
@@ -1726,7 +1724,7 @@ $$ \uind \sim \frac{d}{dt} \Phi_{M} \quad \Phi_{M} = \int_M \vec{B} d \vec{A} $$
 	für $\uind = - \frac{d\Phi_M}{dt}$ Strom Linksschraube um $\vec{A}$ machen oben $I$ nach unten, $e^-$ Lorentzkraft nach vorne Richtung von $I$ konstant mit Herleitung aus $F_L$
 	\item Gedanken Experiment: $\vec{B}_{\tx{ind}}(I_{\tx{ind}}) \uparrow \downarrow \Delta \vec{B}_{\tx{sol}}$ sonst Verletzung der Energieerhaltung
 \end{itemize}
-Lensche regel:
+\textbf{Lensche Regel:}
 $$\boxed{I_{\tx{ind}} \tx{ so gerichtet, dass erzeugte }\vec{B}_{\tx{ind}}\tx{ der Änderung von }\Phi_M \tx{ entegenwirkt.}}$$
 
 \paragraph{Zusammenfassung:}
@@ -1776,7 +1774,7 @@ Lösungsansatz: $I(t) = Ae^{-\chi t} + B$
 $$\frac{dI}{dt} = -\chi Ae^{-\chi t}$$
 Einsetzen: $- \chi A e^{-\chi t} = - \frac{R}{L} A e^{-\chi t} - \frac{R}{L}B + \frac{U_0}{L}$\\
 für belt: $\rightarrow \chi = \frac{R}{L} A_{\tx{bel}} B = \frac{U_0}{R}$
-$$\rightarrow I(t) \frac{U_0}{R} (1-e^{-\frac{R}{L} t}$$
+$$\rightarrow I(t) = \frac{U_0}{R} (1-e)^{-\frac{R}{L} t}$$
 starker Anstieg, asymptotisch gegen $\frac{U_0}{R} (\hat{=} L = 0)$
 
 \subsubsection{Ausschaltvorgang}
@@ -1817,10 +1815,10 @@ Solenoid: $L = \mu_0 n^2 Al \quad B = \mu_0 n I_0$\\
 dann $w_m = \frac{W_m}{V} = \frac{1}{2} I_0^2 \mu_0 =\frac{1}{2\mu_0}| \vec{B}|^2$\\[5pt]
 Ergebnis ist allgemeingültig
 $$\begin{array}{llll}
-\tx{Zsfg}: & W_{\tx{el}} = \frac{1}{2} \epsilon_0 |\vec{E}^2 & \tx{Kondensators} & W_{\tx{el}} = \frac{1}{2}CU^2 \\
+\tx{Zsfg}: & W_{\tx{el}} = \frac{1}{2} \epsilon_0 |\vec{E}|^2 & \tx{Kondensators} & W_{\tx{el}} = \frac{1}{2}CU^2 \\
 & W_{\tx{mag}} = \frac{1}{2 \mu_0} |\vec{B}|^2 & \tx{spule} & W_{\tx{mag}} = \frac{1}{2}LI^2\\
 & \tx{mit } \epsilon_0 \mu_0 = \frac{1}{c^2} && c\tx{ für Lichtgeschwindigkeit} \\
-& W_{\tx{??}} W_{\tx{ges}} = \frac{1}{2} \epsilon_0 (|\vec{z}|^2 + c^2 |\vec{B}|^2)
+& W_{\tx{ges}} = \frac{1}{2} \epsilon_0 (|\vec{E}|^2 + c^2 |\vec{B}|^2)
 \end{array}$$
 
 \subsection{Maxwell-Gleichungen}
@@ -1833,7 +1831,7 @@ Betrachte: $$\oint \vec{B}d \vec{s} = \mu_0 I$$
 \begin{description}
 	\item [Links] ringförmigen Weg am Leiter $\oint \vec{B}\ ds = 0$\\
 	Widerspruch zu Ampéreschen Gesetz/ Maxwell-Gl.
-	\item [Rechts] keinen Strom $I$ im Kondensator aller el. Fluss $\Phi_{\tx{el}}$ ducht Zylinderfläche $\rightarrow$ zusätzlicher Beitrag $\frac{d \Phi_\tx{el}}{dt}$ nur wenn $\frac{d \Phi_\tx{el}}{dt} \neq 0$ fließt $I$ und erzeugt $\vec{B}$-Feld
+	\item [Rechts] keinen Strom $I$ im Kondensator aller el. Fluss $\Phi_{\tx{el}}$ durch Zylinderfläche $\rightarrow$ zusätzlicher Beitrag $\frac{d \Phi_\tx{el}}{dt}$ nur wenn $\frac{d \Phi_\tx{el}}{dt} \neq 0$ fließt $I$ und erzeugt $\vec{B}$-Feld
 	\item [Rechnung] $I_V = \frac{dQ}{dt} \quad \frac{dQ}{dt}$ Änderung auf Kondensatorplatten
 	$$|\vec{E}| = \frac{Q}{\epsilon_0 A} \quad Q = |\vec{E}|A\epsilon_0$$ 
 \end{description}
@@ -1907,7 +1905,7 @@ $$U_{\tx{eff}} = \frac{U_0}{\sqrt{2}} \quad I_{\tx{eff}} = \frac{I_0}{\sqrt{2}}$
 	$ \rightarrow $ Spannungsschub um $ U_0 $\\
 	$ + $ Gleichrichter $ \rightarrow $ Greinacher Schaltung\\
 	$ U_{D_1} = U_0 + U_0 \cos \omega t $\\
-	$ U_{\tx{max}}^{\tx{aus}} 2 U_0 (-1,4 \tx{V}) $
+	$ U_{\tx{max}}^{\tx{aus}} = 2 U_0 (-1,4 \tx{V}) $
 	\item[iv)] \textbf{Kaskadenschaltung nach Greinacher}
 	\begin{itemize}
 		\item[1. Stufe]
@@ -1937,6 +1935,7 @@ $$U_{\tx{eff}} = \frac{U_0}{\sqrt{2}} \quad I_{\tx{eff}} = \frac{I_0}{\sqrt{2}}$
 \end{itemize}
 
 \subsection{Komplexe Widerstände}
+\paragraph{\underline{Kondensator:}}
 Gilt: $ U = \frac{Q}{C} \quad \frac{d}{dt}: \frac{dU}{dt} = \frac{I}{C} $\\
 $$ U(t) = U_0 \cos \omega t \quad \tx{gegeben} $$
 $$ I(t) = C \frac{dU}{dt} = - \omega U_0 C \sin \omega t = I_0 \cos (\omega t + \frac{\pi}{2}) $$
@@ -1977,7 +1976,7 @@ $ \rightarrow $ \textbf{Fourierzerlegung}
 \paragraph{\underline{Hochpass:}}
 Spannungsteiler mit $ Z_1 = \frac{1}{i \omega C} \quad Z_2 = R $\\
 Übertragungsfaktor $ k = \frac{U_{\tx{aus}}}{U_{\tx{ein}}} = \frac{Z_{\tx{aus}}}{Z_{\tx{ges}}} $
-$$ K = \frac{R}{R + \frac{1}{i \omega C}} \frac{R + \frac{i}{\omega C}}{R + \frac{i}{\omega C}} = \frac{R^2 + i \frac{R}{\omega C}}{ R^2 + \frac{1}{\omega^2 C^2}} = \frac{\omega^2 C^2 R^2}{\omega^2 C^2 R^2 + 1} + i \frac{\omega C R}{\omega^2 C^2 R^2 + 1} $$
+$$ k = \frac{R}{R + \frac{1}{i \omega C}} \frac{R + \frac{i}{\omega C}}{R + \frac{i}{\omega C}} = \frac{R^2 + i \frac{R}{\omega C}}{ R^2 + \frac{1}{\omega^2 C^2}} = \frac{\omega^2 C^2 R^2}{\omega^2 C^2 R^2 + 1} + i \frac{\omega C R}{\omega^2 C^2 R^2 + 1} $$
 $$ |k| = \frac{|U_{\tx{aus}} |}{| U_{\tx{ein}} |} \quad |k|^2 = \frac{\omega ^2 C^2 R^2}{\omega^2 C^2 R^2 + 1} = \frac{1}{1+ \frac{\omega_0^2}{\omega^2}} \qquad \omega_0 \equiv \frac{1}{RC} $$
 Phase $ \Phi \qquad \tan \Phi = \frac{\tx{Im}}{\tx{Re}} = \frac{1}{\omega C R} = \frac{\omega_0}{\omega} $\\
 für $ \omega \rightarrow \infty \quad |k| \rightarrow 1 $ ,,Hochpass``\\
@@ -2081,14 +2080,14 @@ $ L_{12},L_{21} $ Gegeninduktivitäten \\
 perfekte koppelung, keine Verluste von $\Phi_m$ dann $L_{12} = L_{21} = \sqrt{L_{11}L_{22}}$
 $$N_1 \Phi_{m,1} = N_1[\Phi_{m,11} + \Phi_{m,12}] = L_{11} I_1 + L_{12}I_2$$
 $$N_2 \Phi_{m,2} = N_2[\Phi_{m,21} + \Phi_{m,22}] = L_{21} I_1 + L_{22}I_2$$
-Einsetzen in $(*)$ $\rightarrow$ Transfromatior gleichungen
+Einsetzen in $(*)$ $\rightarrow$ Transfromator gleichungen
 $$U_1 - R_1 I_1 = L_{11} \frac{dI_1}{dt}+ L_{12} \frac{dI_2}{dt}$$
 $$U_2 - R_2 I_2 = L_{21} \frac{dI_1}{dt}+ L_{22} \frac{dI_2}{dt}$$
-Für Spitzenwete $U_0,\ I_0$ mit $U_1 = U_0 e^{i\omega t}$
+Für Spitzenwerte $U_0,\ I_0$ mit $U_1 = U_0 e^{i\omega t}$
 $$U_1 - R_1 I_1 = i\omega L_{11} I_1 + \omega L_{12} I_2$$
 $$U_2 + R_2 I_2 = - i\omega L_{21} I_1 - \omega L_{22} I_2$$
 Phasenverschiebung $U_2$ zu $U_1$ von $\pi \rightarrow$ ,,\ -\ '' Zeichen\\
-Für weitere Diskussion $R^{\tx{spule}}_1 = R^{\tx{spule}}_2 = 0$ aber Last $Z$ sekundärkreis
+Für weitere Diskussion $R^{\tx{spule}}_1 = R^{\tx{spule}}_2 = 0$ aber Last $Z$ Sekundärkreis
 
 Nutze $ U_2 = Z I_2 $ und nach Strömen auflösen
 $$ I_1 = \frac{i \omega L_{22} + Z}{i \omega L_{11} Z + \omega^2 (l_{12}^2 - L_{11} L_{22})} U_1 $$
@@ -2096,8 +2095,8 @@ $$ I_2 = \frac{i \omega L_{12}}{i \omega L_{11} Z + \omega^2 (L_{12}^2 - L_{11} 
 Darus Übersetzungsverhältnisse für $ U_i, I_i $
 $$ \frac{I_2}{I_1} = - \frac{i \omega L_{12}}{i \omega L_{22} + Z} \quad \frac{U_2}{U_1} = - \frac{i \omega L_{12} Z}{i \omega L_{11} Z + \omega^2 (L_{12}^2 l L_1 L_2)}$$
 
-\paragraph{Def:} Kppelungsgrad $k= \rightarrow \frac{L_{12}}{\sqrt{L_{11}L_{22}}} \qquad 0<k<1$
-$k=1$ vollständige koppelung $k = 0$ entkoppelt
+\paragraph{Def:} Kopplungsgrad $k= \rightarrow \frac{L_{12}}{\sqrt{L_{11}L_{22}}} \qquad 0<k<1$
+$k=1$ vollständige Kopplung $k = 0$ entkoppelt
 $$\frac{U_2}{U_1} = \frac{i L_{12}}{i L_{11}+\omega^2 (k^2 - 1) \frac{L_{11}L_{22}}{Z}}$$
 
 Beträge: $$ \frac{|I_2|}{|I_1|} = \frac{\omega L_{12}}{\sqrt{Z^2+\omega^2 L_{12}^2}} \quad \frac{|U_2|}{|U_1|} = \frac{L_{12}}{\sqrt{ L_{11}^2 + \omega^2 \frac{L_{11}^2 L_{22}^2}{|Z|^2} (1-k^2)}}$$
@@ -2153,9 +2152,9 @@ RLC-Serienschaltung $\rightarrow$ Bandpass (ohne $R$)
 \end{align*}
 \folie{Serienschwingkeris}
 $$ \frac{d}{dt}: \quad \frac{d U_{\tx{ext}}}{dt} = L \frac{d^2 I}{dt^2} + R \frac{dI}{dt} + \frac{1}{C} I $$
-$ U_{\tx{ext}} = U_0 \sin \omega t \cdot \frac{1}{C} $
-$$\frac{s^2 I}{dt^2} + \frac{R}{L} \frac{dI}{dt} + \frac{1}{LC} I = \frac{U_0 \omega}{L} \cos \omega t $$
-inhomogene DGL 2. Ordnung für den Strom $ I(t) $\\
+$ U_{\tx{ext}} = U_0 \sin \omega t\quad  (??? \cdot \frac{1}{C}) $
+$$\frac{d^2 I}{dt^2} + \frac{R}{L} \frac{dI}{dt} + \frac{1}{LC} I = \frac{U_0 \omega}{L} \cos \omega t $$
+inhomogene DGL 2. Ordnung für den Strom $ I(t) $
 \paragraph{Lösung:} mit komplexwertigem Ansatz\\
 zunächst $ U_{\tx{ext}} = U_0 e^{i\omega t} $
 $$ \frac{d^2 I}{dt^2} + \frac{R}{L} \frac{dI}{dt} + \frac{1}{LC} I = \frac{i U_0 \omega}{L} e ^{i \omega t}$$
@@ -2164,14 +2163,14 @@ Bilden zeitliche Ableitung und Einsetzen
 $$ (\ub{i \omega L}_{Z_L} + \ub{\frac{1}{i \omega L}}_{Z_C} + \ub{R}_{Z_R} ) I_0 = U_0 e ^{i \Phi} $$
  wie erwartet für Impedanzen in Serie\\
  $ I(t) = \frac{U(t)}{Z_{\tx{ges}}} $ Resonanz wenn $ Z_{\tx{ges}} $ minimal
- $$\frac{d Z_{\tx{ges}}}{d \omega} \bigg|_{\omega_R} \buildrel ! \over = 0 \qquad i L \omega - \frac{1}{i \omega_R C} = 0 \Leftrightarrow \omega_R = \frac{1}{\sqrt{LC}}$$
+ $$\frac{d Z_{\tx{ges}}}{d \omega} \bigg|_{\omega_R} \buildrel ! \over = 0 \qquad i L \omega_R - \frac{1}{i \omega_R C} = 0 \Leftrightarrow \omega_R = \frac{1}{\sqrt{LC}}$$
  
  % neue vorlesung
  
  \subsubsection{Freie, ungedämpfte Schwingung}
  \begin{itemize}
  	\item LC-Kreis $ R = 0 $ keine externe Anregung
- 	\item \item Kondensator laden, bei $ t=0 $ mit Spule verbinden\\
+ 	\item Kondensator laden, bei $ t=0 $ mit Spule verbinden\\
  	$ \rightarrow $ Schwingungen
  	\item periodisches Umladen des Kondensators, periodische Ströme in Spule\\
  	\folie{El.-mag. Schwingkreis und mech. Modell eines Oszillators im Vergleich}
@@ -2216,7 +2215,7 @@ $$ (\ub{i \omega L}_{Z_L} + \ub{\frac{1}{i \omega L}}_{Z_C} + \ub{R}_{Z_R} ) I_0
  	$$U(t) = U_0 e^{i\omega t} \quad I(t) = \frac{U(t)}{Z_{\tx{ges}}} $$
  	Kreis schwingt mit externer Frequenz $ I_0 = \frac{U_0}{|Z_{\tx{ges}}|} $
  	\item Serienkreis $\ \; Z_{\tx{ges}} = i \omega L + \frac{1}{i \omega C} + R $\\
- 	Parallelkreis $ Z_{\tx{ges}} = (i \omega L + \frac{1}{i \omega C} + R)^{-1} $\\
+ 	Parallelkreis $ Z_{\tx{ges}} = (i \omega L)^{-1} + (\frac{1}{i \omega C})^{-1} + (R)^{-1} $\\
  	Resonanzverhalten in beiden Fällen
  \end{itemize}
  \paragraph{Serienkreis}
@@ -2259,7 +2258,7 @@ Einsetzen in DGL und sortieren
 $$\ub{\begin{pmatrix}
 R_1 + i (L_1 \omega - \frac{1}{\omega C_1}) & i L_{12} \omega \\
 i L_{21} \omega & R_2 + i(L_2\omega - \frac{1}{\omega C_2})
-\end{pmatrix}}_{\tx{Impedanzmatrix} \mathcal{M}} \begin{pmatrix}
+\end{pmatrix}}_{\tx{Impedanzmatrix } \mathcal{M}} \begin{pmatrix}
 \hat{I}_1\\
 \hat{I}_2
 \end{pmatrix} = \begin{pmatrix}
@@ -2267,16 +2266,18 @@ i L_{21} \omega & R_2 + i(L_2\omega - \frac{1}{\omega C_2})
 \end{pmatrix}$$
 Triviale Lösung: $ \hat{I}_1 = \hat{I}_2 = 0 $\\
 Nicht triviale Lösung: Bedingung $ \det \mathcal{M} = 0 $\\
-$$\det \mathcal{M} = (R_1 + i(\omega L_1 - \frac{1}{\omega C_1}) )(R_2 + i(\omega_2 L_2 - \frac{1}{\omega_2 C_2})) + \omega^2 L_{12} L_{21} \buildrel ! \over = 0 $$
-allgemeiner Lösungsansatz 
+$$\det \mathcal{M} = \Big(R_1 + i(\omega L_1 - \frac{1}{\omega C_1}) \Big)\Big(R_2 + i(\omega_2 L_2 - \frac{1}{\omega_2 C_2})\Big) + \omega^2 L_{12} L_{21} \buildrel ! \over = 0 $$
+allgemeiner Lösungsansatz:
 
 % hier fehlt was Patrick
+
+hier fehlt was
 
 % danach bild 2
 
 Thomsonfrequenz $ \omega_0 = \frac{1}{\sqrt{LC}} $\\
 Kopplungsparameter $ k = \frac{L_{12}}{L} $\\
-Wir haben 2 Eigenfrequenzen $ (h\ll1\ \ \Delta \omega = \omega_1 - \omega_2 = \omega_0 k) $\\
+Wir haben 2 Eigenfrequenzen $ (k\ll1\ \ \Delta \omega = \omega_1 - \omega_2 = \omega_0 k) $\\
 $ k=0 $: Entkopplung Schwingung bei $ \omega_0 $\\
 $ k \rightarrow 1 $: $ \omega_2 \rightarrow \infty \quad \omega_1 = \frac{\omega_0}{\sqrt{2}} $ verständlich 1 Kreis mit doppelter Kapazität\\
 $ 0<k<1 $: Beobachtung beider Frequenzen bzw. Überlagerung $ \rightarrow $ Schebung
@@ -2421,10 +2422,10 @@ $$ \tx{Für LL:} \ = \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} \frac{\ln\frac
 $ \sqrt{\frac{\mu_0}{\epsilon_0}} \approx 377 \Omega $ Wellenwiderstand des Volumens\\[5pt]
 Vollständige Leistungsanpassung: $ Z_L = Z_V $
 \begin{itemize}
-	\item[$ Z_V \neq Z_L $:] nur Teil der Leistung in $ Z_V $ umgesetzt der Rest der Leistung reflektiert
-	\item[Extremfälle:] $ Z_V = 0 $ (Kurzschluss) und $ Z_V = \infty $ (offene LL)
-	\item[$ Z_V = 0: $] $ U(Z_V) = 0 $ Spannungsknoten
-	\item[$ Z_V = \infty: $] $ I(Z_V) = 0 $ Stromknoten
+	\item $ Z_V \neq Z_L $: nur Teil der Leistung in $ Z_V $ umgesetzt der Rest der Leistung reflektiert
+	\item Extremfälle: $ Z_V = 0 $ (Kurzschluss) und $ Z_V = \infty $ (offene LL)
+	\item $ Z_V = 0: $ $ U(Z_V) = 0 $ Spannungsknoten
+	\item $ Z_V = \infty: $ $ I(Z_V) = 0 $ Stromknoten
 \end{itemize}
 komplette oder teilweise Reflexion der Welle\\
 $ \rightarrow $ Überlagerung von einlaufender und auslaufender Welle
@@ -2977,7 +2978,7 @@ $$\vec{w} \equiv \vec{r} - \vec{r}'_{\tx{ret}} \qquad \vec{u} \equiv c \vec{e}_w
 	\item wenn $ \vec{v} = \vec{0} $ dann $ \vec{u} = c \vec{e}_w $ aber Abstrahlung $ \neq 0 $
 	\item wenn $ \vec{a} = \vec{0} $ dann Abstrahlung $ = 0 $\\
 	$ \vec{a} \neq \vec{0} $ dann Abstrahlung in gewisse Richtung\\
-	\boxed{Beschleunigte el. Ladungen strahlen el. mag. Wellen aus}
+	\boxed{\tx{Beschleunigte el. Ladungen strahlen el. mag. Wellen aus}}
 \end{itemize}
 Abgestrahlte Leistung in $ d\Omega = d \varphi \sin \theta \ d \theta $
 $$\frac{d P}{d \Omega} = \epsilon_0 c |\vec{E}|^2 w^2$$
@@ -3145,34 +3146,159 @@ Zshg. von $ \kappa $ und $ \alpha $: $ \alpha = \frac{ 4 \pi \kappa}{\lambda} \q
 	\item Wellenvektor der einlaufenden Welle $ \vec{k}_e $ in x-y-Ebene\\
 	Normalenvektor $ \vec{n}_{xz} $ und $ \vec{k}_e $ bilden Einfallsebene
 	\item Tangentialkomponente des $ \vec{E} $-Feldes stetig an Grenzfläche
-	\begin{equation*}
-	E_{e,t} + E_{r,t} = E_{g,t} \tag{$ * $}
-	\end{equation*}
-	t tangential, e einlaufend, g gebrochen\\
-	bei $ \vec{r} = 0 :$
-	$$A_{e,t} e^{i \omega_e t} + A_{e,t} e^{i \omega_r t} = A_{g,t} e^{i \omega_g t} $$
-	Nur Lösung, wenn gilt $ \omega_e = \omega_r = \omega_g $\\
-	Bedingung $ (*) $ gilt nur für gesamte x-z-Ebene
-	\begin{equation*}
-	k_e \vec{r} = k_r \vec{r} = \vec{k}_g \vec{r} \tag{ $ **  $}
-	\end{equation*}
-	$$\vec{r} = x \vec{e}_x + z \vec{e}_z \quad \tx{ in Grenzfläche }$$
-	$$\vec{k_e} = k_{ex} \vec{e}_x + k_{ey} \vec{e}$$
-	$$\vec{k}_r = k_{rx} \vec{e}_x + k_{ry} \vec{e}_y + k_{rz} \vec{e}_z \qquad \vec{k}_g = k_{gx} \vec{e}_x + k_{gy} \vec{e}_y + k_{gz} \vec{e}_z$$
-	Einsetzen in $ (**) $
-	$$k_{ex} x = k_{rx} x + k_{rz} z = k_{gx} x + k_{gz} z $$
-	Muss für beliebige x und z in Grenzfläche gelten
-	$$\Rightarrow k_{ex} = k_{rx} = k_{gx} \qquad k_{rz} = k_{gz} = 0$$
-	d.h. Wellenvektoren von reflektierter und gebrochener Welle auch in Einfallsebene.\\
-	Aus Abb: 
-	$$k_{ex} = k_e \sin \alpha \qquad k_{rx} = k_r \sin \alpha' \qquad k_{gx} = k_g \sin \beta $$
-	$$\frac{\sin \alpha}{c_1} = \frac{\sin \alpha'}{c_1} = \frac{\sin \beta}{c_2} \quad c_i \tx{ Lichtgeschwindigketi im Medium i}$$
-	$$\boxed{ \sin \alpha = \sin \alpha' \qquad \alpha = \alpha' \qquad \tx{Reflexionsgesetz}}$$
-	$$\boxed{ \frac{\sin \alpha}{\sin \beta} = \frac{c1}{c2} = \frac{n2}{n_1} \qquad \tx{Snelliusche Brechungsgesetz} }$$
-	\folie{Anwendung er Totalreflexion: Retroflexionsprisma und Lichtleiter}
-	
-	
 \end{itemize} 
+\begin{equation*}
+E_{e,t} + E_{r,t} = E_{g,t} \tag{$ * $}
+\end{equation*}
+t tangential, e einlaufend, g gebrochen\\
+bei $ \vec{r} = 0 :$
+$$A_{e,t} e^{i \omega_e t} + A_{e,t} e^{i \omega_r t} = A_{g,t} e^{i \omega_g t} $$
+Nur Lösung, wenn gilt $ \omega_e = \omega_r = \omega_g $\\
+Bedingung $ (*) $ gilt nur für gesamte x-z-Ebene
+\begin{equation*}
+k_e \vec{r} = k_r \vec{r} = \vec{k}_g \vec{r} \tag{ $ **  $}
+\end{equation*}
+$$\vec{r} = x \vec{e}_x + z \vec{e}_z \quad \tx{ in Grenzfläche }$$
+$$\vec{k_e} = k_{ex} \vec{e}_x + k_{ey} \vec{e}$$
+$$\vec{k}_r = k_{rx} \vec{e}_x + k_{ry} \vec{e}_y + k_{rz} \vec{e}_z \qquad \vec{k}_g = k_{gx} \vec{e}_x + k_{gy} \vec{e}_y + k_{gz} \vec{e}_z$$
+Einsetzen in $ (**) $
+$$k_{ex} x = k_{rx} x + k_{rz} z = k_{gx} x + k_{gz} z $$
+Muss für beliebige x und z in Grenzfläche gelten
+$$\Rightarrow k_{ex} = k_{rx} = k_{gx} \qquad k_{rz} = k_{gz} = 0$$
+d.h. Wellenvektoren von reflektierter und gebrochener Welle auch in Einfallsebene.\\
+Aus Abb: 
+$$k_{ex} = k_e \sin \alpha \qquad k_{rx} = k_r \sin \alpha' \qquad k_{gx} = k_g \sin \beta $$
+$$\frac{\sin \alpha}{c_1} = \frac{\sin \alpha'}{c_1} = \frac{\sin \beta}{c_2} \quad c_i \tx{ Lichtgeschwindigketi im Medium i}$$
+$$\boxed{ \sin \alpha = \sin \alpha' \qquad \alpha = \alpha' \qquad \tx{Reflexionsgesetz}}$$
+$$\boxed{ \frac{\sin \alpha}{\sin \beta} = \frac{c1}{c2} = \frac{n2}{n_1} \qquad \tx{Snelliusche Brechungsgesetz} }$$
+\folie{Anwendung er Totalreflexion: Retroreflexionsprisma und Lichtleiter}
+
+% neue Vorlesung
+
+\subsubsection{Totalreflexion}
+Übergang $ 1 \rightarrow 2 $ ; $ n_1 > n_2 $\\
+$ \sin \alpha \frac{n_1}{n_2} = \sin \beta \buildrel ! \over \le 1 $\\
+Für $ \sin \beta > 1 $ keine Brechung $ \rightarrow $ Totalreflexion\\
+Grenzwinkel $ \sin \alpha_{\tx{Gr}} = \frac{n_2}{n_1} $\\[5pt]
+$ \alpha > \alpha_{\tx{Gr}} $ wird $ \vec{k}_{g} $ komplex $ \Rightarrow $ evaneszente Welle:\\
+Welle dringt in das Medium ein. Intensität $ I_2 \sim e^{-\frac{z}{\lambda}} $
+\subsubsection{Absorption}
+$ \kappa , \alpha $ werden groß wenn $ \omega \approx \omega_0 $. Dann $ n_r = 1 $\\
+\textbf{Exp:} weißes Licht $ \rightarrow $ Schatten des Stäbchens, ,,keine`` Absorption\\
+Na-Lampe $ \rightarrow $ Absorption in NaCl $ \rightarrow $ Schatten der Flamme\\
+$ \hbar \omega_{\tx{Licht}} = \Delta E _{\tx{Na}} $ Unterschied der Energieniveaus im Na
+
+\subsection{Wellengleichung in Materie}
+$$\vec{\nabla} \times \vec{E} = - \frac{\partial \vec{B}}{\partial t} \quad \vec{\nabla} \times \vec{B} = \mu_0 \mu (\vec{j} + \frac{\partial D}{\partial t})$$
+$$\vec{\nabla} \vec{D} = \rho \qquad \vec{\nabla}\vec{B} = 0$$
+$$\vec{D} = \epsilon \epsilon_0 \vec{E} = \epsilon_0 \vec{E} + \vec{P} \quad \rho,\vec{j} \tx{ freien Dichten}$$
+Nichtleiter/Isolator: $ \vec{j} = 0 $ ungeladen $ \rho = 0 $\\
+Analog zu Vakuum: $ \Delta \vec{E} = \mu \mu_0 \epsilon \epsilon_0 \frac{\partial ^2 \vec{E}}{\partial t^2}  \quad c = \frac{1}{\sqrt{\mu \mu_0 \epsilon \epsilon_0}} $\\
+ebenso: $ \Delta \vec{B} = \frac{1}{c^2} \frac{\partial ^2 \vec{B}}{\partial t^2} $
+Annahme $\mu_r \approx \underline{1}$ (kein Ferromagnet)\\
+Setze $\vec{D} (\vec{E}, \vec{\underline{P}})$ in rot$\vec{B}$ ein
+$$\Delta \vec{E} = \ub{\frac{1}{c_0^2} \frac{\partial ^2 \vec{E}}{\partial t^2}}_{\tx{Primärwelle}} + \ub{\frac{1}{\epsilon_0 c_0^2} \frac{\partial ^2 \vec{P}}{\partial t^2}}_{\tx{Sekundärwelle aus Dipolen}} \qquad \mu \approx 1 \quad n = \sqrt{\epsilon}$$
+Aus $\vec{B} \frac{1}{\omega} (\vec{k} \times \vec{E}) \tx{ folgt mit }  \vec{k} = n \vec{k}_0 $\\
+$ \vec{B} = \frac{n}{c} (\vec{e}_{\vec{n}_0} \times \vec{E})  = \frac{|n|}{c}  (\vec{e}_{n_0} \times \vec{E}) e^{i \phi_B}$\\
+mit $ n = |n| e^{i \phi_b}  \quad \tan\phi_B = -\frac{k}{n} $\\
+für $ k\neq 0 $ sind $ \vec{E} $ und $ \vec{B} $ nicht mehr in Phase\\
+In $x$ lin. pol. Welle mit Ausbreitung in $z$-Richtung 
+\begin{align*}
+\vec{E}= E_0 e^{i(\omega t-kz} \vec{e}_x \quad &\underline{P}= N\alpha E_x\\
+&\alpha\ \tx{polarisierbarkeit}, N\ \tx{Dipoldichte}
+\end{align*}
+$ \alpha $ Polarisierbarkeit, $N$ Dipoldichte\\
+Einsetzen in Wellengleichung: $ k^2 = \frac{\omega^2}{c^2} (1 + \frac{N \alpha}{\epsilon_0}) \qquad \frac{c}{n} = \frac{\omega}{k} $\\
+ergibt:
+$$\boxed{n^2 = 1 + \frac{N \alpha}{\epsilon_0}}$$
+Zusammenhang zwischen Brechzahl und Polarisierbarkeit\\
+Induzierter Dipol:
+$$p = -e X_0 = \frac{e^2 E}{m(\omega_0^2 - \omega^2 + 2 \gamma i \omega)}$$
+Andererseits: $ \vec{p} = \alpha (\omega) \vec{E} $\\
+Also folgt: $$ \alpha = \frac{e^2}{m( \omega_0^2 \omega^2 + 2 i \gamma \omega)}$$
+bzw: $ n^2 = 1 + \frac{e^2 N}{\epsilon m (\omega_0^2 - \omega^2 + 2 i \gamma \omega)} $\\[5pt]
+Gültig für n-1 groß\\
+Für $ (n-1) \ll 1 $ ,,altes`` Ergebnis mit $ (n^2-1) \approx 2(n-1) $
+
+\subsection{Wellen an Grenzflächen}
+\begin{description}
+	\item[einfallend] $E_e = A_e e^{i(\omega t - \vec{k}_e\vec{r})}$
+	\item[reflektiert] $E_r = A_r e^{i(\omega t - \vec{k}_r\vec{r})}$
+	\item[gebrochen] $E_g = A_g e^{i(\omega t - \vec{k}_g \vec{r})}$
+\end{description}
+$ \vec{k}_0 , \vec{k}_r $ aus Reflexions- bzw. Brechungsgesetz\\
+jetzt: Amplituden und Polarisationen
+\subsubsection{Randbedingungen an $ \vec{E} $ und $ \vec{R} $ auf Grenzfläche}
+Tangentialkomponente $ E_t,B_t $ und Normalkomponente $ E_n,B_n $\\
+Beim übergang: $ E_t $ und $ B_n $ stetig\\
+Weiterhin: $ |\vec{E}_1| \epsilon_1 = |\vec{E}_2| \epsilon_2 $\\
+da $ E_t $ gleicht: 
+$$\frac{E_{1,n}}{E_{2,n}} = \frac{\epsilon_2}{\epsilon_1} \buildrel \substack{\mu = 1 \\ k = 0} \over \approx \frac{n_2^2}{n_1^2}$$
+analog für $ \vec{B} $: $B_{1n} = B_{2n}$
+$$ \frac{B_{1,t}}{B_{2,t}} = \frac{\mu_1}{\mu_2} \buildrel \mu = 1 \over \approx 1$$
+\subsubsection{Amplituden}
+Zerlege Amplitude von $ \vec{E} $ in $ A_p $ parallel und $ A_s $ senkrecht zur Einfallsebene $ (\vec{k}_e,\vec{n}_{\tx{Grenz}}) $\\
+hier: $ A_p = (A_x,A_y,0) \quad A_s = (0,0,A_z) $\\[5pt]
+Nutze Stetigkeit von $ E_t $ und $ B_t $ und Reflexions- bzw. Brechungsgesetz\\
+$ \rightarrow $ \fbox{Fresnelsche Gleichungen}\\[5pt]
+Senkrechte Komponenten\\
+
+%boxed:
+\begin{tcolorbox}[colback=white,colframe=black,sharp corners,boxrule=.5pt]
+\noindent
+Reflexionskoeffizient $ \rho_s $
+$$\rho_s = \frac{A_{rs}}{A_{es}} = \frac{1-a}{1+a} = - \frac{\sin( \alpha - \beta)}{\sin (\alpha + \beta)} \ \ $$
+Transmissionskoeffizienten $ \tau_s $
+$$\, \qquad \tau_s = \frac{A_{gs}}{A_{es}} = \frac{2}{1-a} = \frac{2 n_1 \cos \alpha}{n_1 \cos \alpha + n_2 \cos \beta}$$
+Analog für parallele Komponenten
+\begin{align*}
+\rho_p &= \frac{A_{rp}}{A_{ep}} = \frac{\tan (\alpha - \beta)}{\tan( \alpha + \beta)}\\
+\tau_p &= \frac{A_{gp}}{A_{ep}} = \frac{2 \sin\alpha \cos \beta}{\sin (\alpha + \beta) \cos (\alpha - \beta)}
+\end{align*}
+\end{tcolorbox}
+% bis hier
+
+Grundlage um Reflexion und Transmission zu berechnen
+Reflexions- und Transmissionsvermögen
+\begin{align*}
+\overline{I}_e &= \epsilon_0 \epsilon_1 |\vec{E}_e|^2 = \frac{1}{2} \epsilon_0 \epsilon_1 c_1 A_e^2 \quad A_e = \sqrt{A_{e,s}^2 + A_{e,p}^2}\\
+\overline{I}_R &= \frac{1}{2} \epsilon_0 \epsilon_1 c_1 A_r^2
+\end{align*}
+Reflexionsvermögen $ R = \frac{\overline{I}_r}{\overline{I}_e} = \frac{A_r^2}{A_e^2} $\\
+Strikt Fläche $ \perp $ Strahl $ \quad \frac{1}{\cos \alpha} $ Fläche auf der Grenze
+$$R = \frac{\overline{I}_R \cos \alpha '}{\overline{I}_e \cos \alpha } = \frac{\overline{I}_R}{\overline{I}_e} \quad \tx{da } \alpha = \alpha'$$
+Transmissionsvermögen $ T = \frac{\overline{I}_t \cos \beta}{\overline{I}_e \cos \beta} $
+\begin{align*}
+\overline{I}_t &= \frac{1}{2} \epsilon_2 \epsilon_0 c_2 A_g^2\\
+&= \frac{1}{2} \frac{n_2}{\mu_0 c_0} A_g^2 \qquad \tx{für } \mu = 1
+\end{align*}
+Analog: $ \overline{I}_e = \frac{1}{2} \frac{n_1}{\mu_0 c_0} A_e^2 $
+$$\Rightarrow \boxed{ T = \frac{n_2 \cos \beta A_g^2}{n_1 \cos \alpha A_e^2} }$$
+Da $ \rho_s , \rho_p $ unterschiedlich sind $ R_s,R_p $ unterschiedlich
+$$R_s = \frac{A_{re}^2}{A_{es}^2} = \frac{\sin^2 (\alpha - \beta)}{\sin^2(\alpha + \beta)} \qquad R_p = \frac{A_{rp}^2}{A_{ep}^2} = \frac{\tan^2 (\alpha - \beta)}{\tan^2(\alpha + \beta)}$$
+Senkrechter Einfall $ \quad R(\alpha = 0) = \frac{(n_1 - n_2)^2}{(n_1+n_2)^2} $\\[5pt]
+Allgemeiner Falls (nachrechnen !)
+$$T_p + R_p = 1 \quad T_s + R_s = 1 \quad T + P = 1$$
+$ \rightarrow $ Intensität geht nicht verloren
+\subsubsection{Brewster-Winkel}
+Für $ \alpha + \beta = \frac{\pi}{2} = 90^\circ $ dann $ \tan(\alpha + \beta) \rightarrow \infty $\\
+$ A_{rp} = 0 $ d.h. die reflektierte Welle hat nur Anteile senkrecht zur Einfallsebene\\
+Für Brewster-Winkel $ \alpha_{\tx{Br}} $ gilt $ \vec{k}_r \perp \vec{k}_g $\\[5pt]
+Brewsterbedingung $ \frac{\sin \alpha}{\sin \beta} = \frac{n_2}{n_1} \quad \alpha + \beta = \frac{\pi}{2} $\\
+$$ \rightarrow \tan\alpha_{\tx{Br}} = \frac{n_2}{n_1} \quad \tx{für} \quad  \frac{n_2}{n_1} = 1,5 \quad \alpha = 56.3^\circ $$
+\textbf{Esp:}
+\begin{enumerate}[a)]
+	\item unpolarisiertes Licht\\
+	Reflexion: $ A_p $ wird nicht reflektiert, $ \perp $ unpolarisiert\\
+	Transmission groß\\[5pt]
+	viele Glaßplatten: nur $ A_s $ reflektiert (vielmals)\\
+	$ A_s $ klein $ \rightarrow  A_p $ dominiert $ \rightarrow \parallel $ polarisiert
+	\item polarisiertes Licht\\
+	$ \parallel $ polarisiert $ \rightarrow $ keine Reflexion, vollständig Transmission \\
+	$ \perp $ polarisiert $ \rightarrow $ Reflexion und Transmission
+\end{enumerate}
+
+
 
 
 \end{document}

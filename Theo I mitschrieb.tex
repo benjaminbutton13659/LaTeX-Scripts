@@ -52,6 +52,7 @@
 \newcommand{\rmbox}[1]{\tcboxmath[colback=white,colframe=red!75!black]{#1}} % mahlt eine box um mathe innerhalb mathmode
 
 \renewcommand{\boxed}{\rmbox}
+%\renewcommand{\vec}[1]{\boldsymbol{#1}}
 
 \hbadness=99999
 
@@ -2037,7 +2038,7 @@ oder
 \subsubsection{Eulersche Gleichungen}
 $$ \frac{d}{dt} \vec{L} = \vec{M}$$
 \begin{align*}
-\frac{d}{dt} \vec{L} &= \frac{d}{dt} \sum_{n=1}^N m_n (\vec{r}_n \times \dot \vec{r}_n) = \frac{d}{dt} ( I \cdot \vec{\omega})\\
+\frac{d}{dt} \vec{L} &= \frac{d}{dt} \sum_{n=1}^N m_n (\vec{r}_n \times \dot{\vec{r}}_n) = \frac{d}{dt} ( I \cdot \vec{\omega})\\
 &= \vec{M} = \sum_{n=1}^{N} \vec{r}_i \times \vec{F}_n^A
 \end{align*}
 Mit Gl. $ (*) $ ist dann
@@ -2971,7 +2972,7 @@ $ \rightarrow $ nicht allg. zu sagen \\[5pt]
 \section{Vierdimentionale Entfernungen}
 Drehung eines 3D Vektors $ \vec{a} \in \mathbb{R}^3 $ ändert die Länge $ \sqrt{\vec{a}^{\,2}} $ nicht d.h. $ \vec{a}^{\, 2} = a^2 $ ist eine Invariante unter Drehungen.\\
 $ \rightarrow $ welche Invariant gibt es bei Lorenz-Trafos ?\\[5pt]
-\underline{Gegben:} IS und IS' mit konst. Relativgeschwindigkeit $ \vec{v} $ und Anfangbedingungen:
+\textbf{Gegben:} IS und IS' mit konstanter Relativgeschwindigkeit $ \vec{v} $ und Anfangsbedingungen:
 \begin{align*}
 t_1 &= t_1' = 0\\
 \vec{r}_1 &= \vec{r'}_1 = 0
@@ -2984,13 +2985,13 @@ Zu $ t_1 = t_1' = 0 $ wird ein Lichtpuls in alle Richtungen abgestrahlt, der sic
 folglich ist die Größe $ (ct)^2 - \vec{r}^2 $ Lorenzinvariant für alle Ereignisse, die durch ein Lichtsignal verbunden sind.\\
 \textbf{Def:}
 \begin{itemize}
-	\item Raumzeitpunkt oder \underline{Weltpunkt} $ (ct,\vec{r}) $ def. ein Ereignis
+	\item Raumzeitpunkt oder \textbf{Weltpunkt} $ (ct,\vec{r}) $ def. ein Ereignis
 	\item Die Größe
 	$$s = \sqrt{c^2(t_2-t_1)^2 - (\vec{r}_2 - \vec{r}_1)^2}$$
-	heißt \underline{Abstand} oder Intervall oder \underline{4D Entfernung} zwischen 2 Weltpunkten $ (ct_1,\vec{r}_1) $ und $ (ct_2,\vec{r}_2) $
+	heißt \textbf{Abstand} oder Intervall oder \textbf{4D Entfernung} zwischen 2 Weltpunkten $ (ct_1,\vec{r}_1) $ und $ (ct_2,\vec{r}_2) $
 	\item Das Abstandsquadrat
 	$$s^2 = c^2 (t_2-t_1)^2- (\vec{r}_2 - \vec{r}_1)^2$$
-	zwischen 2 \underline{beliebigen} Ereignissen ist Lorenzinvarant.
+	zwischen 2 \textbf{beliebigen} Ereignissen ist Lorenzinvarant.
 \end{itemize}
 \textbf{Beweis:} Verschiebung um $ -t_1 $ und $ - \vec{r}_1 $ und erhalten die Ereignisse
 $$E_1 = (0,\vec{0})\ \ , \ \ E_2 = (c(t_2-t_1) , \vec{r}_2 - \vec{r}_1) =: (ct,\vec{r})$$
@@ -3069,12 +3070,12 @@ kausaler Zusammenhang ist möglich (mit Lichtgeschwindigkeit).
 \subsection{1.) Vierervektoren}
 Raumzeitpunkt $ (ct,\vec{r}) $ wird als Vierervektor (4-Vektor) geschrieben:
 \begin{equation*}
-X = (ct, \vec{r}) \tag{1}
+\underline{X} = (ct, \vec{r}) \tag{1}
 \end{equation*}
 (alle Komponenten haben die gleiche Einheit)\\
 \textbf{Eigenschaften:}\\
 \begin{enumerate}[1)]
-	\item $$X = \begin{pmatrix}
+	\item $$\underline{X} = \begin{pmatrix}
 	ct\\
 	x\\
 	y\\
@@ -3084,46 +3085,47 @@ X = (ct, \vec{r}) \tag{1}
 	-x \sin \varphi + y \cos \varphi\\ z
 	\end{pmatrix}$$
 	\item Bei Lorenz-Trafo mit $ \vec{v} = v \vec{e}_x$ ist:
-	hier fehlt was 
-	
-	% zweite trafo
-	
-	% vierervektoren underlinen
-	
+	$$\underline{X} = \begin{pmatrix}
+	ct\\x\\y\\z
+	\end{pmatrix} \buildrel \tx{LT} \over \longrightarrow \underline{X}' = \begin{pmatrix}
+	\gamma (ct - \frac{v}{c} x) \\
+	\gamma (c - vt) \\
+	y \\ z
+	\end{pmatrix}$$
 \end{enumerate}
 \textbf{Def: Vierervektoren}
-$$ A = (A_0,A_1,A_2,A_3)$$
+$$ \underline{A} = (\underline{A}_0,\underline{A}_1,\underline{A}_2,\underline{A}_3)$$
 Die sich räumlichen Drehungen und bei Lorenz-Trafos wie
-$$X = (ct, \vec{r}) \qquad \tx{Transformieren}$$
-$ A_0 $: zeitliche Komponente\\
-$ A_1,A_2,A_3 $: räumliche Komponenten\\[5pt]
+$$\underline{X} = (ct, \vec{r}) \qquad \tx{Transformieren}$$
+$ \underline{A}_0 $: zeitliche Komponente\\
+$ \underline{A}_1,\underline{A}_2,\underline{A}_3 $: räumliche Komponenten transformieren sich wie $ \vec{r} \in \mathbb{R}^3 $\\[5pt]
 \textbf{Quadrat}
-$$A^2 := A_0^2 - A_1^2 - A_2^2 - A_3^2$$
-\textbf{Beachte:} $ A^2 = 0 $ folgt nicht $ A = 0 $\\[5pt]
+$$\underline{A}^2 := \underline{A}_0^2 - \underline{A}_1^2 - \underline{A}_2^2 - \underline{A}_3^2$$
+\textbf{Beachte:} $ \underline{A}^2 = 0 $ folgt nicht $ \underline{A} = 0 $\\[5pt]
 Vektorraum heißt Minkowski-Raum oder pseudoeuklidischer Raum.\\[5pt]
 \textbf{Skalarprodukt:}
-$$A \cdot B = A_0 B_0 - A_1 B_1 - A_2 B_2 - A_3 B_3$$
-Da Abstandsquadrat $ s^2 = X \cdot X = c^2 t^2 - \vec{r}^2 $ lorenzinvariant und sich alle 4-Vektoren wie $ X $ transformieren, ist das Quadrat aller 4-Vektoren $ A^2 $ lorenzinvariant.\\
-Wie bei Drehung von $\vec{r}$ in 3D, kann man die Lorenz-Trafo von $ X $ als Drehung im Minkowski-Raum auffassen. Wegen:
-$$(A+B)^2 = A^2 + 2AB + B^2$$
-ist skalarprodukt $ A\cdot B $ lorenzinvariant, da alle anderen Terme lorenzinvariant sind.\\[5pt]
+$$\underline{A} \cdot \underline{B} = \underline{A}_0 \underline{B}_0 - \underline{A}_1 \underline{B}_1 - \underline{A}_2 \underline{B}_2 - \underline{A}_3 \underline{B}_3$$
+Da Abstandsquadrat $ s^2 = \underline{X} \cdot \underline{X} = c^2 t^2 - \vec{r}^2 $ lorenzinvariant und sich alle 4-Vektoren wie $ \underline{X} $ transformieren, ist das Quadrat aller 4-Vektoren $ \underline{A}^2 $ lorenzinvariant.\\
+Wie bei Drehung von $\vec{r}$ in 3D, kann man die Lorenz-Trafo von $ \underline{X} $ als Drehung im Minkowski-Raum auffassen. Wegen:
+$$(\underline{A}+\underline{B})^2 = \underline{A}^2 + 2\underline{A}\underline{B} + \underline{B}^2$$
+ist skalarprodukt $ \underline{A} \cdot \underline{B} $ lorenzinvariant, da alle anderen Terme lorenzinvariant sind.\\[5pt]
 \textbf{Ansatz:}\\
-Ersetze 3D Vektoren der Newtonschen Mechanik $ \vec{r},\vec{v},\vec{a},\vec{p},\vec{F} $ durch lorenzinvariante 4-Vektoren $ X, \dots $\\
+Ersetze 3D Vektoren der Newtonschen Mechanik $ \vec{r},\vec{v},\vec{a},\vec{p},\vec{F} $ durch lorenzinvariante 4-Vektoren $ \underline{X}, \dots $\\
 $ \rightarrow $ relativistische Form des 2. Newtonschen Axioms.\\
 $ \rightarrow $ keine mathematische Ableitung, sondern neue Theorie mit neuen Annahmen oder Axiomen. Muss von Exp. bestätigt werden.\\[5pt]
 Offenbar sind
 \begin{equation*}
-X = (ct,\vec{r}) \qquad \tx{Raumzeitkoordinaten} \tag{1}
+\underline{X} = (ct,\vec{r}) \qquad \tx{Raumzeitkoordinaten} \tag{1}
 \end{equation*}
 \begin{equation*}
 d\tau = \sqrt{1 - \frac{v^2}{c^2}} dt \qquad \tx{Eigenzeit} \tag{2}
 \end{equation*}
 Lorenzinvariant:
-$$\frac{dX}{dt} = (c,\vec{v})$$
+$$\frac{d\underline{X}}{dt} = (c,\vec{v})$$
 ist \textbf{kein} 4-Vektor, da sich $ dt $ bei Lorenz-Trafo ändert.\\[5pt]
 \textbf{Def: Vierergeschwindigkeit}
 \begin{equation*}
-\underline{u} := \frac{dX}{d\tau} = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} \frac{d}{dt} (ct,\vec{r})  = \gamma (c, \vec{v}) \tag{3}
+\underline{u} := \frac{d\underline{X}}{d\tau} = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} \frac{d}{dt} (ct,\vec{r})  = \gamma (c, \vec{v}) \tag{3}
 \end{equation*}
 Wegen
 \begin{equation*}
@@ -3132,7 +3134,7 @@ Wegen
 Vierergeschwindigkeit ist zeitartig.\\[5pt]
 \textbf{Def: Viererbeschleunigung}
 \begin{equation*}
-\underline{a} := \frac{d^2 X}{d\tau^2} = \frac{d\underline{u}}{dt} = \gamma \frac{d}{dt} \Big(\gamma (c,\vec{v})\Big)
+\underline{a} := \frac{d^2 \underline{X}}{d\tau^2} = \frac{d\underline{u}}{dt} = \gamma \frac{d}{dt} \Big(\gamma (c,\vec{v})\Big)
 \end{equation*}
 $ \frac{d\vec{v}^2}{dt} = 2 \vec{v} \cdot \vec{a} $
 \begin{equation*}
@@ -3169,6 +3171,123 @@ Damit ist:
 \end{equation*}
 d.h. Masse nimmt mit Geschwindigkeit $ v $ zu. Masse wird mit steigender Geschwindigkeit immer schwerer zu beschleunigen.\\
 Wegen $m(v) \buildrel \frac{v}{c} \rightarrow 1 \over \longrightarrow \infty$ können massive Körper nicht auf $ c $ beschleunigt werden. Dies ist vielfach experimentell bestätigt.
+
+% neue Vorlesung
+\noindent
+\textbf{Def Viererkraft} (oder Minkowski-Kraft)
+\begin{align*}
+\underline{K} &= \frac{d}{dt} \underline{p} = m_0 \frac{d}{dt} \underline{u} = m_0 \underline{a} \tag{10}
+&= (K_0,\vec{K})
+\end{align*}
+Vergleich von $ \vec{K} $ mit der Newton-Kraft $ \vec{F} $
+\begin{equation*}
+\vec{K} = \frac{d}{dt} \frac{m_0 \vec{v}}{\sqrt{1-\dfrac{v^2}{c^2}}} = \frac{1}{1-\frac{v^2}{c^2}} \frac{d}{dt} \frac{m_0 \vec{v}}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{equation*}
+\begin{equation*}
+\frac{d}{dt} \frac{m_0 \vec{v}}{\sqrt{1 - \frac{v^2}{c^2}}} = \frac{d}{dt} \Big( m(v) \vec{v} \Big) = \frac{d}{dt} \vec{p} \buildrel\  \substack{\tx{Newton}\\\tx{Postulat}} \over = \ \vec{F}
+\end{equation*}
+\begin{equation*}
+\rightarrow \vec{K} = \frac{1}{\sqrt{1 -  \frac{v^2}{c^2}}} \vec{F} = \gamma(v) \vec{F} \tag{11}
+\end{equation*}
+\begin{equation*}
+\rightarrow \vec{F} = m_0 \frac{d}{dt} \frac{\vec{v}}{\sqrt{1 - \frac{v^2}{c^2}}} \buildrel (5) \over = m_0 \gamma (v) \bigg[ \gamma^2(v) \frac{\vec{v} \cdot \vec{a}}{c^2} \vec{v} + \vec{a} \bigg] \tag{12}
+\end{equation*}
+Beachte, dass $ \vec{F} $ und $ \vec{a} $ i.A. verschiedene Richtungen haben.\\
+Wegen:
+\begin{align*}
+\underline{K} \cdot \underline{u} &= m_0 \underline{a} \cdot \underline{u} \buildrel (6) \over = 0 \\
+&= K_0 u_o - \vec{K} \cdot \vec{u} = K_0 \gamma(v) c - \gamma(v) \vec{F} \cdot \gamma(v) \vec{v}
+\end{align*}
+ergibt sich für die zeitliche Komponente
+$$K_0 = \gamma(v) \frac{\vec{F} \cdot \vec{v}}{c}$$
+\begin{equation*}
+\rightarrow \underline{K} = \gamma(v) \Bigg( \frac{\vec{F} \cdot \vec{v}}{c} , \vec{F} \Bigg) \tag{13}
+\end{equation*}
+\textbf{Masse und Energie}
+$$K_0 = \gamma(v) \frac{\vec{F} \cdot \vec{v}}{c}$$
+mit
+\begin{equation*}
+\frac{d}{d\tau} p_0 = m_0 \frac{d}{dt} u_0 = m_0 \gamma(v) \frac{d}{dt} \frac{c}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation*}
+\begin{equation*}
+\frac{d}{dt} \frac{m_0c^2}{\sqrt{den1 - \frac{v^2}{c^2}}} = \vec{F} \cdot \vec{v} = P \tag{14}
+\end{equation*}
+P ist die Leistung, die die Kraft $ \vec{F} $ am Körper mit $ \vec{v} $ verrichtet. Integration ergibt mit $ m(t) = \frac{m_0}{\sqrt{1 - \frac{v^2(t)}{c^2}}} $
+\begin{equation*}
+m(t) c^2 - m(0) c^2 = \int_{0}^{t} P(t') \; dt = W
+\end{equation*}
+wobei W die Arbeit ist, die die Kraft $ \vec{F} $ zwischen $ 0 $ und $ t $ am Körper verrichtet,\\
+Für freien Körper (K = 0) ist dies die Änderung der kinetischen Energie T
+\begin{equation*}
+m(t) c^2 - m(0) c^2 = T(t) - T(0)
+\end{equation*}
+Für $ v(0) = 0 \rightarrow T(0) = 0\ , \ m(0) = m_0 $
+\begin{equation*}
+T = m c^2 - m_0 c^2 \tag{15}
+\end{equation*}
+Für kleine Geschwindigkeiten $ \frac{v}{c} \ll 1 $ ist
+\begin{align*}
+T &= \Bigg( \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} - 1 \Bigg) m_0 c^2 \qquad \tx{mit } (1+ \epsilon)^\alpha \approx 1 + \alpha \epsilon + \dots\\
+&\approx \bigg( 1 - \Big( - \frac{1}{2} \Big) \frac{v^2}{c^2} - 1 \bigg) m_0 c^2 = \frac{m_0}{2} v^2
+\end{align*}
+die korrekte nicht-relativistische kinetische Energie.\\
+Relativistische Energie (15) hat 2 Terme
+\begin{itemize}
+	\item $ m(v) c^2 = m_0 \gamma c^2 $ ist Gesamtenergie, die mit $ v $ wächst
+	\item $ m_0c^2 $ ist die Energie eines Ruhenden Teilchens, die Ruheenergie
+\end{itemize}
+Gesamtenergie $ E $ (ohne Pot. U) ist kinetische Energie $ T $ + Ruheenergie
+\begin{equation*}
+E = T + m_0 c^2 = \frac{m_0 c^2}{\sqrt{1 - \frac{v^2}{c^2}}} = m(v) c^2
+\end{equation*}
+oder kurz:
+\begin{equation*}
+\rmbox{E = mc^2_{\phantom{2}}} \tag{16}
+\end{equation*}
+Die ,,Einsteinsche Formel`` beschreibt die Äquivalenz von Masse und Energie. Ruhemasse kann in Energie und Energie in Ruhemasse umgewandelt werden.\\[5pt]
+\textbf{Bem:}\\
+\begin{itemize}
+	\item Gesamtmasse $ E $ bzw. die dynamische Masse $ m(v) $ ist in abgeschlossenem System erhalten.\\
+	In Newtonscher Mechanik gibt es je einen Erhaltungssatz für Masse und Energie
+	\item dynamische Masse $ m(v) $ ist Erhaltungsgröße, aber nicht Lorenzinvariant\\
+	Ruhemasse $ m_0 $ ist keine Erhaltungsgröße, aber Lorenzinvariant
+\end{itemize}
+\textbf{Bsp:} Massenverlust der Sonne\\
+Fussionsreaktion der Sonne $  \quad 2 p + 2 n \rightarrow ^4 He + \gamma $\\
+$ E_{\gamma} \approx 2,8 \tx{ MeV } $ wird in Wärme umgewandelt \\
+$ \rightarrow 5700 \tx{ K} $ auf Oberfläche\\
+Die Energie $ E = \Delta m_0 c^2 $ mit sogenanntem Massendefekt $ \Delta m_0 $ resultiert daraus, dass Heliumkern leichter als die 4 Bausteine ist.
+\begin{equation*}
+\rightarrow P \approx 3.8 \ 10^{26} \tx{ W} \quad \tx{Leistung}
+\end{equation*}
+Damit verliert die Sonne \underline{pro Sekunde} die Masse
+\begin{equation*}
+m = \frac{p\  1 \tx{s}}{c^2} = 4.3 \ 10^9 \tx{ kg}
+\end{equation*}
+was wenig zur Sonnenmasse $ \approx 2 \cdot 10^{30} \tx{ kg} $ ist.\\[5pt]
+Mit Gl. (16) können wir für 4 Impuls schreiben:
+\begin{equation*}
+\underline{P} = m (v) (c,\vec{v}) = \Big( \frac{E}{c} , m(v) \vec{v} \Big) \tag{17}
+\end{equation*}
+$ \underline{P} $ beschreibt also Energie und räumlichen Impuls.\\[5pt]
+Beacht, dass klassische Energie eines freien Teilchens 
+\begin{equation*}
+E = \frac{p^2}{2m} \quad \tx{ \underline{nicht} mehr gilt.}
+\end{equation*}
+\begin{equation*}
+\underline{p} \cdot \underline{p} \buildrel (8) \over = m_0^2 v^2 \buildrel (17) \over = \frac{E^2}{c^2} - m^2(v) v^2
+\end{equation*}
+und damit (mit $ \vec{p} = m(v) \vec{v} $)
+\begin{equation*}
+E^2 = (m_0 c^2)^2 + (\vec{p} c)^2 \tag{18}
+\end{equation*}
+\begin{equation*}
+\rightarrow E = \pm \sqrt{(m_0c^2)^2 + (\vec{p} c)^2}
+\end{equation*}
+klassische Mechanik: $\ + $ Vorzeichen\\
+QM Relativistik: $\quad \ \ \  - $ Vorzeichen beschreibt Antiteilchen.\\
+(Dirac-Gl.)
+
 
 
 \end{document}
