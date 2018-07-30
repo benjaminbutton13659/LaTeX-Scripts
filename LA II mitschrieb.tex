@@ -80,7 +80,7 @@
 	\item $\forall x \in K \setminus \{0\}$ $\exists x^{-1} x\cdot x^{-1} = x^{-1} \cdot x = 1_{K}$
 \end{itemize}
 \subsection{Bew:} Körper sind Integritätsbereiche
-\subsection{Bem: Ring Homomorphismus}  Sei R ein nichttrivialer Ring $(0_{R} \neq 1_{R})$,
+\subsubsection{Bem: Ring Homomorphismus}  Sei R ein nichttrivialer Ring $(0_{R} \neq 1_{R})$,
 $$\varphi: \mathbb{Z} \to R , n \mapsto \left\{\begin{array}{lll} & \ 1_{R}+\dots + 1_{R} & n\ge 0\\ - & ( 1_{R}+\dots + 1_{R}) & n < 0 \end{array}\right.$$\\
 $\varphi$ ist ein Ring Homomorphismus:
 $$\tx{ker}(\varphi) = \{n\in Z | \varphi(n) = 0\}$$\\
@@ -105,7 +105,7 @@ $$ 1 = a\cdot b+p\cdot m \Rightarrow 1 = \bar{a} \cdot  \bar{b}$$
 \subsection{Def: Polynomring} Sei K ein Körper. Der Polynomring K[T] in einer Variable T über K ist die Menge formeller Summen der Form $$ g,f := \sum^{n}_{i=0} a_{i} \cdot T^{i}, \qquad a_i\in K $$
 $\grad(f) := \textrm{max}\{i\vert a_{i} \neq 0 \}$ \\
 $ \grad(0) := -1$
-\subsection{Bem:} K[T] ist ein Integritätsbereich 
+\subsubsection{Bem:} K[T] ist ein Integritätsbereich 
 $$(\sum^{n}_{i=0} a_{i}\cdot T^i)+(\sum^{m}_{j=0} b_{j}\cdot T^j) = \sum^{\textrm{max}\{n,m\}}_{k=0} (a_{k}+b_{k})\cdot T^k$$
 $$(\sum_{i=0}^{n}a_{i}\cdot T^{i})\cdot (\sum_{j=0}^{m}b_{j}\cdot T^{j}) = \sum_{k=0}^{n\cdot m}c_{k}\cdot T^{k}$$
 $$ c_{k}=\sum_{i+j=k}a_{i}\cdot b_{j}$$
@@ -157,7 +157,7 @@ $(g|f)$ $(r=0)$\\
 \subsection{Def: Nullstelle} $f \in K[T]$ besitzt eine Nullstelle $\lambda \in K$\\
 gdw (genau dann wenn) $(T-\lambda) | f \Leftrightarrow f(\lambda) = 0$ \\
 $f = (T-\lambda) q + r$\\
-\subsection{Bem: Anzahl Nullstellen} $$f\in K[T] , \qquad f\neq 0 , \grad(f) = n$$\\
+\subsubsection{Bem: Anzahl Nullstellen} $$f\in K[T] , \qquad f\neq 0 , \grad(f) = n$$\\
 Dann besitzt f höchstens n viele Nullstellen in K.\\
 \subsection{Bew:} $n= 0,  f = a_{0} \neq 0$\\
 $n> 0 $ Falls f keine Nullstellen in K besitzt $\Rightarrow$ Ok !\\
@@ -172,13 +172,13 @@ $$\rightarrow f = (T-\lambda)^{K_{\lambda }} \cdot g, \quad (g(\lambda) \neq 0)$
 \subsection{Def: Algebraische Abgeschlossenheit} Ein Körper heißt algebraisch abgeschlossen falls jedes Polynom über K positiven Grades eine Nullstelle in K besitzt.
 \subsection{Frage:} Ist $\mathbb{R}$ algebraisch abgeschlossen ?\\ 
 Nein: $T^2+1$
-\subsection{Bem:} $\mathbb{C}$ ist algebraisch abgeschlossen 
-\subsection{Bem: Unendlichkeit} Jeder alg. abg. Körper muss unendlich sein!
+\subsubsection{Bem:} $\mathbb{C}$ ist algebraisch abgeschlossen 
+\subsubsection{Bem: Unendlichkeit} Jeder alg. abg. Körper muss unendlich sein!
 \subsection{Warum?:}
 (Beweis läuft wie unendlichkeit der Primzahlen)\\
 $K = \{\lambda_1,\dots,\lambda_n\}$\\
 $f=(T-\lambda_1)\cdot \dots \cdot (T-\lambda_n) +1$
-\subsection{Bem: Algebraische Abgeschlossenheit} K ist genau dann alg. abg. wenn jedes Polynom f positiven Grades in lineare Faktoren zerfällt:\\
+\subsubsection{Bem: Algebraische Abgeschlossenheit} K ist genau dann alg. abg. wenn jedes Polynom f positiven Grades in lineare Faktoren zerfällt:\\
 $$f=(T-\lambda_1)\cdot \dots \cdot (T-\lambda_n) \in K$$
 \subsection{Bew:}
 ,,$\Leftarrow$`` Trivial\\
@@ -203,7 +203,7 @@ sodass:
 \end{itemize}
 
 Ein Untervektorraum $U\subset V$ ist eine Untergruppe, welche unter Skalarmultiplikation, abg. ist.
-\subsection{Bem: Untervektorräume} $\{U_i\}_{i\in I}$ Unterräume von V\\
+\subsubsection{Bem: Untervektorräume} $\{U_i\}_{i\in I}$ Unterräume von V\\
 $\rightarrow \bigcap_{i\in I} U_i$ ist auch ein Unterraum.\\
 Insbesondere gegeben $M \subset V $ existiert :
 $$\spa(M) = \langle M \rangle =\textrm{ der kleinste Untervektorram von V, welcher M enthält}$$\\
@@ -228,7 +228,7 @@ $$\dim(V) = | \mathcal{B} | $$ ($\mathcal{B}$ eine Basis)\\
 
 \subsection{Basisauswahlsatz}
 $M\subset V$ erzeugendensystem $\rightarrow \exists \mathcal{B} \subset M $ Basis von V
-\subsection{Bem: Dimensions Addition} 
+\subsubsection{Bem: Dimensions Addition} 
 $U\buildrel UR \over \subset V$, 
 $\dim(V) < \infty \Rightarrow \dim(U) < \infty$
 dim ist modular:
@@ -251,13 +251,13 @@ $ F: V\rightarrow W $ ist \underline{linear}, falls $$D(\lambda v+\mu u ) = \lam
 $$ Ker(F) =\{ v \in V \vert  F(v) = 0 \}$$
 (F UR von W)
 $$ Im(F) = \{ w \in W \vert \exists v \in V, F(v) = w\}$$
-\subsection{Bem: Dimensionssatz}
+\subsubsection{Bem: Dimensionssatz}
 Falls $\mathcal{B}$ eine Basis von v ist $\Rightarrow F(\mathcal{B})$ ist ein erzeugendensystem von $Im(F)$\\ 
 $$\textrm{F injektiv} \Leftrightarrow Ker(F) = \{0\}$$\\
 V endlich $$\rightarrow dim(V) = dim(Ker(F)) + dim(Im(F))$$
 
 $$ \nicefrac{v}{Ker(F)} \cong Im(F)$$
-\subsection{Bem: Isomorphie}
+\subsubsection{Bem: Isomorphie}
 V, W endlich $\{r_1,\dots ,r_n\}$ eine Basis von V
 $$ V \cong K^n$$
 $$v_i \mapsto e_i$$
@@ -344,7 +344,7 @@ $GL_n(K)$ ist eine Gruppe\\
 $$A\in GL_n(K) \Leftrightarrow rg(A) = n$$
 also \underline{invertierbar $\Leftrightarrow$ regulär}\\
 
-\subsection{Bem: Eindeutige Lösung}
+\subsubsection{Bem: Eindeutige Lösung}
 Wenn A regulär ist, dann besitzt ein Gleichungssystem
 
 $$A \cdot \begin{pmatrix}
@@ -366,7 +366,7 @@ b_1\\
 b_n\\
 \end{pmatrix}$$
 
-\subsection{Bem: Zeilenoperationen}
+\subsubsection{Bem: Zeilenoperationen}
 A ist regulär gdw. A sich durch elementare zeilenoperationen in $E_n$ überführen lässt.\\
 $E_{ij} \leftarrow$ Die Matrix die 1 an der Stelle $(i,j)$ hat und 0 sonst.\\
 Multiplizieren der i-ten Zeile mit $\lambda$ \\
@@ -449,7 +449,7 @@ Darstellungsmatrix von F bzgl. $\{v_1',\dots v_n'\} ,\{w_1',\dots ,w_n'\}$ ist $
 \subsection{Def: Äquivalenz und Ähnlichkeit} Zwei (mxn)-Matritzen A, A' sind \underline{äquivalent}, falsls es regulare Matritzen $T\in GL_m(K),\quad S \in GL_n(K)$ gibt, sodass: $$A' = T^{-1} \cdot A \cdot S$$\\
 A, A' $\in M_{n\times n}(K)$ sind \underline{ähnlich}, falls es $S \in GL_n(K)$ gibt, sodass: $$A' = S^{-1} \cdot A \cdot S$$
 
-\subsection{Bem: Ähnlichkeit}
+\subsubsection{Bem: Ähnlichkeit}
 Ähnlichkeit (Än) auf $M_{n\times n}(K)\Rightarrow$ Äquivalenz (Äq) auf $M_{m\times n}(K)$
 
 \subsection{Def: Determinante} Die Determinante $$det(K^n) \mapsto K$$ multilineare alternierende Abbildung derart, dass $det(e_1,\dots e_n) = 1$.
@@ -516,7 +516,7 @@ $det(F) = det(a)$, Darstellungsmatrix von F bzgl. der Basis $\{v_1,\dots , v_n\}
 \subsection{Def: Adjunkte} Sei A $(= a_{ij})$ eine n$\times$n-Matrix\\
 definiere die Adjunkte von A,  
 $$\textrm{adj}(A) = (\gamma_{ij})$$ wobei $$\gamma_{ij} = (-1)^{i\neq j} \det(A_{ij})$$
-\subsection{Bem: Determinante und Adjunkte}
+\subsubsection{Bem: Determinante und Adjunkte}
 Sei $c_j$ die $j$-te Zeile von $\textrm{adj}(A)$.\\
 Sei $a_i$ die $i$-te Spalte von A 
 \begin{align*}\overbrace{(\gamma_{j1}, \dots , \gamma_{jn})}^{c_i} \cdot \underbrace{\begin{pmatrix} c_{1i}\\ \vdots\\ a_{ni} \end{pmatrix}}_{a_i}  = \sum_{k=1}^n \gamma_{jk} a_{ki} &= \sum_{k=1}^n (-1)^{j+k} a_{ki} \det(A_{jk}) \\ &= \det(a_1, \dots , a_{j-1}, a_i , a_{j+1}, \dots , a_n) \end{align*}
@@ -550,8 +550,8 @@ $$F(v) = \mu \cdot v = \lambda \cdot v \Rightarrow (\lambda\cdot \mu) \cdot v = 
 $$V(\lambda) = \{ v\in V\vert F(v) = \lambda \cdot v\}$$
 $V(\lambda)$ ist Eigenraum zum Wert $\lambda$\\
 und ist ein Unterraum
-\subsection{Bem: Eigenwert}$\lambda$ ist ein Eigenwert von F gdw. $\dim(V(\lambda)) \ge 1$.
-\subsection{Bem: Eigenwerte} $\lambda_1,\dots , \lambda_k$ verschiedene Eigenwerte von F 
+\subsubsection{Bem: Eigenwert}$\lambda$ ist ein Eigenwert von F gdw. $\dim(V(\lambda)) \ge 1$.
+\subsubsection{Bem: Eigenwerte} $\lambda_1,\dots , \lambda_k$ verschiedene Eigenwerte von F 
 $$\rightarrow V(\lambda_{i}) \cap  \sum_{\substack{j = 1\\j\neq i}}^k V(\lambda_j) = \{0\}$$
 \subsection{Def: Diagonalisierbarkeit} V endlich VR / K
 $ F: V \to V$ Endomorphismus ( bzw. eine Matrix $A = K^n \to K^n$) ist diagonalisierbar, falls 
@@ -582,7 +582,7 @@ $A$ ist diagonlaisierbar genau dann wenn es eine reguläre Matrix $S$ gibt, soda
 \subsection{Def: Charakteristisches Polynom} Das charakteristische Polynom einer Matrix
 $$ A\in \mathcal{M}_{n\times n}(K)$$ ist 
 $$\chi_A (T) = det(T\cdot E_n -A)$$
-\subsection{Bem: Eigenwerte als Nullstellen} $\lambda$ ist Eigenwert von $A \Leftrightarrow \chi _A (\lambda) = 0 $
+\subsubsection{Bem: Eigenwerte als Nullstellen} $\lambda$ ist Eigenwert von $A \Leftrightarrow \chi _A (\lambda) = 0 $
 \subsection{Bsp:} 
 $$A = \begin{pmatrix}
 0 & 1\\
@@ -593,7 +593,7 @@ T & -1\\
 1 & T\\
 \end{pmatrix} ((= T \cdot E_2 - A))$$
 
-\subsection{Bem: Spur} $A$ und $A'$ ähnlich $A' = S^{-1} A S $
+\subsubsection{Bem: Spur} $A$ und $A'$ ähnlich $A' = S^{-1} A S $
 $$\Rightarrow \chi_A (T) = \chi_{A'} (T)$$
 Insbesondere, können wir über das charakteristische Polynom eines Endomorphismus
 $$\chi_F(T) \qquad F: V\to V$$
@@ -628,7 +628,7 @@ Da die Eigenräume transversal sind, und ein Vektorraum nur einen UVR der dimens
 
 %Vorlesung 4
 
-\subsection{Bem: Eigenwerte und Diagonalisierbarkeit} $F: V \rightarrow V$ Endomorphismus $0 \neq v \in V$ ist ein Eigenvektor für $F$ 
+\subsubsection{Bem: Eigenwerte und Diagonalisierbarkeit} $F: V \rightarrow V$ Endomorphismus $0 \neq v \in V$ ist ein Eigenvektor für $F$ 
 $$F(v) = \lambda v , \lambda \in K$$
 $$V(\lambda)=\{v \in V | F(v) = \lambda v \}$$ 
 $\lambda$ ist Eigenwert $\Leftrightarrow \dim(V(\lambda)?=1)$\\
@@ -677,7 +677,7 @@ $\lambda \in K$ Eigenwert\\
 $$\Rightarrow \chi_{F}(\lambda) = 0$$
 algebraische Vielfachheit von $\lambda \quad K = \textrm{ord}_\lambda(F)$
 $$\chi_F(T) = (T-\lambda)\cdot G(T) \qquad G(T) = 0$$
-\subsection{Bem:}
+\subsubsection{Bem:}
 $$\textrm{ord}_\lambda(F) \ge \dim V(\lambda)$$
 \subsection{Bew:}
 Sei $ \{v_1,\dots,v_k\}$ Basis von $V(\lambda)$ und erweitern sie zu einer Basis \\
@@ -695,7 +695,7 @@ $$\begin{pmatrix}
 & & & & & \\
 \end{pmatrix} $$
 
-$ C_1 (\tx{vllt.} C_2) \in Mat_{n - k \times k} (K)$
+$ C_1 (\tx{vllt.} C_2) \in \tx{Mat}_{n - k \times k} (K)$
 
 $$\chi_{F(\tx{vllt} \mid U)}(T) = \det(TE_n-M) = (T-\lambda)^k\cdot \underbrace{\det(TE_{n-k} \cdot C_1)}_{H(\lambda)}$$
 $$\Rightarrow k = \textrm{ord}_\lambda(F)$$
@@ -704,7 +704,7 @@ $$\Rightarrow k = \textrm{ord}_\lambda(F)$$
 	$\square$
 \end{flushright}
 
-\subsection{Lemma:}
+\subsection{Lemma: Quotientenraum Endomorphismus}
 Sei V endlichdim.
 $F: V\to V$ Endomorphismus\\
 $U \subset V$ F-invarianter Unterraum ( $F(U) \subset U$)\\
@@ -722,9 +722,9 @@ $$ F(v_1) = F(v) + \underbrace{F(v_1 - v)}_{\in U}$$
 $$\Rightarrow \overline{F(v_1)} = \overline{F(v)}$$
 Restklassen sind linear und $\tilde{F}$ ist linear $\Rightarrow\; \tilde{F}$ ist linear
 Sei $\{u_1,\dots,u_k\}$ eine Basis von U und erweitere sie zu einer Basis $\{u_1,\dots,u_k, v_{k+1}, \dots, v_n\}$ von V.
-\subsection{Bem:}
+\subsubsection{Bem:}
 $\{\overline{v_{k+1}},\dots,\overline{v_n}\}$ ist eine Basis von $V/U$ 
-\subsection{Bem: Darstellungsmatrizen}
+\subsubsection{Bem: Darstellungsmatrizen}
 Einfach Darstellungsmatrix von F bzgl. $\mathcal{B}$.
 
 \pagebreak
@@ -747,7 +747,6 @@ v_n & \rightarrow
 \vdots & & \vdots & & & C_1 & \\
 0 & \dots & 0 & & & \\
 \end{pmatrix} $$
-
 \begin{align*}
 \chi_F(T) &= \det(T\cdot E_n - H) \\
 &= \det\bigg( T \begin{pmatrix}
@@ -763,9 +762,8 @@ TE_k-A & -C_2 \\
 \end{pmatrix} \\
 &= \det(TE_k-A) \cdot \det(TE_{n-k} - C_1)
 \end{align*}
-
 A ist die Darstellungsmatrix von $ F \mid U $ bzgl. $\{u_1, \dots, u_k\}$ 
-$$ \Rightarrow \det (TE_k -A) = \chi_{F 1 \mid U}(T)$$
+$$ \Rightarrow \det (TE_k -A) = \chi_{F_1 \upharpoonright U}(T)$$
 $C_j$ ist die Darstellungsmatrix von $\tilde{F}$ bzgl. $\{\overline{v_{k+1}}, \dots, \overline{v_n}\}$\\
 $$ \Rightarrow \det (TE_{n-k}-A) = \chi_{\tilde{F}}(T)$$
 \subsection{Satz: Diagonalisierbarkeit}
@@ -846,7 +844,7 @@ $$ \tilde{F}: V/U \to V/U$$
 $$\bar{v} \mapsto \ov{F(v)}$$
 F ist dia/tri ? gonalisierbar $\Leftrightarrow \ \chi_A$ in linearfaktoren zerfällt und $\forall \lambda_1, \dots \lambda_k$ Eigenwerte
 $$\dim(V(\chi)) = \textrm{ord}_{\lambda_i}(\chi_F)$$
-\subsection{Def:}
+\subsection{Def: Trigonalisierbarkeit}
 $F: V\to V $\\
 F trigonalisierbar ist, falls es eine Darstellungsmatrix von F gibt, welche in oberer Dreiecksform ist.
 
@@ -856,12 +854,12 @@ a_{11} & \dots & a_{1n} \\
 0 & & a_{nn}
 \end{pmatrix}$$
 
-\subsection{Satz:}
+\subsection{Satz: Trigonalisierbarkeit}
 $F: V\to V $
 ist trigonalisierbar, gdw $\chi_F$ in Linearfaktoren zerfällt 
 $$\chi_F(T) = (T-\lambda_1) \dots (T-\lambda_n)$$
 (eventuell mit wiederholungen)
-\subsection{Kor:}
+\subsection{Kor:  Trigonalisierbarkeit}
 Jeder Endomorphismus eines endlichdim VR über einem alg. abg. Körper (z.B.$\mathbb{C}$) ist trigonalisierbar.
 \subsection{Bew: (Satz)}
 $\Rightarrow$ \\
@@ -895,7 +893,7 @@ $$\begin{pmatrix}
 & \ddots & \\
 0 & & \lambda_1
 \end{pmatrix} = (\mu_{ij})$$
-\subsection{Beh:} Seien $v_i \in V \quad \overline{v_i} = \overline{v_i}, 2 \le i \le n$\\
+\subsection{Beh:} Seien $v_i \in V \quad \overline{v_i} = \overline{v_i}\quad  2 \le i \le n$\\
 $\{v_1,v_2,\dots,v_n\}$ it eine Basis von V
 
 \subsection{Bew: } (Übungsaufgabe)
@@ -912,10 +910,11 @@ $$\begin{pmatrix}
 0 & 0 &  & \lambda_n
 \end{pmatrix} $$
 
-\subsection{Lemma:} V endlichdim / K \\
+\subsection{Lemma: $ F^r $ \& Polynome}
+V endlichdim / K \\
 $v\in V \setminus \{0\} \quad \exists r \in \mathbb{N}$
 
-$$\equalto{F^r(v)}{ \underbrace{F \circ F \circ \dots \circ F}_{r \textrm{Mal}}} = \sum ^{r-1}_{i=0} \underbrace{a_i}_{\substack{\textrm{eindeutig} \\ \textrm{bestimmt}}} F^i(v)$$
+$$\equalto{F^r(v)}{ \underbrace{F \circ F \circ \dots \circ F}_{r \textrm{-Mal}}} = \sum ^{r-1}_{i=0} \underbrace{a_i}_{\substack{\textrm{eindeutig} \\ \textrm{bestimmt}}} F^i(v)$$
 
 Insb. ist
 $$U = \textrm{Span}(v, F(v), \dots , F^{n-1}(v))$$
@@ -1248,7 +1247,7 @@ Aber $ + V(\lambda_j) = \oplus V(\lambda_j) $ oder $ v \in V(\lambda_i)) \Righta
 	$ \square $
 \end{flushright}
 
-\subsection{Bem:} $A\in \mathcal{M}_{n \times n} (\mathbb{R})$
+\subsubsection{Bem:} $A\in \mathcal{M}_{n \times n} (\mathbb{R})$
 $ A^2 = E_n$
 $$\Rightarrow A \tx{ ist diagonalisierbar}$$
 da $A^2 = E_n \Rightarrow (T^2-1) (A) = 0$\\
@@ -1287,10 +1286,10 @@ Eigenraum von F bzgl. $\lambda$
 $$ \ker(F-\lambda) \subset \ker(F-\lambda)^2 \subset \ker(F-\lambda)^3 \subset \dots$$
 $$V_\lambda = \bigcup_{n\in \mathbb{N}} \ker(F-\lambda)^n$$
 ist ein Hauptraum von F bzgl. $\lambda$
-\subsection{Bem:}
+\subsubsection{Bem:}
 $V_\lambda$ ist ein Unterraum und $V_\lambda$ ist F-invariant.\\
 \underline{Warum ?} Weil $V_\lambda$ $(F-\lambda)$-invariant ist.
-\subsection{Bem:} Falls $(\ker(F-\lambda))= V(\lambda) = 0$
+\subsubsection{Bem:}Falls $(\ker(F-\lambda))= V(\lambda) = 0$
 $$\Rightarrow \bigcup_{n\in \mathbb{N}} \ker(F-\lambda)^n = 0$$
 \subsection{Bew:}
 Sei $v \in \bigcup_{n \in \mathbb{N}}(F-\lambda)^n$
@@ -1769,7 +1768,7 @@ $ \ker(A - 2 E_4) = \{(x_1,x_2,x_3,x_4) | -x_1 +x_2 + x_4 = 0\} $
 
 \subsection{Def:}
 Sei $V$ ein $K$-VR Der Dualraum $V^*$ ist die kollektion aller linearen Abbildungen $V \to K$.
-\subsection*{Bem:} $V^*$ ist ein $K$-vektorraum. $F + G: V\to K, \ v\mapsto F(v) + G(v)$ ist linear.\\
+\subsubsection{Bem:} $V^*$ ist ein $K$-vektorraum. $F + G: V\to K, \ v\mapsto F(v) + G(v)$ ist linear.\\
 $\lambda \in K, \ \lambda \cdot F = V \to K, \ v \mapsto \lambda \cdot F(v)$ ist linear.
 
 
@@ -1777,7 +1776,7 @@ $\lambda \in K, \ \lambda \cdot F = V \to K, \ v \mapsto \lambda \cdot F(v)$ ist
 Die duale Basis $ \mathcal{B}^* = \{b_1^*,\dots,b_n^*\} $ ist eine Kollektion linearer Abbildungen derart, dass $ b^*_i (b_j) = \delta_{ij} = \casess{1}{i=j}{0}{\tx{sonst}} $\\
 Insbesondere:
 $$b^*_i(v) = b_i^* (\sum_{j=1}^{n} \lambda_j \cdot \backepsilon_j) = \lambda_i$$
-\subsection*{Bem:} Falls V endlichdim. ist, dann ist $ \mathcal{B}^*  $ eine Basis von $ V^* $ und sonst $ V\simeq V^* $
+\subsubsection*{Bem:} Falls V endlichdim. ist, dann ist $ \mathcal{B}^*  $ eine Basis von $ V^* $ und sonst $ V\simeq V^* $
 
 \Bew{}{
 	$$b_i^* \dots b_n^* \quad \tx{sind linear unabhängig.}$$
@@ -1878,7 +1877,7 @@ V & \buildrel F \over \longrightarrow & W \\
 \equalto{\Psi \circ F }{F^*(\Psi)} & & K
 \end{array}$$
 
-\subsection*{Bem:}
+\subsubsection*{Bem:}
 $F^*$ ist linear. 
 $$F^* (\psi_1 + \psi_2) = (\psi_1 + \psi_2) \circ F = \psi_1 \circ F + \psi_2 \circ F = F^* (\psi_1) + F^* (\psi_2)$$
 
@@ -1897,7 +1896,7 @@ $$(F \circ G)^*(\Psi) = \ub{\Psi\circ F}_{F^*(Psi)} \circ G = G^* \circ F^*(\Psi
 \end{itemize}
 
 $$(Id_{iv})^* (\psi) = \psi \circ Id_{iv} = \psi$$
-\subsection*{Bem:} Falls $F^* =0$ dann ist $\underline{F = 0}$. Feiner, falls $v$ und $W$ endlich dimensional sind.
+\subsubsection*{Bem:} Falls $F^* =0$ dann ist $\underline{F = 0}$. Feiner, falls $v$ und $W$ endlich dimensional sind.
 $$G: W^* \to V^* \tx{ lin. Abbildung}$$ dann gilt es $$F: V \to W \tx{ so dass } F^* = G$$
 
 \Bew{}{
@@ -1924,7 +1923,7 @@ Falls V, W endlichdim. sind:\\
 Aber $*: \tx{Hom }(V,W) \to \tx{Hom }(W^*, V^*)$ ist injektiv $\Rightarrow$ Surjektiv
 $$\dim V = n, \quad \dim W = m$$
 }
-\subsection*{Bem:}
+\subsubsection*{Bem:}
 $F: V \to W$ hat Darstellungsmatrix $A$ bezüglich $\mathcal B = \{b_i \dots b_n\}$ von $V$ und $\mathcal B' = \{b_i' \dots b_m'\}$ von $W$. Seien $\mathcal B^*$ und $(\mathcal B')^*$ die entsprechenden dualen Basen aus $V^* \tx{, und } W^*$.
 
 
@@ -1996,7 +1995,7 @@ $ (F\circ G)^* G^* \circ F^* $\\
 $ (Id_{IV})^* = Id_{IV^*} $\\
 $ V,W $ endlichdim $ \rightarrow * $ \underline{\underline{Isonorphismus}} 
 
-\subsection*{Bem}
+\subsubsection*{Bem}
 $ \enph $ lineare Abb. mit Darstellungsmatrix $ A = (a_{ij}) $ bzgl. der Basen $ \mathcal{B} = \{b_1,\dots ,b_n\} , \mathcal{C}= \{c_1,\dots,c_m\} $\\
 
 \begin{align*}
@@ -2082,7 +2081,7 @@ Eine Abbildung $ \varphi: V \cdot W \mapsto K $ ist bilinear, wenn $ \varphi $ l
 	\item[b)] $ \varphi(\lambda_1 v_1 + \lambda_2 v_2, w) \;= \lambda_1 \varphi(v_1,w) + \lambda_2 \varphi(v_2,w) $
 \end{itemize}
 
-\subsection*{Bem:} Falls $V, W$ endlich dimensional mit Basen $\mathcal B = \{b_1 \dots b_n\}$ von V\\
+\subsubsection*{Bem:} Falls $V, W$ endlich dimensional mit Basen $\mathcal B = \{b_1 \dots b_n\}$ von V\\
 und $\mathcal C = \{c_1 \dots c_m\}$ von W. Dann ist $\varphi$ eindeutig bestimmt durch die $(n \times m)$-Matrix $A= (\varphi(b_i, c_j))$
 \begin{align*}
 \varphi(v, w) &= \varphi \bigg(\sum_{i \leq n} \lambda_i b_i, \sum_{j \leq m}\mu_j c_j\bigg)\\
@@ -2093,7 +2092,7 @@ und $\mathcal C = \{c_1 \dots c_m\}$ von W. Dann ist $\varphi$ eindeutig bestimm
 \end{pmatrix}
 \end{align*}
 
-\subsection{Bem:}
+\subsubsection{Bem:}
 Falls wir Basen $ \mathcal{B}' $ von $ v $ und $ \mathcal{C}' $ von $ W $ gewählt hätten, dann ist die Darstellungsmatrix von $ \varphi $
 $$\mathcal{M}(\mathcal{B},\mathcal{B}')^\top \cdot A \cdot \mathcal{M}(\mathcal{C}, \mathcal{C}')$$
 $$ \begin{pmatrix}
@@ -2128,7 +2127,7 @@ Ein Tripel $(V,W,\varphi)$ ist ein duales Paar, falls dim $V =$ dim $W < \infty 
 $$\varphi: V \times W \to K \tx{ ist bilinear und Rg}(\varphi) = \dim (V) = \dim (W)$$
 
 
-\subsection*{Bem:} Falls $ \varphi: V \times W \to K $ bilinear ist, dann ist $ \varphi': W \times V \mapsto K \quad (w,v) \mapsto \varphi(v,w)$ auch bilinear.
+\subsubsection*{Bem:} Falls $ \varphi: V \times W \to K $ bilinear ist, dann ist $ \varphi': W \times V \mapsto K \quad (w,v) \mapsto \varphi(v,w)$ auch bilinear.
 \subsection*{Aufgabe:}
 $ (V,W,\varphi) $ duales Paar $ \Rightarrow (W,V,\varphi') $ auch!
 \subsection{Lemma:} $ V,W $ fest
@@ -2240,7 +2239,7 @@ $$\varphi(b_i, c_j) = \delta_{ij}$$
 \subsection{Def:}
 Sei $(V,W,\varphi)$ ein duales Paar. $U \subset V$ Unterraum von $V$.\\
 Definiere $$U^\perp = \{w \in W \ |\  \varphi (u,w) = 0\ \forall u \in U \}$$
-\subsection*{Bem:}
+\subsubsection*{Bem:}
 $U^\perp$ ist ein Unterraum von $W$.
 $$(0)^\perp = W$$
 $$V^\perp = \{0\}, \tx{ weil $\varphi$ nicht-ausgeartet ist!}$$
@@ -2292,7 +2291,7 @@ Der adjungierte Endomorphismus $G^\top: V \to V$ wird definiert als $$G\top:F^{-
 	\end{tikzcd}
 \end{center}
 $ G^*(\Phi) = \Phi \circ G \qquad \Phi \circ ??? G (oder w ) \to K $
-\subsection*{Bem:}
+\subsubsection*{Bem:}
 $G^*$ ist eindeutig bestimmt durch die Gleichung 
 $$\varphi(G^\top(v),w) \buildrel (*) \over = \varphi(v,G(w))\qquad \ \forall v \in V,\ \forall w \in W$$
 \Bew{Eindeutigkeit}{
@@ -2324,7 +2323,7 @@ $$\varphi(G^\top(v),w) \buildrel (*) \over = \varphi(v,G(w))\qquad \ \forall v \
 \subsection{Def:}
 Eine Bilinearform $ \varphi: V \times V \to K$ ist symmetrisch, falls $ \varphi = \varphi' $ 
 $$ \Leftrightarrow \forall u,v \in V : \varphi(u,v) = \varphi(v,u) $$
-\subsection*{Bem:}
+\subsubsection*{Bem:}
 Seien $ \mathcal{B},\mathcal{C} $ Basen von V und A die Darstellungsmatrix vo $ \varphi $ bzgl. $ \mathcal{B},\mathcal{C} $.
 $$ \varphi \tx{ symmetrisch } \Leftrightarrow A = A^\top = (\varphi(b_i,c_j))$$
 \subsection{Bew:}
@@ -2336,7 +2335,7 @@ $\boxed{\Leftarrow}$\\
 & = v^\top \cdot \bigg( ( A^\top \cdot u)^\top \bigg)^\top\\
 & = v^\top \cdot \equalto{A^\top}{A} \cdot u \qquad = \varphi(v,u) 
 \end{align*}
-\subsection*{Bem:}
+\subsubsection*{Bem:}
 $ \varphi $ symmetrisch\\
 $ \Rightarrow $ Der Begriff der Orthogonalitt ist wohldefiniert und vor allem symmetrisch
 \begin{center}
@@ -2400,7 +2399,7 @@ Sei $V$ ein endlich dimensionaler $\mathbb R$-VR. und $ \varphi:V\times V \to \m
 	\item $\varphi: \mathbb R^2 \times \mathbb R^2 \to \mathbb R,\ ((x_1,y_1),(x_2,y_2)) \mapsto x_1 y_1$ ist positiv semidefinit aber nicht pos.def. $\varphi ((0,1),(0,1)) = 0$
 	\item $\mathbb R^2 \times \mathbb R^2 \to \mathbb R,\ ((x_1,y_1),(x_2,y_2)) \mapsto x_1y_1  - x_2y_2$ indefinit
 \end{enumerate}
-\subsection*{Bem:}  
+\subsubsection*{Bem:}  
 $$\varphi \tx{ ist posit (semi)-def., } -\varphi \tx{ ist neg (semi)-def.}$$
 \subsection{Def:}
 Ein Skalarprodukt auf einem endlichdimensionalen $ \mathbb{R} $-VR V ist eine positiv definite symmetrische Bilinearform: $ \varphi(u,v) \buildrel \tx{bijektion ???} \over \longrightarrow <u,v> $
@@ -2462,7 +2461,7 @@ $ (V,<,>) $ euklidischer Raum
 $$ -1 \le \equalto{\ub{ \frac{<u,v>}{||u||\, ||v||} }}{\cos \theta} \le 1$$
 $ \theta \in [0,\pi] $ eindeutig \underline{bestimmt}.\\
 $ \theta $ ist der Winkel zwischen $ u $ und $ v $
-\subsection*{Bem:}
+\subsubsection*{Bem:}
 $ u \perp v \Leftrightarrow <u,v> = 0 \Leftrightarrow \tx{ der Winkel } \frac{\pi}{2} \tx{\underline{ist}} $
 $$ u \uparrow \rightarrow v$$
 
@@ -2497,7 +2496,7 @@ $\theta$ ist winkel zwischen $v$ und $w$.
 	\item $\Leftrightarrow$ Der Winkel ist $\frac{\pi}{2}$
 \end{trivlist}
 
-\section{Satz (Pythagoras)}
+\subsection{Satz (Pythagoras)}
 $$(V, <.>) \tx{ endlichdimensionaler Raum}$$
 $v \perp w \Leftrightarrow ||v + w||^2 = ||v||^2 + ||w||^2$
 %bild
@@ -2520,11 +2519,11 @@ Orthonormalbasis (ONB)
 \paragraph{Beispiel:}
 Standardbasis $\{o_1, \dots o_k \}\ (\mathbb R^n, \underset{\scriptstyle}{<.>)}_{\tx{standard skalarprodukt}}$
 
-\section{Satz}
+\subsection{Satz}
 (Char$(K) \neq 2$)\\
 \indent Jede Symmetrische Bilinearform $\varphi$ auf einem endlich dimensionalen $K$-VR $V$ läßt sich bei einer geeigneten Basisauswahl durch eine Diagonalmatrix darstellen. Ferner ist $\varphi$ nicht-ausg. $\Leftrightarrow$ kein Eigenwert der Matrix null ist.
 
-\subsection*{Bem:}
+\subsubsection*{Bem:}
 Es genügt zu zeigen, dass $ (V,\varphi) $ eine Basis $ \mathcal{B} = \{b_1,\dots, b_n\} $ besitzt welche aus paarweise orthogonalen Vektoren \underline{besteht}.\\
 Dann ist die Darstellungsmatrix von $ \varphi $ bzgl. $ \{b_1,\dots , b_n\}$
 $$\begin{pmatrix}
@@ -2544,7 +2543,7 @@ $$\ker (F) = \{v \in V \setminus \varphi(v_1,b_1=0\} = \{v \in V \setminus v \pe
 Induktion auf die Dimension von $V \Rightarrow$ Es existiert eine Basis $b_1 \dots b_n$ von $\ker(F)$ welches aus paarweise orthogonal Vektoren besteht.
 
 Die Basis $ \{b_1, \dots , b_n\} $ ist eine orthogonale Basis von \underline{\underline{V}}.\\
-\subsection*{Bem:}
+\subsubsection*{Bem:}
 Die Eigenwerte der Matrix hängen nicht von der Basis \underline{ab}\\
 $ \rightarrow $ Eigenwerte sind $ \equalto{\varphi(b_1,b_1)}{\mu_1} , \dots , \equalto{\varphi(b_n,b_n)}{\mu_n} $
 
@@ -2602,7 +2601,7 @@ $$ \begin{pmatrix}
 \\
 \end{array}$$
 
-\section{Kor: (Sylvester)}
+\subsection{Kor: (Sylvester)}
 Jede Symm. Bilinearform $\varphi$ auf einem endlich dimensionalen $\mathbb R$-VR läßt sich bei geeigneter Basisauswahl durch eine Matrix der form \begin{center}
 	\begin{tikzpicture}
 	\matrix[matrix of math nodes,
@@ -2660,8 +2659,7 @@ Ferner hängen die Zahlen $p,g$ und $r$ nur bon $\varphi$ ab.
 	\\
 	\end{array}$$
 }
-
-\subsection*{Bem:}
+\subsubsection{Bem:}
 $ \varphi \upharpoonright \tx{Span}(c_1,\dots,c_p) \times \tx{Span}(c_1,\dots,c_p) $ ist positiv definit.
 
 \subsection{Bew: falsch:}
@@ -2711,7 +2709,7 @@ $$ \rightarrow\quad  \equalto{\dim(U)}{0} + \equaltoup{n - p}{\dim \spa(c_{p+1,\
 $ \Rightarrow h \le p  $
 
 \chapter{Unitäre Räume}
-\section{Def:} Ein unitärer Raum $V$ ist ein $\mathbb C$-VR zusammen mit einem komplexen Skalarprodukt $\langle\ ,\ \rangle : V \times V \mapsto \mathbb C$ mit folgeneden Eigenschaften
+\subsection{Def:} Ein unitärer Raum $V$ ist ein $\mathbb C$-VR zusammen mit einem komplexen Skalarprodukt $\langle\ ,\ \rangle : V \times V \mapsto \mathbb C$ mit folgeneden Eigenschaften
 \begin{enumerate}
 	\item $\langle v,w \rangle = \overline{\langle w,v \rangle},$ wobei $\overline{a+bi}=a-bi$
 	\item $\langle v+ v', w \rangle = \langle v,w \rangle + \langle v',w \rangle$
@@ -2720,7 +2718,7 @@ $ \Rightarrow h \le p  $
 \end{enumerate}
 \paragraph{Beispiel} $\mathbb C^n \qquad \langle \overline x, \overline y \rangle = \summ{i = 1}{n} x_i \overline{y_i}$
 
-\subsection{Bem:}
+\subsubsection{Bem:}
 Die Abblidung $ \langle\ ,\ \rangle $ ist nicht bilinear sondern \underline{hermitisch sesquilinear}
 $$ \langle v,\lambda w + \mu w'\rangle = \overline{\lambda}\langle v,w \rangle + \overline{\mu} \langle v,w' \rangle$$
 \subsection{Bew:}
@@ -2728,7 +2726,7 @@ $$ \langle v,\lambda w + \mu w'\rangle = \overline{\lambda}\langle v,w \rangle +
 \langle v,\lambda w + \mu w'\rangle &= \langle \overline{\lambda w + \mu w', v} \rangle \\
 &= \overline{\lambda} \langle \overline{w,v}\rangle + \overline{mu}\langle \overline{w',v}\rangle  = \overline{\lambda}\langle v,w \rangle + \overline{mu}\langle v,w'\rangle 
 \end{align*}
-\subsection{Bem:}
+\subsubsection{Bem:}
 Für einen unitären Raum V ist
 $$ || \ \ ||: V \to \mathbb{R}$$
 $$ \qquad \qquad \qquad \ \ \, v \mapsto \sqrt{<v,v>}$$
@@ -2738,16 +2736,16 @@ $$ \qquad \qquad \qquad \ \ \, v \mapsto \sqrt{<v,v>}$$
 	\item $ ||v+w|| \le ||v|| + ||w|| $
 \end{enumerate}
 
-\section*{Bem:}
+\subsubsection*{Bem:}
 $(V, \langle\ ,\ \rangle)$ unitärer Raum $v \perp w \Leftrightarrow \langle v,w \rangle = 0$
 $$\left. \begin{array}{l}
 \tx{Orthogonalität} \\ \tx{Orthogonales System} \\ \tx{Orthonormales System} \\ \tx{Orthogonalbasis}
 \end{array} \right  \} \longrightarrow \tx{ Wir können die Begriffe hier \underline{verwenden}.}$$
-\section{Def:} Sei $ ( V, \langle\ ,\ \rangle)$ ein euklidischer oder unitärer Raum. Eine Orthonormalbasis von $V$ ist eine Basis $\mathcal B = \{b_i\}\quad /\quad b_i \perp b_j \quad i \neq j \quad ||b_i|| = 1$
-\section*{Bem:} Jedes orthoganles System ist linear unabhängig.
+\subsection{Def:} Sei $ ( V, \langle\ ,\ \rangle)$ ein euklidischer oder unitärer Raum. Eine Orthonormalbasis von $V$ ist eine Basis $\mathcal B = \{b_i\}\quad /\quad b_i \perp b_j \quad i \neq j \quad ||b_i|| = 1$
+\subsubsection*{Bem:} Jedes orthoganles System ist linear unabhängig.
 \Bew{}{$$\summ{i=1}{n}\lambda_i b_i = 0$$
 	$$\equalto{\langle \sum \lambda_i b_i, b_j\rangle}{\summ{i=1}{n}\lambda_i \langle b_i, b_j \rangle = \lambda_i \custo{\neq}{\langle b_j,b_j \rangle}{0}} = 0$$}
-\section{Lemma} Sei $(V, \langle\ ,\ \rangle)$ ein euklidischer oder unitärer Raum und $\{b_1, \dots b_n \}$ eine ONB. Dann
+\subsection{Lemma} Sei $(V, \langle\ ,\ \rangle)$ ein euklidischer oder unitärer Raum und $\{b_1, \dots b_n \}$ eine ONB. Dann
 \begin{enumerate}
 	\item $$\forall v \in V \qquad v = \summ{i=1}{n} \langle v,b_i \rangle b_i$$
 	\item $$\begin{array}{c} v = \sum \lambda_i b_i \\ w = \sum \mu_i b_i \end{array} \Rightarrow \langle v,w \rangle = \sum \lambda_i \overline{\mu_i}$$
@@ -2794,7 +2792,7 @@ $$v_{k+1} = ||e_{k+1}||\ e_{k+1}+\summ{j=1}{k} \langle v_{k+1}, e_j \rangle \in 
 
 \subsection{Kor:}
 $ (V,\langle \ ,\ \rangle) $ euklidisch oder unitär endlichdimensional und $ D \subset V $ ein Orthonormalsystem. Dann $ \exists $ ONB $ B \supset D $ 
-\subsection{Bem:}
+\subsubsection{Bem:}
 Sei $ D = \{v_1,\dots,v_k \} $ und ergänze zu einer Basis $ \{v_1 \dots,v_n \} $ von V. $ \rightarrow $ Konstruiere eine ONB $ \{e_1,\dots,e_n\} $\\
 zu zeigen: $ e_i = v_i \quad i \le k $\\
 $$ e_1 = \frac{v_1}{||v_1|| =1} = v_1 $$
@@ -2997,7 +2995,7 @@ $$\begin{array}{ccc}
 \langle \overline{ w, F \circ F^\top (v)}\rangle & = & \langle \overline{F^\top (w), F^\top (v)} \rangle
 \end{array}$$
 
-\subsubsection*{Bem:}  $F: V \to V$ 
+\subsubsection{Bem:}  $F: V \to V$ 
 $$\tx{ mit Darstellungsmatrix $A$ bzg. der ONB } \mathcal B =\basis{b}{1}{n} \tx{ von } \underline{V}$$
 $$F^\top : V \to V \tx{ hat Darstellungsmatrix } A^*$$
 
@@ -3118,8 +3116,7 @@ Falls $K = \mathbb R$ ist , dann ist hermitesch = symmetrisch
 Sei $\mathcal B$ eine ONB von $V$
 $$F: V \to V \tx{ ist selbstadjungiert}$$
 $\Leftrightarrow$ Die Darstellungsmatrix von $F$ bzg. $\mathcal B$ hermitesch ist.
-
-\subsection{Bem:}
+\subsubsection{Bem:}
 Selbstadjungierte Endomorphismen sind normal.
 \subsection{Lemma:}
 Falls V euklidisch, unitär, endlichdim. ist $ F: V\to V $ selbstadjungiert, dann gilt:
@@ -3538,7 +3535,7 @@ $$ \alpha = \frac{\pi}{2} :\qquad \begin{tikzpicture}
 \end{array}$$
 
 % neue Vorlesung
-% wud auf bild evtl nachtragen
+% wid auf bild evtl nachtragen
 
 \subsection{Wid:}
 V  euklidischer Raum
