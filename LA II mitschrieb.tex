@@ -6,7 +6,6 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{amsmath}
-\usepackage{cleveref}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{tikz}
@@ -15,6 +14,8 @@
 \usepackage{mathtools}
 \usepackage{enumerate}
 \usepackage{cancel}
+\usepackage{hyperref}
+\usepackage{cleveref}
 
 \newenvironment{bew}[1]{\subsection{Bew: #1}}{\hfill$\square$}
 
@@ -73,7 +74,7 @@
 	gelten
 \end{itemize}
 
-\subsection{Def: Itegritätsbereich} Ein Integritätsbereich ist ein Ring ohne Nullteiler $$\forall x,y \in R \quad (x\cdot y = 0 \Rightarrow x=0\textrm{ oder } y=0)$$ 
+\subsection{Def: Integritätsbereich} Ein Integritätsbereich ist ein Ring ohne Nullteiler $$\forall x,y \in R: \quad (x\cdot y = 0 \Rightarrow x=0\textrm{ oder } y=0)$$ 
 \subsection{Def: Körper} Ein Körper K ist ein Ring derart, dass:
 \begin{itemize}
 	\item $1_{K} = 0_{K}$
@@ -93,7 +94,7 @@ $$\tx{ker}(\varphi) = \{n\in Z | \varphi(n) = 0\}$$\\
 
 $\rightarrow$ es existiert ein kleinstes positives Element $p>0$ in  $\ker(\phi)$%, R hat Charakteristik p
 \subsection{Bew:} 
-R Interitätsbereich $\Rightarrow$ p eine Primzahl z.B. 
+R Integritätsbereich $\Rightarrow$ p eine Primzahl z.B. 
 \begin{equation*} \frac{\mathbb{Z}}{p\mathbb{Z}} = \{\bar{0}, \bar{1},\dots,\overline{n-1}\} \end{equation*}
 hat \underline{Charakteristik n}.\\
 Insbesondere enthält jeder Körper der Charakteristik p eine ,,Kopie`` von $\frac{\mathbb{Z}}{p\mathbb{Z}}$\\
@@ -126,7 +127,7 @@ $g\neq g'$
 \begin{gather*}
 \grad(g\cdot(q-q')) = \grad( r' - r) = \textrm{max}\{ \grad(r'),\grad(r) \} < \grad(g) \\ \grad(g\cdot(q-q')) \buildrel q\neq q'\over = \grad(g) + \grad(q-q') 
 \end{gather*}
-$\Rightarrow$ Widerspruch (Wid) !\\
+$\Rightarrow$ Widerspruch (Wid)!\\
 $\Rightarrow$ $q = q' \Rightarrow r = r'$\\\\
 \subsubsection{Existenz Beweis: Induktion auf $\grad(f)$}
 I.A.: $\grad(f)= 0 \rightarrow f = g\cdot0 + f$\\
@@ -535,8 +536,8 @@ V = \sum_{i=1}^n U_i & 1\le i \le k \\
 & \\
 U_i \cap \sum\limits_{\substack{j=1\\ j\neq i}}^k U_j = \{0\} & 
 \end{array} \right.$$
-
-Äquvalent dazu, wenn jeder Vektor $v\in V$ sich eindeutig schreiben  lässt als linear kombination von den Vektoren 
+\\
+Äquivalent dazu, wenn jeder Vektor $v\in V$ sich eindeutig schreiben  lässt als Linearkombination von den Vektoren 
 
 $$\bigcup_{i=1}^k \mathcal{B}_j$$
 $\mathcal{B}$ ist Basis von $v_j$
@@ -3314,7 +3315,7 @@ Weil $ \varphi \upharpoonright_U $ positiv aus der Induktion
 $$ \varphi(v,v) = \varphi( \alpha b_i + \beta b_j , \alpha b_i + \beta b_j) = \ub{ \alpha^2 \lambda _i + \lambda \beta^2 }_{< 0} + 0$$
 $$\Rightarrow \tx{ Widerspruch ! }$$
 
-\section{Orthogonale Abblidungen und Drehungen}
+\section{Orthogonale Abbildungen und Drehungen}
 \subsection{Def:} $V$ euklidischer bzw. unitär. $F:V \to V$ ist orthogonal, falls $\forall v,w \in V:\ \ska{v}{w} = \ska{F(v)}{F(w)}$
 \subsection{Lemma:}
 Folgende Aussagen sind äquivalent: 
