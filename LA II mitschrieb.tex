@@ -453,14 +453,14 @@ A, A' $\in M_{n\times n}(K)$ sind \underline{ähnlich}, falls es $S \in GL_n(K)$
 \subsubsection{Bem: Ähnlichkeit}
 Ähnlichkeit (Än) auf $M_{n\times n}(K)\Rightarrow$ Äquivalenz (Äq) auf $M_{m\times n}(K)$
 
-\subsection{Def: Determinante} Die Determinante $$det(K^n) \mapsto K$$ multilineare alternierende Abbildung derart, dass $det(e_1,\dots e_n) = 1$.
+\subsection{Def: Determinante} Die Determinante $$\det(K^n) \mapsto K$$ multilineare alternierende Abbildung derart, dass $\det(e_1,\dots e_n) = 1$.
 $$A\in M_{n\times n}(K)$$
 
 $$A  = \Bigg( a_1 \bigg\vert a_2\bigg\vert \dots \bigg\vert a_n\Bigg) $$
-$$ det(A) = det(a_1,\dots , a_n)$$
+$$ \det(A) = \det(a_1,\dots , a_n)$$
 $$A=(a_{ij})$$
-$$det(A) = \sum_{\pi \in \underbrace{S_n}_{B_{ij}(\{1,\dots ,n\})}} sign(\pi) \cdot \prod _{i = 1}^n a_{\pi(i)i}$$
-$sign(\pi)$ (-1) Anzahl von Fehlständen $\{(ij)\vert i<j \pi(i) >\pi(j)\}$, \\
+$$\det(A) = \sum_{\pi \in \underbrace{S_n}_{B_{ij}(\{1,\dots ,n\})}} \tx{sign}(\pi) \cdot \prod _{i = 1}^n a_{\pi(i)i}$$
+$\tx{sign}(\pi)$ (-1) Anzahl von Fehlständen $\{(ij)\vert i<j \pi(i) >\pi(j)\}$, \\
 (-1) Anzahl von Faktoren von $\pi$ als Produkt von Transpositionen\\
 
 %käastchen mit tickz um 22 n-1 1 und n n-1 mit verbindungslinien
@@ -511,9 +511,9 @@ b_n
 $$
 
 Falls A regulär ist, dann gibt es eine einzige Lösung zum System:
-$$ x_j = \frac{det(a_i,\dots,a_{j-1},b,a_{j+1},\dots , a_n)}{det(A)}$$
+$$ x_j = \frac{\det(a_i,\dots,a_{j-1},b,a_{j+1},\dots , a_n)}{\det(A)}$$
 \subsection{Def: Darstellungsmatrix}
-$det(F) = det(a)$, Darstellungsmatrix von F bzgl. der Basis $\{v_1,\dots , v_n\}$
+$\det(F) = \det(a)$, Darstellungsmatrix von F bzgl. der Basis $\{v_1,\dots , v_n\}$
 \subsection{Def: Adjunkte} Sei A $(= a_{ij})$ eine n$\times$n-Matrix\\
 definiere die Adjunkte von A,  
 $$\textrm{adj}(A) = (\gamma_{ij})$$ wobei $$\gamma_{ij} = (-1)^{i\neq j} \det(A_{ij})$$
@@ -523,9 +523,9 @@ Sei $a_i$ die $i$-te Spalte von A
 \begin{align*}\overbrace{(\gamma_{j1}, \dots , \gamma_{jn})}^{c_i} \cdot \underbrace{\begin{pmatrix} c_{1i}\\ \vdots\\ a_{ni} \end{pmatrix}}_{a_i}  = \sum_{k=1}^n \gamma_{jk} a_{ki} &= \sum_{k=1}^n (-1)^{j+k} a_{ki} \det(A_{jk}) \\ &= \det(a_1, \dots , a_{j-1}, a_i , a_{j+1}, \dots , a_n) \end{align*}
 (Laplacesche Entwicklung) $ = \left\{\begin{array}{ll} det(A) & j=i \\ 0 & j\neq i \end{array}\right.$\\\\
 A regulär:
-$$adj(A) \cdot A = det(A) \cdot E_n$$
-$$\Rightarrow \frac{adj(A)}{det(A)} \cdot A = E_n = A^{-1} \cdot A$$
-$$\Rightarrow \frac{adj(A)}{det(A)} = A^{-1} \quad \Rightarrow \quad A \cdot adj(A) = det(A) \cdot E_n$$
+$$\tx{adj}(A) \cdot A = \det(A) \cdot E_n$$
+$$\Rightarrow \frac{\tx{adj}(A)}{\det(A)} \cdot A = E_n = A^{-1} \cdot A$$
+$$\Rightarrow \frac{\tx{adj}(A)}{\det(A)} = A^{-1} \quad \Rightarrow \quad A \cdot \tx{adj}(A) = \det(A) \cdot E_n$$
 
 \chapter{Lineare Algebra II}
 \subsection{Def: Diagonaliserbarkeit}
