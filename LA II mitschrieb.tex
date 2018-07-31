@@ -1794,7 +1794,7 @@ $$b^*_i(v) = b_i^* (\sum_{j=1}^{n} \lambda_j \cdot b_j) = \lambda_i$$
 	
 	Insb. $ V\to V^* $ ist ein Isomorphismus $  b_i \mapsto b_i^* $\\
 	\underline{Achtung:} Der Isomorphismus $ V\simeq V^* $ hängt von der Basis $ \{b_1,\dots,b_n\} $ ab! NICHT KANONISCH}
-\subsection{Lemma: kanonischer Monomarphismus} 
+\subsection{Lemma: kanonischer Monomorphismus} 
 kanonischer Monomorphismus $ V \buildrel \varphi \over \hookrightarrow (V^*)^* , v \mapsto \varphi_v:\quad V^* \to K , F \mapsto F(v)$ 
 \subsection{Bew:} $ \varphi $ ist wohldefiniert 
 $$ \varphi_v(F+G) = (F+G) (v) = F(v)+ G(v) \quad \tx{Ok!}$$\\
@@ -1808,7 +1808,7 @@ Wenn V endlichdim. ist, $ V \simeq V^* $ \emph{kanonisch}
 \subsection{Lemma: Duale Transformation}
 Sei $V$ endlich und wähle Basen $\mathcal B = \{b_1 \dots b_i \}$ und $\mathcal B' = \{b_1' \dots b_i' \}$ von $V$.
 
-Seien $ \mathcal{B}^* $ und $ (\mathcal{B}')^* $ die entsprechenden dualen Basen in $ V^* $. Wenn A die Transformationsmatrix von $ \mathcal{B} $ nach $ \mathcal{B}' $ ist, dann ist die Transformationsmatrix $ \mathcal{B^*} $ nach $ (\mathcal{B}')^* \ \ (A^\top)^{-1}$
+Seien $ \mathcal{B}^* $ und $ (\mathcal{B}')^* $ die entsprechenden dualen Basen in $ V^* $. Wenn A die Transformationsmatrix von $ \mathcal{B} $ nach $ \mathcal{B}' $ ist, dann ist die Transformationsmatrix $ \mathcal{B^*} $ nach $ (\mathcal{B}')^* : \ \ (A^\top)^{-1}$
 \Bew{}{
 $$\begin{pmatrix}
 b'_1\\
@@ -1870,7 +1870,7 @@ b_1 & \dots b_n
 $$E_n = X \cdot E_n \cdot A^\top = X \cdot A^\top \Rightarrow X = (A^\top)^{-1}$$
 }
 
-\subsection{Def:}
+\subsection{Def: duale Abbildung}
 Sei $F: V \to W$ eine lineare Abbildung. Definiere die duale Abbildung $F^* : W^* \to V^*$, $\psi \mapsto \psi \circ F$
 
 
@@ -1980,7 +1980,7 @@ F^* \cdot \begin{pmatrix}
 \end{pmatrix} \bigg)^\top
 \end{align*}
 $ \rightarrow $ Die Darstellungsmatrix von $ F^* $ ist $ A^\top $
-\subsection{Korrolar:}
+\subsection{Korrolar: zu Duale Basen}
 $$ \det(F^*) = \det(F) $$
 
 % neue vorlesung:
@@ -2128,7 +2128,7 @@ $$\begin{pmatrix}
 \paragraph{Folgerung}
 Der Rang hängt nicht von der Auswahl der Basen ab $\Rightarrow$ Rg$(\varphi)$ ist \underline{wohldefiniert.}
 
-\subsection{Def:}
+\subsection{Def: Duales Paar}
 Ein Tripel $(V,W,\varphi)$ ist ein duales Paar, falls dim $V =$ dim $W < \infty $
 $$\varphi: V \times W \to K \tx{ ist bilinear und Rg}(\varphi) = \dim (V) = \dim (W)$$
 
@@ -2141,7 +2141,7 @@ $ (V,W,\varphi) $ duales Paar $ \Rightarrow (W,V,\varphi') $ auch!
 	\begin{tabular}{cccc}
 		$ \ub{\{\varphi: V\times W \to K \}}_{\tx{bilinear}} $ & $ \buildrel \tx{Bijektion} \Phi \over \longleftrightarrow$ & $ \ub{\{F: V \to W^*\}}_{\tx{linear}} $ & $  $\\
 		\\
-		$ \varphi: V \times W \to K $ & $ \buildrel \Phi \over \longmapsto $ & $ F_\varphi V \to W^* $ & $  $\\
+		$ \varphi: V \times W \to K $ & $ \buildrel \Phi \over \longmapsto $ & $ F_\varphi: V \to W^* $ & $  $\\
 		$  $ & $  $ & $ v \mapsto F_\varphi (v) : $ & $ W \to K $\\
 		$  $ & $  $ & $  $ & $ w \mapsto \varphi(v,w) $\\
 		$ \varphi_F : V \times W \to K $ & $ \buildrel \Phi ^{-1} \over{\reflectbox{$\longmapsto$}}$ & $ F: V \to W^* $ & $  $\\
@@ -2167,11 +2167,12 @@ $$A_\varphi =
 \vdots & & \vdots \\
 \varphi(b_n, c_1) & \dots & \varphi(b_n, c_m)	
 \end{pmatrix}$$
-$$\varphi \bigg( \sum \lambda_i b_i, \sum \mu_j \epsilon_j \bigg) = (\lambda_1 \dots \lambda_n) A_\varphi \begin{pmatrix} c_1 \\ \dots \\ c_m \end{pmatrix}$$
+$$\varphi \bigg( \sum \lambda_i b_i, \sum \mu_j b_j \bigg) = (\lambda_1 \dots \lambda_n) A_\varphi \begin{pmatrix} \mu_1 \\ \dots \\ \mu_m \end{pmatrix}$$
 $$\tx{Rg}(\varphi) \tx{ ist eindeutig bestimmt.}$$
-$$(V, W, \varphi) \tx{ ist ein duales Paar, falls } \equalto{\tx{dim } V}{\tx{Rg}(\varphi)} = \tx{ dim } W < \infty$$
+$$(V, W, \varphi) \tx{ ist ein duales Paar, falls } \tx{Rg}(\varphi) = \tx{dim } V = \tx{ dim } W < \infty$$
 $$ \varphi: V \times W \to K \tx{ duales Paar}$$
 $$\rightarrow \varphi' = W \times V \to K,\ (w,v) \mapsto \varphi(v,w) \tx{ \underline{dual}}$$
+$$\varphi'(w,v) \mapsto \varphi(v,w)$$
 \subsection{Bew:}
 $ \Phi $ ist Wohldefiniert\\
 $ F_\varphi (v) \in W^* $, weil $ \varphi(v,???-) $ linear in der Koordinate ist $ F_\varphi $ ist linear weil $ \varphi $ linear in der ersten Koordinate ist (da es Wohldefiniert ist)
@@ -2196,11 +2197,16 @@ Wobei $\lambda_{12} = \varphi(b_2, c_1) = a_{21}$, und $\lambda_{21} = a_{12}$
 $$\tx{Rg}(A_\varphi^\top) = \tx{Rg}(A_\varphi)$$
 $$(V,W,\varphi) \tx{ ist ein duales Paar} \Leftrightarrow \dim V = \equalto{\dim W}{\dim W^*} = \equalto{\tx{Rg}(A_\varphi)}{\tx{Rg}(A_\varphi^\top)}$$ 
 $$\Leftrightarrow F_\varphi \tx{ Isomorphismus.}$$
-\subsection{Kor:}
+\subsection{Kor: Ausartung}
 Seien $V,W$ endlich dimensional, $\varphi:V \times W \to K$ Bilinearform. Dann ist $(V,W,\varphi)$ duales Paar, genau dann wenn $\varphi$ \underline{nicht-ausgeartet} ist d.h.
 \begin{align*}
-&a) \forall v \in V:\ \varphi(v,w) = 0\ \forall w \in W \Rightarrow v = 0 \\
-&b) \forall w \in W:\ \varphi(v,w) = 0\ \forall v \in V \Rightarrow w = 0
+&\,a) \forall v \in V:\ \varphi(v,w) = 0\ \forall w \in W \Rightarrow v = 0 \\
+&\;b) \forall w \in W:\ \varphi(v,w) = 0\ \forall v \in V \Rightarrow w = 0
+\end{align*}
+oder:
+\begin{align*}
+&\,a) \forall v \in V \setminus\{0\} :\ \exists w \in W : \varphi(v,w) \neq 0\\\
+&\;b) \forall w \in W \setminus\{0\} :\ \exists v \in V : \varphi(v,w) \neq 0
 \end{align*}
 \subsection{Bew:}
 $\boxed{\Rightarrow}$
@@ -2230,7 +2236,7 @@ $$(\mathbb R^2, <, > )$$
 $$<x_1 \dots x_n, y_1 \dots y_n> = \sum_{i=1}^n x_i y_i \in \mathbb R.$$
 $$<(x_1 \dots x_n), (1, 0 \dots 0)> = x_1 = 0$$
 
-\subsection{Kor:}
+\subsection{Kor: duale Basen}
 Sei $(V,W,\varphi)$ ein duales Paar. Für jede Basis $\{c_1 \dots c_n\}$ aus $W$ gibt es eine Basis $\{b_1 \dots b_n\}$ aus $V$, welche ,,dual`` zu $\{c_1 \dots c_n\}$ ist:
 $$\varphi(b_i, c_j) = \delta_{ij}$$
 
@@ -2242,15 +2248,16 @@ $$\varphi(b_i, c_j) = \delta_{ij}$$
 	$$\varphi(b_i, c_j) = \equalto{\underbracket{F_\varphi(b_i)}}{c_i^*}(c_j) = \delta_{ij}$$
 }
 
-\subsection{Def:}
+\subsection{Def: Orthogonales Komplement}
 Sei $(V,W,\varphi)$ ein duales Paar. $U \subset V$ Unterraum von $V$.\\
 Definiere $$U^\perp = \{w \in W \ |\  \varphi (u,w) = 0\ \forall u \in U \}$$
+$ U^\perp $ ist ein UVR von W
 \subsubsection*{Bem:}
 $U^\perp$ ist ein Unterraum von $W$.
-$$(0)^\perp = W$$
+$$(0)^\perp = V$$ % oder W
 $$V^\perp = \{0\}, \tx{ weil $\varphi$ nicht-ausgeartet ist!}$$
 $$U \subset V$$
-$$\equalto{(U^\perp)^\perp}{U} = \{v \in V \ | \  \forall w \in U^\perp\ \varphi(v,w) = 0 \}$$
+$$\equalto{(U^\perp)^\perp}{U} = \{v \in V \ | \  \forall w \in U^\perp\ \varphi(v,w) = 0 \} = U$$
 \Bew{}{
 	$$U\subset (U^\perp)^\perp$$
 	$$u \in U \Rightarrow  u \in (U^\perp)^\perp \Rightarrow \forall w \in U^\perp,\ \varphi(u,w) = 0$$
@@ -2264,8 +2271,8 @@ $$\equalto{(U^\perp)^\perp}{U} = \{v \in V \ | \  \forall w \in U^\perp\ \varphi
 	$ 0 = G(u) = \varphi(u,w) \rightarrow w \in U^\perp $\\
 	$ 1 = G(u) = \varphi(u,w) \rightarrow u \notin (U^\perp)^\perp $
 }
-\subsection{Lemma:}
-Se $ (v,w,\varphi) $ ein duales Paar $ U\subset V $ ein UVR\\
+\subsection{Lemma: zu Quotientenräumen}
+Sei $ (V,W,\varphi) $ ein duales Paar $ U\subset V $ ein UVR\\
 Dann ist $ (V/U, U^\perp, \tilde{\varphi}) $ duales Paar, wobei $ \tilde{\varphi}(v+u,w) = \varphi(u,w) $\\
 Insbesondere gilt $$ \dim V = \dim U + \dim U^\perp $$
 \subsection*{Bew:}
@@ -2287,16 +2294,16 @@ $$U \subset V\ \tx{UR},\ U^\perp = \{w \in W \setminus \varphi(u,w) = 0\}\ \tx{U
 $$\rightarrow(U^\perp)^\perp = U \rightarrow \dim V = \dim U + \dim U^\perp$$
 $$\mathcal B = \{b1 \dots b_n\}\tx{ Basis von V}$$
 $$\tx{ist dual zu der Basis von W }\{c1 \dots c_n\} \tx{ falls } \varphi(b_i,c_j) = \delta_{ij}$$
-\subsection{Def:}
+\subsection{Def: Adjungierte}
 Sei $(V,W,\varphi)$ duales Paar und $G:W \to W$ Endomorphismus.\\
-Der adjungierte Endomorphismus $G^\top: V \to V$ wird definiert als $$G\top:F^{-1} \circ G^* \circ F_\varphi$$
+Der \emph{adjungierte Endomorphismus} $G^\top: V \to V$ wird definiert als $$G^\top:F^{-1} \circ G^* \circ F_\varphi$$
 \begin{center}
 	\begin{tikzcd}
 		V & \arrow{l}[swap]{F_{\varphi}^{-1}}  W^* & W \arrow{d}{G}\\
 		V \arrow[mapsto]{u}{G^\top} \arrow{r}[swap]{F_{\varphi}}& W^* \arrow{u}{G^*} & W
 	\end{tikzcd}
 \end{center}
-$ G^*(\Phi) = \Phi \circ G \qquad \Phi \circ ??? G (oder w ) \to K $
+$ G^*(\Phi) = \Phi \circ G \qquad \Phi: W \to K $%\Phi \circ ??? G (oder w ) \to K
 \subsubsection*{Bem:}
 $G^*$ ist eindeutig bestimmt durch die Gleichung 
 $$\varphi(G^\top(v),w) \buildrel (*) \over = \varphi(v,G(w))\qquad \ \forall v \in V,\ \forall w \in W$$
@@ -2326,11 +2333,11 @@ $$\varphi(G^\top(v),w) \buildrel (*) \over = \varphi(v,G(w))\qquad \ \forall v \
 }
 
 \section{Euklidische Räume}
-\subsection{Def:}
+\subsection{Def: Symmetrie}
 Eine Bilinearform $ \varphi: V \times V \to K$ ist symmetrisch, falls $ \varphi = \varphi' $ 
 $$ \Leftrightarrow \forall u,v \in V : \varphi(u,v) = \varphi(v,u) $$
 \subsubsection*{Bem:}
-Seien $ \mathcal{B},\mathcal{C} $ Basen von V und A die Darstellungsmatrix vo $ \varphi $ bzgl. $ \mathcal{B},\mathcal{C} $.
+Seien $ \mathcal{B},\mathcal{C} $ Basen von V und A die Darstellungsmatrix von $ \varphi $ bzgl. $ \mathcal{B},\mathcal{C} $.
 $$ \varphi \tx{ symmetrisch } \Leftrightarrow A = A^\top = (\varphi(b_i,c_j))$$
 \subsection{Bew:}
 $\boxed{\Rightarrow}$ Siehe \underline{Übungsblatt}\\
@@ -2343,7 +2350,7 @@ $\boxed{\Leftarrow}$\\
 \end{align*}
 \subsubsection*{Bem:}
 $ \varphi $ symmetrisch\\
-$ \Rightarrow $ Der Begriff der Orthogonalitt ist wohldefiniert und vor allem symmetrisch
+$ \Rightarrow $ Der Begriff der Orthogonalität ist wohldefiniert und vor allem symmetrisch
 \begin{center}
 	$\begin{array}{c}
 	u \perp v \Leftrightarrow \varphi(u,v) = 0\\
@@ -2355,18 +2362,18 @@ $ \Rightarrow $ Der Begriff der Orthogonalitt ist wohldefiniert und vor allem sy
 $ \mathbb{R}^n $\\
 $$\varphi(\vec{x},\vec{y}) = \sum_{i=1}^{n} x_i y_i \tx{ smmetrisch}$$ 
 $$\varphi(\vec{x},\vec{x}) = \sum_{i=1}^{n} x_i^2 \ge 0$$
-\subsection{Def:}
+\subsection{Def: Quadratische Form}
 Sei $ \varphi: V \times V \to K $ symmetrische Bilinearform.\\
 Die zugehörige quadratische Form:
 \begin{align*}
 g: V &\to K\\
 v &\mapsto \varphi(v,v)
 \end{align*}
-\subsection*{Anmerkung:}
+\subsubsection*{Anmerkung:}
 $ \dim V = n $\\
 Sei $ \mathcal{B} = \{b_1,\dots,b_n\} $ eine Basis $ \rightarrow \varphi $ hat Darstellungsmatrix \underline{\underline{A}} bzgl. $ \mathcal{B} $.
 \begin{align*}
-q(v) & = \varphi(v,v) - \varphi(\sum\lambda_i b_i , \sum \lambda_j b_j)\\
+ g(v) \tx{ auch }q(v) & = \varphi(v,v) - \varphi(\sum\lambda_i b_i , \sum \lambda_j b_j)\\
 & = \begin{pmatrix}
 \lambda_1 & \dots & \lambda_n
 \end{pmatrix} \cdot A \cdot \begin{pmatrix}
@@ -2376,7 +2383,7 @@ q(v) & = \varphi(v,v) - \varphi(\sum\lambda_i b_i , \sum \lambda_j b_j)\\
 \end{pmatrix}\\
 & = \sum a_{ij} \lambda_i \lambda_j
 \end{align*}
-\subsection*{Folgerung:}
+\subsubsection*{Folgerung:}
 (char $ K \neq 2 $)\\
 Jede symmetrische Bilinearform ist durch ihre quadratische Form eindeutig \underline{bestimmt}.
 \begin{align*}
@@ -2390,8 +2397,8 @@ $$ \varphi(u,v) = \frac{q(u+v) - q(u-v)}{4} $$
 
 
 % nach pause
-\subsection{Def:}
-Sei $V$ ein endlich dimensionaler $\mathbb R$-VR. und $ \varphi:V\times V \to \mathbb R$ Symmetrische Bilinearform. Wir sagen,$\varphi$ ist:
+\subsection{Def: Definitheit}
+Sei $V$ ein endlich dimensionaler $\mathbb R$-VR. und $ \varphi:V\times V \to \mathbb R$ Symmetrische Bilinearform. Wir sagen, $\varphi$ ist:
 \begin{enumerate}
 	\item positiv semidefinit, falls $\varphi(u, u) \geq 0\ \forall u \in V$
 	\item negativ semidefinit, falls $\varphi(u,u) \leq 0\ \forall u \in V$
@@ -2407,10 +2414,10 @@ Sei $V$ ein endlich dimensionaler $\mathbb R$-VR. und $ \varphi:V\times V \to \m
 \end{enumerate}
 \subsubsection*{Bem:}  
 $$\varphi \tx{ ist posit (semi)-def., } -\varphi \tx{ ist neg (semi)-def.}$$
-\subsection{Def:}
-Ein Skalarprodukt auf einem endlichdimensionalen $ \mathbb{R} $-VR V ist eine positiv definite symmetrische Bilinearform: $ \varphi(u,v) \buildrel \tx{bijektion ???} \over \longrightarrow <u,v> $
-\subsection{Def:}
-$ (V,<,>) $ ist ein euklidischer Raum, wenn V ein $ \mathbb{R} $-VR endlichdimensional  und $ <,> $ ein Skalarprodukt ist.
+\subsection{Def: Skalarprodukt}
+Ein Skalarprodukt auf einem endlichdimensionalen $ \mathbb{R} $-VR V ist eine \emph{positiv definite symmetrische Bilinearform}: $ \varphi(u,v) \buildrel \tx{bijektion ???} \over \longrightarrow \langle u,v \rangle $
+\subsection{Def: Euklidischer Raum}
+$ (V,\langle \ , \rangle ) $ ist ein euklidischer Raum, wenn V ein $ \mathbb{R} $-VR endlichdimensional  und $ \langle \ , \rangle $ ein Skalarprodukt ist.
 \subsection{Def: Norm}
 Eine Norm auf einem $\mathbb R$-VR $V$ ist eine Abbildung $||\cdot||: V \to \mathbb R$ derart, dass:
 \begin{enumerate}
@@ -2425,9 +2432,12 @@ $(V, || \cdot ||)$ ein normierter $\mathbb R$-VR \underline{ist}
 	\item $||\vec{x}||_{\infty \downarrow} = \sum |x_i|$
 	\item $||\vec{x}||_{\infty \geq} = \underbrace{\tx{max}}_{1 \leq i \leq n}\ |x_i|$
 \end{enumerate}
-\subsection{Def:}
+
+% ab hier bis unitäre räume langles und rangles
+
+\subsection{Def: Norm über Skalarprodukt}
 Sei $(V,<,>)$ ein euklidischer Raum und definiere $||\ ||: V \to \mathbb R,\\v \mapsto \sqrt{<v,v>}$ wohldefiniert. Wir wollen Zeigen, dass es eine Norm auf $V$ \underline{induziert}.
-\subsection{Lemma}
+\subsection{Lemma:}
 (Cauchy-Schwarzsche-Ungleichung)
 $$\forall v, w \in V$$
 $$|<v,w>| \leq ||v|| \cdot ||w||$$
@@ -2443,7 +2453,7 @@ $$|<v,w>| \leq ||v|| \cdot ||w||$$
 	$$ \rightarrow <v,w>^2 \le ||v||^2 \cdot ||w||^2$$
 	$$ \rightarrow |<v,w>| \le ||v|| \cdot ||w|| $$
 }
-\subsection{Folgerung:}
+\subsection*{Folgerung:}
 $ (V,<,>) $ euklidischer Raum\\
 \begin{align*}
 ||\cdot ||: V & \to \mathbb{R}\\
@@ -2458,18 +2468,17 @@ ist eine \underline{\underline{Norm}}.
 	\begin{align*}
 	||u+v||^2 & = < u+v, u+v>\\
 	& = < u,u> + <v,v> + 2 <u,v>\\
-	& = ||u||^2 + ||v||^2 + 2 ||u||\, ||v||\\
-	& = (||u|| + ||v||)^2
+	& \le ||u||^2 + ||v||^2 + 2 ||u||\, ||v||\\
+	& \le (||u|| + ||v||)^2
 	\end{align*}
 \end{enumerate}
-\subsection{Def:}
+\subsection{Def: Winkel zwischen Vektoren}
 $ (V,<,>) $ euklidischer Raum
 $$ -1 \le \equalto{\ub{ \frac{<u,v>}{||u||\, ||v||} }}{\cos \theta} \le 1$$
 $ \theta \in [0,\pi] $ eindeutig \underline{bestimmt}.\\
-$ \theta $ ist der Winkel zwischen $ u $ und $ v $
+\emph{$ \theta $ ist der Winkel zwischen $ u $ und $ v $}
 \subsubsection*{Bem:}
-$ u \perp v \Leftrightarrow <u,v> = 0 \Leftrightarrow \tx{ der Winkel } \frac{\pi}{2} \tx{\underline{ist}} $
-$$ u \uparrow \rightarrow v$$
+$ u \perp v \Leftrightarrow <u,v> = 0 \Leftrightarrow \tx{ der Winkel } \frac{\pi}{2} \tx{\underline{ist}} \quad u \uparrow \rightarrow v$
 
 % neue Vorlesung
 
@@ -2483,7 +2492,7 @@ $ g(v) = g(\sum(\lambda_i b_i)) =\sum a_{ij} \lambda_i \lambda_j $\\
 $ \tx{char } k \neq 2 \rightarrow q $ bestimmt $ \varphi $\\
 $ \varphi(u,v) = \frac{q(u+v) - q(u-v)}{4} $\\
 $ \varphi $ symmetrisch ist positiv definit, falls $ \varphi(u,u) = q(u) \ge 0 \leftarrow \tx{ Körper ist } \mathbb{R} $\\
-$ q(u) = 0 \Rightarrow u = 0 $\\
+$ q(u) = \varphi(u,u)= 0 \Rightarrow u = 0 $\\
 Ein Skalarprodukt auf einen $ \mathbb{R} $-VR V ist eine symmetrische positiv definite Bilinearform
 $ \varphi(u,v) \to <u,v> $\\
 $ ||v||=\sqrt{q(v)} = \sqrt{<v,v>}$ Norm. \\
@@ -2502,7 +2511,7 @@ $\theta$ ist winkel zwischen $v$ und $w$.
 	\item $\Leftrightarrow$ Der Winkel ist $\frac{\pi}{2}$
 \end{trivlist}
 
-\subsection{Satz (Pythagoras)}
+\subsection{Satz: (des Pythagoras)}
 $$(V, <.>) \tx{ endlichdimensionaler Raum}$$
 $v \perp w \Leftrightarrow ||v + w||^2 = ||v||^2 + ||w||^2$
 %bild
@@ -2515,7 +2524,7 @@ $v \perp w \Leftrightarrow ||v + w||^2 = ||v||^2 + ||w||^2$
 &\tx{mit: } v\perp w \Leftrightarrow <v,w> = 0 \Leftrightarrow \\
 &= ||v||^2 + ||w||^2
 \end{align*}
-\subsection{Def:}
+\subsection{Def: Orthogonal- und Orthonormalbasis}
 $ \varphi:V\times V \to K $ symmetrische Bilinearform\\
 Ein orthogonales System bzgl. $ \varphi $ ist eine Kollektion M von Vektoren $ 0 \notin M \ \ u,v \in M \tx{ verschieden } \varphi(u,v) = 0 $\\
 Ein orthonormales System M ist eine Kollektion von Vektoren\\ $ \varphi(u,v) = \casess{0}{v\neq u}{1}{u=v} $
@@ -2525,7 +2534,7 @@ Orthonormalbasis (ONB)
 \paragraph{Beispiel:}
 Standardbasis $\{o_1, \dots o_k \}\ (\mathbb R^n, \underset{\scriptstyle}{<.>)}_{\tx{standard skalarprodukt}}$
 
-\subsection{Satz}
+\subsection{Satz: $ \varphi $ symmetrisch $ \Rightarrow $ diagonalisierbar}
 (Char$(K) \neq 2$)\\
 \indent Jede Symmetrische Bilinearform $\varphi$ auf einem endlich dimensionalen $K$-VR $V$ läßt sich bei einer geeigneten Basisauswahl durch eine Diagonalmatrix darstellen. Ferner ist $\varphi$ nicht-ausg. $\Leftrightarrow$ kein Eigenwert der Matrix null ist.
 
@@ -2545,7 +2554,7 @@ $ \rightarrow $ Jede Basis von V besteht aus paarweise orthogonalen \underline{V
 
 Sonst, existiert $b_1 \in V\setminus \equalto{g(b_1)}{\varphi(b_1, b_1)} \neq 0, \quad F:V \to K,\ v \mapsto \varphi(v,b_1)$
 $$\custo{\Rightarrow}{\tx{Im}(F)}{\dim \ker (F) = n -1} = K \tx{ als \underline{$K$-VR}}$$
-$$\ker (F) = \{v \in V \setminus \varphi(v_1,b_1=0\} = \{v \in V \setminus v \perp b_1\} = \tx{ Span}(b_1)^\perp$$
+$$\ker (F) = \{v \in V \setminus \varphi(v_1,b_1)=0\} = \{v \in V \setminus v \perp b_1\} = \tx{ Span}(b_1)^\perp$$
 Induktion auf die Dimension von $V \Rightarrow$ Es existiert eine Basis $b_1 \dots b_n$ von $\ker(F)$ welches aus paarweise orthogonal Vektoren besteht.
 
 Die Basis $ \{b_1, \dots , b_n\} $ ist eine orthogonale Basis von \underline{\underline{V}}.\\
@@ -2556,10 +2565,10 @@ $ \rightarrow $ Eigenwerte sind $ \equalto{\varphi(b_1,b_1)}{\mu_1} , \dots , \e
 \boxed{\Rightarrow} Angenommen, dass 
 $$\mu_j = \varphi(b_j,b_j) = 0$$
 wäre
-$$\left. \varphi(b_j,b_i) = \right \{ \begin{array}{ll}
+$$\varphi(b_j,b_i) = \left \{ \begin{array}{ll}
 0 \quad i \neq j\\
 0 \quad i   =  j
-\end{array}$$
+\end{array} \right. $$
 $i$ \underline{beliebig}
 $$\varphi(b_j,-):V \to K \tx{ ist die triviale Abbildung } \Rightarrow \tx{ Wid! } b_j \neq 0$$
 \boxed{\Leftarrow} Sei $v \in V\setminus \{0\}$ beliebig.
@@ -2584,8 +2593,6 @@ $ \begin{pmatrix}
 Es existiert eine Orthogonalbasis  $ \{b_1,\dots , b_n\} $ für $ \varphi:V \times V \to K $.
 $$c_i = \casess{\frac{b_i}{\sqrt{\varphi(b_i,b_i)}}}{\varphi(b_i,b_i) \neq 0}{\quad \ b_i}{\quad \tx{sonst.}}$$
 $ \{c_1,\dots , c_n \} $ ist immer noch eine Basis.\\
-
-
 OBdA können wir annehmen, dass $ c_1,\dots,c_n $ ist so umgeordnet, dass
 \begin{align*}
 \varphi(c_i,c_i) &= 1  \qquad i \le k\\
@@ -2633,7 +2640,7 @@ Jede Symm. Bilinearform $\varphi$ auf einem endlich dimensionalen $\mathbb R$-VR
 	\end{tikzpicture}
 \end{center}
 darstellen.
-Ferner hängen die Zahlen $p,g$ und $r$ nur bon $\varphi$ ab.
+Ferner hängen die Zahlen $p,g$ und $r$ nur von $\varphi$ ab.
 \Bew{}{Sei $\{b_1 \dots b_n\}$ eine Orthogonalbasis für $\varphi$
 	$$ c := \left \{ 
 	\begin{array}{ll}
@@ -2682,7 +2689,7 @@ $ g,r $ \underline{bestimmen}\\
 $ \tx{Rg}(\varphi) = \underline{p} + q  \ \rightarrow $ ist eindeutig \underline{bestimmt}\\
 $ r = n - \tx{Rg}(\varphi) \rightarrow $ eindeutig \underline{bestimmt}
 
-\subsection{Def:}
+\subsection{Def: Signatur}
 Signatur $ (\varphi) = \underline{\underline{q-p}} $
 
 % neun Vorlesung
@@ -2700,7 +2707,7 @@ Signatur $ (\varphi) = \underline{\underline{q-p}} $
 \subsection{Wiederholung}
 $ \varphi: \mathbb{R}^2 \times \mathbb{R}^2 \mapsto \mathbb{R} $\\
 $ ((x_1,y_1), x_2,y_2) ) \mapsto 2 x_1x_2 - y_1 y_2 $\\
-$ \varphi $ ist positiv definit auf $ \spa ((1,0)) \quad \varphi((\lambda,0),(lambda,0)) = 2 \lambda^2 \ge 0$\\
+$ \varphi $ ist positiv definit auf $ \spa ((1,0)) \quad \varphi((\lambda,0),(\lambda,0)) = 2 \lambda^2 \ge 0$\\
 $ \varphi $ ist positiv definit auf $ \spa((1,1)) \quad \varphi((\lambda,\lambda),(\lambda,\lambda)) = \lambda^2 \ge 0 $\\
 $ \varphi $ ist nicht positiv definit auf $ \spa((1,0)) + \spa((1,1)) = \mathbb{R}^2$\\
 $\varphi((0,1),(0,1)) = -1 $
@@ -2725,12 +2732,12 @@ $ \Rightarrow h \le p  $
 \paragraph{Beispiel} $\mathbb C^n \qquad \langle \overline x, \overline y \rangle = \summ{i = 1}{n} x_i \overline{y_i}$
 
 \subsubsection{Bem:}
-Die Abblidung $ \langle\ ,\ \rangle $ ist nicht bilinear sondern \underline{hermitisch sesquilinear}
+Die Abblidung $ \langle\ ,\ \rangle $ ist nicht bilinear sondern \textbf{hermitesch sesquilinear}
 $$ \langle v,\lambda w + \mu w'\rangle = \overline{\lambda}\langle v,w \rangle + \overline{\mu} \langle v,w' \rangle$$
 \subsection{Bew:}
 \begin{align*}
 \langle v,\lambda w + \mu w'\rangle &= \langle \overline{\lambda w + \mu w', v} \rangle \\
-&= \overline{\lambda} \langle \overline{w,v}\rangle + \overline{mu}\langle \overline{w',v}\rangle  = \overline{\lambda}\langle v,w \rangle + \overline{mu}\langle v,w'\rangle 
+&= \overline{\lambda} \langle \overline{w,v}\rangle + \overline{\mu}\langle \overline{w',v}\rangle  = \overline{\lambda}\langle v,w \rangle + \overline{\mu}\langle v,w'\rangle 
 \end{align*}
 \subsubsection{Bem:}
 Für einen unitären Raum V ist
@@ -2747,11 +2754,15 @@ $(V, \langle\ ,\ \rangle)$ unitärer Raum $v \perp w \Leftrightarrow \langle v,w
 $$\left. \begin{array}{l}
 \tx{Orthogonalität} \\ \tx{Orthogonales System} \\ \tx{Orthonormales System} \\ \tx{Orthogonalbasis}
 \end{array} \right  \} \longrightarrow \tx{ Wir können die Begriffe hier \underline{verwenden}.}$$
-\subsection{Def:} Sei $ ( V, \langle\ ,\ \rangle)$ ein euklidischer oder unitärer Raum. Eine Orthonormalbasis von $V$ ist eine Basis $\mathcal B = \{b_i\}\quad /\quad b_i \perp b_j \quad i \neq j \quad ||b_i|| = 1$
-\subsubsection*{Bem:} Jedes orthoganles System ist linear unabhängig.
+\subsection{Def: Orthonormalbasis}
+Sei $ ( V, \langle\ ,\ \rangle)$ ein euklidischer oder unitärer Raum. Eine Orthonormalbasis von $V$ ist eine Basis $\mathcal B = \{b_i\}\quad | \quad b_i \perp b_j \quad i \neq j \quad ||b_i|| = 1$
+\subsubsection*{Bem:} Jedes orthogonales System ist linear unabhängig.
+
 \Bew{}{$$\summ{i=1}{n}\lambda_i b_i = 0$$
-	$$\equalto{\langle \sum \lambda_i b_i, b_j\rangle}{\summ{i=1}{n}\lambda_i \langle b_i, b_j \rangle = \lambda_i \custo{\neq}{\langle b_j,b_j \rangle}{0}} = 0$$}
-\subsection{Lemma} Sei $(V, \langle\ ,\ \rangle)$ ein euklidischer oder unitärer Raum und $\{b_1, \dots b_n \}$ eine ONB. Dann
+	$$\equalto{\langle \sum \lambda_i b_i, b_j\rangle}{\summ{i=1}{n}\lambda_i \langle b_i, b_j \rangle = \sum \lambda_i \custo{\neq}{\langle b_i,b_j \rangle}{0}} = 0$$% old : \custo{\neq}{\langle b_j,b_j \rangle}{0}} = 0
+}
+\subsection{Lemma: Orthonormalbasen}
+Sei $(V, \langle\ ,\ \rangle)$ ein euklidischer oder unitärer Raum und $\{b_1, \dots b_n \}$ eine ONB. Dann
 \begin{enumerate}
 	\item $$\forall v \in V \qquad v = \summ{i=1}{n} \langle v,b_i \rangle b_i$$
 	\item $$\begin{array}{c} v = \sum \lambda_i b_i \\ w = \sum \mu_i b_i \end{array} \Rightarrow \langle v,w \rangle = \sum \lambda_i \overline{\mu_i}$$
@@ -2893,7 +2904,7 @@ $$ || v-u ||^2 < || \equalto{\ub{v - (u + \lambda u')}}{} ||^2$$
 $$ \langle v-u - \lambda u' , v-u - \lambda u' \rangle$$
 $$ = ||v-u||^2 - \underbracket{\lambda \langle u',v-u\rangle}_{= \overline{\lambda}} - \underbracket{\overline{\lambda}\langle v-u,u'\rangle}_{ = \lambda} + \lambda \overline{\lambda} \underbracket{||u'||^2}_{= 1}$$
 $$ = || v-u ||^2 - \underbracket{\lambda \overline{\lambda}}_{||\lambda||^2} - \lambda \overline{\lambda} + \lambda \overline{\lambda} < || v-u ||^2 \quad \tx{Wid !}$$
-\section{Selbsadjungierte Endomorphismen\\ und Hauptachsentransformationen}
+\chapter{Selbsadjungierte Endomorphismenund Hauptachsentransformationen}
 \subsubsection{Bem:}
 Sei $ (V, \langle , \rangle) $ ein endlichsim. euklidischer Raum\\
 $ \rightarrow (V,V,\langle,\rangle)$ ein duales \underline{Paar}.\\
