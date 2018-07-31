@@ -14,7 +14,7 @@
 \usepackage{mathtools}
 \usepackage{enumerate}
 \usepackage{cancel}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
 
 \newenvironment{bew}[1]{\subsection{Bew: #1}}{\hfill$\square$}
@@ -994,12 +994,11 @@ T & 0 & & \dots  & a_0 \\
 \end{align*}
 
 \noindent
-\subsection*{\underline{Notation}}
+\subsubsection*{\underline{Notation}}
 $$\equalto{P(T)}{\sum^m_{i=0} a_i T^i} \in K[T]$$
 $\enph$\\
 $P(F): V\to V $\\
-$ v\mapsto \sum^m_{i=0} a_i F^i(v)$
-
+$ v\mapsto \sum^m_{i=0} a_i F^i(v)$\\
 Mit dieser Notation haben wir, das im vorherigen Lemma
 $$\chi_{F \mid U} (v) = F^r(v) - \sum^{r-1}_{i=0} a_i F^i(v) = 0$$
 \subsection{Satz: (Calay - Hamilton)}
@@ -1016,29 +1015,26 @@ U F-invariant
 $$\Rightarrow \chi_F = \chi_{F \mid U} \cdot \chi_{\tilde{F}} = \chi_{\tilde{F}} \cdot \chi_{F \mid U}$$
 $\tilde{F}: V/U \to V/U$\\
 $\bar{w} \mapsto \bar{F(w)}$\\
-\underline{Aufgabe}\\
+\textbf{Aufgabe}\\
 $R(T) = P \cdot C$ allg. Polynom
 $\Rightarrow R(F) = P \cdot (G(F))$ als Endomorphismen
-$$\chi_F(F)(v) = \equalto{\underbrace{\chi_{\tilde{F}} \cdot (\equalto{\underbrace{\chi_{F \mid U}(v)}}{0})}}{0} $$
+$$\chi_F(F)(v) = \equaltoup{\overbrace{\chi_{\tilde{F}} \cdot (\equalto{\underbrace{\chi_{F \mid U}(v)}}{0})}}{0} $$
 
 \subsection{Kor:}
 $A \in \mathcal{M}_{n\times n}(K)$
-$$\chi_A(T) = T^n + \sum^{n-1}_{i=0} b_i T^i$$
+$$\chi_A(T) = T^n + \sum^{n-1}_{i=0} b_i \cdot T^i$$
 $$\Rightarrow A^n + \sum^{n-1}_{i=0} b_i \cdot A^i = 0$$
 da $n\times n$ Matrix
-\subsection{Satz:}
+\subsection{Satz: Minimalpolynom}
 $\enph \quad V$ endlichdim. /K\\
 Dann existiert genau ein normierter Polynom kleinsten Grades $m_F$ derart, dass $\forall P\in K[T]$\\
 $$m_F | _P \Leftrightarrow P(T) = 0  \quad \textrm{als Endomorphismus von F}$$
 Insb. gilt $m_F(F) = 0$\\
-Das Polynom $m_F (= \mu _F)$ heißt das minimalpolynom von F.\\																										
+Das Polynom $m_F (= \mu _F)$ heißt das Minimalpolynom von F.\\																										
 
 %Vorlesung 6
 
-
-
-
-\subsection{Satz:}
+\subsection{Satz: Trigonalisierbarkeit}
 $\enph$ V eindlich dim. und trigonalisierbar
 falls es eine Basis $\mathcal{B}$ von V gibt, sodass F Darstellungsmatrix der Form
 $$\begin{pmatrix}
@@ -1049,25 +1045,28 @@ $$\begin{pmatrix}
 Falls $\chi_F(T)$ in Linearfaktoren zerfällt dann ist F trigonalisierbar (Insb. falls K alg. abg. ist z.B. $ \mathbb{C}$)
 $$F^0 = Id_{iv}$$
 $$ F^i = \underbrace{F \circ \dots \circ F}_{\tx{i mal}}$$
-$P\in k[T] \quad P = \sum_{i=0}^mT^i$
+$P\in K[T] \quad P = \sum_{i=0}^mT^i$
 $$P(F): \sum a_i F^i: V\to V, v \mapsto \sum a_i F^i(v)$$
-\underline{Aufgabe:}\\
-komposition des Endomorphismus ... Produkt im Polynom
+\textbf{Aufgabe:}\\
+Komposition des Endomorphismus ... Produkt im Polynom
+% hier fehlt was vielleicht
 $$P(F) \circ f(F) = (P \cdot G)(F)$$
 
 \subsection{Satz: (Caley-Hamilton)}
 $$\chi_F(F) = 0_{iv} $$
 als Endomorphismus
-\subsection{Kor:} $A\in \mathcal{M}_{n\times x} (K)$
+\subsection{Kor: Charakteristische Polynome}
+$A\in \mathcal{M}_{n\times n} (K)$
 $$\chi_A(T) = T^n + \sum_{i=0}^{n-1} b_i T^i$$
-$$\Rightarrow A^n + b_{n-1} A^{n-1} + \dots  + b_0 En = 0$$
-\subsection{Satz:}
+$$\Rightarrow A^n + b_{n-1} A^{n-1} + \dots  + b_0 E_n = 0$$
+\subsection{Satz: normiertes Polynom}
 $ V \tx{endlichdim} / K \enph$
-Dann existiert genau ein normiertes Polynom $m_F(T)$ derart, dass $\forall P\in K[T]$:
+Dann existiert genau ein normiertes und minimales Polynom $m_F(T)$ kleinsten gradesb derart, dass $\forall P\in K[T]$:
 $$ m_F|_P \Leftrightarrow P(F) = 0$$
-\subsection{Def:}
+
+\subsection{Def: minimal Polynom}
 Das Polynom $m_F(T)$ heißt das Minimalpolynom von F. Insb. $m_F(F) = 0$
-\subsection{Bew:} Sei $$\mathcal{F} = \{ P\in K[T] \tx{ normiert } |P(F) = 0 \tx{ als Endomorphismus}\}$$
+\Bew{} {Sei $$\mathcal{F} = \{ P\in K[T] \tx{ normiert } |P(F) = 0 \tx{ als Endomorphismus}\}$$
 Caley.Hamilton
 $$\chi_F(T) \in \mathcal{F} \neq \varnothing$$
 Sei $m_F(T) \in \mathcal{F}$ Polynom kleinsten Grades.\\
@@ -1087,26 +1086,25 @@ $ \Rightarrow r = 0$ ( Sonst $\frac{1}{a_{(\grad(r))}} \cdot r(T) \in \mathcal{F
 Angenommen $m_F'$ ist normiert. wäre auch so:
 $$m_F'|_P \Leftrightarrow P(F) = 0 \forall P \in K[T]$$
 $$\Rightarrow m_F|_{m_F'} \quad \& \quad m_F'|_{m_F}$$ 
-
 $\left. \begin{array}{ll}
 m_F = & Q \cdot m_F' \\
 m_F' = & H \cdot m_F
 \end{array} \right\} \rightarrow Q,H \tx{ sind beide \underline{normiert}} $\\[10pt]
 Zu zeigen: \underline{$Q=H=1$}
 $$m_F = Q \cdot m_F' = Q \cdot H \cdot m_F$$
-K[T] \underline{Integritätsbereich}
+$K[T]$ \underline{Integritätsbereich}
 $$ \Rightarrow 1 = Q \cdot H$$
 $\grad(G\cdot H) = \grad (1) = 0$\\
 $\grad(G) + \grad(H) \Rightarrow G,H \in K $ und normiert\\
 (als Polynom) $\Rightarrow Q = H = 1$
+}
 
-\subsubsection{Bsp:}
+\subsubsection{Bsp: Minimalpolynom mit Hauptraum}
 $$A = \begin{pmatrix}
 0 & 1 \\
 0 & 0
 \end{pmatrix}$$
-$m_A? $
-
+$m_A \ ? $
 $$\chi_A(T) = T^2 = \det\begin{pmatrix}
 T & -1 \\
 0 & T
@@ -1120,10 +1118,10 @@ $$A^2 = \begin{pmatrix}
 0 & 0
 \end{pmatrix}$$
 $\rightarrow m_A(T) = T^2$
-\subsection{Lemma:}
-Gegeben $\enph$ V endlichdim / K , dann haben $\chi_F$ und $m_F$ dieselben Nullstellenn in K.
-\subsection{Bew:}
-$$m_F|_{\chi_F} \Rightarrow \chi_F = G \cdot m_F$$
+\subsection{Lemma: Nullstellen von $ \chi_F $ und $ m_F $}
+Gegeben $\enph$ V endlichdim / K , dann haben $\chi_F$ und $m_F$ dieselben Nullstellen in K.
+\Bew{}{
+$$m_{F|\chi_F} \Rightarrow \chi_F = G \cdot m_F$$
 $\forall \lambda \in K$ , falls $m_F(\lambda) = 0$
 $$ \Rightarrow \chi_F(\lambda) = 0$$
 
@@ -1139,8 +1137,9 @@ Sei $m_F(T) = T^d + \sum_{i=0}^{d-1} c_i T^i$\\
 &= \equalto{\ub{(\lambda^d + \sum c_i \lambda^i)}}{_{m_F(\lambda)}} \cdot v
 \end{align*}
 $v\neq 0 \quad m_F(\lambda) = 0$
+}
 
-\subsection{Satz:}
+\subsection{Satz: Diagonalisierbarkeit und Minimalpolynom}
 $\enph$ V endlichdim. / K ist diagonalisierbar gdw $m_F$ in lauter verschiedene Linearfaktoren zerfällt.
 
 $$m_F(T) = \prod_{i=1}^{k} (T-\lambda_i) : \lambda_i \neq \lambda_j \tx{ für } i\neq j $$
@@ -1198,7 +1197,7 @@ Unser Satz gilt für $ \dim(V) < n (n\in \mathbb{N}) \tx{ fest} $\\
 Also sei $ \dim(V) = n \ge 2 \ \&\  k \ge 2 $ \\
 $(*)$ \underline{Beh:} \\	
 $$ V = \ub{\ker(F-\lambda_i \cdot I_d)}_{\substack{V(\lambda_i)  \\ (\dim(V(\lambda_i)) \ge 1 !)}} \oplus \ub{\im(F-\lambda_i \cdot I_d)}_{\substack{\tx{zu zeigen:} \\ (= V(\lambda_2) \oplus \dots \oplus V(\lambda_k))}} $$
-\underline{Bew:} Sei $ R(T) := \prod_{i=2}^{k}(T-\lambda_i) \quad \bigg[ \Rightarrow m_f(T) = R(T) (T-\lambda_1)\bigg] $\\
+\underline{Bew:} Sei $ R(T) := \prod_{i=2}^{k}(T-\lambda_i) \quad \Big[ \Rightarrow m_f(T) = R(T) (T-\lambda_1)\Big] $\\
 Division mit Rest: $ \exists Q(T) \& r\in K $, sodass:
 $R(T) = Q(T) (T-\lambda1) + r $\\
 $0 \neq R(\lambda_1) = 0 + r \Rightarrow r \neq 0 \in K$\\
@@ -1260,10 +1259,10 @@ T+1
 \end{array} \right.$$
 
 \chapter{Die Jordansche Normalenform}
-\subsection{Lemma:}
+\subsection{Lemma: Invarianzen}
 $\enph \quad U \subset V$ Untervektorraum:\\
-Dann ist U F-invariant gdw
-$ U(F-\lambda Id)$- invariant ist für $ \forall \lambda \in K$
+Dann ist U $F$-invariant gdw
+U $ (F-\lambda \; Id)$- invariant ist für $ \forall \lambda \in K$
 \subsection{Bsp:}
 $\enph \ V$ endlichdim. derart, dass 
 $F^m = 0$ als Endomorphismus) und $m>0$ minimal (,, F ist nilpotent``)\\
@@ -1283,10 +1282,10 @@ $$\begin{pmatrix}
 \subsection{Def: Hauptraum}
 Sei $\lambda \in K$ ein Eigenwert von $\enph \ V$ endlichdim.
 $$ V(\lambda) = \ker ( F-\lambda )$$
-Eigenraum von F bzgl. $\lambda$
+\emph{Eigenraum} von F bzgl. $\lambda$
 $$ \ker(F-\lambda) \subset \ker(F-\lambda)^2 \subset \ker(F-\lambda)^3 \subset \dots$$
 $$V_\lambda = \bigcup_{n\in \mathbb{N}} \ker(F-\lambda)^n$$
-ist ein Hauptraum von F bzgl. $\lambda$
+ist ein\emph{ Hauptraum} von F bzgl. $\lambda$
 \subsubsection{Bem:}
 $V_\lambda$ ist ein Unterraum und $V_\lambda$ ist F-invariant.\\
 \underline{Warum ?} Weil $V_\lambda$ $(F-\lambda)$-invariant ist.
@@ -1294,14 +1293,13 @@ $V_\lambda$ ist ein Unterraum und $V_\lambda$ ist F-invariant.\\
 $$\Rightarrow \bigcup_{n\in \mathbb{N}} \ker(F-\lambda)^n = 0$$
 \subsection{Bew:}
 Sei $v \in \bigcup_{n \in \mathbb{N}}(F-\lambda)^n$
-$$\Rightarrow \exists n \in \mathbb{N} | (F-\lambda)^n(v) = 0$$
+$$\Rightarrow \exists \ n \in \mathbb{N} \ | \ (F-\lambda)^n(v) = 0$$
 $n=0$\\
-$\rightarrow \ub{Id(v)}_{=V} = 0$\\
-sonst: $$(F-\lambda)((F-\lambda)^{n-1}(v)) = 0$$
+$\rightarrow \ub{Id(v)}_{=V} = 0\ $ sonst: $$(F-\lambda)((F-\lambda)^{n-1}(v)) = 0$$
 $$\Rightarrow (F-\lambda)^{n-1}(v) \in \ker(F-\lambda) = 0$$
 $$\Rightarrow (F-\lambda)^{n-1}(v) = 0$$
-\subsection{Lemma:}
-Seien $\lambda_1,\dots, \lambda_k$ verschiedene Elemente aus K
+\subsection{Lemma: Haupträume sind disjunkt}
+Seien $\lambda_1,\dots, \lambda_k$ verschiedene Elemente aus K (Eigenwerte)
 $$\Rightarrow V_{\lambda_i} \cap \sum^k_{\substack{ j=1 \\ j \neq i}} V_{\lambda_j} = \{0\}$$
 \subsection{Bew:}
 $V_{\lambda_j}$ ist $(F-\lambda_j)$.invariant\\
@@ -1336,12 +1334,12 @@ $$V_\lambda = \bigcup \equalto{\ker(F-\lambda)^n}{(F-\lambda)\circ \dots \circ (
 $V(\lambda) = \ker (F-\lambda) = \{0\}  \Leftrightarrow \chi_F(\lambda) \neq 0 \Rightarrow V_\lambda = \{0\}$\\
 $\lambda_1,\dots,\lambda_k \tx{ verschiedene Eigenwerte}$\\
 $\Rightarrow V_{\lambda_i}  \bigcap \sum^k_{\substack{i=1 \\ i \neq j}} V_{\lambda_i} = \{0\}$
-\subsection{Bem:}
+\subsection{Bem: Invarianzen}
 $V_\lambda $ ist $(F-\lambda)$-invariant\\
 $\Rightarrow V_\lambda$ ist F-invariant
-\subsection{Lemma:}
+\subsection{Lemma: Ordnung}
 Sei $\lambda \in K $\\
-$\dim V_\amalg = \ord_\lambda (\chi_F)$\\
+$\dim V_\lambda = \ord_\lambda (\chi_F)$\\
 Ferner hat $ F \upharpoonright V_\lambda $ Matrixdarstellung der Form
 $\begin{pmatrix}
 \lambda & & * \\
@@ -1351,10 +1349,10 @@ $\begin{pmatrix}
 
 \subsection{Bew}
 Sei $K = \tx{ord}_\lambda ( \chi_F(T))
-\Rightarrow \chi_F (T) = (T - \lambda)^K \cdot Q(T)$ wobei: $Q(\lambda) \neq 0$ 
-\subsection{Beh}
+\Rightarrow \chi_F (T) = (T - \lambda)^K \cdot Q(T)$ wobei: $Q(T) \neq 0$ 
+\subsubsection{Behauptung:}
 Es gibt einen $F$-inv. Unterraum $U \subset V$ der dimension $K$, so dass $F \upharpoonright U$ matrix darstellung $$\begin{pmatrix}
-\lambda & & \star \\ & \ddots & \\ 0 & & \lambda
+\lambda & & * \\ & \ddots & \\ 0 & & \lambda
 \end{pmatrix}$$
 
 Falls $ n=0  \rightarrow $ Ok!\\
@@ -1374,12 +1372,12 @@ $$ Q(\lambda)\neq 0$$
 
 Nach I.A. existiert einen $\tilde{F}$- Invarianten Unterraum $\tilde{U} \subset V / U$ der Dimension $n-1$, so dass die Matrixdarstellung von $\tilde{F}$ der Form 
 $$\begin{pmatrix}
-\lambda & & \star \\ & \ddots & \\ 0 & & \lambda
+\lambda & & * \\ & \ddots & \\ 0 & & \lambda
 \end{pmatrix}$$
 besitzt.
 Sei $\bar{v}_2, \dots, \bar{v}_K$ eine Basis von $\bar{U}$ so dass die Darstellungsmatrix von $\tilde{F}$ bzg $\{ \bar{v}_2, \dots, \bar{v}_K \}$ 
 $$A =\begin{pmatrix}
-\lambda & & \star \\ & \ddots & \\ 0 & & \lambda
+\lambda & & * \\ & \ddots & \\ 0 & & \lambda
 \end{pmatrix} \tx{ist.}$$
 Die Vektoren $\underbrace{\{ v, v_2 \dots , v_K \}}_{\tx{Vektoren aus \underline{V}}}$
 sind linear unabhängig.\\
@@ -1418,13 +1416,13 @@ Sei $\omega \in V_\lambda$\\
 $\Rightarrow \exists s \in \mathbb{N}$\\
 $(F-\lambda)^s(\omega) = 0 \Rightarrow (F -\lambda)^s(\ov{\omega}) = 0$\\
 $\Rightarrow \ov{\omega} = 0 \Rightarrow \omega \in U$
-\subsection{Def:}
-$\enph$ heißt nilpotent falls es eine feste Zahl m existiert, so dass $\underbrace{F\circ \dots \circ F}_{m} = F^m = 0$ auf V ist.
-\subsection{Lemma:}
-Sei $\enph \quad \dim V = n$ Folgende Aussagen sin äquivalent:
+\subsection{Def: Nilpotenz}
+$\enph$ heißt nilpotent falls es eine feste Zahl $m$ existiert, so dass $\underbrace{F\circ \dots \circ F}_{m} = F^m = 0$ auf V ist.
+\subsection{Lemma: Nilpotenz}
+Sei $\enph \ \dim V = n$ Folgende Aussagen sind äquivalent:
 \begin{itemize}
 	\item[1)] F ist nilpotent
-	\item[2)] $\forall v \in V \exists m_v \in \mathbb{N}: F^{m_v}(v) = 0$
+	\item[2)] $\forall v \in V \ \exists \ m_v \in \mathbb{N}: F^{m_v}(v) = 0$
 	\item[3)] Es existiert eine Basis von V, so dass F Darstellungsmatrix $$\begin{pmatrix}
 	0 & & *\\
 	& \ddots \\
@@ -1475,10 +1473,10 @@ Sei $\enph \quad \dim V = n$ Folgende Aussagen sin äquivalent:
 	$\boxed{4 \Rightarrow 1}$  Caley-Hamilton\\
 	$$F^n = \chi_F(F) = 0$$
 }
-\subsection{Satz: Jorda-Charelley Zerlegung}
+\subsection{Satz: Jordan-Charelley Zerlegung}
 $\enph \ V$ endlichdim.\\
-Falls $ \chi_F(T) $ in linearfaktoren zerfällt dann ist $ V = \bigoplus\limits_{i=1}^{k} V_{\lambda_i} \quad \lambda_1,\dots, \lambda_k$ die verschiedenen Eigenwerte und F lässt sich als Blockmatrix darstellen
-$$\begin{pmatrix}
+Falls $ \chi_F(T) $ in linearfaktoren zerfällt dann ist $ V = \bigoplus\limits_{i=1}^{k} \,V_{\lambda_i} \quad \lambda_1,\dots, \lambda_k$ die verschiedenen Eigenwerte und F lässt sich als Blockmatrix darstellen
+$$ F = \begin{pmatrix}
 A_1 \\
 & A_2 \\
 & & A_3 \\
@@ -1529,15 +1527,15 @@ $$\begin{pmatrix}
 $\lambda_1,\dots , \lambda_k$ verschiedene Eigenwerte
 $$\chi_F(T) = \prod_{i=1}^{k}(T-\lambda)^{d_i}$$
 $\dim V = \grad \chi_F(T) = n\sum_{i=1}^{k} \equalto{d_i}{\dim V_{\lambda_i}}$\\\\
-$$\dim(\sum_{i=1}^{k} V_{\lambda_i}) \buildrel V_{\lambda_i} \bigcap \sum_{\substack{j=1 \\ j \neq i}}^{k} V_{\lambda_j} = \{0\}\over = \sum d_i = n = \dim V$$
+$$\dim(\sum_{i=1}^{k} V_{\lambda_i}) \buildrel V_{\lambda_i} \bigcap \sum\limits_{\tiny{\substack{j=1 \\ j \neq i}}}^{k} V_{\lambda_j} = \{0\}\over = \sum d_i = n = \dim V$$
 $\Rightarrow V = \bigoplus^{k}_{i=1} V_{\lambda_i}$\\
 V besitzt eine Basis $ \mathcal{B} $, welche aus der Vereinigung der Basen jedes $V_{\lambda_i}$ besteht.
 
 $F$ wird durch $\equalto{F \upharpoonright V_\lambda\ ,}{\equalto{\begin{pmatrix}
-		\lambda_1 & & \star \\ & \ddots & \\ 0 & & \lambda_1
-		\end{pmatrix}}{A_1}} \dots \ ,\equalto{F \upharpoonright V_{\lambda_K}}{\equalto{\begin{pmatrix}
-		\lambda_K & & \star \\ & \ddots & \\ 0 & & \lambda_K
-		\end{pmatrix}}{A_K}}$ bestimmt \\
+		\lambda_1 & & * \\ & \ddots & \\ 0 & & \lambda_1
+		\end{pmatrix}}{A_1}} \dots \ ,\equalto{F \upharpoonright V_{\lambda_k}}{\equalto{\begin{pmatrix}
+		\lambda_k & & * \\ & \ddots & \\ 0 & & \lambda_k
+		\end{pmatrix}}{A_k}}$ bestimmt \\
 
 $$\begin{pmatrix}
 A_1 &&&\\ &A_2&&\\ &&\ddots &\\ &&&A_K
@@ -1559,18 +1557,18 @@ $G\circ H (w) \buildrel{W(w) \in V_{\lambda_i}} \over{=} \lambda_1 H(w)$
 
 %neue vorlesung wieder mit pizarro
 
-\subsection{Def:}
+\subsection{Def: F-adaption}
 $ \enph $ V endlichdim.\\
 Eine Basis $ \{v_1,\dots,v_n\} $ ist F-adaptiert, falls:\\
 $$F(v_1) = 0$$
 $$2\le j \le n \quad F(v_j) = \casess{0}{}{v_{j-1}}{}$$
-\subsection{Bem:}
+\subsubsection{Bem:}
 Falls V eine F-adaptierte Basis besitzt, dann ist $ \enph $ nilpotent.
 \subsection{Bew:}
 Sei $ \{v_1,\dots ,v_n\} $ F-adaptiert\\
 Es genügt zu zeigen, dass $ F^n = 0 $ (als Endomorphismus)
 $$F^n(\equalto{v}{\sum_{j=1}^{n} \lambda_j v_j}) = \sum_{j=1}^{n} \lambda_j \ub{F^n(v_j)}_{=0} = 0$$
-\underline{Notation}
+\textbf{Notation:}
 $$ \mathcal{N}_m = \begin{pmatrix}
 0 & 1 \\
 & 0 \\
@@ -1584,27 +1582,26 @@ $$ \mathcal{N}^m_m = \begin{pmatrix}
 & \ddots \\
 0 & & 0
 \end{pmatrix}$$
-\subsection{Def:}
+\subsection{Def: Index}
 $ \enph $ nilpotent. Es gibt $ m \le n $ kleinste Zahl, sodass 
 $$ \ker(F^m) \subsetneq \dots \ker (F^m) \subsetneq \ker(F^{m+1}) \subsetneq \dots \subsetneq V$$
-m heißt der Index von F
+$m$ heißt der Index von F
 $$ V = \ker(F^m) \bigoplus F^m(V)$$
-\subsection{Satz:}
-Sei $ \enph \dim(V) = n $ und $ \mathcal{B} $ eine F-adaptierte Basis von F. Dann hat F Matrixdarstellung der Form
+\subsection{Satz: Index}
+Sei $ \enph \ \dim(V) = n $ und $ \mathcal{B} $ eine F-adaptierte Basis von F. Dann hat F Matrixdarstellung der Form
 $$\begin{pmatrix}
 \mathcal{N}_{k_1}\\
 & \ddots \\
 & & \mathcal{N}_{k_r}
 \end{pmatrix}$$
-$$\sum_{j=1}^{r} k_j = n \quad \tx{ Index} (F) = \tx{max} \{k_j\}_{1 \le j \le r}$$
+$$\sum_{j=1}^{r} k_j = n \quad \tx{ Index} (F) = \tx{max} \{k_j\}_{1 \le j \le r \ oder \ n}$$
 \subsection{Bew:}
 Sei $  \{v_1,\dots,v_n\} $ F-adaptiert\\
 Sei $ k \le i_1 < \dots < i_r < n $ eine Aufzählung der Menge $ \{j | F(v_{j+1})=0\} $
-\nopagebreak
-$$v_1,v_2,\dots,v_{i_j},v_{i_{j-1}}, \dots\quad $$
-\nopagebreak
+$$v_1,v_2,\dots,v_{i_j},v_{i_{j+1}}, \dots\quad $$
+\pagebreak
 $$ \begin{array}{rrrrrrrrrrrrrrrr}
-v_1 & v_2 & \dots & v_{i_1} & v_{i_{j-1}} & & & & & & & & & & &
+v_1 & v_2 & \dots & v_{i_1} & v_{i_{j+1}} & & & & & & & & & & &
 \end{array} $$
 $$\begin{pmatrix}
 0 & 1\\
@@ -1631,8 +1628,8 @@ $$\begin{pmatrix}
 
 % nacher matrix foto: done 
 
-\subsection{Satz:}
-Sei $ F: V \to V  $ nilpotent mit Index k. Gegeben einen Unterraum $ U \subset V $ derart, dass $ U \cap \ker(F^{k-1}) = \{0\} $. Dann lässt sich jede Basis von $ U $ zu einer $ F $-adaptierten Basis von $ V $ ergänzen.
+\subsection{Satz: F-adaptierte Basis}
+Sei $ F: V \to V  $ nilpotent mit Index $k$. Gegeben einen Unterraum $ U \subset V $ derart, dass $ U \cap \ker(F^{k-1}) = \{0\} $. Dann lässt sich jede Basis von $ U $ zu einer $ F $-adaptierten Basis von $ V $ ergänzen.
 
 \subsection{Kor:}
 Jeder nilpotente Endomorphismus besitzt eine $ F $-adaptierte \underline{Basis}
@@ -1641,7 +1638,7 @@ $$ B_1 \quad \subset \quad  B_2 \ \ \subset \ \  \dots B_{k-1} \quad \subset \qu
 $$\bigg(F(U_1) \dots F(U_2) \rightarrow B_{k-1} \qquad U_1, \dots U_r \in B_k \setminus \ker(F^{k-1}) \bigg)$$
 $ \ker F^{K-1} $ hat ein Komplement $ \equalto{U}{\substack{U_1 \\ \vdots \\ U_j}}  $ in $ \ker F^k $
 
-\subsection{Beh:}
+\subsubsection{Behauptung:}
 $ \{F(U_1), \dots , F(U_r) \} $ sind lin. unabh. \\
 $ \rightarrow $ sie bilden die Basis von $ F(w) $
 
@@ -1671,47 +1668,53 @@ v_{i_2+2} &= U_2 \\
 
 \subsection{Folgerung}
 Jeder nilpotente Endomorphismus lässt sich bezüglich  einer geeigneten Basis durch eine Blockmatrix darstellen:
-$$\left (\begin{array}{*{20}c}
-0 & 1\\
-& 0 \\
-& & \ddots\\
-& & & 0 & 1\\
-& & & & 0\\
-& & & & & 0 & 1\\
-& & & & & & 0 \\
-& & & & & & & \ddots\\
-& & & & & & & & 0 & 1\\
-& & & & & & & & & 0\\
-& & & & & & & & & & & \ddots \\
-& & & & & & & & & & & & 0 & 1\\ 
-& & & & & & & & & & & & & 0 \\ 
-& & & & & & & & & & & & & & \ddots\\ 
-& & & & & & & & & & & & & & & 0 & 1\\ 
-& & & & & & & & & & & & & & & & 0\\
-\end{array} \right)$$
+
+\begin{center}
+	\mbox{\scriptsize $\left (\begin{array}{*{20}c}
+		0 & 1\\
+		& 0 \\
+		& & \ddots\\
+		& & & 0 & 1\\
+		& & & & 0\\
+		& & & & & 0 & 1\\
+		& & & & & & 0 \\
+		& & & & & & & \ddots\\
+		& & & & & & & & 0 & 1\\
+		& & & & & & & & & 0\\
+		& & & & & & & & & & & \ddots \\
+		& & & & & & & & & & & & 0 & 1\\ 
+		& & & & & & & & & & & & & 0 \\ 
+		& & & & & & & & & & & & & & \ddots\\ 
+		& & & & & & & & & & & & & & & 0 & 1\\ 
+		& & & & & & & & & & & & & & & & 0\\
+		\end{array} \right)$}
+\end{center}
 
 \subsection{Kor: Jordansche Normalform}
 Jeder Endomorphismus eines endl. dimensionalen VR, dessen charakteristisches Polynom in Linearfaktoren zerfällt, lässt sich bezüglich einer geeigneten Basis durch eine Blockmatrix folgender Form darstellen:
-$$\left (\begin{array}{*{20}c}
-\lambda_1 & 1\\
-& \lambda_1 \\
-& & \ddots\\
-& & & \lambda_1 & 1\\
-& & & & \lambda_1\\
-& & & & & \lambda_2 & 1\\
-& & & & & & \lambda_2 \\
-& & & & & & & \ddots\\
-& & & & & & & & \lambda_2 & 1\\
-& & & & & & & & & \lambda_2\\
-& & & & & & & & & & & \ddots \\
-& & & & & & & & & & & & \lambda_3 & 1\\ 
-& & & & & & & & & & & & & \lambda_3 \\ 
-& & & & & & & & & & & & & & \ddots\\ 
-& & & & & & & & & & & & & & & \lambda_3 & 1\\ 
-& & & & & & & & & & & & & & & & \lambda_3\\
-\end{array} \right)$$
 
-\subsection{Bew:}
+\begin{center}
+	\mbox{\scriptsize $\left (\begin{array}{*{20}c}
+		\lambda_1 & 1\\
+		& \lambda_1 \\
+		& & \ddots\\
+		& & & \lambda_1 & 1\\
+		& & & & \lambda_1 & 0\\
+		& & & & & \lambda_2 & 1\\
+		& & & & & & \lambda_2 \\
+		& & & & & & & \ddots\\
+		& & & & & & & & \lambda_2 & 1\\
+		& & & & & & & & & \lambda_2\\
+		& & & & & & & & & & & \ddots \\
+		& & & & & & & & & & & & \lambda_3 & 1\\ 
+		& & & & & & & & & & & & & \lambda_3 \\ 
+		& & & & & & & & & & & & & & \ddots\\ 
+		& & & & & & & & & & & & & & & \lambda_3 & 1\\ 
+		& & & & & & & & & & & & & & & & \lambda_3\\
+		\end{array} \right)$}
+\end{center}
+
+\Bew{}{
 Induktion auf n\\
 $ \boxed{k=1} $\\
 $ F = 0 $ als Endomorphismus $ \rightarrow $ Jede Basis ist F-adaptiert\\
@@ -1725,7 +1728,7 @@ $U \subset \mathcal{W} = \spa(u_1,\dots,u_j)$\\
 $ W \cap V' = \{0\} $\\
 $ F(W) \subset \ker(F^{k-1}) = V' $ (Weil $ F^k = 0 $), $V'$ ist F-invariant und\\
 $ F \upharpoonright V' = V' \to V' $ hat Index \underline{\underline{$ k-1 $}}.
-\subsection{Beh:}
+\subsubsection{Beh:}
 $ \{0\} = F(\mathcal{W}) \cap \ker(F^{k-2}) $\\
 Sei $ u \in F(\mathcal{W}) \cap \ker(F^{k-2}) $\\
 $ \Rightarrow F^{k-2}(u) = 0 $\\
@@ -1739,12 +1742,11 @@ $ W \cap V' = \{0\} $\\
 Es genügt zu zeigen, dass die Basis $ \{v_1,\dots,v_n\} $ \underline{F-adaptiert} ist.\\
 z.B. $$F(v_{j+1})  = V'_{i_1} = F(u_1)$$
 $ \Rightarrow u_1 - \ub{v_i +1}_{\in V'} \in \ker(F) \subset V' $\\
-$ \Rightarrow u_1 \in V' \cap W = \{0\} $ \underline{Widerspruch !}\\\\
-
-$ \enph $ nilpotent index K.
-
+$ \Rightarrow u_1 \in V' \cap W = \{0\} $ \underline{Widerspruch !}\\[5pt]
+$ \enph $ nilpotent Index K.
+\pagebreak
 % blockblatt markus 1
-
+}
 \subsection*{Beispiel:}
 $$A = \begin{pmatrix}
 1 &1&0&1\\0&2&0&0\\-1&1&2&1\\-1&1&0&3
@@ -1767,16 +1769,17 @@ $ \ker(A - 2 E_4) = \{(x_1,x_2,x_3,x_4) | -x_1 +x_2 + x_4 = 0\} $
 
 \chapter{Dualität}
 
-\subsection{Def:}
-Sei $V$ ein $K$-VR Der Dualraum $V^*$ ist die kollektion aller linearen Abbildungen $V \to K$.
-\subsubsection{Bem:} $V^*$ ist ein $K$-vektorraum. $F + G: V\to K, \ v\mapsto F(v) + G(v)$ ist linear.\\
-$\lambda \in K, \ \lambda \cdot F = V \to K, \ v \mapsto \lambda \cdot F(v)$ ist linear.
+\subsection{Def: Dualraum}
+Sei $V$ ein $K$-VR Der Dualraum $V^*$ ist die Kollektion aller linearen Abbildungen $V \to K$.
+\subsubsection{Bem:} $V^*$ ist ein $K$-Vektorraum.\\
+$F + G: V\to K, \ v\mapsto F(v) + G(v)$ ist linear.\\
+$\lambda \in K, \ \lambda \cdot F : V \to K, \ v \mapsto \lambda \cdot F(v)$ ist linear.
 
-
-\subsection{Def:} Sei V endlichdim und wählte eine Basis $ \mathcal{B} = \{ b_1,\dots,b_n\} $ von  V.\\
+\subsection{Def: Duale Basis}
+Sei V endlichdim und wählte eine Basis $ \mathcal{B} = \{ b_1,\dots,b_n\} $ von  V.\\
 Die duale Basis $ \mathcal{B}^* = \{b_1^*,\dots,b_n^*\} $ ist eine Kollektion linearer Abbildungen derart, dass $ b^*_i (b_j) = \delta_{ij} = \casess{1}{i=j}{0}{\tx{sonst}} $\\
 Insbesondere:
-$$b^*_i(v) = b_i^* (\sum_{j=1}^{n} \lambda_j \cdot \backepsilon_j) = \lambda_i$$
+$$b^*_i(v) = b_i^* (\sum_{j=1}^{n} \lambda_j \cdot b_j) = \lambda_i$$
 \subsubsection*{Bem:} Falls V endlichdim. ist, dann ist $ \mathcal{B}^*  $ eine Basis von $ V^* $ und sonst $ V\simeq V^* $
 
 \Bew{}{
@@ -1791,32 +1794,31 @@ $$b^*_i(v) = b_i^* (\sum_{j=1}^{n} \lambda_j \cdot \backepsilon_j) = \lambda_i$$
 	
 	Insb. $ V\to V^* $ ist ein Isomorphismus $  b_i \mapsto b_i^* $\\
 	\underline{Achtung:} Der Isomorphismus $ V\simeq V^* $ hängt von der Basis $ \{b_1,\dots,b_n\} $ ab! NICHT KANONISCH}
-\subsection{Lemma:} 
+\subsection{Lemma: kanonischer Monomarphismus} 
 kanonischer Monomorphismus $ V \buildrel \varphi \over \hookrightarrow (V^*)^* , v \mapsto \varphi_v:\quad V^* \to K , F \mapsto F(v)$ 
 \subsection{Bew:} $ \varphi $ ist wohldefiniert 
 $$ \varphi_v(F+G) = (F+G) (v) = F(v)+ G(v) \quad \tx{Ok!}$$\\
 Zu zeigen: $ \varphi $ ist injektiv (Übungsaufgabe !)
-\subsection{Korollar:} Wenn V endlichdim. ist, $ V \simeq V^* $ \underline{kanonisch}
+\subsection{Korollar: }
+Wenn V endlichdim. ist, $ V \simeq V^* $ \emph{kanonisch}
 
 \Bew{}{ 
 	$$\dim V = \dim V^* = \dim (V^*)^* \Rightarrow \varphi: V \to (V^*)^* \tx{ ist surjektiv} $$
 	$\Rightarrow $ ein Isomorphismus}
-\subsection{Lemma:}
+\subsection{Lemma: Duale Transformation}
 Sei $V$ endlich und wähle Basen $\mathcal B = \{b_1 \dots b_i \}$ und $\mathcal B' = \{b_1' \dots b_i' \}$ von $V$.
 
-Seien $ \mathcal{B}^* $ und $ (\mathcal{B}')^* $ die entsprechenden dualen Basen in $ V^* $. Wenn A die Transformationsmatrix von $ \mathcal{B} $ nach $ \mathcal{B}' $ ist, dann ist die Transformationsmatrix $ \mathcal{B^*} $ nach $ (\mathcal{B}')^* \ \ (A^*)^{-1}$
-\subsection{Bew:}
+Seien $ \mathcal{B}^* $ und $ (\mathcal{B}')^* $ die entsprechenden dualen Basen in $ V^* $. Wenn A die Transformationsmatrix von $ \mathcal{B} $ nach $ \mathcal{B}' $ ist, dann ist die Transformationsmatrix $ \mathcal{B^*} $ nach $ (\mathcal{B}')^* \ \ (A^\top)^{-1}$
+\Bew{}{
 $$\begin{pmatrix}
-b^*_1\\
+b'_1\\
 \vdots\\
-b^*_n
+b'_n
 \end{pmatrix} = A \cdot \begin{pmatrix}
 b_1\\
 \vdots\\
 b_n
-\end{pmatrix}$$
-Sei $ X $ die Transformationsmatrix von $ \mathcal{B}' $ nach $ (\mathcal{B}') ^* $
-$$\begin{pmatrix}
+\end{pmatrix} \quad \begin{pmatrix}
 b_1'^*\\
 \vdots\\
 b_n'^*
@@ -1825,6 +1827,7 @@ b_1^*\\
 \vdots\\
 b_n^*
 \end{pmatrix}$$
+Sei $ X $ die Transformationsmatrix von $ \mathcal{B}' $ nach $ (\mathcal{B}') ^* $
 
 $$\begin{pmatrix}
 b_1^*\\
@@ -1832,8 +1835,7 @@ b_1^*\\
 b_n^*
 \end{pmatrix} \cdot \begin{pmatrix}
 b_1 & \dots b_n
-\end{pmatrix} = E_n $$
-$$\begin{pmatrix}
+\end{pmatrix} = E_n \quad \begin{pmatrix}
 b_1'^*\\
 \vdots\\
 b_n'^*
@@ -1849,9 +1851,9 @@ b_n'^*
 b_1' & \dots b_n'
 \end{pmatrix}\\
 &= X \cdot \begin{pmatrix}
-b_1'^*\\
+b_1^*\\
 \vdots\\
-b_n'^*
+b_n^*
 \end{pmatrix} \bigg( A \cdot \begin{pmatrix}
 b_1\\
 \vdots\\
@@ -1865,8 +1867,8 @@ b_n^*
 b_1 & \dots b_n
 \end{pmatrix} \cdot A^\top
 \end{align*}
-
-$$En = X \cdot En \cdot A^\top = X \cdot A^\top \Rightarrow X = (A^\top)^{-1}$$
+$$E_n = X \cdot E_n \cdot A^\top = X \cdot A^\top \Rightarrow X = (A^\top)^{-1}$$
+}
 
 \subsection{Def:}
 Sei $F: V \to W$ eine lineare Abbildung. Definiere die duale Abbildung $F^* : W^* \to V^*$, $\psi \mapsto \psi \circ F$
@@ -1878,6 +1880,8 @@ V & \buildrel F \over \longrightarrow & W \\
 \equalto{\Psi \circ F }{F^*(\Psi)} & & K
 \end{array}$$
 
+% verbessere mit tikz
+
 \subsubsection*{Bem:}
 $F^*$ ist linear. 
 $$F^* (\psi_1 + \psi_2) = (\psi_1 + \psi_2) \circ F = \psi_1 \circ F + \psi_2 \circ F = F^* (\psi_1) + F^* (\psi_2)$$
@@ -1888,7 +1892,7 @@ von $ W^* $ nach $ U^* $:
 $$(F\circ G)^* = G^* \circ F^*$$
 \subsection{Bew:} $ \Psi \in W^* \quad \Psi \circ W \to K $ 
 $$(F \circ G)^*(\Psi) = \ub{\Psi\circ F}_{F^*(Psi)} \circ G = G^* \circ F^*(\Psi)$$
-\underline{Eigenschaften:}
+\textbf{Eigenschaften:}
 \begin{itemize}
 	\item[a)] $ (Id_{I_{V}})^* = Id_{I_{V^*}} $
 	\item[b)] $ (F+G)^* = F^* + G^* $
@@ -1897,7 +1901,8 @@ $$(F \circ G)^*(\Psi) = \ub{\Psi\circ F}_{F^*(Psi)} \circ G = G^* \circ F^*(\Psi
 \end{itemize}
 
 $$(Id_{iv})^* (\psi) = \psi \circ Id_{iv} = \psi$$
-\subsubsection*{Bem:} Falls $F^* =0$ dann ist $\underline{F = 0}$. Feiner, falls $v$ und $W$ endlich dimensional sind.
+\subsubsection*{Bem:}
+Falls $F^* =0$ dann ist $\underline{F = 0}$. Feiner, falls $V$ und $W$ endlich dimensional sind.
 $$G: W^* \to V^* \tx{ lin. Abbildung}$$ dann gilt es $$F: V \to W \tx{ so dass } F^* = G$$
 
 \Bew{}{
@@ -1994,7 +1999,7 @@ F: V \to W \rightarrow F^* &\to V^* \\
 \end{align*}
 $ (F\circ G)^* G^* \circ F^* $\\
 $ (Id_{IV})^* = Id_{IV^*} $\\
-$ V,W $ endlichdim $ \rightarrow * $ \underline{\underline{Isonorphismus}} 
+$ V,W $ endlichdim $ \rightarrow * $ \underline{\underline{Isomorphismus}} 
 
 \subsubsection*{Bem}
 $ \enph $ lineare Abb. mit Darstellungsmatrix $ A = (a_{ij}) $ bzgl. der Basen $ \mathcal{B} = \{b_1,\dots ,b_n\} , \mathcal{C}= \{c_1,\dots,c_m\} $\\
@@ -2017,11 +2022,11 @@ Darstellungsmatrix von $ F^* $ bzgl. $ \mathcal{C}^* \mathcal{B}^* $ ist $ A^\to
 	\end{array} \rightarrow A^\top \tx{ist die Darstellungs matrix}$$
 }
 
-\subsection{Lemma:}
+\subsection{Lemma: $ V $ und $ V^* $}
 $$ V = \bigoplus_{i = 1}^{n} V_i$$
 $$ \Rightarrow V^* \simeq \bigoplus_{i=1}^{n} V_i^*$$
 $ F: V \to K $ ist eindeutig bestimmt durch $ F \upharpoonright V_1, \dots , F \upharpoonright V_n $
-\subsection{Lemma:}
+\subsection{Lemma: Duale Endomorphismen}
 $ \enph $ linear
 \begin{itemize}
 	\item[a)] F injektiv $ \Leftrightarrow F^* $ surjektiv
@@ -2074,15 +2079,15 @@ $ \buildrel F^* \tx{ inj.} \over \Rightarrow G =0 $ als lineare Abbildung\\
 $ \Rightarrow B = \emptyset \Rightarrow Z = 0 \Rightarrow F $ surjektiv
 
 \section{Duale Paarung}
-\subsection{Def:}
+\subsection{Def: Bilinearität}
 Seien $ V,W $ K-VR\\
-Eine Abbildung $ \varphi: V \cdot W \mapsto K $ ist bilinear, wenn $ \varphi $ linear in jeder Koordinate ist.
+Eine Abbildung $ \varphi: V \times W \mapsto K $ ist bilinear, wenn $ \varphi $ linear in jeder Koordinate ist.
 \begin{itemize}
 	\item[a)] $ \varphi(v, \lambda_1w_1 + \lambda_2 w_2) = \lambda_1 \varphi(v, w_1) + \lambda_2 \varphi(v,w_2) $
 	\item[b)] $ \varphi(\lambda_1 v_1 + \lambda_2 v_2, w) \;= \lambda_1 \varphi(v_1,w) + \lambda_2 \varphi(v_2,w) $
 \end{itemize}
 
-\subsubsection*{Bem:} Falls $V, W$ endlich dimensional mit Basen $\mathcal B = \{b_1 \dots b_n\}$ von V\\
+\subsubsection*{Bem: !!!} Falls $V, W$ endlich dimensional mit Basen $\mathcal B = \{b_1 \dots b_n\}$ von V\\
 und $\mathcal C = \{c_1 \dots c_m\}$ von W. Dann ist $\varphi$ eindeutig bestimmt durch die $(n \times m)$-Matrix $A= (\varphi(b_i, c_j))$
 \begin{align*}
 \varphi(v, w) &= \varphi \bigg(\sum_{i \leq n} \lambda_i b_i, \sum_{j \leq m}\mu_j c_j\bigg)\\
@@ -2094,7 +2099,7 @@ und $\mathcal C = \{c_1 \dots c_m\}$ von W. Dann ist $\varphi$ eindeutig bestimm
 \end{align*}
 
 \subsubsection{Bem:}
-Falls wir Basen $ \mathcal{B}' $ von $ v $ und $ \mathcal{C}' $ von $ W $ gewählt hätten, dann ist die Darstellungsmatrix von $ \varphi $
+Falls wir Basen $ \mathcal{B}' $ von $ V $ und $ \mathcal{C}' $ von $ W $ gewählt hätten, dann ist die Darstellungsmatrix von $ \varphi $
 $$\mathcal{M}(\mathcal{B},\mathcal{B}')^\top \cdot A \cdot \mathcal{M}(\mathcal{C}, \mathcal{C}')$$
 $$ \begin{pmatrix}
 \lambda_1\\
