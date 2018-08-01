@@ -2373,7 +2373,7 @@ v &\mapsto \varphi(v,v)
 $ \dim V = n $\\
 Sei $ \mathcal{B} = \{b_1,\dots,b_n\} $ eine Basis $ \rightarrow \varphi $ hat Darstellungsmatrix \underline{\underline{A}} bzgl. $ \mathcal{B} $.
 \begin{align*}
- g(v) \tx{ auch }q(v) & = \varphi(v,v) - \varphi(\sum\lambda_i b_i , \sum \lambda_j b_j)\\
+g(v) \tx{ auch }q(v) & = \varphi(v,v) - \varphi(\sum\lambda_i b_i , \sum \lambda_j b_j)\\
 & = \begin{pmatrix}
 \lambda_1 & \dots & \lambda_n
 \end{pmatrix} \cdot A \cdot \begin{pmatrix}
@@ -2803,11 +2803,11 @@ $$e_{k+1} \perp e_{j_{j \le k}} :$$
 &=\frac{1}{||e'_{k+1}||} \bigg( <v_{k+1},e_j> - \underbracket{\sum_{i=1}^{k} <v_{k+1},e_i> < e_i,e_j>  }_{<v_{k+1},e_j>} \bigg) = 0 \ \checkmark
 \end{align*}
 
-$$\spa (e_1 \dots e_{k + 1} = \spa (v_1 \dots v_{k + 1})$$
+$$\spa (e_1 \dots e_{k + 1}) = \spa (v_1 \dots v_{k + 1})$$
 $$e_{k + 1} \in \spa ( v_{k + 1}, e_1 \dots e_k) = \spa(v_{k+1},v_1 \dots v_k)$$
 $$v_{k+1} = ||e_{k+1}||\ e_{k+1}+\summ{j=1}{k} \langle v_{k+1}, e_j \rangle \in \spa (e_1 \dots e_{k+1})$$
 
-\subsection{Kor:}
+\subsection{Kor: Orthonormalsysteme}
 $ (V,\langle \ ,\ \rangle) $ euklidisch oder unitär endlichdimensional und $ D \subset V $ ein Orthonormalsystem. Dann $ \exists $ ONB $ B \supset D $ 
 \subsubsection{Bem:}
 Sei $ D = \{v_1,\dots,v_k \} $ und ergänze zu einer Basis $ \{v_1 \dots,v_n \} $ von V. $ \rightarrow $ Konstruiere eine ONB $ \{e_1,\dots,e_n\} $\\
@@ -2820,7 +2820,7 @@ $$ e_{i+j} \frac{e'_{i+1}}{||e'_{i+1}||} = v_{i+1} \qquad e'_{i+1} = v _{i+1} - 
 
 %\subsection{Wiederholung}
 %Unitärer Raum: $ \mathbb{C} $-VR V mit einem komplexen skalarprodukt 1) 2) 3)#
-\subsection{Def:}$ (V,\langle\ ,\ \rangle) $ euklidisch und unitär\\
+\subsection{Def: Orthogonale Teilmengen}$ (V,\langle\ ,\ \rangle) $ euklidisch und unitär\\
 Zwei Teilmengen A,B von V sind Orthogonal, $ A \perp B $ falls $ v \perp w \quad \forall v \in A,\  \forall w \in B$
 \subsubsection{Bem:}
 $ A \perp B \Leftrightarrow \spa(A) \perp \spa(B) $\\
@@ -2829,7 +2829,7 @@ in Blatt 7 Aufgabe 3 schon gezeigt
 $ A \subset B $ Teilmenge
 \begin{align*}
 A ^\perp &= \{ v \in V\ |\ \{v\} \perp A\}\\
-&= \{ v \in V\ |\ \forall w \in A \quad v \perp W\}
+&= \{ v \in V\ |\ \forall w \in A \ : \ v \perp W\}
 \end{align*}
 \subsubsection{Bem:}
 $ A^\perp $ ist ein Unterraum von V
@@ -2843,7 +2843,7 @@ $ \boxed{\supset} $\\
 $$ v \in \spa(A)^\perp \Rightarrow \forall w \in \overbrace{\spa(A)}^{\supset A}$$
 $$ v \perp w \Rightarrow \forall w \in A \quad v \perp w $$
 $$ \Rightarrow v \in A^\perp$$
-\subsection{Satz:}
+\subsection{Satz: Orthogonales Komplement}
 Sei $ (V,\langle\ ,\ \rangle) $ euklidisch oder unitär und $ U \subset V $ endlichdim. UR
 $$ \Rightarrow V = U \oplus U^\perp$$
 \subsection{Bew:}
@@ -2878,7 +2878,7 @@ Sei $  v \in (U^\perp)^\perp $\\
 $$ \tx{ mit } V = U \oplus U^\perp \Rightarrow  v = u + w \quad u \in U \quad w \in U^\perp$$
 Es genügt zu zeigen, dass $ w = 0 \Rightarrow v = u \in U $
 $$ w = \ub{v}_{\in (U^\perp)^\perp} - \ub{u}_{\in U \subset (U^\perp)^\perp} \in \ub{(U^\perp)^\perp \cap U^\perp}_{= 0} \Rightarrow \tx{ ok !}$$
-\subsection{Def:}
+\subsection{Def: orthogonale Projektion}
 Sei $ U \subset V $ UR\\
 Wir definieren die orthogonale Projektion von v auf U als den Vektor $ u \in U $ derart, dass $ v = u+\ub{w}_{\in U^\perp}  $
 \subsubsection{Bem:}
@@ -2887,7 +2887,7 @@ $$ \ub{u_2}_{ \in U} + \ub{w_2}_{ \in U^\perp} = v = \ub{u_1}_{\in U} + \ub{w_1}
 \subsubsection{Bem:}
 Falls $ U \subset V $ endlichdim. $ \Rightarrow $ ist die Projektion auf U wohldefiniert\\
 $ \forall v \in V $ existiert $ Pr|_{u}(v) $ derart, dass $ v = Pr|_{u}(v) + \ub{w}_{\in U^\perp} $
-\subsection{Satz:}
+\subsection{Satz: Projektion}
 Sei $ U \subset V $ Unterraum, $ v \in V \ u \in U $\\
 sind folgende Aussagen äquivalent
 \begin{enumerate}[a)]
@@ -2904,7 +2904,7 @@ $$ || v-u ||^2 < || \equalto{\ub{v - (u + \lambda u')}}{} ||^2$$
 $$ \langle v-u - \lambda u' , v-u - \lambda u' \rangle$$
 $$ = ||v-u||^2 - \underbracket{\lambda \langle u',v-u\rangle}_{= \overline{\lambda}} - \underbracket{\overline{\lambda}\langle v-u,u'\rangle}_{ = \lambda} + \lambda \overline{\lambda} \underbracket{||u'||^2}_{= 1}$$
 $$ = || v-u ||^2 - \underbracket{\lambda \overline{\lambda}}_{||\lambda||^2} - \lambda \overline{\lambda} + \lambda \overline{\lambda} < || v-u ||^2 \quad \tx{Wid !}$$
-\chapter{Selbsadjungierte Endomorphismenund Hauptachsentransformationen}
+\chapter{Selbsadjungierte Endomorphismen und Hauptachsentransformationen}
 \subsubsection{Bem:}
 Sei $ (V, \langle , \rangle) $ ein endlichsim. euklidischer Raum\\
 $ \rightarrow (V,V,\langle,\rangle)$ ein duales \underline{Paar}.\\
@@ -2914,25 +2914,25 @@ Falls V endlichdim. unitärer Raum ist, dann ist
 $$ \langle v,-\rangle : V \to \mathbb{C} \quad \tx{ nichttrivial !!} $$
 $$ \langle v, \lambda w + \mu w' \rangle \neq \lambda \langle v,w \rangle + \mu \langle v, w' \rangle$$
 $$ \tx{aber } = \overline{\lambda} \langle v,w \rangle + \overline{\mu} \langle v, w'\rangle \qquad \quad $$
-\underline{Lösung:}\\
+\textbf{Lösung:}\\
 Wir definieren eine neue Struktur auf V als $ \mathbb{C} $-VR
 $$ \lambda *_{\tx{konj}} \cdot v = \overline{\lambda} \cdot v $$
 Somit ist $ (V,V_{\tx{konj}}, \langle,\rangle) $ ein Duales \underline{Paar} weil 
 $$ \langle v,v \rangle = ||v||^2 \neq 0 \tx{ für } v \neq 0$$
-\underline{Folgerung:}\\
-Sei V endlichdim. unitärer oder euklidischer Raum. Jeder Endomorphismus $ F: V \to V $ besitzt einen adjungierten Endomorphismus $ F^t: V \to V $, sodass $ \forall v,w \in V  $\\
+\textbf{Folgerung:}\\
+Sei V endlichdim. unitärer oder euklidischer Raum. Jeder Endomorphismus $ F: V \to V $ besitzt einen \emph{adjungierten Endomorphismus} $ F^t: V \to V $, sodass $ \forall v,w \in V  $\\
 $$ \langle v, F(w)\rangle = \langle F^t(v) , w \rangle$$
-\underline{Alternative Beschreibung:}\\
+\textbf{Alternative Beschreibung:}\\
 Sei $ \mathcal{B}= \{b_1,\dots , b_n  \} $ eine ONB von V.\\
 Seien $ v,w \in V \rightarrow w = \sum_{i=1}^{n} \equalto{\lambda _i}{\langle w, b_i \rangle} = b_i $
 \begin{align*}
 \langle v, F(w) \rangle &= \langle v , \sum_{i=1}^{n} \langle w, b_i \rangle b_i \rangle\\
 &= \sum_{i=1}^{n} \overline{ \langle w, b_i \rangle } \langle v, F(b_i) \rangle \\
 &= \sum_{i=1}^{n} \langle v, F(b_i) \rangle \langle bi , w \rangle\\
-&= \langle \sum_{i=1}^{n} \langle v, F(b_i)\rangle \cdot b_i , w \rangle = \langle F^t, w \rangle\\
+&= \langle \sum_{i=1}^{n} \langle v, F(b_i)\rangle \cdot b_i , w \rangle = \langle F^t(v), w \rangle\\
 \end{align*}
 $$ \Rightarrow F^t(v) = \sum_{i=1}^{n} \langle v, F(b_i)\rangle b_i$$
-\subsection{Def:}
+\subsection{Def: adjungierte Matrix}
 Sei $ K = \mathbb{R}$ oder $\mathbb{C} $\\
 $$ a_{ij} = \mathcal{A} \in \mathcal{M}_{n\times n} (K) $$
 Die adjungierte Matrix $ \mathcal{A}^* $ von $ \mathcal{A} $ ist die Matrix
@@ -2951,19 +2951,18 @@ $ (\mathcal{A} \cdot \mathcal{B})^* = \mathcal{B}^* \cdot \mathcal{A}^* $
 \subsection*{Widerholung:}
 
 $$(V, \langle\ \cdot\ \rangle) \tx{unitärer/euklidischer Raum}$$
-$$A \subset V \tx{teilmenge}$$
-$$A^\perp = \{v \in V\ |\ \forall w \in A\ \langle v,w \langle = 0\}$$
+$$A \subset V \tx{ Teilmenge}$$
+$$A^\perp = \{v \in V\ |\ \forall w \in A\ \langle v,w \rangle = 0\}$$
 Unterraum
 $$U \tx{ UR von } V \to U \cap U^\perp =\{0\}$$
 Insbensondere falls $U$ endlich dim. $\Rightarrow V = U \oplus U^\perp$\\
-Orhtogonale Projektion auf $U$ $$Pr|_U : V \to U,\ v \mapsto u\ / v = u + w \in U^\perp$$
-$$\forall u \in U\ u_1 \neq Pr|_U(v) \Leftrightarrow ||v-u_1||> ||v-u||$$
-$$F: \underbrace{V}_{\tx{\underline{endlichdim.}}} \to V \tx{ Endomorphismus,}$$ dann ex. 
-$$F^\top : V \to V \tx{ adjungierter Endomorphismus}$$
-$$\underline{\langle v, F(w) \rangle = \langle F^\top (v) ,w \rangle} \quad \forall v,w \in V$$
+Orthogonale Projektion auf $U$ $$Pr|_U : V \to U,\ v \mapsto u\  | \ v = u + w \in U^\perp$$
+$$\forall u \in U \ | \ u_1 \neq Pr|_U(v) \Leftrightarrow ||v-u_1||> ||v-u||$$
+$$F: \underbrace{V}_{\tx{\underline{endlichdim.}}} \to V \tx{ Endomorphismus,}$$ dann existiert. $F^t : V \to V$ adjungierter Endomorphismus
+$$\underline{\langle v, F(w) \rangle = \langle F^t (v) ,w \rangle} \quad \forall v,w \in V$$
 
-\subsection{Def:}
-$ k= \mathbb{R} $ oder $ \mathbb{C} $\\
+\subsection*{Def: adjungierte Matrix}
+$ K= \mathbb{R} $ oder $ \mathbb{C} $\\
 $ A = (a_{ij}) \in \mathcal{M}_{n\times n}(K) $\\
 Die adjungierte Matrix $ A^* $ ist $ A^* = (\overline{a_{ji}}) $\\
 $ K = \mathbb{R} \to A^* = A^\top $\\
@@ -2971,25 +2970,29 @@ $ (A \cdot B)^* = B^* \cdot A^* $\\
 $ (\lambda \cdot A)^* = \overline{\lambda} \cdot A^* $\\
 \subsubsection{Bem:}
 Falls A regulär ist, dann ist $ \det(A^*) = \overline{\det(A)} $ weil $ \overline{a+b} = \overline{a} + \overline{b} \quad \overline{a \cdot b} = \overline{a} \cdot \overline{b} $
-\subsection{Lemma:}
+\subsection{Lemma: adjungierte Abbildung}
 Sei $ \enph $ eines euklidischen bzw. unitären endlichdim. Raumes V und A die Darstellungsmatrix von F bzgl. der orthonormalen Basis $ \mathcal{B} = \basis{b}{1}{n} $ und $ \mathcal{D} = \basis{d}{1}{n} $\\
-Dann hat $ F^\top: V \to V $ die Darstellungsmatrix $ A^* $ bzgl. $ \mathcal{D} $ und $ \mathcal{B} $.
-\Bew{}{$$F^\top (d_i) = \summ{j=1}{n} \langle F^\top (d_i), b_j \rangle \cdot b_j$$
-	$$F^\top \to C = (c \cdot j) \quad F^\top (d_j) = \sum c_{ij} b_j \quad \begin{pmatrix}
+Dann hat $ F^t: V \to V $ die Darstellungsmatrix $ A^* $ bzgl. $ \mathcal{D} $ und $ \mathcal{B} $.
+\Bew{}{$$F^t (d_i) = \summ{j=1}{n} \langle F^t (d_i), b_j \rangle \cdot b_j$$
+	$$F^t \to C = (c \cdot j) \quad F^t (d_j) = \sum c_{ij} b_j \quad \begin{pmatrix}
 	c_{1j} \\ \vdots \\ c_{nj}\end{pmatrix}$$
 	$$A= (c_{ij}) \to F(b_j) = \summ{i = 1}{n} \equalto{a_{ij}}{\langle F(b_j),d_i\rangle} d_i$$
-	$$\overline{a_{ij}} = \langle \overline{F(b_j), d_i} \rangle = \langle d_i, F(b_j) \rangle \buildrel{\tx{Def. von }F^\top} \over = \underline{\langle F^\top (d_i),b_j \rangle} = c_{ji}$$
+	$$\overline{a_{ij}} = \langle \overline{F(b_j), d_i} \rangle = \langle d_i, F(b_j) \rangle \buildrel{\tx{Def. von }F^t} \over = \underline{\langle F^t (d_i),b_j \rangle} = c_{ji}$$
 }
-\subsection{Def:}
+\subsection{Def: Normale Homomorphismen}
 $ (V,\langle\ ,\ \rangle) $ endlichdim., euklidisch, unitär\\
-$ F:V^\top $ ist \underline{normal}, falls
-$$F \circ F^\top  F^\top \circ F $$ 
+$ F:V \to V $ ist \underline{normal}, falls
+$$F \circ F^t  = F^t \circ F $$ 
 \subsection{Prop:}
 Folgende Aussagen sind Äquivalent:
 \begin{enumerate}[a)]
-	\item $ F:V^\top $ ist normal
-	\item $ \forall v, w \in V \quad \langle F(v) , F(w) \rangle = \langle F^\top(v) , F^\top(w) \rangle $
+	\item $ F:V^t $ ist normal
+	\item $ \forall v, w \in V \quad \langle F(v) , F(w) \rangle = \langle F^t(v) , F^t(w) \rangle $
 \end{enumerate}
+($ F^\top = F^t $ ab hier ist meist $ F^t $ gemeint nicht $ F^\top $ was ja transformation war)
+
+% fehler behenebn und komment löschen oben
+
 \subsection{Bew:}
 $ \boxed{a) \Rightarrow b)} $\\
 \begin{align*}
@@ -3008,7 +3011,7 @@ Oder Äquivalent dazu, dass $$ F \circ F^\top(v) - F^\top \circ F(v) = 0 $$
 \end{align*}
 
 $$\begin{array}{ccc}
-\langle F^\top \circ F(v), w \rangle &=& \langle F(v) , F(w) \rangle \\ \rotatebox{90}{$\,=$}& & \rotatebox{90}{$\,=$}\\ \langle F \circ F^\top (v) , w \rangle & & \langle F^top (v) , F^\top (w) \rangle \\ \rotatebox{90}{$\,=$} & & \rotatebox{90}{$\,=$} \\
+\langle F^\top \circ F(v), w \rangle &=& \langle F(v) , F(w) \rangle \\ \rotatebox{90}{$\,=$}& & \rotatebox{90}{$\,=$}\\ \langle F \circ F^\top (v) , w \rangle & & \langle F^\top (v) , F^\top (w) \rangle \\ \rotatebox{90}{$\,=$} & & \rotatebox{90}{$\,=$} \\
 \langle \overline{ w, F \circ F^\top (v)}\rangle & = & \langle \overline{F^\top (w), F^\top (v)} \rangle
 \end{array}$$
 
@@ -3020,35 +3023,35 @@ $$\begin{array}{ccc}
 F^\top \circ F & \to & A^* \cdot A \\ \rotatebox{90}{$\,=$}& & \rotatebox{90}{$\,=$}\\ F \circ F^\top & \to & A \cdot A^* 
 \end{array}$$
 
-\subsection{Def:}
+\subsection{Def: Normale Matrix}
 Eine Matrix $A \in \mathcal M_{n \times n} (K)$ ist normal, falls $A^* \cdot A = A \cdot A^*$
 
 \subsubsection{Folgerung:}
 F ist normal gdw. F eine normale Darstellungsmatrix bzgl JEDER ONB \underline{besitz}.
-\subsection{Lemma:}
+\subsection{Lemma: adjunkte Eigenwerte}
 $ \enph $ normal.\\
-$ v \in V $ ist ein Eigenvektor von F bzgl $ \lambda $ gdw v ein Eigenvektor von $ F^\top $ bzgl. $ \overline{\lambda} $
+$ v \in V $ ist ein Eigenvektor von F bzgl $ \lambda $ gdw v ein Eigenvektor von $ F^t $ bzgl. $ \overline{\lambda} $
 \subsection{Bew:}
 der Abstand von $ F(v) $ und $ \lambda \cdot v $
 \begin{align*}
- || F(v) - \lambda \cdot v ||^2  &= \langle  F(v) - \lambda v, F(v) - \lambda v \rangle\\
- &= \equalto{\langle F(v), F(v) \rangle }{\langle F^\top(v) , F^\top(v)}  - \overline{\lambda} \equalto{\langle F(v) , v \rangle}{\langle F^\top(v),v \rangle} - \lambda \equalto{\langle v, F(v) \rangle}{\langle F^\top(v),v \rangle} + \lambda \overline{\lambda} \langle v, v \rangle\\
- &= \langle F^\top(v) , F^\top(v) \rangle - \overline{\lambda} \overline{\langle F^\top(v) , v \rangle} - \langle F^\top(v) , \overline{\lambda} \cdot v \rangle + \langle \overline{\lambda} v , \overline{\lambda} v \rangle\\
- &= \langle F^\top(v), F^\top(v) \rangle - \overline{\lambda} \langle v, F^\top(v) \rangle - \langle F^\top(v) , \overline{\lambda}v\rangle + \langle \overline{\lambda} v , \overline{\lambda} v \rangle\\
- &= \langle F^\top(v) - \overline{\lambda}v , F^\top(v) - \overline{\lambda} v \rangle \\
- &= || F^\top(v) - \overline{\lambda} \cdot v ||^2 
+|| F(v) - \lambda \cdot v ||^2  &= \langle  F(v) - \lambda v, F(v) - \lambda v \rangle\\
+&= \equalto{\langle F(v), F(v) \rangle }{\langle F^\top(v) , F^\top(v)}  - \overline{\lambda} \equalto{\langle F(v) , v \rangle}{\langle F^\top(v),v \rangle} - \lambda \equalto{\langle v, F(v) \rangle}{\langle F^\top(v),v \rangle} + \lambda \overline{\lambda} \langle v, v \rangle\\
+&= \langle F^\top(v) , F^\top(v) \rangle - \overline{\lambda} \overline{\langle F^\top(v) , v \rangle} - \langle F^\top(v) , \overline{\lambda} \cdot v \rangle + \langle \overline{\lambda} v , \overline{\lambda} v \rangle\\
+&= \langle F^\top(v), F^\top(v) \rangle - \overline{\lambda} \langle v, F^\top(v) \rangle - \langle F^\top(v) , \overline{\lambda}v\rangle + \langle \overline{\lambda} v , \overline{\lambda} v \rangle\\
+&= \langle F^\top(v) - \overline{\lambda}v , F^\top(v) - \overline{\lambda} v \rangle \\
+&= || F^\top(v) - \overline{\lambda} \cdot v ||^2 
 \end{align*}
 
-\subsection{Satz:}
-Sei $F: V \to >V $ derart, dass $\chi_F(T)$ in Linearfaktoren zerfällt. Folgende Aussagen sind äquivalent:
+\subsection{Satz: zu char. Polynomen und adjunkten}
+Sei $F: V \to V $ derart, dass $\chi_F(T)$ in Linearfaktoren zerfällt. Folgende Aussagen sind äquivalent:
 \begin{enumerate}[a)]
 	\item $F$ ist normal
 	\item Es existiert eine ONB $ \mathcal B =\basis{b}{1}{n}$ von $V$, welche aus Eigenvektoren von $F$ besteht.
 \end{enumerate}
-\subsubsection{Folg}
-Jeder dnormaler Endomorphismus eines unitärem/euklidischen Raumes ist diagonalisierbar
+\subsubsection{Folgerung:}
+Jeder normaler Endomorphismus eines unitärem/euklidischen Raumes ist diagonalisierbar
 
-\Bew{(satz)}{
+\Bew{(Satz)}{
 	$\boxed{a) \Rightarrow b)}$ Induktion auf dim$(V)$ 
 	$$\underline{\dim V = 1} \rightarrow F \tx{ besitzt einen Eigenvektor } o \neq v \tx{ zum Eigenwert } \lambda$$
 	$$||v|| \neq 0 \rightarrow \frac{v}{||v||} \tx{ ist auch ein Eigenvektor tu }\lambda$$
@@ -3059,11 +3062,11 @@ Jeder dnormaler Endomorphismus eines unitärem/euklidischen Raumes ist diagonali
 	OBdA $\underline{||b_i|| = 187}$ $$V = \spa (b_i) \oplus \equalto{U}{\spa (b_i)^\perp} \qquad \dim U = \underline{n-1}$$
 }
 
-\subsection{Beh:}
+\subsubsection{Beh:}
 U ist $F$-invariant\\
 Beweis: Nächste Woche 
 $$F \upharpoonright_U : U \to U \quad \tx{ ist ein Endomorphismus}$$
-\subsection{Beh:}
+\subsubsection{Beh:}
 U ist $ F^\top $-invariant und:
 $$ (F\upharpoonright_U)^\top = F^\top \upharpoonright_U$$
 \subsection{Bew:}
@@ -3095,7 +3098,7 @@ $$F^\top(b_i) = \overline{\lambda_i} b_i = G(b_i) \Rightarrow G = F^\top$$
 % neue vorlesung
 
 \subsubsection{Widerholung:}
-$ \enph $ endlichdim. euklidisch, unitär\\ $\ska{F^\top(v)}{w} = \ska{v}{F^\top(w)} $
+$ \enph $ endlichdim. euklidisch, unitär\\ $\ska{F(v)}{w} = \ska{v}{F^\top(w)} $ %\ska{F^\top(v)}{w} = \ska{v}{F^\top(w)} old
 $ \exists F^\top: V \to V $ adjungierter Endomorphismus zu F, derart:\\
 $ \mathcal{B} = \basis{b}{1}{n} $ ONB von $ V \to F^\top $ hat Darstellungsmatrix \\
 $ A = a_{ij} $ Darstellungsmatrix von F bzgl. $ \mathcal{B} \qquad A^* = (\overline{a_{ji}})$ bzgl. $\mathcal{B}$\\
@@ -3105,13 +3108,14 @@ $$\Leftrightarrow \ska{F(v)}{F(w)} = \ska{F^\top (v)}{F^\top (w)}$$
 $$\longrightarrow v \in V \setminus \{0\} \tx{ ist Eigenvektor von $F$ bzg. } \lambda $$
 $$\Leftrightarrow v \tx{ Eigenvektor von } F^\top \tx{ bzg. } \overline{\lambda}$$
 
-\subsection{Satz} $ \enph\  | \  \chi_F(T) $ zerfällt in Linearfaktoren\\
+\subsection*{Satz} $ \enph\  | \  \chi_F(T) $ zerfällt in Linearfaktoren\\
 F ist normal $ \Leftrightarrow $ Es existiert eine ONB von V, welche aus Eigenvektoren von F besteht.\\\\
 ende Wiederholung.
 
-\subsection{Def:}$ F_V\to V $ ist selbstadjungiert, falls $ F = F^\top $ oder äquivalent dazu,
+\subsection{Def: Selbsadjungierte}
+$ F: V\to V $ ist selbstadjungiert, falls $ F = F^\top $ oder äquivalent dazu,
 $$\ska{v}{F(w)} = \ska{F(v)}{w} \quad \forall v,w \in V$$
-Eine Matrix $ A \in \mathcal{M}_{n\times n} (K) $ ist hermitesch, falls $ A^* = A $
+Eine Matrix $ A \in \mathcal{M}_{n\times n} (K) $ ist \textbf{hermitesch}, falls $ A^* = A $
 \subsubsection{Wid:}
 $V$ euklidischer untärer endlichedim. Raum $F: V \to V$ selbst adjungiert falls $F = F^*$\\ 
 $F \tx{ selbstadj. } \Leftrightarrow$ Die darstellungsmatrix bzg.$\begin{pmatrix}
@@ -3124,7 +3128,7 @@ $\rightarrow$ Hauptachsen von $\varphi$ sind die Elemente einer ONB von $V$ soda
 \subsection{Kor: Spektralsatz}
 $F:V\to V$ selbstadjungiert $\rightarrow \exists \tx{ ONB von } V$ welches aus Eigenvektoren von $F$ besteht.
 \Bew{}{$V$ unitär $\rightarrow$ ok, weil $\chi_F$ in Linearfaktoren über $\mathbb C$ zerfällt\\
-	$V$ eiklidisch $\rightarrow$ Die Darstellungsmatrix von $F$ ist symmetrisch $\rightarrow$ diagonalisierbar $\rightarrow$ $\chi_F$ zerfällt in Linearfaktoren über $\mathbb R$ 
+	$V$ euklidisch $\rightarrow$ Die Darstellungsmatrix von $F$ ist symmetrisch $\rightarrow$ diagonalisierbar $\rightarrow$ $\chi_F$ zerfällt in Linearfaktoren über $\mathbb R$ 
 }
 
 \subsubsection{Bem}
@@ -3135,7 +3139,7 @@ $$F: V \to V \tx{ ist selbstadjungiert}$$
 $\Leftrightarrow$ Die Darstellungsmatrix von $F$ bzg. $\mathcal B$ hermitesch ist.
 \subsubsection{Bem:}
 Selbstadjungierte Endomorphismen sind normal.
-\subsection{Lemma:}
+\subsection{Lemma: Eigenwerte und Eigenvektoren}
 Falls V euklidisch, unitär, endlichdim. ist $ F: V\to V $ selbstadjungiert, dann gilt:
 \begin{enumerate}[a)]
 	\item Alle Eigenwerte von F reell sind
@@ -3246,7 +3250,7 @@ Für eine symm. $(n \times n)$-$\mathcal M$atrix $\equaltoup{A}{(a_{ij})}$ über
 	a_{11} & \cdots & a_{1k}\\
 	\vdots & & \vdots\\
 	a_{k1} & \cdots & a_{kk}	
-	\end{array} \ > \ 0 \qquad \forall\  1 \le v \le n$$
+	\end{array} \ > \ 0 \qquad \forall\  1 \le v \tx{ oder } k \le n$$
 \end{itemize}
 
 % neue Vorlesung
@@ -3262,7 +3266,7 @@ $A$ ist dann diagonalisierbar $\rightarrow$ Hauptachsentransformationssatz.\\
 $V \tx{ euklidischer endlidim. Raum}$, $\varphi: V \times V \to \mathbb R \tx{ symmetrische bilinearform}$
 $\rightarrow$ Hauptachsen von $\varphi$ sind die Elemente einer ONB von $V$ sodass $\varphi$ Darstellungsmatrix in Diagonalform besitzt.
 \subsection{Kor: Spektralsatz}
-$F:V\to V$ selbstadjungiert $\rightarrow \exists \tx{ ONB von } V$ welches aus Eigenvektoren von $F$ besteht.
+$F:V\to V$ selbstadjungiert $\rightarrow \exists \tx{ ONB von } V$ welche aus Eigenvektoren von $F$ besteht.
 \Bew{}{$V$ unitär $\rightarrow$ ok, weil $\chi_F$ in Linearfaktoren über $\mathbb C$ zerfällt\\
 	$V$ euklidisch $\rightarrow$ Die Darstellungsmatrix von $F$ ist symmetrisch $\rightarrow$ diagonalisierbar $\rightarrow$ $\chi_F$ zerfällt in Linearfaktoren über $\mathbb R$ 
 
@@ -3292,7 +3296,7 @@ $$\left.\begin{array}{cc}
 x^\top \lambda x = \lambda x^2 \ge 0 \phantom{\Leftrightarrow x = 0}\\
 \phantom{x^\top \lambda x  = \lambda x^2 \  } = 0 \Leftrightarrow x = 0
 \end{array} \right\} \rightarrow \substack{A \tx{ ist }\\\tx{positiv} \\\tx{defnit}}$$
-Für $A = \spa (e_1 \dots e_{n+1}$ Die Darstellungmatrix von $\varphi_{\upharpoonright U}$ hat auch alle Hauptminoren exht positiv $\Rightarrow \varphi_{\upharpoonright U}$ \underline{positiv definit}\\
+Für $A = \spa (e_1 \dots e_{n+1})$ Die Darstellungmatrix von $\varphi_{\upharpoonright U}$ hat auch alle Hauptminoren echt positiv $\Rightarrow \varphi_{\upharpoonright U}$ \underline{positiv definit}\\
 $\buildrel{\tx{Hauptachsen.}} \over \longrightarrow$ Es gibt eine Orthonormalbasis $\basis{b}{1}{n}$ von $V$ sodass $\varphi$ Diagonalform bzg. $\basis{b}{1}{n}$ hat 
 $$\Bigg(
 \begin{array}{ccc}
@@ -3332,7 +3336,8 @@ $$ \varphi(v,v) = \varphi( \alpha b_i + \beta b_j , \alpha b_i + \beta b_j) = \u
 $$\Rightarrow \tx{ Widerspruch ! }$$
 
 \section{Orthogonale Abbildungen und Drehungen}
-\subsection{Def:} $V$ euklidischer bzw. unitär. $F:V \to V$ ist orthogonal, falls $\forall v,w \in V:\ \ska{v}{w} = \ska{F(v)}{F(w)}$
+\subsection{Def: Orthogonale Abbildung}
+$V$ euklidischer bzw. unitär. $F:V \to V$ ist orthogonal, falls $\forall v,w \in V:\ \ska{v}{w} = \ska{F(v)}{F(w)}$
 \subsection{Lemma:}
 Folgende Aussagen sind äquivalent: 
 \begin{enumerate}[1.)]
@@ -3387,18 +3392,18 @@ w &= \mu_1 b_1 + \mu_2 b_2
 % neue vorlesung
 
 \subsection{Wiederholung:}
-Orthogonale Endlómorphismes $ F: V \to V \quad \forall v,w \in V$ V euklidisch oder unitär \\
+Orthogonale Endomorphismen $ F: V \to V \quad \forall v,w \in V$ V euklidisch oder unitär \\
 $ \ska{v}{w} = \ska{F(v)}{F(w)} $\\
 F orthogonal gdw $ ||v|| = ||F(v) || \  \forall v \in V $ dann bildet F Orthonormalsysterme zu Orthonormalsysteme ab \\
-\underline{Frage:}\\
+\textbf{Frage:}\\
 $ F: \mathbb{R} \to \mathbb{R}\quad x \mapsto 2 \cdot x $
 $ \rightarrow $ Orthogonale Abbildungen (für euklidische Räume) erhalten den Winkel zwischen Vektoren
 
-\subsection{Satz:}
+\subsection{Satz: Orthogonale Abbildungen}
 Jede orthogonale Abbildung ist injektiv.
 \subsection{Bew:} $ F:V\to V \quad v \in \ker(F)$
 $$0 = F(v) \rightarrow 0 = ||F(v)|| = ||v|| \rightarrow v = 0$$
-\subsection{Satz:} Sei V endlichdim. euklidischer oder unitärer Raum und $ F: V\to V $ eine Bijektive lineare Abbildung.\\
+\subsection{Satz: Bijektive Orthogonale Abbildung} Sei V endlichdim. euklidischer oder unitärer Raum und $ F: V\to V $ eine Bijektive lineare Abbildung.\\
 Folgende Aussagen sind dann äquivalent:
 \begin{enumerate}[1)]
 	\item F it orthogonal
@@ -3408,14 +3413,14 @@ Folgende Aussagen sind dann äquivalent:
 \subsection{Bew:}
 $ \boxed{1 \Rightarrow 2} $ \\
 $ \forall v,w \in V: $\\
-%$$\ska{\equalto{w}{\equalto{\ub{F(F^{-1}(w))}_{=}}}{}}{F(v)} = \ska{F^\top(w)}{v}$$
-$ \leftarrow F \tx{ orthogonal} $\\
+$$\ska{\equalto{w}{\equalto{\ub{F(F^{-1}(w))}_{=}}{}}}{F(v)} = \ska{F^\top(w)}{v}$$
+$$ \leftarrow F \tx{ orthogonal} $$
 $$\ska{F^{-1}(w)}{v}  \buildrel \substack{\tx{Eindeutigkeit}\\\tx{von } F^\top} \over \Rightarrow  F^{-1} = F^\top $$
 $ \boxed{2 \Rightarrow 1} $ \\
 F \underline{orthogonal}\\
 $$\ska{F(v)}{F(w)} \buildrel \tx{Definition} F^\top \over = \ska{F^\top(F(v))}{w} \buildrel F^\top = F^{-1} \over = \ska{F^{-1}(F(v))}{w} = \ska{v}{w}$$
 
-\subsection{Kor:}
+\subsection{Kor: $ F $ Bijektiv $ \Rightarrow F^{-1} = F^\top $}
 $ F: V\to V $ endlichdim. euklidisch oder unitäre orthogonale Abbildung \\
 $ \Rightarrow $ F ist bijektiv und normal, mit $ F^{-1} = F^\top $
 
@@ -3423,7 +3428,7 @@ $ \Rightarrow $ F ist bijektiv und normal, mit $ F^{-1} = F^\top $
 F orthogonal $ \Rightarrow $ F injektiv $ \buildrel \tx{dim}(V) < \infty \over \Rightarrow $ F bijektiv ist $ \Rightarrow $ $ F^\top = F^{-1} $
 $$F \circ F^\top = F \circ F^{-1} = F^{-1} \circ F = F^\top \circ F \Rightarrow \quad \tx{ normal}$$
 
-\subsection{Satz:}
+\subsection{Satz: Orthogonale Abbildung}
 Sei V endlichdim, euklidisch oder unitär $ F:V\to V $ orthogonale Abbildung. Dann haben alle Eigenwerte von F Absolutbetrag 1. Form ist $ \det(F) = 1 $
 
 \subsection{Bew:}
@@ -3448,19 +3453,19 @@ $ A^* \ \:$ die Darstellungsmatrix von $ F^\top \ $ bzgl. B\\
 $ A^{-1} $ die Darstellungsmatrix von $ F^{-1} $ bzgl. B
 $$F^{-1} = F^\top \Leftrightarrow A^{-1} = A^*$$
 
-\subsection{Def:}
+\subsection{Def: Orthogonalität von A}
 Sei $A \in \mathcal M_{(n \times n)} (K) \qquad K = \mathbb{R} \tx{ oder } \mathbb{C}$ regulär 
 $$A \tx{ ist Orthogonal, falls } A^{-1} = A^*$$
 \subsubsection{Bem:}
 $F$ ist orthogonal $\Leftrightarrow$ Die Darstellungsmatrix von $F$ bzgl. $\begin{pmatrix}
 \tx{einer} \\ \tx{jeder}
 \end{pmatrix}$ ONB orthogonal
-\subsection{Kor:}
-$ A \in \mathcal{M}_{n \times n} (K) $ regülär ist orthogonal $ \Leftrightarrow $ die  Zeilenvektoren (bzw die Spaltenvektoren) ein Orthonormalsystem in $ K^n $ bilden (und somit eine ONB)
+\subsection{Kor: Zeilen-/Spalten-orthonormalbasis}
+$ A \in \mathcal{M}_{n \times n} (K) $ regulär ist orthogonal $ \Leftrightarrow $ die  Zeilenvektoren (bzw die Spaltenvektoren) ein Orthonormalsystem in $ K^n $ bilden (und somit eine ONB)
 \subsection{Bew:}
 $$ A \tx{ orthogonal } \Leftrightarrow A^{-1} = A^* \Leftrightarrow A \cdot A^* = E_n = A \cdot A^{-1}$$ $$\Leftrightarrow \equalto{\ub{\sum_{k=1}^{n} a_{ik} \cdot \overline{a_{jk}}}}{\ska{\vec{a}_i}{\vec{a}_j} \in K^n} = \casess{1}{i=j}{0}{i\neq j} $$
 $$\ska{\ub{\vec{a}_i}_{\tx{i-te Zeile}}}{\ub{\vec{a}_j}_{\tx{j-te Zeile}}} \in K^n \tx{ mit dem Standartskalarprodukt } $$
-\subsection{Kor: zu irgendeinem Satz}
+\subsection{Kor: zu  Satz VI.1.11} %irgendeinem Satz}
 Sei $ F: V \to V $ normale Abbildung eines endlichdimensionalen unitären Raumes V derart, dass alle Eigenwerte von F Absolutbetrag 1 haben. Dann ist F orthogonal.
 
 \subsection{Bew:}
@@ -3481,7 +3486,7 @@ $\begin{pmatrix}
 & \ddots \\
 & & \overline{\lambda_n}
 \end{pmatrix}$
-bzgl $ B ) \basis{b}{1}{n} $\\[5pt]
+bzgl $ B = \basis{b}{1}{n} $\\[5pt]
 $$\lambda_i \cdot \overline{\lambda_i} = |\lambda_i|^2 = 1 \Rightarrow \overline{\lambda_i} = \lambda_i^{-1}$$
 $ F^\top $ $ (= F^{-1}) $ hat Darstellungsmatrix: $ \begin{pmatrix}
 \frac{1}{\lambda_1} \\
@@ -3490,10 +3495,10 @@ $ F^\top $ $ (= F^{-1}) $ hat Darstellungsmatrix: $ \begin{pmatrix}
 \end{pmatrix} $ bzgl $ B = \basis{b}{1}{n} $ 
 $$\Rightarrow F^{-1} = F^\top \rightarrow F \tx{ ist orthogonal}$$
 
-\subsection{Def:}
+\subsection{Def: Orthogonal diagonalisierbar}
 Eine Matrix $ A \in \mathcal{M}_{n \times n}(K) $ ist orthogonal diagonalisierbar, falls es eine orthogonale (reguläre) Matrix $ S $ gibt, sodass $ S^{-1} A S  \ (= S^* A S)$ in Diagonalform ist.
 
-\subsection{Prop:}
+\subsection{Prop: Orthogonal diagonalisierbar}
 Jede normale Matrix $ A \in \mathcal{M}_{n \times n}(K) $ deren charakteristisches Polynom in Linearfaktoren zerfällt, ist orthogonal diagonalisierbar.
 
 \subsection{Bew:}
@@ -3505,7 +3510,7 @@ Es genügt zu zeigen, dass S eine orthogonale Matrix ist.\\
 Aber die Spaltenvektoren von S bilden ein orthonormales System.\\
 $$\Rightarrow S \tx{ ist orthogonal} $$
 
-\subsection{Kor:}
+\subsection{Kor: Symmetrie und diagonalisierbarkeit}
 Jede symmetrische $ n \times n $ Matrix über $ \mathbb{R} $ bzw. jede hermitesche Matrix über $ \mathbb{C} $ ist orthogonal diagonalisierbar.
 
 \subsection{Bew:}
@@ -3518,7 +3523,7 @@ $ F: V \to V $ orthogonale Abbildung ist eine \underline{\underline{Drehung}}, f
 \subsubsection{Bem:}
 Die Kollektion aller Drehungen bilden eine \underline{\underline{Gruppe}}.
 
-\subsection{Satz:}
+\subsection{Satz: Drehung}
 Sei $ \mathbb{R}^2 $ mit dem Standartskalarprodukt als euklidischer Raum.\\
 $F: \mathbb{R}^2 \to \mathbb{R}^2$ ist eine Drehung, gdw F Darstellungsmatrix bzgl $ \{e_1,e_2\} $ der Form:
 $$\begin{pmatrix}
@@ -3572,7 +3577,7 @@ $$A = \begin{pmatrix}
 \ska{F(e_1)}{e_1} & \ska{F(e_2)}{e_1}\\
 \ska{F(e_1)}{e_2} & \ska{F(e_2)}{2_2}
 \end{pmatrix}$$
-Die Spaltenvektoren bilden ein orthonormales System.\pagebreak
+Die Spaltenvektoren bilden ein orthonormales System.
 $$||\equalto{F(e_1)}{}||^2 = 1$$\\[-30pt]
 $$\ska{F(e_1)}{e_1}^2 + \ska{F(e_1)}{e_2}^2$$
 $ \Rightarrow \exists \alpha \in [0,2 \pi] \quad \cos \alpha = \ska{F(e_1)}{e_1} \quad \sin \alpha = \ska{F(e_1)}{e_2} $
@@ -3606,7 +3611,7 @@ $$\begin{pmatrix}
 \end{pmatrix}$$
 }
 
-\subsection{Satz:}
+\subsection{Satz: Drehung}
 $ F : \mathbb{R}^3 \to \mathbb{R}^3 $ ist genau dann eine Drehung, wenn F Darstellungsmatrix bzgl. einer geeigneten ONB $ \{b_1,b_2,b_3\} $ der Form
 $$\begin{pmatrix}
 1 & 0 & 0 \\
@@ -3830,5 +3835,5 @@ F und G sind Inverse voneinander
 
 }
 
-	 
+ 
 \end{document}
