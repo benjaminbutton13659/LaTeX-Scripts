@@ -1,3 +1,4 @@
+
 \documentclass[titlepage,12pt,a4paper,ngerman]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -5,18 +6,22 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{amsmath}
-\usepackage{cleveref}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{tikz}
-\usetikzlibrary{decorations.pathmorphing,patterns}
-\usetikzlibrary{arrows}
+\usepackage{tikz-cd}
 \usepackage{nicefrac}
 \usepackage{mathtools}
-\usepackage[margin=1in]{geometry}
-\usepackage{tcolorbox}
-\setlength{\parskip}{1em}
 \usepackage{enumerate}
+\usepackage{cancel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{tcolorbox}
+
+\usetikzlibrary{decorations.pathmorphing,patterns}
+\usetikzlibrary{arrows}
+\usepackage[margin=1in]{geometry}
+\setlength{\parskip}{1em}
 
 \newcommand{\verteq}{\rotatebox{90}{$\,=$}}
 \newcommand{\equalto}[2]{\underset{\scriptstyle\overset{\mkern4mu\verteq}{#2}}{#1}}
@@ -72,20 +77,20 @@
 \section*{Einführung}
 \addcontentsline{toc}{section}{Einführung} 
 \begin{itemize}
-\item geht von \underline{grundlegenden Naturgesetzen} aus, die als Postulate (=Axiome)
+\item geht von \textbf{grundlegenden Naturgesetzen} aus, die als Postulate (=Axiome)
 \item benutzt mathematische Methoden um daraus physikalische Aussagen herzuleiten (z.B. $E_{kin}\sim v^2$) 
-\item Eine \underline{Theorie} basiert auf definierten (Def.) Annahmen
+\item Eine \textbf{Theorie} basiert auf definierten (Def.) Annahmen
 \begin{itemize}
-	\item[$\rightarrow$] gilt innerhalb eines Anwendungsbereiches und muss hier experimentell (Exp.) \underline{verifizierbare} Ergebnisse liefern\\
+	\item[$\rightarrow$] gilt innerhalb eines Anwendungsbereiches und muss hier experimentell (Exp.) \textbf{verifizierbare} Ergebnisse liefern\\
 	z.B. klassische Mechanik funktioniert für
 	\begin{itemize}
 		\item[-] $v\ll c$
 		\item[-] $\int(p)dx \gg \hbar$
 	\end{itemize}
 \end{itemize}
-\item Ein \underline{theoretisches Modell} macht oft \underline{idealisierende Annahmen} um \underline{explizite} Lösungen zu erlauben z.B. harmonischer Oszillator
+\item Ein \textbf{theoretisches Modell} macht oft \textbf{idealisierende Annahmen} um \textbf{explizite} Lösungen zu erlauben z.B. harmonischer Oszillator
 \item Computational Physics\\
-löst theoretische Ansätze \underline{numerisch}
+löst theoretische Ansätze \textbf{numerisch}
 \end{itemize}
 
 \section*{Bedeutung der klassischen Mechanik}
@@ -113,73 +118,74 @@ löst theoretische Ansätze \underline{numerisch}
 \begin{itemize}
 \item Statik (ruhende Körper)
 \item Kinematik (Bewegung, ohne Beschreibung der Wechselwirkungen (WW))
-\item Dynamik (Bewegung \underline{mit} Beschreibung der WW)
+\item Dynamik (Bewegung \textbf{mit} Beschreibung der WW)
 \end{itemize}
 
 \subsection{Bezugsystem}
 Ursprung $O$\\
 Basisvektoren $\vec{e}_{i}= \left\{\begin{array}{ll} x,y,z \\1,2,3\end{array}\right. $ \\	
-\underline{Ort:} $\vec{r}$ eines Teilchens (Massenpunkte) (Bahnkurve, Trajektorie)\\
-$\vec{r}(t) = \sum_{i} \vec{x}_{i}(t)\vec{e}_{i}$\\
-\underline{Geschwindigkeit:} $\vec{v}(t) = \frac{d}{dt} \vec{r}(t) = \dot{\vec{r}}(t)$\\
-\underline{Impuls:} $ \vec{p}(t) = m\cdot \vec{v}(t)$\\
-\underline{Beschleunigung:} $\vec{a}(t) = \frac{d^{2}\vec{r}(t)}{dt^{2}} = \ddot{\vec{r}} (t)$\\
+\begin{itemize}
+\item \textbf{Ort:} $\vec{r}$ eines Teilchens (Massenpunkte) (Bahnkurve, Trajektorie) $\vec{r}(t) = \sum_{i} \vec{x}_{i}(t)\vec{e}_{i}$\\
+\item \textbf{Geschwindigkeit:} $\vec{v}(t) = \frac{d}{dt} \vec{r}(t) = \dot{\vec{r}}(t)$\\
+\item \textbf{Impuls:} $ \vec{p}(t) = m\cdot \vec{v}(t)$\\
+\item \textbf{Beschleunigung:} $\vec{a}(t) = \frac{d^{2}\vec{r}(t)}{dt^{2}} = \ddot{\vec{r}} (t)$\\
+\end{itemize}
 z.B. geradlinige - gleichmäßige Bewegung\\
 $\vec{r}(t) = \vec{r}_{0} + \vec{v}_{0} t$\\
 $\vec{v}(t) = \dot{\vec{r}}  = \vec{v}_{0}$\\
 $\vec{a}(t) = 0$
 
 \section{Die Newtonsche Gesetze (1687)} % gleichheitszeichen allignment
-{\large\underline{NG1: Trägheitsgesetz}}\\
-Kräftefreie Bewegung ist gleichförmig, d.h. $v = \const$\\
-{\large\underline{NG2: Grundgesetz der Mechanik}}\\
-$ F = \frac{dp}{dt} = \frac{d}{dt}(mv) = ma$ $m = \const$\\
-def. Kraft und Masse, Bewegungsgleichung\\
-{\large\underline{NG3: Action = Reactio}}\\
+\textbf{NG1: Trägheitsgesetz}\\
+Kräftefreie Bewegung ist gleichförmig, d.h. $v = \const$\\[5pt]
+\textbf{NG2: Grundgesetz der Mechanik}\\
+$ F = \frac{dp}{dt} = \frac{d}{dt}(mv) = ma \quad m = \const$\\
+def. Kraft und Masse, Bewegungsgleichung\\[5pt]
+\textbf{NG3: Action = Reactio}\\
 $F_{12} = -F_{21}$\\
 Kraft von 1 auf 2 = Kraft von 2 auf 1
-{\large \underline{Voraussetzung (Annahme):}}
+\textbf{Voraussetzung (Annahme):}
 \begin{itemize}
 \item ,,absoluter`` Raum
 \item ,,absolute`` Zeit
 \item ,,absolute`` Masse
 \end{itemize}
 $\rightarrow$ nur gültig für $\frac{v}{c} \ll 1$\\
-($c = $Lichtgeschwindigkeit)\\
-{\large\underline{Diskussion
-	{NG1:}} Macht nur Sinn bei Angabe von Bezugsystem z.B. Vergleich rotierendes vs. ruhendes Bezugssystem\\
+($c = $Lichtgeschwindigkeit)\\[5pt]
+\subsubsection{Diskussion NG1:} Macht nur Sinn bei Angabe von Bezugsystem z.B. Vergleich rotierendes vs. ruhendes Bezugssystem\\
 $\rightarrow$ Ein Bezugssystem, in dem das NG1 gilt heißt ,,Inertialsystem`` (IS)\\
 \underline{Bsp:} Hörsaal, relativ zum Fixsternhimmel
 Näherung, z.B. wegen Erdrotation $\rightarrow$ Foucaultsches Pendel\\
-$\rightarrow$ physikalische Gesetze nehmen in IS eine besonders einfache Form an.\par
-\underline{NG1:} In einem IS ist die kräftefreie Bewegung durch $\vec{r}(t) = const.$ beschrieben
-\underline{Relativitätsprinzip} (Galilei)\\
+$\rightarrow$ physikalische Gesetze nehmen in IS eine besonders einfache Form an.
+\subsubsection{NG1:}
+In einem IS ist die kräftefreie Bewegung durch $\vec{r}(t) = const.$ beschrieben
+\textbf{Relativitätsprinzip} (Galilei)\\
 Geg. sei IS S mit Bahnkurve $\vec{r}(t)$\\
 und IS $\bar{S}$ mit Bahnkurve $\bar{r}(t)$\\
 worin $\bar{S}$ um $\vec{r}_{0}$ zu S verschoben sei und sich mit einer Geschwindigkeit $\vec{v}_{0} = \const$ dazu bewege:\\
-Dann gilt die \underline{Galilei Transformation} (Trafo)\\
+Dann gilt die \textbf{Galilei Transformation} (Trafo)\\
 $ r \rightarrow \bar{r}$ mit
 \begin{equation*}
 \bar{r} (t) = \vec{r}(t) + \vec{r}_{0} + \vec{v}_{0} t \tag{1}
 \end{equation*}
-$\rightarrow$ \underline{Relativitätsprinzip}\par
-Alle IS sind gleichwertig.\par
-{\large\underline{NG2:}} $F = \dot{p} = m \cdot \vec{a}$ % tabelle
+$\rightarrow$ \textbf{Relativitätsprinzip} $ \qquad  $
+Alle IS sind gleichwertig.
+\subsubsection{NG2:} $F = \dot{p} = m \cdot \vec{a}$ % tabelle
 \begin{itemize}
 	\item setzt ebenfalls ein IS voraus
-	\item beschreibt Bewegung mittels \underline{Wirkung} $m\cdot a$ und \underline{Ursache} Kraft $F$
+	\item beschreibt Bewegung mittels \textbf{Wirkung} $m\cdot a$ und \textbf{Ursache} Kraft $F$
 	\item Definition der Kraft und der (trägen) Masse $m$
-	\item \underline{grundlegendes Postulat} der klassischen Mechanik:\\
-	sind alle Kräfte $F_{1}$ bekannt, so beschreibt $$m\cdot a = \sum_{i} F_{i}$$ \underline{vollständig} die Bewegung.
+	\item \textbf{grundlegendes Postulat} der klassischen Mechanik:\\
+	sind alle Kräfte $F_{1}$ bekannt, so beschreibt $$m\cdot a = \sum_{i} F_{i}$$ \textbf{vollständig} die Bewegung.
 \end{itemize}
 %vorlesung 2
-Für gegebene Kraft $\vec{F}$ ergibt sich \underline{vollständig} die Bewegung.\par
-\underline{NG3:} $$\vec{F}_{12}=-\vec{F}_{21}$$\\
+Für gegebene Kraft $\vec{F}$ ergibt sich \textbf{vollständig} die Bewegung.
+\subsubsection{NG3:} $$\vec{F}_{12}=-\vec{F}_{21}$$\\
 d.h die Kraft ergibt sich als WW zwischen Körpern.\\
 $$\rightarrow \frac{d}{dt} p_{1}=-\frac{d}{dt}p_{2} \hspace{1cm} \rightarrow \hspace{1cm} \frac{d}{dt}(p_{1}+p_{2}) =0$$
 $\rightarrow$ Impulserhaltung\par
 eigentlich auf Grund der ,,Homogenität des Raumes``.\par
-\underline{Zusatz:} Kräfte addieren sich wie Vektoren\\
+\textbf{Zusatz:} Kräfte addieren sich wie Vektoren\\
 $$ \vec{F}_{tot} = \sum_{i} \vec{F}_{i}$$
 \subsection{Bem:} 
 \begin{itemize}
@@ -195,25 +201,25 @@ allg. Ansatz: Vereinheitlichung von z.B. elektrischer und magnetischer WW Maxwel
 \begin{itemize}
 	\item Wesentliches Axiom ist das 2.NG. (das 1.NG definiert IS, 3.NG entspricht Impulserhaltung)
 \end{itemize}
-\underline{2.NG:} 
+\textbf{2.NG:} 
 $$m\ddot{\vec{r}}(t) = F(\vec{r},\dot{\vec{r}}, t)$$
 DGL 2.Ord, Lösung ergibt Bahnkurve $\vec{r}(t)$ ,,Bewegungsgleichung``\\
 Integrationskonstanten gegeben durch Anfangsbedingungen: z.B. $\vec{r}(0) , \dot{\vec{r}}(0)$\par
 \subsection{Beispiele:}
 \begin{itemize}
-	\item[1.)] \underline{Konstante Kraft:} $\vec{F} =\vec{F}_{0}$\\
+	\item[1.)] \textbf{Konstante Kraft:} $\vec{F} =\vec{F}_{0}$\\
 	z.B. $\vec{F}=m\vec{g}$\\
 	$\rightarrow \vec{r}(t) = \frac{1}{2m} \vec{F}_{0} \cdot t^2 + \vec{v}_{0} \cdot t+\vec{r}_{0}$
-	\item[2.)] \underline{Lineare Kraft:} $\vec{F} \sim \vec{r}$\\
+	\item[2.)] \textbf{Lineare Kraft:} $\vec{F} \sim \vec{r}$\\
 	z.B. bei Federpendel mit $r= \vline \vec{r}\vline $\\
 	$m\ddot{r} = - k r$\\
 	mit $r(t) = x_{0} \cos{\omega t} + \frac{v_{0}}{\omega} sin{\omega t}$, $\omega^2 = \frac{k}{m}$\\
-	\item[3.)] \underline{Zentrale Kraft:} $\vec{F} = \vec{F}(\vec{r}=\vline \vec{r}_{2}-\vec{r}_{1}\vline )$\\
+	\item[3.)] \textbf{Zentrale Kraft:} $\vec{F} = \vec{F}(\vec{r}=\vline \vec{r}_{2}-\vec{r}_{1}\vline )$\\
 	z.B. Gravitation $\vec{F} = \gamma \frac{m_1 m_2 }{r^2} \frac{\vec{r}}{ r}$
-	\item[4.)] \underline{Lorenzkraft:} (geschwindigkeitsabhängig)\\
+	\item[4.)] \textbf{Lorenzkraft:} (geschwindigkeitsabhängig)\\
 	$\vec{F}={\vec{r}}(t) = F(\vec{r},\dot{\vec{r}}, t) = e[\hat{E} (\vec{r}, t) + \dot{\vec{r}} \cdot \vec{B} (\vec{r},t)$
 	Ladung e im elektrischen Feld $\vec{E}$ und magnetischen Feld $\vec{B}$
-	\item[5.)] \underline{Reibungskräfte:}
+	\item[5.)] \textbf{Reibungskräfte:}
 	\begin{itemize}
 		\item Stokesche Reibung $\vec{F} = -\gamma \vec{v}$
 		\item Luftreibung: $\vec{F} \sim \vec{v}^{\,2} \frac{\vec{v}}{v}$
@@ -224,7 +230,7 @@ Integrationskonstanten gegeben durch Anfangsbedingungen: z.B. $\vec{r}(0) , \dot
 \begin{itemize}
 	\item spielen Zentrale Rolle in der Physik
 	\item sind allg. gültig, z.B. auch in der QM
-	\item reflektieren \underline{Symmetrie} des Systems
+	\item reflektieren \textbf{Symmetrie} des Systems
 \end{itemize}
 allg Form eines erhaltungssatzes der Größe $A(\vec{r},\dot{\vec{r}},t)$\\
 $\frac{d}{dt} A = 0 \leftrightarrow $ A ist erhalten\par
@@ -246,7 +252,7 @@ $$\frac{d\vec{l}}{dt} = \vec{M}$$
 $$\vec{M} = 0 \quad \Leftrightarrow \quad \frac{d \vec{l}}{dt} = 0 , \quad \vec{l} \textrm{ erhalten}$$
 
 \subsubsection{Bsp: Zentralkraft}
-$\vec{F} \parallel  \vec{r} \rightarrow \vec{M} = 0 \rightarrow \vec{l}  = const.$
+$\vec{F} \parallel  \vec{r} \rightarrow \vec{M} = 0 \rightarrow \vec{l}  = \const $
 legt man oEdA $\vec{l}$ in z - Richtung \\
 $$\vec{l} = l \vec{e}_z = m \vec{r}\cdot \dot{\vec{r}}$$
 liegen $\vec{r}$ und $ \dot{\vec{r}}$ in x - y - Ebene.\par
@@ -257,7 +263,7 @@ $$ dW = \vec{F} \cdot d \vec{r}$$
 Längs eines eges C von $\vec{r}_{1}$ nach $\vec{r}_{2}$ ist die geleistete Arbeit
 $$W = \int_C dW = \int_C d\vec{r}\cdot \vec{F}$$
 die von $\vec{r}_1, \vec{r}_2$ und i.h. auch von der Wegführung abhängt-\par
-Die pro Zeit verrichtete Arbeit heißt \underline{Leistung} 
+Die pro Zeit verrichtete Arbeit heißt \textbf{Leistung} 
 $$ P = \frac{dW}{dt} = \frac{\vec{F}\cdot d \vec{r}}{dt} = \vec{F}\cdot \dot{\vec{r}}$$
 $$[\oint_C = \textrm{ geschlossenes Wegintegral }]$$
 Multiplikation von NG2 mit $\dot{\vec{r}}$ gibt:
@@ -290,20 +296,20 @@ $$ F = -kx - \gamma \dot{x} = F_{\tx{kons}} + F_{\tx{diss}}$$
 mit
 $$F_{\tx{kons}} = -\frac{dk}{dx} \rightarrow k(x) = \frac{k}{2} x^2$$
 Da $F_{\tx{diss}} \cdot \dot{x}$ quadratisch in $\dot{x} , \frac{dk(x)}{st}$ aber linear in $\dot{x}$ kann $F_{\tx{diss}} \dot{x}$ nicht in der Form $\frac{dk}{dt}$ geschrieben werden.\\\\
-\underline{Bedingung} für konservative Kraft ist
+\textbf{Bedingung} für konservative Kraft ist
 $$ \tx{rot}(\vec{F}(\vec{r})) = \vec{\nabla} \times \vec{F}(\vec{r}) = 0 \quad \leftrightarrow \quad \vec{F}(\vec{r}) = -\vec{\nabla} k(\vec{r})$$
 Dann ist das Wegintegral:
 $$ W = \int_C d\vec{r}\  \vec{F} (\vec{r})$$
-\underline{Wegunabhängig}, verschwindet also für jeden geschlossenen Pfad :
+\textbf{Wegunabhängig}, verschwindet also für jeden geschlossenen Pfad :
 $$ \vec{F}_{\tx{kons}} = -\vec{\nabla} U(\vec{r}) \quad \leftrightarrow  \quad \vec{\nabla} \times \vec{F} = 0 \quad \leftrightarrow \quad  \oint_C d\vec{r} \cdot \vec{F}= 0$$
-\underline{allg.:} 
+\textbf{allg.:} 
 $$ \vec{F}_{\tx{kons}} = - \vec{\nabla} U(\vec{r}) + \ub{ \dot{\vec{r}} \times \vec{B} (\vec{r} , t) } _{\tx{z.B. Lorenz-Kraft}}$$
 da:
 $$P_L = \dot{\vec{r}} \cdot (\dot{\vec{r}} \times \vec{R} ) = 0$$
-\underline{Anwendung:} Vereinfachung von Bewegungsgleichungen
+\textbf{Anwendung:} Vereinfachung von Bewegungsgleichungen
 $$\vec{F} = m \ddot{\vec{r}} = - \vec{\nabla} U (x)$$
 DGL 2. Ordnung\\
-\underline{Bsp:} 1 Dimensionales System mit Energieerhaltung
+\textbf{Bsp:} 1 Dimensionales System mit Energieerhaltung
 $$ \frac{1}{2} m \dot{x}^2 + U(x) = E$$
 $$\rightarrow \dot{x} = \pm \sqrt{\frac{2}{m}(E -U(x))} \qquad \textrm{DGL 1. Ordnung}$$
 ,,erstes Integral`` ( da eine Integration bereits vollzogen)
@@ -312,15 +318,15 @@ $$ t-t_0 = \int_{x_0}^x \frac{dx'}{\sqrt{\frac{2}{m} (E-U(x'))}}$$
 Qualitative Diskussion der Bewegung:\\
 $$E=T+U\ge U$$
 %grafik
-\underline{Numerische Integration der Bewegungsgleichung:}
-\underline{Bsp:} $$f(t) = m \ddot{x}(t) = m \dot{v}(t)$$
-\underline{Idee:} Taylor Entwicklung von x zur Zeit 
+\textbf{Numerische Integration der Bewegungsgleichung:}\\
+\textbf{Bsp:} $$f(t) = m \ddot{x}(t) = m \dot{v}(t)$$
+\textbf{Idee:} Taylor Entwicklung von x zur Zeit 
 \begin{align*}
 x(t+\Delta t) &= x(t) + \frac{dx}{\underbrace{dt}_{v}} \underbrace{((t+\Delta t) -t)}_{\Delta t} + \frac{1}{2} \frac{d^2x}{\underbrace{dt^2}_{F/m = a}} \Delta t^2 + \frac{1}{3!} \frac{d^3x}{dt^3} \Delta t^3 + \mathcal{O}(t^4)\\
 &= x(t) + v(t) \Delta t + \frac{f(t)}{2m} \Delta t^2 + \frac{\Delta t^3}{3!} + \mathcal{O}(t^4)
 \end{align*}
 z.B. Lösung durch Abbruch in 2.Ordnung (Euler-Algorithmus)\\
-\underline{Besser:}
+\textbf{Besser:}
 $$x(t-\Delta t) = x(t) -v(t) \Delta t + \frac{f(t)}{2m} \Delta t^2 - \frac{\Delta t^3}{3!} \dddot{x} + \mathcal{O}(\Delta t^4)$$
 $$ x(t+\Delta t) + x(t-\Delta t) = 2x(t) + \frac{f(t)}{m} \Delta t^2 + \mathcal{O}(\Delta t^4)$$
 bzw.
@@ -338,7 +344,7 @@ Gl. (1) und (2) bestimmen den Verlet-Algorithmus
 Newton Gesetze gelten für Inertialsysteme (IS), Bezugsystem, das relativ zu IS beschleunigt ist, ist kein IS $\rightarrow$ es treten sogenannte Scheinkräfte auf.\\
 z.B. Beschleunigung bei linearer Bewegung
 \subsection{Rotierendes Bezugsystem:}
-\underline{Geg:} IS $S$ mit $\vec{r}(t)$\\
+\textbf{Geg:} IS $S$ mit $\vec{r}(t)$\\
 und nicht-IS $S'$ mit $\vec{r}\,'(t)$, das gegenüber S mit einer Winkelgeschwindigkeit
 \begin{equation*}
 \vec{\omega} = \frac{d\vec{\varphi}}{dt} \tag{1}
@@ -372,7 +378,7 @@ erhalten wir dann:
 $$m\ddot{\vec{r}}\,'= - \underbrace{2 m (\vec{\omega} \times \dot{\vec{r}}\,')}_{\tx{Corioliskraft}} -\underbrace{ m \vec{\omega}\times (\vec{\omega} \times \vec{r}\,')}_{\tx{Zentrifugalkraft}}$$
 $$F_z \sim \omega^2r \textrm{, zeigt von Drehachse weg}$$
 $$F_c \sim \omega\dot{r} \textrm{, steht} \perp \textrm{zur Bewegungsrichtung}$$
-\underline{Bsp:} 
+\textbf{Bsp:} 
 \begin{itemize}
 	\item Erddrehung, Foucaultsches Pendel
 	\item Ball auf Drehscheibe
@@ -383,30 +389,26 @@ Betrachte N Teilchen (Massenpunkte) mit:\\
 Ort: $\vec{r}_i$, Masse $m_i$ und die auf sie wirkende Kraft $\vec{F}_i$ 
 $$m_i \ddot{\vec{r}}_i = \vec{F}_i \qquad (i = 1, \dots , N)$$
 Unterscheidung:\\
-\underline{Innere Kräfte:} Kräfte der Teilchen aufeinander. z.B. Coulomb-Kräfte $\vec{F}_{ij}$ von (geladenen) Teilchen i und j\\
-\underline{Äußere Kräfte:} $\vec{F}^A_i$ wirken von außen. z.B. Schwerkraft oder externes elektromagnetisches Feld.\\
+\textbf{Innere Kräfte:} Kräfte der Teilchen aufeinander. z.B. Coulomb-Kräfte $\vec{F}_{ij}$ von (geladenen) Teilchen i und j\\
+\textbf{Äußere Kräfte:} $\vec{F}^A_i$ wirken von außen. z.B. Schwerkraft oder externes elektromagnetisches Feld.\\
 $$m_i \ddot{\vec{r}}_i = \vec{F}_i^A + \sum _{j\neq i} \vec{F}_{ij}$$
-\underline{Schwerpunktbewegung und Impuls}
+\textbf{Schwerpunktbewegung und Impuls}
 Ortsvektor des Schwerpunktes
 $$\vec{R} = \frac{1}{M} \sum_{i=1}^{N} m_i \vec{r}_i \qquad M = \sum_{i} m_i$$
 Bewegungsgleichung für $\vec{R}$:
 $$M\ddot{\vec{R}} = \sum_{i} m_i \ddot{\vec{r}}_i = \underbrace{\sum_{i} \sum_{j\neq i} F_{ij}}_{\textrm{3.NG:} F_{ij} = - F_{ji}}$$
-
-% = MIT 3 STRICHEN
-
-$$M \ddot{\vec{R}} = \sum_{i} \vec{F}_i^A + 0 =\vec{F}^A$$
-
-\underline{Schwerpunktsystem:}\\ 
-\indent \underline{Schwerpunkt bewegt sich nur gemäß äußerer Kräfte}\\ 
+$$M \ddot{\vec{R}} \equiv \sum_{i} \vec{F}_i^A + 0 =\vec{F}^A$$
+\textbf{Schwerpunktsystem:}\\ 
+\indent \textbf{Schwerpunkt bewegt sich nur gemäß äußerer Kräfte}\\ 
 $\Rightarrow$ vergleiche Münchhausen-Trick\\
 $\rightarrow$ Rechtfertigung der Idealisierung realer Körper durch Massepunkte
 
 % Vorlesung 4
 
-Auf ein \underline{abgeschlossenes System} wirken keine (oder vernachlässigbare) äußeren Kräfte\\
+Auf ein \textbf{abgeschlossenes System} wirken keine (oder vernachlässigbare) äußeren Kräfte\\
 $$\rightarrow \frac{d}{dt} M \dot{\vec{R}} = 0 \quad \rightarrow \vec{P} = M \cdot \dot{\vec{R}} = \textrm{const}$$
 $$\textrm{abgeschlossenes System} \leftrightarrow \textrm{Schwerpunktsystem ist erhalten}$$
-\underline{Drehimpuls:} 
+\textbf{Drehimpuls:} 
 Vektorielle Multiplikation des 2. NG mit r$\vec{r}_i$ 
 $$ \sum_{i} \vec{r}_i \times m_i\ddot{\vec{r}}_i = \sum_{i} \vec{r}_i \times \vec{F}_i$$
 $$( \dot{\vec{r}}_i \times \dot{\vec{r}}_i = 0)$$
@@ -418,7 +420,7 @@ $$\frac{d}{dt} \underbrace{\sum_i m_i (\vec{r}_i \times \dot{\vec{r}}_i)} _{\vec
 d.h. innere Kräfte ergeben kein resultierendes Drehmoment.
 $$\frac{d\vec{L}}{dt} = \sum_i \vec{r}_i \times \vec{F}_i^A = \vec{M}  $$
 $$\textrm{abgeschlossenes System} \leftrightarrow \textrm{Gesamtdrehimpuls } \vec{L} \textrm{ ist erhalten}$$
-\underline{Energie:}
+\textbf{Energie:}
 Mult. von 2.NG mit $\dot{\vec{r}}_i$ 
 \begin{align*}
 \sum_i m_i \ddot{\vec{r}}_i \cdot \dot{\vec{r}}_i &= \frac{d}{dt} \underbrace{\sum_i \frac{m_i}{2} \cdot \dot{\vec{r}}_i\,^2}_{T} = \frac{dT}{dt} \\
@@ -428,11 +430,11 @@ wobei
 $$ \sum_i \vec{F}_i^{\tx{kons}} \cdot \dot{\vec{r}}_i = -\frac{dU(\vec{r}_1,\dots , \vec{r}_N)}{dt} = - \sum_i \frac{\partial U}{\partial \vec{r}_i} \cdot \dot{\vec{r}}_i$$
 mit
 $$\frac{\partial U (\vec{r}_1, \dots , \vec{r}_N)}{\partial \vec{r}_i} = \frac{\partial U}{\partial x_i} \vec{e}_x + \frac{\partial U}{\partial y_i } \vec{e}_y + \frac{\partial U}{\partial z_i } \vec{e}_z$$
-\underline{Energiesatz:}
+\textbf{Energiesatz:}
 $$ \frac{d}{dt} (T+U) = \sum_i \vec{F}^{\tx{diss}}_i \cdot \dot{\vec{r}}_i$$
 $$\textrm{Kräfte konservativ} \leftrightarrow E =  T + U \textrm{ erhalten}$$
-Energieerhaltung gilt also auch bei äußeren Kräften, solange sie konservativ sind.\par
-\underline{Aufteilung:}
+Energieerhaltung gilt also auch bei äußeren Kräften, solange sie konservativ sind.\\[5pt]
+\textbf{Aufteilung:}
 \begin{align*}
 \vec{F}^{\tx{kons}}_i &= \vec{F}_i^A (\vec{r}_i) + \sum_{i\neq j} F_{ij}^I (\vec{r}_i,\vec{r}_j)\\
 &= -\frac{\partial U^A(\vec{r}_1,\dots , \vec{r}_N)}{\partial \vec{r}_i} - \frac{\partial U^F(\vec{r}_1,\dots , \vec{r}_N)}{\partial \vec{r}_i}
@@ -448,7 +450,7 @@ $$ \vec{F}_{ij}^I = - \frac{\partial U^I_{ij} (r_{ij} = |\vec{r}_i - \vec{r}_j|)
 $$ U(\vec{r}_1 , \dots , \vec{r}_N) = \sum_i U_i (\vec{r}_i) + \sum _{i<j} U_{ij} (|\vec{r}_i- \vec{r}_j |)$$
 \underline{z.B.:} $$U_i = q_i \Phi (\vec{r}_i)$$
 $$U_{ij} = \frac{q_i q_j}{|\vec{r}_i - \vec{r}_j |}$$
-\underline{Allgemein:} Abgeschlossene N-Teilchen System $(N\ge 2)$ mit ausschließlich konservativen Kräften haben also mindestens 10 Erhaltungsgrößen:\\\\
+\textbf{Allgemein:} Abgeschlossene N-Teilchen System $(N\ge 2)$ mit ausschließlich konservativen Kräften haben also mindestens 10 Erhaltungsgrößen:\\\\
 \begin{tabular}{lll}
 	$\bullet$ der Gesamtimpuls &  $\vec{P} = \sum_i m_i \dot{\vec{r}}_i \quad (*)$	& 3 Größen \\ 
 	$\bullet$ ein Vektor, & $M\vec{R} - \vec{P} \cdot t\quad $ (Int. von $(*)$)	& 3 Größen \\ 
@@ -462,8 +464,8 @@ $$U_{ij} = \frac{q_i q_j}{|\vec{r}_i - \vec{r}_j |}$$
 Selten mehr: z.B. Lenzscher Vektor im Keplerproblem
 
 \section{Die Hamilton-Funktion (1833)}
-\underline{Newton:} Kraft ist zentrale Größe\\
-\underline{Hamilton:} Energie ist zentrale Größe\\
+\textbf{Newton:} Kraft ist zentrale Größe\\
+\textbf{Hamilton:} Energie ist zentrale Größe\\
 Gegeben sei N-Teilchen System mit ausschließlich konservativen Kräften
 \begin{equation*}
 F_i = - \frac{\partial U(r)}{\partial r_i} = \dot{p}_i \qquad \tx{(3 DGL 2. Ordnung)} \tag{1}
@@ -493,7 +495,7 @@ Bewegungsgleichungen im Hamilton-Formalismus
 \begin{equation*}
 \begin{LARGE}
 \rmbox{\begin{array}{ll}
-	r_i &= \frac{\partial H}{\partial p_i}\\[15pt]
+	\dot{r}_i &= \phantom{-} \frac{\partial H}{\partial p_i}\\[15pt]
 	\dot{p}_i &= -\frac{\partial H}{\partial r_i}
 	\end{array}}
 \end{LARGE} \tag{3}
@@ -501,78 +503,79 @@ Bewegungsgleichungen im Hamilton-Formalismus
 6N DGL 1. Ordnung (Hamilton)\\
 3N DGL 2. Ordnung (Newton)\\
 $$\frac{d}{dt} H(r(t),p(t)) = \sum_i \bigg[ \frac{\partial H}{\partial p_i} \underbrace{\dot{p}_i}_{ -\partial H / \partial r_i} + \frac{\partial H}{\partial r_i} \underbrace{\dot{r}_i}_{\partial H / \partial p_i} \bigg] = 0$$
-d.h. Energie ist erhalten.
-\underline{Bem:}
+d.h. Energie ist erhalten.\par
+\textbf{Bem:}
 \begin{itemize}
-	\item Im Gegensatz zu vektoriellen Kräften ist der Hamiltonian (die Hamilton Funktion) ein \underline{Skalar}, und damit wesentlich leichter aufzustellen.
+	\item Im Gegensatz zu vektoriellen Kräften ist der Hamiltonian (die Hamilton Funktion) ein \textbf{Skalar}, und damit wesentlich leichter aufzustellen.
 	\item Hamilton-Funktion kann für allgemeine Fälle (z.B. geschw. abhängige Potentiale oder zeitabhängige Potentiale (siehe später)) und hat dann nicht notwendigerweise die Bedeutung der Gesamtenergie.
-	\item $(r,p)$ bilden den 2.3N dimensionalen \underline{Phasenraum} der die Bewegung \underline{vollständig} beschreibt.
+	\item $(r,p)$ bilden den 2.3N dimensionalen \textbf{Phasenraum} der die Bewegung \textbf{vollständig} beschreibt.
 \end{itemize}
 
-\underline{Bsp: harmonischer Oszillator}
+\textbf{Bsp: harmonischer Oszillator}
 
 % Blatt 2
 
-\underline{gedämpfter harm. Oszillator}
+\textbf{gedämpfter harm. Oszillator}
 
 % Blatt 2
 
-\underline{ebenes Pendel mit überschlag}
+\textbf{ebenes Pendel mit überschlag}
 
 % Blatt 2
 
 \subsection*{Newtonsche Mechanik: theoretisches Konzept}
 \addcontentsline{toc}{subsection}{Newtonsche Mechanik: theoretisches Konzept}
-\underline{1.Def:}
+\textbf{1.Def:}
 \begin{itemize}
 	\item Masse, Kraft, Energie
 	\item Innertialsystem, beschleunigte Bezugssysteme
 	\item konservative/ dissipative, innere/ äußere Kräfte
 \end{itemize}
-\underline{2. Bew. Gl.:}
+\textbf{2. Bew. Gl.:}
 N Teilchen, konservative Kräfte mit Pot $U(r)$
-$$ r ? (r_1, \dots, 1_{3N})$$
+$$ r = (r_1, \dots, 1_{3N})$$
 $$m_i\ddot{r}_i = - \frac{\partial U(r)}{\partial r_i}$$ 
 gewöhnlich = DGL 2. Ord i. A. nicht linear\\
-\underline{3. Erhaltungssätze}
+\textbf{3. Erhaltungssätze}
 Schwerpunkt $\vec{R}, \vec{P}, M = \sum_i m_i$
 \begin{align*}
-&\bullet \ \frac{d}{dt} \vec{p} = M \cdot \ddot{\vec{R}} = \underbrace{\vec{F}^A} _{\textrm{äußere Kraft}} \buildrel \textrm{abgeschlossenes System} \over = \quad 0 \leftrightarrow \vec{p} = \textrm{const.} \\
-&\indent \textrm{Impulserhaltung}\\[10pt]
-&\bullet \ \frac{d}{dt} \vec{L} = \sum_i \vec{r}_ \times \vec{F}_i^A = \vec{M} \rightarrow 0 \leftrightarrow \vec{L} = \textrm{const.} \quad \textrm{Drehimpulserhaltung}\\[10pt]
-&\bullet \ \frac{d}{dt} (T + U) = \sum_i \vec{F}_i^{diss} \dot{\vec{r}}_i \buildrel\textrm{Kräftegleichgewicht} \over \longrightarrow 0\\
-&\indent E = T+U = \textrm{const.} \quad \textrm{Energieerhaltung}
+&\bullet \ \frac{d}{dt} \vec{p} = M \cdot \ddot{\vec{R}} = \underbrace{\vec{F}^A} _{\textrm{äußere Kraft}} \buildrel\substack{ \textrm{abgeschlossenes} \\ \tx{System}} \over = \quad 0 \leftrightarrow \vec{p} = \textrm{const.} \quad  \tx{\textbf{Impulserhaltung}}\\
+&\bullet \ \frac{d}{dt} \vec{L} = \sum_i \vec{r}_ \times \vec{F}_i^A = \vec{M} \rightarrow 0 \quad  \leftrightarrow \quad \vec{L} = \textrm{const.} \quad \textrm{\textbf{Drehimpulserhaltung}}\\[10pt]
+&\bullet \ \frac{d}{dt} (T + U) = \sum_i \vec{F}_i^{\tx{diss}} \dot{\vec{r}}_i \quad  \buildrel\textrm{Kräftegleichgewicht} \over \longrightarrow \quad 0\\
+&\indent E = T+U = \textrm{const.} \quad \textrm{\textbf{Energieerhaltung}}
 \end{align*}
-\underline{Alternativ:}
-Hamilton Funktion mit Impuls $p=(p_1,\dots, p_{3N}) \widehat{=}$ Gesamtenergie
-$$H(r,p) = T(p) + U(r) = \sum_i \frac{p_i^2}{dm} + U(r)$$
-$$\rightarrow \dot{r_i} = \frac{\partial H}{\partial p_i}, \quad \dot{p_i}= -\frac{\partial H}{\partial r_i} \qquad 2\times 3 N \textrm{DGL 1. Ord}$$
+\textbf{Alternativ:}
+Hamilton Funktion mit Impuls $p=(p_1,\dots, p_{3N}) \ \widehat{=}$ Gesamtenergie
+$$H(r,p) = T(p) + U(r) = \sum_i \frac{p_i^2}{\partial m} + U(r)$$
+$$\rightarrow \dot{r_i} = \frac{\partial H}{\partial p_i}, \quad \dot{p_i}= -\frac{\partial H}{\partial r_i} \qquad 2\times 3 \tx{N } \textrm{DGL 1. Ord}$$
 $(r,p)$ bilden den 2 3N dim Phasenraum
 \begin{itemize}
 	\item Wichtig für Übergang zur QM und statistischen Mechanik
-	\item Beschreibt Bewegung vollständig, d.h. geg. Bew. Gl. mit Anfangsbedingungen $r_i(0), p_i(0)$, so ist $r(t)$ und $p(t)$ \underline{für alle Zeiten vollständig} bestimmt. Man sagt die klassische Mechanik ist deterministisch.
+	\item Beschreibt Bewegung vollständig, d.h. geg. Bew. Gl. mit Anfangsbedingungen $r_i(0), p_i(0)$, so ist $r(t)$ und $p(t)$ \textbf{für alle Zeiten vollständig} bestimmt. Man sagt die klassische Mechanik ist \textbf{deterministisch}.
 \end{itemize}
 \subsubsection{Nichtlineare Dynamik und Chaos}
 \begin{itemize}
 	\item Man kann zeigen: Existieren für ein System mit 2f-dim Phasenraum f Erhaltungsgrößen, so heißt das System Integrabel.\\
-	\underline{Bsp.:}
+	\textbf{Bsp.:}
 	\begin{itemize}
 		\item[1)] Konservative Bewegung in 1D $\rightarrow f=1$ \\
 		Energie ist erhalten $\rightarrow$ System ist Integrabel
 		\item[2)] 2-Körperproblem: $f=6$ \\
 		Erhaltung von Energie, Gesamtimpuls, $\vec{L}^2, L_z \rightarrow$ System ist integrabel
 		\item[3)] 3-Körperproblem: $f=9$\\
-		6 Erhaltungsgrößen $\rightarrow$ i.A. nicht integrabel, \underline{kann chaotisch} sein (Poincare' um 1900)
+		6 Erhaltungsgrößen $\rightarrow$ i.A. nicht integrabel, \textbf{kann chaotisch} sein (Poincare' um 1900)
 	\end{itemize}
-	\item \underline{Grund}\\
-	Nichtlineare Bwe. Gl. können instabile Lösungen haben d.h. bei \\\underline{geringstfügiger} Änderung der Anfangsbedingungen zeigt System für \\\underline{lange Zeiten} eine qualitativ andere Bewegung: ,,\underline{Schmetterlingseffekt}`` sog. deterministisches Chaos
-	\item \underline{Bedingung} für chaotisches Verhalten
+	\item \textbf{Grund}\\
+	Nichtlineare Bwe. Gl. können instabile Lösungen haben d.h. bei \\
+	\textbf{geringstfügiger} Änderung der Anfangsbedingungen zeigt System für \\
+	\textbf{lange Zeiten} eine qualitativ andere Bewegung: ,,\textbf{Schmetterlingseffekt}`` sog. \textbf{deterministisches Chaos}
+	\item \textbf{Bedingung} für chaotisches Verhalten
 	\begin{itemize}
 		\item Anzahl der Freiheitsgrade $f \ge2$ 
 		\item Nichtlinearität der Kraft
-		\item\underline{Bsp:} Vergleiche\\
+		\item \textbf{Bsp:} Vergleiche\\
 		harm Oszillator $F\sim r, U(r) \sim r^2$ \\
-		mit stabilem Fixpunkt und $H(r)$\\
+		mit stabilem Fixpunkt und $U(r)$\\
 		Pendel: $F\sim \sin \varphi, U \sim \cos \varphi$ und $ U(\varphi)$ \\
 		mit stabilen Fixpunkten in sinus Tälern und instabilen Fixpunkten auf den sinus Bergen
 	\end{itemize}
@@ -589,68 +592,70 @@ Harm. Oszillator ist ein zentrales Modell der Physik
 $$ H(p,q) = \frac{p^2}{2m} + U(q)$$
 das bei $q = q_0$ eine stable Gleichgewichtslage besitzt.\\
 Idee(,,harmonische Näherung``) : Taylor Entwicklung von $k$ um $q_0$
-$$U(q) = \underbrace{U(q_0)}_{\textrm{oEdA } =\  0} + \underbrace{\frac{dU}{dq} \bigg|_{q_0}}_{\substack{ =\  0 \tx{,da}\\ \textrm{GGWlage}}} (q-q_0) + \frac{1}{2} \underbrace{ \frac{d^2 U}{d q^2} \bigg|}_{= k} (q-q_0)^2 + \dots$$
+$$U(q) = \underbrace{U(q_0)}_{\textrm{oEdA } =\  0} + \underbrace{\frac{dU}{dq} \bigg|_{q_0}}_{\substack{ =\  0 \tx{,da}\\ \textrm{GGW-Lage}}} (q-q_0) + \frac{1}{2} \underbrace{ \frac{d^2 U}{d q^2} \bigg|}_{= k} (q-q_0)^2 + \dots$$
 $$\approx \frac{1}{2} k (q-q_0)^2 \equiv \frac{k}{2} x^2$$
-\underline{Bew Gl:} 
+\textbf{Bew Gl:} 
 $$ \dot{x} = \frac{\partial H}{\partial p }= \frac{p}{m} \qquad; \qquad \dot{p} = - \frac{\partial H}{\partial x} = -kx$$
 oder: $$ m\ddot{m} + kx = 0$$
 Lösungen sind $\sin \omega t, \cos \omega t$ mit $\omega^2 = \frac{k}{m}$
-Die allg. Lösung mit Anfangsbedingungen $x_0 = x(0) , p_0 = 0(0)$
+Die allg. Lösung mit Anfangsbedingungen $x_0 = x(0) , p_0 = p(0)$
 $$x(t) = x_0 \cos \omega t + \frac{p_0}{m \omega} \sin \omega t$$
 $$p(t) = p_0 \cos \omega t - m x_0 \omega \sin \omega t$$
 Mit $$ e^{ix} = \cos x + i \sin x \qquad (i^2 = -1)$$
+können wir alternativ $ e^{\pm i \omega x} $ als Lösung ansetzen, z.B.
 $$x(t) = Re(A e^{i\omega t} + B e^{i\omega t} )$$
 Im folgenden werden Schwingungen in 1D mit Reibung:
 $$ F_R = -\gamma \dot{x}(t)$$
 und einer Zeitabhängigen externen Kraft:
-$$F_{ext}(t) \quad \textrm{,,Antrieb``}$$
+$$F_{\tx{ext}}(t) \quad \textrm{,,Antrieb``}$$
 bezeichnet.
 \subsection{Gedämpfte Schwingungen}
 $$\ddot{x}(t) + \gamma \dot{x}(t) + \omega^2 x(t) = 0 $$
-\underline{Grenzfälle:}
+\textbf{Grenzfälle:}
 \begin{itemize}
 	\item $ \gamma = 0 \rightarrow$ harm. Oszillator, $x \sim e^{\pm i \omega t}$
 	\item $\omega = 0, \quad \ddot{x} + \gamma\dot{x} = 0, \quad v= \dot{x}$\\
 	$\dot{v} = -\gamma v \quad \rightarrow \quad v \sim e^{-\gamma t}$
 \end{itemize}
-\underline{Ansatz:} $$x(t) = e^{\lambda t} \quad , \quad \lambda = a+ ib \in \mathbb{C}$$
-\underline{eingesetzt:} $$(\lambda^2 + \gamma\lambda + \omega^2) e^{\lambda t} = 0$$
+\textbf{Ansatz:} $$x(t) = e^{\lambda t} \quad , \quad \lambda = a+ ib \in \mathbb{C}$$
+\textbf{eingesetzt:} $$(\lambda^2 + \gamma\lambda + \omega^2) e^{\lambda t} = 0$$
 $\lambda^2 + \gamma \lambda + \omega^2 = 0 $ charakteristische Gleichung
 $$\lambda_{1/2} = - \frac{\gamma}{2} \pm \frac{1}{2} \sqrt{\gamma^2 - 4\omega^2} = -\frac{\gamma}{2} \pm \frac{\sqrt{D}}{2}$$
-$\rightarrow$ i.A. 2 Lösungen $x_0 (t) = e^{\lambda_1 t}, x_2(t) = e^{\lambda_2 t}$\\
-\underline{$D<0$ :}
+$\rightarrow$ i.A. 2 Lösungen $x_1 (t) = e^{\lambda_1 t}, x_2(t) = e^{\lambda_2 t}$\\
+\underline{$\mathbf{D<0}$ }
 d.h. $\gamma < 2 \omega$, komplexe Lösungen
 $$\lambda_{1/2} = - \frac{\gamma}{2} \pm \frac{1}{2} \sqrt{ 4\omega^2 - \gamma^2}$$
-\underline{allg. Lösung:}
+\textbf{allg. Lösung:}
 $$x(t) = e^{-\gamma \frac{1}{2} t (c_1 e^{i\Omega t} + c_2 e ^{i \Omega t})}$$
-$\gamma$ bewirkt Dämpfung und Änderung der Frequenz\\
-\underline{$D>0$ :}
+$$\Omega = \frac{\sqrt{4 \omega^2 - \gamma ^2}}{2} \quad \buildrel \gamma = 0 \over \longrightarrow \quad \omega$$
+$\gamma$ bewirkt Dämpfung und Änderung der Frequenz\\[10pt]
+\underline{$\mathbf{D>0:}$ }
 $\gamma > 2\omega$: ,,Überdämpfte Schwingung``
 $$\rightarrow x(t) = c_1 e^{i\lambda_2 t} + c_2 e ^{i \lambda_2 t}$$
-\underline{$D = 0$:}
+\underline{$\mathbf{D = 0:}$}
 $\gamma = 2 \omega$\\
 $\rightarrow$ wir erhalten 
 $$x(t) = C e^{-\frac{\gamma}{2}t}$$
-d.h. nur eine Lsg. anstelle von 2 unabhängigen Lsg.\\
-\underline{Variation der Konstanten:}
+d.h. nur eine Lsg. anstelle von 2 unabhängigen Lsg.\\[10pt]
+\textbf{Variation der Konstanten:}
 $$x(t) = C(t) e^{- \frac{\gamma}{2}t}$$
 $$\dot{x} = (\dot{C} - \frac{\gamma C}{2}) e ^{-\frac{\gamma}{2}t}$$
 $$ \ddot{x} = (\ddot{C} - \gamma\dot{C} + \frac{\gamma^2 C }{4}) e ^{-\frac{\gamma}{2}t}$$
-\underline{eingesetzt:}
+\textbf{eingesetzt:}
 \begin{align*}
 0 & = (\ddot{C} - \gamma \dot{C} + \frac{\gamma^2 C}{4} + \gamma \dot{C} - \frac{\gamma^2 C}{2} + \omega^2 C ) e ^{-\frac{\gamma}{2}t}\\
 & = ( \ddot{C} + C\underbrace{(\omega^2 - \frac{\gamma^2}{4})}_{=v} ) e ^{-\frac{\gamma}{2}t}
 \end{align*}
-$$\rightarrow \ddot{C} = 0 , C(t) = C_0 + C_1 t$$
-$\rightarrow$ \underline{allg:} 
+$$\rightarrow \ddot{C} = 0 \quad , \quad C(t) = C_0 + C_1 t$$
+$\rightarrow$ \textbf{allg:} 
 $$x(t) = C_0  e ^{-\frac{\gamma}{2}t} + C_1 t  e ^{-\frac{\gamma}{2}t}$$
 ,,kritische gedämpfte Schwingung``\\
-\underline{Bem:}
+\textbf{Bem:}
 \begin{itemize}
-	\item Allg. \underline{lineare} DGL (mit konstanten Koeffizienten) n-ter Ordnung können durch einen Exponentialansatz gelöst werden.\\
+	\item Allg. \textbf{lineare} DGL (mit konstanten Koeffizienten) n-ter Ordnung können durch einen Exponentialansatz gelöst werden.\\
 	$\rightarrow$ charakteristische Gl. ist Polynom vom Grad n
 	\item Physikalische Bedeutung der Nullstellen von Polynomen:\\
-	\begin{tabular}{ccc}
+	\begin{tabular}{lcr}
 		Komplexe Nullstellen & $\widehat{=}$ & oszillatorische Lösungen \\
 		Reelle Nullstellen & $\widehat{=}$ & zerfallende Lösungen
 	\end{tabular}
@@ -664,15 +669,15 @@ $$\lambda_{1/2} = \ub{- \gamma/2}_{\tx{Dämpfung}} \pm \frac{1}{2} \underbrace{\
 %bild 2 überdämpfte schwingung
 
 \subsection{Der getriebene Oszillator}
-$$\underbrace{\ddot{x} + \gamma \dot{x} - \omega^2_0 x}_{\textrm{homogene DGL}} = f(t) \quad \substack{\textrm{externer Antrieb } f(t) \\ \textrm{``Inhomogenität'' der DGL}}$$
-\underline{Lösung der DGL:}
-$$\underbrace{x_{tot}}_{\textrm{bereits bekannt}} = \underbrace{x_{hom}(t)}_{\textrm{partikuläre Lösung}} + x (t)$$
+$$\underbrace{\ddot{x} + \gamma \dot{x} - \omega^2_0 x}_{\textrm{homogene DGL}} = f(t) \quad \substack{\textrm{externer Antrieb } f(t) \\ \textrm{,,Inhomogenität`` der DGL}}$$
+\textbf{Lösung der DGL:}
+$$\underbrace{x_{\tx{tot}}}_{\textrm{bereits bekannt}} = \underbrace{x_{\tx{hom}}(t)}_{\textrm{partikuläre Lösung}} + x (t)$$
 Betrachten periodischen Antrieb
 $$f (t) = f \cos(\omega t) = \frac{f}{2} ( e^{i \omega t} + e^{-i \omega t})$$
 bzw.
 $$f(t) = fe^{\pm i \omega t}$$
-mit \underline{Exp. ansatz:} $x(t) = A \pm e^{\pm i \omega t}$\\
-\underline{Eingesetzt:} [$\omega \pm i \omega \gamma + \omega_0^2$] $A \pm \quad = \quad f$ \quad [Ermitteln mit $z^{\star}$]
+mit \textbf{Exp. ansatz:} $x(t) = A \pm e^{\pm i \omega t}$\\
+\textbf{Eingesetzt:} [$\omega \pm i \omega \gamma + \omega_0^2$] $A \pm \quad = \quad f$ \quad [Ermitteln mit $z^{\star}$]
 \begin{align*}
 \rightarrow \quad A \pm =& f \frac{\omega^2_0 - \omega^2 \mp i \gamma \omega}{(\omega_0^2 - \omega^2)^2 + \omega^2 \gamma^2}\\[10pt]
 \rightarrow \quad x(t) =& \frac{1}{2}(A_+e^{i \omega t}+A_- e^{-i \omega t})\\[10pt] 
@@ -684,15 +689,14 @@ mit \underline{Exp. ansatz:} $x(t) = A \pm e^{\pm i \omega t}$\\
 &\tan(y) = \frac{a}{b} \rightarrow y(\omega) = \arctan\bigg(\frac{\gamma \omega}{\omega^2_0 - \omega^2}\bigg ) \quad &\textrm{Phase}
 \end{align*}
 
-
 %bild 3 A/(f/m) 0 1 2 graph // bild 4 q/pi graph
-
+%Resonazen vergleich
 
 Resonanz bei $\omega = \omega_0$, $A$ groß für $\gamma$ klein
 $\gamma \to 0$ und $\omega \to \omega_0$ 	„Resonanzkatastrophe“\\
 z.B. Brücke, Tacoma Narrows Bridge 1940\\
-Gesamtlösung $$x_{tot}^{(t)} = x_{hom}^{(t)} - x (t)$$
-$$\buildrel{t \to \infty}\over{\rightarrow} x(t) \quad \textrm{,,Stationäre Lösung``} $$
+Gesamtlösung $$x_{\tx{tot}}^{(t)} = x_{\tx{hom}}^{(t)} + x (t)$$
+$$\buildrel{t \to \infty}\over{\rightarrow} x(t) \quad \textrm{,,stationäre Lösung``} $$
 Resonanz wichtig: \begin{itemize}
 	\item[-] Schwingende Karrosserieteile
 	\item[-] Schwingkreis (E-Dynamik)
@@ -729,7 +733,8 @@ $$
 \draw (4,-1) -- (4,1);
 \end{tikzpicture}
 $$
-$m_1$ und $m_2$ sind aneinander und an zwei wänden mit federn gekoppelt (äußere federn mit c und innere feder mit k)
+$m_1$ und $m_2$ sind aneinander und an zwei Wänden mit Federn gekoppelt (äußere Federn mit Federkonstante c und innere Feder mit k)\\
+$ x_1,x_2 $ die jeweiligen Auslenkungen aus der Ruhelage
 \begin{align*}
 m\ddot{x}_1 &= - cx_1 + k (x_2 - x_1) \tag{1}\\
 m\ddot{x}_2 &= - cx_2 - k (x_2 - x_1) \tag{2}
@@ -747,7 +752,7 @@ eingesetzt:
 x_1(t) = \frac{a}{2} ( \cos \omega_1 t - \cos \omega_2 t)\\
 x_2(t) = \frac{a}{2} ( \cos \omega_1 t + \cos \omega_2 t)
 \end{align*}
-\underline{Zusammenhang mit Eigenwertproblem}
+\textbf{Zusammenhang mit Eigenwertproblem}
 $$ m\vec{\ddot{x}} = - V \vec{x}$$
 $$ \vec{x} = \begin{pmatrix}
 x_1 \\
@@ -756,7 +761,7 @@ x2
 c+k & -k \\
 -k & c+k
 \end{pmatrix}$$
-Ansatz:
+\textbf{Ansatz:}
 $$ x_1(t) = a_1 e^{i\omega t}$$
 $$ \ddot{x}_i (t) = - \omega^2 a_i e^{i \omega t}$$
 eingesetzt:
@@ -774,8 +779,9 @@ $$ 1 = \begin{pmatrix}
 \end{pmatrix} \qquad \vec{a} = \begin{pmatrix}
 a_1\\
 a_2
-\end{pmatrix} \qquad (V- \lambda 1 ) \vec{a} = 0$$
-Lösung für $$\det (V - \lambda 1 ) = 0$$
+\end{pmatrix}$$
+\frbox{Eigenwertgleichung $ \qquad \qquad \qquad \quad \Leftrightarrow \qquad $ charakteristische Gleichung}{\begin{equation} (V- \lambda 1 ) \vec{a} = 0 \qquad \Leftrightarrow \qquad V \vec{a}_1 = \lambda_i \vec{a}_i \tag{1} \end{equation}}
+\noindent Lösung für $$\det (V - \lambda 1 ) = 0$$
 
 % einrahmen und umschreiben v a = lambda a
 
@@ -783,8 +789,8 @@ $$ (c+k-\lambda)^2 - k^2 = 0$$
 $$ \lambda^2 - 2(c+k)\lambda + (c-k)^2 - k^2 = 0$$
 ,,Eigenfrequenzen`` Eigenwerte
 \begin{align*}
-\rightarrow \lambda_1 &= c \quad \omega_1 = \sqrt{\frac{c}{m}} \\
-\lambda_2 &= c+2k \quad \omega_2 = \sqrt{\frac{c+2k}{m}}
+\rightarrow \lambda_1 &= c \quad ; \quad \omega_1 = \sqrt{\frac{c}{m}} \\
+\lambda_2 &= c+2k \quad ; \quad \omega_2 = \sqrt{\frac{c+2k}{m}}
 \end{align*}
 Lösung der Eigenwertgleichung (1) für die Eigenwerte ergibt die ,,Eigenvektoren`` hier Eigenschwingungen
 $$ \vec{a}_1 = \frac{1}{\sqrt{2}} \begin{pmatrix}
@@ -794,24 +800,24 @@ $$ \vec{a}_1 = \frac{1}{\sqrt{2}} \begin{pmatrix}
 1 \\
 -1
 \end{pmatrix}$$
-
 $$\rmbox{\underbrace{V}_{\substack{\textrm{Operator} \\ \textrm{Abbildung} \\ \textrm{Matrix}}} \cdot \underbrace{\vec{a}_i}_{\textrm{Eigenvektor}} = \underbrace{\lambda_i}_{\textrm{Eigenwert}} \cdot \underbrace{\vec{a}_i}_{\textrm{Eigenvektor}}}$$
-
-\underline{Eigenschwingungen}\\
+\textbf{Eigenschwingungen}\\
 z.B. betrachte Molekül mit N Atomen (nicht lineare Mol)(für lineare Mol. $3N-5$ FG)
-$$3N - 3 - 3 = 3N - 6$$
+$$3N - 3 - 3 = 3N - 6 \quad \tx{Freiheitsgrade}$$
 -3 Translation -3 Rotation also $3N-6$ Freiheitsgrade für innere Bewegung
 $f = 3N-6$ innere FG $x_1, \dots x_f$\\
 mit Gleichgewichtslage $x_1^{(0)}, \quad \rightarrow \frac{\partial V}{\partial x_i} \vert _{x_i^{(0)}} = 0$\\
 und Potential $V(x_1,\dots, x_f)$\\
 Entwickle V um $\vec{x}^{(0)}$\\
-$$\underbrace{V(x_1,\dots , x_f)}_{\textrm{oEdA }= 0} = V(x_1^{(0)},\dots , x_f^{(0)}) + \sum_i \underbrace{\bigg(\frac{\partial V}{\partial x_i}\bigg)_{x_i^{(0)}}}_{= 0} (x_i - x_i^{(0)})$$
-$$ T = \frac{1}{2} \sum _{i,j} \ub{\bigg(\frac{\partial^2 V}{\partial x_i \partial x_j} \bigg)_0}_{V_{ij}} \ub{(x_i - x_i^{(0)} )}_{\equiv x_i}  \ub{( x_j - x_j^{(0)})}_{\equiv x_j} + \dots $$
-Hessematrix: $V = \frac{1}{2} \sum_{i,j} V_{ij} x_i x_j  $ harmonische Näherung
-\underline{Bew. GL:} $$m_i\ddot{x}_i = -\frac{\partial V}{\partial x_i} = - \sum_i V_{ij} x_j$$
+\begin{align*}
+V(x_1,\dots , x_f) &= \underbrace{V(x_1^{(0)},\dots , x_f^{(0)})}_{\textrm{oEdA }= 0} + \sum_i \underbrace{\bigg(\frac{\partial V}{\partial x_i}\bigg)_{x_i^{(0)}}}_{= 0} (x_i - x_i^{(0)})\\
+&+ \frac{1}{2} \sum _{i,j} \ub{\bigg(\frac{\partial^2 V}{\partial x_i \partial x_j} \bigg)_0}_{V_{ij}} \ub{(x_i - x_i^{(0)} )}_{\equiv x_i}  \ub{( x_j - x_j^{(0)})}_{\equiv x_j} + \dots 
+\end{align*}
+Hessematrix: $V = \frac{1}{2} \sum_{i,j} V_{ij} x_i x_j  $ harmonische Näherung\\
+\textbf{Bew. GL:} $$m_i\ddot{x}_i = -\frac{\partial V}{\partial x_i} = - \sum_j V_{ij} x_j$$
 massenbehaftete Koordinaten: $ q_i = \sqrt{m_i} x_i$
-$$\rightarrow \boxed{\ddot{q}_i + \sum_i V_{ij} q_j = 0} \qquad V_{ij} = \frac{V_{ij}}{\sqrt{m_i m_j}}$$
-\underline{Exp. Ansatz:} $q_i (t) = q_i r^{i\omega t}$
+$$\rightarrow \boxed{\ddot{q}_i + \sum_i^{\phantom{.}} V_{ij} q_j = 0} \qquad V_{ij} = \frac{V_{ij}}{\sqrt{m_i m_j}}$$
+\textbf{Exp. Ansatz:} $q_i (t) = q_i e^{i\omega t}$
 $$\rightarrow \sum_i V_{ij} a_J - \omega^2 a_i = 0 \textrm{ charakteristische Gl.}$$
 Mit $$\mathcal{V} = \{V_{ij}\} \quad , \quad \vec{a} = \begin{pmatrix}
 a_1\\
@@ -823,24 +829,40 @@ ist $(\mathcal{V} - \lambda 1)\vec{a}=0 $ Eigenwertproblem
 \subsection{Eigenschwingungen}
 $\mathcal{V} = \{v_{ij}\} \qquad i,j = 1, \dots ,N \qquad \vec{a} = (a_1,\dots,a_N)$\\
 Eigenwertproblem: $ \boxed{\mathcal{V} \vec{a} = \lambda \vec{a}}  \qquad \lambda = \omega^2$\\
-\underline{Eigenwerte $ \lambda_k $} $\det(\mathcal{V}-\lambda1) \buildrel ! \over = 0 \qquad (1)$\\
+\textbf{Eigenwerte $ \lambda_k $} 
+\begin{equation*}
+\det(\mathcal{V}-\lambda1) \vec{a} \buildrel ! \over = 0 \tag{1}
+\end{equation*}
 charakteristische Gleichung., Polynom N-ter Ordung\\
-\underline{Eigenvektoren $ \vec{a}_k $:} Lösungen (1) mit $ \lambda = \lambda_k  $\\
-orthogonal (bzw. Orthonormal)\\
+\textbf{Eigenvektoren $ \vec{a}_k $:}\\
+Lösungen (1) mit $ \lambda = \lambda_k  $ orthogonal (bzw. Orthonormal)\\
 $$\vec{a}_i \cdot \vec{a}_j = \delta_{ij} = \left\{ \begin{array}{ll}
 1 & i=j \\
 0 & \tx{sonst}
 \end{array}\right.$$
 $\rightarrow$ Eigenwertproblem $A = (\vec{a}_{1},\dots , \vec{a}_{N})$ ist orthogonal
-$$A^\top = A^{-1} \rightarrow A A^\top = 1 A^\top A$$
-A ist diagonalisierbar die Hessematrix $ \mathcal{V} $
+$$A^\top = A^{-1} \rightarrow A A^\top = 1 = A^\top A$$
+A ist diagonalisierbar die Hessematrix $ V $
 $$\boxed{A^{\top}V A = \tx{diag}(\lambda_1,\dots, \lambda_N) = \varLambda}$$
-$$\rightarrow \tx{\underline{Lösungen: }} \quad   q_i(t) = a_{ik} e ^{i \omega_k t} \quad (k=1,\dots,N)$$
-\underline{Allg. Lsg.:} $$q_i(t) = \sum_k C_k \ q_{ik} \ e^{i\omega_k t}$$
+$$\rightarrow \tx{\textbf{Lösungen: }} \quad   q_i(t) = a_{ik} e ^{i \omega_k t} \quad (k=1,\dots,N)$$
+\textbf{Allg. Lsg.:} $$q_i(t) = \sum_k C_k \ q_{ik} \ e^{i\omega_k t}$$
 mit Koeffizienten $C_k$ aus Anfangsbedingungen
-$$\boxed{q_i(t) = \sum_k a_{ik} \ Q_k(t) \leftrightarrow \vec{q} = A \vec{Q}}$$
-$$\boxed{Q_{k}(t) = C_k e^{i\omega_k t}} \quad \tx{,,Eigenschwingung`` oder Normalmoden}$$
-\underline{Pot.Energie:}
+\begin{large}
+$$
+\begin{array}{cc}
+\boxed{
+	\begin{array}{c}
+		q_i(t) = \sum_k a_{ik} \ Q_k(t) \\[2pt] \\
+		Q_{k}(t) = C_k e^{i\omega_k t}
+	\end{array} } & 
+	\begin{array}{c}
+		\leftrightarrow \qquad \vec{q} = A \vec{Q} \\[2pt] \\
+		\tx{\normalsize{,,Eigenschwingung`` oder Normalmoden}}
+	\end{array}
+\end{array}
+$$
+\end{large}
+\textbf{Pot.Energie:}
 \begin{align*}
 U &= \frac{1}{2} \sum_{i,j} v_{ij} q_i q_j = \frac{1}{2} \vec{q} V \vec{q}\\
 &= \frac{1}{2} \vec{Q}^\top \ub{ A^\top V A}_{\varLambda} \vec{Q} = \frac{1}{2} \vec{Q}^\top \varLambda \vec{Q}\\
@@ -849,11 +871,11 @@ U &= \frac{1}{2} \sum_{i,j} v_{ij} q_i q_j = \frac{1}{2} \vec{q} V \vec{q}\\
 \begin{align*}
 T &= \frac{1}{2} \sum_i \dot{q}_i^2 = \frac{1}{2} \dot{\vec{q}}^\top \dot{\vec{q}} \\
 &= \frac{1}{2} \dot{Q}^\top \ub{ A^\top A }_{= 1} \dot{\vec{Q}} = \frac{1}{2} \dot{\vec{Q}}^\top \dot{\vec{Q}}\\
-&= \frac{1}{2} \sum_{n=1}^{N} \dot{Q}_k^2 \quad \tx{ kin. Energie ist auch Diagonal}
+&= \frac{1}{2} \sum_{n=1}^{N} \dot{Q}_k^2 \quad \tx{ \ \ kin. Energie ist auch Diagonal}
 \end{align*}
 Mit $P_k = \dot{Q}_k$ ist damit der Hamiltonian
 $$\boxed{H(Q,P) = \frac{1}{2} \sum_{k=1}^{N} ( p^2_k + \omega_k^2 Q^2_k)}$$
-der in ein System \underline{unabhängiger} Oszillatoren \underline{seperiert.}
+der in ein System \textbf{unabhängiger} Oszillatoren \textbf{seperiert.}
 \subsubsection{\underline{Bsp:} Normalmoden von Wasser}
 $$
 \begin{tikzpicture}
@@ -894,13 +916,11 @@ $$
 $$
 
 \noindent
-Bilder: Wasser Molekül mit Biegeschwingung und symmetrischer oder asymmetrischer Streckschwingung.\\[5pt]
-Anwendung: Wasser absorbiert (infrarot) Licht mit den Eigenfrequenzen: \underline{$\omega_k$ sind exp. observable Größen}\\
+\textbf{Bilder:} Wasser Molekül mit Biegeschwingung und symmetrischer oder asymmetrischer Streckschwingung.\\[5pt]
+\textbf{Anwendung:} Wasser absorbiert (infrarot) Licht mit den Eigenfrequenzen: \textbf{$\omega_k$ sind exp. observable Größen}\\
 $\rightarrow$ Schwingungsspektroskopie
 
-
 % nummerierung der gleichungen nachtragen
-
 
 \section{Das Zweikörperproblem}
 \begin{itemize}
@@ -912,8 +932,7 @@ $\rightarrow$ Schwingungsspektroskopie
 \begin{equation*}
 H = T+U = \sum_{i=1}^{2} \frac{\vec{p}^{\,2}_i}{2 m_i} +  U(|\vec{r}_2-\vec{r}_1|) \tag{1}
 \end{equation*}
-
-\underline{Vorgehen:}
+\textbf{Vorgehen:}
 \begin{itemize}
 	\item Seperation der Schwerpunktsbewegung (Impulserhaltung) \\
 	$ \rightarrow $ Reduktion auf Einkörperproblem (3 statt 6 Freiheitsgrade)
@@ -921,8 +940,8 @@ H = T+U = \sum_{i=1}^{2} \frac{\vec{p}^{\,2}_i}{2 m_i} +  U(|\vec{r}_2-\vec{r}_1
 	\item Diskussion des Keplerproblems , $ k \sim 1/r $
 \end{itemize}
 
-\underline{(1.) Trafo in Schwerpunkts- und Relativbewegung}
-Schwerpunktskoordinaten: $$\vec{R} = \frac{m_1\vec{r}_1 + m_2\vec{r}_2}{m_1+m_2}$$
+\textbf{(1.) Trafo in Schwerpunkts- und Relativbewegung}
+$$ \tx{Schwerpunktskoordinaten:} \qquad \vec{R} = \frac{m_1\vec{r}_1 + m_2\vec{r}_2}{m_1+m_2}$$
 Relativkoordinaten: $$\vec{r} = \vec{r}_1 - \vec{r}_2$$
 $$T = \frac{\vec{p}_1^{\;2}}{2m_1} + \frac{\vec{p}^{\;2}_2}{2m_2} = \frac{m_1}{2} \dot{\vec{r}}_1^{\;2} + \frac{m_2}{2} \dot{\vec{r}}_2^{\;2}$$
 \begin{equation*}
@@ -3287,7 +3306,6 @@ E^2 = (m_0 c^2)^2 + (\vec{p} c)^2 \tag{18}
 klassische Mechanik: $\ + $ Vorzeichen\\
 QM Relativistik: $\quad \ \ \  - $ Vorzeichen beschreibt Antiteilchen.\\
 (Dirac-Gl.)
-
 
 
 \end{document}

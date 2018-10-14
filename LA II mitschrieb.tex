@@ -16,6 +16,7 @@
 \usepackage{cancel}
 \usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
+\usepackage{tcolorbox}
 
 \newenvironment{bew}[1]{\subsection{Bew: #1}}{\hfill$\square$}
 
@@ -77,7 +78,7 @@
 \subsection{Def: Integritätsbereich} Ein Integritätsbereich ist ein Ring ohne Nullteiler $$\forall x,y \in R: \quad (x\cdot y = 0 \Rightarrow x=0\textrm{ oder } y=0)$$ 
 \subsection{Def: Körper} Ein Körper K ist ein Ring derart, dass:
 \begin{itemize}
-	\item $1_{K} = 0_{K}$
+	\item $1_{K} \neq 0_{K}$
 	\item $\forall x \in K \setminus \{0\}$ $\exists x^{-1} x\cdot x^{-1} = x^{-1} \cdot x = 1_{K}$
 \end{itemize}
 \subsection{Bew:} Körper sind Integritätsbereiche
@@ -198,7 +199,7 @@ $$(\lambda, v) \mapsto \lambda\cdot v$$
 sodass:
 \begin{itemize}
 	\item[1.)] $\lambda(v+w) = \lambda v +\lambda w$
-	\item[2.)] $\lambda(\mu \cdot v) = \lambda\mu) \cdot v$
+	\item[2.)] $\lambda(\mu \cdot v) = (\lambda\mu) \cdot v$
 	\item[3.)] $(\lambda + \mu) v = \lambda v + \mu v$
 	\item[4.)] $ 1_K \cdot v = v \qquad\forall v \in V$
 \end{itemize}
@@ -247,7 +248,7 @@ $$\begin{pmatrix}1 \\ 0 \end{pmatrix} , \begin{pmatrix}0 \\ 1 \end{pmatrix} = e_
 $U$ = Span$(e_1) \rightarrow K^2 = U \oplus$ Span$(e_2) = U \oplus$ Span$(e_1, e_2)$
 
 \subsection{Def: Lineare Abbildungen}
-$ F: V\rightarrow W $ ist \underline{linear}, falls $$D(\lambda v+\mu u ) = \lambda F(v) + \mu F(u)$$\\
+$ F: V\rightarrow W $ ist \underline{linear}, falls $$F(\lambda v+\mu u ) = \lambda F(v) + \mu F(u)$$\\
 (F UR von V)
 $$ Ker(F) =\{ v \in V \vert  F(v) = 0 \}$$
 (F UR von W)
@@ -256,6 +257,8 @@ $$ Im(F) = \{ w \in W \vert \exists v \in V, F(v) = w\}$$
 Falls $\mathcal{B}$ eine Basis von v ist $\Rightarrow F(\mathcal{B})$ ist ein erzeugendensystem von $Im(F)$\\ 
 $$\textrm{F injektiv} \Leftrightarrow Ker(F) = \{0\}$$\\
 V endlich $$\rightarrow dim(V) = dim(Ker(F)) + dim(Im(F))$$
+
+% text shits
 
 $$ \nicefrac{v}{Ker(F)} \cong Im(F)$$
 \subsubsection{Bem: Isomorphie}
@@ -516,7 +519,7 @@ $$ x_j = \frac{\det(a_i,\dots,a_{j-1},b,a_{j+1},\dots , a_n)}{\det(A)}$$
 $\det(F) = \det(a)$, Darstellungsmatrix von F bzgl. der Basis $\{v_1,\dots , v_n\}$
 \subsection{Def: Adjunkte} Sei A $(= a_{ij})$ eine n$\times$n-Matrix\\
 definiere die Adjunkte von A,  
-$$\textrm{adj}(A) = (\gamma_{ij})$$ wobei $$\gamma_{ij} = (-1)^{i\neq j} \det(A_{ij})$$
+$$\textrm{adj}(A) = (\gamma_{ij})^\top$$ wobei $$\gamma_{ij} = (-1)^{i + j} \det(A_{ij})$$
 \subsubsection{Bem: Determinante und Adjunkte}
 Sei $c_j$ die $j$-te Zeile von $\textrm{adj}(A)$.\\
 Sei $a_i$ die $i$-te Spalte von A 
@@ -578,7 +581,7 @@ $A$ ist diagonlaisierbar genau dann wenn es eine reguläre Matrix $S$ gibt, soda
 \subsection{Satz: Zu Eigenwerten}$ A \in \mathcal{M}_{n \times n}(K)\\
 \lambda \in K\\
 \lambda \textrm{ ist ein Eigenwert von } A \textrm{ genau dann wenn } \\
-\lambda E_n - A \textrm{ night regulär ist} \Leftrightarrow \textrm{det}(\lambda \cdot E_n - A) = 0 $
+\lambda E_n - A \textrm{ nicht regulär ist} \Leftrightarrow \textrm{det}(\lambda \cdot E_n - A) = 0 $
 
 \subsection{Def: Charakteristisches Polynom} Das charakteristische Polynom einer Matrix
 $$ A\in \mathcal{M}_{n\times n}(K)$$ ist 
@@ -602,7 +605,7 @@ sagen:
 $$(a_{ij}) = A \in M_{n\times n} (K) $$
 $$\chi_A(T) = T^n + b_{n-1} T^{n-1}+ \dots + b_0$$
 wobei $$b_0 = (-1) ^n \det(A)$$
-$$b_{n-1} = - Tr(A) = -\sum_{i=1}^{n} a_{i(i oder j)}$$
+$$b_{n-1} = - Tr(A) = -\sum_{i=1}^{n} a_{ii}$$
 Tr = Trace = Spur von A
 
 \subsection{Kor: Anzahl der Eigenwerte} dim(V) = n\\
@@ -677,7 +680,7 @@ $\dim(V)< \infty \quad F: V\to V$ Endomorphismus\\
 $\lambda \in K$ Eigenwert\\
 $$\Rightarrow \chi_{F}(\lambda) = 0$$
 algebraische Vielfachheit von $\lambda \quad K = \textrm{ord}_\lambda(F)$
-$$\chi_F(T) = (T-\lambda)\cdot G(T) \qquad G(T) = 0$$
+$$\chi_F(T) = (T-\lambda)^K \cdot G(T) \qquad G(T) = 0$$
 \subsubsection{Bem:}
 $$\textrm{ord}_\lambda(F) \ge \dim V(\lambda)$$
 \subsection{Bew:}
@@ -821,7 +824,7 @@ $$d_i = \dim(V(\lambda_i)$$
 F ist diagonalisierbar $\Leftrightarrow n = \dim(V) = \sum d_i$
 
 
-\subsection{Def: Diag. und ähnlichkeit} Eine Matrix $A \in M_{n\times n} (K)$ ist \underline{trigonalisierbar}, wenn sie \underline{ähnlich zu einer} \underline{oberen Dreiecksmatrix} ist 
+\subsection{Def: Trigonalisierbarkeit und ähnlichkeit} Eine Matrix $A \in M_{n\times n} (K)$ ist \underline{trigonalisierbar}, wenn sie \underline{ähnlich zu einer} \underline{oberen Dreiecksmatrix} ist 
 
 $$\begin{pmatrix}
 a_{11} & \dots & a_{1n} \\
@@ -1034,7 +1037,9 @@ Das Polynom $m_F (= \mu _F)$ heißt das Minimalpolynom von F.\\
 
 %Vorlesung 6
 
-\subsection{Satz: Trigonalisierbarkeit}
+\subsection{Wiederholung:}
+
+\subsection*{Satz: Trigonalisierbarkeit}
 $\enph$ V eindlich dim. und trigonalisierbar
 falls es eine Basis $\mathcal{B}$ von V gibt, sodass F Darstellungsmatrix der Form
 $$\begin{pmatrix}
@@ -1052,20 +1057,23 @@ Komposition des Endomorphismus ... Produkt im Polynom
 % hier fehlt was vielleicht
 $$P(F) \circ f(F) = (P \cdot G)(F)$$
 
-\subsection{Satz: (Caley-Hamilton)}
+\subsection*{Satz: (Caley-Hamilton)}
 $$\chi_F(F) = 0_{iv} $$
 als Endomorphismus
-\subsection{Kor: Charakteristische Polynome}
+\subsection*{Kor: Charakteristische Polynome}
 $A\in \mathcal{M}_{n\times n} (K)$
 $$\chi_A(T) = T^n + \sum_{i=0}^{n-1} b_i T^i$$
 $$\Rightarrow A^n + b_{n-1} A^{n-1} + \dots  + b_0 E_n = 0$$
-\subsection{Satz: normiertes Polynom}
+\subsection*{Satz: normiertes Polynom}
 $ V \tx{endlichdim} / K \enph$
 Dann existiert genau ein normiertes und minimales Polynom $m_F(T)$ kleinsten gradesb derart, dass $\forall P\in K[T]$:
 $$ m_F|_P \Leftrightarrow P(F) = 0$$
 
-\subsection{Def: minimal Polynom}
-Das Polynom $m_F(T)$ heißt das Minimalpolynom von F. Insb. $m_F(F) = 0$
+\subsection*{Def: minimal Polynom}
+Das Polynom $m_F(T)$ heißt das Minimalpolynom von F. Insb. $m_F(F) = 0$\\
+
+ende Wiederholung
+
 \Bew{} {Sei $$\mathcal{F} = \{ P\in K[T] \tx{ normiert } |P(F) = 0 \tx{ als Endomorphismus}\}$$
 Caley.Hamilton
 $$\chi_F(T) \in \mathcal{F} \neq \varnothing$$
@@ -1258,7 +1266,7 @@ T-1 \\
 T+1
 \end{array} \right.$$
 
-\chapter{Die Jordansche Normalenform}
+\chapter{Die Jordansche Normalform}
 \subsection{Lemma: Invarianzen}
 $\enph \quad U \subset V$ Untervektorraum:\\
 Dann ist U $F$-invariant gdw
@@ -2654,9 +2662,9 @@ Ferner hängen die Zahlen $p,g$ und $r$ nur von $\varphi$ ab.
 	1\\
 	& \ddots\\
 	& & 1\\
-	& & &1\\
+	& & &-1\\
 	& & & & \ddots\\
-	& & & & & 1\\
+	& & & & & -1\\
 	& & & & & & 0\\
 	& & & & & & & \ddots\\
 	& & & & & & & & 0
@@ -2722,7 +2730,8 @@ $$ \rightarrow\quad  \equalto{\dim(U)}{0} + \equaltoup{n - p}{\dim \spa(c_{p+1,\
 $ \Rightarrow h \le p  $
 
 \chapter{Unitäre Räume}
-\subsection{Def:} Ein unitärer Raum $V$ ist ein $\mathbb C$-VR zusammen mit einem komplexen Skalarprodukt $\langle\ ,\ \rangle : V \times V \mapsto \mathbb C$ mit folgeneden Eigenschaften
+\subsection{Def: unitärer Raum}
+Ein unitärer Raum $V$ ist ein $\mathbb C$-VR zusammen mit einem komplexen \textbf{Skalarprodukt} $\langle\ ,\ \rangle : V \times V \mapsto \mathbb C$ mit folgenden Eigenschaften
 \begin{enumerate}
 	\item $\langle v,w \rangle = \overline{\langle w,v \rangle},$ wobei $\overline{a+bi}=a-bi$
 	\item $\langle v+ v', w \rangle = \langle v,w \rangle + \langle v',w \rangle$
@@ -2777,7 +2786,7 @@ Sei $(V, \langle\ ,\ \rangle)$ ein euklidischer oder unitärer Raum und $\{b_1, 
 	$ \Downarrow $ 1)\\
 	$ a_{ij} = \langle F(b_j),b_i \rangle $
 \end{enumerate}
-\subsection{Satz: (Geom-Schmidtsches\\ Orthonormalisierungsverfahren)}
+\subsection{Satz: (Gram-Schmidtsches\\ Orthonormalisierungsverfahren)}
 Sei V ein euklidischer oder unitärer Raum. Gegeben $ \{v_1,\dots , v_n \} $ lin. unabh. dann gibt es ein orthonormalsystem $ \{e_1,\dots , e_n \} $ derart, dass
 $$\spa(v_1,\dots,v_n) = \spa(e_1,\dots,e_n)$$
 Insb., falls V endlichdim ist, besitzt V eine ONB.
@@ -2825,11 +2834,11 @@ Zwei Teilmengen A,B von V sind Orthogonal, $ A \perp B $ falls $ v \perp w \quad
 \subsubsection{Bem:}
 $ A \perp B \Leftrightarrow \spa(A) \perp \spa(B) $\\
 in Blatt 7 Aufgabe 3 schon gezeigt
-\subsection{Def:}
-$ A \subset B $ Teilmenge
+\subsection{Def: Orthogonale Teilmenge}
+$ A \subset V $ Teilmenge
 \begin{align*}
 A ^\perp &= \{ v \in V\ |\ \{v\} \perp A\}\\
-&= \{ v \in V\ |\ \forall w \in A \ : \ v \perp W\}
+&= \{ v \in V\ |\ \forall w \in A \ : \ v \perp w\}
 \end{align*}
 \subsubsection{Bem:}
 $ A^\perp $ ist ein Unterraum von V
@@ -3136,7 +3145,7 @@ Falls $K = \mathbb R$ ist , dann ist hermitesch = symmetrisch
 \subsubsection{Bem}
 Sei $\mathcal B$ eine ONB von $V$
 $$F: V \to V \tx{ ist selbstadjungiert}$$
-$\Leftrightarrow$ Die Darstellungsmatrix von $F$ bzg. $\mathcal B$ hermitesch ist.
+$\Leftrightarrow$ Die Darstellungsmatrix von $F$ bzgl. $\mathcal B$ hermitesch ist.
 \subsubsection{Bem:}
 Selbstadjungierte Endomorphismen sind normal.
 \subsection{Lemma: Eigenwerte und Eigenvektoren}
@@ -3265,8 +3274,11 @@ $A$ symmetrisch reelle $(n \times n)$-Matrix $\rightarrow$ $\chi_A$ zerfällt in
 $A$ ist dann diagonalisierbar $\rightarrow$ Hauptachsentransformationssatz.\\ 
 $V \tx{ euklidischer endlidim. Raum}$, $\varphi: V \times V \to \mathbb R \tx{ symmetrische bilinearform}$
 $\rightarrow$ Hauptachsen von $\varphi$ sind die Elemente einer ONB von $V$ sodass $\varphi$ Darstellungsmatrix in Diagonalform besitzt.
-\subsection{Kor: Spektralsatz}
-$F:V\to V$ selbstadjungiert $\rightarrow \exists \tx{ ONB von } V$ welche aus Eigenvektoren von $F$ besteht.
+\subsection*{Kor: Spektralsatz}
+$F:V\to V$ selbstadjungiert $\rightarrow \exists \tx{ ONB von } V$ welche aus Eigenvektoren von $F$ besteht.\\
+
+ende Wiederholung
+
 \Bew{}{$V$ unitär $\rightarrow$ ok, weil $\chi_F$ in Linearfaktoren über $\mathbb C$ zerfällt\\
 	$V$ euklidisch $\rightarrow$ Die Darstellungsmatrix von $F$ ist symmetrisch $\rightarrow$ diagonalisierbar $\rightarrow$ $\chi_F$ zerfällt in Linearfaktoren über $\mathbb R$ 
 
@@ -3399,8 +3411,11 @@ F orthogonal gdw $ ||v|| = ||F(v) || \  \forall v \in V $ dann bildet F Orthonor
 $ F: \mathbb{R} \to \mathbb{R}\quad x \mapsto 2 \cdot x $
 $ \rightarrow $ Orthogonale Abbildungen (für euklidische Räume) erhalten den Winkel zwischen Vektoren
 
-\subsection{Satz: Orthogonale Abbildungen}
-Jede orthogonale Abbildung ist injektiv.
+\subsection*{Satz: Orthogonale Abbildungen}
+Jede orthogonale Abbildung ist injektiv.\\
+
+ende Wiederholung
+
 \subsection{Bew:} $ F:V\to V \quad v \in \ker(F)$
 $$0 = F(v) \rightarrow 0 = ||F(v)|| = ||v|| \rightarrow v = 0$$
 \subsection{Satz: Bijektive Orthogonale Abbildung} Sei V endlichdim. euklidischer oder unitärer Raum und $ F: V\to V $ eine Bijektive lineare Abbildung.\\

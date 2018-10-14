@@ -1,3 +1,4 @@
+
 \documentclass[titlepage,12pt,a4paper,ngerman]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -5,16 +6,20 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{amsmath}
-\usepackage{cleveref}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{tikz}
+\usepackage{tikz-cd}
 \usepackage{nicefrac}
 \usepackage{mathtools}
-\usepackage[margin=1in]{geometry}
 \usepackage{enumerate}
-\usepackage{tocloft}
+\usepackage{cancel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
 \usepackage{tcolorbox}
+
+\usepackage{tocloft}
+\usepackage[margin=1in]{geometry}
 
 \addtolength{\cftchapnumwidth}{10pt}
 \addtolength{\cftsecnumwidth}{10pt}
@@ -825,7 +830,7 @@ $$E_{el} = \frac{3}{5}\ k\ \frac{\ Q^2}{R}$$
 \end{itemize}
 \underline{Andere Form von $E_{el}$ mit $ \vec{E}$}
 \begin{align*}
-E_{el} &= \frac{1}{2} \it d^3\vec{r} \rho(\vec{r}) \varphi(\vec{r}) \qquad \qquad \tx{(3. MW-Gl.)} \quad \tx{div}(\vec{E}) = \frac{\rho}{\epsilon_0}\\
+E_{el} &= \frac{1}{2} \int d^3\vec{r} \rho(\vec{r}) \varphi(\vec{r}) \qquad \qquad \tx{(3. MW-Gl.)} \quad \tx{div}(\vec{E}) = \frac{\rho}{\epsilon_0}\\
 &= \frac{\epsilon_0}{2} \int d^3 \vec{r} \vec{\nabla} \vec{E}(\vec{r}) \varphi(\vec{r})
 \end{align*}
 partielle Integraltion $\bigg($ 1 dim: $\int_a^b dx f(x) g'(x) = fg \bigg \vert _a^b - \int dx f'(x) g(x) \bigg)$
